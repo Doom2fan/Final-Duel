@@ -1,0 +1,30 @@
+#include "fd_defs.dh"
+//#include "commonFuncs.h"
+__library("FinalDuel");
+
+// Includes
+/*#include "Chasecam.ACS"
+#include "Commands.ACS"
+#include "Class.ACS"
+#include "FatalitySystem.ACS"
+#include "Footsteps.ACS"
+#include "Health.ACS"
+#include "HUD.ACS"
+#include "Misc.ACS"
+#include "Start.ACS"
+//#include "stralloc.ACS"
+#include "Weapons.ACS"
+#include "XPSystem.ACS"*/
+
+script void FD_ADDTRANSLATIONS(void) __open
+{
+	// 7: Fire/plasma death palette
+	CreateTranslationStart(7);
+	CreateTranslationPalette(0, 255, 5, 8);
+	CreateTranslationEnd();
+	// 10: Normal palette
+	CreateTranslationStart(10);
+	CreateTranslationPalette(0, 255, 0, 255);
+	CreateTranslationEnd();
+};
+

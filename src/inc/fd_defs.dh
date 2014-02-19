@@ -1,0 +1,18 @@
+#ifndef _FD_DEFS_DH_
+#define _FD_DEFS_DH_
+
+#include <zcommon.acs>
+
+#define script			__extscript "ACS"
+
+#define EAST			0
+#define NORTHEAST		32
+#define NORTH			64
+#define NORTHWEST		96
+#define WEST			128
+#define SOUTHWEST		160
+#define SOUTH			192
+#define SOUTHEAST		224
+
+#endif
+
