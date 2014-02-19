@@ -1,0 +1,35 @@
+#include "fd_defs.dh"
+#include "fd_util.dh"
+#include "fd_ccmd.dh"
+
+// Action keys
+script void fd_Reload()
+{
+	if(CheckInventory("Reloading") == 1)
+	{
+		TakeInventory("Reloading", 1);
+	}
+	else
+	{
+		GiveInventory("Reloading", 1);
+	};
+	return;
+};
+
+script void fd_Keys() __enter
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	while(1)
+	{
+		if(KeyPressed(BT_RELOAD)) fd_Reload();
+		Delay(1);
+	};
+	return;
+};
+
+script void fd_Kick() __net
+{
+	GiveInventory("Kicking", 1);
+	return;
+};
+

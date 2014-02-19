@@ -63,16 +63,6 @@ function int keyDown(int key)
     return 0;
 }
 
-function int keyPressed(int key)
-{
-    int buttons     = GetPlayerInput(-1, INPUT_BUTTONS);
-    int oldbuttons  = GetPlayerInput(-1, INPUT_OLDBUTTONS);
-    int newbuttons  = (buttons ^ oldbuttons) & buttons;
-
-    if (newbuttons & key) { return 1; }
-    return 0;
-}
-
 function int adjustBottom(int tmin, int tmax, int i)
 {
     if (i < tmin) { tmin = i; }

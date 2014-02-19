@@ -13,3 +13,21 @@ __function void fd_AddTranslations()
 	CreateTranslationEnd();
 };
 
+function int KeyPressed(int key)
+{
+    int buttons		= GetPlayerInput(-1, INPUT_BUTTONS);
+    int oldbuttons	= GetPlayerInput(-1, INPUT_OLDBUTTONS);
+    int newbuttons	= (buttons ^ oldbuttons) & buttons;
+	
+    if (newbuttons & key) return 1;
+    return 0;
+};
+
+// Original player move speed script by DoomRater
+script void PlayerSpeed(int arg1)
+{
+	fixed rval = arg1;
+	SetActorProperty(0, APROP_Speed, rval/100);
+	return;
+};
+

@@ -15,6 +15,7 @@ script void fd_ChaseCamToggle()
 		camera_mode[pnum] = OFF;
 		Thing_Remove(C_TID + pnum);
 	};
+	
 	return;
 };
 
@@ -65,11 +66,15 @@ script void fd_ChaseCam(int arg1)
 		};
 		Delay(1);
 	};
+	
+	return;
 };
 
 script fd_KillChaseCam(int arg1) __disconnect
 {
 	camera_mode[arg1] = OFF;
 	Thing_Remove(C_TID + arg1);
+	
+	return;
 };
 

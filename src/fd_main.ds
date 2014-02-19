@@ -20,6 +20,7 @@ __library("FinalDuel");
 script void fd_Init()
 {
 	fd_AddTranslations();
+	
 	return;
 };
 

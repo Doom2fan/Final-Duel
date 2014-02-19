@@ -1,0 +1,9 @@
+#ifndef _FD_CCMD_DH_
+#define _FD_CCMD_DH_
+
+externscript		void	fd_Reload();
+externscript		void	fd_Keys();
+externscript		void	fd_Kick();
+
+#endif
+
