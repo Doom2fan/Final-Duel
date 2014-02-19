@@ -1,0 +1,44 @@
+#define PLAYER_TID_START 30000
+
+script "CVars" Enter
+{
+	// Not needed or desired in TitleMaps.
+	If (GameType() == Game_Title_Map) Terminate;
+	Delay(1);
+	restart;
+}
+
+script "FDEnter" ENTER
+{
+	// Not needed or desired in TitleMaps.
+	If (GameType() == Game_Title_Map) Terminate;
+	Thing_ChangeTID(0,PLAYER_TID_START+PlayerNumber());
+	TakeInventory ("ShowKeys", 1);
+	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
+	TakeInventory ("NightvisionOn", 1);
+	TakeInventory ("EnforcerFire2", 1);
+	TakeInventory ("QuadShotgunFired", 1);
+}
+
+script "FDRespawn" RESPAWN
+{
+	// Not needed or desired in TitleMaps.
+	If (GameType() == Game_Title_Map) Terminate;
+	// Make sure our old dead body doesn't still have our tid
+	Thing_ChangeTID(PLAYER_TID_START+PlayerNumber(),0);
+	Thing_ChangeTID(0,PLAYER_TID_START+PlayerNumber());
+	TakeInventory ("ShowKeys", 1);
+	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
+	TakeInventory ("NightvisionOn", 1);
+	TakeInventory ("EnforcerFire2", 1);
+	TakeInventory ("QuadShotgunFired", 1);
+	switch(GetCVar("FD_NothingOnRespawn"))
+	{
+		case 1:
+			RestartInventory();
+			RestartLevelSystem();
+			break;
+		case 0:
+			break;
+	}
+}

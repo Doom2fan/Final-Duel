@@ -1,0 +1,217 @@
+// By The Zombie Killer.
+// reformated and edited by Alex_Mercer
+
+// Defines
+#define MaxStepSounds 159
+#define DefStepSound "floor/footstep"
+str StepSound[MaxStepSounds][2] = {
+	{ "CEIL1_1", "floor/wood" },
+	{ "CEIL1_1", "floor/wood" },
+	{ "CEIL1_2", "floor/metal" },
+	{ "CEIL1_3", "floor/tile" },
+	{ "CEIL3_1", "floor/hard" },
+	{ "CEIL3_2", "floor/hard" },
+	{ "CEIL3_3", "floor/tile" },
+	{ "CEIL3_4", "floor/tile" },
+	{ "CEIL3_5", "floor/hard" },
+	{ "CEIL3_6", "floor/hard" },
+	{ "CEIL4_1", "floor/carpet" },
+	{ "CEIL4_2", "floor/carpet" },
+	{ "CEIL4_3", "floor/carpet" },
+	{ "CEIL5_1", "floor/hard" },
+	{ "CEIL5_2", "floor/hard" },
+	{ "COMP01", "floor/tile" },
+	{ "CONS1_1", "floor/tile" },
+	{ "CONS1_5", "floor/tile" },
+	{ "CONS1_7", "floor/tile" },
+	{ "CRATOP1", "floor/wood" },
+	{ "CRATOP2", "floor/wood" },
+	{ "DEM1_1", "floor/tile2" },
+	{ "DEM1_2", "floor/tile2" },
+	{ "DEM1_3", "floor/tile2" },
+	{ "DEM1_4", "floor/tile2" },
+	{ "DEM1_5", "floor/tile2" },
+	{ "DEM1_6", "floor/tile2" },
+	{ "FLAT1", "floor/rock" },
+	{ "FLAT1_1", "floor/rock" },
+	{ "FLAT1_2", "floor/rock" },
+	{ "FLAT1_3", "floor/metal" },
+	{ "FLAT2", "floor/tile" },
+	{ "FLAT3", "floor/tile" },
+	{ "FLAT4", "floor/metal" },
+	{ "FLAT5", "floor/hard" },
+	{ "FLAT5_1", "floor/wood" },
+	{ "FLAT5_2", "floor/wood" },
+	{ "FLAT5_3", "floor/carpet" },
+	{ "FLAT5_4", "floor/carpet" },
+	{ "FLAT5_5", "floor/carpet" },
+	{ "FLAT5_6", "floor/rock" },
+	{ "FLAT5_7", "floor/rock" },
+	{ "FLAT5_8", "floor/rock" },
+	{ "FLAT8", "floor/tile" },
+	{ "FLAT9", "floor/tile" },
+	{ "FLAT10", "floor/dirt" },
+	{ "FLAT14", "floor/carpet" },
+	{ "FLAT17", "floor/tile" },
+	{ "FLAT18", "floor/tile" },
+	{ "FLAT19", "floor/tile" },
+	{ "FLAT20", "floor/metal" },
+	{ "FLAT22", "floor/metal" },
+	{ "FLAT23", "floor/metal" },
+	{ "FLOOR0_1", "floor/hard" },
+	{ "FLOOR0_2", "floor/hard" },
+	{ "FLOOR0_3", "floor/hard" },
+	{ "FLOOR0_5", "floor/tile" },
+	{ "FLOOR0_6", "floor/tile" },
+	{ "FLOOR0_7", "floor/tile" },
+	{ "FLOOR1_1", "floor/carpet" },
+	{ "FLOOR1_6", "floor/hard" },
+	{ "FLOOR1_7", "floor/hard" },
+	{ "FLOOR3_3", "floor/tile" },
+	{ "FLOOR4_1", "floor/tile" },
+	{ "FLOOR4_5", "floor/tile" },
+	{ "FLOOR4_6", "floor/tile2" },
+	{ "FLOOR4_8", "floor/tile2" },
+	{ "FLOOR5_1", "floor/tile2" },
+	{ "FLOOR5_2", "floor/tile2" },
+	{ "FLOOR5_3", "floor/tile2" },
+	{ "FLOOR5_4", "floor/rock" },
+	{ "FLOOR6_1", "floor/gravel" },
+	{ "FLOOR6_2", "floor/gravel" },
+	{ "FLOOR7_1", "floor/hard" },
+	{ "FLOOR7_2", "floor/tile2" },
+	{ "GATE1", "floor/metal" },
+	{ "GATE2", "floor/metal" },
+	{ "GATE3", "floor/metal" },
+	{ "GATE4", "floor/metal" },
+	{ "GRASS1", "floor/dirt" },
+	{ "GRASS2", "floor/dirt" },
+	{ "GRNLITE1", "floor/hard" },
+	{ "GRNROCK", "floor/rock" },
+	{ "MFLR8_1", "floor/hard" },
+	{ "MFLR8_2", "floor/rock" },
+	{ "MFLR8_3", "floor/rock" },
+	{ "MFLR8_4", "floor/dirt" },
+	{ "RROCK03", "floor/rock" },
+	{ "RROCK04", "floor/rock" },
+	{ "RROCK09", "floor/rock" },
+	{ "RROCK10", "floor/rock" },
+	{ "RROCK11", "floor/rock" },
+	{ "RROCK12", "floor/rock" },
+	{ "RROCK13", "floor/rock" },
+	{ "RROCK14", "floor/rock" },
+	{ "RROCK15", "floor/rock" },
+	{ "RROCK16", "floor/dirt" },
+	{ "RROCK17", "floor/dirt" },
+	{ "RROCK18", "floor/dirt" },
+	{ "RROCK19", "floor/dirt" },
+	{ "RROCK20", "floor/dirt" },
+	{ "SFLR6_1", "floor/slimy" },
+	{ "SFLR6_4", "floor/slimy" },
+	{ "SFLR7_1", "floor/slimy" },
+	{ "SFLR7_4", "floor/slimy" },
+	{ "SLIME13", "floor/rock" },
+	{ "SLIME14", "floor/metal2" },
+	{ "SLIME15", "floor/metal2" },
+	{ "SLIME16", "floor/metal2" },
+	{ "STEP1", "floor/metal" },
+	{ "STEP2", "floor/metal" },
+	{ "TLITE6_1", "floor/tile" },
+	{ "TLITE6_4", "floor/tile" },
+	{ "TLITE6_5", "floor/tile" },
+	{ "TLITE6_6", "floor/tile" },
+	{ "VENT64", "floor/metal" },
+	{ "DRSILV18", "floor/metal2" },
+	{ "DRFLAT2", "floor/rock" },
+	{ "DRFLAT3", "floor/rock" },
+	{ "DRFLAT4", "floor/rock" },
+	{ "DRFLAT5", "floor/rock" },
+	{ "DRCOMP4", "floor/tile" },
+	{ "DRCOMP5", "floor/tile" },
+	{ "DRCOMP6", "floor/tile" },
+	{ "DRCOMP7", "floor/tile" },
+	{ "DRCOMP4", "floor/tile" },
+	{ "CLOTH", "floor/carpet" },
+	{ "FWATER1", "floor/water" },
+	{ "FWATER2", "floor/water" },
+	{ "FWATER3", "floor/water" },
+	{ "FWATER4", "floor/water" },
+	{ "lava1", "floor/lava" },
+	{ "lava2", "floor/lava" },
+	{ "lava3", "floor/lava" },
+	{ "lava4", "floor/lava" },
+	{ "blood1", "floor/water" },
+	{ "blood2", "floor/water" },
+	{ "blood3", "floor/water" },
+	{ "nukage1", "floor/water" },
+	{ "nukage2", "floor/water" },
+	{ "nukage3", "floor/water" },
+	{ "slime01", "floor/slime" },
+	{ "slime02", "floor/slime" },
+	{ "slime03", "floor/slime" },
+	{ "slime04", "floor/slime" },
+	{ "slime05", "floor/slime" },
+	{ "slime06", "floor/slime" },
+	{ "slime07", "floor/slime" },
+	{ "slime08", "floor/slime" },
+	{ "rrock01", "none" },
+	{ "rrock02", "none" },
+	{ "rrock05", "none" },
+	{ "rrock06", "none" },
+	{ "rrock07", "none" },
+	{ "rrock08", "none" },
+	{ "slime09", "none" },
+	{ "slime10", "none" },
+	{ "slime11", "none" },
+	{ "slime12", "none" }
+};
+
+// Functions
+Function int GetVelocity(void)
+{
+	int vel;
+	int x = GetActorVelX(0);
+	int y = GetActorVelY(0);
+	int angle = VectorAngle(x, y);
+	
+	if(((angle + 0.125) % 0.5) > 0.25)
+	{
+		vel = FixedDiv(y, Sin(angle));
+	} else
+	{
+		vel = FixedDiv(x, Cos(angle));
+	}
+	return vel >> 16;
+}
+
+// Scripts
+Script "Footsteps" ENTER
+{
+	int DelayTime;
+	//int StepVolume;
+	int i;
+	int SoundPlayed;
+	While(1)
+	{
+		Delay(1);
+		DelayTime = 16 - GetVelocity() / 2;
+		// StepVolume = 7 * GetVelocity();
+		if(GetActorZ(0) - GetActorFloorZ(0) == 0 && GetVelocity() > 0)
+		{
+			for(i=0; i<MaxStepSounds; i++)
+			{
+				if(CheckActorFloorTexture(0, StepSound[i][0]))
+				{
+					ActivatorSound(StepSound[i][1], 4.0);
+					SoundPlayed = 1;
+				}
+			}
+			if(SoundPlayed == 0)
+			{
+				ActivatorSound(DefStepSound, 1.0);
+			}
+		}
+		SoundPlayed = 0;
+		Delay(DelayTime);
+	}
+}
