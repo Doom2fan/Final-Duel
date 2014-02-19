@@ -3,26 +3,27 @@
 
 #include <zcommon.acs>
 
-#define script			__extscript "ACS"
-#define externscript	extern "ACS" __script
-#define externmapreg	extern __variable __map_register
-#define pnum			PlayerNumber()
-#define printf			__printf<__printf_print>
+#define script				__extscript "ACS"
+#define externscript		extern "ACS" __script
+#define externmapreg		extern __variable __map_register
+#define pnum				PlayerNumber()
+#define printf				__printf<__printf_print>
 
-#define EAST			0
-#define NORTHEAST		32
-#define NORTH			64
-#define NORTHWEST		96
-#define WEST			128
-#define SOUTHWEST		160
-#define SOUTH			192
-#define SOUTHEAST		224
+#define PLAYER_TID_START	30000
+#define EAST				0
+#define NORTHEAST			32
+#define NORTH				64
+#define NORTHWEST			96
+#define WEST				128
+#define SOUTHWEST			160
+#define SOUTH				192
+#define SOUTHEAST			224
 
 // For fd_ccam.ds
-#define C_TID			1000	// Default camera tid
-#define MAX_R			56		// Maximum distance
-#define ADJUST_R		8		// Amount to adjust the camera by
-#define VIEW_HEIGHT		61.0	// The approximate height of the player's view
+#define C_TID				1000	// Default camera tid
+#define MAX_R				56		// Maximum distance
+#define ADJUST_R			8		// Amount to adjust the camera by
+#define VIEW_HEIGHT			61.0	// The approximate height of the player's view
 
 #endif
 

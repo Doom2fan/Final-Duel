@@ -2,7 +2,50 @@
 #include "fd_util.dh"
 #include "fd_main.dh"
 
-script void fd_Init()
+/* Not used yet
+script void fd_CVars() __enter
+{
+	start:
+	
+	if(GameType() == GAME_TITLE_MAP) return;
+	Delay(1);
+	
+	goto start;
+	return;
+};*/
+
+script void fd_Enter() __enter
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	
+	Thing_ChangeTID(0, PLAYER_TID_START+pnum);
+	TakeInventory("ShowKeys", 1);
+	//fd_ShowKeys();
+	TakeInventory("NightvisionOn", 1);
+	TakeInventory("EnforcerFire2", 1);
+	TakeInventory("QuadShotgunFired", 1);
+	
+	return;
+};
+
+script void fd_Respawn() __respawn
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	
+	// Make sure our old dead body doesn't still have our tid
+	Thing_ChangeTID(PLAYER_TID_START+pnum,0);
+	fd_Enter();
+	
+	if(GetCVar("FD_NothingOnRespawn"))
+	{
+	//	RestartInventory();
+	//	RestartLevelSystem();
+	};
+	
+	return;
+};
+
+script void fd_Init() __open
 {
 	fd_AddTranslations();
 	

@@ -3,6 +3,8 @@
 
 #include "fd_defs.dh"
 
+externscript		void	fd_Enter();
+externscript		void	fd_Respawn();
 externscript		void	fd_Init();
 
 #endif
