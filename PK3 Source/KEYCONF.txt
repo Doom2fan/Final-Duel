@@ -34,6 +34,8 @@ addkeysection "Final Duel-Hotkeys" FDHotkeys
 	alias keystoggle "use ShowKeysToggle"
 	alias messagestoggle "use MessagesToggle"
 	alias FDnightvision "use FDNightvision"
+	alias FDCheatGiveXP "give xpsystemexperience 1000000"
+	alias FDCheatGiveAll "give all;give megasphere;give fdredarmor;echo YOU GOT IT!"
 
 // Misc
 // 	alias Cheats "god; give weapons; give keys; give armor; give ammo; give health 100;"
