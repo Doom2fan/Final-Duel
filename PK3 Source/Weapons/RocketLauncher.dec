@@ -15,6 +15,7 @@ ACTOR FDRocketLauncher : FDWeapon 30057
 	Tag "$TAGRLAUNCHER"
 	Game Doom
 	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 1
 	Weapon.AmmoGive 0
 	Weapon.AmmoType "RocketAmmo2"
 	+WEAPON.NOAUTOFIRE
