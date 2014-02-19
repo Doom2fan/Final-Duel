@@ -1,0 +1,10 @@
+#ifndef _FD_CCAM_DH_
+#define _FD_CCAM_DH_
+
+externmapreg		bool[8]	camera_mode;
+externscript		void	fd_ChaseCam(int);
+externscript		void	fd_KillChaseCam(int);
+externscript		void	fd_ChaseCamToggle();
+
+#endif
+

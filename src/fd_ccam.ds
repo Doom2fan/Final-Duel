@@ -1,0 +1,75 @@
+#include "fd_defs.dh"
+#include "fd_ccam.dh"
+
+bool[8] camera_mode;
+
+script void fd_ChaseCamToggle()
+{
+	if(camera_mode[pnum] == OFF)
+	{
+		camera_mode[pnum] = ON;
+		fd_ChaseCam(pnum);
+	}
+	else
+	{
+		camera_mode[pnum] = OFF;
+		Thing_Remove(C_TID + pnum);
+	};
+	return;
+};
+
+script void fd_ChaseCam(int arg1)
+{
+	int r = MAX_R;
+	
+	while (camera_mode[arg1] == ON)
+	{	
+		fixed fa = GetActorAngle(0);
+		fixed p = GetActorPitch(0);
+		fixed x = GetActorX(0);
+		fixed y = GetActorY(0);
+		fixed z = GetActorZ(0) + VIEW_HEIGHT;
+		fixed fxyr = r * Cos (p);
+		int a = fa;
+		int xyr = fxyr;
+		
+		if(!ThingCountName ("Chasecam", C_TID+arg1))
+		{
+			while(!Spawn("Chasecam", x-Cos(a)*xyr, y-Sin(a)*xyr, z+Sin(p)*r, C_TID+arg1, a >> 8) && r > 0)
+			{
+				r -= ADJUST_R;
+				xyr = Cos (p) * r;
+			};
+			
+			if(ThingCountName("Chasecam", C_TID + arg1))
+			{
+				ChangeCamera(C_TID + arg1, 0, 0);
+			}
+			else
+			{
+				camera_mode[arg1] = OFF;
+				printf("Camera failed to initialize.\n");
+				break;
+			};
+		}
+		else
+		{
+			while (!SetActorPosition (C_TID+arg1, x-Cos(a)*xyr, y-Sin(a)*xyr, z+Sin(p)*r, 0) && r > 0)
+			{
+				r -= ADJUST_R;
+				xyr = Cos (p) * r;
+			};
+			SetActorAngle(C_TID + arg1, a);
+			SetActorPitch(C_TID + arg1, p);
+			if (r < MAX_R) r += ADJUST_R;
+		};
+		Delay(1);
+	};
+};
+
+script fd_KillChaseCam(int arg1) __disconnect
+{
+	camera_mode[arg1] = OFF;
+	Thing_Remove(C_TID + arg1);
+};
+

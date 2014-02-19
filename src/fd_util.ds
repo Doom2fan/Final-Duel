@@ -1,0 +1,15 @@
+#include "fd_defs.dh"
+#include "fd_util.dh"
+
+__function void fd_AddTranslations()
+{
+	// 7: Fire/plasma death palette
+	CreateTranslationStart(7);
+	CreateTranslationPalette(0, 255, 5, 8);
+	CreateTranslationEnd();
+	// 10: Normal palette
+	CreateTranslationStart(10);
+	CreateTranslationPalette(0, 255, 0, 255);
+	CreateTranslationEnd();
+};
+

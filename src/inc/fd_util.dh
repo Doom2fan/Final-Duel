@@ -1,0 +1,7 @@
+#ifndef _FD_UTIL_DH_
+#define _FD_UTIL_DH_
+
+extern __function	void	fd_AddTranslations();
+
+#endif
+

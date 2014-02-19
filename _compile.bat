@@ -9,10 +9,14 @@ set OBJ=.\acs
 set CMD=dh-acc --named-scripts --auto-stack-size=0 -Z -i %SRC%\inc
 
 echo Compiling DS files...
-%CMD% %SRC%\fd_main.ds -o %OBJ%\fd_main.o
-rem echo Done! Compiling final object file...
-rem %CMD% %OBJ%\CWAtchMenu.o %OBJ%\CWAttach.o %OBJ%\CWGetVal.o %OBJ%\CWKeyFinder.o %OBJ%\CWLaser.o %OBJ%\CWGetAttachment.o -o %OBJ%\CWMain.o
-rem del %OBJ%\CWAtchMenu.o
+%CMD% -c %SRC%\fd_ccam.ds -o %OBJ%\fd_ccam.o
+%CMD% -c %SRC%\fd_util.ds -o %OBJ%\fd_util.o
+%CMD% -c %SRC%\fd_main.ds -o %OBJ%\fd_main.o
+echo Done! Compiling final object file...
+%CMD% %OBJ%\fd_ccam.o %OBJ%\fd_util.o %OBJ%\fd_main.o -o %OBJ%\main.o
+del %OBJ%\fd_ccam.o
+del %OBJ%\fd_util.o
+del %OBJ%\fd_main.o
 
 echo All done! Press any key to exit.
 
