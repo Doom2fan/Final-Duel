@@ -212,7 +212,6 @@ Actor SonicRailgun : FDWeapon 30008
 		TNT1 A 0 A_JumpIfInventory("Cell2",1,1)
 		Goto REnd
 		TNT1 A 0 A_JumpIfInventory("RGZoomed", 1, "Reload.Unzoom")
-		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
 		TNT1 A 0 A_TakeInventory("RGZoomed",1)
 		RGG2 ABCDEFG 1
 		RGG2 G 6

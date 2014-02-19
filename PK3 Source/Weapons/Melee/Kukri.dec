@@ -19,7 +19,7 @@ actor Kukri : FDWeapon
 	Ready:
 		KNFS EDCBA 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Taunt")
+		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		KNF1 A 1 A_WeaponReady

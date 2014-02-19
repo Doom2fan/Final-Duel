@@ -95,7 +95,6 @@ actor Beretta : FDWeapon
 		TNT1 A 0 A_JumpIfInventory("AmmoBeretta",15,"Ready2")
         TNT1 A 0 A_JumpIfInventory("Clip2",1,1)
         Goto NoAmmo
-		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
 		TNT1 A 0 A_TakeInventory("Clip2",1)
 		TNT1 A 0 A_TakeInventory("AmmoBeretta",15)
 		TNT1 A 0 A_PlaySound("Beretta/ClipOut", CHAN_WEAPON)

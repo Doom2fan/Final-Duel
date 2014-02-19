@@ -42,7 +42,6 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		TNT1 A 0 A_JumpIfInventory("AmmoGrenadeLauncher",6,"Ready2")
         TNT1 A 0 A_JumpIfInventory("GrenadeAmmo",1,1)
         Goto Ready2
-		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
 		GLGR ABCDEF 1
 		GLGR F 8
 		TNT1 A 0 A_FireCustomMissile("GrenadeMagSpawn",0,0,0,0)

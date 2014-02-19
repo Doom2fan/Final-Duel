@@ -90,7 +90,6 @@ Actor Magnum : FDWeapon 30083
 		REVG A 0 A_JumpIfInventory("AmmoMagnum", 6, "Ready2")
 		TNT1 A 0 A_JumpIfInventory("MagnumClip", 1, 1)
 		Goto Ready2
-		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
 		TNT1 A 0 A_PlaySound("Magnum/Open", CHAN_WEAPON)
 		REVR AAABBCCCDDD 1
 		TNT1 A 0  A_PlaySound("Magnum/Out", CHAN_WEAPON)
