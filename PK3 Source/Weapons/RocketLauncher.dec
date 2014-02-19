@@ -18,6 +18,7 @@ ACTOR FDRocketLauncher : FDWeapon 30057
 	Weapon.AmmoUse2 1
 	Weapon.AmmoGive 0
 	Weapon.AmmoType "RocketAmmo2"
+	Weapon.AmmoType2 "RocketAmmo2"
 	+WEAPON.NOAUTOFIRE
 	+AMMO_OPTIONAL
 	+NOALERT
