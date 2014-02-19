@@ -1,7 +1,6 @@
-// Header
-#library "FinalDuel"
-#include "zcommon.ACS"
+#include <zcommon.acs>
 #include "commonFuncs.h"
+__library("FinalDuel");
 // Defines
 #define EAST 0
 #define NORTHEAST 32
