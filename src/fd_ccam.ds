@@ -1,4 +1,3 @@
-#include "fd_defs.dh"
 #include "fd_ccam.dh"
 
 bool[8] camera_mode;

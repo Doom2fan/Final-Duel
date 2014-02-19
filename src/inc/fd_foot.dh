@@ -1,0 +1,12 @@
+#ifndef _FD_FOOT_DH_
+#define _FD_FOOT_DH_
+
+#include "fd_defs.dh"
+
+#define MAX_STEP_SOUNDS		159
+#define DEFAULT_FOOTSTEP	"floor/footstep"
+
+externmapreg		str[MAX_STEP_SOUNDS][2]	stepsounds;
+
+#endif
+
