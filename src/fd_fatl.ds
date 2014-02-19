@@ -1,0 +1,40 @@
+#include "fd_defs.dh"
+#include "fd_ccam.dh"
+#include "fd_fatl.dh"
+
+script void fd_FatalitySystem(int arg1)
+{
+	fd_ChaseCamToggle();
+	if(arg1 == 1)
+	{
+		SetPlayerProperty(0, OFF, PROP_TOTALLYFROZEN);
+		SetActorProperty(0, APROP_Mass, 100);
+	}
+	else
+	{
+		SetPlayerProperty(0, ON, PROP_TOTALLYFROZEN);
+		SetActorProperty(0, APROP_Mass, 0x7FFFFFFF);
+		fd_FatalityInvuln();
+	};
+	
+	return;
+};
+
+script void fd_FatalityInvuln() __net // Original by TheZombieKiller
+{
+	while(CheckInventory("PowerInvulnerable") > 0)
+		Delay(1);
+	
+	while(CheckInventory("GoFatality") > 0)
+	{
+		Delay(1);
+		if(GetActorProperty(0, APROP_Invulnerable) != 1)
+		{
+			SetActorProperty(0, APROP_Invulnerable, ON);
+		};
+	};
+	SetActorProperty(0, APROP_Invulnerable, OFF);
+	
+	return;
+};
+

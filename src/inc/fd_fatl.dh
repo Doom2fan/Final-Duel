@@ -1,0 +1,10 @@
+#ifndef _FD_FATL_DH_
+#define _FD_FATL_DH_
+
+#include "fd_defs.dh"
+
+externscript		void	fd_FatalitySystem(int);
+externscript		void	fd_FatalityInvuln();
+
+#endif
+

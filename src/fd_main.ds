@@ -1,21 +1,6 @@
 #include "fd_defs.dh"
 #include "fd_util.dh"
-//#include "commonFuncs.h"
-__library("FinalDuel");
-
-// Includes
-/*#include "Chasecam.ACS"
-#include "Commands.ACS"
-#include "Class.ACS"
-#include "FatalitySystem.ACS"
-#include "Footsteps.ACS"
-#include "Health.ACS"
-#include "HUD.ACS"
-#include "Misc.ACS"
-#include "Start.ACS"
-//#include "stralloc.ACS"
-#include "Weapons.ACS"
-#include "XPSystem.ACS"*/
+#include "fd_main.dh"
 
 script void fd_Init()
 {

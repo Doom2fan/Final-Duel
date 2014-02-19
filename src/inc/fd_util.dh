@@ -1,6 +1,8 @@
 #ifndef _FD_UTIL_DH_
 #define _FD_UTIL_DH_
 
+#include "fd_defs.dh"
+
 extern __function	void	fd_AddTranslations();
 extern __function	int		KeyPressed(int);
 externscript		void	PlayerSpeed(int);

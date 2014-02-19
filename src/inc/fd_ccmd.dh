@@ -1,6 +1,8 @@
 #ifndef _FD_CCMD_DH_
 #define _FD_CCMD_DH_
 
+#include "fd_defs.dh"
+
 externscript		void	fd_Reload();
 externscript		void	fd_Keys();
 externscript		void	fd_Kick();
