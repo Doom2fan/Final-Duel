@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: ID Software, Eriance, Uboa, Alex_Mercer
+Sounds: NightmareMutant, Alex_Mercer, Counter Strike 1.6 and Condition Zero

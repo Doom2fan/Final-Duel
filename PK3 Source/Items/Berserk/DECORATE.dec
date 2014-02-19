@@ -1,0 +1,48 @@
+ACTOR BerserkSpeed : PowerSpeed
+{
+	Powerup.Duration -60
+	Speed 1.25
+	-INVENTORY.HUBPOWER
+}
+Actor PowerFDStrength : Powerup
+{
+	Powerup.Duration -60
+	Inventory.Icon "ARTIBSRK"
+	-INVENTORY.HUBPOWER
+}
+actor BerserkProtection : PowerProtection
+{
+	Powerup.Duration -60
+	-INVENTORY.HUBPOWER
+	DamageFactor 0.5
+}
+ACTOR FDBerserk: CustomInventory Replaces Berserk
+{
+	//$Category Final Duel-Items
+	Tag "$TAGBERSERK"
+	+COUNTITEM
+	+INVBAR
+	Inventory.MaxAmount 5
+	Inventory.Icon "ARTIBSRK"
+	Inventory.PickupMessage "You got an adrenaline kit!"
+	Inventory.InterHubAmount 5
+	Inventory.PickupSound "misc/p_pkup"
+	Inventory.UseSound "pickups/berserk"
+	States
+	{
+	Spawn:
+		BSRK A -1
+		Stop
+	Use:
+		TNT1 A 0 A_JumpIfInventory("PowerFDStrength",1,"Failed")
+		TNT1 A 0 A_GiveInventory("PowerFDStrength",1)
+		TNT1 A 0 A_GiveInventory("BerserkSpeed",1)
+		TNT1 A 0 A_GiveInventory("BerserkProtection",1)
+		TNT1 A 0 HealThing(50)
+		TNT1 A 0
+		Stop
+	Failed:
+		TNT1 A 0
+		Fail
+	}
+}

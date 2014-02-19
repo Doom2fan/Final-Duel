@@ -1,0 +1,22 @@
+$random weapons/shell		{weapons/shell1 weapons/shell2 weapons/shell3}
+			weapons/shell1			dsshell1
+			weapons/shell2			dsshell2
+			weapons/shell3			dsshell3
+			$random weapons/smallmagdrop  { weapons/smallmagdrop1 weapons/smallmagdrop2 weapons/smallmagdrop3 weapons/smallmagdrop4 }
+			weapons/smallmagdrop1		dsbounc1
+			weapons/smallmagdrop2		dsbounc2
+			weapons/smallmagdrop3		dsbounc3
+			weapons/smallmagdrop4		dsbounc4
+			$volume weapons/smallmagdrop 0.5
+			$random weapons/largemagdrop  { weapons/largemagdrop1 weapons/largemagdrop2 weapons/largemagdrop3 weapons/largemagdrop4 }
+			weapons/largemagdrop1		dsaounc1
+			weapons/largemagdrop2		dsaounc2
+			weapons/largemagdrop3		dsaounc3
+			weapons/largemagdrop4		dsaounc4
+			$volume weapons/largemagdrop 0.5
+			$random weapons/casing  { weapons/casing2 weapons/casing3 } 
+			weapons/casing2	dscasin1
+			weapons/casing2	dscasin2
+			weapons/casing3	dscasin3
+			$limit weapons/casing  5
+			weapons/barrelpain		barrelz

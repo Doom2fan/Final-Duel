@@ -1,0 +1,112 @@
+//===========================================================================
+//
+// Chaingunner
+//
+//===========================================================================
+ACTOR FDChaingunGuy : ChaingunGuy 30096
+{
+	//$category Final Duel-Original Monsters
+	//$title Corrupted Commando
+	Game Doom
+	SpawnID 2
+	Health 70
+	GibHealth -35
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 8
+	PainChance 170
+	PainChance "Kick", 255
+	Monster
+	+FLOORCLIP
+	SeeSound "chainguy/sight"
+	PainSound "chainguy/pain"
+	DeathSound "chainguy/death"
+	ActiveSound "chainguy/active"
+	AttackSound "chainguy/attack"
+	Obituary "$OB_CHAINGUY"
+	Dropitem "FDMinigun"
+	DropItem "Energy"
+	States
+	{
+	Spawn:
+	Idle:
+		CPOS A 10 A_Look
+		Loop
+	See:
+		CPOS AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		CPOS E 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("chainguy/attack")
+		CPOS F 4 BRIGHT A_CustomMissile("Tracer", 36, 11, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		TNT1 A 0 A_PlaySound("chainguy/attack")
+		CPOS E 4 BRIGHT A_CustomMissile("Tracer", 36, 11, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		CPOS F 1 A_CPosRefire
+		Goto Missile+2
+	Pain:
+		CPOS G 3
+		CPOS G 3 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",70)
+		CPOS H 5
+		CPOS I 5 A_Scream
+		CPOS J 5 A_NoBlocking
+		CPOS KLM 5
+		CPOS N -1
+		Stop
+	Death.SRType1:
+	XDeath:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",70)
+		TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBloodGibbingSpawner", 0.0, 0.0, 28.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR)
+		CPOS O 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		CPOS O 5
+		CPOS P 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		CPOS P 5 A_XScream
+		CPOS Q 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		CPOS Q 5 A_NoBlocking
+		CPOS R 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		CPOS RS 5
+		CPOS T -1
+		stop
+	Death.Fire:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",70)
+		BURN ABC 5 BRIGHT Light(BURNDEATH)
+		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("chainguy/pain")
+		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		TNT1 A 0 A_PlaySound("chainguy/pain")
+		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
+		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		TNT1 A 0 A_PlaySound("chainguy/pain")
+		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN V -1
+		Stop
+	Death.Plasma:
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		CPOS H 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		CPOS I 5 A_Scream
+		CPOS J 5 A_NoBlocking
+		CPOS KLM 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		CPOS NNNNNNNNNNNNNNNNNNNNN 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		CPOS N -1
+		Stop
+	Pain.Kick:
+	    TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
+        Goto Spawn
+	Crush:
+		TNT1 A 1 A_SpawnItem("NashGore_CrushedSmall",0,0,0,0)
+		stop
+	Raise:
+		TNT1 A 0 Thing_SetTranslation(0,10)
+		CPOS N 5
+		CPOS MLKJIH 5
+		Goto See
+	Pain.Stunner:
+    		CPOS G 2 A_ChangeFlag("NoPain", 1)
+    		CPOS G 300 A_Pain
+    		CPOS G 0 A_ChangeFlag("NoPain", 0)
+    		Goto See
+	}
+}

@@ -1,0 +1,323 @@
+
+//===========================================================================
+//
+// Cyberdemon
+//
+//===========================================================================
+ACTOR FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
+{
+	//$category Final Duel-Original Monsters
+	//$title Cyberdemon
+	Game Doom
+	Health 4000
+	Radius 40
+	Height 110
+	Mass 1000
+	Speed 16
+	FastSpeed 28
+	PainChance 20
+	Monster
+	MinMissileChance 160
+	+BOSS 
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	SeeSound "cyber/sight"
+	PainSound "cyber/pain"
+	DeathSound "cyber/death"
+	ActiveSound "cyber/active"
+	Obituary "$OB_CYBORG"
+	DamageFactor "Ice", 0.0
+	DamageFactor "SRType1", 1.0
+	DropItem "Energy"
+	States
+	{
+	Spawn:
+		CYBR A 10 A_Look
+		Loop
+	See:
+		CYBR A 3 A_Hoof
+		CYBR ABBCC 3 A_Chase
+		CYBR D 3 A_Metal
+		CYBR D 3 A_Chase
+		Loop
+	Missile:
+		TNT1 A 0 A_JumpIfInventory("Enraged", 1, "Missile.Rage")
+		CYBR E 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_WEAPON)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_VOICE)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", 5)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		Goto See
+	Missile.Rage:
+		CYBR E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_WEAPON)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_VOICE)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", 5)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", 6)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		CYBR E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("Cyber/Attack", 7)
+		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
+		Goto See
+	Pain:
+		CYBR G 10 A_Pain
+		Goto See
+	Pain.Taunt:
+		TNT1 A 0 A_JumpIfInventory("Enraged", 1, "See")
+		TNT1 A 0 A_ChangeFlag("FASTER", 1)
+		TNT1 A 0 A_ChangeFlag("MISSILEEVENMORE", 1)
+		TNT1 A 0 A_PlaySound("cyber/sight", CHAN_BODY)
+		CYBT A 1 A_FaceTarget
+		CYBT ABCCBADE 4
+		TNT1 A 0 A_PlaySound("cyber/sight", CHAN_BODY)
+		CYBT FGHGFGHGFGHGFGHG 3
+		CYBT EDA 4
+		TNT1 A 0 A_GiveInventory("Enraged", 1)
+		Goto Missile.Rage
+	Death: // from Beautiful Doom
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",1500)
+		CYBR G 1 A_PlaySound("cyberdeath")
+		CYBR GGGGGGGGHI 5 A_SpawnItemEx("CyberExplosion",random(-24,24),random(-24,24),random(0,64),0,0,0,0,0,0)
+		TNT1 A 0 Radius_Quake(5,20,0,13,0)
+		TNT1 A 0 A_SpawnItem("CyberPartsSpawner")
+		TNT1 A 0 A_Scream
+		CYB1 JJJJJJ 1 A_SpawnItemEx("Blood",random(-4,4),random(-4,4),random(32,96),random(1,4),0,random(3,12),random(0,360))
+		CYB1 KKKKKLLLLLMNMMM 1 A_SpawnItemEx("Blood",random(-4,4),random(-4,4),random(32,96),random(1,4),0,random(3,12),random(0,360))
+		TNT1 A 0 A_NoBlocking
+		CYB1 NNNNNOOOOO 1 A_SpawnItemEx("Blood",random(-4,4),random(-4,4),random(32,96),random(1,4),0,random(3,12),random(0,360))
+		TNT1 A 150
+		TNT1 A 1 A_BossDeath
+		Stop
+	Crush:
+		TNT1 A 1 A_SpawnItem("NashGore_CrushedLarge",0,0,0,0)
+		Stop
+	}
+}
+Actor CyberdemonRocket : FDRocket { }
+// from Beautiful Doom
+Actor CyberExplosion
+{
+	+NOCLIP
+	+NOGRAVITY
+	RenderStyle Add
+	Alpha .85
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySoundEx("weapons/rlan/explosion","voice")
+		TNT1 A 0 Radius_Quake(2,8,0,8,0)
+		BEXP EFGHIJKLMNOPQ 1 bright
+		Stop
+	}
+}
+Actor CyberPartsSpawner : GibsSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("Blood",random(-4,4),random(-4,4),random(32,96),random(1,4),0,random(3,12),random(0,360))
+		//TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigMeatPiece",random(-4,4),random(-4,4),random(32,96),random(3,10),0,random(2,8),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybTorso1",random(-4,4),random(-4,4),random(12,80),random(3,12),0,random(5,17),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybTorso2",random(-4,4),random(-4,4),random(12,80),random(3,12),0,random(5,17),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybTorso3",random(-4,4),random(-4,4),random(12,80),random(3,12),0,random(5,17),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybHand1",random(-4,4),random(-4,4),random(32,80),random(3,20),0,random(5,20),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybHand2",random(-4,4),random(-4,4),random(32,80),random(3,20),0,random(5,20),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybLeg1",random(-4,4),random(-4,4),random(32,80),random(3,20),0,random(5,20),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybLeg2",random(-4,4),random(-4,4),random(32,80),random(3,20),0,random(5,20),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybHead",random(-4,4),random(-4,4),random(56,80),random(3,20),0,random(5,20),random(0,360))
+		TNT1 A 0 A_SpawnItemEx("CybHorn",random(-4,4),random(-4,4),random(56,80),random(3,20),0,random(5,20),random(0,360))
+		Stop
+	}
+}
+actor CybHand1 : Gibs_general
+{
+	Mass 200
+	Gravity 1
+	Radius 32
+	Height 16
+	States
+	{
+	Spawn:
+		HND9 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		HND9 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		HND9 A 1
+		wait
+		HND9 E 1
+		wait
+	Crush:
+		CRS2 A -1
+		Stop
+	}
+}
+
+actor CybHand2 : CybHand1
+{
+seesound "gibs/cybergibs"
++NOBLOOD
+States
+	{
+	spawn:
+		HND7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		HND7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		HND7 A 1
+		wait
+		HND7 E 1
+		wait
+	}
+}
+
+actor CybLeg1 : CybHand1
+{
+States
+	{
+	spawn:
+		LEG9 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		LEG9 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		LEG9 A 1
+		wait
+		LEG9 E 1
+		wait
+	Crush:
+		CRS2 A -1
+		Stop
+	}
+}
+
+actor CybLeg2 : CybHand2
+{
+seesound "gibs/cybergibs"
++NOBLOOD
+States
+	{
+	spawn:
+		LEG7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		LEG7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		LEG7 A 1
+		wait
+		LEG7 E 1
+		wait
+	}
+}
+
+actor CybHead : CybHand1
+{
+radius 32
+height 32
+States
+	{
+	spawn:
+		HED7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		HED7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		HED7 A 1
+		wait
+		HED7 E 1
+		wait
+	}
+}
+
+Actor CybHorn : Gibs_general
+{
+States
+	{
+	spawn:
+		HEDC ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+3
+		HEDC HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		goto spawn+11
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,1,2)
+		HEDC A 1
+		wait
+		HEDC E 1
+		wait
+	}
+}
+
+
+Actor CybTorso1: Gibs_General
+{
+scale 1
+mass 200
+height 16
+radius 20
+States
+	{
+	spawn:
+		TRC1 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		wait
+	Death:
+		TRC1 E 1
+		wait
+	Crush:
+		CRS3 A -1
+		Stop
+	}
+}
+
+Actor CybTorso2 : CybTorso1
+{
+States
+	{
+	spawn:
+		TRC2 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		wait
+	Death:
+		TRC2 E 1
+		wait
+	}
+}
+
+Actor CybTorso3 : CybTorso1
+{
+height 32
+States
+	{
+	spawn:
+		TRC3 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
+		wait
+	Death:
+		TRC3 E 1
+		wait
+	}
+}

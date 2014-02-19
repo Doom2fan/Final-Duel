@@ -1,0 +1,84 @@
+clearskills
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DamageFactor = 0.5
+	EasyBossBrain
+	SpawnFilter = Baby
+	Name = "$SKILLZ_BABY"
+	PicName = "SKILL1"
+	MustConfirm = "$SKILLZ_BABYTEXT"
+	Key = "p"
+}
+
+skill easy
+{
+	AutoUseHealth
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "$SKILLZ_EASY"
+	PicName = "SKILL2"
+	MustConfirm = "$SKILLZ_EASYTEXT"
+	Key = "w"
+}
+
+skill normal
+{
+	AutoUseHealth
+	SpawnFilter = Normal
+	Name = "$SKILLZ_NORMAL"
+	PicName = "SKILL3"
+	MustConfirm = "$SKILLZ_NORMALTEXT"
+	Key = "h"
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "$SKILLZ_HARD"
+	PicName = "SKILL4"
+	Aggressiveness = 0.1
+	MustConfirm = "$SKILLZ_HARDTEXT"
+	Key = "f"
+}
+skill veryhard
+{
+	SpawnFilter = Hard
+	FastMonsters
+	Name = "$SKILLZ_HARDSPEED"
+	PicName = "SKILL5"
+	Aggressiveness = 0.2
+	MustConfirm = "$SKILLZ_HARDSPEEDTEXT"
+	Key = "m"
+}
+skill nnightmare
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	FastMonsters
+	RespawnTime = 12
+	SpawnFilter = Nightmare
+	PicName = "SKILL6"
+	Name = "$SKILLZ_NIGHTMARE"
+	Aggressiveness = 0.3
+	MustConfirm = "$SKILLZ_NIGHTMARETEXT"
+	Key = "b"
+}
+skill brutal
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	RespawnTime = 5
+	RespawnLimit = 3
+	DamageFactor = 1.3
+	Aggressiveness = 0.6
+	SpawnFilter = Nightmare
+	Name = "$SKILLZ_NEIN"
+	PicName = "SKILL7"
+	FastMonsters
+	MustConfirm = "$SKILLZ_NEINTEXT"
+	Key = "u"
+	ReplaceActor = "GreenArmor","FDBlueArmor"
+	ReplaceActor = "BlueArmor","FDRedArmor"
+}

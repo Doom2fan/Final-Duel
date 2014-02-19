@@ -1,0 +1,7 @@
+Name: UAC Auto Sentry Gunbot
+Difficulty: Very Hard
+Connections: DSBAREXP is used, skulltag grenade sprites and sounds are used and provided
+Summon: UACbot
+Melee: No
+Distance: Hitscan, projectile
+Type: Robot

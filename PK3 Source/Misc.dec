@@ -1,0 +1,91 @@
+// By Jekyll Grim Payne "Aka" zer0
+actor RocketSmoke : ShotSmoke
+{
+renderstyle Translucent
+vspeed 0.50
+alpha 0.50
+states
+	{
+	Spawn:
+      TNT1 A 0
+      TNT1 A 0 Thing_ChangeTID(0,390)
+		SMOK ABCDEFGHIJKLMNOPQ 1
+		SMOK Q 1 A_FadeOut(0.02)
+		wait
+	}
+}
+// By Jekyll Grim Payne "Aka" zer0
+Actor Rocket1Trail
+{
++NOTDMATCH
++NOCLIP +NOBLOCKMAP
++NOGRAVITY
++NOINTERACTION
+scale 0.1
+renderstyle translucent
+alpha 0.4
+states
+	{
+	Spawn:
+		SMOK ABCDEFGHIJKLMNOPQ 1 Thing_ChangeTID(0,390)
+		stop
+	}
+}
+// Barrel By Jekyll Grim Payne "Aka" zer0, Edited by Alex_Mercer
+Actor FDExplosiveBarrel replaces ExplosiveBarrel
+{
+	SpawnID 125
+	DamageFactor "Kick", 0.1
+	Health 40
+	Radius 10
+	Height 34
+	Mass 200
+	PainChance "Kick", 255
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	+ACTIVATEMCROSS
+	+NOICEDEATH
+    +PUSHABLE
+	+SLIDESONWALLS
+    +WINDTHRUST
+    +TELESTOMP
+	+NOBLOCKMONST
+	Obituary "$OB_BARREL"
+	States
+	{
+	Spawn:
+		BAR1 ABCDCB 4
+		loop
+	Pain.Kick:
+	    BAR1 A 1 A_Pain
+        BAR1 A 1 A_FaceTarget
+		TNT1 A 0 ThrustThing(angle*256/360+128, 40, 0, 0)
+        Goto Spawn
+	Death:
+		BEXP AB 2
+		BEXP C 2 A_Scream
+		BEXP D 2 A_Explode
+		TNT1 A 0 Radius_Quake(3,15,0,5,0)
+		TNT1 AAAAAAAAA 0 A_custommissile("SmokingPiece",random(0,16),random(-8,8),random(-360,360),2,random(10,70))
+		TNT1 AAA 0 A_SpawnItem("BarrelSparkSpawner",0,random(8,32))
+//		TNT1 AAAAAA 0 A_custommissile("BarrelPart",20,random(-5,5),random(0,360),2,random(40,85))
+		BEXP EFGHIJKLMNOPQ 2
+		BEXP Q 1050 A_BarrelDestroy
+		BEXP Q 5 A_Respawn
+		wait
+	}
+}
+Actor BarrelSparkSpawner : DebrisGeneral
+{
++NOINTERACTION
++NOGRAVITY
+states
+	{
+	Spawn:
+		TNT1 A 0
+//		TNT1 A 0 A_PlaySound("weapons/ricochet")
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("RicochetSpark",0,0,random(0,360),2,random(10,80))
+		stop
+	}
+}

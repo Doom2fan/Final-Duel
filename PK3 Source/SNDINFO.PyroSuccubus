@@ -1,0 +1,20 @@
+$random pyr/sight   { pyr/sight1  pyr/sight2 }
+pyr/pain            pyropain
+pyr/death           pyrodth
+pyr/sight1          pyrosit1
+pyr/active          pyroact
+weapons/pyrobrn      pyrobrn
+weapons/pyroxxpl      pyroxxpl
+
+$random pyr/active { pyr/active1 pyr/active2 }
+$random pyr/attack { pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack1 }
+pyr/sight1		pyrosit1
+pyr/sight2		pyrosit2
+pyr/active1		pyroact1
+pyr/active2		pyroact2
+pyr/attack2		nosound
+pyr/pain		pyropain
+pyr/death		pyrodth
+weapons/pyrobrn		pyrobrn
+weapons/pyroxxpl    pyroxxpl
+pyr/resurrected		pyroheal

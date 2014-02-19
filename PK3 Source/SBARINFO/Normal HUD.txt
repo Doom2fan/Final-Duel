@@ -1,0 +1,147 @@
+statusbar normal,fullscreenoffsets
+{
+	DrawImage "HPBARS", 20, -272; // 10 = a, -2 = b; health is drawn at a+26 and b-17, armor at a+6 and b-17
+	DrawString BIGFONT, green, weapontag, 0+center, 0, 0, alignment(center);
+	
+    // Health
+	DrawBar "HPBAR", "EMPTY1", Health, Vertical, 56, -239;
+    DrawNumber 3, BIGFONT, red, health, drawshadow, 92, -24;
+	
+    // Armor
+	DrawBar "ARMORBAR", "EMPTY1", Armor, Vertical, 26, -239;
+	InInventory BasicArmor, 1
+	{
+		drawnumber 3, BIGFONT, green, armor, drawshadow, whennotzero, 48, -24;
+	}
+	InInventory BasicArmor, 101
+	{
+		drawnumber 3, BIGFONT, lightblue, armor, drawshadow, whennotzero, 48, -24;
+	}
+	InInventory BasicArmor, 201
+	{
+		drawnumber 3, BIGFONT, red, armor, drawshadow, whennotzero, 48, -24;
+	}
+	// Invulnerability
+	InInventory PowerInvulnerable
+	{
+		drawbar "HPINV", "EMPTY2", PowerupTime FDInvulnerabilitySphere, Vertical, 56, -239;
+	}
+	// Air supply
+	InInventory IsUnderwater, 1
+	{
+		InInventory Not PowerIronFeet, 1
+		{
+			drawbar "AIRBAR", "AIRNULL", AirTime, Vertical, -32, -280;
+		}
+	}
+	// Radiation Suit
+	InInventory PowerIronFeet, 1
+	{
+		drawbar "AIRBAR", "AIRNULL", PowerupTime RadSuit, Vertical, -32, -280;
+	}
+	InInventory PowerWeaponLevel2, 1
+	{
+		drawbar "AIRBAR", "AIRNULL", PowerupTime TomeOfTheUnholy, Vertical, 8, 64;
+	}
+	usesammo
+    {
+        //secondary ammo and inventory
+        usessecondaryammo
+        {
+			IsSelected Enforcer //, EnforcerPowered
+			{
+				drawimage "CLIPA0", -14, -100, centerbottom;
+				drawnumber 4, BIGFONT, untranslated, Ammo Clip2, drawshadow, -25, -116;
+				drawimage ammoicon2, -14, -52, centerbottom;
+				drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
+				drawimage ammoicon1, -14, -4, centerbottom;
+				drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+				drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -148, -26, -164, untranslated;
+			}
+			IsSelected Not Enforcer //, EnforcerPowered
+			{
+				IsSelected PumpActionShotgun //, PumpActionShotgunPowered
+				{
+					InInventory PASSlugs
+					{
+						drawimage "SLUGA0", -14, -52, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, Ammo Slug, drawshadow, -25, -68;
+						drawimage ammoicon1, -14, -4, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, Ammo AmmoPAShotgunSlug, drawshadow, -25, -20;
+						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
+					}
+					InInventory Not PASSlugs
+					{
+						drawimage "SHELA0", -14, -52, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
+						drawimage ammoicon1, -14, -4, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
+					}
+				}
+				IsSelected Not PumpActionShotgun //, PumpActionShotgunPowered
+				{
+					// drawbar "FULLCLIP", "MPTYCLIP", Ammo1, Horizontal, -258, -64;
+					drawimage ammoicon2, -14, -52, centerbottom;
+					drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
+					drawimage ammoicon1, -14, -4, centerbottom;
+					drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+					drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
+				}
+			}
+		}
+        //no secondary ammo
+        usessecondaryammo not
+        {
+			IsSelected Magic
+			{
+				drawimage "PSIBBG", -155, -25;
+				drawbar "PSIBBAR", "PSIBBACK", PsiEnergy, Horizontal, -153, -23;
+				drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -52, -26, -68, untranslated;
+			}
+			IsSelected Not Magic
+			{
+				IsSelected QuadShotgun //, QuadShotgunPowered
+				{
+					drawimage "SHELA0", -14, -52, centerbottom;
+					drawnumber 4, BIGFONT, untranslated, Ammo Shell2, drawshadow, -25, -68;
+					drawimage ammoicon1, -14, -4, centerbottom;
+					drawnumber 4, BIGFONT, untranslated, Ammo AmmoQuadShotgun, drawshadow, -25, -20;
+					drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
+				}
+				IsSelected Not QuadShotgun //, QuadShotgunPowered
+				{
+					IsSelected FDPlasmaRifle, FDPlasmaRiflePowered
+					{
+						drawimage "CELLA0", -14, -52, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, Ammo Cell2, drawshadow, -25, -68;
+						drawimage ammoicon1, -14, -4, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
+					}
+					IsSelected Not FDPlasmaRifle, FDPlasmaRiflePowered
+					{
+						// drawbar "FULLCLIP", "MPTYCLIP", Ammo1, Horizontal, -258, -64;
+						drawimage ammoicon1, -14, -4, centerbottom;
+						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -52, -26, -68, untranslated;
+					}
+				}
+			}
+		}
+    }    
+    // no ammo but inventory
+    usesammo not
+    {
+		drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -3, -26, -20, untranslated;
+    }
+	gamemode deathmatch
+    {
+        drawnumber 4, BIGFONT, untranslated, frags, drawshadow, -3, 1;
+    }
+	InInventory ShowKeys,1
+	{
+		DrawString BIGFONT, untranslated, "Keys:", 150, -300;
+		drawkeybar 400, vertical, reverserows, auto, 150, -280, 0, 3, auto;
+	}
+}

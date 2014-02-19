@@ -1,0 +1,9 @@
+Name: Flares
+Type: Light
+Palette: Custom
+Summon: Flare, FlareBox
+Use Type: Inventory
+
+NOTES
+This is most useful in OpenGL mode, with dynamic lights on, where it can illuminate
+a small area. Otherwise it's simply a marker.

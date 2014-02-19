@@ -1,0 +1,28 @@
+// Template:
+// Skybox FDSKY1 
+// {
+//     North
+//     East
+//     South
+//     West
+//	   Top
+//     Bottom
+// }
+Skybox FDSKY1 fliptop
+{
+	FDSKY1_N
+	FDSKY1_E
+	FDSKY1_S
+	FDSKY1_W
+	FDSKY1_T
+	FDSKY1_B
+}
+Skybox FDSKY2 fliptop
+{
+	FDSKY2_N
+	FDSKY2_E
+	FDSKY2_S
+	FDSKY2_W
+	FDSKY2_T
+	FDSKY2_B
+}

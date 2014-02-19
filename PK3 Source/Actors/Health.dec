@@ -1,0 +1,72 @@
+//=================================================================================================
+//
+// MaxHealth
+//
+//=================================================================================================
+
+Actor MaxHealth : Health
+{
+	Inventory.MaxAmount 50
+	Inventory.PickupSound "misc/health_pkup"
+}
+
+//=================================================================================================
+//
+// Max. health bonus
+//
+//=================================================================================================
+
+Actor MaxHealthBonus : MaxHealth 5090
+{
+	Game Doom
+	Game Heretic
+	Game Hexen
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Health 200
+	Inventory.PickupMessage "$PICKUP_MAXHEALTHBONUS"
+	States
+	{
+	Spawn:
+		BON3 ABCDCB 6
+		Loop
+	}
+}
+// Stimpack
+Actor FDStimpack : HealthPickup Replaces Stimpack
+{
+	Health 25
+	+FLOORCLIP
+	+INVENTORY.INVBAR
+	Inventory.MaxAmount 20
+	Tag "Stimpack"
+	Inventory.Icon "ARTISTIM"
+	Inventory.PickupMessage "$GOTSTIM"
+	HealthPickup.AutoUse 1
+	States
+	{
+	Spawn:
+		STIM A -1
+		Stop
+	}
+}
+// Medikit
+Actor FDMedikit : HealthPickup Replaces Medikit
+{
+	Health 50
+	+FLOORCLIP
+	+INVENTORY.INVBAR
+	Inventory.MaxAmount 5
+	Tag "Medikit"
+	Inventory.Icon "ARTIMEDI"
+	Inventory.PickupMessage "$GOTMEDIKIT"
+	HealthPickup.AutoUse 1
+	States
+	{
+	Spawn:
+		MEDI A -1
+		Stop
+	}
+}

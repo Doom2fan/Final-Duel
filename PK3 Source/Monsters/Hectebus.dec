@@ -1,0 +1,132 @@
+
+//=================================================================================================
+//
+// Hectebus
+//
+//=================================================================================================
+
+ACTOR FDHectebus 30133
+{
+	//$Category Final Duel-Monsters
+	//$Title Hectebus
+	Radius 48
+	Height 64
+	Mass 1000
+	Speed 8
+	Monster
+	+FLOORCLIP
+	+BOSSDEATH
+   SeeSound "fatso/sight"
+   PainSound "fatso/pain"
+   DeathSound "fatso/death"
+   ActiveSound "fatso/active"
+   Health 1200
+   GibHealth -600
+   PainChance 20
+   Obituary "$OB_HECTEBUS"
+   DamageFactor "Ice", 0.0
+   DamageFactor "SRType1", 1.0
+	DropItem "Energy"
+   States
+   {
+   Spawn:
+	  TNT1 A 0 Thing_SetTranslation(0,10)
+      HECT A 15 A_Look
+      Loop
+   See:
+      HECT AABBCCDDEEFF 4 A_Chase
+      Loop
+   Pain:
+      HECT J 3
+      HECT J 3 A_Pain
+      Goto See
+   Missile:
+      //These Next 2 states replace A_FatRaise and A_HectRaise
+      HECT G 0 A_PlaySound("fatso/raiseguns")
+      HECT G 20 A_FaceTarget
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,5.625,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,11.25,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,16.875,1)
+      HECT H 10 BRIGHT
+      HECT IG 5 A_FaceTarget
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,-5.625,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,-11.25,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,-16.875,1)
+      HECT H 10 BRIGHT
+      HECT IG 5 A_FaceTarget
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,-11.25,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,-5.625,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,5.625,1)
+      HECT H 0 A_CustomMissile("FDHectShot",28,0,11.25,1)
+      HECT H 10 BRIGHT
+      HECT IG 5 A_FaceTarget
+      Goto See
+   Death:
+	  TNT1 A 0 A_GiveToTarget("XPSystemExperience",400)
+      HECT K 6
+      HECT L 6 A_Scream
+      HECT M 6 A_NoBlocking
+      HECT NOPQRS 6
+      HECT T -1
+      Stop
+   	Death.Fire:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",400)
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		HECT K 6
+		TNT1 A 0
+		HECT L 6 A_Scream
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		HECT M 6 A_NoBlocking
+		HECT NOPQRS 6 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		TNT1 A 0  A_BossDeath
+		HECT TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		HECT TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		HECT T -1
+		stop
+	Death.Plasma:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",400)
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		HECT K 6
+		TNT1 A 0
+		HECT L 6 A_Scream
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		HECT M 6 A_NoBlocking
+		HECT NOPQRS 6 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		TNT1 A 0  A_BossDeath
+		HECT TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
+		HECT T -1
+		stop
+	 Raise:
+		TNT1 A 0 Thing_SetTranslation(0,10)
+      HECT RQPONMLK 5
+      Goto See
+   }
+}
+
+ACTOR FDHectShot : FatShot
+{
+   Speed 22
+   Damage 12
+   SeeSound "fatso/attack"
+   States
+   {
+   Spawn:
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+      HECF A 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  HECF B 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+      Loop
+   Death:
+      HECF C 8 BRIGHT
+      HECF D 6 BRIGHT
+      HECF E 4 BRIGHT
+      Stop
+   }
+}

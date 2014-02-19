@@ -1,0 +1,39 @@
+// Starts Everything
+	Alias initmenu "set fd_dummycmd 1;archivecvar fd_dummycmd;minit_1"
+	Alias minit_1  "echo Mod initialized,please restart"
+	
+// Adds player classes
+	//clearplayerclasses
+	//addplayerclass MarineClass
+	//addplayerclass OmegaClass
+
+// Keys section
+addkeysection "Final Duel-Actions" FDActions
+	addmenukey "Reload" reload
+	addmenukey "Taunt" taunt
+	addmenukey "Kick" kick
+	//addmenukey "Weapon Special Action" wepspact
+	addmenukey "Toggle Auto-Reload" "use AutoReloadingToggle"
+	addmenukey "Toggle mod messages" messagestoggle
+	addmenukey "Show Player Info" keystoggle
+	
+addkeysection "Final Duel-Hotkeys" FDHotkeys
+	addmenukey "Nightvision" FDnightvision
+
+// Key bindings
+	// defaultbind R reload
+	// defaultbind Q kick
+	// defaultbind mouse3 wepspact
+	// defaultbind N FDnightvision
+
+// Aliases
+	alias reload "pukename \"FDReload\""
+	alias wepspact "pukename \"FDWeaponSpecial\""
+	alias kick "pukename \"FDKick\""
+	alias taunt "use TauntKey"
+	alias keystoggle "use ShowKeysToggle"
+	alias messagestoggle "use MessagesToggle"
+	alias FDnightvision "use FDNightvision"
+
+// Misc
+// 	alias Cheats "god; give weapons; give keys; give armor; give ammo; give health 100;"

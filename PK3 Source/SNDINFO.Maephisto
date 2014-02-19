@@ -1,0 +1,15 @@
+		Maephisto/chaingn		machngun
+		Maephisto/bolt		mabolt
+		Maephisto/charge		macharge
+		Maephisto/laser		malaser
+		$random Maephisto/sight { Maephisto/sight1 Maephisto/sight2 }
+		Maephisto/sight1		masight1
+		Maephisto/sight2		masight2
+		Maephisto/death		madeath
+		Maephisto/pain		mapain
+		$random Maephisto/idle  { Maephisto/idle1 Maephisto/idle2 Maephisto/idle3 Maephisto/idle4 Maephisto/idle5 }
+		Maephisto/idle1		maidle1
+		Maephisto/idle2		maidle2
+		Maephisto/idle3		maidle3
+		Maephisto/idle4		maidle4
+		Maephisto/idle5		maidle5

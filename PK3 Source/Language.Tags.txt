@@ -1,0 +1,47 @@
+[default enu]
+// Weapons
+	// Slot 1
+		TAGMELEE										= "Melee";
+		TAGSWORD										= "Sword";
+		TAGCHAINSAW										= "Chainsaw";
+
+	// Slot 2
+		TAGBERETTA										= "Beretta";
+		TAGENFORCER										= "S18 Enforcer";
+		TAGMAGNUM										= ".357 Magnum";
+		TAGRIFLE										= "Order Standard Issue M9A10 Rifle";
+
+	// Slot 3
+		TAGSHOTTY										= "Shotgun";
+		TAGPAS											= "Tactical Shotgun";
+		TAGSSG											= "Double-Barrel Shotgun";
+		TAGQSG											= "Quad-Barrel Shotgun";
+
+	// Slot 4
+		TAGAMG											= "M9A15 Carbine";
+		TAGAK47											= "Order Custom AK-47";
+		TAGMINIGUN										= "Order \"Parias\" Minigun";
+
+	// Slot 5
+		TAGRLAUNCHER									= "Rocket Launcher";
+		TAGANNIHILATOR									= "Annihilator Mk II";
+		TAGGL											= "GT Grenade Launcher";
+
+	// Slot 6
+		TAGPRIFLE										= "Plasma Rifle";
+		TAGSRAIL										= "Mjolnir Mark IV Sonic Railgun";
+
+	// Slot 7
+		TAGBFG											= "BFG 9000";
+		TAGBFG10K										= "BFG 10K";
+
+	// Slot 8
+		TAGSREAPER										= "Soul Reaper";
+		TAGSNIPERRIFLE									= "Magnum Sniper Rifle";
+
+	// Slot 9
+		TAGFATARM										= "Mancubus Flamethrower";
+		TAGMAGIC										= "Magic";
+		TAGKUKRI										= "Kukri";
+// Inventory
+	TAGBERSERK											= "Adrenaline kit\nGrants higher speed, protection and strength";

@@ -1,0 +1,140 @@
+ACTOR DemonBlood : Ammo 30032
+{
+	//$category Final Duel-Ammunition
+	Tag "Demon Blood"
+	Game Doom
+	SpawnID 75
+	Inventory.PickupMessage "Picked up a vial of Demon Blood."
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "BVALA0"
+	States
+	{
+	Spawn:
+		BVAL ABCDCB 6
+		loop
+	}
+}
+actor MancubusArm : FDWeapon 30031
+{
+	//$Category Final Duel-Weapons
+	//$Sprite FARMA0
+	Weapon.SelectionOrder 2600
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse 4
+	Weapon.AmmoGive 20
+	Weapon.AmmoType "DemonBlood"
+	Inventory.PickupMessage "$GOTMANCUBUSARM"
+	Weapon.SisterWeapon MancubusArmPowered
+	Tag "$TAGFATARM"
+	+AMMO_OPTIONAL
+	+NOAUTOFIRE
+	States
+	{
+	Ready:
+		MRGS EDCBA 1
+	Ready2:
+		TNT1 A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		MARG A 1 A_WeaponReady
+		Loop
+	DryFire:
+		MARG A 0
+		Goto Ready2
+	Deselect:
+		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		MRGS ABCDE 1
+		TNT1 A 0 A_Lower
+		Wait
+	Select:
+		TNT1 A 0 A_Raise
+		Wait
+	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		TNT1 A 0 A_GunFlash
+		TNT1 A 8 A_FireCustomMissile("FDFatShotP")
+		MARG B 10 
+		Goto Ready2
+	Flash:
+		MARF A 3 Bright A_Light1
+		MARF B 5 Bright A_Light2
+		Goto LightDone
+	Spawn:
+		FARM A -1
+		Stop
+	}
+}
+actor FDFatShotP
+{
+	Radius 6
+	Height 8
+	Speed 23
+	Damage 8
+	Projectile 
+	+RANDOMIZE
+	RenderStyle Add
+	DamageType Fire
+	Alpha 1
+	SeeSound "fatso/attack"
+	DeathSound "fatso/shotx"
+	+NOEXTREMEDEATH
+	+DONTSPLASH
+	Decal BigScorch
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		MANF A 1 bright A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		MANF B 1 bright A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		Loop
+	Death:
+		MISL B 8 BRIGHT
+		MISL C 6 BRIGHT
+		MISL D 4 BRIGHT
+		Stop
+	}
+}
+Actor FDHectShotP : FDFatShotP
+{
+	Speed 22
+	Damage 12
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		HECF A 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		HECF B 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+		Loop
+	Death:
+		HECF C 8 BRIGHT
+		HECF D 6 BRIGHT
+		HECF E 4 BRIGHT
+		Stop
+	}
+}
+actor MancubusArmPowered : MancubusArm
+{
+	Weapon.SisterWeapon MancubusArm
+	+POWERED_UP
+	States
+	{
+	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		MARG B 8 A_FireCustomMissile("FDHectShotP")
+		MARG B 10 
+		Goto Ready2
+	}
+}

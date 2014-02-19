@@ -1,0 +1,104 @@
+Sprite RGG1A0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUNB0, 150, 111
+	Patch SCOP, 175, 86
+}
+
+Sprite RGG1B0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUNC0, 150, 111
+	Patch SCOP, 175, 86
+}
+
+Sprite RGG1C0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUND0, 150, 111
+	Patch SCOP, 175, 86
+}
+
+Sprite RGG1D0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUNE0, 150, 111
+	Patch SCOP, 175, 86
+}
+
+Sprite RGGFA0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUNF0, 150, 111
+	Patch SCOP, 175, 86
+}
+
+Sprite RGGFB0, 320, 200
+{
+	Patch HAND0002, 63, 122
+	Patch RGUNA0, 114, 82
+	Patch RGUNF0, 150, 111
+	Patch RGUNH0, 130, 74
+	Patch SCOP, 175, 86
+}
+
+Sprite RGG2A0, 320, 200
+{
+	Patch HAND0002, 55, 130
+	Patch RGUNA0, 106, 90
+	Patch RGUNE0, 142, 119
+	Patch SCOP, 167, 94
+}
+
+Sprite RGG2B0, 320, 200
+{
+	Patch HAND0002, 39, 146
+	Patch RGUNA0, 90, 106
+	Patch RGUNE0, 126, 135
+	Patch SCOP, 151, 110
+}
+
+Sprite RGG2C0, 320, 200
+{
+	Patch HAND0002, 23, 162
+	Patch RGUNA0, 74, 122
+	Patch RGUNE0, 110, 151
+	Patch SCOP, 135, 126
+}
+
+Sprite RGG2D0, 320, 200
+{
+	Patch HAND0002, 7, 178
+	Patch RGUNA0, 58, 138
+	Patch RGUNE0, 94, 167
+	Patch SCOP, 119, 142
+}
+
+Sprite RGG2E0, 320, 200
+{
+	Patch HAND0002, -10, 194
+	Patch RGUNA0, 42, 154
+	Patch RGUNE0, 78, 183
+	Patch SCOP, 103, 158
+}
+
+Sprite RGG2F0, 320, 200
+{
+	Patch HAND0002, -26, 210
+	Patch RGUNA0, 26, 170
+	Patch RGUNE0, 62, 199
+	Patch SCOP, 87, 174
+}
+
+Sprite RGG2G0, 320, 200
+{
+	Patch HAND0002, -42, 226
+	Patch RGUNA0, 10, 186
+	Patch RGUNE0, 46, 215
+	Patch SCOP, 71, 190
+}

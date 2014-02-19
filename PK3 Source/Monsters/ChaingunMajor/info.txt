@@ -1,0 +1,8 @@
+Name: Chaingun Major
+Difficulty: Medium
+Connection: none
+Summon: ChaingunMajor
+Melee: No
+Distance: Hitscan
+Type: Human, Undead
+Brightmaps: Yes

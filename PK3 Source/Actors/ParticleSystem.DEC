@@ -1,0 +1,90 @@
+// Spark spawner
+// It works exactly like ZDoom's built
+// in one, except that the default amount
+// of particles is 5
+Actor SparkerSparkCounter : Counter { }
+Actor Sparker 30066
+{
+	//$Categoty Final Duel-SFX
+	//$Title Sparker
+	Radius 1
+	Height 1
+	+IsMonster
+	+NoBlockMap
+	+NoGravity
+	+NoClip
+	+Dormant
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(Args[0] == 0, "Default")
+		TNT1 A 0 A_GiveInventory("SparkerSparkCounter", Args[0])
+		TNT1 A 0 A_PlaySound("world/spark")
+	Spawning:
+		TNT1 A 0 A_JumpIfInventory("SparkerSparkCounter", 1, 1)
+		Goto Finish
+		TNT1 A 0 A_SpawnItemEx("SparkerSparks", 0, random(-4,4), random(-5,5), random(0,5))
+		TNT1 A 0 A_TakeInventory("SparkerSparkCounter", 1)
+		Loop
+	Default:
+		TNT1 A 0 A_GiveInventory("SparkerSparkCounter", 5)
+		TNT1 A 0 A_PlaySound("world/spark")
+		Goto Spawning
+	Finish:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecute("ThingDeactivate", 0, 0, 0, 0) //ACS code: Thing_Deactivate(ActivatorTID());
+		TNT1 A 0
+		Goto FAKDISSHIT
+	FAKDISSHIT:
+		TNT1 A 0
+		TNT1 A 1
+		TNT1 A 0
+		Goto Spawn
+	}
+}
+Actor SparkerSparks
+{
+	Height 0
+	Radius 0
+	Mass 0
+	+Missile
+	+NoBlockMap
+	-NoGravity
+	+DontSplash
+	+ForceXYBillboard
+	Gravity 0.8
+	RenderStyle Add
+	Scale 0.05
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_Jump(128, "SpawnB", "SpawnC", "SpawnD", "SpawnE", "SpawnF", "SpawnG", "SpawnH")
+		FLR3 A 4
+		Goto Fade
+	SpawnB:
+		FLR3 B 4
+		Goto Fade
+	SpawnC:
+		FLR3 C 4
+		Goto Fade
+	SpawnD:
+		FLR3 D 4
+		Goto Fade
+	SpawnE:
+		FLR3 E 4
+		Goto Fade
+	SpawnF:
+		FLR3 F 4
+		Goto Fade
+	SpawnG:
+		FLR3 G 4
+		Goto Fade
+	SpawnH:
+		FLR3 H 4
+		Goto Fade
+	Fade:
+		"####" "#" 1 A_FadeOut(0.2)
+		Wait
+	}
+}

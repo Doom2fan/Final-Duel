@@ -1,0 +1,73 @@
+
+//Dynamic lights
+
+FlickerLight2 ChaingunMajorAttack
+{
+color 1.0 0.8 0.2
+size 48
+secondarySize 56
+interval 1
+offset 0 40 0
+}
+
+Object ChaingunMajor
+{
+Frame CPS2F { Light ChaingunMajorAttack }
+}
+
+
+//Brightmaps
+
+BrightMap Sprite CPS2E1
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2E1.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2E2E8
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2E2.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2E3E7
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2E3.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2E4E6
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2E4.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2F1
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2F1.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2F2F8
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2F2.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2F3F7
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2F3.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2F4F6
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2F4.png
+DisableFullBright
+}
+
+BrightMap Sprite CPS2F5
+{
+Map Brightmaps/Monsters/ChaingunMajor/BMCPS2F5.png
+DisableFullBright
+}

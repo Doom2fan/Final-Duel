@@ -1,0 +1,5 @@
+Decorate: Vader
+GLDEFs: Ghastly Dragon, Sandypaper (Brightmaps)
+Sounds: Id Software
+Sprites: Vader
+Idea Base: Chaingunner from Doom 2

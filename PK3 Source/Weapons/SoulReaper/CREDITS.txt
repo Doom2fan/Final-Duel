@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer, PillowBlaster
+Sprites: Eriance, zrrion the insect, osjclatchford, Blox, Rogue Entertainment, Banjo Software, Lobotomy Software, Mike12, Neoworm, Keksdose, DoomNukem
+Sounds: WildWeasel, NightmareMutant

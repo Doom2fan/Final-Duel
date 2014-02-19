@@ -1,0 +1,66 @@
+// Inventory
+Graphic ARTIBSRK, 17, 18
+{
+	Offset -6, -2
+	Patch BSRKA0, 0, 0
+}
+
+Graphic ARTITOME, 24, 23
+{
+	Offset -2, -2
+	Patch TOMEA0, 0, 0
+}
+
+Graphic ARTISTIM, 17, 24
+{
+	Offset -4, -1
+	Patch STIMA0, 0, 0
+}
+
+Graphic ARTIMEDI, 28, 19
+{
+	Patch MEDIA0, 0, 0
+}
+
+Graphic ARTIJET, 33, 17
+{
+	Offset -1, -7
+	Patch JETTA0, 0, 0
+}
+
+Graphic ARTINBAT, 17, 13
+{
+	Offset -7, -4
+	Patch NVISA0, 0, 0
+}
+
+// Keys
+Graphic STKEYS0, 14, 16
+{
+	Patch BKEYA0, 0, 0
+}
+
+Graphic STKEYS1, 14, 16
+{
+	Patch YKEYA0, 0, 0
+}
+
+Graphic STKEYS2, 14, 16
+{
+	Patch RKEYA0, 0, 0
+}
+
+Graphic STKEYS3, 13, 16
+{
+	Patch BSKUA0, 0, 0
+}
+
+Graphic STKEYS4, 13, 16
+{
+	Patch YSKUA0, 0, 0
+}
+
+Graphic STKEYS5, 13, 16
+{
+	Patch RSKUA0, 0, 0
+}

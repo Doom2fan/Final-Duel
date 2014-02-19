@@ -1,0 +1,41 @@
+moloch/grenade dsmolgrn
+		moloch/grenexp dsgrexpl
+		moloch/scorch dsswoosh
+		moloch/scorchhit dsscrexp
+		moloch/wraith dswrasee
+		moloch/wraithdie dswradth
+		moloch/emberexp dsembexp
+		moloch/thunder dsmobolt
+		moloch/thundercrash dsbolhit
+		moloch/flash dsmolfls
+		moloch/flashhit dsflshit
+		moloch/death dsmoldth
+		moloch/thud dsmothud
+		moloch/step dsmstep1
+		moloch/wraith dsmolwra
+		moloch/wraithdie dswradie
+		moloch/nail dsmonail
+		moloch/nailhitbleed dsnaiimp
+		moloch/wraithattack dswrtchg
+		moloch/wraithmelle dswrtatt
+		ricochet1 dsnailr1
+		ricochet2 dsnailr2
+		$RANDOM moloch/nailhit { ricochet1 ricochet2 }
+		msight1 dsmolsi1
+		msight2 dsmolsi2
+		msight3 dsmolsi3
+		$RANDOM moloch/sight { msight1 msight2 msight3 }
+		mact1 dsmolac1
+		mact2 dsmolac2
+		mact3 dsmolac3
+		mact4 dsmolac4
+		$RANDOM moloch/active { mact1 mact2 mact3 mact4 }
+		mpain1 dsmolpa1
+		mpain2 dsmolpa2
+		mpain3 dsmolpa3
+		$RANDOM moloch/pain { mpain1 mpain2 mpain3 }
+		mattack1 dsmolat1
+		mattack2 dsmolat2
+		mattack3 dsmolat3
+		mattack4 dsmolat4
+		$RANDOM moloch/attack { mattack1 mattack2 mattack3 mattack4 }

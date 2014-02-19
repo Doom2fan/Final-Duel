@@ -1,0 +1,8 @@
+Name: Marine Stuff
+Connection: none
+Palette: Doom
+Summon: HelmA, HelmB, HelmC, HelmD, Boots, UniformA, UniformB
+Ambient Sound: none
+De-/Activatable: no
+Destroyable: no
+Special Effects: none

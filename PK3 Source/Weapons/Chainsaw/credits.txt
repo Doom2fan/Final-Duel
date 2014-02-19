@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: Mike12, ID Software, Midway, NMN/Paul, JoeyTD
+Sounds: ID Software

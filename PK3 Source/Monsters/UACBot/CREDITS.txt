@@ -1,0 +1,12 @@
+Submitted: Virtue
+Decorate: Virtue
+Sounds: Strife, Quake2, Skulltag, Doom
+Sprites: George Hamlin
+Sprite Edit: Virtue
+Idea Base: A Doom style Robot
+
+Description:
+
+A faceless, robotic nightmare. This titanium terror will cut you down with a high velocity chaingun, but watch out for the 
+hidden grenade launcher popping out and lobbing 3 grenades your way. Since it is a machine, it feels no pain therefore trying
+to outgun it and interupt its relentless fire is pointless.

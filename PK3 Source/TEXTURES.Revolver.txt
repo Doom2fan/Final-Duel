@@ -1,0 +1,19 @@
+Sprite REVSA0, 320, 200
+{
+	Patch REVGA0, 236, 91
+}
+
+Sprite REVSB0, 320, 200
+{
+	Patch REVGA0, 260, 115
+}
+
+Sprite REVSC0, 320, 200
+{
+	Patch REVGA0, 284, 139
+}
+
+Sprite REVSD0, 320, 200
+{
+	Patch REVGA0, 308, 163
+}

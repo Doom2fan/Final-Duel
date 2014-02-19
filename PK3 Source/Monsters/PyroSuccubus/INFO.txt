@@ -1,0 +1,15 @@
+Name: Pyro Succubus
+Difficulty: Easy
+Connections: Afrit, Bruiser Demon
+Summon: PyroSuccubus, PyroSuccubusWalk, PyroSuccubusFly
+Melee: No
+Distance: Projectile
+Type: Demon, Magical
+Brightmaps: No
+Added States: No
+ACS: No
+
+
+A low level female demon with a decent fire-based projectile attack. There are 3
+variants: a flying one, a grounded one, and one that switches between the two
+modes.

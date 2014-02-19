@@ -1,0 +1,14 @@
+Sprite QSGSA0, 320, 200
+{
+	Patch QSGGA0, 106, 101
+}
+
+Sprite QSGSB0, 320, 200
+{
+	Patch QSGGA0, 82, 125
+}
+
+Sprite QSGSC0, 320, 200
+{
+	Patch QSGGA0, 58, 149
+}

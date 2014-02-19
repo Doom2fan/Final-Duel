@@ -1,0 +1,8 @@
+Name: Catharsi
+Difficulty: Medium
+Connection: Uses sounds and projectile from the Dune Warrior, included
+Summon: Catharsi
+Melee: No
+Distance: Projectile
+Type: Alien
+Brightmaps: Yes

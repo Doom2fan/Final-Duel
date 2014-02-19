@@ -1,0 +1,7 @@
+Submitted: PillowBlaster
+Decorate: PillowBlaster
+GLDefs: N/A
+Sprites: 3D Realms
+Sprite Edit: PillowBlaster
+Idea Base: Single use, unrefitable jetpack-like device that can make you fly
+over pits and obstacles that you can't jump over.

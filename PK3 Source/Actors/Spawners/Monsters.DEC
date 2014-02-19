@@ -1,0 +1,140 @@
+// Zombieman Spawner
+ACTOR ZombiemanSpawner replaces Zombieman
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(16,"EasyZSec")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDZombieman",1,0)
+		Stop
+	EasyZSec:
+		TNT1 A 1 A_SpawnItem("EasyZSec",1,0)
+		Stop
+	}
+}
+// Shotgun Guy Spawner
+ACTOR ShotgunGuySpawner replaces ShotgunGuy
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(16,"FDSuperShotgunGuy")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDShotgunGuy",1,0)
+		Stop
+	FDSuperShotgunGuy:
+		TNT1 A 1 A_SpawnItem("FDSuperShotgunGuy",1,0)
+		Stop
+	}
+}
+// Chaingun Guy Spawner
+ACTOR ChaingunGuySpawner replaces ChaingunGuy
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(64,"ChaingunMajor")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDChaingunGuy",1,0)
+		Stop
+	ChaingunMajor:
+		TNT1 A 1 A_SpawnItem("ChaingunMajor",1,0)
+		Stop
+	}
+}
+// Imp Spawner
+ACTOR DoomImpSpawner replaces DoomImp
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(48, "Catharsi")
+		TNT1 A 0 A_Jump(96, "VoidDarkImp")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDDoomImp",1,0)
+		Stop
+	VoidDarkImp:
+		TNT1 A 1 A_SpawnItem("VoidDarkImp",1,0)
+		Stop
+	Catharsi:
+		TNT1 A 1 A_SpawnItem("Catharsi",1,0)
+		Stop
+	}
+}
+// Demon Spawner
+ACTOR DemonSpawner replaces Demon
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(96,"FDBloodDemon")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDDemon",1,0)
+		Stop
+	FDBloodDemon:
+		TNT1 A 1 A_SpawnItem("FDBloodDemon",1,0)
+		Stop
+	}
+}
+// Hell Knight Spawner
+ACTOR HellKnightSpawner replaces HellKnight
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(64,"FDBelphegor")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDHellKnight",1,0)
+		Stop
+	FDBelphegor:
+		TNT1 A 1 A_SpawnItem("FDBelphegor",1,0)
+		Stop
+	}
+}
+// Mancubus Spawner
+ACTOR MancubusSpawner replaces Fatso
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(96,"FDHectebus")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDFatso",1,0)
+		Stop
+	FDHectebus:
+		TNT1 A 1 A_SpawnItem("FDHectebus",1,0)
+		Stop
+	}
+}
+// Baron of Hell Spawner
+ACTOR BaronOfHellSpawner replaces BaronOfHell
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(32,"ArchonOfHell")
+		TNT1 A 0 A_Jump(85,"Cybruiser")
+		TNT1 A 0 A_Jump(128,"Cyberbaron")
+	Normal:
+		TNT1 A 1 A_SpawnItem("FDBaronOfHell",1,0)
+		Stop
+	Cyberbaron:
+		TNT1 A 1 A_SpawnItem("Cyberbaron",1,0)
+		Stop
+	Cybruiser:
+		TNT1 A 1 A_SpawnItem("Cybruiser",1,0)
+		Stop
+	ArchonOfHell:
+		TNT1 A 1 A_SpawnItem("ArchonOfHell",1,0)
+		Stop
+	}
+}

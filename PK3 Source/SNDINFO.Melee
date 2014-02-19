@@ -1,0 +1,23 @@
+	// Kick
+	$random weapons/kick/strong { weapons/kick/strong1 weapons/kick/strong2 weapons/kick/strong3 }
+	weapons/kick/strong1			KICKSTR1
+	weapons/kick/strong2			KICKSTR2
+	weapons/kick/strong3			KICKSTR3
+	weapons/kick/swing				KICKSW // from Diaz:Last Hours of Purity
+	weapons/kick/hitwall			KICKWAL // from Diaz:Last Hours of Purity
+	// Knife
+	Melee/Knife/HitThing			DSKNIFE
+	Melee/Knife/HitWall				DSKNIFE3	
+	Melee/Knife/Miss				DSKNIFE2
+	// Sword
+	Melee/Sword/HitThing			SWRDHIT // by 
+	Melee/Sword/HitWall				SWRDHITW // from the Sound Library
+	Melee/Sword/Swing				SWRDSWNG // by Langerium(a Freesound user)
+	// Fists
+	$random Melee/Fists/HitWall { Melee/Fists/HitWall1 Melee/Fists/HitWall2 Melee/Fists/HitWall3 Melee/Fists/HitWall4 }
+	Melee/Fists/HitWall1			FISTHIT1
+	Melee/Fists/HitWall2			FISTHIT2
+	Melee/Fists/HitWall3			FISTHIT3
+	Melee/Fists/HitWall4			FISTHIT4
+	// Berserk
+	pickups/berserk					BERSPKUP // from Beautiful Doom

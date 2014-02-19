@@ -1,0 +1,3 @@
+Decorate: Alex_Mercer
+Sprites: Eriance, JoeyTD, Neoworm
+Models: Alex_Mercer

@@ -1,0 +1,59 @@
+// Chronos                                                                              // by Alex_Mercer
+    // Damage
+    $playeralias       chronos male *death            	Chronos/Death
+    $playersound       chronos male *xdeath           	CDIEHI
+    $playersound       chronos male *crazydeath       	CDIEHI
+    $playersound       chronos male *gibbed          	DSSLOP
+    $playeralias       chronos male *pain100          	Chronos/Pain
+    $playersounddup    chronos male *pain75           	*pain100
+    $playersounddup    chronos male *pain50           	*pain100
+    $playersounddup    chronos male *pain25           	*pain100
+    // Misc
+    $playersound       chronos male *evillaugh        	CLAUGH
+    $playersound       chronos male *grunt            	COOF
+    $playersound       chronos male *land             	PLAND
+    $playersound       chronos male *usefail          	NOWAY                             // from ww-terror
+    $playersound       chronos male *regenerate       	REGEN
+	$playersound       chronos male *reload			  	CLOAD
+	$playeralias       chronos male *taunt			  	Chronos/Taunt
+    $random	Chronos/Taunt { Chronos/Taunt1 Chronos/Taunt2 Chronos/Taunt3 }
+    Chronos/Taunt1										CTAUNT1
+	Chronos/Taunt2										CTAUNT2
+	Chronos/Taunt3										CTAUNT3
+	
+	$random Chronos/Pain { Chronos/Pain1 Chronos/Pain2 Chronos/Pain3 Chronos/Pain4 Chronos/Pain5 }
+	Chronos/Pain1 CPAIN1
+	Chronos/Pain2 CPAIN2
+	Chronos/Pain3 CPAIN3
+	Chronos/Pain4 CPAIN4
+	Chronos/Pain5 CPAIN5
+	
+	$random Chronos/Death { Chronos/Death1 Chronos/Death2 Chronos/Death3 }
+	Chronos/Death1 CDEATH1
+	Chronos/Death2 CDEATH2
+	Chronos/Death3 CDEATH3
+	
+// Nero
+    // Damage
+    $playersound       nero male *death               	NDEATH
+    $playersound       nero male *xdeath              	NDIEHI
+    $playersound       nero male *crazydeath          	NDIEHI
+    $playersound       nero male *gibbed              	DSSLOP
+    $playersound       nero male *pain100             	NPAIN100
+    $playersounddup    nero male *pain75              	*pain100
+    $playersounddup    nero male *pain50              	*pain100
+    $playersounddup    nero male *pain25              	*pain100
+    // Misc
+    $playersound       nero male *evillaugh           	NLAUGH
+    $playersound       nero male *grunt               	NOOF
+    $playersound       nero male *land                	PLAND
+    $playersound       nero male *usefail             	NOWAY                             // from ww-terror
+	$playersound       nero male *regenerate          	REGEN
+	$playersound       nero male *reload			  	NLOAD
+	$playeralias       nero male *taunt			  	  	Nero/Taunt
+    $random Nero/Taunt { NTaunt1 }
+    NTaunt1 									  	  	NTAUNT1
+	
+// All
+	Player/LevelUp									  	LEVELUP
+	Player/HeartBeat								  	PHEART                            // by cakeje from freeSFX

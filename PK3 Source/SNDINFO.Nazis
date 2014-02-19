@@ -1,0 +1,9 @@
+// Mauser
+MauserNazi/BoltBack 		NAZMBACK // From wwhc-diaz
+MauserNazi/BoltFwd 			NAZMFWD // From wwhc-diaz
+MauserNazi/In 				NAZMIN // From wwhc-diaz
+MauserNazi/Shoulder 		NAZMSHLD // From wwhc-diaz
+MauserNazi/Attack			NAZMFIRE // From wwhc-diaz
+
+// MP40
+MP40Nazi/Attack				NAZIFIRE // from ww-nazis

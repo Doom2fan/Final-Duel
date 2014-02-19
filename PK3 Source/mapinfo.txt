@@ -1,0 +1,6 @@
+// MAPINFO for Final Duel
+include Mapinfo/Gameinfo.txt
+include Mapinfo/Skills.txt
+include Mapinfo/Intermissions.txt
+include Mapinfo/Episodes.txt
+include Mapinfo/Maps.txt

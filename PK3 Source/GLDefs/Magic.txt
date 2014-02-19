@@ -1,0 +1,22 @@
+// Ice
+pointlight MAGICICEGLOWER
+{
+    color 0.5 0.5 1.0
+    size 20
+}
+object FreezeBlast
+{
+	frame FBLS { light MAGICICEGLOWER }
+}
+
+// Lava
+pointlight MAGICLAVAGLOWER
+{
+    color 1.0 0.5 0.5
+    size 32
+}
+pointlight MAGICLAVAGLOWER2
+{
+    color 1.0 0.5 0.5
+    size 5
+}

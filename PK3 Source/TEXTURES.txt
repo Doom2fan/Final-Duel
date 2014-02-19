@@ -1,0 +1,123 @@
+Texture SKIN3, 64, 128
+{
+	Patch HELL6_3, 0, 0
+}
+
+// Water
+Flat FWATER1, 64, 64
+{
+	Patch FWATER1, 0, 0
+}
+Flat FWATER2, 64, 64
+{
+	Patch FWATER1, 0, 0
+}
+Flat FWATER3, 64, 64
+{
+	Patch FWATER1, 0, 0
+}
+Flat FWATER4, 64, 64
+{
+	Patch FWATER1, 0, 0
+}
+Flat NUKAGE1, 64, 64
+{
+	Patch NUKAGE1, 0, 0
+}
+Flat NUKAGE2, 64, 64
+{
+	Patch NUKAGE1, 0, 0
+}
+Flat NUKAGE3, 64, 64
+{
+	Patch NUKAGE1, 0, 0
+}
+Flat LAVA1, 64, 64
+{
+	Patch LAVA1, 0, 0
+}
+Flat LAVA2, 64, 64
+{
+	Patch LAVA1, 0, 0
+}
+Flat LAVA3, 64, 64
+{
+	Patch LAVA1, 0, 0
+}
+Flat LAVA4, 64, 64
+{
+	Patch LAVA1, 0, 0
+}
+Flat SLIME1, 64, 64
+{
+	Patch SLIME01, 0, 0
+}
+Flat SLIME2, 64, 64
+{
+	Patch SLIME01, 0, 0
+}
+Flat SLIME3, 64, 64
+{
+	Patch SLIME01, 0, 0
+}
+Flat SLIME4, 64, 64
+{
+	Patch SLIME01, 0, 0
+}
+Flat SLIME5, 64, 64
+{
+	Patch SLIME05, 0, 0
+}
+Flat SLIME6, 64, 64
+{
+	Patch SLIME05, 0, 0
+}
+Flat SLIME7, 64, 64
+{
+	Patch SLIME05, 0, 0
+}
+Flat SLIME8, 64, 64
+{
+	Patch SLIME05, 0, 0
+}
+Flat BLOOD1, 64, 64
+{
+	Patch BLOOD1, 0, 0
+}
+Flat BLOOD2, 64, 64
+{
+	Patch BLOOD1, 0, 0
+}
+Flat BLOOD3, 64, 64
+{
+	Patch BLOOD1, 0, 0
+}
+
+// Fake sprites
+Sprite ENRGA0, 1, 1 { }
+Sprite MODLA0, 1, 1 { }
+Sprite MODLB0, 1, 1 { }
+Sprite MODLC0, 1, 1 { }
+Sprite MODLD0, 1, 1 { }
+Sprite MODLE0, 1, 1 { }
+Sprite MODLF0, 1, 1 { }
+Sprite MODLG0, 1, 1 { }
+Sprite MODLH0, 1, 1 { }
+Sprite MODLI0, 1, 1 { }
+Sprite MODLJ0, 1, 1 { }
+Sprite MODLK0, 1, 1 { }
+Sprite MODLL0, 1, 1 { }
+Sprite MODLM0, 1, 1 { }
+Sprite MODLN0, 1, 1 { }
+Sprite MODLO0, 1, 1 { }
+Sprite MODLP0, 1, 1 { }
+Sprite MODLQ0, 1, 1 { }
+Sprite MODLR0, 1, 1 { }
+Sprite MODLS0, 1, 1 { }
+Sprite MODLT0, 1, 1 { }
+Sprite MODLU0, 1, 1 { }
+Sprite MODLV0, 1, 1 { }
+Sprite MODLW0, 1, 1 { }
+Sprite MODLX0, 1, 1 { }
+Sprite MODLY0, 1, 1 { }
+Sprite MODLZ0, 1, 1 { }

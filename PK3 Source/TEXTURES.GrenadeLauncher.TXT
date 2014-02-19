@@ -1,0 +1,29 @@
+Sprite GLGRA0, 320, 200
+{
+	Patch GLG1A0, 115, 93
+}
+
+Sprite GLGRB0, 320, 200
+{
+	Patch GLG1A0, 115, 109
+}
+
+Sprite GLGRC0, 320, 200
+{
+	Patch GLG1A0, 115, 125
+}
+
+Sprite GLGRD0, 320, 200
+{
+	Patch GLG1A0, 115, 141
+}
+
+Sprite GLGRE0, 320, 200
+{
+	Patch GLG1A0, 115, 157
+}
+
+Sprite GLGRF0, 320, 200
+{
+	Patch GLG1A0, 115, 173
+}

@@ -1,0 +1,11 @@
+monster/dogsit dsdogsit
+		monster/dogatk dsdogatk
+		monster/dogbit dsdogbit
+		monster/dogpai dsdogpai
+		$RANDOM monster/dogdth { monster/dogdt1 monster/dogdt2 }
+		monster/dogdt1 dsdogdt1
+		monster/dogdt2 dsdogdt2
+		monster/dogact dsdogact
+		weapons/bigbrn dsbigbrn
+		monster/dogsht dsdogsht
+		monster/doghit dsdoghit

@@ -1,0 +1,5 @@
+BrightMap Sprite CELLA0
+{
+	Map Brightmaps/Ammo/CELLA0.png
+	DisableFullBright
+}

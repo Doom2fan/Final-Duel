@@ -1,0 +1,26 @@
+Actor HeadshotSystem
+{
+	+NoGravity
+	+Shootable
+	+CanPass
+	+NOTELEPORT
+	+IsMonster
+	States
+	{
+	Spawn:
+		TNT1 A 1 NoDelay A_Warp(AAPTR_MASTER, 0, 0, reactiontime)
+		Loop
+	Death:
+		TNT1 AAAAA 0 A_KillMaster("Headshot")
+		Stop
+	Death.Fire:
+		TNT1 AAAAA 0 A_KillMaster("Fire")
+		Stop
+	Death.Plasma:
+		TNT1 AAAAA 0 A_KillMaster("Plasma")
+		Stop
+	XDeath:
+		TNT1 AAAAA 0 A_KillMaster("Extreme")
+		Stop
+	}
+}

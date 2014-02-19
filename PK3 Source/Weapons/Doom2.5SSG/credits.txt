@@ -1,0 +1,3 @@
+Decorate: Alex_Mercer
+Sprites: ID Software, Per Kristian, Alex_Mercer
+Sounds: coop

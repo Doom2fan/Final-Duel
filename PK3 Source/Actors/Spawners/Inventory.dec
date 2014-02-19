@@ -1,0 +1,50 @@
+ACTOR InvulnerabilitySpawner Replaces InvulnerabilitySphere
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(38,"TomeDrop")
+	Normal:
+		TNT1 A 1 A_SpawnItemEx("FDInvulnerabilitySphere", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	TomeDrop:
+		TNT1 A 1 A_SpawnItemEx("TomeOfTheUnholy", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+ACTOR BlursphereSpawner Replaces Blursphere
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(128,"BatteryDrop")
+		TNT1 A 0 A_Jump(166,"FlareDrop")
+	Normal:
+		TNT1 A 1 A_SpawnItemEx("FDBlursphere", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	FlareDrop:
+		TNT1 A 1 A_SpawnItemEx("Flare", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	BatteryDrop:
+		TNT1 A 1 A_SpawnItemEx("NVBattery", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+ACTOR SoulsphereSpawner Replaces Soulsphere
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(102,"JetDrop")
+	Normal:
+		TNT1 A 1 A_SpawnItemEx("FDSoulsphere", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	JetDrop:
+		TNT1 A 1 A_SpawnItemEx("JetThruster", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}

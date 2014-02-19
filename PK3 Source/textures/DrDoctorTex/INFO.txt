@@ -1,0 +1,6 @@
+Source: Scratch/Doom edits
+Count: 120
+Palette: Doom
+Format: TX Markers
+Anims/Switches: N/A
+Description: Various textures, mainly tech/base, few hellish and city. Some Wolf3D texture edits.

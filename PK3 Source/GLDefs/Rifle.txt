@@ -1,0 +1,51 @@
+BrightMap Sprite RIFLA0
+{
+Map brightmaps/Weapons/Rifle/RIFLA0.png
+DisableFullBright
+}
+BrightMap Sprite RIFLB0
+{
+Map brightmaps/Weapons/Rifle/RIFLB0.png
+DisableFullBright
+}
+BrightMap Sprite RIFFA0
+{
+Map brightmaps/Weapons/Rifle/RIFFA0.png
+DisableFullBright
+}
+BrightMap Sprite RIFSA0
+{
+Map brightmaps/Weapons/Rifle/RIFSA0.png
+DisableFullBright
+}
+BrightMap Sprite RIFSB0
+{
+Map brightmaps/Weapons/Rifle/RIFSB0.png
+DisableFullBright
+}
+// Select/Deselect
+BrightMap Sprite RFLSA0
+{
+Map brightmaps/Weapons/Rifle/RFLSA0.png
+DisableFullBright
+}
+BrightMap Sprite RFLSB0
+{
+Map brightmaps/Weapons/Rifle/RFLSB0.png
+DisableFullBright
+}
+BrightMap Sprite RFLSC0
+{
+Map brightmaps/Weapons/Rifle/RFLSC0.png
+DisableFullBright
+}
+BrightMap Sprite RFLSD0
+{
+Map brightmaps/Weapons/Rifle/RFLSD0.png
+DisableFullBright
+}
+BrightMap Sprite RIFLZ0
+{
+Map brightmaps/Weapons/Rifle/RIFLZ0.png
+DisableFullBright
+}

@@ -1,0 +1,13 @@
+episode FDMAP01
+{
+	name = "Final Duel"
+	key = "f"
+	optional
+}
+
+episode TRAINING
+{
+	name = "Final Duel-Training Course"
+	key = "a"
+	optional
+}

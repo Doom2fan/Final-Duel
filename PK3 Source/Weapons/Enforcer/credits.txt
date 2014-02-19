@@ -1,0 +1,2 @@
+Decorate: Alex_Mercer
+Sprites: Minigunner, HavoX, Alex_Mercer

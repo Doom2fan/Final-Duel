@@ -1,0 +1,49 @@
+//brightmaps for the slime (nukage) splash actors
+//without these, they're hard to see against the nukage flat if used in gzDoom with brightmap support
+BrightMap Sprite SLIMA0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMA0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMB0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMB0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMC0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMC0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMD0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMD0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIME0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIME0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMF0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMF0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMG0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMG0.png"
+DisableFullBright
+}
+
+BrightMap Sprite SLIMH0
+{
+Map "Brightmaps/Misc/DoomTerrain/BMSLIMH0.png"
+DisableFullBright
+}

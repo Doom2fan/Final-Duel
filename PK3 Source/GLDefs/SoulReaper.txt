@@ -1,0 +1,5 @@
+BrightMap Sprite SREAZ0
+{
+Map brightmaps/Weapons/SoulReaper/SREAZ0.png
+DisableFullBright
+}

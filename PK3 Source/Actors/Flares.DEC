@@ -1,0 +1,76 @@
+// From Beautiful Doom
+Actor BlueFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LENB A 2 bright
+		Stop
+	}
+}
+// by Alex_Mercer
+Actor LensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LENS A 2 bright
+		Stop
+	}
+}
+Actor YellowLensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LEYS A 2 bright
+		Stop
+	}
+}
+
+Actor BlueLensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LEYS B 2 bright
+		Stop
+	}
+}
+
+Actor GreenLensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LEYS G 2 bright
+		Stop
+	}
+}
+
+Actor OrangeLensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LEYS O 2 bright
+		Stop
+	}
+}
+
+Actor RedLensFlare : Flare_General
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		LEYS R 2 bright
+		Stop
+	}
+}

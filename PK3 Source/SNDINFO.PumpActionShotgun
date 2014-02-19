@@ -1,0 +1,12 @@
+	// Fire
+	$random PAShotgun/Fire { PAShotgun/Fire1 PAShotgun/Fire2 PAShotgun/Fire3 PAShotgun/Fire4 }
+	PAShotgun/Fire1					PASFIRE1
+	PAShotgun/Fire2					PASFIRE2
+	PAShotgun/Fire3					PASFIRE3
+	PAShotgun/Fire4					PASFIRE4
+
+	// Pump
+	PAShotgun/Pump					PASPUMP
+
+	// Shell
+	PAShotgun/Shell					PASSHELL

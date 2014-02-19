@@ -1,0 +1,47 @@
+ACTOR BlueWallTorch 30073
+{
+  //$Category Final Duel-Props
+  Tag "Blue Wall Torch"
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +FIXMAPTHINGPOS
+  Radius 6.5
+  States
+  {
+  Spawn:
+    BWTR ABCD 4 Bright
+    Loop
+  }
+}
+
+ACTOR RedWallTorch 30074
+{
+  //$Category Final Duel-Props
+  Tag "Red Wall Torch"
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +FIXMAPTHINGPOS
+  Radius 6.5
+  States
+  {
+  Spawn:
+    YWTR ABCD 4 Bright
+    Loop
+  }
+}
+
+ACTOR GreenWallTorch 30075
+{
+  //$Category Final Duel-Props
+  Tag "Green Wall Torch"
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +FIXMAPTHINGPOS
+  Radius 6.5
+  States
+  {
+  Spawn:
+    GWTR ABCD 4 Bright
+    Loop
+  }
+}

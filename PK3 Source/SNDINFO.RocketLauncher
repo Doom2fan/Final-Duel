@@ -1,0 +1,6 @@
+RocketLauncher/bounce	DSGRNHIT
+weapons/rlan/fire	RLANSHOT
+weapons/rlan/explosion	RLANEXPL
+$limit weapons/rlan/fire 0
+$limit weapons/rlan/explosion 0
+weapons/rlan/draw	RLANDRAW

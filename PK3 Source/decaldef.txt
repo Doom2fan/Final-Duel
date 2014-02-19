@@ -1,0 +1,120 @@
+// SSG Guy
+generator FDSuperShotgunGuy           BulletChip
+
+// Belphegor
+generator FDBelphegorBall             BaronScorch
+
+// Hectebus
+generator FDHectShot                  Scorch
+// from Beautiful Doom
+/// +++++++++++++++++////
+/// +++++++++++++++++////
+/// PLASMA DECALS
+/// +++++++++++++++++////
+/// +++++++++++++++++////
+
+
+fader PFade
+{
+DecayStart 3
+DecayTime 9
+}
+
+decal BluePlasmaSplat1
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT1
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decal BluePlasmaSplat2
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT2
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decal BluePlasmaSplat3
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT3
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decal BluePlasmaSplat4
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT4
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decal BluePlasmaSplat5
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT5
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decal BluePlasmaSplat6
+{
+lowerdecal Scorch
+add 1.0
+	fullbright
+animator PFade
+pic PLSPLAT6
+randomflipx
+randomflipy
+x-scale 0.5
+y-scale 0.5
+}
+
+decalgroup BluePlasmaSplat
+{
+	BluePlasmaSplat1 6
+	BluePlasmaSplat2 6
+	BluePlasmaSplat3 6
+	BluePlasmaSplat4 6
+	BluePlasmaSplat5 6
+	BluePlasmaSplat6 6
+}
+generator FDPlasmaBall				BluePlasmaSplat
+decal FistScorch
+{
+	pic SCORCH1
+	add .5
+	shade "00 00 00"
+	x-scale 0.2
+	y-scale 0.08
+	randomflipx
+	randomflipy
+}

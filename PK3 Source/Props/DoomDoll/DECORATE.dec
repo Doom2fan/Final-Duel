@@ -1,0 +1,15 @@
+ACTOR DoomDoll 30055
+{
+//$Category Final Duel-Props
+//$Title Doomguy Doll
+  Game Doom
+  Radius 28
+  Height 9
+  +SOLID
+  States
+  {
+  Spawn:
+    DDOL A -1
+    Stop
+  }
+}

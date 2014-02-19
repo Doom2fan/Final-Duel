@@ -1,0 +1,6 @@
+Decorate: Eriance
+GLDefs: Dreadopp, SandyPaper (Brightmaps)
+Sounds: id Software, Eriance
+Sprites: id Software, Raven Software, Wolfendoom
+Sprite Edit: Eriance
+Idea Base: Doom 2 Cyberdemon

@@ -1,0 +1,190 @@
+// Knife Select/Deselect
+Sprite KNFSA0, 320, 200
+{
+	Patch KNF1A0, 38, 50
+}
+
+Sprite KNFSB0, 320, 200
+{
+	Patch KNF1A0, 62, 74
+}
+
+Sprite KNFSC0, 320, 200
+{
+	Patch KNF1A0, 86, 98
+}
+
+Sprite KNFSD0, 320, 200
+{
+	Patch KNF1A0, 110, 122
+}
+
+Sprite KNFSE0, 320, 200
+{
+	Patch KNF1A0, 134, 146
+}
+
+// Sword
+Sprite SWRDA0, 320, 200
+{
+	Patch SWORD1, 178, 113
+}
+
+Sprite SWRDB0, 320, 200
+{
+	Patch SWORD2, 146, -8
+}
+
+Sprite SWRDC0, 320, 200
+{
+	Patch SWORD2, 117, 2
+}
+
+Sprite SWRDD0, 320, 200
+{
+	Patch SWORD2, 81, 15
+}
+
+Sprite SWRDE0, 320, 200
+{
+	Patch SWORD2, 58, 19
+}
+
+Sprite SWRDF0, 320, 200
+{
+	Patch SWORD3, 86, 44
+}
+
+Sprite SWRDG0, 320, 200
+{
+	Patch SWORD3, 42, 51
+}
+
+Sprite SWRDH0, 320, 200
+{
+	Patch SWORD3, 11, 59
+}
+
+Sprite SWRDI0, 320, 200
+{
+	Patch SWORD4, -7, 97
+}
+
+Sprite SWRDJ0, 320, 200
+{
+	Patch SWORD4, -25, 104
+}
+
+Sprite SWRDK0, 320, 200
+{
+	Patch SWORD4, -42, 112
+}
+
+Sprite SRDSA0, 320, 200
+{
+	Patch SWORD1, 186, 129
+}
+
+Sprite SRDSB0, 320, 200
+{
+	Patch SWORD1, 194, 145
+}
+
+Sprite SRDSC0, 320, 200
+{
+}
+
+// Melee
+Sprite FISTA0, 320, 200
+{
+	Patch PUNCH1, 211, 118
+	Patch PUNCH1, -32, 118
+	{
+		FlipX
+	}
+}
+
+Sprite FISTB0K0, 320, 200
+{
+	Patch PUNCH1, 227, 134
+	Patch PUNCH2, -24, 110
+	{
+		FlipX
+	}
+}
+
+Sprite FISTC0L0, 320, 200
+{
+	Patch PUNCH1, 243, 150
+	Patch PUNCH3, -1, 98
+	{
+		FlipX
+	}
+}
+
+Sprite FISTD0M0, 320, 200
+{
+	Patch PUNCH3, 29, 87
+	{
+		FlipX
+	}
+}
+
+Sprite FISTE0N0, 320, 200
+{
+	Patch PUNCH4, 40, 82
+}
+
+Sprite FISTF0O0, 320, 200
+{
+	Patch PUNCH4, 72, 82
+}
+
+Sprite FISTG0P0, 320, 200
+{
+	Patch PUNCH4, 104, 98
+}
+
+Sprite FISTH0Q0, 320, 200
+{
+	Patch PUNCH4, 136, 114
+}
+
+Sprite FISTI0R0, 320, 200
+{
+	Patch PUNCH4, 168, 130
+}
+
+Sprite FISTJ0S0, 320, 200
+{
+	Patch PUNCH4, 200, 146
+}
+Sprite FST1A0, 320, 200
+{
+	Patch PUNCH5, -95, 160
+}
+
+Sprite FST1B0, 320, 200
+{
+	Patch PUNCH5, -71, 136
+}
+
+Sprite FST1C0, 320, 200
+{
+	Patch PUNCH5, -47, 112
+}
+
+Sprite FST1D0, 320, 200
+{
+	Patch PUNCH5, -23, 88
+}
+
+Sprite FST1E0, 320, 200
+{
+	Patch PUNCH5, 1, 64
+}
+
+Sprite FST1F0, 320, 200
+{
+	Patch PUNCH5, 25, 40
+}

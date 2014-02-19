@@ -1,0 +1,96 @@
+// Carbine
+BrightMap Sprite AMGFA0
+{
+Map brightmaps/Weapons/AMG/AMGFA0.png
+DisableFullBright
+}
+BrightMap Sprite AMGFB0
+{
+Map brightmaps/Weapons/AMG/AMGFA0.png
+DisableFullBright
+}
+
+// AK-47
+BrightMap Sprite AK47B0
+{
+Map brightmaps/Weapons/Misc/AK47B0.png
+DisableFullBright
+}
+
+// SSG
+BrightMap Sprite SSGFA0
+{
+Map brightmaps/Weapons/Misc/SSGFA0.png
+DisableFullBright
+}
+BrightMap Sprite SSGFU0
+{
+Map brightmaps/Weapons/Misc/SSGFU0.png
+DisableFullBright
+}
+
+// Enforcer
+BrightMap Sprite ENF1B0
+{
+Map brightmaps/Weapons/Misc/ENF1B0.png
+DisableFullBright
+}
+BrightMap Sprite ENF1D0
+{
+Map brightmaps/Weapons/Misc/ENF1D0.png
+DisableFullBright
+}
+
+// Shotgun
+BrightMap Sprite SHTFA0
+{
+Map brightmaps/Weapons/Misc/SHTFA0.png
+DisableFullBright
+}
+
+// Tactical Shotgun
+BrightMap Sprite SGGFA0
+{
+Map brightmaps/Weapons/Misc/SGGFA0.png
+DisableFullBright
+}
+BrightMap Sprite SGGFB0
+{
+Map brightmaps/Weapons/Misc/SGGFB0.png
+DisableFullBright
+}
+
+// Quad Shotgun
+BrightMap Sprite QSGFA0
+{
+Map brightmaps/Weapons/Misc/QSGFA0.png
+DisableFullBright
+}
+BrightMap Sprite QSGFB0
+{
+Map brightmaps/Weapons/Misc/QSGFB0.png
+DisableFullBright
+}
+BrightMap Sprite QSGFC0
+{
+Map brightmaps/Weapons/Misc/QSGFC0.png
+DisableFullBright
+}
+// BFG 9000
+BrightMap Sprite BFGGZ0
+{
+Map brightmaps/Weapons/Misc/BFGGZ0.png
+DisableFullBright
+}
+// BFG10K
+BrightMap Sprite BFG2A0
+{
+Map brightmaps/Weapons/Misc/BFG2A0.png
+DisableFullBright
+}
+// Minigun
+BrightMap Sprite MINGZ0
+{
+Map brightmaps/Weapons/Misc/MINGZ0.png
+DisableFullBright
+}

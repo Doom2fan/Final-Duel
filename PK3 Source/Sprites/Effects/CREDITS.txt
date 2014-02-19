@@ -1,0 +1,16 @@
+ENR1?0 is from Doom 64.
+SMOK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+SSHK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+FIP??0 are from Beautiful Doom
+FIR??0?0(1 and 2) are from the KD ZDoom Resource Pack PK3 file.
+FIR3?0?0 is a recolor of FIR??0?0 by Alex_Mercer
+
+Flares:
+	FLR1-3?0 are from the KD ZDoom Resource Pack PK3 file.
+	LEN?A0(B, C, G, R, W and Y): Some are from Beautiful Doom and some are from the Brutal Doom PK3 file.
+	?FLRA0(B, G, L, R and Y) are from the KD ZDoom Resource Pack PK3 file.
+	LENSA0 and LEYS?0(A, B, G, O and R): I don't know where those sprites are from or who made them. IIRC I found them in the Brutal Doom PK3 file.
+	L2N?A0(B, C, G, R and Y): I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+
+Nein:
+	NN01?0 was ripped by Neoworm.

@@ -1,0 +1,320 @@
+Sprite SRR3A0, 320, 200
+{
+	Patch SRRTB0, 48, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3B0, 320, 200
+{
+	Patch SRRTB0, 42, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3C0, 320, 200
+{
+	Patch SRRTB0, 36, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3D0, 320, 200
+{
+	Patch SRRTB0, 25, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3E0, 320, 200
+{
+	Patch SRRTB0, 16, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3F0, 320, 200
+{
+	Patch SRRTB0, 8, 95
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3G0, 320, 200
+{
+	Patch SRRTB0, -1, 100
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3H0, 320, 200
+{
+	Patch SRRTB0, -8, 112
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3I0, 320, 200
+{
+	Patch SRRTB0, -16, 120
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3J0, 320, 200
+{
+	Patch SRRTB0, -24, 136
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3K0, 320, 200
+{
+	Patch SRRTB0, -32, 151
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR3L0, 320, 200
+{
+	Patch SRRTB0, -40, 168
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4A0, 320, 200
+{
+	Patch SRRTC0, 48, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4B0, 320, 200
+{
+	Patch SRRTC0, 42, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4C0, 320, 200
+{
+	Patch SRRTC0, 36, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4D0, 320, 200
+{
+	Patch SRRTC0, 25, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4E0, 320, 200
+{
+	Patch SRRTC0, 16, 90
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4F0, 320, 200
+{
+	Patch SRRTC0, 8, 95
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4G0, 320, 200
+{
+	Patch SRRTC0, 0, 100
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4H0, 320, 200
+{
+	Patch SRRTC0, -8, 112
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4I0, 320, 200
+{
+	Patch SRRTC0, -16, 120
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4J0, 320, 200
+{
+	Patch SRRTC0, -24, 136
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4K0, 320, 200
+{
+	Patch SRRTC0, -31, 151
+	Patch SRRTA0, 123, 80
+}
+
+Sprite SRR4L0, 320, 200
+{
+	Patch SRRTC0, -40, 168
+	Patch SRRTA0, 123, 80
+}
+// Select/Deselect
+Sprite SRESA0, 320, 200
+{
+	Patch SREAA0, 76, 96
+}
+
+Sprite SRESB0, 320, 200
+{
+	Patch SREAA0, 60, 112
+}
+
+Sprite SRESC0, 320, 200
+{
+	Patch SREAA0, 44, 128
+}
+
+Sprite SRESD0, 320, 200
+{
+	Patch SREAA0, 28, 144
+}
+
+Sprite SRESE0, 320, 200
+{
+	Patch SREAA0, 12, 160
+}
+
+// Projectile
+
+	// Flare
+Sprite SRP1A0, 256, 256
+{
+	Offset 128, 128
+	Patch FLARE_01, 0, 0
+	{
+		Blend "#FF0000", 0.9
+		Style Add
+	}
+	Patch FLARE_01, 0, 0
+	{
+		Blend "#CF0000", 0.9
+		Style Add
+	}
+}
+
+Sprite SRP1B0, 256, 256
+{
+	Offset 128, 128
+	Patch FLARE_01, 0, 0
+	{
+		FlipY
+		Blend "#CF0F00", 0.9
+		Style Add
+	}
+	Patch FLARE_01, 0, 0
+	{
+		FlipY
+		Blend "#AF0F00", 0.9
+		Style Add
+	}
+}
+	// Smoke
+Sprite SRP2A0B0, 256, 256
+{
+	Offset 128, 128
+	Patch SMOKE_01, 0, 0
+	{
+		Blend "#CF0F00"
+		Style Add
+	}
+}
+
+Sprite SRP2C0D0, 256, 256
+{
+	Offset 128, 128
+	Patch SMOKE_01, 0, 0
+	{
+		FlipY
+		Blend "#CF0F00"
+		Style Add
+	}
+}
+	// Flame
+Sprite SRP3A0B0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#FF0F00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#CF0F00", 1.0
+		Style Add
+	}
+}
+
+Sprite SRP3C0D0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#CF0000", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#FF0000", 1.0
+		Style Add
+	}
+}
+
+Sprite SRP3E0F0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#FF0F00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#CF0F00", 1.0
+		Style Add
+	}
+}
+
+Sprite SRP3G0H0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#CF0000", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#AF0000", 1.0
+		Style Add
+	}
+}
+
+Sprite SRP3I0J0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#FF0F00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#CF0F00", 1.0
+		Style Add
+	}
+}
+
+Sprite SRP3K0L0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#CF0000", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#AF0000", 1.0
+		Style Add
+	}
+}

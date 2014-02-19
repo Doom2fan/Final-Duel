@@ -1,0 +1,6 @@
+AIRNULL, BARDUMMY, SOLBAR, EMPTY2 and WATERREF were made by Alex_Mercer
+HPINV was made by Alex_Mercer with a texture by DrDoctor
+AIRBAR, EMPTY1, HPBAR and HPBARS were made by Alex_Mercer with textures from Doom II
+ARMORBAR was made by Alex_Mercer with a texture by DrDoctor and a texture from Doom II
+AUTO, BURST, SEMI and BUCKSHEL were made by Marrub
+SLUGSHEL was made by Marrub and recolored by Alex_Mercer

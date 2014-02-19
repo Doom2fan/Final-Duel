@@ -1,0 +1,7 @@
+Submitted: zrrion the insect
+Decorate: zrrion the insect
+GLDefs: none
+Sounds: unknown
+Sprites: Monolith Software
+Sprite Edit: zrrion the insect
+Idea Base: MagicWazard

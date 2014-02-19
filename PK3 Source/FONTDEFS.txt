@@ -1,0 +1,14 @@
+HUDLCD
+{
+	0 hudnum0
+	1 hudnum1
+	2 hudnum2
+	3 hudnum3
+	4 hudnum4
+	5 hudnum5
+	6 hudnum6
+	7 hudnum7
+	8 hudnum8
+	9 hudnum9
+	NOTRANSLATION 160
+}

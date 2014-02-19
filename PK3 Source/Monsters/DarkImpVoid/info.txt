@@ -1,0 +1,8 @@
+Name: Dark Imp (Void)
+Difficulty: Easy
+Connection: Dark Imp variants
+Summon: VoidDarkImp
+Melee: Yes
+Distance: Projectile
+Type: Demon
+Brightmaps: Yes

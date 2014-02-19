@@ -1,0 +1,7 @@
+Submitted: Xim
+Decorate: Xim
+Sprites: ScubaSteve, Uboa, Alex_Mercer
+Sounds: NightmareMutant
+Idea Base: Action Doom Machinegun
+
+Edited for Final Duel by Alex_Mercer

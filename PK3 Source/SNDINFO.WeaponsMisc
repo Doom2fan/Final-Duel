@@ -1,0 +1,14 @@
+$limit weapons/bfg10kx 0
+$limit weapons/grenlx 0
+misc/gunpickup1				GPICKUP1
+misc/gunpickup2				GPICKUP2
+misc/gunpickup3				GPICKUP3
+misc/gunpickup4				GPICKUP4
+Weapons/Empty 				DRYFIRE1
+Weapons/Mode				WEAPMODE
+Weapons/Zoom				WEAPZOOM
+Weapons/Beep				BEP // From Brutal Doom
+Weapons/BeepX2				BEPBEP // From Brutal Doom
+Weapons/BEEEP				BEEEP // From Brutal Doom
+Weapons/BeepStartLoop		BEPSLOOP // by Alex_Mercer, made from "Weapons/Beep"
+Weapons/BeepLoop			BEPLOOP // by Alex_Mercer, made from "Weapons/Beep"

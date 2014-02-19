@@ -1,0 +1,25 @@
+gameinfo
+{
+	titlepage = "TITLEPIC"
+	creditpage = "CREDIT"
+	titlemusic = "D_DTFAF"
+	playerclasses = "MarineClass", "OmegaClass"
+	titletime = 8
+	advisorytime = 6
+	pagetime = 5
+	chatsound = "misc/chat"
+	finalemusic = "D_READ_2"
+	finaleflat = "SLIME16"
+	finalepage = "CREDIT"
+	infopage = "HELP", "CREDIT"
+	quitsound = "menu/quit2"
+	borderflat = "FLAT5_6"
+	border = DoomBorder
+	telefogheight = 0
+	defkickback = 100
+	skyflatname = "F_SKY1"
+	translator = "xlat/doom.txt"
+	backpacktype = "Backpack"
+	gibfactor = 0.5
+//	statusbar = "sbarinfo.txt"
+}

@@ -1,0 +1,95 @@
+BrightMap Sprite RGG1A0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1A0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1B0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1B0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1C0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1C0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1D0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1D0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2A0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2A0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2B0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2B0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2C0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2C0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2D0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2D0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2E0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2E0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1A0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1A0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1B0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1B0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1C0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1C0.png
+DisableFullBright
+}
+BrightMap Sprite RGG1D0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG1D0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2A0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2A0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2B0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2B0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2C0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2C0.png
+DisableFullBright
+}
+BrightMap Sprite RGG2D0
+{
+Map brightmaps/Weapons/SonicRailgun/RGG2D0.png
+DisableFullBright
+}
+BrightMap Sprite RGGFA0
+{
+Map brightmaps/Weapons/SonicRailgun/RGGFA0.png
+DisableFullBright
+}
+BrightMap Sprite RGGFB0
+{
+Map brightmaps/Weapons/SonicRailgun/RGGFB0.png
+DisableFullBright
+}

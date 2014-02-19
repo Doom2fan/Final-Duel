@@ -1,0 +1,7 @@
+$random Magnum/Fire { Magnum/Fire1 Magnum/Fire2 Magnum/Fire3 }
+Magnum/Fire1	MAGFIRE1
+Magnum/Fire2 	MAGFIRE2
+Magnum/Fire3 	MAGFIRE3
+Magnum/Open 	MAGNMOPN
+Magnum/Out 		MAGNMOUT
+Magnum/In 		MAGNUMIN

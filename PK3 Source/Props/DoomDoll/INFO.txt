@@ -1,0 +1,8 @@
+Name: Doom Doll
+Connection: No
+Palette: Doom
+Summon: DoomDoll
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: No

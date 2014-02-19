@@ -1,0 +1,25 @@
+// Select/Deselect
+Sprite MRGSA0, 320, 200
+{
+	Patch MARGA0, 188, 96
+}
+
+Sprite MRGSB0, 320, 200
+{
+	Patch MARGA0, 204, 112
+}
+
+Sprite MRGSC0, 320, 200
+{
+	Patch MARGA0, 220, 127
+}
+
+Sprite MRGSD0, 320, 200
+{
+	Patch MARGA0, 236, 143
+}
+
+Sprite MRGSE0, 320, 200
+{
+	Patch MARGA0, 252, 159
+}

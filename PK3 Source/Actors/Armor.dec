@@ -1,0 +1,66 @@
+//=================================================================================================
+//
+// Max. armor bonus
+//
+//=================================================================================================
+
+ACTOR MaxArmorBonus : BasicArmorBonus 5091
+{
+	Game Doom
+	Game Heretic
+	Game Hexen
+	Radius 20
+	Height 16
+	Inventory.Pickupmessage "$PICKUP_MAXARMORBONUS"
+	Inventory.Icon "ARM1A0"
+	Armor.Savepercent 33.33333
+	Armor.Saveamount 1
+	Armor.Maxsaveamount 200
+	Armor.MaxBonus 1
+	Armor.MaxBonusMax 100
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		BON4 ABCDCB 6
+		loop
+	}
+}
+
+//=================================================================================================
+//
+// Red Armor
+//
+//=================================================================================================
+
+ACTOR FDRedArmor : BasicArmorPickup 5040
+{
+	Game Doom
+	Radius 20
+	Height 16
+	Armor.Savepercent 70.0
+	Armor.Saveamount 300
+	Inventory.Icon "ARM3A0"
+	Inventory.Pickupmessage "$PICKUP_REDARMOR"
+	Inventory.PickupSound "Pickup/Armor"
+	States
+	{
+	Spawn:
+		ARM3 A 6
+		ARM3 B 6 bright
+		goto Spawn
+	}
+}
+
+// Green Armor
+actor FDGreenArmor : GreenArmor Replaces GreenArmor
+{
+	Inventory.PickupSound "Pickup/Armor"
+}
+
+// Blue Armor
+actor FDBlueArmor : BlueArmor Replaces BlueArmor
+{
+	Inventory.PickupSound "Pickup/Armor"
+}

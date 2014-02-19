@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer, PillowBlaster
+Sprites: Captain J, Alex_Mercer
+Sounds: Eriance, NightmareMutant, WildWeasel, Alex_Mercer

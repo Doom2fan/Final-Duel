@@ -1,0 +1,169 @@
+//===========================================================================
+//
+// Pink Demon
+//
+//===========================================================================
+ACTOR FDDemon : Demon 30098
+{
+	//$category Final Duel-Original Monsters
+	//$title Bull Demon
+	Game Doom
+	Health 150
+	PainChance 180
+	Speed 10
+	Radius 30
+	Height 56
+	Mass 400
+	Monster
+	Painchance "Kick", 255
+	+FLOORCLIP
+	+FASTER
+	+FASTMELEE
+	SeeSound "demon/sight"
+	AttackSound "demon/melee"
+	PainSound "demon/pain"
+	DeathSound "demon/death"
+	ActiveSound "demon/active"
+	Obituary "$OB_DEMONHIT"
+	DamageFactor "Ice", 1.0
+	DamageFactor "SRType1", 1.0
+	DropItem "Energy"
+	States
+	{
+	Spawn:
+		TNT1 A 0 Thing_SetTranslation(0,10)
+		SARG A 10 A_Look
+		Loop
+	See:
+		SARG AABBCCDD 2 A_Chase
+		Loop
+	Melee:
+		SARG EF 8 A_FaceTarget
+		SARG G 8 A_SargAttack
+		Goto See
+	Pain.Kick:
+	    SARG A 1 A_Pain
+        SARG A 1 A_FaceTarget
+		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
+        Goto Spawn
+	Pain:
+		SARG H 2
+		SARG H 2 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",100)
+		TNT1 A 0 A_Jump(256, "Death1", "Death2")
+		Wait
+	Death1:
+		SARG I 8
+		SARG J 8 A_Scream
+		SARG K 4
+		SARG L 4 A_NoBlocking
+		SARG M 4
+		SARG N -1
+		Stop
+	Death2: // Sprites by Neoworm
+		SAAR A 8 
+		SAAR B 0 A_FaceTarget
+		SAAR B 0 A_SpawnItemEx("DemonArm", 10, 0, 32, 0, 8, 0, 0, 128)
+		SAAR B 8 A_Scream
+		SAAR C 4 
+		SAAR D 4 A_NoBlocking
+		SAAR E 4 
+		SAAR F -1 
+		Stop 
+	Death.Fire:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",100)
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		SARG I 8
+		SARG J 8 A_Scream
+		SARG K 4
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG L 4 A_NoBlocking
+		SARG M 4 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG NNNNNNNNNNNNNNNNNN 5 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG NNNNNNNNNNNNNNNNNN 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG N -1
+		stop
+	Death.Plasma:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",100)
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		SARG I 8
+		SARG J 8 A_Scream
+		SARG K 4
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG L 4 A_NoBlocking
+		SARG M 4 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG NNNNNNNNNNNNNNNNNN 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SARG N -1
+		stop
+	Raise:
+		TNT1 A 0 Thing_SetTranslation(0,10)
+		SARG N 5
+		SARG MLKJI 5
+		Goto See
+	Crush:
+		TNT1 A 1 A_SpawnItem("NashGore_CrushedMedium",0,0,0,0)
+		stop
+	}
+}
+Actor DemonArm // Sprites by Neoworm
+{
+  Radius 8
+  Height 8
+  Speed 8
+  +DoomBounce
+  +DropOff
+  +Missile
+  States
+  {
+  Spawn:
+    SAAR GHIJKLMN 2
+    Loop
+  Death:
+    SAAR O -1
+    Loop
+  }
+} 
+Actor SpectreArm : DemonArm { RenderStyle OptFuzzy }
+//===========================================================================
+//
+// Spectre
+//
+//===========================================================================
+ACTOR FDSpectre : FDDemon Replaces Spectre 30099
+{
+	//$category Final Duel-Original Monsters
+	//$title Spectre
+	Game Doom
+	SpawnID 9
+	+SHADOW
+	RenderStyle OptFuzzy
+	Alpha 0.5
+	SeeSound "spectre/sight"
+	AttackSound "spectre/melee"
+	PainSound "spectre/pain"
+	DeathSound "spectre/death"
+	ActiveSound "spectre/active"
+	HitObituary "$OB_SPECTREHIT"
+	States
+	{
+	Death:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",100)
+		TNT1 A 0 A_Jump(256, "Death1", "Death2")
+		Wait
+	Death2: // Sprites by Neoworm
+		SAAR A 8 
+		SAAR B 0 A_FaceTarget
+		SAAR B 0 A_SpawnItemEx("SpectreArm", 10, 0, 32, 0, 8, 0, 0, 128)
+		SAAR B 8 A_Scream
+		SAAR C 4 
+		SAAR D 4 A_NoBlocking
+		SAAR E 4 
+		SAAR F -1 
+		Stop 
+	}
+}

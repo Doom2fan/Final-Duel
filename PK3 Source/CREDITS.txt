@@ -1,0 +1,13 @@
+This file contains credits for common things(Kick and other stuff)
+
+Kick:
+	Decorate: Alex_Mercer.
+	Sprites: Marty Kirra, Monolith, 3D Realms, ID Software, Banjo Software.
+	Sounds: wwhc-diaz.
+
+Humanoid fire death:
+	Decorate: WildWeasel, Alex_Mercer
+	Sprites: Strife
+
+Misc fire death:
+	Decorate: Beautiful Doom, Alex_Mercer

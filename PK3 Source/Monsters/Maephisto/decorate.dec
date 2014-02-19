@@ -1,0 +1,139 @@
+Actor Maephisto 30124
+{
+	//$Category Final Duel-Monsters
+	//$Title Maephisto
+	Obituary "$OB_MAEPHISTO"
+	Health 3500
+	Radius 50
+	Height 100
+	Mass 1000
+	Speed 10
+	Scale 0.8
+	PainChance 20
+	SeeSound "Maephisto/sight"
+	PainSound "Maephisto/pain"
+	DeathSound "Maephisto/death"
+	ActiveSound "Maephisto/idle"
+	MONSTER
+	+BOSS
+	+FLOORCLIP
+	+NOBLOOD
+	+NORADIUSDMG
+	States
+	{
+	Spawn:
+		MMDR E 10 A_Look
+		Loop
+	See:
+		MMDR AABBCCDD 4 A_Chase
+		Loop
+	Missile:
+		MMDR E 0 A_JumpIfHealthLower(1400,"Missile2")
+		MMDR E 0 A_Jump(256,"Chaingun","Bolt")
+		Goto See
+	Missile2:
+		MMDR E 0 A_Jump(96,"Laser")
+		MMDR E 0 A_Jump(256,"Chaingun","Bolt")
+		Goto See
+	Chaingun:  
+		MMDR E 10 A_FaceTarget
+		MMDR H 0 A_PlaySound("Maephisto/Chaingn")
+		MMDR H 4 Bright A_CustomMissile("Tracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		MMDR I 4 Bright A_CustomMissile("Tracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		MMDR H 4 Bright A_CustomMissile("Tracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		MMDR I 4 Bright A_CustomMissile("Tracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
+		MMDR I 0 A_Jump(20,3)
+		MMDR I 0 A_CPosRefire    
+		Goto Chaingun+1
+	Bolt:
+		MMDR EEEE 5 A_FaceTarget     
+		MMDR F 0 Bright A_CustomMissile("EnergyBolt",50,30)
+		MMDR F 10 Bright A_CustomMissile("EnergyBolt",50,-30)    
+		MMDR GG 3 Bright A_FaceTarget
+		Goto See
+	Laser:
+		MMDR EEEE 5 A_FaceTarget
+		MMDR E 0 A_PlaySound("Maephisto/Charge",CHAN_WEAPON,1,0,0)
+		MMDR JKLKJ 5 Bright A_FaceTarget
+		MMDR JKLKJ 4 Bright A_FaceTarget
+		MMDR JKLKJ 3 Bright A_FaceTarget
+		MMDR JKLKJ 2 Bright A_FaceTarget
+		MMDR JKLKJ 1 Bright A_FaceTarget 
+		MMDR JKLKJ 1 Bright A_FaceTarget 
+		MMDR M 0 A_PlaySound("Maephisto/Laser",Chan_AUTO,1,0,0)
+		MMDR M 0 A_GiveToTarget("Flash")
+		MMDR MNOOOOOOOOO 1 Bright A_CustomMissile("Laserbeam",60,0,0)    
+		Goto See        
+	Death:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",1000)
+		MMDR P 10 Bright A_Scream
+		MMDR QRS 10 Bright
+		MMDR T 10 Bright A_NoBlocking
+		MMDR U 10 Bright
+		MMDR V 10 Bright
+		MMDR W -1 A_BossDeath
+		Stop
+	}
+}
+
+Actor EnergyBolt
+{
+	Radius 6
+	Height 16
+	Speed 20
+	Damage 8
+	RenderStyle Add
+	Alpha 1
+	SeeSound "mbolt"
+	DeathSound "weapons/rocklx"
+	Decal "Scorch"
+	Projectile
+	States
+	{
+	Spawn:
+		MMDB A 1 Bright
+		Loop
+	Death:
+		MMDB HIJKL 3 Bright
+		Stop
+	}
+}
+
+Actor Laserbeam
+{
+	Radius 20
+	Height 20
+	Speed 40
+	Damage 20
+	RenderStyle Add
+	Alpha 1
+	DeathSound "weapons/bfgx"
+	Projectile
+	+RIPPER
+	States
+	{
+	Spawn:
+		KAMS A 1 Bright
+		Loop
+	Death:
+		KAXP B 3 Bright A_Explode
+		KAXP CDEFGHIJKLM 3 Bright
+		Stop
+	}
+}
+
+Actor Flash : CustomInventory
+{  
+	+INVENTORY.QUIET
+	+INVENTORY.UNDROPPABLE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.AUTOACTIVATE
+	Inventory.Amount 1
+	Inventory.MaxAmount 0
+	States
+	{
+	Pickup:
+		NULL A 1 A_SetBlend("white",1,100)    
+		Stop
+	}
+}

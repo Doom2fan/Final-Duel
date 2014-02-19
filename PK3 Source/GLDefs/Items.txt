@@ -1,0 +1,17 @@
+BrightMap Sprite STIMA0
+{
+	Map Brightmaps/Items/STIMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite MEDIA0
+{
+	Map Brightmaps/Items/MEDIA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite BSRKA0
+{
+	Map Brightmaps/Items/BSRKA0.png
+	DisableFullBright
+}

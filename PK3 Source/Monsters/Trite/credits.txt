@@ -1,0 +1,5 @@
+Decorate: Ghastly_dragon
+Sprites: Monolith, Id Software
+Sprite Edit: Captain Toenail
+Sounds: Id Software
+Idea Base: Trite from Doom 3

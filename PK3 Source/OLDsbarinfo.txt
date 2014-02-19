@@ -1,0 +1,198 @@
+/*******************************************************************************
+ *                         DEFAULT DOOM STATUS BAR
+ *******************************************************************************
+ * If you wish to include this file into a custom status bar please use the 
+ * following command:
+ *
+ *     base Doom;
+ *
+ * Using #include "sbarinfo/doom.txt" will not be supported.
+ ******************************************************************************/
+
+height 0;
+completeborder true;
+monospacefonts true, "0";
+
+
+statusbar fullscreen,fullscreenoffsets// ZDoom HUD
+{
+	drawimage "HudLeft", 0, -161;
+	drawimage "HudRight", -343, -161;
+	/*InInventory Ammotype, 7
+	{
+	drawimage "MEDIA0",401,50;
+	}*/
+	// Energy
+	drawbar "SOLBAR", "AIRNULL", ammo Energy, Vertical, 32, 280;
+	drawnumber 6, BigFont, untranslated, ammo Energy, drawshadow, 42, 42;
+	
+	// Health
+	drawimage "MEDIA0", 20, -2, centerbottom;
+	drawnumber 6, BigFont, untranslated, health, drawshadow, 82, -20;
+
+	// Armor
+	drawimage armoricon, 20, -24, centerbottom;
+	drawnumber 6, BigFont, untranslated, armor, drawshadow, whennotzero, 82, -39;
+	
+	// Stamina
+	
+	drawimage "MEDIA0", 20, -46, centerbottom;
+	drawnumber 6, BigFont, untranslated,ammo stamina, drawshadow, 82, -58;
+
+	// Ammo
+	drawimage ammoicon1, -14, -4, centerbottom;
+	drawnumber 6, BigFont, untranslated, ammo1, drawshadow, -25, -20;
+	
+	// Mugshot
+	InInventory not zoomcross
+	{
+	drawmugshot "STF", 5,10, -450;
+	}
+	/* InInventory zoomcross
+	{
+	drawimage "ZOOMA0", 0+center, 0+center, centerbottom;
+	}*/
+	usesammo
+	{
+		// Secondary ammo and inventory
+		usessecondaryammo
+		{
+			drawimage ammoicon2, -14, -42, centerbottom;
+			drawnumber 6, BigFont, untranslated, ammo2, drawshadow, -25, -58;
+			inventorybarnotvisible
+			{
+				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -59, -26, -76, untranslated;
+			}
+		}
+		// No secondary ammo
+		usessecondaryammo not
+		{
+			inventorybarnotvisible
+			{
+				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -41, -26, -58, untranslated;
+			}
+		}
+	}
+	
+	// No ammo but inventory
+	usesammo not
+	{
+		inventorybarnotvisible
+		{
+			drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -3, -26, -20, untranslated;
+		}
+	}
+
+	gamemode deathmatch
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
+	}
+	InInventory IsUnderwater, 1
+	{
+		InInventory Not PowerIronFeet, 1
+		{
+		drawbar "AIRBAR", "AIRNULL", airamount, Vertical, -32, -280;
+		}
+	}
+	InInventory ShowKeys,1
+	{
+		drawkeybar 400, vertical, reverserows, auto, 0+center, 0+center, 0, 3, auto;
+	}
+}
+
+statusbar normal,fullscreenoffsets
+{
+	drawimage "HudLeft", 0, -161;
+	drawimage "HudRight", -343, -161;
+	/*InInventory Ammotype, 7
+	{
+	drawimage "MEDIA0",401,50;
+	}*/
+	// Energy
+	drawbar "SOLBAR", "AIRNULL", ammo Energy, Vertical, 32, 280;
+	drawnumber 6, BigFont, untranslated, ammo Energy, drawshadow, 42, 280;
+	
+	// Health
+	drawimage "MEDIA0", 20, -2, centerbottom;
+	drawnumber 6, BigFont, untranslated, health, drawshadow, 82, -20;
+
+	// Armor
+	drawimage armoricon, 20, -24, centerbottom;
+	drawnumber 6, BigFont, untranslated, armor, drawshadow, whennotzero, 82, -39;
+	
+	// Stamina
+	
+	drawimage "MEDIA0", 20, -46, centerbottom;
+	drawnumber 6, BigFont, untranslated,ammo stamina, drawshadow, 82, -58;
+
+	// Ammo
+	drawimage ammoicon1, -14, -4, centerbottom;
+	drawnumber 6, BigFont, untranslated, ammo1, drawshadow, -25, -20;
+	
+	// Mugshot
+	InInventory not zoomcross
+	{
+	drawmugshot "STF", 5,10, -450;
+	}
+	/* InInventory zoomcross
+	{
+	drawimage "ZOOMA0", 0+center, 0+center, centerbottom;
+	}*/
+	usesammo
+	{
+		// Secondary ammo and inventory
+		usessecondaryammo
+		{
+			drawimage ammoicon2, -14, -42, centerbottom;
+			drawnumber 6, BigFont, untranslated, ammo2, drawshadow, -25, -58;
+			inventorybarnotvisible
+			{
+				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -59, -26, -76, untranslated;
+			}
+		}
+		// No secondary ammo
+		usessecondaryammo not
+		{
+			inventorybarnotvisible
+			{
+				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -41, -26, -58, untranslated;
+			}
+		}
+	}
+	
+	// No ammo but inventory
+	usesammo not
+	{
+		inventorybarnotvisible
+		{
+			drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, BigFont, -14, -3, -26, -20, untranslated;
+		}
+	}
+
+	gamemode deathmatch
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
+	}
+	gamemode singleplayer, cooperative, teamgame
+	{
+		// Let's hope no mod ever uses 100 keys...
+		drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
+	}
+	InInventory IsUnderwater, 1
+	{
+		InInventory Not PowerIronFeet, 1
+		{
+		drawbar "AIRBAR", "AIRNULL", airamount, Vertical, -32, -280;
+		}
+	}
+}
+
+statusbar inventory // Standard bar overlay (ZDoom Addition)
+{
+	drawinventorybar Doom, 7, INDEXFONT, 50, 170;
+}
+
+statusbar inventoryfullscreen, fullscreenoffsets // ZDoom HUD overlay.
+{
+	drawinventorybar Doom, translucent, 7, INDEXFONT, -106+center, -31;
+}

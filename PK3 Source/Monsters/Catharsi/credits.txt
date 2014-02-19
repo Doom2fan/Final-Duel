@@ -1,0 +1,7 @@
+The CatharsiBall actor is the same as the Soul Reaper's projectile(the actor name is SRLaser), the credits for it are on the Soul Reaper's DECORATE code
+Decorate: Tormentor667
+GLDEFs: Ghastly Dragon, Sandypaper (Brightmaps)
+Sounds: Id Software (Quake 3 Arena)
+Sprites: Id Software, LucasArts
+Sprite Edit: Rottking
+Idea Base: Serious Sam Aliens

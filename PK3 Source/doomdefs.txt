@@ -1,0 +1,140 @@
+// ------------------
+// -- Weapons --
+// ------------------
+
+// BFG10K
+pointlight BFG10kShot
+{
+    color 0.0 1.0 0.0
+    size 80
+}
+
+flickerlight BFG10KSHOT_X1
+{
+    color 0.0 1.0 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight BFG10KSHOT_X2
+{
+    color 0.0 1.0 0.0
+    size 104
+    secondarySize 112
+    chance 0.3
+}
+
+flickerlight BFG10KSHOT_X3
+{
+    color 0.0 1.0 0.0
+    size 120
+    secondarySize 128
+    chance 0.3
+}
+
+object FDBFG10KShot
+{
+    frame BFE1A0 { light BFG10KSHOT }
+    frame BFE1B0 { light BFG10KSHOT }
+
+    frame BFE1C0 { light BFG10KSHOT_X1 }
+    frame BFE1D0 { light BFG10KSHOT_X2 }
+    frame BFE1E0 { light BFG10KSHOT_X3 }
+}
+
+
+// ------------------
+// -- Monsters --
+// ------------------
+// Hectebus Fireball
+pointlight HECTSHOT
+{
+    color 0.0 1.0 0.0
+    size 48
+}
+flickerlight HECTSHOT_X1
+{
+    color 0.0 1.0 0.0
+    size 48
+    secondarySize 56
+    chance 0.3
+}
+
+flickerlight HECTSHOT_X2
+{
+    color 0.0 0.5 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+
+flickerlight HECTSHOT_X3
+{
+    color 0.0 0.3 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+object FDHectShot
+{
+    frame HECFA { light HECTSHOT }
+    frame HECFB { light HECTSHOT }
+
+    frame HECFC { light HECTSHOT_X1 }
+    frame HECFD { light HECTSHOT_X2 }
+    frame HECFE { light HECTSHOT_X3 }
+}
+
+// Belphegor Ball
+pointlight BELPHEGORBALL
+{
+    color 0.0 1.0 0.0
+    size 64
+}
+
+flickerlight BELPHEGORBALL_X1
+{
+    color 0.0 1.0 0.0
+    size 80
+    secondarySize 88
+    chance 0.25
+}
+
+flickerlight BELPHEGORBALL_X2
+{
+    color 0.0 0.7 0.0
+    size 96
+    secondarySize 104
+    chance 0.25
+}
+
+flickerlight BELPHEGORBALL_X3
+{
+    color 0.0 0.5 0.0
+    size 112
+    secondarySize 120
+    chance 0.25
+}
+
+object FDBelphegorBall
+{
+    frame BAL7A { light BELPHEGORBALL }
+    frame BAL7B { light BELPHEGORBALL }
+
+    frame BAL7C { light BELPHEGORBALL_X1 }
+    frame BAL7D { light BELPHEGORBALL_X2 }
+    frame BAL7E { light BELPHEGORBALL_X3 }
+}
+
+object FDSuperShotgunGuy
+{
+    frame GPOSF { light ZOMBIEATK }
+}
+// Meh
+brightmap texture ZZZFACE4
+{
+	map "brightmaps/doom/Textures/ZZZFACE4.png"
+	//iwad
+}

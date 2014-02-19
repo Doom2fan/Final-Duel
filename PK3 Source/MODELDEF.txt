@@ -1,0 +1,43 @@
+Model ZombieTarget
+{
+	Path "Models/Target"
+	Model 0 "Target.md3"
+	Skin 0 Target.png
+	Scale 0.2 0.2 0.2
+
+	FrameIndex TRGT A 0 0
+	FrameIndex TRGT B 0 1
+	FrameIndex TRGT C 0 2
+	FrameIndex TRGT D 0 3
+	FrameIndex TRGT E 0 4
+	FrameIndex TRGT F 0 5
+	FrameIndex TRGT G 0 6
+	FrameIndex TRGT H 0 7
+	FrameIndex TRGT I 0 8
+	FrameIndex TRGT J 0 9
+	FrameIndex TRGT K 0 10
+	FrameIndex TRGT L 0 11
+	FrameIndex TRGT M 0 12
+}
+
+Model TSRifledSlug // Model by Alex_Mercer
+{				   // Texture from CG Textures
+	Path "Models/ShotgunSlug"
+	Model 0 "ShotgunSlug.md3"
+	Skin 0 ShotgunSlug.png
+	Scale 0.2 0.2 0.2
+	
+	PITCHFROMMOMENTUM
+
+	FrameIndex SLUG A 0 0
+}
+
+Model Energy // Model by Alex_Mercer
+{			 // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy.png"
+	Scale 0.7 0.7 0.7
+	
+	FrameIndex ENRG A 0 0
+}

@@ -1,0 +1,158 @@
+// Reloading and Pumping sprites: Brutal Doom v19 SE, Shotgun recolored by Alex_Mercer
+Actor ShotgunnerAmmo : Counter { Inventory.MaxAmount 8 }
+ACTOR FDShotgunGuy : ShotgunGuy 30095
+{
+	//$category Final Duel-Original Monsters
+	//$title Corrupted Sergeant
+	Game Doom
+	SpawnID 1
+	Health 30
+	GibHealth -15
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 8
+	PainChance 170
+	PainChance "Kick", 255
+	Monster
+	+FLOORCLIP
+	SeeSound "shotguy/sight"
+	AttackSound "shotguy/attack"
+	PainSound "shotguy/pain"
+	DeathSound "shotguy/death"
+	ActiveSound "shotguy/active"
+	Obituary "$OB_SHOTGUY"
+	DropItem "FDShotgun"
+	DropItem "Energy"
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_GiveInventory("ShotgunnerAmmo", random(0,6))
+	Idle:
+		TNT1 A 0 A_JumpIfInventory("ShotgunnerAmmo", 8, "Reload")
+		SPOS A 10 A_Look
+		Loop
+	See:
+		SPOS AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		TNT1 A 0 A_JumpIfInventory("ShotgunnerAmmo", 8, "Idle")
+		SPOS E 5 A_FaceTarget
+		TNT1 A 0 A_GiveInventory("ShotgunnerAmmo", 1)
+		TNT1 A 0 A_PlaySound("Shotgun/Fire")
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ShotgunnerTracer", 29, 8, frandom(-2.5,2.5), 0, frandom(-3.0,3.0))
+		SPOS F 10 BRIGHT
+		SPSR A 5
+        TNT1 A 0 A_PlaySound("Shotgun/Pump")
+		SPSR BA 5
+		Goto See
+	Reload:
+        SPSR A 15
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+		SPSR A 10
+        TNT1 A 0 A_PlaySound("Shotgun/Pump")
+		SPSR BA 10
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+		ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+		ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+        ID12 EFG 4
+        TNT1 A 0 A_PlaySound("Shotgun/InsertShell")
+		TNT1 A 0 A_TakeInventory("ShotgunnerAmmo", 1)
+		SPSR A 10
+        Goto See
+	Pain:
+		SPOS G 3
+		SPOS G 3 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_Jump(256, "Death1", "Death2")
+	Death1:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		SPOS H 5
+		SPOS I 5 A_Scream
+		SPOS J 5 A_NoBlocking
+		SPOS K 5
+		SPOS L -1
+		Stop
+	Death2: // Sprites by The_Funktasm
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		SPOH A 5 A_Scream
+		SPOH B 5
+		SPOH C 5 A_NoBlocking
+		SPOH D 5
+		SPOH E -1
+		Stop
+	Death.SRType1:
+	XDeath:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBloodGibbingSpawner", 0.0, 0.0, 28.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR)
+		/*SPOS M 0 A_SpawnItemEx ("NashGore_Gib9", 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, SXF_USEBLOODCOLOR) //A_SpawnDebris("NashGore_Gib9",0)
+		SPOS M 0 A_SpawnItemEx ("NashGore_Gib10", 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, SXF_USEBLOODCOLOR) //A_SpawnDebris("NashGore_Gib10",0)
+		SPOS M 0 A_SpawnItemEx ("NashGore_Gib11", 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, SXF_USEBLOODCOLOR) //A_SpawnDebris("NashGore_Gib11",0)
+		SPOS M 0 A_SpawnItemEx ("NashGore_Gib11", 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0, SXF_USEBLOODCOLOR) //A_SpawnDebris("NashGore_Gib11",0)*/
+		SPOS M 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		SPOS M 5
+		SPOS N 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		SPOS N 5 A_XScream
+		SPOS O 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		SPOS O 5 A_NoBlocking
+		SPOS P 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
+		SPOS PQRST 5
+		SPOS U -1
+		stop
+	Death.Fire:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		BURN ABC 5 BRIGHT Light(BURNDEATH)
+		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("shotguy/pain")
+		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		TNT1 A 0 A_PlaySound("shotguy/pain")
+		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
+		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		TNT1 A 0 A_PlaySound("shotguy/pain")
+		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN V -1
+		Stop
+	Death.Plasma:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		TNT1 A 0 Thing_SetTranslation(0,7)
+		SPOS H 5
+		SPOS I 5 A_Scream
+		SPOS J 5 A_NoBlocking
+		SPOS K 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SPOS LLLLLLLLLLLLLLLLLL 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
+		SPOS L -1
+		stop
+	Pain.Kick:
+	    SPOS A 1 A_Pain
+        SPOS A 1 A_FaceTarget
+		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
+        Goto Spawn
+	Crush:
+		TNT1 A 1 A_SpawnItem("NashGore_CrushedSmall",0,0,0,0)
+		stop
+	Raise:
+		TNT1 A 0 Thing_SetTranslation(0,10)
+		SPOS L 5
+		SPOS KJIH 5
+		Goto See
+	}
+}

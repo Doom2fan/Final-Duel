@@ -1,0 +1,33 @@
+[IntroStrings]
+"Prepare to die."
+"I am Chronos Ouroboros, the ruler of this Universe."
+"You are dead."
+
+[FragStrings]
+"You suck."
+"If this is the best the humans can offer, then what a truly sad race they are."
+
+[KilledStrings]
+"You will not win."
+
+[RoamingStrings]
+"..."
+"I'll end your life."
+"Your soul is mine!"
+
+[LosingRoamingStrings]
+"This can't be."
+"No..."
+
+[WinStrings]
+
+[LoseStrings]
+"How could I lose?"
+"Impossible..."
+"No..."
+
+[EnragedStrings]
+"JUST FUCKING DIE!"
+"WHEN I CATCH YOU, YOU WILL FUCKING WISH YOU WERE NEVER BORN!"
+"I WILL FUCKING KILL YOU!"
+"WHEN I CATCH YOU, I WILL FUCKING RIP OFF YOUR HEAD!"

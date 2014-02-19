@@ -1,0 +1,137 @@
+// Chainsaw Spawner
+ACTOR ChainsawSpawner Replaces Chainsaw
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(128,"Sword")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("FDChainsaw", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	Sword:
+		TNT1 A 0 A_SpawnItemEx("Sword", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// Shotgun Spawner
+ACTOR ShotgunSpawner Replaces Shotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(128,"PAS","Magnum")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("ShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	PAS:
+		TNT1 A 0 A_SpawnItemEx("PumpActionShotgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	Magnum:
+		TNT1 A 0 A_SpawnItemEx("Magnum", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// Super Shotgun Spawner
+ACTOR SuperShotgunSpawner Replaces SuperShotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(128,"QuadShotgun")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("SuperShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	QuadShotgun:
+		TNT1 A 0 A_SpawnItemEx("QuadShotgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// Chaingun Spawner
+ACTOR ChaingunSpawner Replaces Chaingun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(192,"Minigun")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("ChaingunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	Minigun:
+		TNT1 A 0 A_SpawnItemEx("FDMinigun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("MinigunAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// Rocket Launcher Spawner
+ACTOR RocketLauncherSpawner Replaces RocketLauncher
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(64,"SoulReaperDrop")
+		TNT1 A 0 A_Jump(128,"Grenade")
+		TNT1 A 0 A_Jump(192,"Annihilator")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("RocketLauncherReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	Grenade:
+		TNT1 A 0 A_SpawnItemEx("FDGrenadeLauncher", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	SoulReaperDrop:
+		TNT1 A 0 A_SpawnItemEx("SoulReaper", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	Annihilator:
+		TNT1 A 0 A_SpawnItemEx("Annihilator", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// Plasma Gun Replacer
+ACTOR PlasmaRifleSpawner Replaces PlasmaRifle
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(128,"SonicRailgun")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("PlasmaRifleReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	SonicRailgun:
+		TNT1 A 0 A_SpawnItemEx("SonicRailgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}
+// BFG 9000 Replacer
+ACTOR BFG9000Spawner Replaces BFG9000
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
+		TNT1 A 0 A_Jump(96, "SniperRifle")
+		TNT1 A 0 A_Jump(128, "BFG10K")
+	Normal:
+		TNT1 A 0 A_SpawnItemEx("BFG9000Replacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		Stop
+	BFG10K:
+		TNT1 A 0 A_SpawnItemEx("BFG10K", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	SniperRifle:
+		TNT1 A 0 A_SpawnItemEx("SniperRifle", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("SniperRifleClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	}
+}

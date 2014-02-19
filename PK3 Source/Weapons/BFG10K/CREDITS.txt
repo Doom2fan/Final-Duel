@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: the Skulltag Team
+Sounds: the Skulltag Team

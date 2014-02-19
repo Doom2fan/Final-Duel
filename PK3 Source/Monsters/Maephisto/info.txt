@@ -1,0 +1,8 @@
+Name: 'Maephisto' Multiple Demon Weapon System
+Difficulty: Very Hard
+Connections: None
+Summon: Maephisto
+Melee: No
+Distance: hitscan, projectile
+Type: Demon, cybernetic
+Added States: None

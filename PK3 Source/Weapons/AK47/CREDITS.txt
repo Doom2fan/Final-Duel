@@ -1,0 +1,5 @@
+DECORATE: Alex_Mercer
+Sounds: NightmareMutant
+Sprites:
+	Gun: Pisstepank, Alex_Mercer
+	Pickup: Terminator Rampage, JoeyTD, WildWeasel, Alex_Mercer

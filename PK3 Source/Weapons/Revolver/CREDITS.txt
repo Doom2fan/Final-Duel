@@ -1,0 +1,3 @@
+Decorate: Alex_Mercer
+Sprites: HellCattX
+Sounds: MoH: Pacific Assault

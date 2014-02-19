@@ -1,0 +1,263 @@
+// Dynamic Lights
+pointlight PLASMABALL
+{
+    color 0.0 1.0 1.0
+    size 56
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.2 0.2 1.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.2 0.2 0.8
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.1 0.1 0.5
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.0 0.0 0.2
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object BluePlasmaballExplosion
+{
+	frame PEXPA { light PLASMA_X1 }
+	frame PEXPB { light PLASMA_X1 }
+	frame PEXPC { light PLASMA_X1 }
+	frame PEXPD { light PLASMA_X2 }
+	frame PEXPE { light PLASMA_X2 }
+	frame PEXPF { light PLASMA_X2 }
+	frame PEXPG { light PLASMA_X2 }
+	frame PEXPH { light PLASMA_X3 }
+	frame PEXPI { light PLASMA_X3 }
+	frame PEXPJ { light PLASMA_X3 }
+	frame PEXPK { light PLASMA_X4 }
+	frame PEXPL { light PLASMA_X4 }
+	frame PEXPM { light PLASMA_X4 }
+}
+pointlight PLASMAMISSILE
+{
+    color 1.0 1.0 0.1
+    size 56
+}
+
+flickerlight PLASMAMISSILE_X1
+{
+    color 1.0 1.0 0.2
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMAMISSILE_X2
+{
+    color 0.8 0.8 0.2
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PLASMAMISSILE_X3
+{
+    color 0.5 0.5 0.1
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMAMISSILE_X4
+{
+    color 0.2 0.2 0.0
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+object PlasmaMissileExplosion
+{
+	frame PEXPA { light PLASMAMISSILE_X1 }
+	frame PEXPB { light PLASMAMISSILE_X1 }
+	frame PEXPC { light PLASMAMISSILE_X1 }
+	frame PEXPD { light PLASMAMISSILE_X2 }
+	frame PEXPE { light PLASMAMISSILE_X2 }
+	frame PEXPF { light PLASMAMISSILE_X2 }
+	frame PEXPG { light PLASMAMISSILE_X2 }
+	frame PEXPH { light PLASMAMISSILE_X3 }
+	frame PEXPI { light PLASMAMISSILE_X3 }
+	frame PEXPJ { light PLASMAMISSILE_X3 }
+	frame PEXPK { light PLASMAMISSILE_X4 }
+	frame PEXPL { light PLASMAMISSILE_X4 }
+	frame PEXPM { light PLASMAMISSILE_X4 }
+}
+// Brightmaps
+
+BrightMap Sprite PLSMZ0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMZ0.png
+	DisableFullBright
+}
+
+// Firing
+BrightMap Sprite PLSFA0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFB0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFB0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFC0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFC0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFD0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFD0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFG0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFH0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFI0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFE0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFE0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFF0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFF0.png
+	DisableFullBright
+}
+
+// Powered
+BrightMap Sprite PLSPA0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSPB0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFB0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSPC0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFC0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSFD0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSFD0.png
+	DisableFullBright
+}
+
+// Ready
+BrightMap Sprite PLSMA0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSMB0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSMC0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSMA0.png
+	DisableFullBright
+}
+
+// Reloading
+BrightMap Sprite PLSRA0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRB0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRB0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRC0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRC0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRD0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRD0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRE0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRE0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRF0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRF0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRG0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRG0.png
+	DisableFullBright
+}
+
+BrightMap Sprite PLSRH0
+{
+	Map Brightmaps/Weapons/PlasmaRifle/PLSRH0.png
+	DisableFullBright
+}

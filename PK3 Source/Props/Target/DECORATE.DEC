@@ -1,0 +1,28 @@
+Actor ZombieTarget 30071
+{
+	//$category Final Duel-Props
+	//$title Zombie Target
+	Health 50
+	Monster
+	Mass 0x7FFFFFFF
+	Speed 0
+	Height 66
+	Radius 19
+	+NOPAIN
+	+NOBLOOD
+	+NODAMAGETHRUST
+	States
+	{
+	Spawn:
+		TRGT A 1
+		Loop
+	Death.Ice:
+	Death:
+		TRGT ABCDEFGHIJKL 1
+		TRGT M -1 A_NoBlocking
+		Stop
+	Raise:
+		TRGT MLKJIHGFEDCBA 1
+		Goto Spawn
+	}
+}

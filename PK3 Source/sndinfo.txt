@@ -1,0 +1,45 @@
+// Player
+
+// Items
+	// Flares
+		Flare/Light	FLARLITE
+		Flare/Loop	FLARLOOP
+		$Volume Flare/Light 0.5
+		$Volume Flare/Loop 0.5
+		$Limit Flare/Loop 5
+
+	// Jet Thruster
+		misc/jetthruster	JETTHRST
+
+// Weapons
+	// Bio Pipebomb Launcher
+		Weapons/BioReady			BIOREADY
+		Weapons/BioFire				BIOSHOOT
+		Weapons/BioProj				BIOBURST
+	// Casings
+		$limit weapons/casing  5
+		$volume weapons/casing 0.5
+		weapons/casing2	dscasin1
+		weapons/casing3	dscasin2
+		weapons/shell1			dsshell1
+		weapons/shell2			dsshell2
+		weapons/shell3			dsshell3
+		$random weapons/shell		{weapons/shell1 weapons/shell2 weapons/shell3}
+		$volume weapons/shell 0.5
+// Inventory
+	$random misc/gunpickup		{ misc/gunpickup1 misc/gunpickup2 misc/gunpickup3 misc/gunpickup4 }
+	misc/gunpickup1				gpickup1
+	misc/gunpickup2				gpickup2
+	misc/gunpickup3				gpickup3
+	misc/gunpickup4				gpickup4
+	$random misc/ammopickup		{ misc/ammopickup1 misc/ammopickup2 misc/ammopickup3 misc/ammopickup4 }
+	misc/ammopickup1			apickup1
+	misc/ammopickup2			apickup2
+	misc/ammopickup3			apickup3
+	misc/ammopickup4			apickup4
+
+// New Deaths
+	spiderdeath	spiddie
+	spidershut	spidshut
+	cyberdeath	cybdie
+	cyber/death	cybexp

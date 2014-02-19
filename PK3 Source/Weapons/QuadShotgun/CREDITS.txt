@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: Bane
+Sounds: ID Software, Killing Floor(I think), Borderlands, Wasteland Half-Life

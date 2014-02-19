@@ -1,0 +1,147 @@
+// From Beautiful Doom
+
+//Aspects Floor Sounds
+
+//Carpet - soft ground
+$random floor/carpet		{ floor/carpet01  floor/carpet02 floor/carpet03 }
+floor/carpet01	fscarp1
+floor/carpet02	fscarp2
+floor/carpet03	fscarp3
+
+$limit floor/carpet 20
+
+//Dirt
+$random floor/dirt		{ floor/dirt01  floor/dirt02 floor/dirt03 floor/dirt04  floor/dirt05 floor/dirt06 }
+floor/dirt01	fsdirt1
+floor/dirt02	fsdirt2
+floor/dirt03	fsdirt3
+floor/dirt04	fsdirt4
+floor/dirt05	fsdirt5
+floor/dirt06	fsdirt6
+
+$limit floor/dirt 20
+
+//Gravel - loose crunchy surface
+$random floor/gravel		{ floor/grav01  floor/grav02 floor/grav03 floor/grav04 }
+floor/grav01	fsgrav1
+floor/grav02	fsgrav2
+floor/grav03	fsgrav3
+floor/grav04	fsgrav4
+
+$limit floor/gravel 20
+
+//Metal - hard metal
+$random floor/metal		{ floor/metl01  floor/metl02 floor/metl03 floor/metl04  floor/metl05 floor/metl06 }
+floor/metl01	fsmet01
+floor/metl02	fsmet02
+floor/metl03	fsmet03
+floor/metl04	fsmet04
+floor/metl05	fsmet05
+floor/metl06	fsmet06
+
+$limit floor/metal 20
+
+//Metal2 - clanky metal
+$random floor/met2		{ floor/met201  floor/met202 floor/met203 floor/met204 }
+floor/met201	fsmet201
+floor/met202	fsmet202
+floor/met203	fsmet203
+floor/met204	fsmet204
+
+$limit floor/met2 20
+
+//Rock - Hard outdoor type floor
+$random floor/rock		{ floor/rock01  floor/rock02 floor/rock03 floor/rock04  floor/rock05 floor/rock06 floor/rock07 floor/rock08 }
+floor/rock01	fsrock1
+floor/rock02	fsrock2
+floor/rock03	fsrock3
+floor/rock04	fsrock4
+floor/rock05	fsrock5
+floor/rock06	fsrock6
+floor/rock07	fsrock7
+floor/rock08	fsrock8
+
+$limit floor/rock 20
+
+//Snow
+$random floor/snow		{ floor/snow01  floor/snow02 floor/snow03 floor/snow04  floor/snow05 floor/snow06 }
+floor/snow01	fssnow1
+floor/snow02	fssnow2
+floor/snow03	fssnow3
+floor/snow04	fssnow4
+floor/snow05	fssnow5
+floor/snow06	fssnow6
+
+$limit floor/snow 20
+
+//Hard - generic hard floor
+$random floor/hard		{ floor/hard01  floor/hard02 floor/hard03 floor/hard04  floor/hard05 floor/hard06 }
+floor/hard01	fshard1
+floor/hard02	fshard2
+floor/hard03	fshard3
+floor/hard04	fshard4
+floor/hard05	fshard5
+floor/hard06	fshard6
+
+$limit floor/hard 20
+
+//Tile - Hard indoor floor
+$random floor/tile		{ floor/tile01  floor/tile02 floor/tile03 floor/tile04  floor/tile05 floor/tile06 }
+floor/tile01	fstile01
+floor/tile02	fstile02
+floor/tile03	fstile03
+floor/tile04	fstile04
+floor/tile05	fstile05
+floor/tile06	fstile06
+
+$limit floor/tile 20
+
+//Tile2 - More echoey traditional tile
+$random floor/tile2		{ floor/tile201  floor/tile202 floor/tile203 floor/tile204  floor/tile205 floor/tile206 floor/tile207 floor/tile208 }
+floor/tile201	fstile21
+floor/tile202	fstile22
+floor/tile203	fstile23
+floor/tile204	fstile24
+floor/tile205	fstile25
+floor/tile206	fstile26
+floor/tile207	fstile27
+floor/tile208	fstile28
+
+$limit floor/tile2 20
+
+//Wood
+$random floor/wood		{ floor/wood01  floor/wood02 floor/wood03 floor/wood04 }
+floor/wood01	fswood1
+floor/wood02	fswood2
+floor/wood03	fswood3
+floor/wood04	fswood4
+
+$limit floor/wood 20
+
+//Slimy - for the Doom snake floors
+$random floor/slimy		{ floor/slimy01  floor/slimy02 floor/slimy03 floor/slimy04 }
+floor/slimy01	fsslimy1
+floor/slimy02	fsslimy2
+floor/slimy03	fsslimy3
+floor/slimy04	fsslimy4
+
+$limit floor/slimy 20
+
+//Fans and electrical stuff
+floor/elec1	fselec1
+
+$limit floor/elec1 20
+
+// Default
+$random floor/footstep { floor/step1  floor/step2  floor/step3  floor/step4 }
+floor/step1			FSSTP1
+floor/step2			FSSTP2
+floor/step3			FSSTP3
+floor/step4			FSSTP4
+
+// Water
+$random floor/water { floor/water1  floor/water2  floor/water3  floor/water4 }
+floor/water1			FSWTR1
+floor/water2			FSWTR2
+floor/water3			FSWTR3
+floor/water4			FSWTR4

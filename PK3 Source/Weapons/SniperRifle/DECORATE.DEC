@@ -1,0 +1,244 @@
+Actor SniperRifleClip : Ammo 30092
+{
+	//$Category Final Duel-Ammunition
+	Tag "Clip"
+	Game Doom
+	Inventory.PickupMessage "$GOTCLIP"
+	Inventory.Amount 1
+	Inventory.MaxAmount 4
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 6
+	Inventory.Icon "SNPPB0"
+	Inventory.PickupSound "misc/ammopickup"
+	States
+	{
+	Spawn:
+		SNPP B -1
+		Stop
+	}
+}
+
+Actor AmmoSniperRifle : Ammo
+{
+	Inventory.MaxAmount 5
+	Ammo.BackpackMaxAmount 5
+	+IGNORESKILL
+}
+
+ACTOR SniperRifleZoomed : Counter { Inventory.MaxAmount 4 }
+
+Actor SniperRifle : FDWeapon 30091
+{
+	//$Category Final Duel-Weapons
+	//$Sprite SNPPA0
+	Tag "$TAGSNIPERRIFLE"
+	Inventory.PickupSound "misc/gunpickup"
+	//Weapon.SisterWeapon SniperRiflePowered
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive 0
+	Weapon.AmmoGive2 0
+	Weapon.AmmoType "AmmoSniperRifle"
+	Weapon.AmmoType2 "SniperRifleClip"
+	+NoAlert
+	+Weapon.NoAutoFire
+	Inventory.PickupMessage "$GOTSNIPERRIFLE"
+	Obituary "$OBSNIPERRIFLE"
+	+Ammo_Optional
+	States
+	{
+	Spawn:
+		SNPP A -1
+		Stop
+	Ready:
+		SNPD CBA 1
+	Ready2:
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed",1,"ZReady")
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		SNPG AA 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_TakeInventory("PressingZoom", 1)
+		Loop
+	Select:
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		SNPD A 0 A_JumpIfInventory("SniperRifleZoomed",1,"Deselect.Unzoom")
+		SNPD ABC 1
+		TNT1 A 0 A_Lower
+		Wait
+	Deselect.Unzoom:
+		TNT1 A 0 A_TakeInventory("SniperRifleZoomed",999)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair(0)
+		SNPG A 10 A_SetBlend("00 00 00", 1.0, 20)
+		SNPG A 10
+		Goto Deselect
+	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 4, "ZFire4")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 3, "ZFire3")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 2, "ZFire2")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 1, "ZFire")
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireCustomMissile("MagnumTracer", frandom(-1.5,1.5), 1, 6, -1, 0, frandom(-1.8,1.8))
+		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
+		TNT1 A 0 A_PlaySound("SniperRifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		SNPG BB 1 Bright A_SetPitch(pitch - 0.25)
+		TNT1 A 0 A_SetPitch(pitch - 0.8)
+		SNPG CD 2
+		SNPG CA 3
+		SNPG EFGHIJ 3
+		SNPG K 3 A_PlayWeaponSound("SniperRifle/Bolt1")
+		SNPG LML 3
+		SNPG K 3 A_PlayWeaponSound("SniperRifle/Bolt2")
+		SNPG JIHGFE 3
+		SNPG A 2
+		Goto Ready2
+	Reload:
+		TNT1 A 0 A_TakeInventory("Reloading", 1)
+		REVG A 0 A_JumpIfInventory("AmmoSniperRifle", 5, "Ready2")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleClip", 1, 1)
+		Goto Ready2
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 1, "Reload.Unzoom")
+		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
+		SNPR ABCDEFGH 2
+		TNT1 A 0 A_FireCustomMissile("SniperRifleMagSpawn",-4,0,0,0)
+		TNT1 A 0 A_PlaySound("SniperRifle/Out", CHAN_WEAPON)
+		SNPR IJKL 3
+		SNPR L 18
+		TNT1 A 0 A_PlaySound("SniperRifle/In", CHAN_WEAPON)
+		SNPR MNO 3
+		SNPR PQRSTUVW 2
+		TNT1 A 0 A_TakeInventory("AmmoSniperRifle", 5)
+		TNT1 A 0 A_TakeInventory("SniperRifleClip", 1)
+		TNT1 A 0 A_GiveInventory("AmmoSniperRifle", 5)
+		Goto Ready2
+	Reload.Unzoom:
+		TNT1 A 0 A_TakeInventory("SniperRifleZoomed",999)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair(0)
+		SNPG A 10 A_SetBlend("00 00 00", 1.0, 20)
+		SNPG A 10
+		Goto Reload
+	DryFire:
+		TNT1 A 0 A_PlaySound("weapons/empty")
+		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
+		Goto Ready2
+	// Zoom
+	Zoom:
+		TNT1 A 0 A_JumpIfInventory("PressingZoom", 1, "Ready2")
+		TNT1 A 0 A_GiveInventory("PressingZoom", 1)
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 4, "Unzoom")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 3, "Zoom4")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 2, "Zoom3")
+		TNT1 A 0 A_JumpIfInventory("SniperRifleZoomed", 1, "Zoom2")
+		TNT1 A 0 A_GiveInventory("SniperRifleZoomed",1)
+		TNT1 A 0 A_ZoomFactor(3.0)
+		TNT1 A 0 A_SetCrosshair(99)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		SNPS C 10 A_SetBlend("00 00 00", 1.0, 20)
+		SNPS CCCCCCCCCC 1
+		Goto ZReady
+	Zoom2:
+		TNT1 A 0 A_GiveInventory("SniperRifleZoomed",1)
+		TNT1 A 0 A_ZoomFactor(5.0)
+		TNT1 A 0 A_SetCrosshair(99)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		SNPS C 10
+		SNPS CCCCCCCCCC 1
+		Goto ZReady
+	Zoom3:
+		TNT1 A 0 A_GiveInventory("SniperRifleZoomed",1)
+		TNT1 A 0 A_ZoomFactor(7.0)
+		TNT1 A 0 A_SetCrosshair(99)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		SNPS C 10
+		SNPS CCCCCCCCCC 1
+		Goto ZReady
+	Zoom4:
+		TNT1 A 0 A_GiveInventory("SniperRifleZoomed",1)
+		TNT1 A 0 A_ZoomFactor(10.0)
+		TNT1 A 0 A_SetCrosshair(99)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		SNPS C 10
+		SNPS CCCCCCCCCC 1
+		Goto ZReady
+	Unzoom:
+		TNT1 A 0 A_TakeInventory("SniperRifleZoomed",999)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair(0)
+		SNPG A 10 A_SetBlend("00 00 00", 1.0, 20)
+		SNPG A 10
+		Goto Ready2
+	ZReady:
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		SNPS CC 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOBOB)
+		TNT1 A 0 A_TakeInventory("PressingZoom", 1)
+		Loop
+	ZFire:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireCustomMissile("MagnumTracer", frandom(-1.3,1.3), 1, 0, -4, 0, frandom(-1.6,1.6))
+		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
+		TNT1 A 0 A_PlaySound("SniperRifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.7)
+		SNPS CC 1 Bright A_SetPitch(pitch - 0.525)
+		SNPS C 10
+		SNPS C 18
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt1")
+		SNPS C 9
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt2")
+		SNPS C 20
+		Goto ZReady
+	ZFire2:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireCustomMissile("MagnumTracer", frandom(-1.1,1.1), 1, 0, -4, 0, frandom(-1.4,1.4))
+		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
+		TNT1 A 0 A_PlaySound("SniperRifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.6)
+		SNPS CC 1 Bright A_SetPitch(pitch - 0.4215)
+		SNPS C 10
+		SNPS C 18
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt1")
+		SNPS C 9
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt2")
+		SNPS C 20
+		Goto ZReady
+	ZFire3:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireCustomMissile("MagnumTracer", frandom(-0.9,0.9), 1, 0, -4, 0, frandom(-1.2,1.2))
+		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
+		TNT1 A 0 A_PlaySound("SniperRifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.5)
+		SNPS CC 1 Bright A_SetPitch(pitch - 0.44)
+		SNPS C 10
+		SNPS C 18
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt1")
+		SNPS C 9
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt2")
+		SNPS C 20
+		Goto ZReady
+	ZFire4:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireCustomMissile("MagnumTracer", frandom(-0.0,0.0), 1, 0, -4, 0, frandom(-0.0,0.0))
+		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
+		TNT1 A 0 A_PlaySound("SniperRifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.4)
+		SNPS CC 1 Bright A_SetPitch(pitch - 0.15)
+		SNPS CCCC 1 A_SetPitch(pitch + 0.04175)
+		SNPS C 6
+		SNPS C 18
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt1")
+		SNPS C 9
+		SNPS C 3 A_PlayWeaponSound("SniperRifle/Bolt2")
+		SNPS C 20
+		Goto ZReady
+	}
+}

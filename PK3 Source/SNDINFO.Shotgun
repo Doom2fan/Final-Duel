@@ -1,0 +1,7 @@
+Shotgun/Fire			SGFIRE
+Shotgun/Pump			SGPUMP
+$random Shotgun/InsertShell { Shotgun/InsertShell1 Shotgun/InsertShell2 Shotgun/InsertShell3 Shotgun/InsertShell4 }
+Shotgun/InsertShell1	SGSHELL1
+Shotgun/InsertShell2	SGSHELL2
+Shotgun/InsertShell3	SGSHELL3
+Shotgun/InsertShell4	SGSHELL4

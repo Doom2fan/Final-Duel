@@ -1,0 +1,20 @@
+// Select/Deselect
+Sprite SHTSA0, 320, 200
+{
+	Patch SHTYA0, 110, 116
+}
+
+Sprite SHTSB0, 320, 200
+{
+	Patch SHTYA0, 94, 132
+}
+
+Sprite SHTSC0, 320, 200
+{
+	Patch SHTYA0, 78, 148
+}
+
+Sprite SHTSD0, 320, 200
+{
+	Patch SHTYA0, 63, 164
+}

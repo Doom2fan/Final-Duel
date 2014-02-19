@@ -1,0 +1,110 @@
+Actor MagnumCasingSpawner
+{
+	Speed 20
+	PROJECTILE
+	+NOCLIP
+	+CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+        TNT1 A 0
+		TNT1 A 0 A_CustomMissile("9mmCasing",-5,-1,0,2,-90)
+		TNT1 A 0 A_CustomMissile("9mmCasing",-5,-3,0,2,-90)
+		TNT1 A 0 A_CustomMissile("9mmCasing",-5,-5,0,2,-90)
+		TNT1 A 0 A_CustomMissile("9mmCasing",-5,1,0,2,-90)
+		TNT1 A 0 A_CustomMissile("9mmCasing",-5,3,0,2,-90)
+		TNT1 A 1 A_CustomMissile("9mmCasing",-5,5,0,2,-90)
+		Stop
+	}
+}
+Actor AmmoMagnum : Ammo
+{
+	Inventory.MaxAmount 6
+	Ammo.BackpackMaxAmount 6
+	+IGNORESKILL
+}
+Actor MagnumUpgrade : Boolean { }
+Actor Magnum : FDWeapon 30083
+{
+	//$Category Final Duel-Weapons
+	Tag "$TAGMAGNUM"
+	Inventory.PickupMessage "$GOTMAGNUM"
+	Obituary "$OBMAGNUM"
+	Weapon.AmmoType1 "AmmoMagnum"
+	Weapon.AmmoType2 "MagnumClip"
+	Weapon.AmmoGive1 0
+	Weapon.AmmoGive2 0
+	Weapon.AmmoUse1 1
+	Weapon.AmmoUse2 0
+	+AMMO_OPTIONAL
+	+NOALERT
+	+NOAUTOFIRE
+	States
+	{
+	Ready:
+		REVS DCBA 1
+	Ready2:
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		REVG A 1 A_WeaponReady
+		Loop
+	Select:
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		REVS ABCD 1
+		TNT1 A 0 A_Lower
+		Wait
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("MagnumUpgrade",1,"Fire.Upgraded")
+		REVG A 0 A_JumpIfNoAmmo("DryFire")
+		REVG A 1
+		REVF A 2
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile("RevolverTracer", frandom(-2.0,2.0), 1, 10, 2, 0, frandom(-2.5,2.5))
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		REVF BB 1 BRIGHT A_SetPitch(pitch - 0.4)
+		REVF C 2
+		REVG A 1
+		Goto Ready2
+	Fire.Upgraded:
+		REVG A 0 A_JumpIfNoAmmo("DryFire")
+		REVG A 1
+		REVF A 2
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile("UpgradedRevolverTracer", frandom(-0.5,0.5), 1, 10, 2, 0, frandom(-1.0,1.0))
+		TNT1 A 0 A_Recoil(cos(pitch) * 0.4)
+		REVF BB 1 BRIGHT A_SetPitch(pitch - 0.25)
+		REVF C 2
+		REVG A 1
+		Goto Ready2
+	DryFire:
+		ENF1 A 0 A_PlaySound("weapons/empty")
+		ENF1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
+		Goto Ready2
+	Reload:
+		TNT1 A 0 A_TakeInventory("Reloading", 1)
+		REVG A 0 A_JumpIfInventory("AmmoMagnum", 6, "Ready2")
+		TNT1 A 0 A_JumpIfInventory("MagnumClip", 1, 1)
+		Goto Ready2
+		TNT1 A 0 A_PlaySound("*reload",CHAN_VOICE)
+		TNT1 A 0 A_PlaySound("Magnum/Open", CHAN_WEAPON)
+		REVR AAABBCCCDDD 1
+		TNT1 A 0  A_PlaySound("Magnum/Out", CHAN_WEAPON)
+		REVR EEEFFGGG 1
+		REVR H 4 A_FireCustomMissile("MagnumCasingSpawner",-4,0,0,0)
+		REVR IIIJJ 1
+		TNT1 A 0 A_PlaySound("Magnum/In", CHAN_WEAPON)
+		REVR KKKCCBBBAAA 1
+		TNT1 A 0 A_TakeInventory("AmmoMagnum", 6)
+		TNT1 A 0 A_TakeInventory("MagnumClip", 1)
+		TNT1 A 0 A_GiveInventory("AmmoMagnum", 6)
+		Goto Ready2
+	Spawn:
+		REVP A -1
+		Stop
+	}
+}

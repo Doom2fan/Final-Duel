@@ -1,0 +1,13 @@
+Sprite TRGTA0, 1, 1 {}
+Sprite TRGTB0, 1, 1 {}
+Sprite TRGTC0, 1, 1 {}
+Sprite TRGTD0, 1, 1 {}
+Sprite TRGTE0, 1, 1 {}
+Sprite TRGTF0, 1, 1 {}
+Sprite TRGTG0, 1, 1 {}
+Sprite TRGTH0, 1, 1 {}
+Sprite TRGTI0, 1, 1 {}
+Sprite TRGTJ0, 1, 1 {}
+Sprite TRGTK0, 1, 1 {}
+Sprite TRGTL0, 1, 1 {}
+Sprite TRGTM0, 1, 1 {}

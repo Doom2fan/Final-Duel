@@ -1,0 +1,34 @@
+ACTOR FDBossBrain : BossBrain Replaces BossBrain
+{
+	Game Doom
+	Health 250
+	Mass 10000000
+	PainChance 255
+	+SOLID
+	+SHOOTABLE
+	+NOICEDEATH
+	+OLDRADIUSDMG
+	DamageFactor BFG, 0.5
+	PainSound "brain/pain"
+	DeathSound "brain/death"
+	States
+	{
+	BrainExplode:
+		MISL BC 10 Bright
+		MISL D 10 A_BrainExplode
+		Stop
+	Spawn:
+		BBRN A -1
+		Stop
+	Pain:
+		TNT1 A 0 Radius_Quake(3,10,0,50,0)
+		BBRN A 36 A_BrainPain
+		Goto Spawn
+	Death:
+		TNT1 A 0 Radius_Quake(4,300,0,50,0)
+		BBRN A 100 A_BrainScream
+		BBRN A 60
+		BBRN A -1 A_BrainDie
+		Stop
+	}
+}

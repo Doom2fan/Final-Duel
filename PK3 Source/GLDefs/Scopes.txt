@@ -1,0 +1,10 @@
+BrightMap Sprite SNPSB0
+{
+	Map brightmaps/Weapons/Scopes/SNPSB0.png
+	DisableFullBright
+}
+BrightMap Sprite SNPSC0
+{
+	Map brightmaps/Weapons/Scopes/SNPSC0.png
+	DisableFullBright
+}

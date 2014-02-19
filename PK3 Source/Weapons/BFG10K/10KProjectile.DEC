@@ -1,0 +1,26 @@
+ACTOR FDBFG10kShot
+{
+	Radius 11
+	Height 8
+	Speed 60
+	Damage (random(1,4) * 40)
+	Alpha 5.0
+	Scale .2
+	DamageType BFG
+	Renderstyle Add
+	Projectile
+	+EXTREMEDEATH
+	+FORCEXYBILLBOARD
+	+DONTSPLASH
+	Obituary "$OB_BFG10K"
+	SeeSound "Weapons/BFG10KX"
+	AttackSound "Weapons/BFG10KX"
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound("BFG10K/Fly", CHAN_BODY, 1.0, 1)
+	Spawn2:
+		L2NG A 1
+		Loop
+	}
+}

@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: Cory Whittle, Scuba Steve, Marty Kirra, Alex_Mercer
+Sounds: NightmareMutant, Valve

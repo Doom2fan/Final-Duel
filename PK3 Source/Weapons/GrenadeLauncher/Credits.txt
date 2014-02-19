@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: Mike12, Nmn
+Sounds: Raven Software, id Software, Valve Software, Freedoom

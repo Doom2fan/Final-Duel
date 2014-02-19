@@ -1,0 +1,75 @@
+Pointlight CatharsiShot1
+{
+Color 0.8 0.4 0.2
+Size 24
+}
+
+Pointlight CatharsiShot2
+{
+Color 1.0 0.5 0.3
+Size 40
+}
+
+Pointlight CatharsiShot3
+{
+Color 0.8 0.4 0.2
+Size 32
+}
+
+Pointlight CatharsiShot4
+{
+Color 0.5 0.2 0.0
+Size 16
+}
+
+Pointlight CatharsiShot5
+{
+Color 0.3 0.15 0.0
+Size 8
+}
+
+Object CatharsiBall
+{
+Frame SDFBA { Light CatharsiShot1 }
+Frame SDFBB { Light CatharsiShot2 }
+Frame SDFBC { Light CatharsiShot3 }
+Frame SDFBD { Light CatharsiShot4 }
+Frame SDFBE { Light CatharsiShot5 }
+}
+
+
+BrightMap Sprite SDDMF1
+{
+Map Brightmaps/Monsters/Catharsi/BMSDDMF1.png
+DisableFullBright
+}
+
+BrightMap Sprite SDDMF2F8
+{
+Map Brightmaps/Monsters/Catharsi/BMSDDMF2.png
+DisableFullBright
+}
+
+BrightMap Sprite SDDMF3F7
+{
+Map Brightmaps/Monsters/Catharsi/BMSDDMF3.png
+DisableFullBright
+}
+
+BrightMap Sprite SDDMF4F6
+{
+Map Brightmaps/Monsters/Catharsi/BMSDDMF4.png
+DisableFullBright
+}
+
+BrightMap Sprite SDDMF5
+{
+Map Brightmaps/Monsters/Catharsi/BMSDDMF5.png
+DisableFullBright
+}
+
+BrightMap Sprite THRMA0
+{
+Map Brightmaps/Monsters/Catharsi/BMTHRMA0.png
+DisableFullBright
+}

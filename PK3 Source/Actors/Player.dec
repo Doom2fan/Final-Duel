@@ -1,0 +1,150 @@
+// By Alex_Mercer
+// Base Player Class
+Actor BasePlayerClass : PlayerPawn
+{
+	// Damage
+	GibHealth -50
+	PainChance 255
+	DamageFactor PsiBurnout, 1.0
+	// Speed Related
+	Player.JumpZ 8.0
+	// Misc
+	Radius 16
+	Height 56
+    Player.ViewHeight 48
+	Player.AttackZOffset 20
+	Player.InvulnerabilityMode Reflective
+	Player.ColorRange 112, 127
+    +SOLID
+	+NOSKIN
+	States
+	{
+	Death.Fire:
+		BURN ABC 5 BRIGHT
+		BURN D 5 BRIGHT A_PlaySound("*burndeath")
+		BURN EFGHIJKLMN 5 BRIGHT
+		BURN O 5 BRIGHT A_NoBlocking
+		BURN PQRSTU 5 BRIGHT
+		BURN V -1
+		Stop
+	}
+}
+Actor ReloadInv : PowerInvulnerable { }
+ACTOR Stamina : AMMO
+{
+	Inventory.Amount 0
+	Inventory.MaxAmount 100
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 100
+}
+
+// Taunting
+Actor Taunting : Boolean { }
+ACTOR TauntKey : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-INVBAR
+	States
+	{
+	Use:
+        TNT1 A 0 A_GiveInventory("Taunting",1)
+        Fail
+	}
+}
+
+// Show keys(Original code by WildWeasel)
+ACTOR ShowKeys : Boolean { }
+ACTOR ShowKeysToggle : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-INVBAR
+	States
+	{
+	Use:
+	    TNT1 A 0 A_JumpIfInventory("ShowKeys",1,"Disable")
+        TNT1 A 0 A_GiveInventory("ShowKeys",1)
+		TNT1 A 0 ACS_NamedExecute("ShowKeys", 0, 0, 0, 0)
+        Fail
+	Disable:
+		TNT1 A 0 A_TakeInventory("ShowKeys",1)
+		TNT1 A 0 ACS_NamedExecute("ShowKeys", 0, 0, 0, 0)
+		Fail
+   }
+}
+
+// Weapon Special
+Actor WeaponSpecial : Boolean { }
+
+// Is Player
+Actor IsPlayer : Boolean { }
+
+// Stamina Regeneration
+Actor StaminaRegen : Boolean { }
+
+// Reloading
+Actor Reloading : Boolean { }
+
+// Kicking
+Actor Kicking : Boolean { }
+
+// Special action caller
+Actor GoSpecial : Boolean { }
+
+// Fatality caller
+Actor GoFatality : Boolean { }
+
+// Fatality on
+Actor FatalityOn : Boolean { }
+
+// Chasecam actor
+Actor Chasecam
+{
+	Height 0
+	Radius 0
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	}
+}
+
+/* ---------------------------------------------------- */
+// Omega/Chronos class items
+Actor ChronosItem : Boolean { }
+
+/* ---------------------------------------------------- */
+
+/* ---------------------------------------------------- */
+// Marine/Nero class Items
+Actor NeroItem : Boolean { }
+/* ---------------------------------------------------- */
+
+// By WildWeasel
+// Auto Reload(By WildWeasel)
+ACTOR EnableAutoReload : Boolean { }
+
+ACTOR AutoReloadingToggle : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-INVBAR
+	States
+	{
+    Use:
+		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Disable")
+		TNT1 A 0 A_GiveInventory("EnableAutoReload",1)
+		TNT1 A 0 A_Print("Auto-Reload ON")
+		Fail
+	Disable:
+		TNT1 A 0 A_TakeInventory("EnableAutoReload",1)
+		TNT1 A 0 A_Print("Auto-Reload OFF")
+		Fail
+   }
+}
+
+// Underwater effects
+ACTOR IsUnderwater : Boolean { }

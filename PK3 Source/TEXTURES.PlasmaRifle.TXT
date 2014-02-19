@@ -1,0 +1,20 @@
+// Select/Deselect
+Sprite PLSSA0, 320, 200
+{
+	Patch PLSMA0, 93, 114
+}
+
+Sprite PLSSB0, 320, 200
+{
+	Patch PLSMA0, 77, 130
+}
+
+Sprite PLSSC0, 320, 200
+{
+	Patch PLSMA0, 61, 146
+}
+
+Sprite PLSSD0, 320, 200
+{
+	Patch PLSMA0, 45, 162
+}

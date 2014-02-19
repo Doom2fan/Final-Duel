@@ -1,0 +1,2 @@
+TEXTURES.AMG,BFG10K,FUEL,HUD,Items,PlasmaRifle,PumpActionShotgun,SonicRailgun and SoulReaper were made by Alex_Mercer
+ANIMDEFS.BeautifulDoom and TEXTURES.BeautifulDoom are from Beautiful Doom

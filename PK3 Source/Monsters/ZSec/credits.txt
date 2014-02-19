@@ -1,0 +1,7 @@
+Submitted: Captain Toenail 
+Decorate: Ghastly Dragon, Alex_Mercer
+GLDEFs: Dreadopp
+Sounds: Id Software
+Sprites: Id Software, Rogue Entertainment, KDiZD
+Sprite Edit: Captain Toenail 
+Idea Base: ZSec Zombie from Doom 3

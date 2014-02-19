@@ -1,0 +1,810 @@
+texture optional BFALL01, 64, 128
+{
+	Patch BFALL1, 0, 0
+}
+
+texture optional BFALL02, 64, 128
+{
+	Patch BFALL1, 0, -124
+	Patch BFALL1, 0, 4
+}
+
+texture optional BFALL03, 64, 128
+{
+	Patch BFALL1, 0, -120
+	Patch BFALL1, 0, 8
+}
+
+texture optional BFALL04, 64, 128
+{
+	Patch BFALL1, 0, -116
+	Patch BFALL1, 0, 12
+}
+
+texture optional BFALL05, 64, 128
+{
+	Patch BFALL1, 0, -112
+	Patch BFALL1, 0, 16
+}
+
+texture optional BFALL06, 64, 128
+{
+	Patch BFALL1, 0, -108
+	Patch BFALL1, 0, 20
+}
+
+texture optional BFALL07, 64, 128
+{
+	Patch BFALL1, 0, -104
+	Patch BFALL1, 0, 24
+}
+
+texture optional BFALL08, 64, 128
+{
+	Patch BFALL1, 0, -100
+	Patch BFALL1, 0, 28
+}
+
+texture optional BFALL09, 64, 128
+{
+	Patch BFALL1, 0, -96
+	Patch BFALL1, 0, 32
+}
+
+texture optional BFALL10, 64, 128
+{
+	Patch BFALL1, 0, -92
+	Patch BFALL1, 0, 36
+}
+
+texture optional BFALL11, 64, 128
+{
+	Patch BFALL1, 0, -88
+	Patch BFALL1, 0, 40
+}
+
+texture optional BFALL12, 64, 128
+{
+	Patch BFALL1, 0, -84
+	Patch BFALL1, 0, 44
+}
+
+texture optional BFALL13, 64, 128
+{
+	Patch BFALL1, 0, -80
+	Patch BFALL1, 0, 48
+}
+
+texture optional BFALL14, 64, 128
+{
+	Patch BFALL1, 0, -76
+	Patch BFALL1, 0, 52
+}
+
+texture optional BFALL15, 64, 128
+{
+	Patch BFALL1, 0, -72
+	Patch BFALL1, 0, 56
+}
+
+texture optional BFALL16, 64, 128
+{
+	Patch BFALL1, 0, -68
+	Patch BFALL1, 0, 60
+}
+
+texture optional BFALL17, 64, 128
+{
+	Patch BFALL1, 0, -64
+	Patch BFALL1, 0, 64
+}
+
+texture optional BFALL18, 64, 128
+{
+	Patch BFALL1, 0, -60
+	Patch BFALL1, 0, 68
+}
+
+texture optional BFALL19, 64, 128
+{
+	Patch BFALL1, 0, -56
+	Patch BFALL1, 0, 72
+}
+
+texture optional BFALL20, 64, 128
+{
+	Patch BFALL1, 0, -52
+	Patch BFALL1, 0, 76
+}
+
+texture optional BFALL21, 64, 128
+{
+	Patch BFALL1, 0, -48
+	Patch BFALL1, 0, 76
+}
+
+texture optional BFALL22, 64, 128
+{
+	Patch BFALL1, 0, -44
+	Patch BFALL1, 0, 84
+}
+
+texture optional BFALL23, 64, 128
+{
+	Patch BFALL1, 0, -40
+	Patch BFALL1, 0, 88
+}
+
+texture optional BFALL24, 64, 128
+{
+	Patch BFALL1, 0, -36
+	Patch BFALL1, 0, 92
+}
+
+texture optional BFALL25, 64, 128
+{
+	Patch BFALL1, 0, -32
+	Patch BFALL1, 0, 96
+}
+
+texture optional BFALL26, 64, 128
+{
+	Patch BFALL1, 0, -28
+	Patch BFALL1, 0, 100
+}
+
+texture optional BFALL27, 64, 128
+{
+	Patch BFALL1, 0, -24
+	Patch BFALL1, 0, 104
+}
+
+texture optional BFALL28, 64, 128
+{
+	Patch BFALL1, 0, -20
+	Patch BFALL1, 0, 108
+}
+
+texture optional BFALL29, 64, 128
+{
+	Patch BFALL1, 0, -16
+	Patch BFALL1, 0, 112
+}
+
+texture optional BFALL30, 64, 128
+{
+	Patch BFALL1, 0, -12
+	Patch BFALL1, 0, 116
+}
+
+texture optional BFALL31, 64, 128
+{
+	Patch BFALL1, 0, -8
+	Patch BFALL1, 0, 120
+}
+
+texture optional BFALL32, 64, 128
+{
+	Patch BFALL1, 0, -4
+	Patch BFALL1, 0, 124
+}
+
+texture optional LFALL01, 64, 128
+{
+	Patch LFALL1, 0, 0
+}
+
+texture optional LFALL02, 64, 128
+{
+	Patch LFALL1, 0, -124
+	Patch LFALL1, 0, 4
+}
+
+texture optional LFALL03, 64, 128
+{
+	Patch LFALL1, 0, -120
+	Patch LFALL1, 0, 8
+}
+
+texture optional LFALL04, 64, 128
+{
+	Patch LFALL1, 0, -116
+	Patch LFALL1, 0, 12
+}
+
+texture optional LFALL05, 64, 128
+{
+	Patch LFALL1, 0, -112
+	Patch LFALL1, 0, 16
+}
+
+texture optional LFALL06, 64, 128
+{
+	Patch LFALL1, 0, -108
+	Patch LFALL1, 0, 20
+}
+
+texture optional LFALL07, 64, 128
+{
+	Patch LFALL1, 0, -104
+	Patch LFALL1, 0, 24
+}
+
+texture optional LFALL08, 64, 128
+{
+	Patch LFALL1, 0, -100
+	Patch LFALL1, 0, 28
+}
+
+texture optional LFALL09, 64, 128
+{
+	Patch LFALL1, 0, -96
+	Patch LFALL1, 0, 32
+}
+
+texture optional LFALL10, 64, 128
+{
+	Patch LFALL1, 0, -92
+	Patch LFALL1, 0, 36
+}
+
+texture optional LFALL11, 64, 128
+{
+	Patch LFALL1, 0, -88
+	Patch LFALL1, 0, 40
+}
+
+texture optional LFALL12, 64, 128
+{
+	Patch LFALL1, 0, -84
+	Patch LFALL1, 0, 44
+}
+
+texture optional LFALL13, 64, 128
+{
+	Patch LFALL1, 0, -80
+	Patch LFALL1, 0, 48
+}
+
+texture optional LFALL14, 64, 128
+{
+	Patch LFALL1, 0, -76
+	Patch LFALL1, 0, 52
+}
+
+texture optional LFALL15, 64, 128
+{
+	Patch LFALL1, 0, -72
+	Patch LFALL1, 0, 56
+}
+
+texture optional LFALL16, 64, 128
+{
+	Patch LFALL1, 0, -68
+	Patch LFALL1, 0, 60
+}
+
+texture optional LFALL17, 64, 128
+{
+	Patch LFALL1, 0, -64
+	Patch LFALL1, 0, 64
+}
+
+texture optional LFALL18, 64, 128
+{
+	Patch LFALL1, 0, -60
+	Patch LFALL1, 0, 68
+}
+
+texture optional LFALL19, 64, 128
+{
+	Patch LFALL1, 0, -56
+	Patch LFALL1, 0, 72
+}
+
+texture optional LFALL20, 64, 128
+{
+	Patch LFALL1, 0, -52
+	Patch LFALL1, 0, 76
+}
+
+texture optional LFALL21, 64, 128
+{
+	Patch LFALL1, 0, -48
+	Patch LFALL1, 0, 76
+}
+
+texture optional LFALL22, 64, 128
+{
+	Patch LFALL1, 0, -44
+	Patch LFALL1, 0, 84
+}
+
+texture optional LFALL23, 64, 128
+{
+	Patch LFALL1, 0, -40
+	Patch LFALL1, 0, 88
+}
+
+texture optional LFALL24, 64, 128
+{
+	Patch LFALL1, 0, -36
+	Patch LFALL1, 0, 92
+}
+
+texture optional LFALL25, 64, 128
+{
+	Patch LFALL1, 0, -32
+	Patch LFALL1, 0, 96
+}
+
+texture optional LFALL26, 64, 128
+{
+	Patch LFALL1, 0, -28
+	Patch LFALL1, 0, 100
+}
+
+texture optional LFALL27, 64, 128
+{
+	Patch LFALL1, 0, -24
+	Patch LFALL1, 0, 104
+}
+
+texture optional LFALL28, 64, 128
+{
+	Patch LFALL1, 0, -20
+	Patch LFALL1, 0, 108
+}
+
+texture optional LFALL29, 64, 128
+{
+	Patch LFALL1, 0, -16
+	Patch LFALL1, 0, 112
+}
+
+texture optional LFALL30, 64, 128
+{
+	Patch LFALL1, 0, -12
+	Patch LFALL1, 0, 116
+}
+
+texture optional LFALL31, 64, 128
+{
+	Patch LFALL1, 0, -8
+	Patch LFALL1, 0, 120
+}
+
+texture optional LFALL32, 64, 128
+{
+	Patch LFALL1, 0, -4
+	Patch LFALL1, 0, 124
+}
+
+texture optional SFALL01, 64, 128
+{
+	Patch SFALL1, 0, 0
+}
+
+texture optional SFALL02, 64, 128
+{
+	Patch SFALL1, 0, -124
+	Patch SFALL1, 0, 4
+}
+
+texture optional SFALL03, 64, 128
+{
+	Patch SFALL1, 0, -120
+	Patch SFALL1, 0, 8
+}
+
+texture optional SFALL04, 64, 128
+{
+	Patch SFALL1, 0, -116
+	Patch SFALL1, 0, 12
+}
+
+texture optional SFALL05, 64, 128
+{
+	Patch SFALL1, 0, -112
+	Patch SFALL1, 0, 16
+}
+
+texture optional SFALL06, 64, 128
+{
+	Patch SFALL1, 0, -108
+	Patch SFALL1, 0, 20
+}
+
+texture optional SFALL07, 64, 128
+{
+	Patch SFALL1, 0, -104
+	Patch SFALL1, 0, 24
+}
+
+texture optional SFALL08, 64, 128
+{
+	Patch SFALL1, 0, -100
+	Patch SFALL1, 0, 28
+}
+
+texture optional SFALL09, 64, 128
+{
+	Patch SFALL1, 0, -96
+	Patch SFALL1, 0, 32
+}
+
+texture optional SFALL10, 64, 128
+{
+	Patch SFALL1, 0, -92
+	Patch SFALL1, 0, 36
+}
+
+texture optional SFALL11, 64, 128
+{
+	Patch SFALL1, 0, -88
+	Patch SFALL1, 0, 40
+}
+
+texture optional SFALL12, 64, 128
+{
+	Patch SFALL1, 0, -84
+	Patch SFALL1, 0, 44
+}
+
+texture optional SFALL13, 64, 128
+{
+	Patch SFALL1, 0, -80
+	Patch SFALL1, 0, 48
+}
+
+texture optional SFALL14, 64, 128
+{
+	Patch SFALL1, 0, -76
+	Patch SFALL1, 0, 52
+}
+
+texture optional SFALL15, 64, 128
+{
+	Patch SFALL1, 0, -72
+	Patch SFALL1, 0, 56
+}
+
+texture optional SFALL16, 64, 128
+{
+	Patch SFALL1, 0, -68
+	Patch SFALL1, 0, 60
+}
+
+texture optional SFALL17, 64, 128
+{
+	Patch SFALL1, 0, -64
+	Patch SFALL1, 0, 64
+}
+
+texture optional SFALL18, 64, 128
+{
+	Patch SFALL1, 0, -60
+	Patch SFALL1, 0, 68
+}
+
+texture optional SFALL19, 64, 128
+{
+	Patch SFALL1, 0, -56
+	Patch SFALL1, 0, 72
+}
+
+texture optional SFALL20, 64, 128
+{
+	Patch SFALL1, 0, -52
+	Patch SFALL1, 0, 76
+}
+
+texture optional SFALL21, 64, 128
+{
+	Patch SFALL1, 0, -48
+	Patch SFALL1, 0, 76
+}
+
+texture optional SFALL22, 64, 128
+{
+	Patch SFALL1, 0, -44
+	Patch SFALL1, 0, 84
+}
+
+texture optional SFALL23, 64, 128
+{
+	Patch SFALL1, 0, -40
+	Patch SFALL1, 0, 88
+}
+
+texture optional SFALL24, 64, 128
+{
+	Patch SFALL1, 0, -36
+	Patch SFALL1, 0, 92
+}
+
+texture optional SFALL25, 64, 128
+{
+	Patch SFALL1, 0, -32
+	Patch SFALL1, 0, 96
+}
+
+texture optional SFALL26, 64, 128
+{
+	Patch SFALL1, 0, -28
+	Patch SFALL1, 0, 100
+}
+
+texture optional SFALL27, 64, 128
+{
+	Patch SFALL1, 0, -24
+	Patch SFALL1, 0, 104
+}
+
+texture optional SFALL28, 64, 128
+{
+	Patch SFALL1, 0, -20
+	Patch SFALL1, 0, 108
+}
+
+texture optional SFALL29, 64, 128
+{
+	Patch SFALL1, 0, -16
+	Patch SFALL1, 0, 112
+}
+
+texture optional SFALL30, 64, 128
+{
+	Patch SFALL1, 0, -12
+	Patch SFALL1, 0, 116
+}
+
+texture optional SFALL31, 64, 128
+{
+	Patch SFALL1, 0, -8
+	Patch SFALL1, 0, 120
+}
+
+texture optional SFALL32, 64, 128
+{
+	Patch SFALL1, 0, -4
+	Patch SFALL1, 0, 124
+}
+
+texture optional WFALL01, 64, 128
+{
+	Patch WFALL1, 0, 0
+}
+
+texture optional WFALL02, 64, 128
+{
+	Patch WFALL1, 0, -124
+	Patch WFALL1, 0, 4
+}
+
+texture optional WFALL03, 64, 128
+{
+	Patch WFALL1, 0, -120
+	Patch WFALL1, 0, 8
+}
+
+texture optional WFALL04, 64, 128
+{
+	Patch WFALL1, 0, -116
+	Patch WFALL1, 0, 12
+}
+
+texture optional WFALL05, 64, 128
+{
+	Patch WFALL1, 0, -112
+	Patch WFALL1, 0, 16
+}
+
+texture optional WFALL06, 64, 128
+{
+	Patch WFALL1, 0, -108
+	Patch WFALL1, 0, 20
+}
+
+texture optional WFALL07, 64, 128
+{
+	Patch WFALL1, 0, -104
+	Patch WFALL1, 0, 24
+}
+
+texture optional WFALL08, 64, 128
+{
+	Patch WFALL1, 0, -100
+	Patch WFALL1, 0, 28
+}
+
+texture optional WFALL09, 64, 128
+{
+	Patch WFALL1, 0, -96
+	Patch WFALL1, 0, 32
+}
+
+texture optional WFALL10, 64, 128
+{
+	Patch WFALL1, 0, -92
+	Patch WFALL1, 0, 36
+}
+
+texture optional WFALL11, 64, 128
+{
+	Patch WFALL1, 0, -88
+	Patch WFALL1, 0, 40
+}
+
+texture optional WFALL12, 64, 128
+{
+	Patch WFALL1, 0, -84
+	Patch WFALL1, 0, 44
+}
+
+texture optional WFALL13, 64, 128
+{
+	Patch WFALL1, 0, -80
+	Patch WFALL1, 0, 48
+}
+
+texture optional WFALL14, 64, 128
+{
+	Patch WFALL1, 0, -76
+	Patch WFALL1, 0, 52
+}
+
+texture optional WFALL15, 64, 128
+{
+	Patch WFALL1, 0, -72
+	Patch WFALL1, 0, 56
+}
+
+texture optional WFALL16, 64, 128
+{
+	Patch WFALL1, 0, -68
+	Patch WFALL1, 0, 60
+}
+
+texture optional WFALL17, 64, 128
+{
+	Patch WFALL1, 0, -64
+	Patch WFALL1, 0, 64
+}
+
+texture optional WFALL18, 64, 128
+{
+	Patch WFALL1, 0, -60
+	Patch WFALL1, 0, 68
+}
+
+texture optional WFALL19, 64, 128
+{
+	Patch WFALL1, 0, -56
+	Patch WFALL1, 0, 72
+}
+
+texture optional WFALL20, 64, 128
+{
+	Patch WFALL1, 0, -52
+	Patch WFALL1, 0, 76
+}
+
+texture optional WFALL21, 64, 128
+{
+	Patch WFALL1, 0, -48
+	Patch WFALL1, 0, 76
+}
+
+texture optional WFALL22, 64, 128
+{
+	Patch WFALL1, 0, -44
+	Patch WFALL1, 0, 84
+}
+
+texture optional WFALL23, 64, 128
+{
+	Patch WFALL1, 0, -40
+	Patch WFALL1, 0, 88
+}
+
+texture optional WFALL24, 64, 128
+{
+	Patch WFALL1, 0, -36
+	Patch WFALL1, 0, 92
+}
+
+texture optional WFALL25, 64, 128
+{
+	Patch WFALL1, 0, -32
+	Patch WFALL1, 0, 96
+}
+
+texture optional WFALL26, 64, 128
+{
+	Patch WFALL1, 0, -28
+	Patch WFALL1, 0, 100
+}
+
+texture optional WFALL27, 64, 128
+{
+	Patch WFALL1, 0, -24
+	Patch WFALL1, 0, 104
+}
+
+texture optional WFALL28, 64, 128
+{
+	Patch WFALL1, 0, -20
+	Patch WFALL1, 0, 108
+}
+
+texture optional WFALL29, 64, 128
+{
+	Patch WFALL1, 0, -16
+	Patch WFALL1, 0, 112
+}
+
+texture optional WFALL30, 64, 128
+{
+	Patch WFALL1, 0, -12
+	Patch WFALL1, 0, 116
+}
+
+texture optional WFALL31, 64, 128
+{
+	Patch WFALL1, 0, -8
+	Patch WFALL1, 0, 120
+}
+
+texture optional WFALL32, 64, 128
+{
+	Patch WFALL1, 0, -4
+	Patch WFALL1, 0, 124
+}
+
+texture optional DBRAIN1, 64, 32
+{
+	Patch RWDM11A, 0, 0
+}
+
+texture optional DBRAIN2, 64, 32
+{
+	Patch RWDM11A, 0, -28
+	Patch RWDM11A, 0, 4
+}
+
+texture optional DBRAIN3, 64, 32
+{
+	Patch RWDM11A, 0, -24
+	Patch RWDM11A, 0, 8
+}
+
+texture optional DBRAIN4, 64, 32
+{
+	Patch RWDM11A, 0, -20
+	Patch RWDM11A, 0, 12
+}
+
+texture optional DBRAIN5, 64, 32
+{
+	Patch RWDM11A, 0, -16
+	Patch RWDM11A, 0, 16
+}
+
+texture optional DBRAIN6, 64, 32
+{
+	Patch RWDM11A, 0, -12
+	Patch RWDM11A, 0, 20
+}
+
+texture optional DBRAIN7, 64, 32
+{
+	Patch RWDM11A, 0, -8
+	Patch RWDM11A, 0, 24
+}
+
+texture optional DBRAIN8, 64, 32
+{
+	Patch RWDM11A, 0, -4
+	Patch RWDM11A, 0, 28
+}

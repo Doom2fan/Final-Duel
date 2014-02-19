@@ -1,0 +1,2 @@
+Decorate: Alex_Mercer
+Sprites: Xaser, Marrub, Eriance, Cryptic, Raven Software, Sergeant_Mark_IV, Alex_Mercer

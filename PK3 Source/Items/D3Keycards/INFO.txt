@@ -1,0 +1,11 @@
+Name: Doom 3 Keys
+Type: Keys
+Palette: Doom
+Summon: D3[Blue, Black, Brown, Green, Orange, Red, Violet, White, Yellow]Card
+Use type: Instant
+Duration: One level
+Added States: No
+ACS: No
+
+
+A set of 9-colored keycards.

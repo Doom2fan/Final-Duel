@@ -1,0 +1,288 @@
+Sprite ANHRA0, 320, 200
+{
+	Patch ANHGA0, 82, 74
+}
+
+Sprite ANHRB0, 320, 200
+{
+	Patch ANHGA0, 79, 80
+}
+
+Sprite ANHRC0, 320, 200
+{
+	Patch ANHGA0, 73, 87
+}
+
+Sprite ANHRD0, 320, 200
+{
+	Patch ANHGA0, 67, 92
+}
+
+Sprite ANHRE0, 320, 200
+{
+	Patch ANHGA0, 63, 96
+}
+
+Sprite ANHRF0, 320, 200
+{
+	Patch ANHGA0, 57, 100
+}
+
+Sprite ANHRG0, 320, 200
+{
+	Patch ANHGA0, 52, 96
+}
+
+Sprite ANHRH0, 320, 200
+{
+	Patch ANHGA0, 48, 91
+}
+
+Sprite ANHRI0, 320, 200
+{
+	Patch ANHGA0, 48, 90
+}
+
+Sprite ANHRJ0, 320, 200
+{
+	Patch ANHGA0, 49, 90
+}
+
+Sprite ANHRK0, 320, 200
+{
+	Patch ANHGA0, 52, 86
+}
+
+Sprite ANHRL0, 320, 200
+{
+	Patch ANHGA0, 54, 82
+}
+
+Sprite ANHRM0, 320, 200
+{
+	Patch ANHGA0, 58, 88
+}
+
+Sprite ANHRN0, 320, 200
+{
+	Patch ANHGA0, 59, 91
+}
+
+Sprite ANHRO0, 320, 200
+{
+	Patch ANHGA0, 64, 88
+}
+
+Sprite ANHRP0, 320, 200
+{
+	Patch ANHGA0, 69, 85
+}
+
+Sprite ANHRQ0, 320, 200
+{
+	Patch ANHGA0, 77, 82
+}
+
+Sprite ANHRR0, 320, 200
+{
+	Patch ANHGA0, 82, 78
+}
+
+Sprite ANHRS0, 320, 200
+{
+	Patch ANHGA0, 82, 74
+}
+
+Sprite ANHGC0, 320, 200
+{
+	Patch ANHGA0, 82, 86
+}
+
+Sprite ANHGD0, 320, 200
+{
+	Patch ANHGA0, 82, 83
+}
+
+Sprite ANHGE0, 320, 200
+{
+	Patch ANHGA0, 82, 80
+}
+
+Sprite ANHGF0, 320, 200
+{
+	Patch ANHGA0, 82, 77
+}
+
+Sprite ANHGG0, 320, 200
+{
+	Patch ANHGA0, 82, 74
+}
+
+// Select/Deselect
+
+Sprite ANHSA0, 320, 200
+{
+	Patch ANHGA0, 58, 98
+}
+
+Sprite ANHSB0, 320, 200
+{
+	Patch ANHGA0, 34, 122
+}
+
+Sprite ANHSC0, 320, 200
+{
+	Patch ANHGA0, 10, 146
+}
+
+// Projectile
+
+	// Flare
+Sprite ANP1A0, 256, 256
+{
+	Offset 128, 128
+	Patch FLARE_01, 0, 0
+	{
+		Blend "#00FF00", 0.9
+		Style Add
+	}
+	Patch FLARE_01, 0, 0
+	{
+		Blend "#00CF00", 0.9
+		Style Add
+	}
+}
+
+Sprite ANP1B0, 256, 256
+{
+	Offset 128, 128
+	Patch FLARE_01, 0, 0
+	{
+		FlipY
+		Blend "#0FCF00", 0.9
+		Style Add
+	}
+	Patch FLARE_01, 0, 0
+	{
+		FlipY
+		Blend "#0FAF00", 0.9
+		Style Add
+	}
+}
+	// Smoke
+Sprite ANP2A0B0, 256, 256
+{
+	Offset 128, 128
+	Patch SMOKE_01, 0, 0
+	{
+		Blend "#0FCF00"
+		Style Add
+	}
+}
+
+Sprite ANP2C0D0, 256, 256
+{
+	Offset 128, 128
+	Patch SMOKE_01, 0, 0
+	{
+		FlipY
+		Blend "#0FCF00"
+		Style Add
+	}
+}
+	// Flame
+Sprite ANP3A0B0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FFF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FCF00", 1.0
+		Style Add
+	}
+}
+
+Sprite ANP3C0D0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00CF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00FF00", 1.0
+		Style Add
+	}
+}
+
+Sprite ANP3E0F0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FFF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FCF00", 1.0
+		Style Add
+	}
+}
+
+Sprite ANP3G0H0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00CF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00AF00", 1.0
+		Style Add
+	}
+}
+
+Sprite ANP3I0J0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FFF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		Blend "#0FCF00", 1.0
+		Style Add
+	}
+}
+
+Sprite ANP3K0L0, 128, 128
+{
+	Offset 64, 64
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00CF00", 1.0
+		Style Add
+	}
+	Patch FLAME_01, 0, 0
+	{
+		FlipY
+		Blend "#00AF00", 1.0
+		Style Add
+	}
+}

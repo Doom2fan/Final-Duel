@@ -1,0 +1,5 @@
+// Server CVars
+server noarchive bool FD_NothingOnRespawn = false;
+server noarchive bool FD_DontRandomizeStuff = false;
+// User CVars
+user bool FD_MsgsOn = true;

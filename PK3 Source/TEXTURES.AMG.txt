@@ -1,0 +1,20 @@
+// Select/Deselect
+Sprite AMGSA0, 320, 200
+{
+	Patch AMGGA0, 145, 84
+}
+
+Sprite AMGSB0, 320, 200
+{
+	Patch AMGGA0, 169, 108
+}
+
+Sprite AMGSC0, 320, 200
+{
+	Patch AMGGA0, 194, 132
+}
+
+Sprite AMGSD0, 320, 200
+{
+	Patch AMGGA0, 218, 156
+}

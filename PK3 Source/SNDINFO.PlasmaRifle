@@ -1,0 +1,16 @@
+$random PlasmaRifle/fire { PlasmaRifle/fire1 PlasmaRifle/fire2 PlasmaRifle/fire3 }
+$limit PlasmaRifle/fire 0
+PlasmaRifle/Fire1		PLSSHOT1
+PlasmaRifle/Fire2		PLSSHOT2
+PlasmaRifle/Fire3		PLSSHOT3
+PlasmaRifle/Cool		PLSCOOL
+PlasmaRifle/Draw		PLSDRAW
+PlasmaRifle/CellIn		PLCLPIN
+PlasmaRifle/CellOut		PLCLPOUT
+PlasmaRifle/Dryfire 	PRDRY
+PlasmaRifle/Fly  		PLSFLY
+$random PlasmaRifle/Altfire { PlasmaRifle/Altfire1 PlasmaRifle/Altfire2 PlasmaRifle/Altfire3 }
+$limit PlasmaRifle/Altfire 0
+PlasmaRifle/Altfire1	PLSSHT21
+PlasmaRifle/Altfire2	PLSSHT22
+PlasmaRifle/Altfire3	PLSSHT23

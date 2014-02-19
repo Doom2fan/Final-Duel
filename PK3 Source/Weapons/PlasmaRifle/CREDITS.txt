@@ -1,0 +1,6 @@
+Sounds: Beautiful Doom(I think)
+Weapon:
+	DECORATE: Alex_Mercer
+	Sprites: Brutal Doom, edited by Uboa and Alex_Mercer
+Projectile:
+	DECORATE: from Beautiful Doom, edited by Alex_Mercer

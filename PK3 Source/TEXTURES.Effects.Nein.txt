@@ -1,0 +1,179 @@
+Sprite NN02A0, 69, 78
+{
+	Offset 37, 41
+	Patch NN01A0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02B0, 66, 75
+{
+	Offset 36, 39
+	Patch NN01B0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02C0, 65, 72
+{
+	Offset 35, 39
+	Patch NN01C0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02D0, 66, 69
+{
+	Offset 37, 38
+	Patch NN01D0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02E0, 67, 66
+{
+	Offset 37, 37
+	Patch NN01E0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02F0, 65, 66
+{
+	Offset 35, 35
+	Patch NN01F0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02G0, 64, 65
+{
+	Offset 35, 34
+	Patch NN01G0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02H0, 62, 62
+{
+	Offset 34, 32
+	Patch NN01H0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02I0, 61, 60
+{
+	Offset 33, 30
+	Patch NN01I0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02J0, 59, 58
+{
+	Offset 32, 30
+	Patch NN01J0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02K0, 57, 59
+{
+	Offset 31, 30
+	Patch NN01K0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02L0, 56, 59
+{
+	Offset 30, 29
+	Patch NN01L0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02M0, 53, 56
+{
+	Offset 27, 27
+	Patch NN01M0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02N0, 50, 52
+{
+	Offset 25, 25
+	Patch NN01N0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02O0, 46, 50
+{
+	Offset 23, 25
+	Patch NN01O0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02P0, 47, 44
+{
+	Offset 23, 21
+	Patch NN01P0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02Q0, 47, 40
+{
+	Offset 24, 19
+	Patch NN01Q0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}
+
+Sprite NN02R0, 35, 36
+{
+	Offset 20, 19
+	Patch NN01R0, 0, 0
+	{
+		Blend 0, 255, 0, 255
+		Style Add
+	}
+}

@@ -1,0 +1,116 @@
+////////////Green Holograms
+Actor UACHolo1 10050
+{
+//$Category Final Duel-Props
+//$Title Green UAC Hologram 1
+Scale 0.5
+Renderstyle add
++NOGRAVITY
+States
+{
+Spawn:
+	UAC1 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+Actor UACHolo2 : UACHolo1 10051
+{
+//$Category Final Duel-Props
+//$Title Green UAC Hologram 2
+States
+{
+Spawn:
+	UAC1 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+////////////Cyan Holograms
+Actor UACHolo3 : UACHolo1 10052
+{
+//$Category Final Duel-Props
+//$Title Cyan UAC Hologram 1
+States
+{
+Spawn:
+	UAC2 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner2", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+Actor UACHolo4 : UACHolo1 10053
+{
+//$Category Final Duel-Props
+//$Title Cyan UAC Hologram 2
+States
+{
+Spawn:
+	UAC2 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner2", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+////////////Orange Holograms
+Actor UACHolo5 : UACHolo1 10054
+{
+//$Category Final Duel-Props
+//$Title Orange UAC Hologram 1
+States
+{
+Spawn:
+	UAC3 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner3", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+Actor UACHolo6 : UACHolo1 10055
+{
+//$Category Final Duel-Props
+//$Title Orange UAC Hologram 2
+States
+{
+Spawn:
+	UAC3 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner3", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	Loop
+}
+}
+////////////Plasma Particle Spawner
+Actor PlasmaSpawner
+{
+Alpha 0.75
+RenderStyle Add
++NOGRAVITY
++DONTSPLASH
++NOCLIP
+-SOLID
+Projectile
+States
+{
+Spawn:
+    PLEM AAAAAAAAAAAAAAAA 1 BRIGHT A_FadeOut(0.09) 
+    stop
+Death:
+    TNT1 A 1
+    stop
+}
+}
+Actor PlasmaSpawner2 : plasmaspawner////Cyan
+{
+States
+{
+Spawn:
+    PLEM BBBBBBBBBBBBBBBB 1 BRIGHT A_FadeOut(0.09) 
+    stop
+Death:
+    TNT1 A 1
+    stop
+}
+}
+Actor PlasmaSpawner3 : plasmaspawner////Orange
+{
+States
+{
+Spawn:
+    PLEM CCCCCCCCCCCCCCCC 1 BRIGHT A_FadeOut(0.09) 
+    stop
+Death:
+    TNT1 A 1
+    stop
+}
+}

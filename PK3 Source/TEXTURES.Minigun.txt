@@ -1,0 +1,44 @@
+Sprite MINSA0, 320, 200
+{
+	Patch MINGA0, 0, 99
+}
+
+Sprite MINSB0, 320, 200
+{
+	Patch MINGA0, -24, 123
+}
+
+Sprite MINSC0, 320, 200
+{
+	Patch MINGA0, -48, 147
+}
+
+Sprite MINRA0, 320, 200
+{
+	Patch MINGB0, 16, 83
+}
+
+Sprite MINRB0, 320, 200
+{
+	Patch MINGC0, 6, 91
+}
+
+Sprite MINRC0, 320, 200
+{
+	Patch MINGD0, -2, 99
+}
+
+Sprite MINRD0, 320, 200
+{
+	Patch MINGA0, -10, 107
+}
+
+Sprite MINRE0, 320, 200
+{
+	Patch MINGB0, -18, 115
+}
+
+Sprite MINRF0, 320, 200
+{
+	Patch MINGC0, -26, 123
+}

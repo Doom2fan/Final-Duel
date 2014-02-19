@@ -1,0 +1,10 @@
+// from Diaz:Last Hours of Purity
+menu/backup 						menupick
+menu/prompt 						menuprmp
+menu/cursor 						menuhigh
+menu/change 						menuhigh
+menu/choose 						menupick
+menu/invalid 						menuinvl
+menu/activate 						menupick
+menu/dismiss 						menupick
+menu/clear 							menuinvl

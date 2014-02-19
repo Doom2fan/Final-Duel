@@ -1,0 +1,80 @@
+BrightMap Sprite REVGA0
+{
+Map brightmaps/Weapons/Revolver/REVGA0.png
+DisableFullBright
+}
+BrightMap Sprite REVFA0
+{
+Map brightmaps/Weapons/Revolver/REVFA0.png
+DisableFullBright
+}
+BrightMap Sprite REVFB0
+{
+Map brightmaps/Weapons/Revolver/REVFB0.png
+DisableFullBright
+}
+BrightMap Sprite REVFC0
+{
+Map brightmaps/Weapons/Revolver/REVFC0.png
+DisableFullBright
+}
+BrightMap Sprite REVRA0
+{
+Map brightmaps/Weapons/Revolver/REVRA0.png
+DisableFullBright
+}
+BrightMap Sprite REVRB0
+{
+Map brightmaps/Weapons/Revolver/REVRB0.png
+DisableFullBright
+}
+BrightMap Sprite REVRC0
+{
+Map brightmaps/Weapons/Revolver/REVRC0.png
+DisableFullBright
+}
+BrightMap Sprite REVRD0
+{
+Map brightmaps/Weapons/Revolver/REVRD0.png
+DisableFullBright
+}
+BrightMap Sprite REVRE0
+{
+Map brightmaps/Weapons/Revolver/REVRE0.png
+DisableFullBright
+}
+BrightMap Sprite REVRF0
+{
+Map brightmaps/Weapons/Revolver/REVRF0.png
+DisableFullBright
+}
+BrightMap Sprite REVRG0
+{
+Map brightmaps/Weapons/Revolver/REVRG0.png
+DisableFullBright
+}
+BrightMap Sprite REVRH0
+{
+Map brightmaps/Weapons/Revolver/REVRH0.png
+DisableFullBright
+}
+BrightMap Sprite REVRI0
+{
+Map brightmaps/Weapons/Revolver/REVRI0.png
+DisableFullBright
+}
+BrightMap Sprite REVRJ0
+{
+Map brightmaps/Weapons/Revolver/REVRJ0.png
+DisableFullBright
+}
+BrightMap Sprite REVRK0
+{
+Map brightmaps/Weapons/Revolver/REVRK0.png
+DisableFullBright
+}
+BrightMap Sprite REVPA0
+{
+Map brightmaps/Weapons/Revolver/REVPA0.png
+DisableFullBright
+}

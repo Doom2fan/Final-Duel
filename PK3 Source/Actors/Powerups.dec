@@ -1,0 +1,58 @@
+ACTOR PowerLight : PowerLightAmp
+{
+	Powerup.Color "77 77 77", 0.9
+}
+
+// Invulnerability
+actor FDInvulnerabilitySphere : PowerupGiver Replaces InvulnerabilitySphere
+{
+	SpawnID 133
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Type "Invulnerable"
+	Powerup.Color GoldMap
+	Inventory.PickupMessage "$GOTINVUL" // "Invulnerability!"
+	States
+	{
+	Spawn:
+		PINV ABCD 6 Bright
+		Loop
+	}
+}
+
+// Blursphere
+ACTOR PowerFDInvisibility : PowerInvisibility
+{
+	-SHADOW
+	+CANTSEEK
+	Powerup.Duration -60
+	Powerup.Strength 80
+	Powerup.Mode Translucent
+}
+ACTOR FDBlursphere : CustomInventory Replaces Blursphere
+{
+	Game Doom
+	SpawnID 135
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	Inventory.MaxAmount 0
+	RenderStyle Translucent
+	Inventory.PickupMessage "$GOTINVIS" // "Partial Invisibility"
+	States
+	{
+	Spawn:
+		PINS ABCD 6 Bright
+		Loop
+	Use:
+	Pickup:
+		TNT1 A 0 A_GiveInventory("PowerFDInvisibility",1)
+		TNT1 A 0 A_GiveInventory("PowerFrightener",1)
+		Stop
+	}
+}
+ACTOR FDSoulsphere : Soulsphere { }

@@ -1,0 +1,36 @@
+texture STATIC1
+	pic STATIC1 tics 3
+	pic STATIC2 tics 3
+	pic STATIC3 tics 3
+	pic STATIC4 tics 3
+	
+texture WRNCOMP1
+	pic WRNCOMP1 tics 8
+	pic WRNCOMP2 tics 8
+	
+texture WRNCMP21
+	pic WRNCMP21 tics 8
+	pic WRNCMP22 tics 8
+
+Warp Flat BLOOD1
+Warp Flat BLOOD2
+Warp Flat BLOOD3
+warp2 Flat FWATER1
+warp2 Flat FWATER2
+warp2 Flat FWATER3
+warp2 Flat FWATER4
+Warp Flat LAVA1
+Warp Flat LAVA2
+Warp Flat LAVA3
+Warp Flat LAVA4
+Warp Flat NUKAGE1
+Warp Flat NUKAGE2
+Warp Flat NUKAGE3
+Warp Flat SLIME01
+Warp Flat SLIME02
+Warp Flat SLIME03
+Warp Flat SLIME04
+Warp Flat SLIME05
+Warp Flat SLIME06
+Warp Flat SLIME07
+Warp Flat SLIME08

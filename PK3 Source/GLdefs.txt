@@ -1,0 +1,38 @@
+// Weapons
+	#include "GLDefs/Rifle.txt"
+	#include "GLDefs/Revolver.txt"
+	#include "GLDefs/PlasmaRifle.txt"
+	#include "GLDefs/SonicRailgun.txt"
+	#include "GLDefs/SoulReaper.txt"
+	#include "GLDefs/Magic.txt"
+	#include "GLDefs/MiscWeaponBrightmaps.txt"
+	#include "GLDefs/Scopes.txt"
+
+// Monsters
+	#include "GLDefs/ArchonOfHell.txt"
+	#include "GLDefs/CyberBaron.txt"
+	#include "GLDefs/Catharsi.txt"
+	#include "GLDefs/ChaingunMajor.txt"
+	#include "GLDefs/DarkImpVoid.txt"
+	#include "GLDefs/Cybruiser.txt"
+	#include "GLDefs/ZSec.txt"
+	#include "GLDefs/InfernalSpider.txt"
+	#include "GLDefs/PyroSuccubus.txt"
+
+// Items
+	#include "GLDefs/Flares.txt"
+	#include "GLDefs/SentryGun.txt"
+	#include "GLDefs/Items.txt"
+	#include "GLDefs/Ammo.txt"
+
+// Props
+	#include "GLDefs/UACHolograms.txt"
+	#include "GLDefs/StrobeLights.txt"
+	#include "GLDefs/WallTorches.txt"
+
+// SFX
+	#include "GLDefs/DoomTerrain.txt"
+
+// Misc
+	#include "GLDefs/Misc.txt"
+	#include "GLDefs/Skyboxes.txt"

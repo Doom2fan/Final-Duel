@@ -1,0 +1,13 @@
+Name: Wall Torches
+Connection: No
+Palette: Doom
+Summon: [Blue/Red/Green]WallTorch
+Ambient Sound: No
+De-/Activatable: No
+Destroyable: No
+Special Effects: No
+
+Submitted: Captain Toenail
+Decorate: Captain Toenail
+Sprites: Doom
+Sprite Edit: Captain Toenail

@@ -1,0 +1,12 @@
+pickup/armor				ARMOR
+$alias Cyber/Attack weapons/rlan/fire
+$random Misc/Body { Misc/Body1 Misc/Body2 Misc/Body3 Misc/Body4 Misc/Body5 Misc/Body6 Misc/Body7 Misc/Body8 Misc/Body9 }
+Misc/Body1					BODY01
+Misc/Body2					BODY02
+Misc/Body3					BODY03
+Misc/Body4					BODY04
+Misc/Body5					BODY05
+Misc/Body6					BODY06
+Misc/Body7					BODY07
+Misc/Body8					BODY08
+Misc/Body9					BODY09

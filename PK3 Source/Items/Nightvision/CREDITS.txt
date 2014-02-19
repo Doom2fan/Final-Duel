@@ -1,0 +1,5 @@
+DECORATE: Alex_Mercer
+Battery:
+	Base Sprite: BloodyAcid
+	Sprites: Alex_Mercer
+	Sprite edits: Captain J

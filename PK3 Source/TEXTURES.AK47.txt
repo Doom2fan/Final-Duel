@@ -1,0 +1,29 @@
+Sprite AKGSA0, 320, 200
+{
+	Patch AK47A0, 91, 46
+}
+
+Sprite AKGSB0, 320, 200
+{
+	Patch AK47A0, 67, 70
+}
+
+Sprite AKGSC0, 320, 200
+{
+	Patch AK47A0, 44, 94
+}
+
+Sprite AKGSD0, 320, 200
+{
+	Patch AK47A0, 20, 118
+}
+
+Sprite AKGSE0, 320, 200
+{
+	Patch AK47A0, -4, 142
+}
+
+Sprite AKGSF0, 320, 200
+{
+	Patch AK47A0, -28, 166
+}

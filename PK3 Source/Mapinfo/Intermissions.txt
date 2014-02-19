@@ -1,0 +1,55 @@
+Intermission Endgame
+{
+	Image
+	{
+		Background = "DRSKY01"
+		Time = -1
+		Music = "$MUSIC_EVIL"
+		Time = -70
+	}
+	link = FDThe_End
+}
+Intermission FDThe_End
+{
+	Image
+	{
+		Draw = "END0", 108, 68
+		Time = -50
+	}
+	Image
+	{
+		Draw = "END1", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+	Image
+	{
+		Draw = "END2", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+	Image
+	{
+		Draw = "END3", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+	Image
+	{
+		Draw = "END4", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+	Image
+	{
+		Draw = "END5", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+	Image
+	{
+		Draw = "END6", 108, 68
+		Time = -5
+		Sound = "weapon/actionMachinegunFire"
+	}
+}

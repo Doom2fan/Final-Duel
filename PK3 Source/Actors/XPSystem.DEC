@@ -1,0 +1,2 @@
+ACTOR XPSystemExperience : Counter { }
+ACTOR XPSystemLevel      : Counter { Inventory.MaxAmount 25 }

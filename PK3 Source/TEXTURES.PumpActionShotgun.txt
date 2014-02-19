@@ -1,0 +1,20 @@
+// Select/Deselect
+Sprite SGGSA0, 320, 200
+{
+	Patch SGG1A0, 98, 107
+}
+
+Sprite SGGSB0, 320, 200
+{
+	Patch SGG1A0, 82, 123
+}
+
+Sprite SGGSC0, 320, 200
+{
+	Patch SGG1A0, 66, 139
+}
+
+Sprite SGGSD0, 320, 200
+{
+	Patch SGG1A0, 50, 155
+}

@@ -1,0 +1,456 @@
+
+//Dynamic lights
+
+Pointlight BruiserMissile
+{
+Color 1.0 0.5 0.0
+Size 25
+}
+
+Pointlight BruiserMissile2
+{
+Color 1.0 0.5 0.0
+Size 35
+}
+
+Pointlight BruiserMissile3
+{
+Color 0.7 0.3 0.0
+Size 25
+}
+
+Pointlight BruiserMissile4
+{
+Color 0.4 0.1 0.0
+Size 20
+}
+
+Pointlight CybruiserDeath1
+{
+Color 1.0 0.5 0.0
+Size 35
+}
+
+Pointlight CybruiserDeath2
+{
+Color 1.0 0.5 0.0
+Size 40
+}
+
+Pointlight CybruiserDeath3
+{
+Color 0.9 0.4 0.0
+Size 45
+}
+
+Pointlight CybruiserDeath4
+{
+Color 0.7 0.2 0.0
+Size 35
+}
+
+Pointlight CybruiserDeath5
+{
+Color 0.5 0.1 0.0
+Size 30
+}
+
+Pointlight CybruiserDeath6
+{
+Color 0.3 0.0 0.0
+Size 25
+}
+
+Pointlight CybruiserDeath7
+{
+Color 0.1 0.0 0.0
+Size 20
+}
+
+Pointlight CybruiserDeath8
+{
+Color 0.1 0.0 0.0
+Size 15
+}
+
+Object Cybruiser
+{
+Frame BRUSK { Light CybruiserDeath1 }
+Frame BRUSL { Light CybruiserDeath2 }
+Frame BRUSM { Light CybruiserDeath3 }
+Frame BRUSN { Light CybruiserDeath4 }
+Frame BRUSO { Light CybruiserDeath5 }
+Frame BRUSP { Light CybruiserDeath6 }
+Frame BRUSQ { Light CybruiserDeath7 }
+Frame BRUSR { Light CybruiserDeath8 }
+}
+
+Object BruiserMissile
+{
+Frame FBRSA { Light BruiserMissile }
+Frame BAL3C { Light BruiserMissile2 }
+Frame BAL3D { Light BruiserMissile3 }
+Frame BAL3E { Light BruiserMissile4 }
+}
+
+//Brightmaps
+
+BrightMap Sprite BRUSA1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSA1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSA2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSA2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSA7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSA7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSA8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSA8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSB1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSB1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSB2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSB2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSB7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSB7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSB8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSB8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSC1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSc1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSC2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSc2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSC3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSc3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSC7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSc7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSC8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSc8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSD1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSD1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSD2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSD2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSD3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSD3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSD7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSD7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSD8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSD8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSE1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSE1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSE2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSE2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSE3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSE3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSE7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSE7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSE8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSE8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF4
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF4.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF5
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF5.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF6
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF6.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSF8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSF8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSG1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSG1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSG2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSG2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSG3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSG3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSG8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSG8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSH1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSH1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSH2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSH2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSH7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSH7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSH8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSH8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSI1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSI1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSI2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSI2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSI7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSI7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSI8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSI8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSJ1
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSJ1.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSJ2
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSJ2.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSJ3
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSJ3.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSJ7
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSJ7.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSJ8
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSJ8.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSK0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSK0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSL0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSL0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSM0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSM0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSN0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSN0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSO0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSO0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSP0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSP0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSQ0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSQ0.png
+DisableFullBright
+}
+
+BrightMap Sprite BRUSR0
+{
+Map Brightmaps/Monsters/Cybruiser/BMBRUSR0.png
+DisableFullBright
+}
+
+BrightMap Sprite FBRSA1
+{
+Map Brightmaps/Monsters/Cybruiser/BMFBRSA1.png
+DisableFullBright
+}
+
+BrightMap Sprite FBRSA2A8
+{
+Map Brightmaps/Monsters/Cybruiser/BMFBRSA2.png
+DisableFullBright
+}
+
+BrightMap Sprite FBRSA3A7
+{
+Map Brightmaps/Monsters/Cybruiser/BMFBRSA3.png
+DisableFullBright
+}
+
+BrightMap Sprite FBRSA4A6
+{
+Map Brightmaps/Monsters/Cybruiser/BMFBRSA4.png
+DisableFullBright
+}
