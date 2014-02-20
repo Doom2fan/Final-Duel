@@ -1,0 +1,11 @@
+#ifndef _FD_MISC_DH_
+#define _FD_MISC_DH_
+
+#include "fd_defs.dh"
+
+externscript		void	fd_DeactivateThing();
+externscript		int		fd_Randomizer();
+externscript		void	fd_Water();
+
+#endif
+

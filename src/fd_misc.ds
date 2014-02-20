@@ -1,0 +1,28 @@
+#include "fd_misc.dh"
+
+script void fd_DeactivateThing()
+{
+	Thing_Deactivate(ActivatorTID());
+	return;
+};
+
+script int fd_Randomizer()
+	return GetCVar("FD_DontRandomizeStuff");
+
+script void fd_Water() __enter
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	start:
+	if (GetActorProperty(0,APROP_Waterlevel) > 2)
+	{
+		GiveInventory("IsUnderwater",1);
+	}
+	else if (GetActorProperty(0,APROP_Waterlevel) <= 2)
+	{
+		TakeInventory("IsUnderwater",1);
+	};
+	Delay(1);
+	goto start;
+	return;
+};
+
