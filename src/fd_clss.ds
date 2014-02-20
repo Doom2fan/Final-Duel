@@ -17,7 +17,7 @@ script void fd_Nightvision() __enter
 		break;
 		case 2:
 			if(NVTics == 87) NVTics = 0;
-		break
+		break;
 		};
 
 		if(CheckInventory("FDNightvisionOn") != 0 && CheckInventory("NVBattery") != 0)

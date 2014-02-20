@@ -9,6 +9,7 @@ set OBJ=.\acs
 set CMD=dh-acc --named-scripts --auto-stack-size=0 -Z -i %SRC%\inc
 
 echo Compiling DS files...
+%CMD% -c %SRC%\fd_clss.ds -o %OBJ%\fd_clss.o
 %CMD% -c %SRC%\fd_misc.ds -o %OBJ%\fd_misc.o
 %CMD% -c %SRC%\fd_foot.ds -o %OBJ%\fd_foot.o
 %CMD% -c %SRC%\fd_fatl.ds -o %OBJ%\fd_fatl.o
@@ -17,7 +18,8 @@ echo Compiling DS files...
 %CMD% -c %SRC%\fd_util.ds -o %OBJ%\fd_util.o
 %CMD% -c %SRC%\fd_main.ds -o %OBJ%\fd_main.o
 echo Done! Compiling final object file...
-%CMD% %OBJ%\fd_misc.o %OBJ%\fd_foot.o %OBJ%\fd_fatl.o %OBJ%\fd_ccmd.o %OBJ%\fd_ccam.o %OBJ%\fd_util.o %OBJ%\fd_main.o -o %OBJ%\main.o
+%CMD% %OBJ%\fd_clss.o %OBJ%\fd_misc.o %OBJ%\fd_foot.o %OBJ%\fd_fatl.o %OBJ%\fd_ccmd.o %OBJ%\fd_ccam.o %OBJ%\fd_util.o %OBJ%\fd_main.o -o %OBJ%\main.o
+del %OBJ%\fd_clss.o
 del %OBJ%\fd_misc.o
 del %OBJ%\fd_foot.o
 del %OBJ%\fd_fatl.o
