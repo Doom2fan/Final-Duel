@@ -1,0 +1,44 @@
+#include "fd_clss.dh"
+
+script void fd_Nightvision() __enter
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	int NVTics = 0;
+	
+	while(1)
+    {
+		switch(CheckInventory("NightvisionUpgrade"))
+		{
+		case 0:
+			if(NVTics == 52) NVTics = 0;
+		break;
+		case 1:
+			if(NVTics == 70) NVTics = 0;
+		break;
+		case 2:
+			if(NVTics == 87) NVTics = 0;
+		break
+		};
+
+		if(CheckInventory("FDNightvisionOn") != 0 && CheckInventory("NVBattery") != 0)
+		{
+			GiveInventory("PowerNightvision",1);
+			if(NVTics == 0) TakeInventory("NVBattery",1);
+		}
+		else if(CheckInventory("FDNightvisionOn") != 0 && CheckInventory("NVBattery") == 0)
+		{
+			TakeInventory("PowerNightvision",1);
+			TakeInventory("FDNightvisionOn",1);
+			ActivatorSound("Nightvision/Off", 127);
+		}
+		else if(CheckInventory("FDNightvisionOn") == 0)
+		{
+			TakeInventory("PowerNightvision",1);
+			TakeInventory("FDNightvisionOn",1);
+		};
+		Delay(1);
+		if(CheckInventory("FDNightvisionOn") != 0) NVTics++;
+	};
+	return;
+};
+
