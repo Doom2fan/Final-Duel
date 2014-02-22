@@ -1,5 +1,4 @@
-Submitted: Xim
-Decorate: Xim
+Decorate: Alex_Mercer
 Sprites: ScubaSteve, Uboa, Alex_Mercer
 Sounds: NightmareMutant
 Idea Base: Action Doom Machinegun
