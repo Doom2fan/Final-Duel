@@ -291,7 +291,6 @@ Actor MagnumClip : Ammo 30084
 	Inventory.MaxAmount 10
 	Ammo.BackpackMaxAmount 10
 	Inventory.Icon "MAGAA0"
-	+IGNORESKILL
 	States
 	{
 	Spawn: // Sprites by HellCattX
@@ -323,7 +322,6 @@ Actor Slug : Ammo 30085
 	Inventory.MaxAmount 20
 	Ammo.BackpackMaxAmount 40
 	Inventory.Icon "SLUGA0"
-	+IGNORESKILL
 	States
 	{
 	Spawn: // Sprites by ID Software, edited by Alex_Mercer
@@ -337,11 +335,43 @@ Actor SlugBox : Slug 30086
 	Tag "Box of Rifled Slugs"
 	Inventory.PickupMessage "$GOTSLUGSBOX"
 	Inventory.Amount 20
-	+IGNORESKILL
 	States
 	{
 	Spawn: // Sprites by HellCattX, edited by Alex_Mercer
 		SLUG B -1
+		Stop
+	}
+}
+// Crossbow Bolts
+Actor CrossbowBolts : AMMO 30138
+{
+	//$Category Final Duel-Ammunition
+	Tag "Crossbow Bolt"
+	Inventory.PickupMessage "$GOTXBOWBOLT"
+	Inventory.Amount 1
+	Inventory.MaxAmount 30
+	Ammo.BackpackMaxAmount 50
+	Inventory.Icon "SBOWB0"
+	+IGNORESKILL
+	States
+	{
+	Spawn: // By Alex_Mercer(base sprite by terranova)
+		SBOW B -1
+		Stop
+	}
+}
+Actor CrossbowBoltsQuiver : CrossbowBolts 30139
+{
+	//$Category Final Duel-Ammunition
+	Tag "Quiver of Crossbow Bolt"
+	Inventory.PickupMessage "$GOTXBOWBOLTS"
+	Inventory.Amount 10
+	Inventory.Icon "SBOWC0"
+	+IGNORESKILL
+	States
+	{
+	Spawn: // Sprites by terranova
+		SBOW C -1
 		Stop
 	}
 }

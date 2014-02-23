@@ -38,6 +38,7 @@
 	// Slot 8
 		TAGSREAPER										= "Soul Reaper";
 		TAGSNIPERRIFLE									= "Magnum Sniper Rifle";
+		TAGCROSSBOW										= "Crossbow";
 
 	// Slot 9
 		TAGFATARM										= "Mancubus Flamethrower";

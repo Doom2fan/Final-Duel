@@ -1,0 +1,79 @@
+Actor FDCrossbow : FDWeapon 30137
+{
+	//$Category Final Duel-Weapons
+	//$Sprite SBOWA0
+	Tag "$TAGCROSSBOW"
+	Inventory.PickupSound "misc/gunpickup"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 1
+	Weapon.AmmoType "CrossbowBolts"
+	+NoAlert
+	+Weapon.NoAutoFire
+	Inventory.PickupMessage "$GOTCROSSBOW"
+	Obituary "$OBCROSSBOW"
+	+Ammo_Optional
+	States
+	{
+	Ready:
+		XBWS CBA 1 
+	Ready2:
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		XBOW A 1 A_WeaponReady
+		Loop
+	Deselect:
+		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		XBWS ABC 1
+		TNT1 A 0 A_Lower
+		Wait
+	Select:
+		TNT1 A 0 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		TNT1 A 0 A_PlaySound("Crossbow/Fire", CHAN_WEAPON)
+		XBOW B 1 A_FireCustomMissile ("CrossbowBolt",0,1)
+		XBOW CD 2
+		XBOW D 11
+		XBOW E 2 A_PlaySound("Crossbow/String", CHAN_WEAPON)
+		XBOW FGH 2
+		XBOW I 2 A_PlaySound("Crossbow/Cock", CHAN_WEAPON)
+		XBOW JK 2
+		XBOW L 8
+		XBOW M 3 A_PlaySound("Crossbow/Slide", CHAN_WEAPON)
+		XBOW N 3
+		Goto Ready2
+	DryFire:
+		XBOW A 0 A_PlaySound("weapons/empty")
+		Goto Ready2
+	Spawn:
+		SBOW A -1
+		Stop
+	}
+}
+
+Actor CrossbowBolt
+{
+	Radius 11
+	Height 8
+	Speed 50
+	Damage (random(1,8) * 20)
+	Projectile
+	+WINDTHRUST
+	+NOEXTREMEDEATH
+	States
+	{
+	Spawn:
+		XBWB A 1
+		Loop
+	Death:
+		XBWB A 300 A_PlaySound("Crossbow/Arrow/Hit", CHAN_BODY)
+		"####" "#" 1 A_FadeOut(0.08)
+		Wait
+	Crash:
+	XDeath:
+		TNT1 A 0 A_PlaySound("Crossbow/Arrow/Hit", CHAN_BODY)
+		Stop
+	}
+}

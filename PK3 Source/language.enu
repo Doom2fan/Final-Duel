@@ -52,6 +52,7 @@
 		GOTMAGNUMAMMOBOX			= "Picked up a box of Magnum ammo";
 		GOTSLUGS					= "Picked up 4 Rifled Slugs";
 		GOTSLUGSBOX					= "Picked up a box of Rifled Slugs";
+		GOTXBOWBOLTS				= "Picked up a quiver of Crossbow Bolts";
 
 // Weapon Pickups
 	// Slot 1
@@ -91,6 +92,7 @@
 	// Slot 8
 		PICKUP_SOULREAPER      	= "You got the Soul Reaper. (Slot 8)";
 		GOTSNIPERRIFLE			= "You got the Magnum Sniper Rifle. (Slot 8)";
+		GOTCROSSBOW				= "You got the Crossbow. (Slot 8)";
 
 	// Slot 9
 		GOTMANCUBUSARM			= "You got the Mancubus Flamethrower. (Slot 9)";
@@ -203,6 +205,8 @@
 		OBBFG9000				= "%k \cG> \cKBFG 9000 \cG> \cL%o";
 	// Magnum Sniper Rifle
 		OBSNIPERRIFLE			= "%k \cG> \cKMagnum Sniper Rifle \cG> \cL%o";
+	// Crossbow
+		OBCROSSBOW				= "%k \cG> \cKCrossbow \cG> \cL%o";
 
 // Default Strings
 	QUITMSG 					= "Are you sure you want to\nquit this awesome mod?";

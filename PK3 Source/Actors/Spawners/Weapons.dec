@@ -21,7 +21,7 @@ ACTOR ShotgunSpawner Replaces Shotgun
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump(128,"PAS","Magnum")
+		TNT1 A 0 A_Jump(128,"PAS","Magnum","Crossbow")
 	Normal:
 		TNT1 A 0 A_SpawnItemEx("ShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
@@ -32,6 +32,10 @@ ACTOR ShotgunSpawner Replaces Shotgun
 	Magnum:
 		TNT1 A 0 A_SpawnItemEx("Magnum", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		TNT1 AA 0 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	Crossbow:
+		TNT1 A 0 A_SpawnItemEx("FDCrossbow", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

@@ -21,7 +21,7 @@ ACTOR ShellSpawner Replaces Shell
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop")
+		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop","CrossbowBoltDrop")
 	Normal:
 		TNT1 A 1 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
@@ -31,6 +31,9 @@ ACTOR ShellSpawner Replaces Shell
 	MagnumAmmoDrop:
 		TNT1 A 1 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
+	CrossbowBoltDrop:
+		TNT1 A 1 A_SpawnItemEx("CrossbowBolts", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
 	}
 }
 ACTOR ShellBoxSpawner Replaces ShellBox
@@ -39,7 +42,7 @@ ACTOR ShellBoxSpawner Replaces ShellBox
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop")
+		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop","CrossbowBoltDrop")
 	Normal:
 		TNT1 A 1 A_SpawnItemEx("ShellBox2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
@@ -48,6 +51,9 @@ ACTOR ShellBoxSpawner Replaces ShellBox
 		Stop
 	MagnumAmmoDrop:
 		TNT1 A 1 A_SpawnItemEx("MagnumClipBox", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		Stop
+	CrossbowBoltDrop:
+		TNT1 A 1 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

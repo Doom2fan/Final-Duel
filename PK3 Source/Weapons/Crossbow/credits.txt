@@ -1,0 +1,3 @@
+Decorate: Alex_Mercer, terranova
+Sprites: terranova, Alex_Mercer
+Sounds: Erdie(A Freesound user), Tripwire Interactive, Walter_Odington(A Freesound user)

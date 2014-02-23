@@ -1,0 +1,14 @@
+Sprite XBWSA0, 320, 200
+{
+	Patch XBOWA0, 40, 109
+}
+
+Sprite XBWSB0, 320, 200
+{
+	Patch XBOWA0, 16, 133
+}
+
+Sprite XBWSC0, 320, 200
+{
+	Patch XBOWA0, -9, 156
+}
