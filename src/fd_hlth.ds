@@ -1,0 +1,95 @@
+#include "fd_hlth.dh"
+
+script void fd_Health() __enter
+{
+	if(GameType() == GAME_TITLE_MAP) return;
+	int HeartbeatTics = 0;
+	int Health;
+	while(1)
+	{
+		Health = GetActorProperty(0, APROP_Health);
+		if(Health > 0)
+		{
+			if(Health < 2)
+			{
+				if(HeartbeatTics == 35)
+				{
+					HeartbeatTics = 0;
+					LocalAmbientSound ("Player/Heartbeat", 127);
+				};
+				HeartbeatTics++;
+			}
+			else if(Health <= 5)
+			{
+				if(HeartbeatTics == 70)
+				{
+					HeartbeatTics = 0;
+					LocalAmbientSound ("Player/Heartbeat", 127);
+				};
+				HeartbeatTics++;
+			}
+			else if(Health <= 10)
+			{
+				if(HeartbeatTics == 105)
+				{
+					HeartbeatTics = 0;
+					LocalAmbientSound ("Player/Heartbeat", 127);
+				};
+				HeartbeatTics++;
+			}
+			else if(Health <= 15)
+			{
+				if(HeartbeatTics == 140)
+				{
+					HeartbeatTics = 0;
+					LocalAmbientSound ("Player/Heartbeat", 127);
+				};
+				HeartbeatTics++;
+			}
+			else if(Health <= 20)
+			{
+				if(HeartbeatTics == 175)
+				{
+					HeartbeatTics = 0;
+					LocalAmbientSound ("Player/Heartbeat", 127);
+				};
+				HeartbeatTics++;
+			}
+			else if(GetActorProperty(0, APROP_Health) > 20 && HeartbeatTics > 0)
+			{
+				HeartbeatTics = 0;
+			};
+		};
+		Delay(1);
+	};
+	
+	return;
+};
+
+script void fd_TimedHPRegen(int arg1, int arg2, int arg3)
+{
+	int TicsPassed, SecsPassed, SecCounter, Health, MaxHealth;
+	while(1)
+	{
+		MaxHealth = GetActorProperty(0, APROP_SpawnHealth);
+		Health = GetActorProperty(0, APROP_Health);
+		if(Health == 0) return;
+		if(SecsPassed == arg1) return;
+		if(TicsPassed == 35)
+		{
+			SecsPassed++;
+			SecCounter++;
+			TicsPassed = 0;
+		};
+		if (SecCounter == arg3)
+		{
+			if(Health != MaxHealth) SetActorProperty(0, APROP_Health, Health + arg2);
+			SecCounter = 0;
+		};
+		TicsPassed++;
+		Delay(1);
+	};
+	
+	return;
+};
+

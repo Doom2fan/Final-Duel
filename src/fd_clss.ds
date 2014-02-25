@@ -39,6 +39,7 @@ script void fd_Nightvision() __enter
 		Delay(1);
 		if(CheckInventory("FDNightvisionOn") != 0) NVTics++;
 	};
+	
 	return;
 };
 

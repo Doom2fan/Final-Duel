@@ -177,6 +177,7 @@ __function int GetVelocity()
 	{
 		vel = x / Cos(angle);
 	};
+	
 	return vel;
 };
 
@@ -207,6 +208,7 @@ script void fd_Footstep() __enter
 		splayed = 0;
 		Delay(dtime);
 	};
+	
 	return;
 };
 

@@ -3,6 +3,7 @@
 script void fd_DeactivateThing()
 {
 	Thing_Deactivate(ActivatorTID());
+	
 	return;
 };
 
@@ -23,6 +24,7 @@ script void fd_Water() __enter
 	};
 	Delay(1);
 	goto start;
+	
 	return;
 };
 

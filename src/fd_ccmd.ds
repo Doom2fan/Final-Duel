@@ -12,6 +12,7 @@ script void fd_Reload()
 	{
 		GiveInventory("Reloading", 1);
 	};
+	
 	return;
 };
 
@@ -23,12 +24,14 @@ script void fd_Keys() __enter
 		if(KeyPressed(BT_RELOAD)) fd_Reload();
 		Delay(1);
 	};
+	
 	return;
 };
 
 script void fd_Kick() __net
 {
 	GiveInventory("Kicking", 1);
+	
 	return;
 };
 

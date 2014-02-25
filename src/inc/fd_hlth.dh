@@ -1,0 +1,10 @@
+#ifndef _FD_HLTH_DH_
+#define _FD_HLTH_DH_
+
+#include "fd_defs.dh"
+
+externscript		void	fd_Health();
+externscript		void	fd_TimedHPRegen();
+
+#endif
+

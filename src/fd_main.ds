@@ -11,7 +11,8 @@ script void fd_CVars() __enter
 	
 	goto start;
 	return;
-};*/
+};
+*/
 
 script void fd_Enter() __enter
 {
@@ -31,7 +32,6 @@ script void fd_Respawn() __respawn
 {
 	if(GameType() == GAME_TITLE_MAP) return;
 	
-	// Make sure our old dead body doesn't still have our tid
 	Thing_ChangeTID(PLAYER_TID_START+pnum,0);
 	fd_Enter();
 	
