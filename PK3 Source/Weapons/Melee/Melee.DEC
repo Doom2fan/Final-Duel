@@ -55,7 +55,16 @@ Actor MeleeAttack : FDWeapon
 		TNT1 A 0 A_JumpIfInventory("PowerFDStrength",1,"Attack.Berserk")
 		FIST BCD 1
 		TNT1 A 0 A_CustomPunch (random(20,30), 1, 0, "FistPuff")
-		FIST EFGHIJ 1
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST E 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST F 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST G 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST H 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST IJ 1
+		FIST AAA 1 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2")
 		TNT1 A 0 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2")
 		Goto Ready2		
 	AltAttack:
@@ -63,15 +72,23 @@ Actor MeleeAttack : FDWeapon
 		TNT1 A 0 A_JumpIfInventory("PowerFDStrength",1,"AltAttack.Berserk")
 		FIST KLM 1
 		TNT1 A 0 A_CustomPunch (random(20,30), 1, 0, "FistPuff")
-		FIST NOPQRS 1 
+		FIST NOPQRSAAA 1 
 		Goto Ready2
 		
 	// Combos
 	Combo1P2:
 		TNT1 A 0 A_TakeInventory("MCSBAltFire", 1)
 		FIST KLM 1
-		TNT1 A 0 A_CustomPunch (random(30,40), 1, 0, "FistPuff")
-		FIST NOPQRS 1
+		TNT1 A 0 A_CustomPunch (random(30,40), 1, 0, "FistPuff")TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST N 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST O 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST P 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST Q 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST RS 1
+		FIST AAA 1 A_JumpIfInventory("MCSBFire", 1, "Combo1Finish")
 		TNT1 A 0 A_JumpIfInventory("MCSBFire", 1, "Combo1Finish")
 		Goto Ready2
 	Combo1Finish:
@@ -79,6 +96,7 @@ Actor MeleeAttack : FDWeapon
 		FST1 ABCDEF 1
 		TNT1 A 0 A_CustomPunch (random(40,50), 1, 0, "FistPuff")
 		FST1 FEDCBA 1
+		FIST AAA 1
 		Goto Ready2
 		
 	// Berserk
@@ -86,14 +104,23 @@ Actor MeleeAttack : FDWeapon
 		TNT1 A 0 A_JumpIfInventory("FatalityOn",1,"Attack.Fatality")
 		FIST BCD 1
 		TNT1 A 0 A_CustomPunch (3 * random(20,30), 1, 0, "FistPuffStrong")
-		FIST EFGHIJ 1
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST E 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST F 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST G 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST H 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST IJ 1
+		FIST AAA 1 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2.Berserk")
 		TNT1 A 0 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2.Berserk")
 		Goto Ready2
 	AltAttack.Berserk:
 		TNT1 A 0 A_JumpIfInventory("FatalityOn",1,"AltAttack.Fatality")
 		FIST KLM 1
 		TNT1 A 0 A_CustomPunch (3 * random(20,30), 1, 0, "FistPuffStrong")
-		FIST NOPQRS 1 
+		FIST NOPQRSAAA 1 
 		Goto Ready2
 	BerserkKick:
 		KICK BCD 1
@@ -105,7 +132,15 @@ Actor MeleeAttack : FDWeapon
 		TNT1 A 0 A_TakeInventory("MCSBAltFire", 1)
 		FIST KLM 1
 		TNT1 A 0 A_CustomPunch (3 * random(30,40), 1, 0, "FistPuffStrong")
-		FIST NOPQRS 1
+		FIST N 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST O 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST P 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST Q 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST RS 1
+		FIST AAA 1 A_JumpIfInventory("MCSBFire", 1, "Combo1Finish.Berserk")
 		TNT1 A 0 A_JumpIfInventory("MCSBFire", 1, "Combo1Finish.Berserk")
 		Goto Ready2
 	Combo1Finish.Berserk:
@@ -114,25 +149,43 @@ Actor MeleeAttack : FDWeapon
 		FST1 ABCDEF 1
 		TNT1 A 0 A_CustomPunch (3 * random(40,50), 1, 0, "FistPuffStrong")
 		FST1 FEDCBA 1
+		FIST AAA 1
 		Goto Ready2
 	
 	// Fatality
 	Attack.Fatality:
 		FIST BCD 1
 		TNT1 A 0 A_CustomPunch (3 * random(20,30), 1, 0, "FistPuffStronger")
-		FIST EFGHIJ 1
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST E 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST F 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST G 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST H 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST IJ 1
+		FIST AAA 1 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2.Fatality")
 		TNT1 A 0 A_JumpIfInventory("MCSBAltFire", 1, "Combo1P2.Fatality")
 		Goto Ready2
 	AltAttack.Fatality:
 		FIST KLM 1
 		TNT1 A 0 A_CustomPunch (3 * random(20,30), 1, 0, "FistPuffStronger")
-		FIST NOPQRS 1 
+		FIST NOPQRSAAA 1
 		Goto Ready2
 	Combo1P2.Fatality:
 		TNT1 A 0 A_TakeInventory("MCSBAltFire", 1)
 		FIST KLM 1
 		TNT1 A 0 A_CustomPunch (3 * random(30,40), 1, 0, "FistPuffStronger")
-		FIST NOPQRS 1
+		FIST N 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST O 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST P 1 A_TakeInventory("MCSBAltFire", 1)
+		TNT1 A 0 A_TakeInventory("MCSBFire", 1)
+		FIST Q 1 A_TakeInventory("MCSBAltFire", 1)
+		FIST RS 1
+		FIST AAA 1 A_JumpIfInventory("MCSBFire", 1, "Combo1P2.Fatality")
 		TNT1 A 0 A_JumpIfInventory("MCSBFire", 1, "Combo1Finish.Fatality")
 		Goto Ready2
 	Combo1Finish.Fatality:
@@ -140,6 +193,7 @@ Actor MeleeAttack : FDWeapon
 		FST1 ABCDEF 1
 		TNT1 A 0 A_CustomPunch (3 * random(40,50), 1, 0, "FistPuffStronger")
 		FST1 FEDCBA 1
+		FIST AAA 1
 		Goto Ready2
 	}
 }
