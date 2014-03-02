@@ -86,6 +86,7 @@ ACTOR MarineClass : BasePlayerClass
 		PLAY G 4 
 		PLAY G 4 A_Pain
 		Goto Spawn
+	Death.Suicide:
 	Death:
 		PLAY H 10 A_PlayerScream
 		PLAY I 10 

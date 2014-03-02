@@ -132,7 +132,6 @@
 		#include "Monsters/ZSec/DECORATE.DEC" 						// Credits in the folder
 		#include "Monsters/Rottweiler/DECORATE.DEC" 				// Credits in the folder
 		#include "Monsters/InfernalSpider/DECORATE.DEC"				// Credits in the folder
-		#include "Monsters/UACBot/DECORATE.DEC" 					// Credits in the folder
 		#include "Monsters/PyroSuccubus/DECORATE.DEC" 				// Credits in the folder
 		#include "Monsters/BloodDemon/DECORATE.DEC"					// Credits in the folder
 

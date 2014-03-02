@@ -1,2 +1,3 @@
 DECORATE: Alex_Mercer
 Sprites: GT Interactive, Eriance, SigFloyd, ID Software, Rogue Entertainment, Snarboo, Mike12, Alex_Mercer
+Sounds: NightmareMutant, Alex_Mercer, IJC Weapon Pack
