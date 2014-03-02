@@ -44,9 +44,6 @@ script "XPSystem" Enter
 		{
 			LevelUp(2);
 			GiveInventory ("RifleUpgrade",1);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"M9A10 Rifle upgraded!\nIron sights(press ",k:"+zoom",s:" to aim down the iron sights)";
-				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
 		if (currentXP >= 3900 && currentLVL == 2)
 		{

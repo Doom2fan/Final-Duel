@@ -150,6 +150,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2
 	DryFire1:
+		TNT1 A 0 A_ClearRefire
 		TNT1 A 0 A_JumpIfInventory("MinigunSpin",1,"StopSpinning")
 		TNT1 A 0 A_PlaySound("Minigun/WindDown",6)
 		MING AB 1

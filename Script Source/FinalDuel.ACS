@@ -19,6 +19,7 @@
 #include "Health.ACS"
 #include "HUD.ACS"
 #include "Misc.ACS"
+#include "ShopSystem.ACS"
 #include "Start.ACS"
 //#include "stralloc.ACS"
 #include "Weapons.ACS"

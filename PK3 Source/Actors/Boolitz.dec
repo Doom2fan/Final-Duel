@@ -1,4 +1,4 @@
-// by WildWeasel(from ww-terror), edited by Alex_Mercer.(IIRC I asked for permission to use this on IRC).
+// by WildWeasel(from ww-terror), edited by Alex_Mercer.
 // Weapons: A_FireCustomMissile(tracerName, frandom(-,horizontalSpread), 1, horizontalOffset, verticalOffset, 0, frandom(-,verticalSpread))
 // Monsters: A_CustomMissile(tracerName, verticalOffset, horizontalOffset, frandom(-,horizontalSpread), 0, frandom(-,verticalSpread))
 ACTOR Tracer : FastProjectile

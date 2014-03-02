@@ -50,7 +50,7 @@ ACTOR FDWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("RGZoomed", 1)
 		TNT1 A 0 A_TakeInventory("SniperRifleZoomed", 1)
 		TNT1 A 0 A_TakeInventory("ShotgunZoomed", 1)
-		TNT1 A 0 A_TakeInventory("RifleZoomed", 1)
+		// TNT1 A 0 A_TakeInventory("RifleZoomed", 1)
 	    TNT1 A 0 A_JumpIfInventory("PowerFDStrength",1,"BerserkKick")
 		KICK BCD 1
 		KICK H 4 A_CustomPunch (random(30,40), 1, 0, "MeleePuff")
