@@ -84,8 +84,8 @@ actor FDShotgun : FDWeapon 30088
 		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",8,"DontReload")
         TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
         Goto DontReload
-		SHTF BCDEF 2
-		SHTR K 2
+		SHTF BCDEF 1
+		SHTR K 1
 		Goto InsertShells
 	DontReload:
 		TNT1 A 0 A_TakeInventory("Reloading")
@@ -114,9 +114,9 @@ actor FDShotgun : FDWeapon 30088
 		SHTR ABC 2
 		TNT1 A 0 A_PlaySound("Shotgun/InsertShell", CHAN_WEAPON)
 		SHTR DEF 2
-		SHTF FGH 3
+		SHTF FGH 2
 		TNT1 A 0 A_PlaySound("Shotgun/Pump", 5)
-		SHTR GF 3
+		SHTR GF 2
 		TNT1 A 0 A_GiveInventory("AmmoFDShotgun",1)
 		TNT1 A 0 A_TakeInventory("Shell2",1)
 		TNT1 A 0 A_TakeInventory("ShottyEmpty",1)
@@ -139,15 +139,14 @@ actor FDShotgun : FDWeapon 30088
 	// Zoomed
 	Ready2.Zoom:
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload.Unzoom")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		SHTZ A 1 A_WeaponReady(WRF_ALLOWZOOM)
 		Loop
 	Fire.Zoom:
 		TNT1 A 0 A_JumpIfInventory("ShottyPump", 1, "Pump.Zoom")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_PlaySound("Shotgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("ShotgunTracer", frandom(-2.5,2.5), 1, 0, -2, 0, frandom(-3.0,3.0))
-		TNT1 AAAAAAAA 0 A_FireCustomMissile("ShotgunTracer", frandom(-2.5,2.5), 0, 0, -2, 0, frandom(-3.0,3.0))
+		TNT1 A 0 A_FireCustomMissile("ShotgunTracer", frandom(-1.25,1.25), 1, 0, -2, 0, frandom(-1.5,1.5))
+		TNT1 AAAAAAAA 0 A_FireCustomMissile("ShotgunTracer", frandom(-1.25,1.25), 0, 0, -2, 0, frandom(-1.5,1.5))
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.5)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_SetPitch(pitch - 0.7)
