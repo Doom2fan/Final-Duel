@@ -40,8 +40,8 @@
 		GOT_NIGHTVISION	       		= "Picked up a Nightvision goggle.";
 		GOTTOME						= "Picked up a Tome of the Unholy.";
 	// Ammo
-		GOTHELLCLIP					= "Picked up a Inferno Clip.";
-		GOTHELLCLIPBOX				= "Picked up 5 Inferno Clips.";
+		GOTHELLCLIP					= "Picked up a Inferno clip.";
+		GOTHELLCLIPBOX				= "Picked up 5 Inferno clips.";
 		GOTGRENADES					= "Picked up a Grenade Launcher magazine.";
 		GOTGRNDBOX					= "Picked up a box of Grenade Launcher magazines";
 		GOTSHELLS 					= "Picked up 4 shells.";
@@ -50,9 +50,10 @@
 		GOTMGUNAMMO2				= "Picked up two Minigun magazines";
 		GOTMAGNUMAMMO				= "Picked up Magnum ammo";
 		GOTMAGNUMAMMOBOX			= "Picked up a box of Magnum ammo";
-		GOTSLUGS					= "Picked up 4 Rifled Slugs";
-		GOTSLUGSBOX					= "Picked up a box of Rifled Slugs";
-		GOTXBOWBOLTS				= "Picked up a quiver of Crossbow Bolts";
+		GOTSLUGS					= "Picked up 4 rifled slugs";
+		GOTSLUGSBOX					= "Picked up a box of rifled slugs";
+		GOTXBOWBOLT					= "Picked up a crossbow bolts";
+		GOTXBOWBOLTS				= "Picked up a quiver of crossbow bolts";
 
 // Weapon Pickups
 	// Slot 1

@@ -43,7 +43,6 @@ script "XPSystem" Enter
 		if (currentXP >= 2800 && currentLVL == 1)
 		{
 			LevelUp(2);
-			GiveInventory ("RifleUpgrade",1);
 		}
 		if (currentXP >= 3900 && currentLVL == 2)
 		{

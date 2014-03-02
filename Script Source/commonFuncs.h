@@ -285,7 +285,6 @@ function void RestartLevelSystem (void)
 {
 	TakeInventory("BerettaUpgrade", 1);
 	TakeInventory("EnforcerUpgrade", 1);
-	TakeInventory("RifleUpgrade", 1);
 	TakeInventory("MinigunUpgrade", 1);
 	TakeInventory("NightvisionUpgrade", 1);
 	TakeInventory("PlasmaRifleUpgrade", 1);
