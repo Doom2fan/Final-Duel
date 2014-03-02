@@ -1,28 +1,20 @@
-Sprite RIFSC0, 320, 200
-{
-	Patch RIFSA0, 60, 76
-}
-Sprite RIFFB0, 320, 200
-{
-	Patch RIFLA0, 164, 102
-}
 // Select/Deselect
 Sprite RFLSA0, 320, 200
 {
-	Patch RIFLA0, 144, 114
+	Patch RIFLA0, 83, 115
 }
 
 Sprite RFLSB0, 320, 200
 {
-	Patch RIFLA0, 128, 130
+	Patch RIFLA0, 67, 131
 }
 
 Sprite RFLSC0, 320, 200
 {
-	Patch RIFLA0, 112, 146
+	Patch RIFLA0, 51, 147
 }
 
 Sprite RFLSD0, 320, 200
 {
-	Patch RIFLA0, 96, 162
+	Patch RIFLA0, 35, 163
 }
