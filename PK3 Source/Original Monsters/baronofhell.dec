@@ -29,6 +29,7 @@ ACTOR FDBaronOfHell : BaronOfHell 30103
 	DamageFactor "Saw", 1.7
 	bloodcolor "0 C8 0"
 	DropItem "Energy"
+	Species "Hell Noble"
 	States
 	{
 	Spawn:

@@ -19,6 +19,7 @@ ACTOR FDSuperShotgunGuy 30134
 	PainChance 170
 	MONSTER
 	+FLOORCLIP
+	Species "Corrupted Human"
    	SeeSound "shotguy/sight"
 	PainSound "shotguy/pain"
 	DeathSound "shotguy/death"

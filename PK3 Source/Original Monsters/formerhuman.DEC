@@ -24,7 +24,7 @@ ACTOR FDZombieMan : ZombieMan 30094
 	DamageFactor "Ice", 1.0
 	DropItem "Clip2"
 	DropItem "Energy"
-	Species Zombieman
+	Species "Corrupted Human"
 	States
 	{
 	Spawn:

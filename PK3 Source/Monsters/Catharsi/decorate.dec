@@ -9,6 +9,7 @@ Actor Catharsi 30114
 	Mass 100
 	Speed 8
 	GibHealth -60
+	Species "Imp"
 	PainChance 140
 	PainChance "Kick", 255
 	SeeSound "catharsi/sit"

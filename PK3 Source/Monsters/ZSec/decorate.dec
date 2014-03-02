@@ -11,7 +11,7 @@ Actor ZSec 30131
 	speed 8
 	painchance 64
 	PainChance "Kick", 255
-	decal bulletchip
+	Species "Corrupted Human"
 	seesound "zsec/sight"
 	attacksound "zsec/attack"
 	painsound "zsec/pain"

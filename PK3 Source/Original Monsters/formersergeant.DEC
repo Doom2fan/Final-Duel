@@ -24,6 +24,7 @@ ACTOR FDShotgunGuy : ShotgunGuy 30095
 	Obituary "$OB_SHOTGUY"
 	DropItem "FDShotgun"
 	DropItem "Energy"
+	Species "Corrupted Human"
 	States
 	{
 	Spawn:

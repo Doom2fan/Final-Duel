@@ -19,6 +19,7 @@ ACTOR FDHellKnight : HellKnight 30102
 	HitObituary "$OB_KNIGHTHIT"
 	Obituary "$OB_KNIGHT"
 	bloodcolor "0 C8 0"
+	Species "Hell Noble"
 	States
 	{
 	Spawn:

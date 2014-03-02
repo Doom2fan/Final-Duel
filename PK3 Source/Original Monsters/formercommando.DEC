@@ -27,6 +27,7 @@ ACTOR FDChaingunGuy : ChaingunGuy 30096
 	Obituary "$OB_CHAINGUY"
 	Dropitem "FDMinigun"
 	DropItem "Energy"
+	Species "Corrupted Human"
 	States
 	{
 	Spawn:

@@ -11,6 +11,7 @@ Actor VoidDarkImp 30118
 	PainChance "Kick", 255
     MONSTER
     +FLOORCLIP
+	Species "Imp"
 	SeeSound "imp/sight"
 	PainSound "imp/pain"
 	DeathSound "imp/death"
