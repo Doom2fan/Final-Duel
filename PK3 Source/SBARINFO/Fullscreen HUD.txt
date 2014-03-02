@@ -50,12 +50,10 @@ statusbar fullscreen,fullscreenoffsets
         {
 			IsSelected Enforcer //, EnforcerPowered
 			{
-				drawimage "CLIPA0", -14, -100, centerbottom;
-				drawnumber 4, BIGFONT, untranslated, Ammo Clip2, drawshadow, -25, -116;
-				drawimage ammoicon2, -14, -52, centerbottom;
-				drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
-				drawimage ammoicon1, -14, -4, centerbottom;
-				drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+				drawimage "AMOCOUN3", -85, -78;
+				drawnumber 8, BIGFONT, untranslated, Ammo Clip2, drawshadow, -10, -72;
+				drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -49;
+				drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -25;
 				drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -148, -26, -164, untranslated;
 			}
 			IsSelected Not Enforcer //, EnforcerPowered
@@ -64,28 +62,24 @@ statusbar fullscreen,fullscreenoffsets
 				{
 					InInventory PASSlugs
 					{
-						drawimage "SLUGA0", -14, -52, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, Ammo Slug, drawshadow, -25, -68;
-						drawimage ammoicon1, -14, -4, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, Ammo AmmoPAShotgunSlug, drawshadow, -25, -20;
+						drawimage "AMOCOUN2", -85, -55;
+						drawnumber 8, BIGFONT, untranslated, Ammo Slug, drawshadow, -10, -49;
+						drawnumber 8, BIGFONT, untranslated, Ammo AmmoPAShotgunSlug, drawshadow, -10, -25;
 						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
 					}
 					InInventory Not PASSlugs
 					{
-						drawimage "SHELA0", -14, -52, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
-						drawimage ammoicon1, -14, -4, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawimage "AMOCOUN2", -85, -55;
+						drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -49;
+						drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -25;
 						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
 					}
 				}
 				IsSelected Not PumpActionShotgun //, PumpActionShotgunPowered
 				{
-					// drawbar "FULLCLIP", "MPTYCLIP", Ammo1, Horizontal, -258, -64;
-					drawimage ammoicon2, -14, -52, centerbottom;
-					drawnumber 4, BIGFONT, untranslated, ammo2, drawshadow, -25, -68;
-					drawimage ammoicon1, -14, -4, centerbottom;
-					drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+					drawimage "AMOCOUN2", -85, -55;
+					drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -49;
+					drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -25;
 					drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
 				}
 			}
@@ -103,27 +97,24 @@ statusbar fullscreen,fullscreenoffsets
 			{
 				IsSelected QuadShotgun //, QuadShotgunPowered
 				{
-					drawimage "SHELA0", -14, -52, centerbottom;
-					drawnumber 4, BIGFONT, untranslated, Ammo Shell2, drawshadow, -25, -68;
-					drawimage ammoicon1, -14, -4, centerbottom;
-					drawnumber 4, BIGFONT, untranslated, Ammo AmmoQuadShotgun, drawshadow, -25, -20;
+					drawimage "AMOCOUN2", -85, -55;
+					drawnumber 8, BIGFONT, untranslated, Ammo Shell2, drawshadow, -10, -49;
+					drawnumber 8, BIGFONT, untranslated, Ammo AmmoQuadShotgun, drawshadow, -10, -25;
 					drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
 				}
 				IsSelected Not QuadShotgun //, QuadShotgunPowered
 				{
 					IsSelected FDPlasmaRifle, FDPlasmaRiflePowered
 					{
-						drawimage "CELLA0", -14, -52, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, Ammo Cell2, drawshadow, -25, -68;
-						drawimage ammoicon1, -14, -4, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawimage "AMOCOUN2", -85, -55;
+						drawnumber 8, BIGFONT, untranslated, Ammo Cell2, drawshadow, -10, -49;
+						drawnumber 8, BIGFONT, untranslated, Ammo AmmoPRifle, drawshadow, -10, -25;
 						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -116, untranslated;
 					}
 					IsSelected Not FDPlasmaRifle, FDPlasmaRiflePowered
 					{
-						// drawbar "FULLCLIP", "MPTYCLIP", Ammo1, Horizontal, -258, -64;
-						drawimage ammoicon1, -14, -4, centerbottom;
-						drawnumber 4, BIGFONT, untranslated, ammo1, drawshadow, -25, -20;
+						drawimage "AMOCOUN1", -85, -31;
+						drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -25;
 						drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -52, -26, -68, untranslated;
 					}
 				}
