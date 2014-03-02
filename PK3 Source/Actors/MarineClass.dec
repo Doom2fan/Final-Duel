@@ -4,6 +4,7 @@ ACTOR MarineClass : BasePlayerClass
 	Health 100
 	Player.MaxHealth 100
 	Player.DamageScreenColor red
+	DamageFactor BFGExtra, 0.0
 	// Speed related
 	Player.ForwardMove 1.0, 1.2
     Player.SideMove 1.0, 1.2

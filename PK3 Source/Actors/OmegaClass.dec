@@ -7,6 +7,7 @@ ACTOR OmegaClass : BasePlayerClass
 	Bloodcolor 28 00 28
 	Player.MugShotMaxHealth 150
 	DamageFactor 0.9
+	DamageFactor BFGExtra, 0.0
 	// Speed related
 	Player.ForwardMove 0.9, 1.1
     Player.SideMove 0.9,1.1
