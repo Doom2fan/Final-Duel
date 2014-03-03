@@ -41,6 +41,7 @@ Actor FDStimpack : HealthPickup Replaces Stimpack
 	+FLOORCLIP
 	+INVENTORY.INVBAR
 	Inventory.MaxAmount 20
+	Inventory.InterHubAmount 20
 	Tag "Stimpack"
 	Inventory.Icon "ARTISTIM"
 	Inventory.PickupMessage "$GOTSTIM"
@@ -59,6 +60,7 @@ Actor FDMedikit : HealthPickup Replaces Medikit
 	+FLOORCLIP
 	+INVENTORY.INVBAR
 	Inventory.MaxAmount 5
+	Inventory.InterHubAmount 5
 	Tag "Medikit"
 	Inventory.Icon "ARTIMEDI"
 	Inventory.PickupMessage "$GOTMEDIKIT"
