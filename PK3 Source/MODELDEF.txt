@@ -1,3 +1,5 @@
+#include "Modeldef/Tracers.txt"
+
 Model ZombieTarget
 {
 	Path "Models/Target"
@@ -37,7 +39,7 @@ Model Energy // Model by Alex_Mercer
 	Path "Models/Energy"
 	Model 0 "Energy.md3"
 	Skin 0 "Energy.png"
-	Scale 0.7 0.7 0.7
+	Scale 0.35 0.35 0.35
 	
 	FrameIndex ENRG A 0 0
 }

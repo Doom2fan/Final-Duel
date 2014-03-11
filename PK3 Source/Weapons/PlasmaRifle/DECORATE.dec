@@ -48,11 +48,12 @@ ACTOR FDPlasmaRifle : FDWeapon 30034
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		PLSF A 0 A_PlaySound("PlasmaRifle/fire",CHAN_WEAPON)
-		PLSF A 0 A_FireCustomMissile ("FDPlasmaBall",0,1,0,0,0,0)
+		TNT1 A 0 A_FireCustomMissile("PlasFlareSpawn",0,0,0,0)
+		PLSF A 0 A_FireCustomMissile ("FDPlasmaBall",0,1,0,-8,0,0)
 		PLSF A 2 Bright A_Recoil(cos(pitch) * 0.2)
 		PLSF A 0 A_AlertMonsters
-		PLSF G 2 Bright
-		PLSF H 1 Bright
+		PLSF G 2
+		PLSF H 1
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire1")
 		PLSF B 0 A_ReFire
 		PLSF E 4 A_PlaySound("PlasmaRifle/cool", 6)
@@ -105,30 +106,32 @@ ACTOR FDPlasmaRifle : FDWeapon 30034
 		PLSM A 1
 		Goto Ready2
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("PlasmaRifleUpgrade",1,1)
-		Goto Ready2
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_PlaySound("Weapons/BeepStartLoop", CHAN_WEAPON)
 		PLSM A 1
 		TNT1 A 0 A_PlaySound("Weapons/BeepLoop", CHAN_WEAPON, 1.0, 1)
 	AltHold:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		PLSF BC 2
+		PLSF BBCC 1 A_FireCustomMissile("PlasFlareSpawn",0,0,0,0)
 		TNT1 A 0 A_Refire("AltHold")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleUpgrade",1,1)
+		TNT1 A 0 A_ThingDamage(10, "WeaponOverload", TDF_PIERCEARMOR)
 		PLSF A 0 A_PlaySound("PlasmaRifle/Altfire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -3, 0, 0, 0, 0, 1.3)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -4.5, 0, 0, 0, 0, 0)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -3, 0, 0, 0, 0, -1.3)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 3, 0, 0, 0, 0, 1.3)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 4.5, 0, 0, 0, 0, 0)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 3, 0, 0, 0, 0, -1.3)
-		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 0, 1, 0, 0, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("PlasFlareSpawn",0,0,0,0)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -3, 0, 0, -8, 0, 1.3)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -4.5, 0, 0, -8, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", -3, 0, 0, -8, 0, -1.3)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 3, 0, 0, -8, 0, 1.3)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 4.5, 0, 0, -8, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 3, 0, 0, -8, 0, -1.3)
+		TNT1 A 0 A_FireCustomMissile("FDPlasmaBallAlt", 0, 1, 0, -8, 0, 0)
+		TNT1 A 0 Radius_Quake (8, 6, 0, 1, 0)
+		TNT1 A 0 A_SetPitch(pitch - 3.0)
 		TNT1 A 0 A_Recoil(cos(pitch) * 5.0)
-		PLSF D 1 Bright
+		PLSF D 2 Bright
 		PLSF A 0 A_AlertMonsters
-		PLSF G 2 Bright
-		PLSF H 1 Bright
+		PLSF GGH 1
 		PLSF E 4 A_PlaySound("PlasmaRifle/cool",6)
 		PLSF FFFFFFFFFF 1 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(10,15), random(0,3))
 		PLSF F 5
@@ -148,45 +151,46 @@ ACTOR FDPlasmaRiflePowered : FDPlasmaRifle
 	{
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		PLSF A 0 A_GunFlash
-		PLSF A 0 A_PlaySound("PlasmaRifle/fire",CHAN_WEAPON)
-		PLSP A 0 A_FireCustomMissile ("PlasmaMissile",0,1,0,0,0,0)
+		PLSP A 0 A_PlaySound("PlasmaRifle/fire",CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile("PlasMissileFlareSpawn",0,0,0,0)
+		PLSF A 0 A_FireCustomMissile ("PlasmaMissile",0,1,0,-8,0,0)
 		PLSP A 2 Bright A_Recoil(cos(pitch) * 0.2)
 		PLSF A 0 A_AlertMonsters
-		PLSF G 2 Bright
-		PLSF H 1 Bright
+		PLSF G 2
+		PLSF H 1
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire1")
 		PLSF B 0 A_ReFire
-		PLSF E 4 A_PlaySound("PlasmaRifle/cool",6)
+		PLSF E 4 A_PlaySound("PlasmaRifle/cool", 6)
 		TNT1 AAAAA 0 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(10,15), random(0,3))
 		PLSF FE 4
 		PLSM BABA 2
 		Goto Ready2
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("PlasmaRifleUpgrade",1,1)
-		Goto Ready2
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_PlaySound("Weapons/BeepStartLoop", CHAN_WEAPON)
 		PLSM A 1
 		TNT1 A 0 A_PlaySound("Weapons/BeepLoop", CHAN_WEAPON, 1.0, 1)
 	AltHold:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		PLSP BC 2
+		PLSP BBCC 1 A_FireCustomMissile("PlasMissileFlareSpawn",0,0,0,0)
 		TNT1 A 0 A_Refire("AltHold")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		PLSP A 0 A_PlaySound("PlasmaRifle/Altfire",CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -3, 0, 0, 0, 0, 1.3)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -4.5, 0, 0, 0, 0, 0)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -3, 0, 0, 0, 0, -1.3)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 3, 0, 0, 0, 0, 1.3)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 4.5, 0, 0, 0, 0, 0)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 3, 0, 0, 0, 0, -1.3)
-		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 0, 1, 0, 0, 0, 0)
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleUpgrade",1,1)
+		TNT1 A 0 A_ThingDamage(10, "WeaponOverload", TDF_PIERCEARMOR)
+		PLSP A 0 A_PlaySound("PlasmaRifle/Altfire", CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile("PlasMissileFlareSpawn",0,0,0,0)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -3, 0, 0, -8, 0, 1.3)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -4.5, 0, 0, -8, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", -3, 0, 0, -8, 0, -1.3)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 3, 0, 0, -8, 0, 1.3)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 4.5, 0, 0, -8, 0, 0)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 3, 0, 0, -8, 0, -1.3)
+		TNT1 A 0 A_FireCustomMissile("PlasmaMissileAlt", 0, 1, 0, -8, 0, 0)
+		TNT1 A 0 Radius_Quake (8, 6, 0, 1, 0)
 		TNT1 A 0 A_Recoil(cos(pitch) * 5.0)
-		PLSP D 1 Bright
-		PLSF A 0 A_AlertMonsters
-		PLSF G 2 Bright
-		PLSF H 1 Bright
+		PLSP D 2 Bright
+		PLSP A 0 A_AlertMonsters
+		PLSF GGH 1
 		PLSF E 4 A_PlaySound("PlasmaRifle/cool",6)
 		PLSF FFFFFFFFFF 1 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(10,15), random(0,3))
 		PLSF F 5

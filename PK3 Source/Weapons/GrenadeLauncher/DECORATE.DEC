@@ -59,9 +59,8 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_PlaySound("GrenadeLauncher/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_Recoil(cos(pitch) * 2.5)
-		GLGF A 3 A_FireCustomMissile("FDGrenade",0,1,0,0,0,6)
-		TNT1 A 0 A_AlertMonsters
-		GLGF B 3
+		GLGF A 3 Bright A_FireCustomMissile("FDGrenade",0,1,0,0,0,6)
+		GLGF B 3 Bright A_AlertMonsters
 		GLG1 ABCDA 3
 		TNT1 A 0 A_Refire
 		Goto Ready2

@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: IMX, Alex_Mercer
+Sounds: 

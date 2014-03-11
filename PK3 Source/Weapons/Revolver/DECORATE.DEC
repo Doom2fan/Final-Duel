@@ -65,8 +65,12 @@ Actor Magnum : FDWeapon 30083
 		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("RevolverTracer", frandom(-2.0,2.0), 1, 10, 2, 0, frandom(-2.5,2.5))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
-		REVF BB 1 BRIGHT A_SetPitch(pitch - 0.4)
-		REVF C 2
+		REVF BB 1 BRIGHT A_SetPitch(pitch - 3.0)
+		REVF CD 1 A_SetPitch(pitch - 1.2)
+		REVF E 1 A_SetPitch(pitch + 1.8)
+		REVF FG 1 A_SetPitch(pitch + 1.2)
+		REVF H 1 A_SetPitch(pitch + 0.8)
+		REVF HHIIJJ 1
 		REVG A 1
 		Goto Ready2
 	Fire.Upgraded:
@@ -77,8 +81,12 @@ Actor Magnum : FDWeapon 30083
 		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("UpgradedRevolverTracer", frandom(-0.5,0.5), 1, 10, 2, 0, frandom(-1.0,1.0))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.4)
-		REVF BB 1 BRIGHT A_SetPitch(pitch - 0.25)
-		REVF C 2
+		REVF BB 1 BRIGHT A_SetPitch(pitch - 1.5)
+		REVF CD 1 A_SetPitch(pitch - 0.6)
+		REVF E 1 A_SetPitch(pitch + 0.9)
+		REVF FG 1 A_SetPitch(pitch + 0.6)
+		REVF H 1 A_SetPitch(pitch + 0.4)
+		REVF HHIIJJ 1
 		REVG A 1
 		Goto Ready2
 	DryFire:
@@ -91,13 +99,13 @@ Actor Magnum : FDWeapon 30083
 		TNT1 A 0 A_JumpIfInventory("MagnumClip", 1, 1)
 		Goto Ready2
 		TNT1 A 0 A_PlaySound("Magnum/Open", CHAN_WEAPON)
-		REVR AAABBCCCDDD 1
+		REVR ABCD 3
 		TNT1 A 0  A_PlaySound("Magnum/Out", CHAN_WEAPON)
-		REVR EEEFFGGG 1
+		REVR EEFFGG 1
 		REVR H 4 A_FireCustomMissile("MagnumCasingSpawner",-4,0,0,0)
 		REVR IIIJJ 1
 		TNT1 A 0 A_PlaySound("Magnum/In", CHAN_WEAPON)
-		REVR KKKCCBBBAAA 1
+		REVR KKCCCBBBAAA 1
 		TNT1 A 0 A_TakeInventory("AmmoMagnum", 6)
 		TNT1 A 0 A_TakeInventory("MagnumClip", 1)
 		TNT1 A 0 A_GiveInventory("AmmoMagnum", 6)

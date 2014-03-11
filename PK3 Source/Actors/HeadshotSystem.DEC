@@ -1,3 +1,4 @@
+Actor HeadshotTargetDead : Boolean { }
 Actor HeadshotSystem
 {
 	+NoGravity
@@ -8,19 +9,30 @@ Actor HeadshotSystem
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_Warp(AAPTR_MASTER, 0, 0, reactiontime)
+		TNT1 A 1 NoDelay A_Warp(AAPTR_MASTER, 0.0, 0.0, Stamina, 0.0, WARPF_INTERPOLATE|WARPF_NOCHECKPOSITION)
 		Loop
 	Death:
-		TNT1 AAAAA 0 A_KillMaster("Headshot")
+		TNT1 A 0 A_DamageMaster(Accuracy, "Headshot")
+		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		Stop
+	Death.MagnumTracer:
+		TNT1 A 0 A_DamageMaster(180, "Headshot")
+		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.Fire:
-		TNT1 AAAAA 0 A_KillMaster("Fire")
+		TNT1 A 0 A_DamageMaster(Accuracy, "Fire")
+		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.Plasma:
-		TNT1 AAAAA 0 A_KillMaster("Plasma")
+		TNT1 A 0 A_DamageMaster(Accuracy, "Plasma")
+		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		Stop
+	Death.SniperRifle:
+		TNT1 A 0 A_DamageMaster(160, "Headshot")
 		Stop
 	XDeath:
-		TNT1 AAAAA 0 A_KillMaster("Extreme")
+		TNT1 A 0 A_DamageMaster(Accuracy, "Extreme")
+		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	}
 }

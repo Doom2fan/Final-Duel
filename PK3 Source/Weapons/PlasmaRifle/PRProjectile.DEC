@@ -1,41 +1,13 @@
 // From Beautiful Doom,edited by Alex_Mercer
-Actor BlueFlarePlasma : Flare_General
+ACTOR FDPlasmaBall Replaces PlasmaBall
 {
-	Alpha .9
-	Scale .1
-	States
-	{
-	Spawn:
-		LENC A 2 bright
-		Stop
-	}
-}
-
-Actor BlueFlarePlasmaTrail : BlueFlarePlasma
-{
-	Alpha .8
-	Scale .065
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		LENC A 1 bright A_FadeOut(0.2)
-		Loop
-	}
-}
-
-ACTOR FDPlasmaBall : FastProjectile Replaces PlasmaBall
-{
-	Radius 13
-	Height 8
+	Radius 10
+	Height 10
 	Speed 1
 	Damage 6
 	Projectile
 	DeathSound "weapons/plasmax"
 	Obituary "$OBPLASMARIFLE"
-	MissileType "BlueFlarePlasmaTrail" //"BluePlasmatrail"
-	MissileHeight 8
 	DamageType Plasma
 	+FORCEXYBILLBOARD
 	+THRUGHOST
@@ -43,8 +15,8 @@ ACTOR FDPlasmaBall : FastProjectile Replaces PlasmaBall
 	+DONTSPLASH
 	Decal BluePlasmaSplat
 	RenderStyle ADD
-	Scale .7
-	Alpha .8
+	Scale .10
+	Alpha .90
 	States
 	{
 	Spawn:
@@ -52,26 +24,30 @@ ACTOR FDPlasmaBall : FastProjectile Replaces PlasmaBall
 		TNT1 A 0 A_ScaleVelocity(35)
 		TNT1 A 0 A_PlaySound("PlasmaRifle/Fly", CHAN_BODY|256)
 	Spawn2:
-		PLBS AB 1 bright Light(PLASMABALL) A_SpawnItem("BlueFlarePlasma")
+		PLBS A 1 bright Light(PLASMABALL) A_SpawnItem("PlasmaFlare",0,0)
 		Loop
 	Death:
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Explode(6,50,1)
+		TNT1 A 1 A_SpawnItem("BluePlasmaBallExplosion",0,0,0)
+		Stop
+	XDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Explode(6,50,0)
 		TNT1 A 1 A_SpawnItem("BluePlasmaBallExplosion",0,0,0)
 		Stop
 	}
 }
 
-ACTOR FDPlasmaBallAlt : FastProjectile
+ACTOR FDPlasmaBallAlt : FDPlasmaBall
 {
-	Radius 13
-	Height 8
+	Radius 10
+	Height 10
 	Speed 1
 	Damage 12
 	Projectile
 	DeathSound "weapons/plasmax"
 	Obituary "$OBPLASMARIFLE"
-	MissileType "BlueFlarePlasmaTrail" //"BluePlasmatrail"
-	MissileHeight 8
 	DamageType Plasma
 	+FORCEXYBILLBOARD
 	+THRUGHOST
@@ -79,8 +55,8 @@ ACTOR FDPlasmaBallAlt : FastProjectile
 	+DONTSPLASH
 	Decal BluePlasmaSplat
 	RenderStyle ADD
-	Scale .7
-	Alpha .8
+	Scale .10
+	Alpha .90
 	States
 	{
 	Spawn:
@@ -88,11 +64,16 @@ ACTOR FDPlasmaBallAlt : FastProjectile
 		TNT1 A 0 A_ScaleVelocity(70)
 		TNT1 A 0 A_PlaySound("PlasmaRifle/Fly", CHAN_BODY|256)
 	Spawn2:
-		PLBS AB 1 bright Light(PLASMABALL) A_SpawnItem("BlueFlarePlasma")
+		PLBS A 1 bright Light(PLASMABALL) A_SpawnItem("PlasmaFlare",0,0)
 		Loop
 	Death:
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_Explode(64,64,0)
+		TNT1 A 0 A_Explode(12,50,1)
+		TNT1 A 1 A_SpawnItem("BluePlasmaBallExplosion",0,0,0)
+		Stop
+	XDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Explode(12,50,0)
 		TNT1 A 1 A_SpawnItem("BluePlasmaBallExplosion",0,0,0)
 		Stop
 	}
@@ -108,91 +89,39 @@ Actor BluePlasmaBallExplosion : DebrisGeneral
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BluePlasmaPiece",0,0,random(-360,360),2,random(-50,50))
-		TNT1 AAAAAA 0 A_CustomMissile("BluePlasmaShred",0,0,random(-360,360),2,random(-90,90))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile ("BluePlasmaShred", 0, 0, random (0, 360), 2, random (0, 360))
 		TNT1 A 0 bright A_SpawnItem("RocketLSmoke")
 		PEXP ABCDEFGHIJKLM 2 bright
 		Stop
 	}
 }
 
-Actor BluePlasmaShred : DebrisGeneral
+Actor BluePlasmaShred
 {
-	+DONTSPLASH
-	RenderStyle ADD
-	Speed 8
-	Scale .1
-	Alpha .8
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		PLSE ABCDE 1 bright A_SpawnItem("BluePlasmaShredTrail")
-		Stop
-	}
-}
-
-Actor BluePlasmaShredTrail : BluePlasmaShred
-{
-	Speed 0
-	Alpha .5
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		PLSE ABCDE 2 bright
-		stop
-	}
-}
-
-Actor BluePlasmaPiece : DebrisGeneral
-{
-	+DONTSPLASH
-	-NOGRAVITY
-	RenderStyle Add
-	Alpha 1.0
-	Scale 0.08
-	Speed 6
+	Height 0
+	Radius 0
+	Mass 0
+	+Missile
+	+NoBlockMap
+	-NoGravity
+	+DontSplash
+	+DoomBounce
+	+FORCEXYBILLBOARD
+	BounceFactor 0.2
 	Gravity 0.8
+	RenderStyle Add
+	Scale 0.035
+	Speed 12
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTID(0,390)
-		PLBS A 1 bright A_FadeOut(0.03)
+	Death:
+		BSPK A 2 Bright A_FadeOut(0.04)
 		Loop
 	}
 }
 // Plasma Missile
-Actor PlasmaMissilePlasma : Flare_General
-{
-	Alpha .9
-	Scale .1
-	States
-	{
-	Spawn:
-		LENY A 2 bright
-		Stop
-	}
-}
-
-Actor PlasmaMissilePlasmaTrail : PlasmaMissilePlasma
-{
-	Alpha .8
-	Scale .065
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		LENY A 1 bright A_FadeOut(0.2)
-		Loop
-	}
-}
-
-ACTOR PlasmaMissileAlt : FastProjectile
+ACTOR PlasmaMissile
 {
 	Radius 13
 	Height 8
@@ -201,8 +130,6 @@ ACTOR PlasmaMissileAlt : FastProjectile
 	Projectile
 	DeathSound "weapons/plasmax"
 	Obituary "$OBPLASMARIFLE"
-	Translation "192:207=208:223"
-	MissileType "PlasmaMissilePlasmaTrail" //"BluePlasmatrail"
 	MissileHeight 8
 	DamageType Fire
 	+FORCEXYBILLBOARD
@@ -211,8 +138,8 @@ ACTOR PlasmaMissileAlt : FastProjectile
 	+DONTSPLASH
 	Decal Scorch
 	RenderStyle ADD
-	Scale .7
-	Alpha .8
+	Scale .10
+	Alpha .90
 	States
 	{
 	Spawn:
@@ -220,37 +147,24 @@ ACTOR PlasmaMissileAlt : FastProjectile
 		TNT1 A 0 A_ScaleVelocity(80)
 		TNT1 A 0 A_PlaySound("PlasmaRifle/Fly", CHAN_BODY|256)
 	Spawn2:
-		PRP1 AB 1 bright Light(PLASMAMISSILE) A_SpawnItem("PlasmaMissilePlasma")
+		PRP1 A 1 bright Light(PLASMAMISSILE) A_SpawnItem("PlasmaMissileFlare",0,0)
 		Loop
 	Death:
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_Explode(64,64,0)
+		TNT1 A 0 A_Explode(12,50,1)
+		TNT1 A 1 A_SpawnItem("PlasmaMissileExplosion",0,0,0)
+		Stop
+	XDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Explode(12,50,0)
 		TNT1 A 1 A_SpawnItem("PlasmaMissileExplosion",0,0,0)
 		Stop
 	}
 }
 
-ACTOR PlasmaMissile : FastProjectile
+ACTOR PlasmaMissileAlt : PlasmaMissile
 {
-	Radius 13
-	Height 8
-	Speed 1
 	Damage 24
-	Projectile
-	DeathSound "weapons/plasmax"
-	Obituary "$OBPLASMARIFLE"
-	Translation "192:207=208:223"
-	MissileType "PlasmaMissilePlasmaTrail" //"BluePlasmatrail"
-	MissileHeight 8
-	DamageType Fire
-	+FORCEXYBILLBOARD
-	+THRUGHOST
-	+NOEXTREMEDEATH
-	+DONTSPLASH
-	Decal Scorch
-	RenderStyle ADD
-	Scale .7
-	Alpha .8
 	States
 	{
 	Spawn:
@@ -258,11 +172,16 @@ ACTOR PlasmaMissile : FastProjectile
 		TNT1 A 0 A_ScaleVelocity(80)
 		TNT1 A 0 A_PlaySound("PlasmaRifle/Fly", CHAN_BODY|256)
 	Spawn2:
-		PRP1 AB 1 bright Light(PLASMAMISSILE) A_SpawnItem("PlasmaMissilePlasma")
+		PRP1 A 1 bright Light(PLASMAMISSILE) A_SpawnItem("PlasmaMissileFlare",0,0)
 		Loop
 	Death:
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_Explode(128,128,0)
+		TNT1 A 0 A_Explode(24,50,1)
+		TNT1 A 1 A_SpawnItem("PlasmaMissileExplosion",0,0,0)
+		Stop
+	XDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Explode(24,50,0)
 		TNT1 A 1 A_SpawnItem("PlasmaMissileExplosion",0,0,0)
 		Stop
 	}
@@ -278,62 +197,20 @@ Actor PlasmaMissileExplosion : DebrisGeneral
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("PlasmaMissilePiece",0,0,random(-360,360),2,random(-50,50))
-		TNT1 AAAAAA 0 A_CustomMissile("PlasmaMissileShred",0,0,random(-360,360),2,random(-90,90))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile ("PlasmaMissileShred", 0, 0, random (0, 360), 2, random (0, 360))
 		TNT1 A 0 bright A_SpawnItem("RocketLSmoke")
 		PEXP ABCDEFGHIJKLM 2 bright
 		Stop
 	}
 }
 
-Actor PlasmaMissileShred : DebrisGeneral
+Actor PlasmaMissileShred : BluePlasmaShred
 {
-	+DONTSPLASH
-	RenderStyle ADD
-	Translation "192:207=208:223"
-	Speed 8
-	Scale .1
-	Alpha .8
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		PRP2 ABCDE 1 bright A_SpawnItem("PlasmaMissileShredTrail")
-		Stop
-	}
-}
-
-Actor PlasmaMissileShredTrail : PlasmaMissileShred
-{
-	Speed 0
-	Alpha .5
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTid(0,390)
-		PRP2 ABCDE 2 bright
-		Stop
-	}
-}
-
-Actor PlasmaMissilePiece : DebrisGeneral
-{
-	+DONTSPLASH
-	-NOGRAVITY
-	Translation "192:207=208:223"
-	RenderStyle Add
-	Alpha 1.0
-	Scale 0.08
-	Speed 6
-	Gravity 0.8
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTID(0,390)
-		PRP1 A 1 bright A_FadeOut(0.03)
+	Death:
+		YSPK A 2 Bright A_FadeOut(0.04)
 		Loop
 	}
 }

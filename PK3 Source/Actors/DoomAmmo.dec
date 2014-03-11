@@ -1,22 +1,3 @@
-// Energy
-ACTOR Energy : AMMO
-{
-	//$Category Final Duel-Ammunition
-	Tag "Soul Energy"
-	Game Doom
-	Inventory.PickupMessage ""
-	Inventory.Amount 1
-	Inventory.MaxAmount 100
-	Ammo.BackpackAmount 1
-	Ammo.BackpackMaxAmount 100
-	Inventory.Icon "ENERGY2"
-	States
-	{
-	Spawn:
-		ENRG A -1 Bright
-		Stop
-	}
-}
 // Inferno Clip
 ACTOR HellClip: AMMO 30020
 {

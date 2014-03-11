@@ -5,10 +5,10 @@ ACTOR FDZombieMan : ZombieMan 30094
 	//$category Final Duel-Original Monsters
 	//$title Corrupted Human
 	Game Doom
-	Health 20
-	GibHealth -10
+	Health 40
+	GibHealth -20
 	Radius 20
-	Height 56
+	Height 44
 	Speed 8
 	PainChance 200
 	PainChance "Kick", 255
@@ -34,17 +34,17 @@ ACTOR FDZombieMan : ZombieMan 30094
 		POSS A 10 A_Look
 		Loop
 	See:
+		TNT1 A 0 A_JumpIfInventory("ZombiemanAmmo", 30, "Reload")
 		POSS AABBCCDD 4 A_Chase
 		Loop
 	Missile:
-		TNT1 A 0 A_Jump(64,"Missile2")
+		TNT1 A 0 A_Jump(32,"Missile2")
 		TNT1 A 0 A_JumpIfInventory("ZombiemanAmmo", 30, "Idle")
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_GiveInventory("ZombiemanAmmo", 1)
 		TNT1 A 0 A_PlaySound("Rifle/Fire")
 		POSS F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-2.0,2.0), 0, frandom(-2.5,2.5))
 		POSS E 2
-		Loop
 		Goto See
 	Missile2:
 		TNT1 A 0 A_JumpIfInventory("ZombiemanAmmo", 30, "Idle")

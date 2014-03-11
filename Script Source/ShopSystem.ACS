@@ -10,7 +10,7 @@
 
 int mouseX = SCREEN_WIDTH / 2;
 int mouseY = SCREEN_HEIGHT / 2;
-int ShopGUIOpen[8];
+int ShopGUIOpen[MAXPLAYERS];
 
 function int BasicButton(str image, str image2, int bx, int by, int bwidth, int bheight, int bid)
 {
@@ -19,7 +19,7 @@ function int BasicButton(str image, str image2, int bx, int by, int bwidth, int 
 	SetFont(image);
 	if(mouseX > bx - bwidth && mouseX < bx + bwidth && mouseY > by - bheight && mouseY < by + bheight) SetFont(image2);
 	HudMessage(s:"A";
-	HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
+		HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
 
 	if(mouseX > bx - bwidth && mouseX < bx + bwidth && mouseY > by - bheight && mouseY < by + bheight)
 	{
@@ -57,11 +57,13 @@ script "ShopSystemz" (void)
 	while(TRUE)
 	{
 		SetHudSize(SCREEN_WIDTH, SCREEN_HEIGHT, 0);
-		if(BasicButton("ARTITOME", "ARTIMEDI", 50, 50, 12, 11, 8000002) == 1)
+		SetFont("SHPMBACK");
+		HudMessage(s:"A"; HUDMSG_FADEOUT, SHOPBACKGROUNDID, CR_UNTRANSLATED, 0.0, 0.0, 0., 0.3);
+		if(BasicButton("ARTITOME", "ARTIMEDI", 50, 50, 24, 22, 8000002) == 1)
 		{
 			SetFont("DBigFont");
 			HudMessage (s:"*click*";
-						HUDMSG_FADEOUT, 0, CR_UNTRANSLATED, 400*1.0, 300*1.0, 4.0, 0.3);
+				HUDMSG_FADEOUT, SHOPTEXTID, CR_UNTRANSLATED, 400*1.0, 300*1.0, 4.0, 0.3);
 		}
 		// move the cursor
 		mouseXadd = GetPlayerInput(-1, INPUT_YAW);

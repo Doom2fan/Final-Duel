@@ -73,7 +73,7 @@ script "XPSystem" Enter
 			LevelUp(6);
 			GiveInventory ("PlasmaRifleUpgrade",1);
 			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Plasma Rifle upgraded!\nOverload (press ",k:"+altattack",s:" to overload)";
+			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Plasma Rifle upgraded!\nOverload now doesn't take health";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
 		if (currentXP >= 9200 && currentLVL == 6)

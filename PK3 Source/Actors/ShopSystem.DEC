@@ -1,0 +1,21 @@
+ACTOR Energy : Inventory 30140
+{
+	//$Category Final Duel-Money
+	Tag "Soul Energy"
+	Game Doom
+	Inventory.PickupMessage ""
+	Inventory.Amount 1
+	Inventory.MaxAmount 9999999
+	Inventory.Icon "ENERGY2"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		ENRG A 1 Bright //A_SpawnItemEx("SoulEnergyTrail")
+		Loop
+	}
+}
+/*Actor SoulEnergyTrail
+{
+	
+}*/

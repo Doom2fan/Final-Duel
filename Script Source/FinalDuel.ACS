@@ -10,6 +10,7 @@
 #define SOUTHWEST 160
 #define SOUTH 192
 #define SOUTHEAST 224
+#define MAXPLAYERS 8
 // Includes
 #include "Chasecam.ACS"
 #include "Commands.ACS"

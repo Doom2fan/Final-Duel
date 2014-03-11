@@ -78,7 +78,7 @@ Actor FDMinigun : FDWeapon 30068
 		MING E 1 Bright A_SetPitch(pitch - 0.625)
 		MING BCD 1 A_SetPitch(pitch - 0.625)
 		TNT1 A 0 A_Refire
-		TNT1 A 0 A_PlaySound("Minigun/WindDown",6)
+		TNT1 A 0 A_PlaySound("Minigun/WindDown",5)
 		MING AB 1
 		MING CD 2
 		MING AAAA 1 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(-3,3), 0)
@@ -93,7 +93,7 @@ Actor FDMinigun : FDWeapon 30068
 		MING E 1 Bright A_SetPitch(pitch - 0.25)
 		MING BCD 1 A_SetPitch(pitch - 0.25)
 		TNT1 A 0 A_Refire
-		TNT1 A 0 A_PlaySound("Minigun/WindDown",6)
+		TNT1 A 0 A_PlaySound("Minigun/WindDown",5)
 		MING AB 1
 		MING CD 2
 		MING AAAA 1 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(-3,3), 0)
@@ -152,7 +152,7 @@ Actor FDMinigun : FDWeapon 30068
 	DryFire1:
 		TNT1 A 0 A_ClearRefire
 		TNT1 A 0 A_JumpIfInventory("MinigunSpin",1,"StopSpinning")
-		TNT1 A 0 A_PlaySound("Minigun/WindDown",6)
+		TNT1 A 0 A_PlaySound("Minigun/WindDown",5)
 		MING AB 1
 		MING CD 2
 		MING AAAA 1 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random(-3,3), 0)

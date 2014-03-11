@@ -4,15 +4,15 @@
 	// please note that I have edited most of the files(Except for
 	// most of the sprites and sounds, any sound or sprite that I
 	// edited should be in the CREDITS or INFO lump)
-// Highest DoomEdNum: 30140
+// Highest DoomEdNum: 30142
  
 // Shared/Common
-	#include "Actors/Defaults.DEC" 										// Credits on the file
-	#include "Actors/Booleans.DEC"										// By Alex_Mercer
-	#include "Actors/Flares.DEC"										// Credits on the file
-	#include "Actors/Particles.DEC"										// Credits on the file
-	#include "Actors/ParticleSystem.DEC"								// Credits on the file
-	#include "Actors/HeadshotSystem.DEC"								// By Alex_Mercer
+	#include "Actors/Defaults.DEC" 									// Credits on the file
+	#include "Actors/Booleans.DEC"									// By Alex_Mercer
+	#include "Actors/Flares.DEC"									// Credits on the file
+	#include "Actors/Particles.DEC"									// Credits on the file
+	#include "Actors/ParticleSystem.DEC"							// Credits on the file
+	#include "Actors/HeadshotSystem.DEC"							// By Alex_Mercer
 	#include "Actors/Boolitz.DEC"
 	
 // Actors
@@ -28,6 +28,7 @@
 	#include "Actors/XPSystem.DEC"									// by Alex_Mercer
 	#include "Actors/Props.DEC"										// by Alex_Mercer
 	#include "Actors/CASING.DEC" 									// Credits on the file
+	#include "Actors/ShopSystem.DEC"								// Credits on the file
 	#include "Misc.DEC" 											// Credits on the file
 
 // SFX
@@ -134,6 +135,7 @@
 		#include "Monsters/InfernalSpider/DECORATE.DEC"				// Credits in the folder
 		#include "Monsters/PyroSuccubus/DECORATE.DEC" 				// Credits in the folder
 		#include "Monsters/BloodDemon/DECORATE.DEC"					// Credits in the folder
+		#include "Monsters/BlackPanther/DECORATE.DEC"				// Credits in the folder
 
 		#include "Monsters/Belphegor.DEC" 							// by Skulltag team,edited by Alex_Mercer
 		#include "Monsters/Hectebus.DEC" 							// by Skulltag team,edited by Alex_Mercer

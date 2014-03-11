@@ -1,8 +1,3 @@
-//===========================================================================
-//
-// Imp
-//
-//===========================================================================
 ACTOR FDDoomImp : DoomImp 30097
 {
 	//$category Final Duel-Original Monsters
@@ -37,7 +32,7 @@ ACTOR FDDoomImp : DoomImp 30097
 		TROO A 10 A_Look
 		Loop
 	See:
-		TROO AABBCCDD 3 A_Chase
+		TROO AABBCCDD 3 
 		Loop
 	Melee:
 	Missile:
