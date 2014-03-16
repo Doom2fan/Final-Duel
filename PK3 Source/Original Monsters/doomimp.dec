@@ -32,7 +32,7 @@ ACTOR FDDoomImp : DoomImp 30097
 		TROO A 10 A_Look
 		Loop
 	See:
-		TROO AABBCCDD 3 
+		TROO AABBCCDD 3 A_Chase
 		Loop
 	Melee:
 	Missile:

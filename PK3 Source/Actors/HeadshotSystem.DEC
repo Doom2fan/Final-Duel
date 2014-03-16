@@ -13,26 +13,26 @@ Actor HeadshotSystem
 		Loop
 	Death:
 		TNT1 A 0 A_DamageMaster(Accuracy, "Headshot")
-		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		TNT1 A 0 //A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.MagnumTracer:
 		TNT1 A 0 A_DamageMaster(180, "Headshot")
-		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		TNT1 A 0 //A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.Fire:
 		TNT1 A 0 A_DamageMaster(Accuracy, "Fire")
-		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		TNT1 A 0 //A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_DamageMaster(Accuracy, "Plasma")
-		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		TNT1 A 0 //A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	Death.SniperRifle:
 		TNT1 A 0 A_DamageMaster(160, "Headshot")
 		Stop
 	XDeath:
 		TNT1 A 0 A_DamageMaster(Accuracy, "Extreme")
-		TNT1 A 0 A_GiveToMaster("HeadshotTargetDead", 1)
+		TNT1 A 0 //A_GiveToMaster("HeadshotTargetDead", 1)
 		Stop
 	}
 }
