@@ -1,4 +1,60 @@
-Actor BlackPanther 30141
+Actor BlackPanther : HellKnight 30141
 {
+	Health 1500
+	Speed 10
+	BloodColor "00 67 67"
+	SeeSound "BlackPanther/Sight"
+	ActiveSound "BlackPanther/Active"
+	PainSound "BlackPanther/Pain"
+	// DeathSound "BlackPanther/Death"
+	DamageFactor TacticalShotgunTracer, 1.2
+	HitObituary "%o was shred to pieces by a Black Panther."
+	Obituary "%o was torn apart by a Black Panther"
+	States
+	{
+	Spawn:
+		BPNT A 10 A_Look 
+		Loop
+	See:
+		BPNT AABBCCDD 2 A_Chase
+		Loop
+	Melee:
+	Missile:
+		BPNT EF 8 A_FaceTarget
+		BPNT G 8 A_CustomComboAttack("PantherBall", 32, 8 * random(1, 8), "baron/melee")
+		Goto See
+	Pain:
+		BPNT H 2
+		BPNT H 2 A_Pain
+		Goto See
+	Death:
+		BPNT I 8
+		BPNT J 8 A_Scream
+		BPNT K 8
+		BPNT L 8 A_NoBlocking
+		BPNT MN 8
+		BPNT O -1
+		Stop
+	Raise:
+		BPNT O 8
+		BPNT NMLKJI 8
+		Goto See
+	}
+}
 
+ACTOR PantherBall : BaronBall
+{
+	Damage (random(1,4) * 16)
+	Speed 20
+	Alpha 1.0
+	States
+	{
+	Spawn:
+		PNTB AB 2
+		Loop
+	Death:
+		TNT1 A 0 A_Explode(16, 16, 0)
+		PNTB CDEFGH 2
+		Stop
+	}
 }

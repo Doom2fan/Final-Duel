@@ -1,3 +1,7 @@
-DECORATE: Alex_Mercer
-Sprites: IMX, Alex_Mercer
-Sounds: 
+Monster:
+	DECORATE: IMX, Alex_Mercer
+	Sprites: IMX, Alex_Mercer
+	Sounds: Alex_Mercer
+Projectile:
+	DECORATE: Alex_Mercer
+	Sprites: Alex_Mercer, Midway
