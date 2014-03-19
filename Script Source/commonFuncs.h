@@ -222,6 +222,7 @@ function void RestartInventory (void)
 {
 	Int Chronos = CheckInventory("ChronosItem");
 	TakeInventory("Sword", 1);
+	TakeInventory("EnforcerFire2", 1);
 	TakeInventory("Magnum", 1);
 	TakeInventory("FDShotgun", 1);
 	TakeInventory("PumpActionShotgun", 1);
