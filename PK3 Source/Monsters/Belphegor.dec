@@ -8,7 +8,7 @@ ACTOR FDBelphegor 30132
 {
 	//$Category Final Duel-Monsters
 	//$Title Belphegor
-	Health 1500
+	Health 1200
 	Radius 24
 	Height 64
 	Mass 1000
@@ -90,5 +90,5 @@ ACTOR FDBelphegor 30132
 
 ACTOR FDBelphegorBall : FDBaronBall
 {
-	Speed 20
+	Damage 10
 }
