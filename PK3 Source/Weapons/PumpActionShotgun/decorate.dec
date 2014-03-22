@@ -96,8 +96,8 @@ actor PumpActionShotgun : FDWeapon 30003
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("PASSlugs",1,"Fire.Slug")
-		TNT1 A 0 A_JumpIfInventory("PASPump",1,"Pump")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
+		TNT1 A 0 A_JumpIfInventory("PASPump",1,"Pump")
 		TNT1 A 0 A_FireCustomMissile("TacticalShotgunTracer", frandom(-1.8,1.8), 1, 0, -2, 0, frandom(-1.8,1.8))
 		TNT1 AAAAAAAA 0 A_FireCustomMissile("TacticalShotgunTracer", frandom(-1.8,1.8), 0, 0, -2, 0, frandom(-1.8,1.8))
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.5)
@@ -157,6 +157,7 @@ actor PumpActionShotgun : FDWeapon 30003
 		TNT1 A 0 A_JumpIfInventory("AmmoPAShotgun",6,"Reloaded")
 		TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
 		Goto Reloaded
+		TNT1 A 0 A_TakeInventory("PASPump", 1)
 		SGR2 ABCDE 2
 		TNT1 A 0 A_PlaySound ("PAShotgun/Shell", CHAN_WEAPON)
 		SGR2 FGHI 1
@@ -179,9 +180,9 @@ actor PumpActionShotgun : FDWeapon 30003
 		SGG1 A 1 A_WeaponReady
 		loop
 	Fire.Slug:
-		TNT1 A 0 A_JumpIfInventory("PASPump",1,"Pump.Slug")
 		TNT1 A 0 A_JumpIfInventory("AmmoPAShotgunSlug",1,1)
 		Goto DryFire.Slug
+		TNT1 A 0 A_JumpIfInventory("PASPump",1,"Pump.Slug")
 		TNT1 A 0 A_FireCustomMissile("TSRifledSlug", frandom(-0.5, 0.5), 0, 0, 0, 0, frandom(-0.8, 0.8))
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.5)
 		TNT1 A 0 A_TakeInventory("AmmoPAShotgunSlug", 1)
@@ -237,6 +238,7 @@ actor PumpActionShotgun : FDWeapon 30003
 		TNT1 A 0 A_JumpIfInventory("AmmoPAShotgunSlug",6,"Reloaded")
 		TNT1 A 0 A_JumpIfInventory("Slug",1,1)
 		Goto Reloaded
+		TNT1 A 0 A_TakeInventory("PASPump", 1)
 		SGR2 ABCDE 2
 		TNT1 A 0 A_PlaySound ("PAShotgun/Shell", CHAN_WEAPON)
 		SGR2 FGHI 1
