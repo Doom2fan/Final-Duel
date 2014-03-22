@@ -1,4 +1,5 @@
 Magic/Mode							MGMODE
+Magic/Book							MGBOOK
 $random Magic/Burnout { Magic/Burnout1 Magic/Burnout2 Magic/Burnout3 Magic/Burnout4 }
 Magic/Burnout1						MGBRN1 // From Doom 3
 Magic/Burnout2						MGBRN2 // From Doom 3
