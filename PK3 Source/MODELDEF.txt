@@ -40,6 +40,7 @@ Model Energy // Model by Alex_Mercer
 	Model 0 "Energy.md3"
 	Skin 0 "Energy.png"
 	Scale 0.35 0.35 0.35
+	Offset 0.0 0.0 8.0
 	
 	FrameIndex ENRG A 0 0
 }
