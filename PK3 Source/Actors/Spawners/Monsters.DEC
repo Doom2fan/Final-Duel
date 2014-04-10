@@ -7,7 +7,7 @@ Actor ZombiemanSpawner replaces Zombieman
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(16,"EasyZSec")
 	Normal:
-		TNT1 A 1 A_SpawnItemExEx("FDZombieman", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("FDZombieman", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	EasyZSec:
 		TNT1 A 1 A_SpawnItemEx("EasyZSec", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)

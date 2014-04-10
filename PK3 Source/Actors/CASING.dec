@@ -272,7 +272,7 @@ Actor EmptyCell : CasingBase {
 	Height 2
 	Radius 2
 	SeeSound "Weapons/ammobounce"
-	{
+	States {
 	Spawn:
 		ACS1 ABCDEFGH 2
 		Loop
