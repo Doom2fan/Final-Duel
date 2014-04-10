@@ -5,7 +5,7 @@
 //
 //=================================================================================================
 
-ACTOR FDHectebus 30133
+Actor FDHectebus 30133
 {
 	//$Category Final Duel-Monsters
 	//$Title Hectebus
@@ -16,16 +16,16 @@ ACTOR FDHectebus 30133
 	Monster
 	+FLOORCLIP
 	+BOSSDEATH
-   SeeSound "fatso/sight"
-   PainSound "fatso/pain"
-   DeathSound "fatso/death"
-   ActiveSound "fatso/active"
-   Health 1200
-   GibHealth -600
-   PainChance 20
-   Obituary "$OB_HECTEBUS"
-   DamageFactor "Ice", 0.0
-   DamageFactor "SRType1", 1.0
+	SeeSound "fatso/sight"
+	PainSound "fatso/pain"
+	DeathSound "fatso/death"
+	ActiveSound "fatso/active"
+	Health 1200
+	GibHealth -600
+	PainChance 20
+	Obituary "$OB_HECTEBUS"
+	DamageFactor "Ice", 0.0
+	DamageFactor "SRType1", 1.0
 	DropItem "Energy"
    States
    {
@@ -41,27 +41,27 @@ ACTOR FDHectebus 30133
       HECT J 3 A_Pain
       Goto See
    Missile:
-      //These Next 2 states replace A_FatRaise and A_HectRaise
+      //These Next 2 States replace A_FatRaise and A_HectRaise
       HECT G 0 A_PlaySound("fatso/raiseguns")
       HECT G 20 A_FaceTarget
       HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,5.625,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,11.25,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,16.875,1)
-      HECT H 10 BRIGHT
+      HECT H 10 Bright
       HECT IG 5 A_FaceTarget
       HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,-5.625,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,-11.25,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,-16.875,1)
-      HECT H 10 BRIGHT
+      HECT H 10 Bright
       HECT IG 5 A_FaceTarget
       HECT H 0 A_CustomMissile("FDHectShot",28,0,-11.25,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,-5.625,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,0,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,5.625,1)
       HECT H 0 A_CustomMissile("FDHectShot",28,0,11.25,1)
-      HECT H 10 BRIGHT
+      HECT H 10 Bright
       HECT IG 5 A_FaceTarget
       Goto See
    Death:
@@ -106,7 +106,7 @@ ACTOR FDHectebus 30133
    }
 }
 
-ACTOR FDHectShot : FatShot
+Actor FDHectShot : FatShot
 {
    Speed 22
    Damage 12
@@ -117,16 +117,16 @@ ACTOR FDHectShot : FatShot
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
-      HECF A 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+      HECF A 1 Bright A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
 	  TNT1 A 0 A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
-	  HECF B 1 BRIGHT A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
+	  HECF B 1 Bright A_CustomMissile("Rocket1Trail",random(-7,7),random(-7,7))
       Loop
    Death:
-      HECF C 8 BRIGHT
-      HECF D 6 BRIGHT
-      HECF E 4 BRIGHT
+      HECF C 8 Bright
+      HECF D 6 Bright
+      HECF E 4 Bright
       Stop
    }
 }

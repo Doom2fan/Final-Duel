@@ -1,5 +1,5 @@
 // Chainsaw Spawner
-ACTOR ChainsawSpawner Replaces Chainsaw
+Actor ChainsawSpawner Replaces Chainsaw
 {
 	States
 	{
@@ -10,12 +10,12 @@ ACTOR ChainsawSpawner Replaces Chainsaw
 		TNT1 A 0 A_SpawnItemEx("FDChainsaw", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Sword:
-		TNT1 A 0 A_SpawnItemEx("Sword", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Sword", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Shotgun Spawner
-ACTOR ShotgunSpawner Replaces Shotgun
+Actor ShotgunSpawner Replaces Shotgun
 {
 	States
 	{
@@ -26,21 +26,21 @@ ACTOR ShotgunSpawner Replaces Shotgun
 		TNT1 A 0 A_SpawnItemEx("ShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	PAS:
-		TNT1 A 0 A_SpawnItemEx("PumpActionShotgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("PumpActionShotgun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	Magnum:
-		TNT1 A 0 A_SpawnItemEx("Magnum", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 AA 0 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Magnum", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	Crossbow:
-		TNT1 A 0 A_SpawnItemEx("FDCrossbow", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("FDCrossbow", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Super Shotgun Spawner
-ACTOR SuperShotgunSpawner Replaces SuperShotgun
+Actor SuperShotgunSpawner Replaces SuperShotgun
 {
 	States
 	{
@@ -51,13 +51,13 @@ ACTOR SuperShotgunSpawner Replaces SuperShotgun
 		TNT1 A 0 A_SpawnItemEx("SuperShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	QuadShotgun:
-		TNT1 A 0 A_SpawnItemEx("QuadShotgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("QuadShotgun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Chaingun Spawner
-ACTOR ChaingunSpawner Replaces Chaingun
+Actor ChaingunSpawner Replaces Chaingun
 {
 	States
 	{
@@ -68,13 +68,13 @@ ACTOR ChaingunSpawner Replaces Chaingun
 		TNT1 A 0 A_SpawnItemEx("ChaingunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Minigun:
-		TNT1 A 0 A_SpawnItemEx("FDMinigun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("MinigunAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("FDMinigun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("MinigunAmmo", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Rocket Launcher Spawner
-ACTOR RocketLauncherSpawner Replaces RocketLauncher
+Actor RocketLauncherSpawner Replaces RocketLauncher
 {
 	States
 	{
@@ -87,21 +87,21 @@ ACTOR RocketLauncherSpawner Replaces RocketLauncher
 		TNT1 A 0 A_SpawnItemEx("RocketLauncherReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Grenade:
-		TNT1 A 0 A_SpawnItemEx("FDGrenadeLauncher", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("FDGrenadeLauncher", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	SoulReaperDrop:
-		TNT1 A 0 A_SpawnItemEx("SoulReaper", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("SoulReaper", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	Annihilator:
-		TNT1 A 0 A_SpawnItemEx("Annihilator", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Annihilator", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Plasma Gun Replacer
-ACTOR PlasmaRifleSpawner Replaces PlasmaRifle
+Actor PlasmaRifleSpawner Replaces PlasmaRifle
 {
 	States
 	{
@@ -112,13 +112,13 @@ ACTOR PlasmaRifleSpawner Replaces PlasmaRifle
 		TNT1 A 0 A_SpawnItemEx("PlasmaRifleReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	SonicRailgun:
-		TNT1 A 0 A_SpawnItemEx("SonicRailgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("SonicRailgun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // BFG 9000 Replacer
-ACTOR BFG9000Spawner Replaces BFG9000
+Actor BFG9000Spawner Replaces BFG9000
 {
 	States
 	{
@@ -130,12 +130,12 @@ ACTOR BFG9000Spawner Replaces BFG9000
 		TNT1 A 0 A_SpawnItemEx("BFG9000Replacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	BFG10K:
-		TNT1 A 0 A_SpawnItemEx("BFG10K", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("BFG10K", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	SniperRifle:
-		TNT1 A 0 A_SpawnItemEx("SniperRifle", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("SniperRifleClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("SniperRifle", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("SniperRifleClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

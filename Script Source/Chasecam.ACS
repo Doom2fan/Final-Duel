@@ -5,19 +5,16 @@
 
 bool camera_mode[MAXPLAYERS];		//Variable for turning the camera on or off.
 	
-Script "FDChasecamOn" (VOID)
-{
+Script "FDChasecamOn" (VOID) {
 	camera_mode[PlayerNumber ()] = ON;
 	ACS_NamedExecuteAlways ("FDChasecam", 0, PlayerNumber ());
 }
 
 
-Script "FDChasecam" (int p_num)
-{
+Script "FDChasecam" (int p_num) {
 	int r = MAX_R;
 	
-	while (camera_mode[p_num] == ON)
-	{	
+	while (camera_mode[p_num] == ON) {
 		int a = GetActorAngle (0);
 		int p = GetActorPitch (0);
 		int x = GetActorX (0);
@@ -25,24 +22,19 @@ Script "FDChasecam" (int p_num)
 		int z = GetActorZ (0) + VIEW_HEIGHT;
 		int xyr = r * cos (p) >> 16;
 		
-		if (!ThingCountName ("Chasecam", C_TID+p_num))
-		{
-			while (!Spawn ("Chasecam", x-cos(a)*xyr, y-sin(a)*xyr, z+sin(p)*r, C_TID+p_num, a >> 8) && r > 0)
-			{
+		if (!ThingCountName ("Chasecam", C_TID+p_num)) {
+			while (!Spawn ("Chasecam", x-cos(a)*xyr, y-sin(a)*xyr, z+sin(p)*r, C_TID+p_num, a >> 8) && r > 0) {
 				r -= ADJUST_R;
 				xyr = cos (p) * r >> 16;
 			}
 			if (ThingCountName ("Chasecam", C_TID + p_num)) ChangeCamera (C_TID + p_num, 0, 0);
-			else
-			{
+			else {
 				camera_mode[p_num] = OFF;
 				Print (s:"Camera script failed to initialize.");
 			}
 		}
-		else
-		{
-			while (!SetActorPosition (C_TID+p_num, x-cos(a)*xyr, y-sin(a)*xyr, z+sin(p)*r, 0) && r > 0)
-			{
+		else {
+			while (!SetActorPosition (C_TID+p_num, x-cos(a)*xyr, y-sin(a)*xyr, z+sin(p)*r, 0) && r > 0) {
 				r -= ADJUST_R;
 				xyr = cos (p) * r >> 16;
 			}
@@ -54,14 +46,12 @@ Script "FDChasecam" (int p_num)
 	}
 }
 
-Script "FDChasecamOff" (VOID)
-{
+Script "FDChasecamOff" (VOID) {
 	camera_mode[PlayerNumber ()] = OFF;
 	Thing_Remove (C_TID + PlayerNumber ());
 }
 
-Script "FDChasecamKillOnDisconnect" (int pln) DISCONNECT
-{
+Script "FDChasecamKillOnDisconnect" (int pln) DISCONNECT {
 	camera_mode[pln] = OFF;
 	Thing_Remove (C_TID + pln);
 }

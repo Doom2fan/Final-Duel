@@ -6,9 +6,9 @@ Actor MeleeAttack : FDWeapon
 {
 	Tag "$TAGMELEE"
 	Obituary "$OBMELEE"
-	+WEAPON.MELEEWEAPON
-    +WEAPON.NOALERT
-    +WEAPON.NOAUTOAIM
+	+Weapon.MELEEWeapon
+    +Weapon.NOALERT
+    +Weapon.NOAUTOAIM
 	States
 	{
 	Kicking:
@@ -28,7 +28,9 @@ Actor MeleeAttack : FDWeapon
         KICK OPQRST 2
 		Goto Ready2
 	Ready:
+		FSTS CBA 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
@@ -36,6 +38,10 @@ Actor MeleeAttack : FDWeapon
 		TNT1 A 0 A_JumpIfInventory("MCSBAltFire", 1, "AltAttack")
 		FIST A 1 A_WeaponReady(WRF_NOFIRE)
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		FIST A 5 ACS_NamedExecute("FD_TryingToDropFists", 0)
+		Goto Ready2
 	Reload:
 		TNT1 A 0 A_TakeInventory("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory("FatalityOn", 1, "Reload2")
@@ -48,11 +54,12 @@ Actor MeleeAttack : FDWeapon
 		Goto Ready2
 	Select:
 		TNT1 A 0 ACS_NamedExecute("FDMeleeComboSystem", 0, 0, 0, 0)
-		FIST A 1 A_Raise
+		FIST A 0 A_Raise
 		Wait
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
-		FIST A 1 A_Lower
+		FSTS ABC 1
+		FIST A 0 A_Lower
 		Wait
 		
 	// Attack
@@ -210,13 +217,13 @@ Actor MeleeAttack : FDWeapon
 		Goto Ready2
 	}
 }
-ACTOR FistPuff
+Actor FistPuff
 {
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+PUFFONACTORS
-	-ALLOWPARTICLES
-	+NOEXTREMEDEATH
+	+NoBlockmap
+	+NoGravity
+	+PuffOnActors
+	-AllowParticles
+	+NoExtremeDeath
 	AttackSound "Melee/Fists/HitWall"
 	States
 	{
@@ -229,13 +236,13 @@ ACTOR FistPuff
 	}
 }
 
-ACTOR FistPuffStrong
+Actor FistPuffStrong
 {
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+PUFFONACTORS
-	-ALLOWPARTICLES
-	+EXTREMEDEATH
+	+NoBlockmap
+	+NoGravity
+	+PuffOnActors
+	-AllowParticles
+	+ExtremeDeath
 	Decal FistScorch
 	AttackSound "Melee/Fists/HitWall"
 	States

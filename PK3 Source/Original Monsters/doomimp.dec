@@ -1,4 +1,4 @@
-ACTOR FDDoomImp : DoomImp 30097
+Actor FDDoomImp : DoomImp 30097
 {
 	//$category Final Duel-Original Monsters
 	//$title Imp
@@ -86,14 +86,14 @@ ACTOR FDDoomImp : DoomImp 30097
 		stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",60)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("imp/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("imp/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("imp/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("imp/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.Plasma:
@@ -130,19 +130,19 @@ ACTOR FDDoomImp : DoomImp 30097
 // Imp fireball
 //
 //===========================================================================
-ACTOR FDDoomImpBall : DoomImpBall replaces DoomImpBall
+Actor FDDoomImpBall : DoomImpBall replaces DoomImpBall
 {
 	DamageType Fire
-	+NOEXTREMEDEATH
+	+NoExtremeDeath
 	Scale .75
 	Decal Scorch
 	States
 	{
 	Spawn:
-		IMPB ABC 1 bright A_custommissile("DoomImpBallTrail",random(-4,0),random(-4,4),random(177,183),2,random(5,30))
-		loop
+		IMPB ABC 1 Bright A_custommissile("DoomImpBallTrail",random(-4,0),random(-4,4),random(177,183),2,random(5,30))
+		Loop
 	Death:
-		IMPB DEFGH 6 bright
+		IMPB DEFGH 6 Bright
 		stop
 	}
 }
@@ -152,7 +152,7 @@ Actor DoomImpBallTrail : ParticleFire_General
 	States
 	{
 	Spawn:
-		FIPR ACEGIKMOQS 1 bright
+		FIPR ACEGIKMOQS 1 Bright
 		Stop
 	}
 }

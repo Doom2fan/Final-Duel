@@ -12,12 +12,12 @@
 		SKILLZ_HARDSPEEDTEXT			= "Enemies are faster and more aggressive.\nUses the Hard spawn filter.";
 	SKILLZ_NIGHTMARE 			= "Brutal.";
 		SKILLZ_NIGHTMARETEXT			= "Monsters are faster, are even more aggressive and respawn.\nHealth items are auto-used.\nUses the Nightmare spawn filter.";
-	SKILLZ_NEIN   				= "Unforgivable.";
+	SKILLZ_NEIN   				= "Insanity.";
 		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled and health items are auto-used.\nMonsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\nUses the Nightmare spawn filter.";
 // Cheats
 	STSTR_DQDON    				= "You are now immortal";
 	STSTR_DQDOFF   				= "Back with the mortals";
-	STSTR_KFAADDED 				= "Suddenly a bunch of guns, ammo,keys and armor fall from the sky.";
+	STSTR_KFAADDED 				= "Suddenly a bunch of guns, ammo, keys and armor fall from the sky.";
 	STSTR_FAADDED  				= "Need ammo?";
 	STSTR_NCON     				= "Sie sind jetzt ein geist";
 	STSTR_NCOFF    				= "After a while you start to miss being able to touch things.";
@@ -43,16 +43,13 @@
 		GOTHELLCLIP					= "Picked up a Inferno clip.";
 		GOTHELLCLIPBOX				= "Picked up 5 Inferno clips.";
 		GOTGRENADES					= "Picked up a Grenade Launcher magazine.";
-		GOTGRNDBOX					= "Picked up a box of Grenade Launcher magazines";
 		GOTSHELLS 					= "Picked up 4 shells.";
 		GOTSHELLBOX					= "Picked up a box of 00 Buckshot.";
 		GOTMGUNAMMO					= "Picked up a Minigun magazine";
-		GOTMGUNAMMO2				= "Picked up two Minigun magazines";
-		GOTMAGNUMAMMO				= "Picked up Magnum ammo";
-		GOTMAGNUMAMMOBOX			= "Picked up a box of Magnum ammo";
+		GOTMAGNUMAMMO				= "Picked up a Magnum speedloader";
 		GOTSLUGS					= "Picked up 4 rifled slugs";
 		GOTSLUGSBOX					= "Picked up a box of rifled slugs";
-		GOTXBOWBOLT					= "Picked up a crossbow bolts";
+		GOTXBOWBOLT					= "Picked up a crossbow bolt";
 		GOTXBOWBOLTS				= "Picked up a quiver of crossbow bolts";
 
 // Weapon Pickups
@@ -61,8 +58,6 @@
 		GOTSAW                 	= "You got the Chainsaw. (Slot 1)";
 
 	// Slot 2
-		GOTENFORCER				= "You got the S18 Enforcer. (Slot 2)";
-		GOTGLOCK				= "You got the S15 Glock. (Slot 2)";
 		GOTRIFLE				= "You got the M9A10 Rifle. (Slot 2)";
 		GOTMAGNUM				= "You got the .357 Magnum. (Slot 2)";
 
@@ -79,16 +74,16 @@
 
 	// Slot 5
 		GOTLAUNCHER            	= "You got the Rocket Launcher. (Slot 5)";
-		GOTANNIHILATOR			= "You got the Annihilator Mk II. (Slot 5)";
+		GOTANNIHILATOR			= "You got the Annihilator MK II. (Slot 5)";
 		GOTGLAUNCHER           	= "You got the GT Grenade Launcher. (Slot 5)";
 
 	// Slot 6
 		GOTPLASMA              	= "You got the Plasma Rifle. (Slot 6)";
-		GOTSONICRAIL			= "You got the Mjolnir Mark IV Sonic Railgun. (Slot 6)";
+		GOTSONICRAIL			= "You got the Mjolnir MK IV Sonic Railgun. (Slot 6)";
 
 	// Slot 7
-		GOTBFG9000             	= "You got the BFG9000!  Oh, yes. (Slot 7)";
-		PICKUP_BFG10K          	= "You got the BFG10k!  Hell yeah. (Slot 7)";
+		GOTBFG9000             	= "You got the Bio Force Gun MK XVI!  Oh, yes. (Slot 7)";
+		PICKUP_BFG10K          	= "You got the Plasmic Pulse Gun MK II!  Hell yeah. (Slot 7)";
 
 	// Slot 8
 		PICKUP_SOULREAPER      	= "You got the Soul Reaper. (Slot 8)";
@@ -124,15 +119,10 @@
 		OB_DARKIMP         		= "%o was cursed by a Dark Imp.";
 		OB_DARKIMP_MELEE   		= "%o was touched by a Dark Imp.";
 	// Hellhound
-		OB_HELLHOUND			= "%o burned alive by a Hellhound.";
+		OB_HELLHOUND			= "%o was burned alive by a Hellhound.";
 		OB_HELLHOUND_MELEE		= "A Hellhound had %o for dinner.";
 	// Maephisto
 		OB_MAEPHISTO			= "%o was vaporised by a Maephisto.";
-	// Moloch
-		OB_MOLOCH				= "%o was sacrificed to Moloch.";
-		OB_MOLOCH_MELEE			= "%o got shredded by Moloch's claws.";
-		OB_MOLOCH_WRAITH		= "%o fell to an unlucky victim of a sacrifice.";
-		OB_MOLOCH_WRAITH_MELEE	= "%o was slashed by a red wraith.";
 	// Rottweiler
 		OB_ROTTWEILER			= "%o was mauled by a Rottweiler.";
 	// Tesla Coil
@@ -153,21 +143,21 @@
 
 
 // PvP
-	// Glock
-		OBGLOCK					= "%k \cG> \cKS15 Glock \cG>\cL%o";
+	// Beretta
+		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
 	// BFG 10K
-		OB_BFG10K        		= "%k \cG> \cKBFG 10K \cG> \cL%o";
+		OB_BFG10K        		= "%o is now plasmic pulsed, thanks to %k's Plasmic Pulse Gun MK II";
 	// Soul Reaper
-		OBSOULREAPER   			= "%k \cG> \cKSoul Reaper \cG> \cL%o";
+		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
 	// Mancubus Flamethrower
-		OBMANCUBUSARM   		= "%k \cG> \cKMancubus Flamethrower \cG> \cL%o";
+		OBMANCUBUSARM   		= "%o was killed by %k";
 	// Melee
 		// Kukri
-			OBKUKRI			  		= "%k \cG> \cKKukri \cG> \cL%o";
+			OBKUKRI			  		= "%k slashed %o to death with his Kukri";
 		// Sword
-			OBSWORD					= "%k \cG> \cKSword \cG> \cL%o";
+			OBSWORD					= "%k cut %o in half with his sword";
 		// Melee
-			OBMELEE					= "%k \cG> \cKMelee Attack \cG> \cL%o";
+			OBMELEE					= "%o was beaten to death by %k";
 	// M9A15 Carbine
 		OBACTIONMACHINEGUN  	= "%k \cG> \cKM9A15 Carbine \cG> \cL%o";
 	// M8A17 Bullpup
@@ -199,15 +189,15 @@
 	// .357 Magnum
 		OBMAGNUM				= "%k \cG> \cK.357 Magnum \cG> \cL%o";
 	// Quad Shotgun
-		OBQUADSHOTGUN			= "%k \cG> \cKQuad-Barrel Shotgun \cG> \cL%o";
+		OBQUADSHOTGUN			= "%o is now full of holes made by %k's Quad-barrel Shotgun";
 	// Annihilator
-		OBANNIHILATOR			= "%k \cG> \cKAnnihilator \cG> \cL%o";
+		OBANNIHILATOR			= "%k annihilated %o";
 	// BFG 9000
-		OBBFG9000				= "%k \cG> \cKBFG 9000 \cG> \cL%o";
+		OBBFG9000				= "%o was forced to die by %k's Bio Force Gun MK XVI";
 	// Magnum Sniper Rifle
-		OBSNIPERRIFLE			= "%k \cG> \cKMagnum Sniper Rifle \cG> \cL%o";
+		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
 	// Crossbow
-		OBCROSSBOW				= "%k \cG> \cKCrossbow \cG> \cL%o";
+		OBCROSSBOW				= "%o now can't be an adventurer anymore, thanks to %k and %p Crossbow";
 
 // Default Strings
 	QUITMSG 					= "Are you sure you want to\nquit this awesome mod?";

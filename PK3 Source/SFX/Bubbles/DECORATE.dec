@@ -1,4 +1,4 @@
-actor Bubble
+Actor Bubble
 {
   Radius 2
   Height 2
@@ -8,8 +8,8 @@ actor Bubble
   RenderStyle Add
   projectile
   +CLIENTSIDEONLY
-  +FORCEXYBILLBOARD
-  +NOCLIP
+  +ForceXYBillboard
+  +NoClip
   States
   {
   Spawn:
@@ -18,30 +18,30 @@ actor Bubble
   Rise:
     SBUB A 0 A_JumpIf(waterlevel == 0, "Death")
     SBUB A 1 A_Jump (32, "Jiggle")
-    loop
+    Loop
   Jiggle:
     SBUB A 0 A_JumpIf(waterlevel == 0, "Death")
     SBUB A 1 A_SetAngle (random (0, 360)) 
     SBUB A 0 A_Recoil (0.1)
-    goto Rise
+    Goto Rise
   Death:
     TNT1 A 1
     stop
   }
 }
 
-actor BubbleSpawner 30065
+Actor BubbleSpawner 30065
 {
   //$Category Final Duel-SFX
   //$Title Bubble Spawner
   Radius 2
   Height 2
-  +NOINTERACTION
+  +NoInteraction
   States
   {
   Spawn:
     TNT1 A 0
     TNT1 A 2 A_SpawnItemEx ("Bubble", random (-16, 16), 0, 0, 0, 0, 2, random (0, 360), 0, 128)
-    loop
+    Loop
   }
 }

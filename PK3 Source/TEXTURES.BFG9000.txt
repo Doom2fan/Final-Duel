@@ -1,0 +1,24 @@
+Sprite BFGSA0, 320, 200
+{
+	Patch BFGGA0, 50, 89
+}
+
+Sprite BFGSB0, 320, 200
+{
+	Patch BFGGA0, 50, 105
+}
+
+Sprite BFGSC0, 320, 200
+{
+	Patch BFGGA0, 50, 121
+}
+
+Sprite BFGSD0, 320, 200
+{
+	Patch BFGGA0, 50, 137
+}
+
+Sprite BFGSE0, 320, 200
+{
+	Patch BFGGA0, 50, 153
+}

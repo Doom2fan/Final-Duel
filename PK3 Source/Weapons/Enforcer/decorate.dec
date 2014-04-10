@@ -1,9 +1,8 @@
-ACTOR EnforcerFire2 : Boolean { }
-ACTOR EnforcerUpgrade : Boolean { }
-ACTOR Enforcer : FDWeapon
+Actor EnforcerFire2 : Boolean { }
+Actor EnforcerUpgrade : Boolean { }
+Actor Enforcer : FDWeapon
 {
 	Tag "$TAGENFORCER"
-	Inventory.PickupMessage "$GOTENFORCER"
 	Obituary "$OBENFORCER"
 	Inventory.RestrictedTo MarineClass
 	Weapon.AmmoType1 "EnforcerClipR"
@@ -13,8 +12,8 @@ ACTOR Enforcer : FDWeapon
 	Weapon.AmmoUse1 0
 	Weapon.AmmoUse2 0
 	Weapon.Kickback 75
-	Weapon.UpSound "weapons/enforcerup"
-	// AttackSound "weapons/enforcerfire"
+	Weapon.UpSound "Weapons/enforcerup"
+	// AttackSound "Weapons/enforcerfire"
 	+AMMO_OPTIONAL
 	+NOALERT
 	+NOAUTOFIRE
@@ -24,11 +23,16 @@ ACTOR Enforcer : FDWeapon
 	Ready:
 		ENFS EDCBA 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		ENF1 A 1 A_WeaponReady
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		ENF1 A 5 ACS_NamedExecute("FD_CannotDropThisWeapon", 0)
+		Goto Ready2
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
 		ENFS ABCDE 1
@@ -44,14 +48,14 @@ ACTOR Enforcer : FDWeapon
 		TNT1 A 0 A_GunFlash
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("PistolTracer", frandom(-2.0,3.0), 1, 10, 1, 0, frandom(-3.0,3.0))
-		TNT1 A 0 A_PlaySound("weapons/enforcerfire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/enforcerfire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn2",5,0,20,-4)
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
 		TNT1 A 0 A_SetPitch(pitch - 0.25)
 		TNT1 A 0 A_TakeInventory("EnforcerClip",1)
 		TNT1 A 0 A_TakeInventory("EnforcerClipR",1)
 		TNT1 A 0 A_GiveInventory("EnforcerFire2",1)
-		ENF1 BB 1 BRIGHT A_SetPitch(pitch - 0.125)
+		ENF1 BB 1 Bright A_SetPitch(pitch - 0.125)
 		ENF1 C 3
 		TNT1 A 0 A_JumpIfInventory("EnforcerUpgrade",1,1)
 		Goto Ready2
@@ -63,14 +67,14 @@ ACTOR Enforcer : FDWeapon
 		TNT1 A 0 A_GunFlash
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("PistolTracer", frandom(-2.0,3.0), 1, -10, 1, 0, frandom(-3.0,3.0))
-		TNT1 A 0 A_PlaySound("weapons/enforcerfire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/enforcerfire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn2",5,0,-11,-4)
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
 		TNT1 A 0 A_SetPitch(pitch - 0.25)
 		TNT1 A 0 A_TakeInventory("EnforcerClip",1)
 		TNT1 A 0 A_TakeInventory("EnforcerClipL",1)
 		TNT1 A 0 A_TakeInventory("EnforcerFire2",1)
-		ENF1 DD 1 BRIGHT A_SetPitch(pitch - 0.125)
+		ENF1 DD 1 Bright A_SetPitch(pitch - 0.125)
 		ENF1 E 3
 		TNT1 A 0 A_JumpIfInventory("EnforcerUpgrade",1,1)
 		Goto Ready2
@@ -82,7 +86,7 @@ ACTOR Enforcer : FDWeapon
        TNT1 A 0 A_Light0
        Stop
 	DryFire:
-		ENF1 A 0 A_PlaySound("weapons/empty")
+		ENF1 A 0 A_PlaySound("Weapons/empty")
 		ENF1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2
 	Reload:
@@ -90,14 +94,14 @@ ACTOR Enforcer : FDWeapon
 		ENFR A 0 A_JumpIfInventory("Clip2", 2, 1)
 		Goto Ready2
 		ENFR A 0 A_JumpIfInventory("EnforcerClip", 30, "Ready2")
-		ENFR A 0 A_PlaySound("weapons/enforcerout")
+		ENFR A 0 A_PlaySound("Weapons/enforcerout")
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,-15,0)
 		ENFR ABCDEFG 2
 		ENFR A 0 A_TakeInventory("EnforcerClip",30)
 		ENFR A 0 A_TakeInventory("EnforcerClipR",15)
 		ENFR A 0 A_TakeInventory("EnforcerClipL",15)
-		ENFR F 0 A_PlaySound("weapons/enforcerin")
+		ENFR F 0 A_PlaySound("Weapons/enforcerin")
 		ENFR HIJKL 2
 		Goto Reloading
 	Reloading:
@@ -109,19 +113,19 @@ ACTOR Enforcer : FDWeapon
 		Goto Reloading
    }
 }
-ACTOR EnforcerClip : Ammo
+Actor EnforcerClip : Ammo
 {
 	Inventory.MaxAmount 30
 	Ammo.BackpackMaxAmount 30
 	+IGNORESKILL
 }
-ACTOR EnforcerClipR : Ammo
+Actor EnforcerClipR : Ammo
 {
 	Inventory.MaxAmount 15
 	Ammo.BackpackMaxAmount 15
 	+IGNORESKILL
 }
-ACTOR EnforcerClipL : Ammo
+Actor EnforcerClipL : Ammo
 {
 	Inventory.MaxAmount 15
 	Ammo.BackpackMaxAmount 15

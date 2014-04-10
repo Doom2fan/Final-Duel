@@ -3,7 +3,7 @@
 // Hell Knight
 //
 //===========================================================================
-ACTOR FDHellKnight : HellKnight 30102
+Actor FDHellKnight : HellKnight 30102
 {
 	//$category Final Duel-Original Monsters
 	//$title Hell Knight

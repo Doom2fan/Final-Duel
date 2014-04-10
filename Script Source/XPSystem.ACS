@@ -1,120 +1,110 @@
-function void LevelUp (int level)
-{
-	int Chronos = checkInventory("ChronosItem");
-	SetFont("DBIGFONT");
-	if(GetUserCVar(0, "FD_MsgsOn"))
-	{
-		HudMessage (s:"You reached level ", d:level, s:"!";
+function void LevelUp (int level) {
+	int Chronos = checkInventory ("ChronosItem");
+	SetFont ("DBIGFONT");
+	if (GetUserCVar (0, "FD_MsgsOn")) {
+		HudMessage (s:"You reached level ", d:level, s:".";
 			HUDMSG_FADEINOUT, 10000, CR_UNTRANSLATED, 0.5, 0.5, 3.0, 0.3, 0.3);
 	}
-	ActivatorSound ("Player/LevelUp",127);
-	GiveInventory ("XPSystemLevel",1);
+	PlaySound (0, "Player/LevelUp", CHAN_UI);
+	GiveInventory ("XPSystemLevel", 1);
+	GiveInventory ("XPSystemAttributePoints", 4);
 }
 
-script "XPSystem" Enter
-{
+script "XPSystem" Enter {
 	If (GameType() == Game_Title_Map) Terminate;
 	int currentLVL;
 	int currentXP;
-	Int currentHP;
-	int Chronos = checkInventory("ChronosItem");
-	while(TRUE)
-	{
-		currentLVL = checkInventory("XPSystemLevel");
-		currentXP = checkInventory("XPSystemExperience");
-		if (currentXP >= 1000 && currentLVL == 0)
-		{
-			LevelUp(1);
-			if(Chronos == 1)
-			{
+	int currentHP;
+	int Chronos = checkInventory ("ChronosItem");
+	while (TRUE) {
+		currentLVL = checkInventory ("XPSystemLevel");
+		currentXP = checkInventory ("XPSystemExperience");
+		if (currentXP >= 1000 && currentLVL == 0) {
+			LevelUp (1);
+			if (Chronos == 1) {
 				GiveInventory ("BerettaUpgrade",1);
-				SetFont("SMALLFONT");
-				if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Beretta upgraded!\nBurstfire(press ",k:"+altattack",s:" to change firing modes)";
+				SetFont ("SMALLFONT");
+				if (GetUserCVar (0, "FD_MsgsOn")) HudMessage (s:"Beretta upgraded.\nBurstfire(press ",k:"+altattack",s:" to change firing modes)";
 					HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 			}
-			else
-			{
+			else {
 				GiveInventory ("EnforcerUpgrade",1);
-				SetFont("SMALLFONT");
-				if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"S18 Enforcer upgraded!\nAutomatic fire";
+				SetFont ("SMALLFONT");
+				if (GetUserCVar (0, "FD_MsgsOn")) HudMessage (s:"S18 Enforcer upgraded.\nAutomatic fire";
 					HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 			}
 		}
-		if (currentXP >= 2800 && currentLVL == 1)
-		{
-			LevelUp(2);
+		if (currentXP >= 2800 && currentLVL == 1) {
+			LevelUp (2);
+			if (Chronos == 1) {
+				GiveInventory ("BerettaUpgrade2",1);
+				SetFont ("SMALLFONT");
+				if (GetUserCVar (0, "FD_MsgsOn")) HudMessage (s:"Beretta upgraded.\nFiring speed++";
+					HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			}			
 		}
-		if (currentXP >= 3900 && currentLVL == 2)
-		{
-			LevelUp(3);
+		if (currentXP >= 3900 && currentLVL == 2) {
+			LevelUp (3);
 			GiveInventory ("MinigunUpgrade",1);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"UAC \"Parias\" Minigun upgraded!\nDamage ++\nSpread --\nRecoil(with altfire off) --";
+			SetFont ("SMALLFONT");
+			if (GetUserCVar (0, "FD_MsgsOn")) HudMessage (s:"UAC \"Parias\" Minigun upgraded.\nDamage ++\nSpread --\nRecoil(with altfire off) --";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 4700 && currentLVL == 3)
-		{
-			LevelUp(4);
-			GiveInventory("NightvisionUpgrade",1);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Nightvision upgraded!\nNightvision now uses battery each 2 seconds instead of each 1.5 seconds.";
+		if (currentXP >= 4700 && currentLVL == 3) {
+			LevelUp (4);
+			GiveInventory ("NightvisionUpgrade",1);
+			SetFont ("SMALLFONT");
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Nightvision upgraded.\nNightvision now uses battery each 2 seconds instead of each 1.5 seconds.";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 6000 && currentLVL == 4)
-		{
-			LevelUp(5);
-			GiveInventory("Magic",1);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New weapon!\mMagic(Slot 0)";
+		if (currentXP >= 6000 && currentLVL == 4) {
+			LevelUp (5);
+			GiveInventory ("Magic",1);
+			SetFont ("SMALLFONT");
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New weapon.\mMagic(Slot 9)";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 7800 && currentLVL == 5)
-		{
-			LevelUp(6);
+		if (currentXP >= 7800 && currentLVL == 5) {
+			LevelUp (6);
 			GiveInventory ("PlasmaRifleUpgrade",1);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Plasma Rifle upgraded!\nOverload now doesn't take health";
+			SetFont ("SMALLFONT");
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Plasma Rifle upgraded.\nOverload now doesn't take health";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 9200 && currentLVL == 6)
-		{
-			LevelUp(7);
-			HealthBoost(50);
+		if (currentXP >= 9200 && currentLVL == 6) {
+			LevelUp (7);
+			HealthBoost (50);
 			currentHP = GetActorProperty(0,APROP_SpawnHealth);
-			SetFont("SMALLFONT");
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Maximum health increased!\nMaximum health is now ", d:currentHP;
+			SetFont ("SMALLFONT");
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Maximum health increased.\nMaximum health is now ", d:currentHP;
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 11500 && currentLVL == 7)
-		{
-			LevelUp(8);
-			SetFont("SMALLFONT");
+		if (currentXP >= 11500 && currentLVL == 7) {
+			LevelUp (8);
+			SetFont ("SMALLFONT");
 			GiveInventory ("MagnumUpgrade",1);
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:".357 Magnum Upgraded!\nRecoil --\nSpread --\nDamage ++";
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:".357 Magnum Upgraded.\nRecoil --\nSpread --\nDamage ++";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 14100 && currentLVL == 8)
-		{
-			LevelUp(9);
-			SetFont("SMALLFONT");
+		if (currentXP >= 14100 && currentLVL == 8) {
+			LevelUp (9);
+			SetFont ("SMALLFONT");
 			GiveInventory ("MagicUnlock",1);
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New magic unlocked!\nFire magic";
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New magic unlocked.\nFire magic";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 17500 && currentLVL == 9)
-		{
-			LevelUp(10);
-			SetFont("SMALLFONT");
+		if (currentXP >= 17500 && currentLVL == 9) {
+			LevelUp (10);
+			SetFont ("SMALLFONT");
 			GiveInventory ("MagicUnlock",1);
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New magic unlocked!\nLava magic";
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"New magic unlocked.\nLava magic";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		if (currentXP >= 24500 && currentLVL == 10)
-		{
-			LevelUp(11);
-			SetFont("SMALLFONT");
+		if (currentXP >= 24500 && currentLVL == 10) {
+			LevelUp (11);
+			SetFont ("SMALLFONT");
 			GiveInventory ("RLUpgrade",1);
-			if(GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Rocket Launcher upgraded!\nSeeker rockets(press ",k:"+altattack",s:" to shoot seeker rockets)";
+			if (GetUserCVar(0, "FD_MsgsOn")) HudMessage (s:"Rocket Launcher upgraded.\nSeeker rockets(press ",k:"+altattack",s:" to shoot seeker rockets)";
 				HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
 		Delay (1);

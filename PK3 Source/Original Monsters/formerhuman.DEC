@@ -1,6 +1,6 @@
 // Sounds: NightmareMutant
 Actor ZombiemanAmmo : Counter { Inventory.MaxAmount 30 }
-ACTOR FDZombieMan : ZombieMan 30094
+Actor FDZombieMan : ZombieMan 30094
 {
 	//$category Final Duel-Original Monsters
 	//$title Corrupted Human
@@ -8,7 +8,7 @@ ACTOR FDZombieMan : ZombieMan 30094
 	Health 40
 	GibHealth -20
 	Radius 20
-	Height 44
+	Height 56
 	Speed 8
 	PainChance 200
 	PainChance "Kick", 255
@@ -102,27 +102,27 @@ ACTOR FDZombieMan : ZombieMan 30094
 		TNT1 A 0 A_Jump(256,"Death.Fatality1")
 		Goto Death.Fatality1
 	Death.Fatality1:
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("grunt/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("grunt/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_TakeFromTarget("GoFatality", 1)
 		BURN V -1
 		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",30)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("grunt/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("grunt/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.SRType1:

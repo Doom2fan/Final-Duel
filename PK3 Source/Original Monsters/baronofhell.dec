@@ -3,7 +3,7 @@
 // Baron of Hell
 //
 //===========================================================================
-ACTOR FDBaronOfHell : BaronOfHell 30103
+Actor FDBaronOfHell : BaronOfHell 30103
 {
 	//$category Final Duel-Original Monsters
 	//$title Baron Of Hell
@@ -125,13 +125,13 @@ ACTOR FDBaronOfHell : BaronOfHell 30103
 //===========================================================================
 Actor BaronBallTrail : Rocket1Trail
 {
-alpha 0.15
+Alpha 0.15
 translation "0:255=121:127"
 }
 Actor FDBaronBall : BaronBall replaces BaronBall
 {
 	decal BaronScorch
-	renderstyle Add
+	RenderStyle Add
 	scale 1.4
 	States
 	{
@@ -139,13 +139,13 @@ Actor FDBaronBall : BaronBall replaces BaronBall
 		TNT1 A 0
 		TNT1 A 0 A_CustomMissile("BaronBallTrail",random(-3,3),random(-3,3))
 		TNT1 A 0 A_CustomMissile("BaronBallTrail",random(-3,3),random(-3,3))
-		BARB A 1 bright A_spawnitem("BaronBallTrail")
+		BARB A 1 Bright A_spawnitem("BaronBallTrail")
 		TNT1 A 0 A_CustomMissile("BaronBallTrail",random(-3,3),random(-3,3))
 		TNT1 A 0 A_CustomMissile("BaronBallTrail",random(-3,3),random(-3,3))
-		BARB B 1 bright A_spawnitem("BaronBallTrail")
-		loop
+		BARB B 1 Bright A_spawnitem("BaronBallTrail")
+		Loop
 	Death:
-		BARB CDEFGH 3 bright
+		BARB CDEFGH 3 Bright
 		stop
 		}
 }

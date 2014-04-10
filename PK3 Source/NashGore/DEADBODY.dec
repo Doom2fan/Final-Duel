@@ -2,13 +2,13 @@
 
 /*
 // ZombieMan
-actor NashGore_ZombieManDeadBody
+Actor NashGore_ZombieManDeadBody
 {
 health 50
 +ISMONSTER
-+SHOOTABLE
++Shootable
 +CORPSE
-states
+States
 	{
     Spawn:
      POSS L -1
@@ -30,45 +30,45 @@ states
 /**** CRUSHED DEAD BODIES ****/
 
 // small
-actor NashGore_CrushedSmall
+Actor NashGore_CrushedSmall
 {
-states
+States
 	{
 	Spawn:
 	 CRS1 A -1
-	 loop
+	 Loop
 	}
 }
 
 // medium
-actor NashGore_CrushedMedium
+Actor NashGore_CrushedMedium
 {
-states
+States
 	{
 	Spawn:
 	 CRS2 A -1
-	 loop
+	 Loop
 	}
 }
 
 // large
-actor NashGore_CrushedLarge
+Actor NashGore_CrushedLarge
 {
-states
+States
 	{
 	Spawn:
 	 CRS3 A -1
-	 loop
+	 Loop
 	}
 }
 
 // TRANSLATED CRUSHED BODIES
-actor NashGore_CrushedMediumGreen : NashGore_CrushedMedium
+Actor NashGore_CrushedMediumGreen : NashGore_CrushedMedium
 {
 translation "16:47=112:127","168:191=112:127"
 }
 
-actor NashGore_CrushedMediumBlue : NashGore_CrushedMedium
+Actor NashGore_CrushedMediumBlue : NashGore_CrushedMedium
 {
 translation "16:47=192:207","168:191=192:207"
 }
@@ -77,156 +77,156 @@ translation "16:47=192:207","168:191=192:207"
 
 // Bloody twitch -----------------------------------------------------------
 
-ACTOR NashGore_BloodyTwitch : BloodyTwitch replaces BloodyTwitch
+Actor NashGore_BloodyTwitch : BloodyTwitch replaces BloodyTwitch
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Meat 2 ------------------------------------------------------------------
 
-ACTOR NashGore_Meat2 : Meat2 replaces Meat2
+Actor NashGore_Meat2 : Meat2 replaces Meat2
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Meat 3 ------------------------------------------------------------------
 
-ACTOR NashGore_Meat3 : Meat3 replaces Meat3
+Actor NashGore_Meat3 : Meat3 replaces Meat3
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Meat 4 ------------------------------------------------------------------
 
-ACTOR NashGore_Meat4 : Meat4 replaces Meat4
+Actor NashGore_Meat4 : Meat4 replaces Meat4
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Meat 5 ------------------------------------------------------------------
 
-ACTOR NashGore_Meat5 : Meat5 replaces Meat5
+Actor NashGore_Meat5 : Meat5 replaces Meat5
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
-// Nonsolid meat -----------------------------------------------------------
+// NonSolid meat -----------------------------------------------------------
 
-ACTOR NashGore_NonsolidMeat2 : NashGore_Meat2 replaces NonsolidMeat2
+Actor NashGore_NonSolidMeat2 : NashGore_Meat2 replaces NonSolidMeat2
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
-ACTOR NashGore_NonsolidMeat3 : NashGore_Meat3 replaces NonsolidMeat3
+Actor NashGore_NonSolidMeat3 : NashGore_Meat3 replaces NonSolidMeat3
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
-ACTOR NashGore_NonsolidMeat4 : NashGore_Meat4 replaces NonsolidMeat4
+Actor NashGore_NonSolidMeat4 : NashGore_Meat4 replaces NonSolidMeat4
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
-ACTOR NashGore_NonsolidMeat5 : NashGore_Meat5 replaces NonsolidMeat5
+Actor NashGore_NonSolidMeat5 : NashGore_Meat5 replaces NonSolidMeat5
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
-// Nonsolid bloody twitch --------------------------------------------------
+// NonSolid bloody twitch --------------------------------------------------
 
-ACTOR NashGore_NonsolidTwitch : NashGore_BloodyTwitch replaces NonsolidTwitch
+Actor NashGore_NonSolidTwitch : NashGore_BloodyTwitch replaces NonSolidTwitch
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Dead on a stick ---------------------------------------------------------
 
-ACTOR NashGore_DeadStick : DeadStick replaces DeadStick
+Actor NashGore_DeadStick : DeadStick replaces DeadStick
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Still alive on a stick --------------------------------------------------
 
-ACTOR NashGore_LiveStick : LiveStick replaces LiveStick
+Actor NashGore_LiveStick : LiveStick replaces LiveStick
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging with no guts ----------------------------------------------------
 
-ACTOR NashGore_HangNoGuts : HangNoGuts replaces HangNoGuts
+Actor NashGore_HangNoGuts : HangNoGuts replaces HangNoGuts
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging from bottom with no brain ---------------------------------------
 
-ACTOR NashGore_HangBNoBrain : HangBNoBrain replaces HangBNoBrain
+Actor NashGore_HangBNoBrain : HangBNoBrain replaces HangBNoBrain
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging from top, looking down ------------------------------------------
 
-ACTOR NashGore_HangTLookingDown : HangTLookingDown replaces HangTLookingDown
+Actor NashGore_HangTLookingDown : HangTLookingDown replaces HangTLookingDown
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging from top, looking up --------------------------------------------
 
-ACTOR NashGore_HangTLookingUp : HangTLookingUp replaces HangTLookingUp
+Actor NashGore_HangTLookingUp : HangTLookingUp replaces HangTLookingUp
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging from top, skully ------------------------------------------------
 
-ACTOR NashGore_HangTSkull : HangTSkull replaces HangTSkull
+Actor NashGore_HangTSkull : HangTSkull replaces HangTSkull
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }
 
 // Hanging from top without a brain ----------------------------------------
 
-ACTOR NashGore_HangTNoBrain : HangTNoBrain replaces HangTNoBrain
+Actor NashGore_HangTNoBrain : HangTNoBrain replaces HangTNoBrain
 {
    mass 999999999
    health -1
-   +SHOOTABLE
+   +Shootable
 }

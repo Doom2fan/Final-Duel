@@ -15,36 +15,65 @@ Actor BasePlayerClass : PlayerPawn
 	Player.AttackZOffset 20
 	Player.InvulnerabilityMode Reflective
 	Player.ColorRange 112, 127
-    +SOLID
+    +Solid
 	+NOSKIN
 	States
 	{
 	Death.Fire:
-		BURN ABC 5 BRIGHT
-		BURN D 5 BRIGHT A_PlaySound("*burndeath")
-		BURN EFGHIJKLMN 5 BRIGHT
-		BURN O 5 BRIGHT A_NoBlocking
-		BURN PQRSTU 5 BRIGHT
+		BURN ABC 5 Bright
+		BURN D 5 Bright A_PlaySound("*burndeath")
+		BURN EFGHIJKLMN 5 Bright
+		BURN O 5 Bright A_NoBlocking
+		BURN PQRSTU 5 Bright
 		BURN V -1
 		Stop
 	}
 }
-Actor ReloadInv : PowerInvulnerable { }
-ACTOR Stamina : AMMO
+
+// Null Weapon
+Actor NullWeapon : FDWeapon
 {
-	Inventory.Amount 0
-	Inventory.MaxAmount 100
-	Ammo.BackpackAmount 0
-	Ammo.BackpackMaxAmount 100
+	Tag "Unarmed"
+	+Inventory.UNDROPPABLE
+	+Weapon.WIMPY_Weapon
+	+Weapon.CHEATNOTWeapon
+	+NoInteraction
+	+Weapon.NOALERT
+	+Inventory.UNDROPPABLE
+	Height 0
+	Radius 0
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		Stop
+	Select:
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_Lower
+		Wait
+	Ready:
+		TNT1 A 1 A_WeaponReady(WRF_NOFIRE|WRF_NOBOB|WRF_NOSWITCH)
+		Loop
+	Fire:
+		TNT1 A 1
+		Goto Ready
+	}
 }
+Actor SprintWeapon : NullWeapon { }
+
+// Stamina Regeneration
+Actor StaminaRegen : Boolean { }
+Actor FDStamina : Counter { Inventory.Amount 100 }
 
 // Taunting
-Actor Taunting : Boolean { }
-ACTOR TauntKey : CustomInventory
+Actor Taunting   : Boolean { }
+Actor FDTauntKey : CustomInventory
 {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-INVBAR
+	-InvBar
 	States
 	{
 	Use:
@@ -53,13 +82,13 @@ ACTOR TauntKey : CustomInventory
 	}
 }
 
-// Show keys(Original code by WildWeasel)
-ACTOR ShowKeys : Boolean { }
-ACTOR ShowKeysToggle : CustomInventory
+// Show Stats(Original code by WildWeasel)
+Actor ShowKeys : Boolean { }
+Actor FDSSTKey : CustomInventory
 {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-INVBAR
+	-InvBar
 	States
 	{
 	Use:
@@ -74,20 +103,41 @@ ACTOR ShowKeysToggle : CustomInventory
    }
 }
 
-// Weapon Special
-Actor WeaponSpecial : Boolean { }
-
 // Is Player
 Actor IsPlayer : Boolean { }
 
-// Stamina Regeneration
-Actor StaminaRegen : Boolean { }
-
 // Reloading
-Actor Reloading : Boolean { }
+Actor Reloading   : Boolean { }
+Actor FDReloadKey : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-InvBar
+	States
+	{
+	Use:
+		TNT1 A 0 A_JumpIfInventory("Reloading", 1, 2)
+        TNT1 A 0 A_GiveInventory("Reloading", 1)
+        Fail
+		TNT1 A 0 A_TakeInventory("Reloading", 1)
+		Fail
+	}
+}
 
 // Kicking
-Actor Kicking : Boolean { }
+Actor Kicking   : Boolean { }
+Actor FDKickKey : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-InvBar
+	States
+	{
+	Use:
+        TNT1 A 0 A_GiveInventory("Kicking",1)
+        Fail
+	}
+}
 
 // Special action caller
 Actor GoSpecial : Boolean { }
@@ -98,12 +148,27 @@ Actor GoFatality : Boolean { }
 // Fatality on
 Actor FatalityOn : Boolean { }
 
-// Chasecam actor
+// Drop Weapon
+Actor DropDatWeapon   : Boolean { }
+Actor FDDropWeaponKey : CustomInventory
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	-InvBar
+	States
+	{
+	Use:
+        TNT1 A 0 A_GiveInventory("DropDatWeapon",1)
+        Fail
+	}
+}
+
+// Chasecam Actor
 Actor Chasecam
 {
 	Height 0
 	Radius 0
-	+NOGRAVITY
+	+NoGravity
 	States
 	{
 	Spawn:
@@ -125,13 +190,12 @@ Actor NeroItem : Boolean { }
 
 // By WildWeasel
 // Auto Reload(By WildWeasel)
-ACTOR EnableAutoReload : Boolean { }
-
-ACTOR AutoReloadingToggle : CustomInventory
+Actor EnableAutoReload    : Boolean { }
+Actor AutoReloadingToggle : CustomInventory
 {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-INVBAR
+	-InvBar
 	States
 	{
     Use:
@@ -147,4 +211,21 @@ ACTOR AutoReloadingToggle : CustomInventory
 }
 
 // Underwater effects
-ACTOR IsUnderwater : Boolean { }
+Actor IsUnderwater : Boolean { }
+
+// Base dropped Weapon
+Actor DroppedWeaponBase
+{
+	PROJECTILE
+	-NoGravity
+	+PAINLESS
+	+BLOODLESSIMPACT
+	Damage 0
+	Radius 16
+	Height 8
+	Speed 9
+	DeathSound "Weapons/gundrop"
+}
+
+// Spare Ammo
+Actor PistolSpareAmmo : Counter { }

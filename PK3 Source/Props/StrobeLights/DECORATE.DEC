@@ -1,77 +1,77 @@
-//CEILING LIGHTS
+//CEILING LightS
 
-ACTOR StrobeLightBlue 12400
+Actor StrobeLightBlue 30125
 {
   //$Category Final Duel-Props
   //$Title Blue Strobe Light
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
   Spawn:
-    STRB A 0 BRIGHT
-    STRB A 0 BRIGHT A_SpawnItem ("StrobeEmitterBlue")
+    STRB A 0 Bright
+    STRB A 0 Bright A_SpawnItem ("StrobeEmitterBlue")
   Spin:
-    STRB DCBA 4 BRIGHT
+    STRB DCBA 4 Bright
     Loop
   }
 }
 
-ACTOR StrobeLightGreen 12401
+Actor StrobeLightGreen 30130
 {
   //$Category Final Duel-Props
   //$Title Green Strobe Light
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
   Spawn:
-    STRG A 0 BRIGHT
-    STRG A 0 BRIGHT A_SpawnItem ("StrobeEmitterGreen")
+    STRG A 0 Bright
+    STRG A 0 Bright A_SpawnItem ("StrobeEmitterGreen")
   Spin:
-    STRG DCBA 4 BRIGHT
+    STRG DCBA 4 Bright
     Loop
   }
 }
 
-ACTOR StrobeLightRed 12402
+Actor StrobeLightRed 30136
 {
   //$Category Final Duel-Props
   //$Title Red Strobe Light
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
   Spawn:
-    STRR A 0 BRIGHT
-    STRR A 0 BRIGHT A_SpawnItem ("StrobeEmitterRed")
+    STRR A 0 Bright
+    STRR A 0 Bright A_SpawnItem ("StrobeEmitterRed")
   Spin:
-    STRR DCBA 4 BRIGHT
+    STRR DCBA 4 Bright
     Loop
   }
 }
 
-ACTOR StrobeLightYellow 12403
+Actor StrobeLightYellow 30142
 {
   //$Category Final Duel-Props
   //$Title Yellow Strobe Light
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
   Spawn:
-    STRY A 0 BRIGHT
-    STRY A 0 BRIGHT A_SpawnItem ("StrobeEmitterYellow")
+    STRY A 0 Bright
+    STRY A 0 Bright A_SpawnItem ("StrobeEmitterYellow")
   Spin:
-    STRY DCBA 4 BRIGHT
+    STRY DCBA 4 Bright
     Loop
   }
 }
@@ -80,11 +80,11 @@ ACTOR StrobeLightYellow 12403
 
 //ROTATING EMITTERS
 
-ACTOR StrobeEmitterBlue
+Actor StrobeEmitterBlue
 {
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
@@ -99,11 +99,11 @@ ACTOR StrobeEmitterBlue
   }
 }
 
-ACTOR StrobeEmitterGreen
+Actor StrobeEmitterGreen
 {
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
@@ -118,11 +118,11 @@ ACTOR StrobeEmitterGreen
   }
 }
 
-ACTOR StrobeEmitterRed
+Actor StrobeEmitterRed
 {
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
@@ -137,11 +137,11 @@ ACTOR StrobeEmitterRed
   }
 }
 
-ACTOR StrobeEmitterYellow
+Actor StrobeEmitterYellow
 {
   Radius 16
   Height 16
-  +NOGRAVITY
+  +NoGravity
   +SPAWNCEILING
   States
   {
@@ -158,9 +158,9 @@ ACTOR StrobeEmitterYellow
 
 
 
-//LIGHT RAYS
+//Light RAYS
 
-ACTOR StrobeRayBlue
+Actor StrobeRayBlue
 {
   Radius 2
   Height 2
@@ -173,7 +173,7 @@ ACTOR StrobeRayBlue
   +RIPPER
   +BLOODLESSIMPACT
   +PAINLESS
-  +THRUACTORS
+  +ThruActors
   States
   {
   Spawn:
@@ -185,14 +185,14 @@ ACTOR StrobeRayBlue
   }
 }
 
-ACTOR StrobeRayGreen : StrobeRayBlue
+Actor StrobeRayGreen : StrobeRayBlue
 {
 }
 
-ACTOR StrobeRayRed : StrobeRayBlue
+Actor StrobeRayRed : StrobeRayBlue
 {
 }
 
-ACTOR StrobeRayYellow : StrobeRayBlue
+Actor StrobeRayYellow : StrobeRayBlue
 {
 }

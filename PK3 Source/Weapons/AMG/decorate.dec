@@ -1,6 +1,19 @@
-actor ActionMachineGun : FDWeapon 30007
+Actor DroppedAMG : DroppedWeaponBase
+{
+	States
+	{
+	Spawn:
+		AGUN A 1
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("ActionMachineGun")
+		Stop
+	}
+}
+Actor ActionMachineGun : FDWeapon 30007
 {
 	//$Category Final Duel-Weapons
+	//$Title M9A15 Carbine
 	//$Sprite AGUNA0
 	Tag "$TAGAMG"
 	Inventory.PickupSound "misc/gunpickup"
@@ -24,17 +37,25 @@ actor ActionMachineGun : FDWeapon 30007
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory("AMGZoomed",1,"ZReady")
 		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		AMGG AA 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_TakeInventory("PressingZoom", 999)
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile("DroppedAMG", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory("ActionMachineGun", 1)
+		Stop
 	ZReady:
 		TNT1 A 0 A_JumpIfInventory("AMGZoomed",1,1)
 		Goto Ready2
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"Unzoom")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_TakeInventory("Kicking",1)
+		TNT1 A 0 A_TakeInventory("Taunting",1)
 		SNPS AA 1 A_WeaponReady(WRF_NOBOB|WRF_ALLOWZOOM)
 		TNT1 A 0 A_TakeInventory("PressingZoom", 999)
 		Loop
@@ -48,7 +69,7 @@ actor ActionMachineGun : FDWeapon 30007
 		Wait
 	Deselect.Unzoom:
 		TNT1 A 0 A_TakeInventory("AMGZoomed",999)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_Weapon)
 		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
 		TNT1 A 0 A_SetCrosshair(0)
 		AMGG A 10 A_SetBlend("00 00 00", 1.0, 20)
@@ -63,7 +84,7 @@ actor ActionMachineGun : FDWeapon 30007
 		AMGG A 0 A_JumpIfInventory("AMGMode2",1,"SemiautomaticFire")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		AMGF A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
 		TNT1 A 0 A_FireCustomMissile("AMGTracer", frandom(-1.3, 1.3), 1, 3, -2, 0, frandom(-2.3, 2.3))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.2)
@@ -74,7 +95,7 @@ actor ActionMachineGun : FDWeapon 30007
 	SemiautomaticFire:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		AMGF A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
 		TNT1 A 0 A_FireCustomMissile("AMGTracer", frandom(-1.1, 1.1), 1, 3, -2, 0, frandom(-2.1, 2.1))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.2)
@@ -85,7 +106,7 @@ actor ActionMachineGun : FDWeapon 30007
 		SNPS A 0 A_JumpIfInventory("AMGMode2",1,"ZSemiautomaticFire")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		SNPS A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
 		TNT1 A 0 A_FireCustomMissile("AMGTracer", frandom(-0.8, 0.8), 1, 0, -4, 0, frandom(-1.8, 1.8))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
@@ -98,7 +119,7 @@ actor ActionMachineGun : FDWeapon 30007
 	ZSemiautomaticFire:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		SNPS A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("AMG/Fire", CHAN_Weapon)
 		TNT1 A 0 A_FireCustomMissile("RifleCasingSpawn",5,0,8,-9)
 		TNT1 A 0 A_FireCustomMissile("AMGTracer", frandom(-0.6, 0.6), 1, 0, -4, 0, frandom(-1.6, 1.6))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
@@ -108,7 +129,7 @@ actor ActionMachineGun : FDWeapon 30007
 		SNPS A 2
 		Goto Ready2
 	DryFire:
-		AMGG A 0 A_PlaySound("weapons/empty")
+		AMGG A 0 A_PlaySound("Weapons/empty")
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("AMGZoomed",1,"ZReady")
 		Goto Ready2
@@ -123,13 +144,13 @@ actor ActionMachineGun : FDWeapon 30007
 		AMGG K 5
 		AMGG L 3
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,0,0)
-		AMGG M 2 A_PlaySound("AMG/ClipOut", CHAN_WEAPON)
+		AMGG M 2 A_PlaySound("AMG/ClipOut", CHAN_Weapon)
 		AMGG N 3
 		AMGG C 12
 		TNT1 A 0 A_TakeInventory("AmmoActionMachinegun",50)
 		Goto InsertBullets
 	NoAmmo:
-		TNT1 A 0 A_PlaySound("weapons/empty")
+		TNT1 A 0 A_PlaySound("Weapons/empty")
 		Goto Ready2
 	InsertBullets:
 		TNT1 A 0 A_JumpIfInventory("AmmoActionMachinegun",50,"LoadGun")
@@ -139,18 +160,18 @@ actor ActionMachineGun : FDWeapon 30007
 	LoadGun:
 		TNT1 A 0
 		AMGG DE 3
-		AMGG F 2 A_PlaySound("AMG/ClipIn", CHAN_WEAPON)
+		AMGG F 2 A_PlaySound("AMG/ClipIn", CHAN_Weapon)
 		AMGG H 5
 		AMGG IJ 3
-		goto Ready2
+		Goto Ready2
 	Altfire:
 		TNT1 A 0 A_JumpIfInventory("AMGMode2",1,4)
 		TNT1 A 0 A_GiveInventory("AMGMode2",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
 		TNT1 A 0 A_Print ("- Semiautomatic mode -")
 		Goto Ready2
 		TNT1 A 0 A_TakeInventory("AMGMode2",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
 		TNT1 A 0 A_Print ("- Automatic mode -")
 		Goto Ready2
 	Zoom:
@@ -158,23 +179,25 @@ actor ActionMachineGun : FDWeapon 30007
 		TNT1 A 0 A_GiveInventory("PressingZoom", 1)
 		TNT1 A 0 A_JumpIfInventory("AMGZoomed",2,"Unzoom")
 		TNT1 A 0 A_JumpIfInventory("AMGZoomed",1,"Zoom2")
+		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 70)
 		TNT1 A 0 A_GiveInventory("AMGZoomed",1)
 		TNT1 A 0 A_ZoomFactor(1.8)
 		TNT1 A 0 A_SetCrosshair(99)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_Weapon)
 		SNPS A 10 A_SetBlend("00 00 00", 1.0, 20)
 		SNPS AAAAAAAAAA 1
 		Goto ZReady
 	Zoom2:
 		TNT1 A 0 A_GiveInventory("AMGZoomed",1)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_Weapon)
 		TNT1 A 0 A_ZoomFactor(2.4)
 		SNPS A 10
 		SNPS AAAAAAAAAA 1
 		Goto ZReady
 	Unzoom:
+		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 100)
 		TNT1 A 0 A_TakeInventory("AMGZoomed",999)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_Weapon)
 		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
 		TNT1 A 0 A_SetCrosshair(0)
 		AMGG A 10 A_SetBlend("00 00 00", 1.0, 20)
@@ -190,9 +213,9 @@ actor ActionMachineGun : FDWeapon 30007
 		Stop
 	}
 }
-ACTOR AMGMode2 : Boolean { }
-ACTOR AMGZoomed : Counter { Inventory.MaxAmount 2 }
-ACTOR AmmoActionMachinegun : AMMO
+Actor AMGMode2 : Boolean { }
+Actor AMGZoomed : Counter { Inventory.MaxAmount 2 }
+Actor AmmoActionMachinegun : AMMO
 {
 	Inventory.MaxAmount 50
 	Ammo.BackpackMaxAmount 50

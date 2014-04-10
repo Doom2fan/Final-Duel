@@ -1,27 +1,27 @@
-ACTOR BerserkSpeed : PowerSpeed
+Actor BerserkSpeed : PowerSpeed
 {
 	Powerup.Duration -60
 	Speed 1.25
-	-INVENTORY.HUBPOWER
+	-Inventory.HUBPOWER
 }
 Actor PowerFDStrength : Powerup
 {
 	Powerup.Duration -60
 	Inventory.Icon "ARTIBSRK"
-	-INVENTORY.HUBPOWER
+	-Inventory.HUBPOWER
 }
-actor BerserkProtection : PowerProtection
+Actor BerserkProtection : PowerProtection
 {
 	Powerup.Duration -60
-	-INVENTORY.HUBPOWER
-	DamageFactor 0.5
+	-Inventory.HUBPOWER
+	DamageFactor 0.8
 }
-ACTOR FDBerserk: CustomInventory Replaces Berserk
+Actor FDBerserk: CustomInventory Replaces Berserk
 {
 	//$Category Final Duel-Items
 	Tag "$TAGBERSERK"
-	+COUNTITEM
-	+INVBAR
+	+CountItem
+	+InvBar
 	Inventory.MaxAmount 5
 	Inventory.Icon "ARTIBSRK"
 	Inventory.PickupMessage "You got an adrenaline kit!"

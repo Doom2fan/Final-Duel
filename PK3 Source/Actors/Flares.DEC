@@ -90,11 +90,11 @@ Actor PlasFlare : Flare_General
 	}
 }
 
-ACTOR PlasFlareSpawn
+Actor PlasFlareSpawn
 {
 	Speed 20
 	Projectile
-	+NOCLIP
+	+NoClip
 	States
 	{
 	Spawn:
@@ -118,11 +118,11 @@ Actor PlasMissileFlare : Flare_General
 	}
 }
 
-ACTOR PlasMissileFlareSpawn
+Actor PlasMissileFlareSpawn
 {
 	Speed 20
 	Projectile
-	+NOCLIP
+	+NoClip
 	States
 	{
 	Spawn:
@@ -181,11 +181,11 @@ Actor RedFiringFlare : Flare_General
 	}
 }
 
-ACTOR RedFiringFlareSpawn
+Actor RedFiringFlareSpawn
 {
 	Speed 20
 	Projectile
-	+NOCLIP
+	+NoClip
 	States
 	{
 	Spawn:
@@ -209,11 +209,11 @@ Actor YellowFiringFlare : Flare_General
 	}
 }
 
-ACTOR YellowFiringFlareSpawn
+Actor YellowFiringFlareSpawn
 {
 	Speed 20
 	Projectile
-	+NOCLIP
+	+NoClip
 	States
 	{
 	Spawn:

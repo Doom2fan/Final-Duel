@@ -1,10 +1,10 @@
-ACTOR HelmA 30076
+Actor HelmA 30076
 {
   //$Category Final Duel-Props
   Tag "Helmet A"
   Radius 8
   Height 10
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -13,13 +13,13 @@ ACTOR HelmA 30076
   }
 }
 
-ACTOR HelmB 30077
+Actor HelmB 30077
 {
   //$Category Final Duel-Props
   Tag "Helmet B"
   Radius 8
   Height 10
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -28,13 +28,13 @@ ACTOR HelmB 30077
   }
 }
 
-ACTOR HelmC 30078
+Actor HelmC 30078
 {
   //$Category Final Duel-Props
   Tag "Helmet C"
   Radius 8
   Height 10
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -43,13 +43,13 @@ ACTOR HelmC 30078
   }
 }
 
-ACTOR HelmD 30079
+Actor HelmD 30079
 {
   //$Category Final Duel-Props
   Tag "Helmet D"
   Radius 6
   Height 10
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -58,13 +58,13 @@ ACTOR HelmD 30079
   }
 }
 
-ACTOR Boots 30080
+Actor Boots 30080
 {
   //$Category Final Duel-Props
   Tag "Boots"
   Radius 8
   Height 11
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -73,13 +73,13 @@ ACTOR Boots 30080
   }
 }
 
-ACTOR UniformA 30081
+Actor UniformA 30081
 {
   //$Category Final Duel-Props
   Tag "Uniform A"
   Radius 12
   Height 11
-  +SOLID
+  +Solid
   States
   {
   Spawn:
@@ -88,13 +88,13 @@ ACTOR UniformA 30081
   }
 }
 
-ACTOR UniformB 30082
+Actor UniformB 30082
 {
   //$Category Final Duel-Props
   Tag "Uniform B"
   Radius 12
   Height 11
-  +SOLID
+  +Solid
   States
   {
   Spawn:

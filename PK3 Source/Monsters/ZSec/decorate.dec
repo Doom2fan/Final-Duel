@@ -59,16 +59,16 @@ Actor ZSec 30131
 		ZSEC E 10 A_FaceTarget
 		ZSEC E 0 A_JumpIfInventory("ZSecAmmo", 10, "Reload")
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-5.0,5.0), 0, frandom(-5.0,5.0))
 		ZSEC E 2 A_FaceTarget
 		ZSEC E 0 A_GiveInventory("ZSecAmmo", 1)
 		ZSEC E 0 A_Jump(32, 2)
@@ -82,8 +82,8 @@ Actor ZSec 30131
 		ZSEC E 0 A_JumpIfCloser(384, 1)
 		Goto Missile+2
 		ZSEC E 8 A_FaceTarget
-		ZSEC F 0 bright A_PlaySound("weapons/rocklf")
-		ZSEC F 2 bright A_CustomMissile("ZSecGrenade", 28, 5, 0)
+		ZSEC F 0 Bright A_PlaySound("Weapons/rocklf")
+		ZSEC F 2 Bright A_CustomMissile("ZSecGrenade", 28, 5, 0)
 		ZSEC E 6 A_FaceTarget
 		ZSEC E 0 A_ChangeFlag("NoPain", 0)
 		Goto See
@@ -125,14 +125,14 @@ Actor ZSec 30131
 		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",100)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("zsec/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("zsec/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("zsec/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("zsec/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.Plasma:
@@ -153,12 +153,12 @@ Actor ZSec 30131
 	}
 }
 
-Actor ZSecAmmo : inventory
+Actor ZSecAmmo : Inventory
 {
 Inventory.MaxAmount "10"
 }
 
-Actor ZSecCharge : inventory
+Actor ZSecCharge : Inventory
 {
 Inventory.MaxAmount "1"
 }
@@ -173,21 +173,21 @@ Actor ZSecGrenade
   seesound "ZSec/bounce"
   PROJECTILE
   +DOOMBOUNCE
-  -NOGRAVITY
+  -NoGravity
   +GRENADETRAIL
   +DONTFALL
-  bouncefactor 0.5
+  bouncefActor 0.5
   bouncecount 10
   States
   {
   Spawn:
-    GRND AAA 35 bright
+    GRND AAA 35 Bright
   Death:
-    MISL C 0 bright A_PlaySound("weapons/rocklx")
-    MISL C 0 bright A_ChangeFlag(NoGravity, 1)
-    MISL C 5 bright A_Explode(40,128,1)
-    MISL D 4 bright
-    MISL E 3 bright
+    MISL C 0 Bright A_PlaySound("Weapons/rocklx")
+    MISL C 0 Bright A_ChangeFlag(NoGravity, 1)
+    MISL C 5 Bright A_Explode(40,128,1)
+    MISL D 4 Bright
+    MISL E 3 Bright
     Stop
   }
 }
@@ -210,16 +210,16 @@ Actor EasyZSec : ZSec 30093
 		ZSEC E 10 A_FaceTarget
 		ZSEC E 0 A_JumpIfInventory("ZSecAmmo", 4, "Reload")
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
 		ZSEC E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("zsec/attack")
-		ZSEC F 2 bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
+		ZSEC F 2 Bright A_CustomMissile("MonsterTracer", 29, 8, frandom(-9.0,9.0), 0, frandom(-8.0,8.0))
 		ZSEC E 2 A_FaceTarget
 		ZSEC E 0 A_GiveInventory("ZSecAmmo", 1)
 		ZSEC E 0 A_Jump(32, 2)
@@ -233,8 +233,8 @@ Actor EasyZSec : ZSec 30093
 		ZSEC E 0 A_JumpIfCloser(384, 1)
 		Goto Missile+2
 		ZSEC E 8 A_FaceTarget
-		ZSEC F 0 bright A_PlaySound("weapons/rocklf")
-		ZSEC F 2 bright A_CustomMissile("ZSecGrenade", 28, 5, 0)
+		ZSEC F 0 Bright A_PlaySound("Weapons/rocklf")
+		ZSEC F 2 Bright A_CustomMissile("ZSecGrenade", 28, 5, 0)
 		ZSEC E 6 A_FaceTarget
 		Goto See
 	Reload:

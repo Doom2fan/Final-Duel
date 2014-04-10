@@ -1,16 +1,14 @@
-function int strcmp(int str1, int str2)
-{
+function int strcmp (int str1, int str2) {
     int i,j,k,l;
-    int len1 = StrLen(str1);
-    int len2 = StrLen(str2);
-    j = max(len1, len2);
+    int len1 = StrLen (str1);
+    int len2 = StrLen (str2);
+    j = max (len1, len2);
  
-    for (i = 0; i < j; i++)
-    {
+    for (i = 0; i < j; i++) {
         if (i >= len1) { return -1; }
         if (i >= len2) { return 1; }
        
-        k = GetChar(str1, i); l = GetChar(str2, i);
+        k = GetChar(str1, i); l = GetChar (str2, i);
  
         if (k > j) { return 1; }
         if (k < j) { return -1; }

@@ -1,15 +1,15 @@
 //mud--a brown variant of the "sludge" that better fits Doom's brown sludgy textures
-ACTOR MudChunk
+Actor MudChunk
 {
 	Radius 2
 	Height 4
-	+NOBLOCKMAP 
+	+NoBlockmap 
 	+MISSILE 
 	+DROPOFF
-	+NOTELEPORT
+	+NoTeleport
 	+LOWGRAVITY
 	+CANNOTPUSH
-	+DONTSPLASH
+	+DontSplash
 	States
 	{
 	Spawn:
@@ -21,12 +21,12 @@ ACTOR MudChunk
 	}
 }
 
-ACTOR MudSplash
+Actor MudSplash
 {
-	+NOBLOCKMAP
-	+NOCLIP
-	+NOGRAVITY
-	+DONTSPLASH
+	+NoBlockmap
+	+NoClip
+	+NoGravity
+	+DontSplash
 	States
 	{
 	Spawn:
@@ -35,4 +35,4 @@ ACTOR MudSplash
 	}
 }
 
-//note that all other "chunk" actors utilized in "TERRAIN" are stock classes included with zDoom's .PK3 file
+//note that all other "chunk" Actors utilized in "TERRAIN" are stock classes included with zDoom's .PK3 file

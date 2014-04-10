@@ -1,18 +1,26 @@
 #include "Weapons/SoulReaper/SRProjectile.DEC"
-actor SRMode2 : Boolean { }
-actor SRMode3 : Boolean { }
-actor SRHeat : Counter
+Actor SRMode2 : Boolean { }
+Actor SRMode3 : Boolean { }
+Actor SRHeat : Counter
 {
 	Inventory.MaxAmount 25
 }
-// --------------------------------------------------------------------------
-//
-// Soul Reaper
-//
-// --------------------------------------------------------------------------
-ACTOR SoulReaper : FDWeapon 9007
+Actor DroppedSoulReaper : DroppedWeaponBase
+{
+	States
+	{
+	Spawn:
+		SREA Z 1
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("SoulReaper")
+		Stop
+	}
+}
+Actor SoulReaper : FDWeapon 9007
 {
 	//$Category Final Duel-Weapons
+	//$Title Soul Reaper
 	//$Sprite SREAZ0
 	Tag "$TAGSREAPER"
 	Game Doom
@@ -34,27 +42,37 @@ ACTOR SoulReaper : FDWeapon 9007
 	Ready:
 		SRES EDCBA 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SREA AA 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SREA BB 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SREA CC 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SREA DD 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SREA EE 1 A_WeaponReady(WRF_ALLOWZOOM)
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile("DroppedSoulReaper", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory("SoulReaper", 1)
+		Stop
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
 		SRES ABCDE 1
@@ -68,12 +86,12 @@ ACTOR SoulReaper : FDWeapon 9007
 		TNT1 A 0 A_JumpIfInventory("SRMode3",1,"Fire.Burst")
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_JumpIfInventory("SRHeat",25,"DryFireHeat")
-		TNT1 A 0 BRIGHT A_FireCustomMissile("SRLaser",0,1,0,0,0)
+		TNT1 A 0 Bright A_FireCustomMissile("SRLaser",0,1,0,0,0)
 		TNT1 A 0 A_GiveInventory("SRHeat",1)
-		TNT1 A 0 BRIGHT A_PlaySound("SoulReaper/Fire", CHAN_WEAPON)
+		TNT1 A 0 Bright A_PlaySound("SoulReaper/Fire", CHAN_Weapon)
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.6)
-		SREF A 1 BRIGHT A_SetPitch(pitch - 1.0)
-		SREF AA 2 BRIGHT A_SetPitch(pitch - 0.4)
+		SREF A 1 Bright A_SetPitch(pitch - 1.0)
+		SREF AA 2 Bright A_SetPitch(pitch - 0.4)
 		TNT1 A 0 A_FireCustomMissile("DemonicCasingSpawner",5,0,8,-9)
 		TNT1 A 0 A_AlertMonsters
 		SREF BBC 2
@@ -82,31 +100,31 @@ ACTOR SoulReaper : FDWeapon 9007
 	Fire.Burst:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_JumpIfInventory("SRHeat",25,"DryFireHeat")
-		TNT1 A 0 BRIGHT A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
+		TNT1 A 0 Bright A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
 		TNT1 A 0 A_GiveInventory("SRHeat",1)
-		TNT1 A 0 BRIGHT A_PlaySound("SoulReaper/Fire", CHAN_WEAPON)
+		TNT1 A 0 Bright A_PlaySound("SoulReaper/Fire", CHAN_Weapon)
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.0)
-		SREF AA 1 BRIGHT A_SetPitch(pitch - 1.7)
+		SREF AA 1 Bright A_SetPitch(pitch - 1.7)
 		TNT1 A 0 A_FireCustomMissile("DemonicCasingSpawner",5,0,8,-9)
 		TNT1 A 0 A_AlertMonsters
 		SREF BC 1 A_SetPitch(pitch - 0.4)
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_JumpIfInventory("SRHeat",25,"DryFireHeat")
-		TNT1 A 0 BRIGHT A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
+		TNT1 A 0 Bright A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
 		TNT1 A 0 A_GiveInventory("SRHeat",1)
-		TNT1 A 0 BRIGHT A_PlaySound("SoulReaper/Fire", CHAN_WEAPON)
+		TNT1 A 0 Bright A_PlaySound("SoulReaper/Fire", CHAN_Weapon)
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.0)
-		SREF AA 1 BRIGHT A_SetPitch(pitch - 1.7)
+		SREF AA 1 Bright A_SetPitch(pitch - 1.7)
 		TNT1 A 0 A_FireCustomMissile("DemonicCasingSpawner",5,0,8,-9)
 		TNT1 A 0 A_AlertMonsters
 		SREF BC 1
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_JumpIfInventory("SRHeat",25,"DryFireHeat")
-		TNT1 A 0 BRIGHT A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
+		TNT1 A 0 Bright A_FireCustomMissile("SRLaser2",frandom(-2.5,2.5),1,0,0,0,frandom(-2.5,2.5))
 		TNT1 A 0 A_GiveInventory("SRHeat",1)
-		TNT1 A 0 BRIGHT A_PlaySound("SoulReaper/Fire", CHAN_WEAPON)
+		TNT1 A 0 Bright A_PlaySound("SoulReaper/Fire", CHAN_Weapon)
 		TNT1 A 0 A_Recoil(cos(pitch) * 1.0)
-		SREF AA 1 BRIGHT A_SetPitch(pitch - 1.7)
+		SREF AA 1 Bright A_SetPitch(pitch - 1.7)
 		TNT1 A 0 A_FireCustomMissile("DemonicCasingSpawner",5,0,8,-9)
 		TNT1 A 0 A_AlertMonsters
 		SREF BC 1
@@ -114,11 +132,11 @@ ACTOR SoulReaper : FDWeapon 9007
 	Fire.Assault:
 		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
 		TNT1 A 0 A_JumpIfInventory("SRHeat",25,"DryFireHeat")
-		TNT1 A 0 BRIGHT A_FireCustomMissile("SRLaser2",frandom(-1.5,1.5),1,0,0,0,frandom(-1.5,1.5))
+		TNT1 A 0 Bright A_FireCustomMissile("SRLaser2",frandom(-1.5,1.5),1,0,0,0,frandom(-1.5,1.5))
 		TNT1 A 0 A_GiveInventory("SRHeat",1)
-		TNT1 A 0 BRIGHT A_PlaySound("SoulReaper/Fire", CHAN_WEAPON)
+		TNT1 A 0 Bright A_PlaySound("SoulReaper/Fire", CHAN_Weapon)
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
-		SREF AA 1 BRIGHT A_SetPitch(pitch - 1.1)
+		SREF AA 1 Bright A_SetPitch(pitch - 1.1)
 		TNT1 A 0 A_FireCustomMissile("DemonicCasingSpawner",5,0,8,-9)
 		TNT1 A 0 A_AlertMonsters
 		SREF BC 2
@@ -129,7 +147,7 @@ ACTOR SoulReaper : FDWeapon 9007
 		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory("AmmoSR",1,1)
 		Goto Ready2
-		SRR1 A 4 A_PlaySound("SoulReaper/Steam", CHAN_WEAPON)
+		SRR1 A 4 A_PlaySound("SoulReaper/Steam", CHAN_Weapon)
 		SRR1 BCDEF 4
 		TNT1 A 0 A_TakeInventory("SRHeat",25)
 		Goto Ready2
@@ -137,20 +155,20 @@ ACTOR SoulReaper : FDWeapon 9007
 		TNT1 A 0 A_JumpIfInventory("SRMode3",1,"Mode.Normal")
 		TNT1 A 0 A_JumpIfInventory("SRMode2",1,"Mode.Burst")
 		TNT1 A 0 A_GiveInventory("SRMode2",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
 		TNT1 A 0 A_Print ("- Assault mode -")
 		SREA A 6
 		Goto Ready2
 	Mode.Burst:
 		TNT1 A 0 A_TakeInventory("SRMode2",1)
 		TNT1 A 0 A_GiveInventory("SRMode3",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
 		TNT1 A 0 A_Print ("- Burstfire mode -")
 		SREA A 6
 		Goto Ready2
 	Mode.Normal:
 		TNT1 A 0 A_TakeInventory("SRMode3",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
 		TNT1 A 0 A_Print ("- Precision mode -")
 		SREA A 6
 		Goto Ready2
@@ -166,16 +184,16 @@ ACTOR SoulReaper : FDWeapon 9007
 		TNT1 A 0 A_JumpIfInventory("HellClip",1,1)
         Goto NoAmmo
 		TNT1 A 0 A_JumpIfInventory("AmmoSR",50,"DontNeedToReload")
-		SRR1 A 4 A_PlaySound("SoulReaper/Steam", CHAN_WEAPON)
+		SRR1 A 4 A_PlaySound("SoulReaper/Steam", CHAN_Weapon)
 		SRR1 BCDEF 4
 		TNT1 A 0 A_TakeInventory("SRHeat",25)
 		SRR2 ABCD 3
 		SRR3 AB 2
 		TNT1 A 0 A_FireCustomMissile("InfernoClipSpawn",0,0,0,0)
-		SRR3 C 2 A_PlaySound("SoulReaper/ClipOut", CHAN_WEAPON)
+		SRR3 C 2 A_PlaySound("SoulReaper/ClipOut", CHAN_Weapon)
 		SRR3 DEFGHIJKL 2
 		SRR4 LKJIHGFED 2
-		SRR4 C 2 A_PlaySound("SoulReaper/ClipIn", CHAN_WEAPON)
+		SRR4 C 2 A_PlaySound("SoulReaper/ClipIn", CHAN_Weapon)
 		SRR4 BA 2
 		SRR2 DCBA 3
 		Goto Reloading
@@ -197,7 +215,7 @@ ACTOR SoulReaper : FDWeapon 9007
 	}
 }
 
-ACTOR AmmoSR : AMMO
+Actor AmmoSR : AMMO
 {
 	Inventory.MaxAmount 50
 	Ammo.BackpackMaxAmount 50

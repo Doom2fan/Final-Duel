@@ -1,72 +1,72 @@
 ////////////Green Holograms
-Actor UACHolo1 10050
+Actor UACHolo1 30143
 {
 //$Category Final Duel-Props
 //$Title Green UAC Hologram 1
 Scale 0.5
 Renderstyle add
-+NOGRAVITY
++NoGravity
 States
 {
 Spawn:
-	UAC1 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC1 A 2 Bright A_SpawnItemEx("PlasmaSpawner", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
-Actor UACHolo2 : UACHolo1 10051
+Actor UACHolo2 : UACHolo1 30144
 {
 //$Category Final Duel-Props
 //$Title Green UAC Hologram 2
 States
 {
 Spawn:
-	UAC1 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC1 B 2 Bright A_SpawnItemEx("PlasmaSpawner", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
 ////////////Cyan Holograms
-Actor UACHolo3 : UACHolo1 10052
+Actor UACHolo3 : UACHolo1 30145
 {
 //$Category Final Duel-Props
 //$Title Cyan UAC Hologram 1
 States
 {
 Spawn:
-	UAC2 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner2", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC2 A 2 Bright A_SpawnItemEx("PlasmaSpawner2", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
-Actor UACHolo4 : UACHolo1 10053
+Actor UACHolo4 : UACHolo1 30146
 {
 //$Category Final Duel-Props
 //$Title Cyan UAC Hologram 2
 States
 {
 Spawn:
-	UAC2 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner2", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC2 B 2 Bright A_SpawnItemEx("PlasmaSpawner2", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
 ////////////Orange Holograms
-Actor UACHolo5 : UACHolo1 10054
+Actor UACHolo5 : UACHolo1 30147
 {
 //$Category Final Duel-Props
 //$Title Orange UAC Hologram 1
 States
 {
 Spawn:
-	UAC3 A 2 BRIGHT A_SpawnItemEx("PlasmaSpawner3", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC3 A 2 Bright A_SpawnItemEx("PlasmaSpawner3", random(-16,16), random(-16,16), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
-Actor UACHolo6 : UACHolo1 10055
+Actor UACHolo6 : UACHolo1 30148
 {
 //$Category Final Duel-Props
 //$Title Orange UAC Hologram 2
 States
 {
 Spawn:
-	UAC3 B 2 BRIGHT A_SpawnItemEx("PlasmaSpawner3", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
+	UAC3 B 2 Bright A_SpawnItemEx("PlasmaSpawner3", random(-22,22), random(-22,22), random(-4,-12), 0, 0, random(6,8),0,SXF_NOCHECKPOSITION)
 	Loop
 }
 }
@@ -75,15 +75,15 @@ Actor PlasmaSpawner
 {
 Alpha 0.75
 RenderStyle Add
-+NOGRAVITY
-+DONTSPLASH
-+NOCLIP
--SOLID
++NoGravity
++DontSplash
++NoClip
+-Solid
 Projectile
 States
 {
 Spawn:
-    PLEM AAAAAAAAAAAAAAAA 1 BRIGHT A_FadeOut(0.09) 
+    PLEM AAAAAAAAAAAAAAAA 1 Bright A_FadeOut(0.09) 
     stop
 Death:
     TNT1 A 1
@@ -95,7 +95,7 @@ Actor PlasmaSpawner2 : plasmaspawner////Cyan
 States
 {
 Spawn:
-    PLEM BBBBBBBBBBBBBBBB 1 BRIGHT A_FadeOut(0.09) 
+    PLEM BBBBBBBBBBBBBBBB 1 Bright A_FadeOut(0.09) 
     stop
 Death:
     TNT1 A 1
@@ -107,7 +107,7 @@ Actor PlasmaSpawner3 : plasmaspawner////Orange
 States
 {
 Spawn:
-    PLEM CCCCCCCCCCCCCCCC 1 BRIGHT A_FadeOut(0.09) 
+    PLEM CCCCCCCCCCCCCCCC 1 Bright A_FadeOut(0.09) 
     stop
 Death:
     TNT1 A 1

@@ -3,7 +3,7 @@
 //		Sprites: Laz Rojas, ID Software
 //		Code: WildWeasel, Alex_Mercer
 Actor MauserNaziAmmo : Counter { Inventory.MaxAmount 5 }
-ACTOR MauserNazi 30111
+Actor MauserNazi 30111
 {
 	//$category Final Duel-Original Monsters
 	//$title Nazi(Mauser)
@@ -41,7 +41,7 @@ ACTOR MauserNazi 30111
 		NAZ5 E 0 A_PlaySound("MauserNazi/Shoulder")
 		NAZ5 EEEEEEEEEE 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("MauserNazi/Attack", CHAN_BODY)
-		NAZ5 F 5 BRIGHT A_CustomMissile("Tracer", 29, 8, frandom(-1.8,1.8), 0, frandom(-2.0,2.0))
+		NAZ5 F 5 Bright A_CustomMissile("Tracer", 29, 8, frandom(-1.8,1.8), 0, frandom(-2.0,2.0))
 		NAZ5 E 8
 		NAZ5 D 8 A_PlaySound("MauserNazi/BoltBack")
 		NAZ5 E 0 A_CustomMissile("RifleCasingSpawn", 32, 10, 0)
@@ -92,14 +92,14 @@ ACTOR MauserNazi 30111
         Goto Spawn
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",115)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("wolfss/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("wolfss/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("wolfss/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("wolfss/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.Plasma:
@@ -123,7 +123,7 @@ ACTOR MauserNazi 30111
 	}
 }
 // MP40 Nazi
-ACTOR MP40Nazi 30135
+Actor MP40Nazi 30135
 {
 	//$Category Final Duel-Original Monsters
 	//$Title Nazi(MP40)
@@ -161,7 +161,7 @@ ACTOR MP40Nazi 30135
 	Missile:
 		SSWV E 3 A_FaceTarget
 		TNT1 A 0 A_PlaySound("MP40Nazi/Attack", CHAN_BODY)
-		SSWV F 5 BRIGHT A_CustomMissile("Tracer", 29, 8, frandom(-2.5,2.5), 0, frandom(-2.5,2.5))
+		SSWV F 5 Bright A_CustomMissile("Tracer", 29, 8, frandom(-2.5,2.5), 0, frandom(-2.5,2.5))
 		SSWV E 0 A_CustomMissile("9mmCasingSpawn", 32, 10, 0)
 		SSWV E 1 A_CPosRefire
 		Goto Missile+1
@@ -199,14 +199,14 @@ ACTOR MP40Nazi 30135
         Goto Spawn
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",115)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("wolfss/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("wolfss/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("wolfss/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("wolfss/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.Plasma:

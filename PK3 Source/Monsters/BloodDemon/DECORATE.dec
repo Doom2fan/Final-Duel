@@ -4,7 +4,7 @@
 //
 //=================================================================================================
 
-ACTOR FDBloodDemon : FDDemon 30113
+Actor FDBloodDemon : FDDemon 30113
 {
 	//$Category Final Duel-Monsters
 	//$Title Blood Demon

@@ -1,5 +1,5 @@
 // Zombieman Spawner
-ACTOR ZombiemanSpawner replaces Zombieman
+Actor ZombiemanSpawner replaces Zombieman
 {
 	States
 	{
@@ -7,15 +7,15 @@ ACTOR ZombiemanSpawner replaces Zombieman
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(16,"EasyZSec")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDZombieman",1,0)
+		TNT1 A 1 A_SpawnItemExEx("FDZombieman", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	EasyZSec:
-		TNT1 A 1 A_SpawnItem("EasyZSec",1,0)
+		TNT1 A 1 A_SpawnItemEx("EasyZSec", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Shotgun Guy Spawner
-ACTOR ShotgunGuySpawner replaces ShotgunGuy
+Actor ShotgunGuySpawner replaces ShotgunGuy
 {
 	States
 	{
@@ -23,15 +23,15 @@ ACTOR ShotgunGuySpawner replaces ShotgunGuy
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(16,"FDSuperShotgunGuy")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDShotgunGuy",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDShotgunGuy", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	FDSuperShotgunGuy:
-		TNT1 A 1 A_SpawnItem("FDSuperShotgunGuy",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDSuperShotgunGuy", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Chaingun Guy Spawner
-ACTOR ChaingunGuySpawner replaces ChaingunGuy
+Actor ChaingunGuySpawner replaces ChaingunGuy
 {
 	States
 	{
@@ -39,15 +39,15 @@ ACTOR ChaingunGuySpawner replaces ChaingunGuy
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(64,"ChaingunMajor")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDChaingunGuy",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDChaingunGuy", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	ChaingunMajor:
-		TNT1 A 1 A_SpawnItem("ChaingunMajor",1,0)
+		TNT1 A 1 A_SpawnItemEx("ChaingunMajor", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Imp Spawner
-ACTOR DoomImpSpawner replaces DoomImp
+Actor DoomImpSpawner replaces DoomImp
 {
 	States
 	{
@@ -56,18 +56,18 @@ ACTOR DoomImpSpawner replaces DoomImp
 		TNT1 A 0 A_Jump(48, "Catharsi")
 		TNT1 A 0 A_Jump(96, "VoidDarkImp")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDDoomImp",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDDoomImp", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	VoidDarkImp:
-		TNT1 A 1 A_SpawnItem("VoidDarkImp",1,0)
+		TNT1 A 1 A_SpawnItemEx("VoidDarkImp", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Catharsi:
-		TNT1 A 1 A_SpawnItem("Catharsi",1,0)
+		TNT1 A 1 A_SpawnItemEx("Catharsi", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Demon Spawner
-ACTOR DemonSpawner replaces Demon
+Actor DemonSpawner replaces Demon
 {
 	States
 	{
@@ -75,15 +75,15 @@ ACTOR DemonSpawner replaces Demon
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(96,"FDBloodDemon")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDDemon",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDDemon", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	FDBloodDemon:
-		TNT1 A 1 A_SpawnItem("FDBloodDemon",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDBloodDemon", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Hell Knight Spawner
-ACTOR HellKnightSpawner replaces HellKnight
+Actor HellKnightSpawner replaces HellKnight
 {
 	States
 	{
@@ -91,15 +91,15 @@ ACTOR HellKnightSpawner replaces HellKnight
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(64,"FDBelphegor")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDHellKnight",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDHellKnight", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	FDBelphegor:
-		TNT1 A 1 A_SpawnItem("FDBelphegor",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDBelphegor", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Mancubus Spawner
-ACTOR MancubusSpawner replaces Fatso
+Actor MancubusSpawner replaces Fatso
 {
 	States
 	{
@@ -107,15 +107,15 @@ ACTOR MancubusSpawner replaces Fatso
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(96,"FDHectebus")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDFatso",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDFatso", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	FDHectebus:
-		TNT1 A 1 A_SpawnItem("FDHectebus",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDHectebus", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Baron of Hell Spawner
-ACTOR BaronOfHellSpawner replaces BaronOfHell
+Actor BaronOfHellSpawner replaces BaronOfHell
 {
 	States
 	{
@@ -125,16 +125,16 @@ ACTOR BaronOfHellSpawner replaces BaronOfHell
 		TNT1 A 0 A_Jump(85,"Cybruiser")
 		TNT1 A 0 A_Jump(128,"Cyberbaron")
 	Normal:
-		TNT1 A 1 A_SpawnItem("FDBaronOfHell",1,0)
+		TNT1 A 1 A_SpawnItemEx("FDBaronOfHell", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Cyberbaron:
-		TNT1 A 1 A_SpawnItem("Cyberbaron",1,0)
+		TNT1 A 1 A_SpawnItemEx("Cyberbaron", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	Cybruiser:
-		TNT1 A 1 A_SpawnItem("Cybruiser",1,0)
+		TNT1 A 1 A_SpawnItemEx("Cybruiser", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	ArchonOfHell:
-		TNT1 A 1 A_SpawnItem("ArchonOfHell",1,0)
+		TNT1 A 1 A_SpawnItemEx("ArchonOfHell", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

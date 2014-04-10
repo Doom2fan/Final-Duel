@@ -1,7 +1,7 @@
-// Modify the internal Blood actor to spawn flying blood
-actor NashGore_Blood : Blood replaces Blood
+// Modify the internal Blood Actor to spawn flying blood
+Actor NashGore_Blood : Blood replaces Blood
 {
-	-ALLOWPARTICLES
+	-AllowParticles
 	Game Doom
 	States
 	{
@@ -25,7 +25,7 @@ Actor NashGore_BloodSplatter : NashGore_Blood Replaces BloodSplatter
 }
 
 // Blood sprite that flies outwards and leaves trails behind
-actor NashGore_FlyingBlood
+Actor NashGore_FlyingBlood
 {
 	Game Doom
 	Scale 0.75
@@ -34,8 +34,8 @@ actor NashGore_FlyingBlood
 	Height 1
 	Mass 1
 	+CORPSE
-	+NOTELEPORT
-	+NOBLOCKMAP
+	+NoTeleport
+	+NoBlockmap
 	+ThruSpecies
 	States
 	{
@@ -65,14 +65,14 @@ actor NashGore_FlyingBlood
 	}
 }
 
-actor NashGore_BloodSpot
+Actor NashGore_BloodSpot
 {
 	Game Doom
 	Radius 12
 	Height 2
 	Mass 1
-	+NOTELEPORT
-	-NOBLOCKMAP
+	+NoTeleport
+	-NoBlockmap
 	States
 	{
 	Spawn:
@@ -103,8 +103,8 @@ Actor NashGore_FlyingBloodTrail
 	Scale 0.70
 	Mass 1
 	+LOWGRAVITY
-	+NOTELEPORT
-	+NOBLOCKMAP
+	+NoTeleport
+	+NoBlockmap
 	States
 	{
 	Spawn:
@@ -137,7 +137,7 @@ Actor NashGore_FlyingBloodGibbingSpawner
 }
 
 // Blood sprite that flies outwards and leaves trails behind
-actor NashGore_FlyingBloodGibbing : NashGore_FlyingBlood
+Actor NashGore_FlyingBloodGibbing : NashGore_FlyingBlood
 {
 	States
 	{
@@ -167,7 +167,7 @@ actor NashGore_FlyingBloodGibbing : NashGore_FlyingBlood
 	}
 }
 
-actor NashGore_BloodSpotGibbing : NashGore_BloodSpot
+Actor NashGore_BloodSpotGibbing : NashGore_BloodSpot
 {
 	States
 	{
@@ -191,7 +191,7 @@ actor NashGore_BloodSpotGibbing : NashGore_BloodSpot
 		Loop
 	}
 }
-actor NashGore_FlyingBloodTrailGibbing : NashGore_FlyingBloodTrail
+Actor NashGore_FlyingBloodTrailGibbing : NashGore_FlyingBloodTrail
 {
 	States
 	{

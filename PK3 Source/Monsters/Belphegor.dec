@@ -4,7 +4,7 @@
 //
 //=================================================================================================
 
-ACTOR FDBelphegor 30132
+Actor FDBelphegor 30132
 {
 	//$Category Final Duel-Monsters
 	//$Title Belphegor
@@ -88,7 +88,7 @@ ACTOR FDBelphegor 30132
 	}
 }
 
-ACTOR FDBelphegorBall : FDBaronBall
+Actor FDBelphegorBall : FDBaronBall
 {
 	Damage 10
 }

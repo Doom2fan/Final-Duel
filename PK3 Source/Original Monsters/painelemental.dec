@@ -3,7 +3,7 @@
 // Pain Elemental
 //
 //===========================================================================
-ACTOR FDPainElemental : PainElemental replaces PainElemental 30105
+Actor FDPainElemental : PainElemental replaces PainElemental 30105
 {
 	//$category Final Duel-Original Monsters
 	//$title Pain Elemental
@@ -16,7 +16,7 @@ ACTOR FDPainElemental : PainElemental replaces PainElemental 30105
 	PainChance 128
 	Monster
 	+FLOAT 
-	+NOGRAVITY
+	+NoGravity
 	SeeSound "pain/sight"
 	PainSound "pain/pain"
 	DeathSound "pain/death"
@@ -35,8 +35,8 @@ ACTOR FDPainElemental : PainElemental replaces PainElemental 30105
 	Missile:
 		PAIN D 5 A_FaceTarget
 		PAIN E 5 A_FaceTarget
-		PAIN F 4 BRIGHT A_FaceTarget
-		PAIN F 1 BRIGHT A_PainAttack
+		PAIN F 4 Bright A_FaceTarget
+		PAIN F 1 Bright A_PainAttack
 		Goto See
 	Pain:
 		PAIN G 6
@@ -44,11 +44,11 @@ ACTOR FDPainElemental : PainElemental replaces PainElemental 30105
 		Goto See
 	Death:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",130)
-		PAIN H 8 BRIGHT
-		PAIN I 8 BRIGHT A_Scream
-		PAIN JK 8 BRIGHT
-		PAIN L 8 BRIGHT A_PainDie
-		PAIN M 8 BRIGHT
+		PAIN H 8 Bright
+		PAIN I 8 Bright A_Scream
+		PAIN JK 8 Bright
+		PAIN L 8 Bright A_PainDie
+		PAIN M 8 Bright
 		Stop
 	Raise:
 		PAIN MLKJIH 8

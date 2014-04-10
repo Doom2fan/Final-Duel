@@ -1,66 +1,87 @@
 // Thing_Deactivate
-script "ThingDeactivate" (void)
-{
-	Thing_Deactivate(ActivatorTID());
+script "ThingDeactivate" (void) {
+	Thing_Deactivate (ActivatorTID ());
 }
+
 // Randomizer CVar state
-script "RandomizerCVar" (void)
-{
-	int result = GetCVar("FD_DontRandomizeStuff");
-	if (result == 1)
-	{
-		SetResultValue(0);
+script "RandomizerCVar" (void) {
+	int result = GetCVar ("FD_DontRandomizeStuff");
+	if (result == 1) {
+		SetResultValue (0);
 		terminate;
 	}
-	if (result == 0)
-	{
-		SetResultValue(1);
+	if (result == 0) {
+		SetResultValue (1);
 		terminate;
 	}
 }
+
 // Meh
-script "Water" Enter // 
-{
+script "Water" Enter {
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
-	if (GetActorProperty(0,APROP_Waterlevel) > 2) // if underwater...
-	{
-		GiveInventory("IsUnderwater",1); // give IsUnderwater
+	If (GameType () == Game_Title_Map) Terminate;
+	if (GetActorProperty(0,APROP_Waterlevel) > 2) { // if underwater...
+		GiveInventory ("IsUnderwater", 1); // give IsUnderwater
 	}
-	else if (GetActorProperty(0,APROP_Waterlevel) <= 2) // if not underwater
-	{
-		TakeInventory("IsUnderwater",1); // take IsUnderwater
+	else if (GetActorProperty(0,APROP_Waterlevel) <= 2) { // if not underwater
+		TakeInventory ("IsUnderwater", 1); // take IsUnderwater
 	}
-	Delay(1);
+	Delay (1);
 	restart;
 }
 
 // Debug
-script "Debug1" (int meh,int time)
-{
+script "Debug1" (int meh, int time) {
 	int heh = meh;	
 	int hue = heh * 2;
-	while (TRUE)
-	{
+	while (TRUE) {
 		hue = heh * 2;
 		heh = hue;
-		print(d:heh);	
-		delay(time);
+		print (d:heh);	
+		delay (time);
 	}
 }
-script "Debug2" (int meh,int bla)
-{
+
+script "Debug2" (int meh, int bla) {
 	int heh = meh << bla;
-	print(d:heh);
+	print (d:heh);
 }
-script "Debug3" (int meh,int bla)
-{
+
+script "Debug3" (int meh,int bla) {
 	int heh = meh >> bla;
-	print(d:heh);
+	print (d:heh);
 }
-script "DKA" (void)
-{
-	ACS_NamedTerminate("Debug1", 0);
-	ACS_NamedTerminate("Debug2", 0);
-	ACS_NamedTerminate("Debug3", 0);
+
+script "DKA" (void) {
+	ACS_NamedTerminate ("Debug1", 0);
+	ACS_NamedTerminate ("Debug2", 0);
+	ACS_NamedTerminate ("Debug3", 0);
+}
+
+// Stuff
+script "FD_CannotDropThisWeapon" (void) {
+	HudMessage (s:"You cannot drop this weapon!";
+				HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+}
+
+int TriedToDropFistsOnce[MAXPLAYERS] = {0};
+str FD_TryingToDropFistsMessages[6] = {
+		"You're not Zharkov.",
+		"Are you dumb?",
+		"WHAT THE FUCK DO YOU WANT ME TO DO?!",
+		"WAT.",
+		"If you do that you will not be able to use anything, since your hands will not grow back.",
+		"STAHP"
+		};
+script "FD_TryingToDropFists" (void) {
+	if (TriedToDropFistsOnce[PlayerNumber ()] == 0) {
+		HudMessage (s:"You can't drop your fists!";
+			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+		TriedToDropFistsOnce[PlayerNumber ()] = 1;
+	}
+	else {
+		int messageNumber = random (0, 5);
+		HudMessage (s:FD_TryingToDropFistsMessages[messageNumber];
+			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+	}
 }

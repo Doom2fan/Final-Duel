@@ -17,7 +17,7 @@ Actor Maephisto 30124
 	MONSTER
 	+BOSS
 	+FLOORCLIP
-	+NOBLOOD
+	+NoBlood
 	+NORADIUSDMG
 	States
 	{
@@ -53,7 +53,7 @@ Actor Maephisto 30124
 		Goto See
 	Laser:
 		MMDR EEEE 5 A_FaceTarget
-		MMDR E 0 A_PlaySound("Maephisto/Charge",CHAN_WEAPON,1,0,0)
+		MMDR E 0 A_PlaySound("Maephisto/Charge",CHAN_Weapon,1,0,0)
 		MMDR JKLKJ 5 Bright A_FaceTarget
 		MMDR JKLKJ 4 Bright A_FaceTarget
 		MMDR JKLKJ 3 Bright A_FaceTarget
@@ -85,7 +85,7 @@ Actor EnergyBolt
 	RenderStyle Add
 	Alpha 1
 	SeeSound "mbolt"
-	DeathSound "weapons/rocklx"
+	DeathSound "Weapons/rocklx"
 	Decal "Scorch"
 	Projectile
 	States
@@ -107,7 +107,7 @@ Actor Laserbeam
 	Damage 20
 	RenderStyle Add
 	Alpha 1
-	DeathSound "weapons/bfgx"
+	DeathSound "Weapons/bfgx"
 	Projectile
 	+RIPPER
 	States
@@ -124,10 +124,10 @@ Actor Laserbeam
 
 Actor Flash : CustomInventory
 {  
-	+INVENTORY.QUIET
-	+INVENTORY.UNDROPPABLE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.AUTOACTIVATE
+	+Inventory.QUIET
+	+Inventory.UNDROPPABLE
+	+Inventory.AlwaysPickup
+	+Inventory.AUTOACTIVATE
 	Inventory.Amount 1
 	Inventory.MaxAmount 0
 	States

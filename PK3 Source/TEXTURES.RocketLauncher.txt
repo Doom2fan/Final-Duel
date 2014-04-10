@@ -1,0 +1,24 @@
+Sprite MSGSA0, 320, 200
+{
+	Patch MISGA0, 112, 95
+}
+
+Sprite MSGSB0, 320, 200
+{
+	Patch MISGA0, 112, 111
+}
+
+Sprite MSGSC0, 320, 200
+{
+	Patch MISGA0, 112, 127
+}
+
+Sprite MSGSD0, 320, 200
+{
+	Patch MISGA0, 112, 143
+}
+
+Sprite MSGSE0, 320, 200
+{
+	Patch MISGA0, 112, 159
+}

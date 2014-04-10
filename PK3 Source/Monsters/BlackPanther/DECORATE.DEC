@@ -42,7 +42,7 @@ Actor BlackPanther : HellKnight 30141
 	}
 }
 
-ACTOR PantherBall : BaronBall
+Actor PantherBall : BaronBall
 {
 	Damage (random(1,4) * 16)
 	Speed 20

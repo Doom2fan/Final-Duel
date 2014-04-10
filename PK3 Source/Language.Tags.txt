@@ -1,7 +1,7 @@
 [default enu]
 // Weapons
 	// Slot 1
-		TAGMELEE										= "Melee";
+		TAGMELEE										= "Unarmed";
 		TAGSWORD										= "Sword";
 		TAGCHAINSAW										= "Chainsaw";
 
@@ -24,16 +24,16 @@
 
 	// Slot 5
 		TAGRLAUNCHER									= "Rocket Launcher";
-		TAGANNIHILATOR									= "Annihilator Mk II";
+		TAGANNIHILATOR									= "Annihilator MK II";
 		TAGGL											= "GT Grenade Launcher";
 
 	// Slot 6
 		TAGPRIFLE										= "Plasma Rifle";
-		TAGSRAIL										= "Mjolnir Mark IV Sonic Railgun";
+		TAGSRAIL										= "Mjolnir MK IV Sonic Railgun";
 
 	// Slot 7
-		TAGBFG											= "BFG 9000";
-		TAGBFG10K										= "BFG 10K";
+		TAGBFG											= "Bio Force Gun MK XVI";
+		TAGBFG10K										= "Plasmatic Pulse Gun MK III";
 
 	// Slot 8
 		TAGSREAPER										= "Soul Reaper";

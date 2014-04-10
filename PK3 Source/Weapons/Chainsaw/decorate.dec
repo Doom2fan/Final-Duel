@@ -1,37 +1,58 @@
+Actor DroppedChainsaw : DroppedWeaponBase
+{
+	States
+	{
+	Spawn:
+		SAWY A 1
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("FDChainsaw")
+		Stop
+	}
+}
 Actor FDChainsaw : FDWeapon
 {
 	//$Category Final Duel-Weapons
+	//$Title Chainsaw
 	//$Sprite SAWYA0
 	Weapon.SisterWeapon FDChainsawPowered
 	Tag "$TAGCHAINSAW"
 	Weapon.Kickback 0
-	Weapon.UpSound "weapons/sawup"
+	Weapon.UpSound "Weapons/sawup"
 	Inventory.PickupMessage "$GOTSAW"
 	Obituary "$OBSAW"
 	DamageType Saw
-	+WEAPON.MELEEWEAPON
+	+Weapon.MELEEWeapon
 	+NOALERT
 	+Ammo_Optional
 	States
 	{
 	Ready:
+		CSAW GFE 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		TNT1 A 0 A_PlaySound("weapons/saw2idle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/saw2idle",CHAN_Weapon)
 		CSAW AB 2 A_WeaponReady
 		TNT1 A 0
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile("DroppedChainsaw", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory("FDChainsaw", 1)
+		Stop
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
-		CSAW A 1 A_Lower
-		Loop
+		CSAW EFG 1
+		CSAW A 0 A_Lower
+		Wait
 	Select:
 		CSAW A 1 A_Raise
 		Loop
 	Fire:
-		CSAW CD 2 A_Saw("weapons/saw2full","weapons/saw2hit",0,"SawPuff")
+		CSAW CD 2 A_Saw("Weapons/saw2full","Weapons/saw2hit",0,"SawPuff")
 		TNT1 A 0 A_AlertMonsters
 		CSAW D 0 A_ReFire
 		Goto Ready2
@@ -47,7 +68,7 @@ Actor FDChainsawPowered : FDChainsaw
 	States
 	{
 	Fire:
-		CSAW CD 2 A_Saw("weapons/saw2full","weapons/saw2hit",0,"SawPuff", 0, 0, 0, 0, 0.5)
+		CSAW CD 2 A_Saw("Weapons/saw2full","Weapons/saw2hit",0,"SawPuff", 0, 0, 0, 0, 0.5)
 		TNT1 A 0 A_AlertMonsters
 		CSAW D 0 A_ReFire
 		Goto Ready2

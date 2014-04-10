@@ -142,5 +142,7 @@ ListMenu "Credits2"
 	StaticText 4,100, "NightmareMutant(a GAMEBANANA user), Bane, abbuw, NiGHTMARE, FuzzballFox,"
 	StaticText 4,110, "Langerium(a Freesound user), Sound Library, Killing Floor, DavidRaven,"
 	
-	StaticText 4, 130, "DoomNukem, IMX, Brutal Doom v19 SE, Strife"
+	StaticText 4, 130, "DoomNukem, Brutal Doom v19 SE, Revilution, Erdie(A Freesound user),"
+	StaticText 4, 140, "Strife, IMX, Tripwire Interactive, Walter_Odington(A Freesound user),"
+	StaticText 4, 150, "terranova."
 }

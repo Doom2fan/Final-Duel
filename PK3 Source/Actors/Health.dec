@@ -21,10 +21,10 @@ Actor MaxHealthBonus : MaxHealth 5090
 	Game Doom
 	Game Heretic
 	Game Hexen
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
+	+CountItem
+	+Inventory.AlwaysPickup
 	Inventory.Amount 1
-	Inventory.MaxAmount 50
+	Inventory.MaxAmount 10
 	Health 200
 	Inventory.PickupMessage "$PICKUP_MAXHEALTHBONUS"
 	States
@@ -37,15 +37,14 @@ Actor MaxHealthBonus : MaxHealth 5090
 // Stimpack
 Actor FDStimpack : HealthPickup Replaces Stimpack
 {
-	Health 25
+	Health 10
 	+FLOORCLIP
-	+INVENTORY.INVBAR
-	Inventory.MaxAmount 20
-	Inventory.InterHubAmount 20
+	+InvBar
+	Inventory.MaxAmount 10
+	Inventory.InterHubAmount 10
 	Tag "Stimpack"
 	Inventory.Icon "ARTISTIM"
 	Inventory.PickupMessage "$GOTSTIM"
-	HealthPickup.AutoUse 1
 	States
 	{
 	Spawn:
@@ -56,14 +55,14 @@ Actor FDStimpack : HealthPickup Replaces Stimpack
 // Medikit
 Actor FDMedikit : HealthPickup Replaces Medikit
 {
-	Health 50
+	Health 25
 	+FLOORCLIP
-	+INVENTORY.INVBAR
+	+InvBar
 	Inventory.MaxAmount 5
 	Inventory.InterHubAmount 5
 	Tag "Medikit"
-	Inventory.Icon "ARTIMEDI"
 	Inventory.PickupMessage "$GOTMEDIKIT"
+	Inventory.Icon "ARTIMEDI"
 	HealthPickup.AutoUse 1
 	States
 	{

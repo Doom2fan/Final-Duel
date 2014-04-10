@@ -1,9 +1,9 @@
-ACTOR BlueWallTorch 30073
+Actor BlueWallTorch 30073
 {
   //$Category Final Duel-Props
   Tag "Blue Wall Torch"
-  +NOBLOCKMAP
-  +NOGRAVITY
+  +NoBlockmap
+  +NoGravity
   +FIXMAPTHINGPOS
   Radius 6.5
   States
@@ -14,12 +14,12 @@ ACTOR BlueWallTorch 30073
   }
 }
 
-ACTOR RedWallTorch 30074
+Actor RedWallTorch 30074
 {
   //$Category Final Duel-Props
   Tag "Red Wall Torch"
-  +NOBLOCKMAP
-  +NOGRAVITY
+  +NoBlockmap
+  +NoGravity
   +FIXMAPTHINGPOS
   Radius 6.5
   States
@@ -30,12 +30,12 @@ ACTOR RedWallTorch 30074
   }
 }
 
-ACTOR GreenWallTorch 30075
+Actor GreenWallTorch 30075
 {
   //$Category Final Duel-Props
   Tag "Green Wall Torch"
-  +NOBLOCKMAP
-  +NOGRAVITY
+  +NoBlockmap
+  +NoGravity
   +FIXMAPTHINGPOS
   Radius 6.5
   States

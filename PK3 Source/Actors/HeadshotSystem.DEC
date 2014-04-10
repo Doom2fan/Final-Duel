@@ -4,7 +4,7 @@ Actor HeadshotSystem
 	+NoGravity
 	+Shootable
 	+CanPass
-	+NOTELEPORT
+	+NoTeleport
 	+IsMonster
 	States
 	{

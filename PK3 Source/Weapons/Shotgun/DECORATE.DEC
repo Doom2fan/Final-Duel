@@ -1,9 +1,22 @@
+Actor DroppedFDShotgun : DroppedWeaponBase
+{
+	States
+	{
+	Spawn:
+		SHOT A 1
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx ("FDShotgun")
+		Stop
+	}
+}
 Actor ShottyEmpty : Boolean { }
 Actor ShotgunZoomed : Boolean { }
 Actor ShottyPump : Boolean { }
-actor FDShotgun : FDWeapon 30088
+Actor FDShotgun : FDWeapon 30088
 {
 	//$Category Final Duel-Weapons
+	//$Title Shotgun
 	//$Sprite SHOTA0
 	Tag "$TAGSHOTTY"
 	Obituary "$OBSHOTTY"
@@ -26,19 +39,27 @@ actor FDShotgun : FDWeapon 30088
 	Ready:
 		SHTS DCBA 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		SHTY A 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		SHTY A 1 A_WeaponReady (WRF_ALLOWZOOM)
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile ("DroppedFDShotgun", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory ("FDShotgun", 1)
+		Stop
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Deselect.Unzoom")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Deselect.Unzoom")
 		SHTS ABCD 1
 		TNT1 A 0 A_Lower
 		Wait
 	Deselect.Unzoom:
-		TNT1 A 0 A_TakeInventory("ShotgunZoomed",1)
+		TNT1 A 0 A_ZoomFactor (1.0)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		TNT1 A 0 A_TakeInventory ("ShotgunZoomed", 1)
 		SHTZ A 1
 		SHTY CBA 1
 		Goto Deselect
@@ -46,131 +67,136 @@ actor FDShotgun : FDWeapon 30088
 		SHTY A 0 A_Raise
 		Wait
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Fire.Zoom")
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_JumpIfInventory("ShottyPump", 1, "Pump")
-		TNT1 A 0 A_PlaySound("Shotgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("ShotgunTracer", frandom(-2.5,2.5), 1, 0, -2, 0, frandom(-3.0,3.0))
-		TNT1 AAAAAAAA 0 A_FireCustomMissile("ShotgunTracer", frandom(-2.5,2.5), 0, 0, -2, 0, frandom(-3.0,3.0))
-		TNT1 A 0 A_Recoil(cos(pitch) * 1.9)
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Fire.Zoom")
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_JumpIfInventory ("ShottyPump", 1, "Pump")
+		TNT1 A 0 A_PlaySound ("Shotgun/Fire", CHAN_Weapon)
+		TNT1 A 0 A_FireCustomMissile ("ShotgunTracer", frandom(-2.5,2.5), 1, 0, -2, 0, frandom(-3.0,3.0))
+		TNT1 AAAAAAAA 0 A_FireCustomMissile ("ShotgunTracer", frandom(-2.5,2.5), 0, 0, -2, 0, frandom(-3.0,3.0))
+		TNT1 A 0 A_Recoil (cos (pitch) * 1.9)
 		TNT1 A 0 A_AlertMonsters
-		SHTF AAAA 1 Bright A_SetPitch(pitch - 0.25)
-		TNT1 A 0 A_GiveInventory("ShottyPump", 1)
+		SHTF AAAA 1 Bright A_SetPitch (pitch - 0.25)
+		TNT1 A 0 A_GiveInventory ("ShottyPump", 1)
 		Goto Ready2
 	Pump.Unzoom:
-		SHTZ A 2 A_ZoomFactor(1.0)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		SHTZ A 2 A_ZoomFactor (1.0)
 		SHTY CBA 2
-		TNT1 A 0 A_TakeInventory("ShotgunZoomed",1)
+		TNT1 A 0 A_TakeInventory ("ShotgunZoomed", 1)
 	Pump:
-		SHTY A 2 A_TakeInventory("ShottyPump", 1)
-		TNT1 A 0 A_PlaySound("Shotgun/Pump", 5)
-		SHTF BCDEFGH 2
-		TNT1 A 0 A_FireCustomMissile("ShellCasingSpawn",0,0,-5,-10)
-		SHTF GFEDCB 2
+		SHTY A 2 A_TakeInventory ("ShottyPump", 1)
+		SHTF BCDEF 2
+		TNT1 A 0 A_PlaySound ("Shotgun/Pump", 5)
+		SHTF G 4 A_FireCustomMissile ("ShellCasingSpawn", 0, 0, -5, -10)
+		SHTF FEDCB 2
 		SHTY A 1
 		Goto Ready2 
   // Dryfire
 	DryFire:
-		TNT1 A 0 A_PlaySound("weapons/empty")
-		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"DryReload")
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Ready2.Zoom")
+		TNT1 A 0 A_PlaySound ("Weapons/empty")
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "DryReload")
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Ready2.Zoom")
 		Goto Ready2
   // Reload
 	DryReload:
-		TNT1 A 0 A_GiveInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Reload.Unzoom")
+		TNT1 A 0 A_GiveInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Reload.Unzoom")
     Reload:
-		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",1,"Reload2")
-		TNT1 A 0 A_GiveInventory("ShottyEmpty",1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoFDShotgun", 1, "Reload2")
+		TNT1 A 0 A_GiveInventory ("ShottyEmpty", 1)
 	Reload2:
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,1)
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, 1)
 		Goto DontReload
-		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",8,"DontReload")
-        TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoFDShotgun", 8, "DontReload")
+        TNT1 A 0 A_JumpIfInventory ("Shell2", 1, 1)
         Goto DontReload
-		SHTF BCDEF 1
-		SHTR K 1
+		SHTF BCDE 2
 		Goto InsertShells
 	DontReload:
-		TNT1 A 0 A_TakeInventory("Reloading")
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Ready2.Zoom")
+		TNT1 A 0 A_TakeInventory ("Reloading")
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Ready2.Zoom")
 		Goto Ready2
     InsertShells:
-		TNT1 A 0 A_JumpIfInventory("ShottyEmpty",1,"InsertFirstShell")
-	    TNT1 A 0 A_JumpIfInventory("Reloading",1,1)
+		TNT1 A 0 A_JumpIfInventory ("ShottyEmpty", 1, "InsertFirstShell")
+	    TNT1 A 0 A_JumpIfInventory ("Reloading", 1, 1)
 		Goto Reloaded
-		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",8,"Reloaded")
-		TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoFDShotgun", 8, "Reloaded")
+		TNT1 A 0 A_JumpIfInventory ("Shell2", 1, 1)
 		Goto Reloaded
-		SHTR ABC 2
-		TNT1 A 0 A_PlaySound("Shotgun/InsertShell", CHAN_WEAPON)
-		SHTR DEF 2
-		SHTR GHIK 1
-		TNT1 A 0 A_GiveInventory("AmmoFDShotgun",1)
-		TNT1 A 0 A_TakeInventory("Shell2",1)
+		SHTR ABCDE 2
+		TNT1 A 0 A_PlaySound ("Shotgun/InsertShell", CHAN_Weapon)
+		SHTR FGHI 2
+		TNT1 A 0 A_GiveInventory ("AmmoFDShotgun", 1)
+		TNT1 A 0 A_TakeInventory ("Shell2", 1, TIF_NOTAKEINFINITE)
 		Goto InsertShells
 	InsertFirstShell:
-	    TNT1 A 0 A_JumpIfInventory("Reloading",1,1)
+	    TNT1 A 0 A_JumpIfInventory ("Reloading", 1, 1)
 		Goto Reloaded
-		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",8,"Reloaded")
-		TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoFDShotgun", 8, "Reloaded")
+		TNT1 A 0 A_JumpIfInventory ("Shell2", 1, 1)
 		Goto Reloaded
 		TNT1 A 0 A_TakeInventory("ShottyPump", 1)
-		SHTR ABC 2
-		TNT1 A 0 A_PlaySound("Shotgun/InsertShell", CHAN_WEAPON)
-		SHTR DEF 2
-		SHTF FGH 2
-		TNT1 A 0 A_PlaySound("Shotgun/Pump", 5)
+		SHTR ABCDE 2
+		TNT1 A 0 A_PlaySound ("Shotgun/InsertShell", CHAN_Weapon)
+		SHTR FGHI 2
+		SHTF FG 2
+		TNT1 A 0 A_PlaySound ("Shotgun/Pump", 5)
 		SHTR GF 2
-		TNT1 A 0 A_GiveInventory("AmmoFDShotgun",1)
-		TNT1 A 0 A_TakeInventory("Shell2",1)
-		TNT1 A 0 A_TakeInventory("ShottyEmpty",1)
+		TNT1 A 0 A_GiveInventory ("AmmoFDShotgun", 1)
+		TNT1 A 0 A_TakeInventory ("Shell2", 1, TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_TakeInventory ("ShottyEmpty", 1)
 		Goto InsertShells
 	Reloaded:
-		SHTF FEDCB 2
+		SHTF EDCB 2
 		Goto Ready2
 	Zoom:
-		TNT1 A 0 A_JumpIfInventory("ShotgunZoomed",1,"Unzoom")
-		TNT1 A 0 A_ZoomFactor(1.6)
+		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Unzoom")
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 70)
+		TNT1 A 0 A_ZoomFactor (1.6)
 		SHTY ABC 1
-		SHTZ A 10 A_GiveInventory("ShotgunZoomed")
+		SHTZ A 10 A_GiveInventory ("ShotgunZoomed")
 		Goto Ready2.Zoom
 	Unzoom:
-		TNT1 A 0 A_ZoomFactor(1.0)
-		SHTZ A 2 A_TakeInventory("ShotgunZoomed")
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		TNT1 A 0 A_ZoomFactor (1.0)
+		SHTZ A 2 A_TakeInventory ("ShotgunZoomed")
 		SHTY CB 2
 		SHTY A 10
 		Goto Ready2
 	// Zoomed
 	Ready2.Zoom:
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload.Unzoom")
-		SHTZ A 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "Unzoom")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Kicking", 1)
+		TNT1 A 0 A_TakeInventory ("Taunting", 1)
+		SHTZ A 1 A_WeaponReady (WRF_ALLOWZOOM)
 		Loop
 	Fire.Zoom:
-		TNT1 A 0 A_JumpIfInventory("ShottyPump", 1, "Pump.Unzoom")
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_PlaySound("Shotgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("ShotgunTracer", frandom(-1.25,1.25), 1, 0, -2, 0, frandom(-1.5,1.5))
-		TNT1 AAAAAAAA 0 A_FireCustomMissile("ShotgunTracer", frandom(-1.25,1.25), 0, 0, -2, 0, frandom(-1.5,1.5))
-		TNT1 A 0 A_Recoil(cos(pitch) * 1.5)
+		TNT1 A 0 A_JumpIfInventory ("ShottyPump", 1, "Pump.Unzoom")
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_PlaySound ("Shotgun/Fire", CHAN_Weapon)
+		TNT1 A 0 A_FireCustomMissile ("ShotgunTracer", frandom(-1.25,1.25), 1, 0, -2, 0, frandom(-1.5,1.5))
+		TNT1 AAAAAAAA 0 A_FireCustomMissile ("ShotgunTracer", frandom(-1.25,1.25), 0, 0, -2, 0, frandom(-1.5,1.5))
+		TNT1 A 0 A_Recoil (cos (pitch) * 1.5)
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_SetPitch(pitch - 0.7)
+		TNT1 A 0 A_SetPitch (pitch - 0.7)
 		SHTZ B 1
-		TNT1 A 0 A_SetPitch(pitch - 0.7)
+		TNT1 A 0 A_SetPitch (pitch - 0.7)
 		SHTZ BCC 1
-		TNT1 A 0 A_GiveInventory("ShottyPump", 1)
+		TNT1 A 0 A_GiveInventory ("ShottyPump", 1)
 		Goto Unzoom
 	Reload.Unzoom:
-		TNT1 A 0 A_JumpIfInventory("AmmoFDShotgun",8,"DontReload")
-        TNT1 A 0 A_JumpIfInventory("Shell2",1,1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoFDShotgun", 8, "DontReload")
+        TNT1 A 0 A_JumpIfInventory ("Shell2", 1, 1)
         Goto DontReload
-		SHTZ A 2 A_ZoomFactor(1.0)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		SHTZ A 2 A_ZoomFactor (1.0)
 		SHTY CBA 2
-		TNT1 A 0 A_TakeInventory("ShotgunZoomed",1)
+		TNT1 A 0 A_TakeInventory ("ShotgunZoomed", 1)
 		Goto Reload
 	}
 }
-ACTOR AmmoFDShotgun : AMMO
+Actor AmmoFDShotgun : AMMO
 {
 	Inventory.MaxAmount 8
 	Ammo.BackpackMaxAmount 8

@@ -9,7 +9,7 @@ Actor ZombieTarget 30071
 	Height 66
 	Radius 19
 	+NOPAIN
-	+NOBLOOD
+	+NoBlood
 	+NODAMAGETHRUST
 	States
 	{

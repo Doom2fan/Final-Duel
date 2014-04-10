@@ -77,7 +77,7 @@ Actor BruiserMissile
 	RenderStyle Normal
 	+ThruGhost
 	SeeSound "monster/brufir"
-	DeathSound "weapons/hellex"
+	DeathSound "Weapons/hellex"
 	DontHurtShooter
 	+FireDamage
 	Decal Scorch
@@ -107,7 +107,7 @@ Actor BruiserTrail
 	{
 	Spawn:
 		TNT1 A 3 Bright
-		PUFF ABCD 4 BRIGHT
+		PUFF ABCD 4 Bright
 		Stop 
 	}
 }

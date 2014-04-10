@@ -3,7 +3,7 @@
 // Pink Demon
 //
 //===========================================================================
-ACTOR FDDemon : Demon 30098
+Actor FDDemon : Demon 30098
 {
 	//$category Final Duel-Original Monsters
 	//$title Bull Demon
@@ -134,7 +134,7 @@ Actor SpectreArm : DemonArm { RenderStyle OptFuzzy }
 // Spectre
 //
 //===========================================================================
-ACTOR FDSpectre : FDDemon Replaces Spectre 30099
+Actor FDSpectre : FDDemon Replaces Spectre 30099
 {
 	//$category Final Duel-Original Monsters
 	//$title Spectre

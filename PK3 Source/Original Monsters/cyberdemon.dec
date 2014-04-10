@@ -4,7 +4,7 @@
 // Cyberdemon
 //
 //===========================================================================
-ACTOR FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
+Actor FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
 {
 	//$category Final Duel-Original Monsters
 	//$title Cyberdemon
@@ -46,7 +46,7 @@ ACTOR FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
 	Missile:
 		TNT1 A 0 A_JumpIfInventory("Enraged", 1, "Missile.Rage")
 		CYBR E 6 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_Weapon)
 		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
 		CYBR E 6 A_FaceTarget
 		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_VOICE)
@@ -57,7 +57,7 @@ ACTOR FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
 		Goto See
 	Missile.Rage:
 		CYBR E 3 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_Weapon)
 		CYBR F 6 A_CustomMissile("CyberdemonRocket", 50.0, -10.0)
 		CYBR E 3 A_FaceTarget
 		TNT1 A 0 A_PlaySound("Cyber/Attack", CHAN_VOICE)
@@ -110,17 +110,17 @@ Actor CyberdemonRocket : FDRocket { }
 // from Beautiful Doom
 Actor CyberExplosion
 {
-	+NOCLIP
-	+NOGRAVITY
+	+NoClip
+	+NoGravity
 	RenderStyle Add
 	Alpha .85
 	States
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_PlaySoundEx("weapons/rlan/explosion","voice")
+		TNT1 A 0 A_PlaySoundEx("Weapons/rlan/explosion","voice")
 		TNT1 A 0 Radius_Quake(2,8,0,8,0)
-		BEXP EFGHIJKLMNOPQ 1 bright
+		BEXP EFGHIJKLMNOPQ 1 Bright
 		Stop
 	}
 }
@@ -144,7 +144,7 @@ Actor CyberPartsSpawner : GibsSpawner
 		Stop
 	}
 }
-actor CybHand1 : Gibs_general
+Actor CybHand1 : Gibs_general
 {
 	Mass 200
 	Gravity 1
@@ -154,87 +154,87 @@ actor CybHand1 : Gibs_general
 	{
 	Spawn:
 		HND9 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		HND9 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		HND9 A 1
-		wait
+		Wait
 		HND9 E 1
-		wait
+		Wait
 	Crush:
 		CRS2 A -1
 		Stop
 	}
 }
 
-actor CybHand2 : CybHand1
+Actor CybHand2 : CybHand1
 {
 seesound "gibs/cybergibs"
-+NOBLOOD
++NoBlood
 States
 	{
 	spawn:
 		HND7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		HND7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		HND7 A 1
-		wait
+		Wait
 		HND7 E 1
-		wait
+		Wait
 	}
 }
 
-actor CybLeg1 : CybHand1
+Actor CybLeg1 : CybHand1
 {
 States
 	{
 	spawn:
 		LEG9 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		LEG9 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		LEG9 A 1
-		wait
+		Wait
 		LEG9 E 1
-		wait
+		Wait
 	Crush:
 		CRS2 A -1
 		Stop
 	}
 }
 
-actor CybLeg2 : CybHand2
+Actor CybLeg2 : CybHand2
 {
 seesound "gibs/cybergibs"
-+NOBLOOD
++NoBlood
 States
 	{
 	spawn:
 		LEG7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		LEG7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		LEG7 A 1
-		wait
+		Wait
 		LEG7 E 1
-		wait
+		Wait
 	}
 }
 
-actor CybHead : CybHand1
+Actor CybHead : CybHand1
 {
 radius 32
 height 32
@@ -242,16 +242,16 @@ States
 	{
 	spawn:
 		HED7 ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		HED7 HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		HED7 A 1
-		wait
+		Wait
 		HED7 E 1
-		wait
+		Wait
 	}
 }
 
@@ -261,16 +261,16 @@ States
 	{
 	spawn:
 		HEDC ABCDEFGH 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+3
+		Goto spawn+3
 		HEDC HGFEDCBA 1 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		goto spawn+11
+		Goto spawn+11
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256,1,2)
 		HEDC A 1
-		wait
+		Wait
 		HEDC E 1
-		wait
+		Wait
 	}
 }
 
@@ -285,10 +285,10 @@ States
 	{
 	spawn:
 		TRC1 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		wait
+		Wait
 	Death:
 		TRC1 E 1
-		wait
+		Wait
 	Crush:
 		CRS3 A -1
 		Stop
@@ -301,10 +301,10 @@ States
 	{
 	spawn:
 		TRC2 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		wait
+		Wait
 	Death:
 		TRC2 E 1
-		wait
+		Wait
 	}
 }
 
@@ -315,9 +315,9 @@ States
 	{
 	spawn:
 		TRC3 ABCD 3 A_SpawnItemEx("Blood",0,0,random(4,8),random(1,3),0,random(1,2),random(-160,200))
-		wait
+		Wait
 	Death:
 		TRC3 E 1
-		wait
+		Wait
 	}
 }

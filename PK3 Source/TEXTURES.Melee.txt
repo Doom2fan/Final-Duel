@@ -95,6 +95,33 @@ Sprite SRDSC0, 320, 200
 }
 
 // Melee
+Sprite FSTSA0, 320, 200
+{
+	Patch PUNCH1, 227, 134
+	Patch PUNCH1, -48, 134
+	{
+		FlipX
+	}
+}
+
+Sprite FSTSB0, 320, 200
+{
+	Patch PUNCH1, 243, 150
+	Patch PUNCH1, -64, 150
+	{
+		FlipX
+	}
+}
+
+Sprite FSTSC0, 320, 200
+{
+	Patch PUNCH1, 259, 166
+	Patch PUNCH1, -80, 166
+	{
+		FlipX
+	}
+}
+
 Sprite FISTA0, 320, 200
 {
 	Patch PUNCH1, 211, 118

@@ -52,14 +52,14 @@ Actor ChaingunMajor : FDChaingunGuy 30115
 		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",180)
-		BURN ABC 5 BRIGHT Light(BURNDEATH)
-		BURN D 5 BRIGHT Light(BURNDEATH) A_PlaySound("chainguy/pain")
-		BURN EFGHI 5 BRIGHT Light(BURNDEATH)
+		BURN ABC 5 Bright Light(BURNDEATH)
+		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("chainguy/pain")
+		BURN EFGHI 5 Bright Light(BURNDEATH)
 		TNT1 A 0 A_PlaySound("chainguy/pain")
-		BURN JKLMN 5 BRIGHT Light(BURNDEATH)
-		BURN O 5 BRIGHT Light(BURNDEATH) A_NoBlocking
+		BURN JKLMN 5 Bright Light(BURNDEATH)
+		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
 		TNT1 A 0 A_PlaySound("chainguy/pain")
-		BURN PQRSTU 5 BRIGHT Light(BURNDEATH)
+		BURN PQRSTU 5 Bright Light(BURNDEATH)
 		BURN V -1
 		Stop
 	Death.Plasma:

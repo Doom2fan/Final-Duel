@@ -1,3 +1,3 @@
 DECORATE: Alex_Mercer
 Sounds:	ID Software
-Sprites: TheDarkArchon, ID Software, Alex_Mercer, Batandy, Dreadus, Per Kristian
+Sprites: ID Software, Alex_Mercer, Batandy, Dreadus, Per Kristian, Mike12

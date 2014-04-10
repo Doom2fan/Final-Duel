@@ -1,4 +1,4 @@
-ACTOR FDBFG10kShot
+Actor FDBFG10kShot
 {
 	Radius 11
 	Height 8
@@ -9,9 +9,9 @@ ACTOR FDBFG10kShot
 	DamageType BFG
 	Renderstyle Add
 	Projectile
-	+EXTREMEDEATH
-	+FORCEXYBILLBOARD
-	+DONTSPLASH
+	+ExtremeDeath
+	+ForceXYBillboard
+	+DontSplash
 	Obituary "$OB_BFG10K"
 	SeeSound "Weapons/BFG10KX"
 	AttackSound "Weapons/BFG10KX"

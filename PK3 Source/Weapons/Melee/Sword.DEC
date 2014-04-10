@@ -3,29 +3,48 @@ DECORATE: Alex_Mercer
 Sprites: ???
 Sounds: Langerium(a Freesound user), Sound Library
 */
-actor Sword : FDWeapon 30072
+Actor DroppedSword : DroppedWeaponBase
+{
+	States
+	{
+	Spawn:
+		SWRD Z 1
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Sword")
+		Stop
+	}
+}
+Actor Sword : FDWeapon 30072
 {
 	//$Category Final Duel-Weapons
+	//$Title Sword
 	//$Sprite SWRDZ0
 	Tag "$TAGSWORD"
 	Obituary "$OBSWORD"
 	Inventory.PickupMessage "$GOTSWORD"
 	Inventory.PickupSound ""
-	+WEAPON.MELEEWEAPON
-    +WEAPON.NOALERT
-    +WEAPON.NOAUTOAIM
-	+WEAPON.NOAUTOFIRE
+	+Weapon.MELEEWeapon
+    +Weapon.NOALERT
+    +Weapon.NOAUTOAIM
+	+Weapon.NOAUTOFIRE
 	+AMMO_OPTIONAL
 	States
 	{
 	Ready:
 		SRDS CBA 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		SWRD A 1 A_WeaponReady
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile("DroppedSword", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory("Sword", 1)
+		Stop
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
 		SRDS ABC 1
@@ -52,14 +71,14 @@ actor Sword : FDWeapon 30072
 		Stop
 	}
 }
-ACTOR SwordPuff
+Actor SwordPuff
 {
-	+NOGRAVITY
-	+FORCEXYBILLBOARD
-	-DONTSPLASH
-	-ALLOWPARTICLES
-	+NOEXTREMEDEATH
-	renderstyle Add
+	+NoGravity
+	+ForceXYBillboard
+	-DontSplash
+	-AllowParticles
+	+NoExtremeDeath
+	RenderStyle Add
 	Scale 0.1
 	Alpha 0.8
 	AttackSound "Melee/Sword/HitWall"

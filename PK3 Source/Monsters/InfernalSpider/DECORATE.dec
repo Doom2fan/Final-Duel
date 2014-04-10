@@ -4,7 +4,7 @@
 //           made by:.+:icytux:+.
 //
 //=========================================
-ACTOR BigInfernalSpider 30120
+Actor BigInfernalSpider 30120
 {
 	//$Category Final Duel-Monsters
 	//$Title "Big Infernal Spider"
@@ -96,7 +96,7 @@ ACTOR BigInfernalSpider 30120
    SPI2 E 6 A_throwgrenade("minispider", 85, 10, 20)
    SPI2 E 6 A_throwgrenade("minispider", 85, 10, 20)
    SPI2 E 5
-   goto see
+   Goto see
    SPI2 E 5 A_Facetarget
    SPI2 U 5 A_Playsound("spider2/sight")
    MNTR W 0 A_Facetarget
@@ -106,21 +106,21 @@ ACTOR BigInfernalSpider 30120
    SPI2 X 2 A_custommissile("flameshot", 54, 0, 0, 0)
    SPI2 X 2 A_custommissile("flameshot", 54, 0, 8, 0)
    SPI2 U 5 A_Facetarget
-   goto see
+   Goto see
    Pain:
     SPI2 E 2 A_Pain
     MNTR E 0 A_Facetarget
     SPI2 E 6 A_throwgrenade("minispider", 85, 10, 20)
     SPI2 E 6 A_throwgrenade("minispider", 85, 10, 20)
     SPI2 E 6 A_throwgrenade("minispider", 85, 10, 20)
-    goto see
+    Goto see
    Death:
 	TNT1 A 0 A_GiveToTarget("XPSystemExperience",200)
     MNTR A 0 A_Die
     MNTR A 0 A_Fall
-    SPI2 F 8 bright A_Pain
-    SPI2 G 18 bright A_Scream
-    SPI2 HIJKL 3 bright
+    SPI2 F 8 Bright A_Pain
+    SPI2 G 18 Bright A_Scream
+    SPI2 HIJKL 3 Bright
     SPI2 M -1
     stop
    Raise:
@@ -128,7 +128,7 @@ ACTOR BigInfernalSpider 30120
 }
 }
 
-ACTOR flameshot : fatshot
+Actor flameshot : fatshot
 {
 Speed 25
 SeeSound "skeleton/attack"
@@ -136,10 +136,10 @@ Decal Scorch
 States
 {
 Spawn:
-SBAL ABC 5 BRIGHT
-loop
+SBAL ABC 5 Bright
+Loop
 Death:
-SBAL DEFGH 3 BRIGHT
+SBAL DEFGH 3 Bright
 stop
 }
 }
@@ -157,10 +157,10 @@ Spawn:
 TNT1 A 1 Bright A_Custommissile("archvilefire2",0,0,90,0)
 TNT1 A 0 Bright A_Custommissile("archvilefire2",0,0,-90,0)
 TNT1 A 0 A_JumpIf (z-floorz<24,1)
-loop
+Loop
 TNT1 A 0 A_Explode
 TNT1 A 0 ThrustThingZ (0, random(2,3), 0, 0)
-loop
+Loop
 Death:
 TNT1 B 5 A_Burst("archvilefire2")
 stop
@@ -173,7 +173,7 @@ Damage 5
 Speed 4
 }
 
-ACTOR minispider 30121
+Actor minispider 30121
 {
 //$Category Final Duel-Monsters
 //$Title "Infernal Spider"
@@ -202,19 +202,19 @@ States
 {
 spawn:
 GAYS A 1 A_Look
-loop
+Loop
 See:
 GAYS ABCD 1 A_chase
-loop
+Loop
 Melee:
 GAYS E 0 A_Facetarget
 GAYS E 8 A_Meleeattack
 GAYS E 13 A_Facetarget
-goto see
+Goto see
 Pain:
 GAYS A 2 A_Pain
 GAYS A 2
-goto see
+Goto see
 Death:
 TNT1 A 0 A_GiveToTarget("XPSystemExperience",150)
 GAYR FEDC 5 A_Setfloorclip
@@ -246,7 +246,7 @@ States
 {
   Spawn:
    SPI2 AAAAAAAAAA 10 A_Look
-   loop
+   Loop
   See:
    SPI2 ABCD 2 A_Chase
    MNTR A 0 A_playsound ("spider/step")
@@ -260,7 +260,7 @@ States
    MNTR A 0 A_playsound ("spider/step")
    SPI2 ABCD 2 A_Chase
    MNTR A 0 A_playsound ("spider/step")
-   loop
+   Loop
   Missile:
    TNT1 A 0 A_jumpifcloser(1024,5)
    SPI2 E 0 A_Facetarget
@@ -274,13 +274,13 @@ States
    SPI2 X 2 A_custommissile("flameshot", 16, 0, 0, 0)
    SPI2 X 3 A_Facetarget
    SPI2 U 5
-   goto see
+   Goto see
    SPI2 E 5 A_Facetarget
    SPI2 E 6 A_throwgrenade("veryminispider", 64, 10, 20)
    SPI2 E 6 A_throwgrenade("veryminispider", 64, 10, 20)
    SPI2 E 6 A_throwgrenade("veryminispider", 64, 10, 20)
    SPI2 E 5
-   goto see
+   Goto see
    SPI2 E 5 A_Facetarget
    SPI2 U 5 A_Playsound("spider2/sight")
    MNTR W 0 A_Facetarget
@@ -290,14 +290,14 @@ States
    SPI2 X 2 A_custommissile("flameshot", 16, 0, 0, 0)
    SPI2 X 2 A_custommissile("flameshot", 16, 0, 8, 0)
    SPI2 U 5 A_Facetarget
-   goto see
+   Goto see
   Pain:
     SPI2 E 2 A_Pain
     MNTR E 0 A_Facetarget
     SPI2 E 6 A_throwgrenade("veryminispider", 85, 10, 20)
     SPI2 E 6 A_throwgrenade("veryminispider", 85, 10, 20)
     SPI2 E 6 A_throwgrenade("veryminispider", 85, 10, 20)
-    goto see
+    Goto see
   Raise:
     stop
   }

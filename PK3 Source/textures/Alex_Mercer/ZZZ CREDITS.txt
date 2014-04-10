@@ -1,2 +1,3 @@
 BSIGN7 was made with Uboa's BSIGN* template
 WRNCOMP21-2 were made with parts of a texture by DrDoctor and parts of a texture by Zero X. Diamond
+The skyboxes were made with Spacescape

@@ -3,7 +3,7 @@
 // Cacodemon
 //
 //===========================================================================
-ACTOR FDCacodemon : Cacodemon replaces Cacodemon 30101
+Actor FDCacodemon : Cacodemon replaces Cacodemon 30101
 {
 	//$category Final Duel-Original Monsters
 	//$title Cacodemon
@@ -15,7 +15,8 @@ ACTOR FDCacodemon : Cacodemon replaces Cacodemon 30101
 	Speed 8
 	PainChance 128
 	Monster
-	+FLOAT +NOGRAVITY
+	+FLOAT
+	+NoGravity
 	SeeSound "caco/sight"
 	PainSound "caco/pain"
 	DeathSound "caco/death"
@@ -39,7 +40,7 @@ ACTOR FDCacodemon : Cacodemon replaces Cacodemon 30101
 	Missile:
 		HEAD B 5 A_FaceTarget
 		HEAD C 5 A_FaceTarget
-		HEAD D 5 BRIGHT A_HeadAttack
+		HEAD D 5 Bright A_HeadAttack
 		Goto See
 	Pain:
 		HEAD E 3
@@ -62,36 +63,36 @@ ACTOR FDCacodemon : Cacodemon replaces Cacodemon 30101
 		TNT1 A 0 Thing_SetTranslation(0,7)
 		HEAD GG 2 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD G 4 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
-		 TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD H 8 A_Scream
-		 TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
-		HEAD IJ 8 
-		 TNT1 A 0		A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		HEAD IJ 8
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD K 8 A_NoBlocking
-		 TNT1 A 0		A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD LLLLLLLLLLLLLLLLLL 5 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD LLLLLLLLLLLLLLLLLL 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
-		HEAD LLLL -1 A_SetFloorClip
+		HEAD L -1 A_SetFloorClip
 		stop
 	Death.Plasma:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",120)
 		TNT1 A 0 Thing_SetTranslation(0,7)
 		HEAD GG 2 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD G 4 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
-		 TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD H 8 A_Scream
-		 TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD IJ 8 
-		 TNT1 A 0		A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD K 8 A_NoBlocking
-		 TNT1 A 0		A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
+		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
 		HEAD LLLLLLLLLLLLLLLLLL 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,38),0,0,1)
-		HEAD LLLL -1 A_SetFloorClip
+		HEAD L -1 A_SetFloorClip
 		stop
 	Raise:
 		HEAD L 8 A_UnSetFloorClip
 		HEAD KJIHG 8
-		goto See
+		Goto See
 	Crush:
 		TNT1 A 1 A_SpawnItem("NashGore_CrushedMediumBlue",0,0,0,0)
 		stop
@@ -110,66 +111,66 @@ ACTOR FDCacodemon : Cacodemon replaces Cacodemon 30101
 //===========================================================================
 Actor FDCacodemonBall : CacodemonBall replaces CacodemonBall
 {
-decal Scorch
-renderstyle Add
-scale 1.2
-alpha .9
-translation "168:191=198:207","16:47=200:207","208:255=200:207"
-		States
+	Decal Scorch
+	Renderstyle Add
+	Scale 1.2
+	Alpha .9
+	Translation "168:191=198:207","16:47=200:207","208:255=200:207"
+	States
 	{
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("RedFlare_Caco")
 		TNT1 A 0 A_SpawnItem("BlueFlare_Caco")
-		BAL2 AB 1 bright A_spawnitem("CacoBallTrail")
-		loop		
-		}
+		BAL2 AB 1 Bright A_Spawnitem("CacoBallTrail")
+		Loop
+	}
 }
 
 Actor CacoBallTrail
 {
-+FORCEXYBILLBOARD
-+NOTDMATCH
-+NOCLIP
-+NOINTERACTION
-+NOGRAVITY
-scale 1.1
-translation "168:191=198:207","16:47=200:207","208:255=200:207"
-renderstyle Add
-alpha 0.6
-states
+	+ForceXYBillboard
+	+NotDMatch
+	+NoClip
+	+NoInteraction
+	+NoGravity
+	Scale 1.1
+	Translation "168:191=198:207","16:47=200:207","208:255=200:207"
+	Renderstyle Add
+	Alpha 0.6
+	States
 	{
 	Spawn:
 		TNT1 A 0 A_SpawnItem("RedFlare_Caco")
-		BAL2 AB 1 bright A_fadeout(0.2)
-		loop
-		}
+		BAL2 AB 1 Bright A_fadeout(0.2)
+		Loop
+	}
 }
 
 Actor RedFlare_Caco : Flare_General
 {
-scale 0.1
-alpha .9
-+FORCEXYBILLBOARD
-states
+	Scale 0.1
+	Alpha .9
+	+ForceXYBillboard
+	States
 	{
 	Spawn:
 		TNT1 A 0
-		LENR A 2 bright
-		stop
+		LENR A 2 Bright
+		Stop
 	}
 }
 
 Actor BlueFlare_Caco : Flare_General
 {
-scale 0.075
-alpha .35
-+FORCEXYBILLBOARD
-states
+	Scale 0.075
+	Alpha .35
+	+ForceXYBillboard
+	States
 	{
 	Spawn:
 		TNT1 A 0
-		LENB A 2 bright
-		stop
+		LENB A 2 Bright
+		Stop
 	}
 }

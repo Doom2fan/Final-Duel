@@ -4,26 +4,31 @@ DECORATE: Alex_Mercer, torridGristle
 Sounds: WildWeasel, Uboa, Mechadon
 */
 // By Alex_Mercer
-actor Kukri : FDWeapon
+Actor Kukri : FDWeapon
 {
 	Tag "$TAGKUKRI"
 	Weapon.Kickback 100
 	Obituary "$OBKUKRI"
-	+WEAPON.MELEEWEAPON
-    +WEAPON.NOALERT
-    +WEAPON.NOAUTOAIM
-	+WEAPON.NOAUTOFIRE
+	+Weapon.MELEEWeapon
+    +Weapon.NOALERT
+    +Weapon.NOAUTOAIM
+	+Weapon.NOAUTOFIRE
 	+AMMO_OPTIONAL
 	States
 	{
 	Ready:
 		KNFS EDCBA 1
 	Ready2:
+		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
 		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
 		KNF1 A 1 A_WeaponReady
 		Loop
+	DropWeapon:
+		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		KNF1 A 5 ACS_NamedExecute("FD_CannotDropThisWeapon", 0)
+		Goto Ready2
 	Deselect:
 		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
 		KNFS ABCDE 1
@@ -82,26 +87,26 @@ Actor TauntAlert : FastProjectile
 	}
 }
 // By Mechadon,Edited by Alex_Mercer
-ACTOR KnifePuff
+Actor KnifePuff
 {
-  +NOGRAVITY
-  +FORCEXYBILLBOARD
-  -DONTSPLASH
-  -ALLOWPARTICLES
-  +NOEXTREMEDEATH
-  renderstyle Add
+  +NoGravity
+  +ForceXYBillboard
+  -DontSplash
+  -AllowParticles
+  +NoExtremeDeath
+  RenderStyle Add
   scale 0.1
-  alpha 0.8
+  Alpha 0.8
   AttackSound "Melee/Knife/HitWall"
   ActiveSound "Melee/Knife/Miss"
   States
   {
   Spawn:
-	TNT1 ABCD 1 bright
+	TNT1 ABCD 1 Bright
 	stop
   Melee:
 	TNT1 A 0 A_PlaySound("Melee/Knife/HitThing")
   }
 }  
 
-Actor BerserkKnifePuff : KnifePuff { -NOEXTREMEDEATH }
+Actor BerserkKnifePuff : KnifePuff { -NoExtremeDeath }

@@ -1,148 +1,108 @@
-script "ShowKeys" (void) // show keys screen
-{
-	SetHudSize(320,200,1);
-	if(checkInventory("ShowKeys") == 1) // if ShowKeys is true...
-	{
+script "ShowKeys" (void) { // show keys screen
+	SetHudSize (320, 200, 1);
+	if (checkInventory ("ShowKeys") == 1) { // if ShowKeys is true...
 		SetFont("DARKNESS");
-		hudmessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 40000, 0, 0, 0, 0); // darken the screen
+		HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 40000, 0, 0, 0, 0); // darken the screen
 	}
-	else if(checkInventory("ShowKeys") == 0) // if ShowKeys is false...
-	{
-		SetFont("DARKNESS");
-		hudmessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 40000, 0, 0, 0, 0); // lighten the screen
+	else if (checkInventory("ShowKeys") == 0) { // if ShowKeys is false...
+		SetFont ("DARKNESS");
+		HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 40000, 0, 0, 0, 0); // lighten the screen
 	}
 }
-script "Stats" ENTER
-{
-	If (GameType() == Game_Title_Map) Terminate;
+
+script "Stats" ENTER {
+	If (GameType () == Game_Title_Map) Terminate;
 	int currentLVL;
 	int currentXP;
-	while (TRUE)
-	{
+	while (TRUE) {
 		currentLVL = checkInventory("XPSystemLevel");
 		currentXP = checkInventory("XPSystemExperience");
-		if(checkInventory("ShowKeys") == 1) // if ShowKeys is true...
-		{
+		if (checkInventory("ShowKeys") == 1) { // if ShowKeys is true...
 			SetFont("DBIGFONT");
-			hudmessage (s:"Current level: ", d:currentLVL; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39999, CR_UNTRANSLATED, 0.5, 0.2, 0); // show current level
-			hudmessage (s:"Experience: ", d:currentXP; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39998, CR_UNTRANSLATED, 0.5, 0.225, 0); // show experience
+			HudMessage (s:"Current level: ", d:currentLVL; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39999, CR_UNTRANSLATED, 0.5, 0.2, 0); // show current level
+			HudMessage (s:"Experience: ", d:currentXP; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39998, CR_UNTRANSLATED, 0.5, 0.225, 0); // show experience
 		}
-		else
-		{
-			hudmessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39999, CR_UNTRANSLATED, 0, 0, 0); // show current level
-			hudmessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39998, CR_UNTRANSLATED, 0, 0, 0); // show experience
+		else {
+			HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39999, CR_UNTRANSLATED, 0, 0, 0); // show current level
+			HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39998, CR_UNTRANSLATED, 0, 0, 0); // show experience
 		}
 		Delay (1);
 	}
 }
-script "HudWeapons" Enter // HUD icons and stuff...
-{
+
+script "HudWeapons" Enter { // HUD icons and stuff...
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
-	While(TRUE)
-	{
-	if (GetCVar("screenblocks") <= 11) // if HUD shown...
-	{
-		/* Firing modes */
-		if(checkWeapon("Beretta") || checkWeapon("BerettaPowered")) // Beretta
-		{	
-			if(checkInventory("BerettaUpgrade"))
-			{
-				if(checkInventory("BerettaMode2"))
-				{
-					SetFont("BURST");
-					HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+	If (GameType () == Game_Title_Map) Terminate;
+	While (TRUE) {
+		if (GetCVar ("screenblocks") <= 11) { // if HUD shown...
+			/* Firing modes */
+			if (checkWeapon ("Beretta") || checkWeapon ("BerettaPowered")) { // Beretta
+				if (checkInventory ("BerettaUpgrade")) {
+					if (checkInventory ("BerettaMode2")) {
+						SetFont ("BURST");
+						HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+					}
+					//	---------------------------------------------------------------------------------------------------------------------------------
+					else {
+						SetFont ("SEMI");
+						HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+					}
+				}
+				else HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+			}
+			else if (checkWeapon ("Rifle") || checkWeapon ("RiflePowered")) { // Rifle
+				if (checkInventory ("RifleBurst")) {
+					SetFont ("BURST");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				//	---------------------------------------------------------------------------------------------------------------------------------
-				else
-				{
-					SetFont("SEMI");
-					HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				else {
+					SetFont ("AUTO");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}
-			else HudMessage(s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+			else if (checkWeapon ("ActionMachineGun") || checkWeapon ("ActionMachineGunPowered")) { // Carbine
+				if (checkInventory ("AMGMode2")) {
+					SetFont ("SEMI");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+				//	---------------------------------------------------------------------------------------------------------------------------------
+				else {
+					SetFont ("AUTO");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+			}
+			else if (checkWeapon ("PumpActionShotgun") || checkWeapon ("PumpActionShotgunPowered")) { // Tactical Shotgun
+				if (checkInventory ("PASSlugs")) {
+					SetFont ("SLUGSHEL");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+				else {
+					SetFont ("BUCKSHEL");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+			}
+			else if (checkWeapon ("SoulReaper")) { // Soul Reaper
+				if (checkInventory("SRMode2")) {
+					SetFont ("AUTO");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+			}
+				else if (checkInventory("SRMode3")) {
+					SetFont ("BURST");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+				//	---------------------------------------------------------------------------------------------------------------------------------
+				else {
+					SetFont ("SEMI");
+					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+				}
+			}
+			else HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 		}
-		else if(checkWeapon("Rifle") || checkWeapon("RiflePowered")) // Rifle
-		{	
-			if(checkInventory("RifleBurst"))
-			{
-				SetFont("BURST");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			//	---------------------------------------------------------------------------------------------------------------------------------
-			else
-			{
-				SetFont("AUTO");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
+		else {
+			HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 		}
-		else if(checkWeapon("ActionMachineGun") || checkWeapon("ActionMachineGunPowered")) // Carbine
-		{
-			if(checkInventory("AMGMode2"))
-			{
-				SetFont("SEMI");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			//	---------------------------------------------------------------------------------------------------------------------------------
-			else
-			{
-				SetFont("AUTO");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-		}
-		else if(checkWeapon("Bullpup") || checkWeapon("BullpupPowered")) // Bullpup
-		{
-			if(checkInventory("BULMode2"))
-			{
-				SetFont("BURST");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			//	---------------------------------------------------------------------------------------------------------------------------------
-			else
-			{
-				SetFont("AUTO");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-		}
-		else if(checkWeapon("PumpActionShotgun") || checkWeapon("PumpActionShotgunPowered")) // Tactical Shotgun
-		{
-			if(checkInventory("PASSlugs"))
-			{
-				SetFont("SLUGSHEL");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			else
-			{
-				SetFont("BUCKSHEL");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-		}
-		else if(checkWeapon("SoulReaper")) // Soul Reaper
-		{	
-			if(checkInventory("SRMode2"))
-			{
-				SetFont("AUTO");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			else if(checkInventory("SRMode3"))
-			{
-				SetFont("BURST");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-			//	---------------------------------------------------------------------------------------------------------------------------------
-			else
-			{
-				SetFont("SEMI");
-				HudMessage(s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
-		}
-		else HudMessage(s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-	}
-	else
-	{
-		// HudMessage(s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, 0, 0.0, 0.0, 0);
-		HudMessage(s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-	}
-	Delay(1);
+		Delay(1);
+		
 	}
 }

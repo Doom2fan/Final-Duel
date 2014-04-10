@@ -1,8 +1,9 @@
-ACTOR TomeOfTheUnholy : PowerupGiver 30056
+Actor TomeOfTheUnholy : PowerupGiver 30056
 {
 	//$Category Final Duel-Items
-	+COUNTITEM
+	+CountItem
 	+FLOATBOB
+	+InvBar
 	Inventory.MaxAmount 1
 	Inventory.Icon "ARTITOME"
 	Powerup.Type Weaponlevel2
@@ -12,7 +13,7 @@ ACTOR TomeOfTheUnholy : PowerupGiver 30056
 	States
 	{
 	Spawn:
-		TOME A 350
+		TOME A 1
 		Loop
 	}
 }

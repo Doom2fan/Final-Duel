@@ -1,4 +1,3 @@
-// #include "zcommon.acs"
 // this was made by Ijon
 
 #define STRALLOC_INPUTSTRING    192
@@ -16,146 +15,124 @@ int vOutputChars[128] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
 
 int inputLock[32] = {0};
 
-function int addString(int string)
-{
-    int strSize = StrLen(string) + 1;  // gotta remember the null byte at the start
+function int addString (int string) {
+    int strSize = StrLen (string) + 1;  // gotta remember the null byte at the start
 
     int index = 0; int ret; int i = 0; int j; int c;
     
-    int wIndex = findFreeIndex(strSize);
+    int wIndex = findFreeIndex (strSize);
 
-    for (i = 0; i < strSize; i++)
-    {
+    for (i = 0; i < strSize; i++) {
         j = i + wIndex;
 
-        strings[j] = GetChar(string, i);
+        strings[j] = GetChar (string, i);
     }
 
     strings[j + i] = 0;
     
-    addIndex(wIndex);
+    addIndex (wIndex);
     return wIndex;
 }
 
-function int addCleanString(int string)
-{
-    int strSize = StrLen(string) + 1;
+function int addCleanString (int string) {
+    int strSize = StrLen (string) + 1;
 
     int index = 0; int i = 0; int j = 0; int k = 0; int c; int ignoreNext;
     
-    int wIndex = findFreeIndex(strSize);
+    int wIndex = findFreeIndex (strSize);
 
-    for (i = 0; i < strSize; i++)
-    {
-        c = GetChar(string, i);
+    for (i = 0; i < strSize; i++) {
+        c = GetChar (string, i);
 
-        if ( ( ((c > 8) && (c < 14)) || ((c > 31) && (c < 127)) || ((c > 160) && (c < 173)) ) && !ignoreNext)
-        {
+        if ( ( ((c > 8) && (c < 14)) || ((c > 31) && (c < 127)) || ((c > 160) && (c < 173)) ) && !ignoreNext) {
             j = (k++) + wIndex;
             strings[j] = c;
         }
-        else if (c == 28 && !ignoreNext)
-        {
+        else if (c == 28 && !ignoreNext) {
             ignoreNext = 1;
         }
-        else
-        {
+        else {
             ignoreNext = 0;
         }
     }
 
     strings[j + 1] = 0;
     
-    addIndex(wIndex);
+    addIndex (wIndex);
     return wIndex;
 }
 
-function int addLowerString(int string)
-{
-    int strSize = StrLen(string) + 1;
+function int addLowerString (int string) {
+    int strSize = StrLen (string) + 1;
 
     int index = 0; int i = 0; int j = 0; int k = 0; int c; int ignoreNext;
     
-    int wIndex = findFreeIndex(strSize);
+    int wIndex = findFreeIndex (strSize);
 
-    for (i = 0; i < strSize; i++)
-    {
-        c = GetChar(string, i);
+    for (i = 0; i < strSize; i++) {
+        c = GetChar (string, i);
 
-        if ( ( ((c > 8) && (c < 14)) || ((c > 31) && (c < 127)) || ((c > 160) && (c < 173)) ) && !ignoreNext)
-        {
+        if ( ( ((c > 8) && (c < 14)) || ((c > 31) && (c < 127)) || ((c > 160) && (c < 173)) ) && !ignoreNext) {
             j = (k++) + wIndex;
 
-            if ((c > 64) && (c < 91))
-            {
+            if ((c > 64) && (c < 91)) {
                 strings[j] = c + 32;
             }
-            else
-            {
+            else {
                 strings[j] = c;
             }
         }
-        else if (c == 28 && !ignoreNext)
-        {
+        else if (c == 28 && !ignoreNext) {
             ignoreNext = 1;
         }
-        else
-        {
+        else {
             ignoreNext = 0;
         }
     }
 
     strings[j + 1] = 0;
     
-    addIndex(wIndex);
+    addIndex (wIndex);
     return wIndex;
 }
 
-function int getString(int index)
-{
+function int getString (int index) {
     int ret = "";
     int i = 0; int j; int c;
     
-    if (getIndex(index) == -1)
-    {
-        return StrParam(s:"ERR");
+    if (getIndex (index) == -1) {
+        return StrParam (s:"ERR");
     }
 
-    while (1)
-    {
+    while (1) {
         j = i + index;
         i += 1;
 
         c = strings[j];
 
-        if (c == 0)
-        {
+        if (c == 0) {
             break;
         }
 
-        ret = StrParam(s:ret, c:c);
+        ret = StrParam (s:ret, c:c);
     }
     
     return ret;
 }
 
-function void freeString(int index)
-{
+function void freeString (int index) {
     int i = 0; int j; int c;
     
-    if (getIndex(index) == -1)
-    {
+    if (getIndex (index) == -1) {
         return;
     }
 
-    while (1)
-    {
+    while (1) {
         j = i + index;
 
         c = strings[j];
 
-        if (c == 0)
-        {
+        if (c == 0) {
             break;
         }
 
@@ -163,26 +140,22 @@ function void freeString(int index)
         i += 1;
     }
 
-    freeIndex(index);
+    freeIndex (index);
 }
 
-function int stringLength(int index)
-{
+function int stringLength (int index) {
     int i = 0; int j; int c;
     
-    if (getIndex(index) == -1)
-    {
+    if (getIndex (index) == -1) {
         return -1;
     }
 
-    while (1)
-    {
+    while (1) {
         j = i + index;
 
         c = strings[j];
 
-        if (c == 0)
-        {
+        if (c == 0) {
             break;
         }
         
@@ -192,50 +165,41 @@ function int stringLength(int index)
     return i;
 }
 
-function int reallocString(int index, int string)
-{
-    freeString(index);
-    return addString(string);
+function int reallocString (int index, int string) {
+    freeString (index);
+    return addString (string);
 }
 
-function int reallocCleanString(int index, int string)
-{
-    freeString(index);
-    return addCleanString(string);
+function int reallocCleanString (int index, int string) {
+    freeString (index);
+    return addCleanString (string);
 }
 
-function int reallocLowerString(int index, int string)
-{
-    freeString(index);
-    return addLowerString(string);
+function int reallocLowerString(int index, int string) {
+    freeString (index);
+    return addLowerString (string);
 }
 
 
 
-function int findFreeIndex(int size)
-{
+function int findFreeIndex (int size) {
     int c; int i = -1; int index = 0; int ret;
 
-    while (1)
-    {
+    while (1) {
         c = strings[index];
         
-        if (c == 0)
-        {
-            if (i == 0)
-            {
+        if (c == 0) {
+            if (i == 0) {
                 ret = index;
             }
 
             i += 1;
         }
-        else
-        {
+        else {
             i = -1;
         }
 
-        if (i >= (size - 1))
-        {
+        if (i >= (size - 1)) {
             break;
         }
 
@@ -245,17 +209,13 @@ function int findFreeIndex(int size)
     return ret;
 }
 
-function int addIndex(int index)
-{
+function int addIndex (int index) {
     int i = 0;
-    while (1)
-    {
-        if (stringIndex[i] == (index + 1))
-        {
+    while (1) {
+        if (stringIndex[i] == (index + 1)) {
             break;
         }
-        else if (stringIndex[i] == 0)
-        {
+        else if (stringIndex[i] == 0) {
             stringIndex[i] = (index + 1);
             break;
         }
@@ -265,18 +225,14 @@ function int addIndex(int index)
     return i;
 }
 
-function int getIndex(int index)
-{
+function int getIndex (int index) {
     int i = 0;
 
-    while (1)
-    {
-        if (stringIndex[i] == (index + 1))
-        {
+    while (1) {
+        if (stringIndex[i] == (index + 1)) {
             break;
         }
-        else if (stringIndex[i] == 0)
-        {
+        else if (stringIndex[i] == 0) {
             return -1;
         }
 
@@ -286,12 +242,10 @@ function int getIndex(int index)
     return i;
 }
 
-function void freeIndex(int index)
-{
-    int curIndex = getIndex(index);
+function void freeIndex (int index) {
+    int curIndex = getIndex (index);
     
-    if (curIndex == -1)
-    {
+    if (curIndex == -1) {
         return;
     }
 
@@ -300,10 +254,8 @@ function void freeIndex(int index)
 
     stringIndex[curIndex] = 0;
 
-    while (1)
-    {
-        if (stringIndex[i] == 0)
-        {
+    while (1) {
+        if (stringIndex[i] == 0) {
             break;
         }
         j = i;
@@ -315,132 +267,111 @@ function void freeIndex(int index)
 }
 
 
-function int dumpStrings(int stop)
-{
+function int dumpStrings (int stop) {
     int printStr = "";
     int i = 0; int strsFound = 0; int stopAtZero = 0;
     
-    if (stop == 0)
-    {
+    if (stop == 0) {
         stop = 0x7FFFFFFF;
         stopAtZero = 1;
     }
 
-    while (i < stop)
-    {
-        if (stringIndex[i] != 0)
-        {
+    while (i < stop) {
+        if (stringIndex[i] != 0) {
             strsFound++;
-            printStr = StrParam(s:printStr, s:"(", d:i, s:", ", d:stringIndex[i], s:"): ", s:getString(stringIndex[i] - 1), s:"\n");
+            printStr = StrParam (s:printStr, s:"(", d:i, s:", ", d:stringIndex[i], s:"): ", s:getString (stringIndex[i] - 1), s:"\n");
         }
-        else if (stopAtZero)
-        {
+        else if (stopAtZero) {
             break;
         }
         i += 1;
     }
     
-    if (strsFound == 0)
-    {
-        printStr = StrParam(s:"<NONE>"); // For consistency reasons, we use StrParam here
+    if (strsFound == 0) {
+        printStr = StrParam (s:"<NONE>"); // For consistency reasons, we use StrParam here
     }
 
     return printStr;
 }
 
-function int padStringR(int baseStr, int padChar, int len)
-{
-    int baseStrLen = StrLen(baseStr);
+function int padStringR (int baseStr, int padChar, int len) {
+    int baseStrLen = StrLen (baseStr);
     int pad = "";
     int padLen; int i;
 
-    if (baseStrLen >= len)
-    {
+    if (baseStrLen >= len) {
         return baseStr;
     }
     
-    padChar = GetChar(padChar, 0);
+    padChar = GetChar (padChar, 0);
     padLen = len - baseStrLen;
 
-    for (i = 0; i < padLen; i++)
-    {
-        pad = StrParam(s:pad, c:padChar);
+    for (i = 0; i < padLen; i++) {
+        pad = StrParam (s:pad, c:padChar);
     }
 
-    return StrParam(s:baseStr, s:pad);
+    return StrParam (s:baseStr, s:pad);
 }
 
-function int padStringL(int baseStr, int padChar, int len)
-{
-    int baseStrLen = StrLen(baseStr);
+function int padStringL (int baseStr, int padChar, int len) {
+    int baseStrLen = StrLen (baseStr);
     int pad = "";
     int padLen; int i;
 
-    if (baseStrLen >= len)
-    {
+    if (baseStrLen >= len) {
         return baseStr;
     }
     
-    padChar = GetChar(padChar, 0);
+    padChar = GetChar (padChar, 0);
     padLen = len - baseStrLen;
 
-    for (i = 0; i < padLen; i++)
-    {
-        pad = StrParam(s:pad, c:padChar);
+    for (i = 0; i < padLen; i++) {
+        pad = StrParam (s:pad, c:padChar);
     }
 
-    return StrParam(s:pad, s:baseStr);
+    return StrParam (s:pad, s:baseStr);
 }
 
-function int changeString(int string, int repl, int where)
-{
+function int changeString (int string, int repl, int where) {
     int i; int j; int k;
     int ret = "";
-    int len = StrLen(string);
-    int rLen = StrLen(repl);
+    int len = StrLen (string);
+    int rLen = StrLen (repl);
 
-    if ((where + rLen < 0) || (where >= len))
-    {
+    if ((where + rLen < 0) || (where >= len)) {
         return string;
     }
     
-    for (i = 0; i < len; i++)
-    {
-        if (inRange(where, where+rLen, i))
-        {
-            ret = StrParam(s:ret, c:GetChar(repl, i-where));
+    for (i = 0; i < len; i++) {
+        if (inRange(where, where+rLen, i)) {
+            ret = StrParam (s:ret, c:GetChar(repl, i-where));
         }
-        else
-        {
-            ret = StrParam(s:ret, c:GetChar(string, i));
+        else {
+            ret = StrParam (s:ret, c:GetChar(string, i));
         }
     }
 
     return ret;
 }
 
-function int sliceString(int string, int start, int end)
-{
-    int len = StrLen(string);
+function int sliceString (int string, int start, int end) {
+    int len = StrLen (string);
     int ret = "";
     int i;
 
-    if (start < 0)
-    {
+    if (start < 0) {
         start = len + start;
     }
 
-    if (end <= 0)
-    {
+    if (end <= 0) {
         end = len + end;
     }
 
-    start = max(0, start);
-    end   = min(end, len-1);
+    start = max (0, start);
+    end   = min (end, len-1);
     
-    for (i = start; i < end; i++)
-    {
-        ret = StrParam(s:ret, c:GetChar(string, i));
+    for (i = start; i < end; i++) {
+        ret = StrParam (s:ret, c:GetChar (string, i));
     }
 
     return ret;

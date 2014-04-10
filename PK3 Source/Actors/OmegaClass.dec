@@ -1,4 +1,4 @@
-ACTOR OmegaClass : BasePlayerClass
+Actor OmegaClass : BasePlayerClass
 {
 	// Damage related
 	Health 200
@@ -7,10 +7,9 @@ ACTOR OmegaClass : BasePlayerClass
 	Bloodcolor 28 00 28
 	Player.MugShotMaxHealth 150
 	DamageFactor 0.9
-	DamageFactor BFGExtra, 0.0
 	// Speed related
-	Player.ForwardMove 0.9, 1.1
-    Player.SideMove 0.9,1.1
+	Player.ForwardMove 0.8, 0.7
+    Player.SideMove 0.8,0.7
 	// Misc
 	// Player.SpawnClass 2
 	// Mass 80
@@ -29,31 +28,7 @@ ACTOR OmegaClass : BasePlayerClass
 	Player.StartItem FDBerserk
 	Player.StartItem FDStimpack, 7
 	Player.StartItem FDMedikit
-	// Start Systems
 	Player.StartItem ChronosItem
-	Player.StartItem AutoReloadingToggle
-	Player.StartItem EnableAutoReload
-	Player.StartItem IsPlayer
-	Player.StartItem StaminaRegen
-	Player.StartItem ShowKeysToggle
-	Player.StartItem TauntKey
-	// Loaded ammo
-	Player.StartItem AmmoBeretta, 15
-	Player.StartItem AmmoRifle, 30
-	Player.StartItem AmmoMagnum, 6
-	Player.StartItem AmmoFDShotgun, 8
-	Player.StartItem AmmoPAShotgun, 8
-	Player.StartItem AmmoPAShotgunSlug, 8
-	Player.StartItem AmmoQuadShotgun, 4
-	Player.StartItem AmmoActionMachinegun, 50
-	Player.StartItem AmmoMinigun, 60
-	Player.StartItem AmmoAnnihilator, 80
-	Player.StartItem AmmoGrenadeLauncher, 6
-	Player.StartItem AmmoPRifle, 80
-	Player.StartItem AmmoSRail, 80
-	Player.StartItem AmmoBFG10K, 80
-	Player.StartItem AmmoSR, 60
-	Player.StartItem AmmoSniperRifle, 5
 	// Weapon Slots
   	Player.WeaponSlot 1, MeleeAttack, Sword, FDChainsaw
   	Player.WeaponSlot 2, Beretta, Magnum, Rifle
@@ -61,7 +36,7 @@ ACTOR OmegaClass : BasePlayerClass
   	Player.WeaponSlot 4, ActionMachineGun, FDMinigun
   	Player.WeaponSlot 5, FDRocketLauncher, Annihilator, FDGrenadeLauncher
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
-  	Player.WeaponSlot 7, FDBFG9000, BFG10K
+  	Player.WeaponSlot 7, BioForceGun, BFG10K
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
 	Player.WeaponSlot 9, MancubusArm, Magic, Kukri
 	States
@@ -84,7 +59,7 @@ ACTOR OmegaClass : BasePlayerClass
 		PLAY E 12 
 		Goto Spawn
 	Melee:
-		PLAY F 6 BRIGHT
+		PLAY F 6 Bright
 		Goto Missile
 	Pain:
 		PLAY G 4 
@@ -101,6 +76,7 @@ ACTOR OmegaClass : BasePlayerClass
 		PLAY N -1
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItemEx("NashGore_FlyingBloodGibbingSpawner", 0.0, 0.0, 28.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR)
 		TNT1 A 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR)
 		PLAY O 5
 		TNT1 A 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR)

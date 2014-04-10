@@ -3,7 +3,7 @@
 // Commander Keen
 //
 //===========================================================================
-ACTOR FDCommanderKeen : CommanderKeen replaces CommanderKeen
+Actor FDCommanderKeen : CommanderKeen replaces CommanderKeen
 {
 	Game Doom
 	Health 100
@@ -11,9 +11,9 @@ ACTOR FDCommanderKeen : CommanderKeen replaces CommanderKeen
 	Height 72
 	Mass 10000000
 	PainChance 256
-	+SOLID 
+	+Solid 
 	+SPAWNCEILING 
-	+NOGRAVITY 
+	+NoGravity 
 	+SHOOTABLE 
 	+COUNTKILL 
 	+NOICEDEATH

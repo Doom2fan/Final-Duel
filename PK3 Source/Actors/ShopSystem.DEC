@@ -1,4 +1,4 @@
-ACTOR Energy : Inventory 30140
+Actor Energy : Inventory 30140
 {
 	//$Category Final Duel-Money
 	Tag "Soul Energy"

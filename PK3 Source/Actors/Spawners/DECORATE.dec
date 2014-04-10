@@ -5,74 +5,74 @@
 // Spawners/Replacers by Alex_Mercer
 
 // Shotgun Replacer
-ACTOR ShotgunReplacer
+Actor ShotgunReplacer
 {
 	States
 	{
 	Spawn:
-		TNT1 AA 0 NoDelay A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("FDShotgun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 NoDelay A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("FDShotgun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
 // Super Shotgun Replacer
-ACTOR SuperShotgunReplacer
+Actor SuperShotgunReplacer
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("DoomSSG", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 NoDelay A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("DoomSSG", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
 // Chaingun Replacer
-ACTOR ChaingunReplacer
+Actor ChaingunReplacer
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("ActionMachineGun", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("AK47", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Clip2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 NoDelay A_SpawnItemEx("ActionMachineGun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("AK47", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Clip2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
 // Rocket Launcher Replacer
-ACTOR RocketLauncherReplacer
+Actor RocketLauncherReplacer
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("FDRocketLauncher", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 AA 0 A_SpawnItemEx("RocketAmmo2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 NoDelay A_SpawnItemEx("FDRocketLauncher", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AA 0 A_SpawnItemEx("RocketAmmo2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
 // Plasma Rifle Replacer
-ACTOR PlasmaRifleReplacer
+Actor PlasmaRifleReplacer
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("FDPlasmaRifle", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 NoDelay A_SpawnItemEx("FDPlasmaRifle", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
 // BFG 9000 Replacer
-ACTOR BFG9000Replacer
+Actor BFG9000Replacer
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("FDBFG9000", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 NoDelay A_SpawnItemEx("BioForceGun", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
@@ -80,7 +80,7 @@ ACTOR BFG9000Replacer
 // Monster Replacers
 
 // Wolfenstein SS Replacer
-ACTOR WolfensteinSSReplacer Replaces WolfensteinSS
+Actor WolfensteinSSReplacer Replaces WolfensteinSS
 {
 	States
 	{

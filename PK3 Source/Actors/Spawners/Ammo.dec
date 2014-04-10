@@ -1,5 +1,5 @@
 // Clip Spawner
-ACTOR ClipAmmoSpawner2 replaces Clip
+Actor ClipAmmoSpawner2 replaces Clip
 {
 	States
 	{
@@ -7,15 +7,15 @@ ACTOR ClipAmmoSpawner2 replaces Clip
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(102,"MinigunAmmoDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("Clip2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("Clip2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	MinigunAmmoDrop:
-		TNT1 A 1 A_SpawnItemEx("MinigunAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("MinigunAmmo", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Shell Spawner
-ACTOR ShellSpawner Replaces Shell
+Actor ShellSpawner Replaces Shell
 {
 	States
 	{
@@ -23,20 +23,20 @@ ACTOR ShellSpawner Replaces Shell
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop","CrossbowBoltDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("Shell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	SlugDrop:
-		TNT1 A 1 A_SpawnItemEx("Slug", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("Slug", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	MagnumAmmoDrop:
-		TNT1 A 1 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	CrossbowBoltDrop:
-		TNT1 A 1 A_SpawnItemEx("CrossbowBolts", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("CrossbowBolts", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
-ACTOR ShellBoxSpawner Replaces ShellBox
+Actor ShellBoxSpawner Replaces ShellBox
 {
 	States
 	{
@@ -44,21 +44,21 @@ ACTOR ShellBoxSpawner Replaces ShellBox
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(128,"SlugDrop","MagnumAmmoDrop","CrossbowBoltDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("ShellBox2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("ShellBox2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	SlugDrop:
-		TNT1 A 1 A_SpawnItemEx("SlugBox", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("SlugBox", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	MagnumAmmoDrop:
-		TNT1 A 1 A_SpawnItemEx("MagnumClipBox", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("MagnumClipBox", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	CrossbowBoltDrop:
-		TNT1 A 1 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("CrossbowBoltsQuiver", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Rocket Spawner
-ACTOR RocketSpawner Replaces Rocket
+Actor RocketSpawner Replaces Rocket
 {
 	States
 	{
@@ -67,18 +67,18 @@ ACTOR RocketSpawner Replaces Rocket
 		TNT1 A 0 A_Jump(64,"HellClipDrop")
 		TNT1 A 0 A_Jump(128,"GrenadeDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("RocketAmmo2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("RocketAmmo2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop		
 	GrenadeDrop:
-		TNT1 A 1 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	HellClipDrop:
-		TNT1 A 1 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 // Rocket Box Spawner
-ACTOR RocketBoxSpawner Replaces RocketBox
+Actor RocketBoxSpawner Replaces RocketBox
 {
 	States
 	{
@@ -87,13 +87,13 @@ ACTOR RocketBoxSpawner Replaces RocketBox
 		TNT1 A 0 A_Jump(64,"HellClipDrop")
 		TNT1 A 0 A_Jump(128,"GrenadeDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("RocketBox2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("RocketBox2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	GrenadeDrop:
-		TNT1 A 1 A_SpawnItemEx("GrenadeBox", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("GrenadeBox", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	HellClipDrop:
-		TNT1 A 1 A_SpawnItemEx("HellClipBox", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("HellClipBox", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
@@ -106,10 +106,10 @@ Actor CellSpawner Replaces Cell
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("RandomizerCVar") == 0, "Normal")
 		TNT1 A 0 A_Jump(96,"SniperRifleDrop")
 	Normal:
-		TNT1 A 1 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	SniperRifleDrop:
-		TNT1 A 1 A_SpawnItemEx("SniperRifleClip", 0, 0, 0, frandom(-1.0, 1.0), frandom(-1.0, 1.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_SpawnItemEx("SniperRifleClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }

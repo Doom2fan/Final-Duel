@@ -10,7 +10,7 @@ Actor TeslaCoil 30128
   speed 0
   MONSTER
   +FLOORCLIP
-  +NOBLOOD
+  +NoBlood
   +LOOKALLAROUND
   +SHORTMISSILERANGE
   States
@@ -25,18 +25,18 @@ Actor TeslaCoil 30128
     Loop
   Missile:
     TESL A 9 A_FaceTarget
-    TESL A 1 bright
-    TESL A 0 bright A_PlaySound ("Tesla/Attack")
-    TESL A 0 bright A_SpawnItem ("TeslaZapper", 0, 60)
-    TESL A 1 bright
+    TESL A 1 Bright
+    TESL A 0 Bright A_PlaySound ("Tesla/Attack")
+    TESL A 0 Bright A_SpawnItem ("TeslaZapper", 0, 60)
+    TESL A 1 Bright
     TESL A 59
     Goto See
   Death:
 	TNT1 A 0 A_GiveToTarget("XPSystemExperience",150)
 	TESL A 1
-    TESL A 1 bright A_SpawnItemEx ("Boom", 0, 0, 60, 0, 0, 0, 0, 160)
-    TESL A 0 bright A_StopSoundEx ("SoundSlot5")
-    TESL A 0 bright A_PlaySound ("weapons/rocklx")
+    TESL A 1 Bright A_SpawnItemEx ("Boom", 0, 0, 60, 0, 0, 0, 0, 160)
+    TESL A 0 Bright A_StopSoundEx ("SoundSlot5")
+    TESL A 0 Bright A_PlaySound ("Weapons/rocklx")
     TESL B -1 
     Stop
   Raise:
@@ -50,17 +50,17 @@ Actor TeslaZapper
   radius 2
   height 2
   //Decal "CrossbowScorch2"
-  +NOGRAVITY
+  +NoGravity
   +LOOKALLAROUND
-  +NOCLIP
+  +NoClip
   +INVULNERABLE
   States
   {
   Spawn:
     TNT1 A 1 A_FaceTarget
   Missile:
-    TNT1 AAAAA 0 bright A_CustomRailgun (2, 0, none, lightblue, 1, 0, 1000)
-    TNT1 AAAAA 0 bright A_CustomRailgun (2, 0, none, white, 1, 0, 1000)
+    TNT1 AAAAA 0 Bright A_CustomRailgun (2, 0, none, Lightblue, 1, 0, 1000)
+    TNT1 AAAAA 0 Bright A_CustomRailgun (2, 0, none, white, 1, 0, 1000)
     Stop
   }
 }
@@ -72,14 +72,14 @@ Actor Boom
   Speed 0
   Damage 0
   Projectile
-  renderstyle Add
-  +NOINTERACTION
+  RenderStyle Add
+  +NoInteraction
   States
   {
   Spawn:
-    MISL B 8 bright
-    MISL C 6 bright
-    MISL D 4 bright
+    MISL B 8 Bright
+    MISL C 6 Bright
+    MISL D 4 Bright
     Stop
   }
 }

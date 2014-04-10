@@ -1,39 +1,70 @@
 #define PLAYER_TID_START 30000
 
-script "CVars" Enter
-{
+function void StartStuff (void) {
+	GiveInventory ("AutoReloadingToggle", 1);
+	GiveInventory ("EnableAutoReload", 1);
+	GiveInventory ("IsPlayer", 1);
+	GiveInventory ("StaminaRegen", 1);
+	GiveInventory ("FDTauntKey", 1);
+	GiveInventory ("FDSSTKey", 1);
+	GiveInventory ("FDReloadKey", 1);
+	GiveInventory ("FDKickKey", 1);
+	GiveInventory ("FDDropWeaponKey", 1);
+	GiveInventory ("EnforcerClip", 24);
+	GiveInventory ("EnforcerClipR", 15);
+	GiveInventory ("EnforcerClipL", 15);
+	GiveInventory ("AmmoBeretta", 15);
+	GiveInventory ("AmmoRifle", 30);
+	GiveInventory ("AmmoMagnum", 6);
+	GiveInventory ("AmmoFDShotgun", 8);
+	GiveInventory ("AmmoPAShotgun", 6);
+	GiveInventory ("AmmoPAShotgunSlug", 6);
+	GiveInventory ("AmmoQuadShotgun", 4);
+	GiveInventory ("AmmoActionMachineGun", 50);
+	GiveInventory ("AmmoAK47", 50);
+	GiveInventory ("AmmoMinigun", 120);
+	GiveInventory ("AmmoAnnihilator", 80);
+	GiveInventory ("AmmoGrenadeLauncher", 6);
+	GiveInventory ("AmmoPRifle", 80);
+	GiveInventory ("AmmoSRail", 80);
+	GiveInventory ("AmmoBFG10K", 80);
+	GiveInventory ("AmmoSR", 60);
+	GiveInventory ("AmmoSniperRifle", 5);
+}
+
+script "CVars" Enter {
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
-	Delay(1);
+	If (GameType () == Game_Title_Map) Terminate;
+	Delay (1);
 	restart;
 }
 
-script "FDEnter" ENTER
-{
+script "FDEnter" ENTER {
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
-	Thing_ChangeTID(0,PLAYER_TID_START+PlayerNumber());
-	SetPlayerProperty(1, 1, PROP_INSTANTWEAPONSWITCH);
+	If (GameType () == Game_Title_Map) Terminate;
+	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
+	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
 	TakeInventory ("ShowKeys", 1);
 	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
 	TakeInventory ("NightvisionOn", 1);
+	StartStuff ();
 }
-script "FDRespawn" RESPAWN
-{
+
+script "FDRespawn" RESPAWN {
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
+	If (GameType () == Game_Title_Map) Terminate;
 	// Make sure our old dead body doesn't still have our tid
-	Thing_ChangeTID(PLAYER_TID_START+PlayerNumber(),0);
-	Thing_ChangeTID(0,PLAYER_TID_START+PlayerNumber());
-	SetPlayerProperty(1, 1, PROP_INSTANTWEAPONSWITCH);
+	Thing_ChangeTID (PLAYER_TID_START+PlayerNumber (), 0);
+	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
+	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
 	TakeInventory ("ShowKeys", 1);
 	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
 	TakeInventory ("NightvisionOn", 1);
-	switch(GetCVar("FD_NothingOnRespawn"))
-	{
+	StartStuff ();
+	switch (GetCVar ("FD_NothingOnRespawn")) {
 		case 1:
-			RestartInventory();
-			RestartLevelSystem();
+			RestartInventory ();
+			RestartLevelSystem ();
 			break;
 		case 0:
 			break;

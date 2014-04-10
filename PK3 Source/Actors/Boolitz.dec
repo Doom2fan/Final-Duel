@@ -1,7 +1,10 @@
-// by WildWeasel(from ww-terror), edited by Alex_Mercer.
+// Credits: 
+// Decorate: WildWeasel, Alex_Mercer
+// Sprites: WildWeasel
+// Models: Revilution(Decals)
 // Weapons: A_FireCustomMissile(tracerName, frandom(-,horizontalSpread), 1, horizontalOffset, verticalOffset, 0, frandom(-,verticalSpread))
 // Monsters: A_CustomMissile(tracerName, verticalOffset, horizontalOffset, frandom(-,horizontalSpread), 0, frandom(-,verticalSpread))
-ACTOR Tracer : FastProjectile
+Actor Tracer : FastProjectile
 {
 	Alpha 1.0
 	RenderStyle Add
@@ -10,7 +13,7 @@ ACTOR Tracer : FastProjectile
 	Speed 75
 	PROJECTILE
 	+BLOODSPLATTER
-	+NOEXTREMEDEATH
+	+NoExtremeDeath
 	+NODAMAGETHRUST
 	Damage (random(1,3) * 4)
 	Scale .3
@@ -20,7 +23,7 @@ ACTOR Tracer : FastProjectile
 	States
 	{
 	Spawn:
-		WPUF B 1 BRIGHT
+		WPUF B 1 Bright
 		Loop
 	Death:
 	Crash:
@@ -34,21 +37,21 @@ ACTOR Tracer : FastProjectile
 		Stop
 	}
 }
-ACTOR TracerTrail
+Actor TracerTrail
 { 
 	Alpha 1.0
 	RenderStyle Add
 	Speed 0
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+NOTELEPORT
+	+NoBlockmap
+	+NoGravity
+	+NoTeleport
 	+CANNOTPUSH
 	+NODAMAGETHRUST
 	Scale 0.3
 	States
 	{
 	Spawn:
-		WPUF BBB 1 BRIGHT
+		WPUF BBB 1 Bright
 		Stop
 	}
 }
