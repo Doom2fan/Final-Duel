@@ -82,6 +82,8 @@ Actor NashGore_BloodyTwitch : BloodyTwitch replaces BloodyTwitch
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Meat 2 ------------------------------------------------------------------
@@ -91,6 +93,8 @@ Actor NashGore_Meat2 : Meat2 replaces Meat2
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Meat 3 ------------------------------------------------------------------
@@ -100,6 +104,8 @@ Actor NashGore_Meat3 : Meat3 replaces Meat3
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Meat 4 ------------------------------------------------------------------
@@ -109,6 +115,8 @@ Actor NashGore_Meat4 : Meat4 replaces Meat4
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Meat 5 ------------------------------------------------------------------
@@ -118,6 +126,8 @@ Actor NashGore_Meat5 : Meat5 replaces Meat5
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // NonSolid meat -----------------------------------------------------------
@@ -127,6 +137,8 @@ Actor NashGore_NonSolidMeat2 : NashGore_Meat2 replaces NonSolidMeat2
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 Actor NashGore_NonSolidMeat3 : NashGore_Meat3 replaces NonSolidMeat3
@@ -134,6 +146,8 @@ Actor NashGore_NonSolidMeat3 : NashGore_Meat3 replaces NonSolidMeat3
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 Actor NashGore_NonSolidMeat4 : NashGore_Meat4 replaces NonSolidMeat4
@@ -141,6 +155,8 @@ Actor NashGore_NonSolidMeat4 : NashGore_Meat4 replaces NonSolidMeat4
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 Actor NashGore_NonSolidMeat5 : NashGore_Meat5 replaces NonSolidMeat5
@@ -148,6 +164,8 @@ Actor NashGore_NonSolidMeat5 : NashGore_Meat5 replaces NonSolidMeat5
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // NonSolid bloody twitch --------------------------------------------------
@@ -157,6 +175,8 @@ Actor NashGore_NonSolidTwitch : NashGore_BloodyTwitch replaces NonSolidTwitch
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Dead on a stick ---------------------------------------------------------
@@ -166,6 +186,8 @@ Actor NashGore_DeadStick : DeadStick replaces DeadStick
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Still alive on a stick --------------------------------------------------
@@ -175,6 +197,8 @@ Actor NashGore_LiveStick : LiveStick replaces LiveStick
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging with no guts ----------------------------------------------------
@@ -184,6 +208,8 @@ Actor NashGore_HangNoGuts : HangNoGuts replaces HangNoGuts
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging from bottom with no brain ---------------------------------------
@@ -193,6 +219,8 @@ Actor NashGore_HangBNoBrain : HangBNoBrain replaces HangBNoBrain
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging from top, looking down ------------------------------------------
@@ -202,6 +230,8 @@ Actor NashGore_HangTLookingDown : HangTLookingDown replaces HangTLookingDown
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging from top, looking up --------------------------------------------
@@ -211,6 +241,8 @@ Actor NashGore_HangTLookingUp : HangTLookingUp replaces HangTLookingUp
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging from top, skully ------------------------------------------------
@@ -220,6 +252,8 @@ Actor NashGore_HangTSkull : HangTSkull replaces HangTSkull
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
 
 // Hanging from top without a brain ----------------------------------------
@@ -229,4 +263,6 @@ Actor NashGore_HangTNoBrain : HangTNoBrain replaces HangTNoBrain
    mass 999999999
    health -1
    +Shootable
+   +NotAutoaimed
+   +NoTarget
 }
