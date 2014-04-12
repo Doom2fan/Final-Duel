@@ -1,4 +1,8 @@
 // Action keys
+Script "FDTaunting" (void) {
+	PlaySound (0, "*taunt", CHAN_VOICE);
+}
+
 Script "FDKeys" Enter {
 	// Not needed or desired in TitleMaps.
 	If (GameType() == Game_Title_Map) Terminate;

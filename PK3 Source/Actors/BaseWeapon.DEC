@@ -47,7 +47,7 @@ Actor FDWeapon : Weapon
 	Taunt:
 		TNT1 A 0 A_TakeInventory("Taunting",1)
 		TNT1 A 0 A_FireCustomMissile("TauntAlert", 0, 0)
-		TNT1 A 0 A_PlaySound("*taunt", 5)
+		TNT1 A 0 A_PlaySound("*offend", 5)
 		TAUN AABBCCDDDDDDDCCBBAA 1
 		TNT1 A 0 A_Jump(256, "Ready")
 	DeselectDEAD:
