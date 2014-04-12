@@ -74,6 +74,7 @@ Actor TauntAlert : FastProjectile
 	Radius 1
 	Height 1
 	DamageType Taunt
+	+DONTSPLASH
 	+FORCEPAIN
 	States
 	{
