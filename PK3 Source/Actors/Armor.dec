@@ -1,10 +1,7 @@
-//=================================================================================================
-//
 // Max. armor bonus
-//
-//=================================================================================================
-
 Actor MaxArmorBonus : BasicArmorBonus 30069 {
+	//$Category Final Duel-Health and Armour
+	//$Title Max. Armor Bonus
 	Radius 20
 	Height 16
 	Inventory.Pickupmessage "$PICKUP_MAXARMORBONUS"
@@ -23,13 +20,24 @@ Actor MaxArmorBonus : BasicArmorBonus 30069 {
 	}
 }
 
-//=================================================================================================
-//
-// Red Armor
-//
-//=================================================================================================
+// Green Armor
+Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
+	//$Category Final Duel-Health and Armour
+	//$Title Max. health bonus
+	Inventory.PickupSound "Pickup/Armor"
+}
 
+// Blue Armor
+Actor FDBlueArmor : BlueArmor Replaces BlueArmor 30167 {
+	//$Category Final Duel-Health and Armour
+	//$Title Max. health bonus
+	Inventory.PickupSound "Pickup/Armor"
+}
+
+// Red Armor
 Actor FDRedArmor : BasicArmorPickup 30119 {
+	//$Category Final Duel-Health and Armour
+	//$Title Red Armor
 	Radius 20
 	Height 16
 	Armor.SavePercent 70.0
@@ -43,14 +51,4 @@ Actor FDRedArmor : BasicArmorPickup 30119 {
 		ARM3 B 6 Bright
 		Goto Spawn
 	}
-}
-
-// Green Armor
-Actor FDGreenArmor : GreenArmor Replaces GreenArmor {
-	Inventory.PickupSound "Pickup/Armor"
-}
-
-// Blue Armor
-Actor FDBlueArmor : BlueArmor Replaces BlueArmor {
-	Inventory.PickupSound "Pickup/Armor"
 }

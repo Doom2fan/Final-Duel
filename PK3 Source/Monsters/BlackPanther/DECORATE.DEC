@@ -1,5 +1,7 @@
 Actor BlackPanther : HellKnight 30141
 {
+	//$Category Final Duel-Monsters
+	//$Title Black Panther
 	Health 1500
 	Speed 10
 	BloodColor "00 67 67"

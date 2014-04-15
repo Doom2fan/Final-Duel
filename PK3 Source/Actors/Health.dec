@@ -16,8 +16,10 @@ Actor MaxHealth : Health
 //
 //=================================================================================================
 
-Actor MaxHealthBonus : MaxHealth 5090
+Actor MaxHealthBonus : MaxHealth 30163
 {
+	//$Category Final Duel-Health and Armour
+	//$Title Max. Health Bonus
 	Game Doom
 	Game Heretic
 	Game Hexen
@@ -35,8 +37,10 @@ Actor MaxHealthBonus : MaxHealth 5090
 	}
 }
 // Stimpack
-Actor FDStimpack : HealthPickup Replaces Stimpack
+Actor FDStimpack : HealthPickup Replaces Stimpack 30164
 {
+	//$Category Final Duel-Health and Armour
+	//$Title Stimpack
 	Health 10
 	+FLOORCLIP
 	+InvBar
@@ -53,8 +57,10 @@ Actor FDStimpack : HealthPickup Replaces Stimpack
 	}
 }
 // Medikit
-Actor FDMedikit : HealthPickup Replaces Medikit
+Actor FDMedikit : HealthPickup Replaces Medikit 30165
 {
+	//$Category Final Duel-Health and Armour
+	//$Title Medikit
 	Health 25
 	+FLOORCLIP
 	+InvBar

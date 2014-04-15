@@ -3,6 +3,15 @@ Texture SKIN3, 64, 128
 	Patch HELL6_3, 0, 0
 }
 
+Texture SHAWN1, 128, 128
+{
+	Patch W13_1, 64, 56
+	Patch W13_1, 64, 0
+	Patch W13_1, 0, 56
+	Patch CYL1_1, 0, 0
+	Patch CYL1_1, 118, 0
+}
+
 // Water
 Flat FWATER1, 64, 64
 {
