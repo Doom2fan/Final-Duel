@@ -40,7 +40,8 @@ Actor FDArachnotron : Arachnotron replaces Arachnotron 30104
 		Goto See+1
 	Missile:
 		BSPI A 20 Bright A_FaceTarget
-		BSPI G 4 Bright A_BspiAttack
+		TNT1 A 0 A_PlaySound ("PlasmaRifle/fire", CHAN_WEAPON)
+		BSPI G 4 Bright A_CustomMissile ("FDArachnotronPlasma", 20)
 		BSPI H 4 Bright
 		BSPI H 1 Bright A_SpidRefire
 		Goto Missile+1
