@@ -33,7 +33,8 @@ OptionMenu "FDSettings"
 {
 	Title "FINAL DUEL OPTIONS"
 	StaticText "Visual Options"
-	Option "Mod messages on",																	"FD_MsgsOn","OnOff"
+	Option "Voxels",																			"r_drawvoxels", "OnOff"
+	Option "Mod messages on",																	"FD_MsgsOn", "OnOff"
 }
 // Main Menu
 LISTMENU "MainMenu"
