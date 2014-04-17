@@ -1,26 +1,19 @@
 [default enu]
 // Dificulty Settings
-	SKILLC_BABY     			= "Pussy";
-	SKILLN_BABY     			= "Pussy";
+	SKILLZ_BABY     			= "Pussy";
 		SKILLZ_BABYTEXT					= "Damage is halved, ammo is doubled and health items are auto-used.\nUses the Baby spawn filter.";
-	SKILLC_EASY     			= "Wimp";
-	SKILLN_EASY     			= "Wimp";
+	SKILLZ_EASY     			= "Wimp";
 		SKILLZ_EASYTEXT					= "Health items are auto-used.\nUses the Easy spawn filter.";
-	SKILLC_NORMAL  				= "Harsh";
-	SKILLN_NORMAL  				= "Harsh";
+	SKILLZ_NORMAL  				= "Harsh";
 		SKILLZ_NORMALTEXT				= "Uses the Normal spawn filter.";
-	SKILLC_HARD     			= "Fatal";
-	SKILLN_HARD     			= "Fatal";
+	SKILLZ_HARD     			= "Fatal";
 		SKILLZ_HARDTEXT					= "Enemies are slightly more aggressive.\nUses the Hard spawn filter.";
-	SKILLC_HARDSPEED 			= "Metal";
-	SKILLN_HARDSPEED 			= "Metal";
+	SKILLZ_HARDSPEED 			= "Metal";
 		SKILLZ_HARDSPEEDTEXT			= "Enemies are faster and more aggressive.\nUses the Hard spawn filter.";
-	SKILLC_NIGHTMARE 			= "Brutal.";
-	SKILLN_NIGHTMARE 			= "Brutal.";
+	SKILLZ_NIGHTMARE 			= "Brutal";
 		SKILLZ_NIGHTMARETEXT			= "Monsters are faster, are even more aggressive and respawn.\nHealth items are auto-used.\nUses the Nightmare spawn filter.";
-	SKILLC_NEIN   				= "Insanity.";
-	SKILLN_NEIN   				= "Insanity.";
-		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled, ST Armour is replaced by GX Armour, GX Armour is replaced by XS Armour and health items are auto-used.\nMonsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\nUses the Nightmare spawn filter.";
+	SKILLZ_NEIN   				= "Insanity";
+		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled, ST Armour is replaced by GX Armour,\nGX Armour is replaced by XS Armour and health items are auto-used.\nMonsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\nUses the Nightmare spawn filter.";
 // Cheats
 	STSTR_DQDON    				= "You are now immortal";
 	STSTR_DQDOFF   				= "Back with the mortals";
@@ -48,7 +41,6 @@
 		GOTTOME						= "Picked up a Tome of the Unholy.";
 	// Ammo
 		GOTHELLCLIP					= "Picked up a Inferno clip.";
-		GOTHELLCLIPBOX				= "Picked up 5 Inferno clips.";
 		GOTGRENADES					= "Picked up a Grenade Launcher magazine.";
 		GOTSHELLS 					= "Picked up 4 shells.";
 		GOTSHELLBOX					= "Picked up a box of 00 Buckshot.";

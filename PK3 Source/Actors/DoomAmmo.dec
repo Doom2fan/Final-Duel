@@ -3,7 +3,6 @@ Actor HellClip: AMMO 30020
 {
 	//$Category Final Duel-Ammunition
 	Tag "Inferno Clip"
-	Game Doom
 	Scale 0.30
 	Inventory.PickupMessage "$GOTHELLCLIP"
 	Inventory.Amount 1
@@ -19,18 +18,14 @@ Actor HellClip: AMMO 30020
 		Stop
 	}
 }
-Actor HellClipBox : HellClip 30021
+Actor HellClipBox : CustomInventory 30021
 {
 	//$Category Final Duel-Ammunition
 	Tag "5 Inferno Clips"
-	Game Doom
-	scale 0.30
-	Inventory.PickupMessage "$GOTHELLCLIPBOX"
-	Inventory.Amount 5
 	States
 	{
-	Spawn: // Sprites by Mike12, edited by Alex_Mercer
-		SREP B -1
+	Spawn:
+		TNT1 AAAAA 0 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
