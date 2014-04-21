@@ -31,7 +31,7 @@ Actor BioForceGun : FDWeapon 30035
 	States
 	{
 	Ready:
-		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 50)
+		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 75)
 		BFGS EDCBA 1
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
@@ -96,8 +96,7 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("BFG9000/Fly", CHAN_BODY, 1.0, 1)
+		TNT1 A 0 NoDelay A_PlaySound("BFG9000/Fly", CHAN_BODY, 1.0, 1)
 	Spawn2:
 		BFS1 A 2 Bright
 		TNT1 A 0 A_SpawnItemEx("BFGTrail")
@@ -109,7 +108,7 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall
 		TNT1 A 0 A_PlaySound("BFG9000/ChargeExplosion", CHAN_BODY, 1.0, 0, 0.0)
 		TNT1 A 0 A_SetTranslucent(1.0, 0)
 		TNT1 A 0 A_SetScale(1.5)
-		NN02 RRQQPPOONNMMLLKKIIHHGGFFEEDDCCBBAA 1 Bright
+		NN02 ABCDEFGHIKLMNOPQR 2 Bright
 		TNT1 A 0 A_SetTranslucent(1.0, 1)
 		NN02 AAAAA 1 A_FadeOut(0.1999998)
 		TNT1 A 15
@@ -120,7 +119,7 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall
 		TNT1 A 0 A_SetScale(2.0)
 		TNT1 A 0 A_PlaySound("BFG9000/Explode", 5, 1.0, 0, 0.0)
 		TNT1 A 0 A_SpawnItemEx("FDBFGExtra", 0.0, 0.0, 0.0,
-								0.0, 0.0, 0.0, 0.0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION)
+								0.0, 0.0, 0.0, 0.0, SXF_TRANSFERPOINTERS|SXF_NoCheckPosition)
 		BFE1 ABCDEF 3 Bright
 		Stop
 	}
@@ -129,27 +128,26 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall
 Actor FDBFGExtra
 {
 	Monster
-	Health 0
-	+NODAMAGE
+	Health -1
+	Speed 0
+	Mass 0x7fffffff
+	+NoDamage
 	+NoBlockmap
 	+NoGravity
 	+ExtremeDeath
-	+FRIENDLY
+	+LookAllAround
+	+IsMonster
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_RearrangePointers(AAPTR_NULL, AAPTR_TARGET, AAPTR_NULL)
-		TNT1 A 0 A_Chase
-		TNT1 A 0 A_JumpIfPointerNull(AAPTR_TARGET, "NoTarget")
-		TNT1 A 0 A_FaceTarget
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomRailgun(random(1,4) * 8, 0, none, 00FF00, RGF_SILENT|RGF_NOPIERCING|RGF_FULLBright, 0, 2.0, "FDBFGExtraPuff", 0, 0)
-		Stop
-	NoTarget:
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomRailgun(random(1,2) * 6, 0, none, "00 FF 00", RGF_SILENT|RGF_NOPIERCING|RGF_FULLBright|RGF_EXPLICITANGLE, 0, 0, "FDBFGExtraPuff", frandom(-180.0, 180.0), frandom(-90.0, 90.0), 512)
+		TNT1 AAAAAAAAAA 0 A_LookEx
+		TNT1 AAAAAAAAAA 0 A_Chase
+		TNT1 AAAAA 0 A_FaceTarget
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomRailgun(random(1,4) * 8, 0, none, 00FF00, RGF_SILENT|RGF_NOPIERCING|RGF_FULLBright, 1, 2.0, "FDBFGExtraPuff", 0, 0)
 		Stop
 	}
 }
-
 Actor FDBFGExtraPuff
 {
 	DamageType "BFGExtra"
