@@ -4,6 +4,7 @@ SSHK?0: I don't know where this is from or who made this. IIRC I found this in t
 FIP??0 are from Beautiful Doom
 FIR??0?0(1 and 2) are from the KD ZDoom Resource Pack PK3 file.
 FIR3?0?0 is a recolor of FIR??0?0 by Alex_Mercer
+SPRKA0: I don't know who made this. I got it from Insanity's Requiem PK3 file.
 
 Flares:
 	FLR1-3?0 are from the KD ZDoom Resource Pack PK3 file.
