@@ -57,7 +57,7 @@ Actor FDFatso : Fatso 30107
 		FATT L 6 A_Scream
 		MBUS M 6 A_NoBlocking
 		MBUS NOPQRS 6
-		MBUS T -1 A_BossDeath    
+		MBUS T -1 A_KillMaster    
 	    Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",150)
@@ -71,7 +71,7 @@ Actor FDFatso : Fatso 30107
 		MBUS T 0
 		MBUS TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("ParticleFire_Red",random(-16,16),random(-16,16),random(24,56),0,0,1)
 		MBUS TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
-		MBUS T -1 A_BossDeath
+		MBUS T -1 A_KillMaster
 		stop
 	Death.Plasma:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",150)
@@ -84,16 +84,17 @@ Actor FDFatso : Fatso 30107
 		MBUS NOPQRS 6 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
 		MBUS T 0
 		MBUS TTTTTTTTTTTTTTTTTTTTT  5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(24,56),0,0,1)
-		MBUS T -1 A_BossDeath
+		MBUS T -1 A_KillMaster
 		stop
-	 Raise:
+	Raise:
 		TNT1 A 0 Thing_SetTranslation(0,10)
+		TNT1 A 0 A_RaiseMaster
 		MBUS SRQPONM 5
 		FATT LK 5
 		Goto See
 	Crush:
 		TNT1 A 1 A_SpawnItem("NashGore_CrushedMedium",0,0,0,0)
-		stop
+		Stop
 	}
 }
 
