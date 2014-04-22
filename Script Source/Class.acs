@@ -71,14 +71,8 @@ script "FDSprintSystem" ENTER {
 					DisableWeapon ("SprintWeapon");
 					restart;
 				}
-				if (!GetUserCvar (0, "cl_run")) {
-					if (keyDown (BT_SPEED)) PlayerSpeed (130);
-					else if (!keyDown (BT_SPEED)) PlayerSpeed (150);
-				}
-				else if (GetUserCvar (0, "cl_run")) {
-					if (keyDown (BT_SPEED)) PlayerSpeed (150);
-					else if (!keyDown (BT_SPEED)) PlayerSpeed (130);
-				}
+				if ((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)) SetActorProperty (0, APROP_Speed, 1.6);
+				else SetActorProperty (0, APROP_Speed, 2.6);
 				if (tics == 5) TakeInventory ("FDStamina", 5);
 			}
 		}
