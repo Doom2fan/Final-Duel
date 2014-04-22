@@ -9,7 +9,8 @@ skill baby
 	Name = "$SKILLZ_BABY"
 	PicName = "SKILL1"
 	MustConfirm = "$SKILLZ_BABYTEXT"
-	Key = "p"
+	ACSReturn = 0
+	Key = "H"
 }
 
 skill easy
@@ -20,7 +21,8 @@ skill easy
 	Name = "$SKILLZ_EASY"
 	PicName = "SKILL2"
 	MustConfirm = "$SKILLZ_EASYTEXT"
-	Key = "w"
+	ACSReturn = 1
+	Key = "S"
 }
 
 skill normal
@@ -30,7 +32,8 @@ skill normal
 	Name = "$SKILLZ_NORMAL"
 	PicName = "SKILL3"
 	MustConfirm = "$SKILLZ_NORMALTEXT"
-	Key = "h"
+	ACSReturn = 2
+	Key = "P"
 }
 
 skill hard
@@ -40,7 +43,8 @@ skill hard
 	PicName = "SKILL4"
 	Aggressiveness = 0.1
 	MustConfirm = "$SKILLZ_HARDTEXT"
-	Key = "f"
+	ACSReturn = 3
+	Key = "F"
 }
 skill veryhard
 {
@@ -50,7 +54,8 @@ skill veryhard
 	PicName = "SKILL5"
 	Aggressiveness = 0.2
 	MustConfirm = "$SKILLZ_HARDSPEEDTEXT"
-	Key = "m"
+	ACSReturn = 4
+	Key = "L"
 }
 skill nnightmare
 {
@@ -63,7 +68,8 @@ skill nnightmare
 	Name = "$SKILLZ_NIGHTMARE"
 	Aggressiveness = 0.3
 	MustConfirm = "$SKILLZ_NIGHTMARETEXT"
-	Key = "b"
+	ACSReturn = 5
+	Key = "B"
 }
 skill brutal
 {
@@ -78,7 +84,8 @@ skill brutal
 	PicName = "SKILL7"
 	FastMonsters
 	MustConfirm = "$SKILLZ_NEINTEXT"
-	Key = "u"
+	ACSReturn = 6
+	Key = "I"
 	ReplaceActor = "GreenArmor","FDBlueArmor"
 	ReplaceActor = "BlueArmor","FDRedArmor"
 }
