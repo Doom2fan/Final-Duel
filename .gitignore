@@ -1,4 +1,6 @@
 thumbs.db
+*.backup*
+*.bak*
 *.wad.backup*
 *.wad.bak*
 *.tmp*
