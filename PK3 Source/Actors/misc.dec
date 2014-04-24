@@ -243,6 +243,93 @@ Actor YellowKeyCard : CustomInventory replaces YellowCard {
 		Stop
 	}
 }
+
+Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
+	Health 4
+	Radius 3
+	Height 6
+	Speed 20
+	Scale .5
+	Mass 0
+	Damage (random (1, 5))
+	ReactionTime 3
+	Projectile
+	+DoomBounce
+	+DONTSPLASH
+	+NODAMAGETHRUST
+	States {
+	Spawn:
+		TNT1 A 0 A_Jump(256, "SpawnA", "SpawnB", "SpawnC", "SpawnD")
+		Wait
+	SpawnA:
+		FRG2 A 1
+		Goto Looper
+	SpawnB:
+		FRG2 B 1
+		Goto Looper
+	SpawnC:
+		FRG2 C 1
+		Goto Looper
+	SpawnD:
+		FRG2 D 1
+		Goto Looper
+	Looper:
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
+		"####" "#" 0 BRIGHT A_Explode(2,1,1)
+		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 A_CountDown
+		Loop 
+	Water:
+	Death:
+		"####" "#" 1 A_FadeOut(0.03)
+		Wait
+	}
+}
 // By Alex_Mercer "Aka" Chronos Ouroboros
 // Bullet puff -------------------------------------------------------------
 Actor PressingZoom : Boolean { }
