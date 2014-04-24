@@ -326,7 +326,7 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 		Loop 
 	Water:
 	Death:
-		"####" "#" 1 A_FadeOut(0.03)
+		"####" "#" 1 A_FadeOut(0.3)
 		Wait
 	}
 }
