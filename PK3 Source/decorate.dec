@@ -88,7 +88,6 @@
 		#include "Weapons/BFG9000.DEC" 								// Credits on the file
 		
 		// Melee Weapons (Credits in the files)
-			#include "Weapons/Melee/Kukri.DEC"
 			#include "Weapons/Melee/Sword.DEC"
 			#include "Weapons/Melee/Melee.DEC"
 

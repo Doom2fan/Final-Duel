@@ -5,10 +5,6 @@
 	weapons/kick/strong3			KICKSTR3
 	weapons/kick/swing				KICKSW // from Diaz:Last Hours of Purity
 	weapons/kick/hitwall			KICKWAL // from Diaz:Last Hours of Purity
-	// Knife
-	Melee/Knife/HitThing			DSKNIFE
-	Melee/Knife/HitWall				DSKNIFE3	
-	Melee/Knife/Miss				DSKNIFE2
 	// Sword
 	Melee/Sword/HitThing			SWRDHIT // by 
 	Melee/Sword/HitWall				SWRDHITW // from the Sound Library

@@ -16,7 +16,6 @@ Actor MarineClass : BasePlayerClass
 	Player.StartItem Rifle
 	Player.StartItem Enforcer
 	Player.StartItem MeleeAttack
-	Player.StartItem Kukri
 	Player.StartItem Clip2, 6
 	Player.StartItem PsiEnergy, 100
 	Player.StartItem FDNightvision
@@ -33,7 +32,7 @@ Actor MarineClass : BasePlayerClass
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
   	Player.WeaponSlot 7, BioForceGun, BFG10K
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
-	Player.WeaponSlot 9, MancubusArm, Magic, Kukri
+	Player.WeaponSlot 9, MancubusArm, Magic
 	States
 	{
 	Spawn:

@@ -1,29 +1,3 @@
-// Knife Select/Deselect
-Sprite KNFSA0, 320, 200
-{
-	Patch KNF1A0, 38, 50
-}
-
-Sprite KNFSB0, 320, 200
-{
-	Patch KNF1A0, 62, 74
-}
-
-Sprite KNFSC0, 320, 200
-{
-	Patch KNF1A0, 86, 98
-}
-
-Sprite KNFSD0, 320, 200
-{
-	Patch KNF1A0, 110, 122
-}
-
-Sprite KNFSE0, 320, 200
-{
-	Patch KNF1A0, 134, 146
-}
-
 // Sword
 Sprite SWRDA0, 320, 200
 {

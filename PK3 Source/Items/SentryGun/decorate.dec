@@ -51,7 +51,7 @@ Actor SentryBoom
 	States
 	{
 	Spawn:
-		XPL1 ABCDEF 3 Bright
+		SENT DEFGHI 3 Bright
 		stop
 	}
 }

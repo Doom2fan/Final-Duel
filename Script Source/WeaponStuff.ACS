@@ -1,6 +1,6 @@
-#define FD_WEAPONMAX 27
-str FD_WeaponName[FD_WEAPONMAX] = { "MeleeAttack", "Sword", "FDChainsaw", "Enforcer", "Beretta", "Magnum", "Rifle", "FDShotgun", "PumpActionShotgun", "DoomSSG", "QuadShotgun", "AK47", "ActionMachineGun", "FDMinigun", "FDRocketLauncher", "Annihilator", "FDGrenadeLauncher", "FDPlasmaRifle", "SonicRailgun", "BioForceGun", "BFG10K", "SoulReaper", "SniperRifle", "FDCrossbow", "MancubusArm", "Magic", "Kukri" };
-int FD_WeaponNumber[FD_WEAPONMAX] = { 1          , 2      , 3           , 4         , 5        , 6       , 7      , 8          , 9                  , 10       , 11           , 12    , 13                , 14         , 15                , 16           , 17                 , 18             , 19            , 20           , 21      , 22          , 23           , 24          , 25           , 26     , 27 };
+#define FD_WEAPONMAX 26
+str FD_WeaponName[FD_WEAPONMAX] = { "MeleeAttack", "Sword", "FDChainsaw", "Enforcer", "Beretta", "Magnum", "Rifle", "FDShotgun", "PumpActionShotgun", "DoomSSG", "QuadShotgun", "AK47", "ActionMachineGun", "FDMinigun", "FDRocketLauncher", "Annihilator", "FDGrenadeLauncher", "FDPlasmaRifle", "SonicRailgun", "BioForceGun", "BFG10K", "SoulReaper", "SniperRifle", "FDCrossbow", "MancubusArm", "Magic" };
+int FD_WeaponNumber[FD_WEAPONMAX] = { 1          , 2      , 3           , 4         , 5        , 6       , 7      , 8          , 9                  , 10       , 11           , 12    , 13                , 14         , 15                , 16           , 17                 , 18             , 19            , 20           , 21      , 22          , 23           , 24          , 25           , 26 };
 int FD_LastWeapon[MAXPLAYERS];
 
 // Functions

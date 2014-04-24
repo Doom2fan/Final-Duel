@@ -20,7 +20,6 @@ Actor OmegaClass : BasePlayerClass
 	Player.StartItem Rifle
 	Player.StartItem Beretta
 	Player.StartItem MeleeAttack
-	Player.StartItem Kukri
 	Player.StartItem Clip2, 5
 	Player.StartItem PsiEnergy, 100
 	Player.StartItem FDNightvision, 1
@@ -38,7 +37,7 @@ Actor OmegaClass : BasePlayerClass
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
   	Player.WeaponSlot 7, BioForceGun, BFG10K
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
-	Player.WeaponSlot 9, MancubusArm, Magic, Kukri
+	Player.WeaponSlot 9, MancubusArm, Magic
 	States
 	{
 	Spawn:
