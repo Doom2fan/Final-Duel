@@ -10,6 +10,8 @@ Actor Cybruiser : BaronOfHell 30117
 	PainChance 20 
 	Monster
 	MeleeDamage 10
+	DamageFactor RifledSlug, 1.5
+	DamageFactor Annihilator, 1.5
 	Obituary "$OB_CYBRUISER"
 	HitObituary "$OB_CYBRUISER_MELEE"
 	+FloorClip

@@ -8,6 +8,7 @@ Actor TeslaCoil 30128
   height 56
   mass 10000
   speed 0
+	DamageFactor Annihilator, 1.5
   MONSTER
   +FLOORCLIP
   +NoBlood

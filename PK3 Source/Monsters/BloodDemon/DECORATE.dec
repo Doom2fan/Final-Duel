@@ -15,6 +15,7 @@ Actor FDBloodDemon : FDDemon 30113
 	Radius 30
 	Height 56
 	Mass 400
+	DamageFactor RifledSlug, 1.5
 	Monster
 	+FLOORCLIP
 	+FASTER

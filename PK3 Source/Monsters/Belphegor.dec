@@ -16,6 +16,7 @@ Actor FDBelphegor 30132
 	PainChance 25
 	Monster
 	+FLOORCLIP
+	DamageFactor RifledSlug, 1.5
 	Species "Hell Noble"
 	SeeSound "baron/sight"
 	PainSound "baron/pain"

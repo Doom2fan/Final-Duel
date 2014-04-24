@@ -10,6 +10,7 @@ Actor Maephisto 30124
 	Speed 10
 	Scale 0.8
 	PainChance 20
+	DamageFactor Annihilator, 1.5
 	SeeSound "Maephisto/sight"
 	PainSound "Maephisto/pain"
 	DeathSound "Maephisto/death"

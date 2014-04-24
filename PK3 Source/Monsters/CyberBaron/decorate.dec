@@ -13,6 +13,8 @@ Actor Cyberbaron : Baronofhell 30116
 	Mass 1000
 	Speed 8
 	PainChance 40
+	DamageFactor RifledSlug, 1.5
+	DamageFactor Annihilator, 1.5
 	Seesound "cbaron/sight"
 	PainSound "cbaron/pain"
 	DeathSound "cbaron/death"

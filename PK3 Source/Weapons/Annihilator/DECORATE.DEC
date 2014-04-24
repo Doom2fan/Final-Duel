@@ -107,14 +107,14 @@ Actor AnnihilatorMissile
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound("Annihilator/Fly", CHAN_BODY, 1.0, 1)
 	Spawn2:
-		GFLR A 1 Bright A_SpawnItemEx("AnnihilatorMissileTrail",-5,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-		GFLR A 1 Bright A_SpawnItemEx("AnnihilatorMissileTrail",-10,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
-		GFLR A 1 Bright A_SpawnItemEx("AnnihilatorMissileTrail",-15,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
+		GFLR A 1 Bright Light(FDBFGBALL) A_SpawnItemEx("AnnihilatorMissileTrail",-5,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
+		GFLR A 1 Bright Light(FDBFGBALL) A_SpawnItemEx("AnnihilatorMissileTrail",-10,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
+		GFLR A 1 Bright Light(FDBFGBALL) A_SpawnItemEx("AnnihilatorMissileTrail",-15,0,0,0,0,0,0,SXF_CLIENTSIDE,0)
 		Loop
 	Death:
 		TNT1 A 0 A_SetScale(0.5)
 		TNT1 A 0 A_Explode
-		ENR1 ABCDEF 2 Bright
+		ENR1 ABCDEF 2 Bright Light(FDBFGBALL)
 		Stop
 	}
 }

@@ -9,6 +9,7 @@ Actor ArchonOfHell : BaronOfHell 30112 {
 	PainChance 20 
 	Monster
 	MeleeDamage 10
+	DamageFactor RifledSlug, 1.5
 	Obituary "$OBAOH"
 	HitObituary "$OBAOHMELEE"
 	BloodColor "20 60 20"
