@@ -46,8 +46,8 @@
 		GOTSHELLBOX					= "Picked up a box of 00 Buckshot.";
 		GOTMGUNAMMO					= "Picked up a Minigun magazine";
 		GOTMAGNUMAMMO				= "Picked up a Magnum speedloader";
-		GOTSLUGS					= "Picked up 4 rifled slugs";
-		GOTSLUGSBOX					= "Picked up a box of rifled slugs";
+		GOTSLUGS					= "Picked up 4 explosive slugs";
+		GOTSLUGSBOX					= "Picked up a box of explosive slugs";
 		GOTXBOWBOLT					= "Picked up a crossbow bolt";
 		GOTXBOWBOLTS				= "Picked up a quiver of crossbow bolts";
 
@@ -99,6 +99,7 @@
 	OB_KILLEDSELF 				= "%o receives a Darwin Award.";
 	OB_DEFAULT					= "%o was eaten by a grue.";
 	OB_VOODOO 					= "%o killed his doppelganger without considering the consequences.";
+	OB_ROCKETSELF				= "%o rode his own rocket";
 
 // Player killed by Monster
 	// Archon Of Hell
@@ -145,14 +146,12 @@
 	// Beretta
 		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
 	// BFG 10K
-		OB_BFG10K        		= "%o is now plasmic pulsed, thanks to %k's Plasmic Pulse Gun MK II";
+		OB_BFG10K        		= "%o was deep fried by %k's Plasmic Pulse Gun MK II";
 	// Soul Reaper
 		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
 	// Mancubus Flamethrower
 		OBMANCUBUSARM   		= "%o was killed by %k";
 	// Melee
-		// Kukri
-			OBKUKRI			  		= "%k slashed %o to death with his Kukri";
 		// Sword
 			OBSWORD					= "%k cut %o in half with his sword";
 		// Melee
@@ -164,7 +163,7 @@
 	// Chainsaw
 		OBSAW            		= "%k \cG> \cKChainsaw \cG> \cL%o";
 	// Enforcer
-		OBENFORCER				= "%k \cG> \cKS18 Enforcer \cG> \cL%o";
+		OBENFORCER				= "%o was forced to die by %k's Enforcer";
 	// Sonic Railgun
 		OBSONICRAIL				= "%k \cG> \cKSonic Railgun \cG> \cL%o";
 	// Tactical Shotgun
@@ -172,7 +171,7 @@
 	// M9A10 Rifle
 		OBRIFLE  				= "%k \cG> \cKM9A10 Rifle \cG> \cL%o";
 	// Rocket Launcher
-		OB_MPROCKET				= "%k \cG> \cKRocket Launcher \cG> \cL%o";
+		OB_MPROCKET				= "%o rode %k's rocket";
 	// Plasma Rifle
 		OBPLASMARIFLE			= "%k \cG> \cKPlasma Rifle \cG> \cL%o";
 	// Double-Barrel Shotgun
@@ -192,7 +191,7 @@
 	// Annihilator
 		OBANNIHILATOR			= "%o was annihilated by %k";
 	// BFG 9000
-		OBBFG9000				= "%o was forced to die by %k's Bio Force Gun MK XVI";
+		OBBFG9000				= "%o was erased from existance by %k's Bio Force Gun MK XVI";
 	// Magnum Sniper Rifle
 		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
 	// Crossbow
