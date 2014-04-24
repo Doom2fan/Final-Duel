@@ -86,8 +86,9 @@ ListMenu "HelpTopicsMenu"
 	Position 37, 30
 	StaticText 0, 0, "Help"
 	Font "Smallfont", "Untranslated"
-	TextItem "1. Help page 1.","1","Help1"
-	TextItem "2. Credits.","2","Credits"
+	TextItem "1. Basic Stuff.","1","Help1"
+	TextItem "2. Damage.","2","HelpDamage"
+	TextItem "3. Credits.","3","Credits"
 }
 
 ListMenu "Help1"
@@ -100,6 +101,17 @@ ListMenu "Help1"
 	StaticText 4,45, "So keep those itchy reload fingers at bay"
 	StaticText 4,65, "2) This mod has custom keys,but none are bound when first running this mod,"
 	StaticText 4,75, "you must set them yourself"
+}
+
+ListMenu "HelpDamage"
+{
+	Font "Dbigfont", "Untranslated"
+	Position 37, 30
+	StaticText 0, 0, "Damage"
+	Font "Smallfont", "Untranslated"
+	StaticText 4,35, "Cybernetic/Robotic enemies take higher damage from the Annihilator."
+	StaticText 4,45, "Hell Nobles and Bull Demons take higher damage from Explosive Slugs."
+	StaticText 4,55, "Rockets and other explosives make damaging shrapnel on explosion"
 }
 
 // Credits
