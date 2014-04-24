@@ -5,6 +5,7 @@ FIP??0 are from Beautiful Doom
 FIR??0?0(1 and 2) are from the KD ZDoom Resource Pack PK3 file.
 FIR3?0?0 is a recolor of FIR??0?0 by Alex_Mercer
 SPRKA0: I don't know who made this. I got it from Insanity's Requiem PK3 file.
+FRG2?0 is from ww-stranger and was made by 3D Realms
 
 Flares:
 	FLR1-3?0 are from the KD ZDoom Resource Pack PK3 file.
@@ -15,3 +16,6 @@ Flares:
 
 Nein:
 	NN01?0 was ripped by Neoworm.
+
+Explosions:
+	XPL1?0 and XPL2?0 were made by torridGristle
