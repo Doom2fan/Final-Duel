@@ -1,8 +1,8 @@
 // Chronos                                                                              // by Alex_Mercer
     // Damage
     $playeralias       chronos male *death            	Chronos/Death
-    $playersound       chronos male *xdeath           	CDIEHI
-    $playersound       chronos male *crazydeath       	CDIEHI
+    $playersound       chronos male *xdeath           	Chronos/Death
+    $playersound       chronos male *crazydeath       	Chronos/Death
     $playersound       chronos male *gibbed          	DSSLOP
     $playeralias       chronos male *pain100          	Chronos/Pain
     $playersounddup    chronos male *pain75           	*pain100
@@ -14,7 +14,6 @@
     $playersound       chronos male *land             	PLAND
     $playersound       chronos male *usefail          	NOWAY                             // from ww-terror
     $playersound       chronos male *regenerate       	REGEN
-	$playersound       chronos male *reload			  	CLOAD
 	$playeralias       chronos male *offend			  	Chronos/Offend
 	$playeralias       chronos male *taunt			  	Chronos/Taunt
     $random	Chronos/Offend { Chronos/Offend1 Chronos/Offend2 Chronos/Offend3 }
@@ -38,7 +37,7 @@
 	
 // Nero
     // Damage
-    $playersound       nero male *death               	NDEATH
+    $playersound       nero male *death               	Nero/Death
     $playersound       nero male *xdeath              	NDIEHI
     $playersound       nero male *crazydeath          	NDIEHI
     $playersound       nero male *gibbed              	DSSLOP
@@ -52,7 +51,6 @@
     $playersound       nero male *land                	PLAND
     $playersound       nero male *usefail             	NOWAY                             // from ww-terror
 	$playersound       nero male *regenerate          	REGEN
-	$playersound       nero male *reload			  	NLOAD
 	$playeralias       nero male *offend			  	Nero/Offend
 	$playeralias       nero male *taunt				  	Nero/Taunt
     $random Nero/Offend { Nero/Offend1 }
