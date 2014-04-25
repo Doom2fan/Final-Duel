@@ -17,7 +17,7 @@
 // Cheats
 	STSTR_DQDON    				= "You are now immortal";
 	STSTR_DQDOFF   				= "Back with the mortals";
-	STSTR_KFAADDED 				= "Suddenly a bunch of guns, ammo, keys and armor fall from the sky.";
+	STSTR_KFAADDED 				= "It's raining weapons, ammunition, keys and armor!";
 	STSTR_FAADDED  				= "Need ammo?";
 	STSTR_NCON     				= "Sie sind jetzt ein geist";
 	STSTR_NCOFF    				= "After a while you start to miss being able to touch things.";
@@ -61,10 +61,10 @@
 		GOTMAGNUM				= "You got the .357 Magnum. (Slot 2)";
 
 	// Slot 3
-		GOTDOOMSSG				= "You got the Double-Barrel Shotgun. (Slot 3)";
-		GOTQUADSHOTGUN			= "You got the Quad-Barrel Shotgun. (Slot 3)";
 		GOTSHOTTY				= "You got the Shotgun. (Slot 3)";
 		GOTPAS					= "You got the Tactical Shotgun. (Slot 3)";
+		GOTDOOMSSG				= "You got the Double-Barrel Shotgun. (Slot 3)";
+		GOTQUADSHOTGUN			= "You got the Quad-Barrel Shotgun. (Slot 3)";
 
 	// Slot 4
 		GOTACTIONMACHINEGUN    	= "You got the M9A15 Carbine. (Slot 4)";
@@ -73,8 +73,8 @@
 
 	// Slot 5
 		GOTLAUNCHER            	= "You got the Rocket Launcher. (Slot 5)";
-		GOTANNIHILATOR			= "You got the Annihilator MK II. (Slot 5)";
 		GOTGLAUNCHER           	= "You got the GT Grenade Launcher. (Slot 5)";
+		GOTANNIHILATOR			= "You got the Annihilator MK II. (Slot 5)";
 
 	// Slot 6
 		GOTPLASMA              	= "You got the Plasma Rifle. (Slot 6)";
@@ -86,8 +86,8 @@
 
 	// Slot 8
 		PICKUP_SOULREAPER      	= "You got the Soul Reaper. (Slot 8)";
-		GOTSNIPERRIFLE			= "You got the Magnum Sniper Rifle. (Slot 8)";
 		GOTCROSSBOW				= "You got the Crossbow. (Slot 8)";
+		GOTSNIPERRIFLE			= "You got the Magnum Sniper Rifle. (Slot 8)";
 
 	// Slot 9
 		GOTMANCUBUSARM			= "You got the Mancubus Flamethrower. (Slot 9)";
@@ -143,6 +143,8 @@
 
 
 // PvP
+	// Misc
+		OB_SHRAPNEL					= "%o was hit by a piece of shrapnel"
 	// Beretta
 		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
 	// BFG 10K
