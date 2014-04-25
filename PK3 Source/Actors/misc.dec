@@ -257,6 +257,8 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 	+DoomBounce
 	+DONTSPLASH
 	+NODAMAGETHRUST
+	Obituary "$OB_SHRAPNEL"
+	SelfObituary "$OB_SHRAPNEL"
 	States {
 	Spawn:
 		TNT1 A 0 A_Jump(256, "SpawnA", "SpawnB", "SpawnC", "SpawnD")
