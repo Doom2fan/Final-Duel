@@ -1,4 +1,3 @@
-
 //Dynamic lights
 
 FlickerLight2 ChaingunMajorAttack

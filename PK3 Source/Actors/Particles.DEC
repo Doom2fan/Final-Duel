@@ -1,13 +1,9 @@
 // From Brutal Doom
-Actor BluePlasmaParticleSpawner
-{
+Actor BluePlasmaParticleSpawner {
 	RenderStyle Add
 	Alpha 0.95
 	Scale 1.1
-	+NoClip
-	+NoBlockMap
-	+NoGravity
-	+Missile
+	+NoClip +NoBlockMap +NoGravity +Missile
 	+ForceXYBillboard
 	States {
 	Spawn:
@@ -19,16 +15,9 @@ Actor BluePlasmaParticleSpawner
 	}
 }
 Actor PlasmaSmoke {
-    +NoBlockmap
-    +NoTeleport
-    +DontSplash
-	+Missile
-	+ForceXYBillboard
-    +ClientsideOnly
-    +NoInteraction
-	+NoGravity
-	+DoomBounce
-	+ThruActors
+    +NoBlockmap +NoTeleport +DontSplash +Missile
+	+ForceXYBillboard +ClientsideOnly +NoInteraction +NoGravity
+	+DoomBounce +ThruActors
 	BounceFactor 0.5
 	Radius 0
 	Height 0
@@ -57,11 +46,7 @@ Actor BluePlasmaParticle {
 	Radius 0
 	Mass 0
 	+Missile
-	+NoBlockMap
-	-NoGravity
-	//+LowGravity
-	+DontSplash
-	+DoomBounce
+	+NoBlockMap -NoGravity +DontSplash +DoomBounce
 	+ForceXYBillboard
 	BounceFactor 0.2
 	Gravity 0.8

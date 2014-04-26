@@ -4,29 +4,21 @@
 Actor CasingSpawnerBase {
 	Speed 20
 	Projectile
-	+NoClip
-	+ClientsideOnly
+	+NoClip +ClientsideOnly
 }
+
 Actor CasingBase {
 	Speed 6
-	+DoomBounce
-	-NoGravity
-	+WindThrust
-	+ClientsideOnly
-	+MoveWithSector
-	+Missile
-	+NoBlockmap
-	-DropOff
-	+NoTeleport
-	+ForceXYBillboard
-	+NotDMatch
-	+Ghost
+	+DoomBounce -NoGravity +WindThrust +ClientsideOnly
+	+MoveWithSector +Missile +NoBlockmap -DropOff
+	+NoTeleport +ForceXYBillboard +NotDMatch +Ghost
 }
+
 // Shotgun Casing
 Actor ShellCasingSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random(-80, -100), 2, random(-40, -60))
+		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random (-80, -100), 2, random (-40, -60))
 		Stop
 	}
 } 
@@ -34,7 +26,7 @@ Actor ShellCasingSpawn : CasingSpawnerBase {
 Actor ShellCasingSpawn2 : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random(80, 100), 2, random(-40, -60))
+		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random (80, 100), 2, random (-40, -60))
 		Stop
 	}
 } 
@@ -42,7 +34,7 @@ Actor ShellCasingSpawn2 : CasingSpawnerBase {
 Actor SSGCasingSpawner : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random(80, 100), 2, random(50, 70))
+		TNT1 A 0 NoDelay A_CustomMissile ("ShotgunCasing", 0, 0, random (80, 100), 2, random (50, 70))
 		Stop
 	}
 }
@@ -92,17 +84,19 @@ Actor ShotgunCasing : CasingBase {
 Actor 9mmCasingSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("9mmCasing", -5, 0, random(-80, -100), 2, random(45, 80))
+		TNT1 A 0 NoDelay A_CustomMissile ("9mmCasing", -5, 0, random (-80, -100), 2, random (45, 80))
 		Stop
 	}
 }
+
 Actor 9mmCasingSpawn2 : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("9mmCasing", -5, 0, random(80, 100), 2, random(45, 80))
+		TNT1 A 0 NoDelay A_CustomMissile ("9mmCasing", -5, 0, random (80, 100), 2, random (45, 80))
 		Stop
 	}
 }
+
 Actor 9mmCasing : CasingBase {
 	Height 2
 	Radius 2
@@ -137,7 +131,7 @@ Actor 9mmCasing : CasingBase {
 Actor RifleCasingSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("RifleCasing", -5, 0, random(-80, -100), 2, random(45, 80))
+		TNT1 A 0 NoDelay A_CustomMissile ("RifleCasing", -5, 0, random (-80, -100), 2, random (45, 80))
 		Stop
 	}
 }
@@ -182,7 +176,7 @@ Actor RifleCasing : CasingBase {
 Actor DemonicCasingSpawner : CasingSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("DemonicCasing", -5, 0,random (-80, -100), 2, random(45, 80))
+		TNT1 A 0 NoDelay A_CustomMissile ("DemonicCasing", -5, 0,random (-80, -100), 2, random (45, 80))
 		Stop
 	}
 }
@@ -233,6 +227,7 @@ Actor EmptyClipSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptyClip : CasingBase {
 	Height 2
 	Radius 2
@@ -261,6 +256,7 @@ Actor EmptyClip : CasingBase {
 		Loop
 	}
 }
+
 Actor PlasmaCaseSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
@@ -268,6 +264,7 @@ Actor PlasmaCaseSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptyCell : CasingBase {
 	Height 2
 	Radius 2
@@ -296,6 +293,7 @@ Actor EmptyCell : CasingBase {
 		Loop
 	}
 }
+
 Actor GrenadeMagSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
@@ -303,6 +301,7 @@ Actor GrenadeMagSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptyGrenadeMag : CasingBase {
 	Height 2
 	Radius 2
@@ -331,6 +330,7 @@ Actor EmptyGrenadeMag : CasingBase {
 		Loop
 	}
 }
+
 Actor InfernoClipSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
@@ -338,6 +338,7 @@ Actor InfernoClipSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptyInfernoClip : CasingBase {
 	Height 2
 	Radius 2
@@ -367,6 +368,7 @@ Actor EmptyInfernoClip : CasingBase {
 		Loop
 	}
 }
+
 Actor MinigunAmmoSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
@@ -374,6 +376,7 @@ Actor MinigunAmmoSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptyMinigunAmmo : CasingBase {
 	Height 2
 	Radius 2
@@ -402,6 +405,7 @@ Actor EmptyMinigunAmmo : CasingBase {
 		Loop
 	}
 }
+
 Actor SniperRifleMagSpawn : CasingSpawnerBase {
 	States {
 	Spawn:
@@ -409,6 +413,7 @@ Actor SniperRifleMagSpawn : CasingSpawnerBase {
 		Stop
 	}
 }
+
 Actor EmptySniperRifleMag : CasingBase {
 	Height 2
 	Radius 2

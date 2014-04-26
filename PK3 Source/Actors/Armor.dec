@@ -11,8 +11,7 @@ Actor MaxArmorBonus : BasicArmorBonus 30069 {
 	Armor.MaxSaveAmount 200
 	Armor.MaxBonus 1
 	Armor.MaxBonusMax 100
-	+CountItem
-	+Inventory.AlwaysPickup
+	+CountItem +Inventory.AlwaysPickup
 	States {
 	Spawn:
 		BON4 ABCDCB 6

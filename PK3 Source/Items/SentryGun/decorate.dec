@@ -1,22 +1,16 @@
-Actor SentryGun
-{
+Actor SentryGun {
 	Obituary "%o was ventilated by an auto-sentry."
-	health 250
-	radius 20
-	height 56
-	mass 100000
-	speed 0
+	Health 250
+	Radius 20
+	Height 56
+	Mass 100000
+	Speed 0
 	MaxTargetRange 2048
-	attacksound "sentry/attack"
-	MONSTER
-	+FLOORCLIP
-	+FRIENDLY
-	+NoBlood
-	+LOOKALLAROUND
-	+NEVERRESPAWN
-	+STANDSTILL
-	States
-	{
+	AttackSound "sentry/attack"
+	Monster
+	+FloorClip +Friendly +NoBlood +LookAllAround
+	+NeverRespawn +StandStill
+	States {
 	Spawn:
 		SENT AAAAAAAAAAAAAAAA 4 A_Look
 		SENT A 0 A_PlaySound ("Sentry/Active")
@@ -41,13 +35,11 @@ Actor SentryGun
 	}
 }
 
-Actor SentryBoom
-{
-	radius 2
-	height 2
+Actor SentryBoom {
+	Radius 2
+	Height 2
 	RenderStyle Add
-	+NoInteraction
-	+CLIENTSIDEONLY
+	+NoInteraction +ClientsideOnly
 	States
 	{
 	Spawn:
@@ -56,18 +48,15 @@ Actor SentryBoom
 	}
 }
 
-Actor SentryBox : CustomInventory 30036
-{
+Actor SentryBox : CustomInventory 30036 {
 	//$Category Final Duel-Items
 	Tag "Sentry Gun"
-	+CountItem
-	+Inventory.InvBar
+	+CountItem +Inventory.InvBar
 	Inventory.MaxAmount 3
 	Inventory.InterHubAmount 3
 	Inventory.Icon "SENBB0"
 	Inventory.PickupMessage "You picked up a sentry gun!"
-	States
-	{
+	States {
 	Spawn:
 		SENB A -1
 		Stop

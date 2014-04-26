@@ -1,6 +1,4 @@
-// Inferno Clip
-Actor HellClip: AMMO 30020
-{
+Actor HellClip: AMMO 30020 {
 	//$Category Final Duel-Ammunition
 	Tag "Inferno Clip"
 	Scale 0.30
@@ -11,53 +9,47 @@ Actor HellClip: AMMO 30020
 	Ammo.BackpackMaxAmount 15
 	Inventory.Icon "SREPA0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn: // Sprites by Mike12, edited by Alex_Mercer
 		SREP A -1
 		Stop
 	}
 }
-Actor HellClipBox : CustomInventory 30021
-{
+
+Actor HellClipBox : CustomInventory 30021 {
 	//$Category Final Duel-Ammunition
 	Tag "5 Inferno Clips"
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AAAAA 0 A_SpawnItemEx("HellClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AAAAA 0 A_SpawnItemEx ("HellClip", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
-Actor FDBackpack : CustomInventory 30022
-{
+Actor FDBackpack : CustomInventory 30022 {
 	//$Category Final Duel-Ammunition
 	Tag "Backpack"
 	Game Doom
 	Height 26
 	Inventory.PickupMessage "You got a backpack."
 	Inventory.PickupSound "misc/backpack"
-	States
-	{
+	States {
 	Spawn: // Sprites by ID Software, edited by Alex_Mercer
 		BPAK A -1
 		Stop
     Pickup:
-		TNT1 A 0 A_GiveInventory("BackpackItem", 1)
-        TNT1 A 0 A_GiveInventory("ShellBox2", 4)
-        TNT1 A 0 A_GiveInventory("ClipBox2", 4)
-        TNT1 A 0 A_GiveInventory("CellPack2", 4)
-        TNT1 A 0 A_GiveInventory("RocketBox2", 4)
-	    TNT1 A 0 A_GiveInventory("HellClipBox", 4)
-		TNT1 A 0 A_GiveInventory("MinigunAmmo", 4)
+		TNT1 A 0 A_GiveInventory ("BackpackItem", 1)
+        TNT1 A 0 A_GiveInventory ("ShellBox2", 4)
+        TNT1 A 0 A_GiveInventory ("ClipBox2", 4)
+        TNT1 A 0 A_GiveInventory ("CellPack2", 4)
+        TNT1 A 0 A_GiveInventory ("RocketBox2", 4)
+	    TNT1 A 0 A_GiveInventory ("HellClipBox", 4)
+		TNT1 A 0 A_GiveInventory ("MinigunAmmo", 4)
         Stop
 	}
 }
-// Clip --------------------------------------------------------------------
 
-Actor Clip2 : Ammo 30023 // Sprite from Action Doom
-{
+Actor Clip2 : Ammo 30023 { // Sprite from Action Doom
 	//$Category Final Duel-Ammunition
 	Tag "Clip"
 	Game Doom
@@ -68,25 +60,20 @@ Actor Clip2 : Ammo 30023 // Sprite from Action Doom
 	Ammo.BackpackMaxAmount 15
 	Inventory.Icon "CLIPA0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn: // Sprites from Action Doom
 		CLIP A -1
 		Stop
 	}
 }
 
-// Clip box ----------------------------------------------------------------
-
-Actor ClipBox2 : Clip2 30024
-{
+Actor ClipBox2 : Clip2 30024 {
 	//$Category Final Duel-Ammunition
 	Tag "Clip Box"
 	Game Doom
 	Inventory.PickupMessage "$GOTCLIPBOX"
 	Inventory.Amount 5
-	States
-	{
+	States {
 	Spawn:
 		AMMO A -1
 		Stop
@@ -94,8 +81,7 @@ Actor ClipBox2 : Clip2 30024
 }
 
 // Minigun ammo
-Actor MinigunAmmo : AMMO 30067
-{
+Actor MinigunAmmo : AMMO 30067 {
 	//$Category Final Duel-Ammunition
 	Tag "Minigun Ammo"
 	Game Doom
@@ -104,18 +90,14 @@ Actor MinigunAmmo : AMMO 30067
 	Inventory.MaxAmount 2
 	Ammo.BackpackAmount 1
 	Ammo.BackpackMaxAmount 4
-	States
-	{
+	States {
 	Spawn:
 		MGAM A -1
 		Stop
 	}
 }
 
-// Rocket ------------------------------------------------------------------
-
-Actor RocketAmmo2 : Ammo 30025
-{
+Actor RocketAmmo2 : Ammo 30025 {
 	//$Category Final Duel-Ammunition
 	Tag "Rocket"
 	Game Doom
@@ -126,35 +108,27 @@ Actor RocketAmmo2 : Ammo 30025
 	Ammo.BackpackMaxAmount 50
 	Inventory.Icon "ROCKA0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn:
 		ROCK A -1
 		Stop
 	}
 }
 
-// Rocket box --------------------------------------------------------------
-
-Actor RocketBox2 : RocketAmmo2 30026
-{
+Actor RocketBox2 : RocketAmmo2 30026 {
 	//$Category Final Duel-Ammunition
 	Tag "Box of Rockets"
 	Game Doom
 	Inventory.PickupMessage "$GOTROCKBOX"
 	Inventory.Amount 5
-	States
-	{
+	States {
 	Spawn:
 		BROK A -1
 		Stop
 	}
 }
 
-// Grenade
-
-Actor GrenadeAmmo : Ammo 30058
-{
+Actor GrenadeAmmo : Ammo 30058 {
 	//$Category Final Duel-Ammunition
 	Tag "Grenade Launcher Magazine"
 	Game Doom
@@ -165,32 +139,27 @@ Actor GrenadeAmmo : Ammo 30058
 	Ammo.BackpackMaxAmount 10
 	Inventory.Icon "GLA1A0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn: // Sprites by Mike12, edited by Alex_Mercer
 		GLA1 A -1
 		Stop
 	}
 }
-Actor GrenadeBox : GrenadeAmmo 30070
-{
+
+Actor GrenadeBox : GrenadeAmmo 30070 {
 	//$Category Final Duel-Ammunition
 	Tag "Box of Grenade Launcher Magazines"
 	Game Doom
 	Inventory.PickupMessage "$GOTGRNDBOX"
 	Inventory.Amount 3
-	States
-	{
+	States {
 	Spawn:
-		TNT1 A 0 A_SpawnItemEx("GrenadeAmmo", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx ("GrenadeAmmo", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
-// Cell --------------------------------------------------------------------
-
-Actor Cell2 : Ammo 30027
-{
+Actor Cell2 : Ammo 30027 {
 	//$Category Final Duel-Ammunition
 	Tag "Cell"
 	Game Doom
@@ -201,15 +170,12 @@ Actor Cell2 : Ammo 30027
 	Ammo.BackpackMaxAmount 15
 	Inventory.Icon "CELLA0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn:
 		CELL A -1
 		Stop
 	}
 }
-
-// Cell pack ---------------------------------------------------------------
 
 Actor CellPack2 30028
 {
@@ -218,14 +184,12 @@ Actor CellPack2 30028
 	States
 	{
 	Spawn:
-		TNT1 AAAAA 0 NoDelay A_SpawnItemEx("Cell2", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AAAAA 0 NoDelay A_SpawnItemEx ("Cell2", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	}
 }
 
-// Shells ------------------------------------------------------------------
-Actor Shell2 : Ammo 30029
-{
+Actor Shell2 : Ammo 30029 {
 	//$Category Final Duel-Ammunition
 	Tag "Shells"
 	Game Doom
@@ -236,61 +200,54 @@ Actor Shell2 : Ammo 30029
 	Ammo.BackpackMaxAmount 70
 	Inventory.Icon "SHELA0"
 	Inventory.PickupSound "misc/ammopickup"
-	States
-	{
+	States {
 	Spawn: // Sprites by ID Software, edited by Alex_Mercer
 		SHEL A -1
 		Stop
 	}
 }
-// Shell box ---------------------------------------------------------------
-Actor ShellBox2 : Shell2 30030
-{
+
+Actor ShellBox2 : Shell2 30030 {
 	//$Category Final Duel-Ammunition
 	Tag "Box of 00 Buckshot Shells"
 	Game Doom
 	Inventory.PickupMessage "$GOTSHELLBOX"
 	Inventory.Amount 20
-	States
-	{
+	States {
 	Spawn: // Sprites by ID Software, edited by Alex_Mercer
 		SBOX A -1
 		Stop
 	}
 }
-// Magnum Ammo
-Actor MagnumClip : Ammo 30084
-{
+
+Actor MagnumClip : Ammo 30084 {
 	//$Category Final Duel-Ammunition
 	Tag "Magnum ammo"
 	Inventory.PickupMessage "$GOTMAGNUMAMMO"
 	Inventory.MaxAmount 10
 	Ammo.BackpackMaxAmount 10
 	Inventory.Icon "MAGAA0"
-	States
-	{
+	States {
 	Spawn: // Sprites by HellCattX
 		MAGA A -1
 		Stop
 	}
 }
-Actor MagnumClipBox : CustomInventory 30087
-{
+
+Actor MagnumClipBox : CustomInventory 30087 {
 	//$Category Final Duel-Ammunition
 	Tag "3 Magnum ammo speedloaders"
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AAA 0 NoDelay A_SpawnItemEx("MagnumClip", 0, 0, 0, frandom(-2.0, 2.0), frandom(-2.0, 2.0), 1.0, random(0, 359), SXF_NOCHECKPOSITION)
+		TNT1 AAA 0 NoDelay A_SpawnItemEx ("MagnumClip", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NOCHECKPOSITION)
 		Stop
 	Pickup:
 		TNT1 A 0
 		Fail
 	}
 }
-// Slug
-Actor Slug : Ammo 30085
-{
+
+Actor Slug : Ammo 30085 {
 	//$Category Final Duel-Ammunition
 	Tag "Slugs"
 	Inventory.PickupMessage "$GOTSLUGS"
@@ -298,29 +255,26 @@ Actor Slug : Ammo 30085
 	Inventory.MaxAmount 20
 	Ammo.BackpackMaxAmount 40
 	Inventory.Icon "SLUGA0"
-	States
-	{
+	States {
 	Spawn: // Sprites by ID Software, edited by Alex_Mercer
 		SLUG A -1
 		Stop
 	}
 }
-Actor SlugBox : Slug 30086
-{
+
+Actor SlugBox : Slug 30086 {
 	//$Category Final Duel-Ammunition
 	Tag "Box of Rifled Slugs"
 	Inventory.PickupMessage "$GOTSLUGSBOX"
 	Inventory.Amount 20
-	States
-	{
+	States {
 	Spawn: // Sprites by HellCattX, edited by Alex_Mercer
 		SLUG B -1
 		Stop
 	}
 }
-// Crossbow Bolts
-Actor CrossbowBolts : AMMO 30138
-{
+
+Actor CrossbowBolts : AMMO 30138 {
 	//$Category Final Duel-Ammunition
 	Tag "Crossbow Bolt"
 	Inventory.PickupMessage "$GOTXBOWBOLT"
@@ -328,24 +282,22 @@ Actor CrossbowBolts : AMMO 30138
 	Inventory.MaxAmount 30
 	Ammo.BackpackMaxAmount 50
 	Inventory.Icon "SBOWB0"
-	+IGNORESKILL
-	States
-	{
+	+IgnoreSkill
+	States {
 	Spawn: // By Alex_Mercer(base sprite by terranova)
 		SBOW B -1
 		Stop
 	}
 }
-Actor CrossbowBoltsQuiver : CrossbowBolts 30139
-{
+
+Actor CrossbowBoltsQuiver : CrossbowBolts 30139 {
 	//$Category Final Duel-Ammunition
 	Tag "Quiver of Crossbow Bolt"
 	Inventory.PickupMessage "$GOTXBOWBOLTS"
 	Inventory.Amount 10
 	Inventory.Icon "SBOWC0"
-	+IGNORESKILL
-	States
-	{
+	+IgnoreSkill
+	States {
 	Spawn: // Sprites by terranova
 		SBOW C -1
 		Stop

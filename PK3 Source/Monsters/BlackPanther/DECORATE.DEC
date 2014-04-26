@@ -24,7 +24,7 @@ Actor BlackPanther : HellKnight 30141
 	Melee:
 	Missile:
 		BPNT EF 8 A_FaceTarget
-		BPNT G 8 A_CustomComboAttack("PantherBall", 32, 8 * random(1, 8), "baron/melee")
+		BPNT G 8 A_CustomComboAttack ("PantherBall", 32, 8 * random(1, 8), "baron/melee")
 		Goto See
 	Pain:
 		BPNT H 2
@@ -47,7 +47,7 @@ Actor BlackPanther : HellKnight 30141
 
 Actor PantherBall : BaronBall
 {
-	Damage (random(1,4) * 16)
+	Damage (random (1, 4) * 16)
 	Speed 20
 	Alpha 1.0
 	States
@@ -56,7 +56,7 @@ Actor PantherBall : BaronBall
 		PNTB AB 2
 		Loop
 	Death:
-		TNT1 A 0 A_Explode(16, 16, 0)
+		TNT1 A 0 A_Explode (16, 16, 0)
 		PNTB CDEFGH 2
 		Stop
 	}

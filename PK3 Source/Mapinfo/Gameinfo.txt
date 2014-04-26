@@ -1,5 +1,4 @@
-gameinfo
-{
+gameinfo {
 	titlepage = "TITLEPIC"
 	creditpage = "CREDIT"
 	titlemusic = "D_DTFAF"
@@ -21,5 +20,4 @@ gameinfo
 	translator = "xlat/doom.txt"
 	backpacktype = "Backpack"
 	gibfactor = 0.5
-//	statusbar = "sbarinfo.txt"
 }

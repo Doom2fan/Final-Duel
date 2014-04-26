@@ -1,9 +1,6 @@
 // By Jekyll Grim Payne "Aka" zer0, edited by Alex_Mercer
 Actor BulletPuff2 Replaces BulletPuff {
-	+NoGravity
-	+ForceXYBillboard
-	-DontSplash
-	-AllowParticles
+	+NoGravity +ForceXYBillboard -DontSplash -AllowParticles
 	+NoExtremeDeath
 	RenderStyle Add
 	Scale 0.05
@@ -11,7 +8,7 @@ Actor BulletPuff2 Replaces BulletPuff {
 	Decal Bullet
 	States {
 	Spawn: // Sprites by Neoworm
-		TNT1 AAAA 0 A_CustomMissile ("WallPart", 0, 0, random (0, 360), 2, random(-20, 80))
+		TNT1 AAAA 0 A_CustomMissile ("WallPart", 0, 0, random (0, 360), 2, random (-20, 80))
 		TNT1 A 0 A_SpawnItem ("ShotSmoke")
 		BPUF ABCDEFGHI 1 Bright
 		Stop
@@ -19,9 +16,7 @@ Actor BulletPuff2 Replaces BulletPuff {
 }
 
 Actor WallPart : DebrisGeneral {
-	+DoomBounce
-	-NoGravity
-	+DontSplash
+	+DoomBounce -NoGravity +DontSplash
 	Speed 8
 	BounceFactor 0.4
 	RenderStyle Translucent
@@ -39,22 +34,19 @@ Actor WallPart : DebrisGeneral {
 }
 
 Actor SparkSpawner {
-	+NoInteraction
-	+NoGravity
+	+NoInteraction +NoGravity
 	States {
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_Jump (128,9)
-		TNT1 AAAAAAAA 0 A_CustomMissile ("RicochetSpark", 0, 0, random(0, 360), 2, random(10, 60))
+		TNT1 A 0 A_Jump (128, 9)
+		TNT1 AAAAAAAA 0 A_CustomMissile ("RicochetSpark", 0, 0, random (0, 360), 2, random (10, 60))
 		TNT1 A 0
 		stop
 	}
 }
 
 Actor RicochetSpark : DebrisGeneral {
-	-DOOMBOUNCE
-	-NoGravity
-	+DontSplash
+	-DoomBounce -NoGravity +DontSplash
 	RenderStyle ADD
 	Alpha 1.0
 	Speed 10
@@ -70,9 +62,7 @@ Actor RicochetSpark : DebrisGeneral {
 }
 
 Actor ShotSmoke {
-	+NotDMatch
-	+NoInteraction
-	+ForceXYBillboard
+	+NotDMatch +NoInteraction +ForceXYBillboard
 	VSpeed 2
 	Renderstyle Add
 	Alpha 0.3
@@ -149,10 +139,7 @@ Actor ParticleFire_Yellow : ParticleFire_General {
 }
 
 Actor MeleePuff { // Edited by Alex_Mercer
-	+NoBlockmap
-	+NoGravity
-	+PuffOnActors
-	-AllowParticles
+	+NoBlockmap +NoGravity +PuffOnActors -AllowParticles
 	+NoExtremeDeath
 	DamageType Kick
 	AttackSound "Weapons/kick/hitwall"
@@ -163,8 +150,7 @@ Actor MeleePuffStrong : MeleePuff { // Edited by Alex_Mercer
 	Decal FistScorch
 	AttackSound "Weapons/kick/strong"
 	ActiveSound "Weapons/kick/swing"
-	-NoExtremeDeath
-	+ExtremeDeath
+	-NoExtremeDeath +ExtremeDeath
 	States {
 	Spawn:
 		TNT1 A 0
@@ -183,15 +169,12 @@ Actor SmokeSpawner : DebrisGeneral {
         Stop
     }
 }
-Actor RocketLSmoke : ShotSmoke {
-	Scale 0.15
-}
+Actor RocketLSmoke : ShotSmoke { Scale 0.15 }
 
 Actor Step : Boolean { }
+
 Actor Footstep {
-	+NoBlockmap
-	-NoGravity
-	-DontSplash
+	+NoBlockmap -NoGravity -DontSplash
 	Radius 1
 	Height 1
 	Speed 40
@@ -217,6 +200,7 @@ Actor BlueKeyCard : CustomInventory replaces BlueCard {
 		Stop
 	}
 }
+
 Actor RedKeyCard : CustomInventory replaces RedCard {
 	Inventory.PickupMessage "Picked up a red keycard."
 	Inventory.PickupSound "pickups/keycard"
@@ -230,6 +214,7 @@ Actor RedKeyCard : CustomInventory replaces RedCard {
 		Stop
 	}
 }
+
 Actor YellowKeyCard : CustomInventory replaces YellowCard {
 	Inventory.PickupMessage "Picked up a yellow keycard."
 	Inventory.PickupSound "pickups/keycard"
@@ -254,14 +239,12 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 	Damage (random (1, 5))
 	ReactionTime 3
 	Projectile
-	+DoomBounce
-	+DONTSPLASH
-	+NODAMAGETHRUST
+	+DoomBounce +DontSplash +NoDamageThrust
 	Obituary "$OB_SHRAPNEL"
 	SelfObituary "$OB_SHRAPNEL"
 	States {
 	Spawn:
-		TNT1 A 0 A_Jump(256, "SpawnA", "SpawnB", "SpawnC", "SpawnD")
+		TNT1 A 0 A_Jump (256, "SpawnA", "SpawnB", "SpawnC", "SpawnD")
 		Wait
 	SpawnA:
 		FRG2 A 1
@@ -277,64 +260,65 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 		Goto Looper
 	Looper:
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_JumpIf (waterlevel >= 1, "Water")
-		"####" "#" 0 BRIGHT A_Explode(2,1,1)
-		"####" "#" 1 BRIGHT A_CustomMissile("SmokingPieceSmoke",0,0,0)
+		"####" "#" 0 BRIGHT A_Explode (2, 1, 1)
+		"####" "#" 1 BRIGHT A_CustomMissile ("SmokingPieceSmoke", 0, 0, 0)
 		"####" "#" 0 A_CountDown
 		Loop 
 	Water:
 	Death:
-		"####" "#" 1 A_FadeOut(0.3)
+		"####" "#" 1 A_FadeOut (0.3)
 		Wait
 	}
 }
+
 // By Alex_Mercer "Aka" Chronos Ouroboros
-// Bullet puff -------------------------------------------------------------
 Actor PressingZoom : Boolean { }
+
 Actor SawPuff : BulletPuff2 {
 	Decal ChainsawMark
 	DamageType "Saw" 
@@ -349,9 +333,7 @@ Actor SawPuff : BulletPuff2 {
 }
 
 Actor FDTeleportFog Replaces TeleportFog {
-	+NoBlockmap
-	+NoTeleport
-	+NoGravity
+	+NoBlockmap +NoTeleport +NoGravity
 	RenderStyle Add
 	Translation "112:127=176:191", "224:231=168:175", "160:167=184:191", "128:143=176:191", "144:151=176:183", "152:159=184:191", "64:79=176:191"
 	States {
@@ -362,9 +344,7 @@ Actor FDTeleportFog Replaces TeleportFog {
 }
 
 Actor HeatSmoke { // Modified version of code from Beautiful Doom
-	+NotDMatch
-	+NoInteraction
-	+ForceXYBillboard
+	+NotDMatch +NoInteraction +ForceXYBillboard
 	Vspeed 2
 	RenderStyle Add
 	Scale 0.1
@@ -397,13 +377,10 @@ Actor HeatSmokeSpawner : DebrisGeneral {
         Stop
 	}
 }
+
 Actor BoomPuff {
-	+NoGravity
-	+ForceXYBillboard
-	-DontSplash
-	-AllowParticles
-	+PuffOnActors
-	+PuffGetsOwner
+	+NoGravity +ForceXYBillboard -DontSplash -AllowParticles
+	+PuffOnActors +PuffGetsOwner
 	Scale 0.1
 	Decal Bullet
 	States {

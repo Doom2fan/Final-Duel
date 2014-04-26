@@ -31,8 +31,8 @@ Actor ActiveFlare 30006
 	{
 	Spawn:
 		FLAR A 0 Bright
-		FLAR A 0 Bright A_PlaySound("Flare/Light")
-		FLAR A 0 Bright A_PlaySoundEx("Flare/Loop", "SoundSlot7", 1, -1)
+		FLAR A 0 Bright A_PlaySound ("Flare/Light")
+		FLAR A 0 Bright A_PlaySoundEx ("Flare/Loop", "SoundSlot7", 1, -1)
 		FLAR AB 1 Bright
 		Goto Spawn+3
 	}

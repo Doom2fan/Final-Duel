@@ -1,77 +1,52 @@
-//=================================================================================================
-//
-// MaxHealth
-//
-//=================================================================================================
-
-Actor MaxHealth : Health
-{
+Actor MaxHealth : Health {
 	Inventory.MaxAmount 50
 	Inventory.PickupSound "misc/health_pkup"
 }
 
-//=================================================================================================
-//
-// Max. health bonus
-//
-//=================================================================================================
-
-Actor MaxHealthBonus : MaxHealth 30163
-{
+Actor MaxHealthBonus : MaxHealth 30163 {
 	//$Category Final Duel-Health and Armour
 	//$Title Max. Health Bonus
-	Game Doom
-	Game Heretic
-	Game Hexen
-	+CountItem
-	+Inventory.AlwaysPickup
+	+CountItem +Inventory.AlwaysPickup
 	Inventory.Amount 1
 	Inventory.MaxAmount 10
 	Health 200
 	Inventory.PickupMessage "$PICKUP_MAXHEALTHBONUS"
-	States
-	{
+	States {
 	Spawn:
 		BON3 ABCDCB 6
 		Loop
 	}
 }
 // Stimpack
-Actor FDStimpack : HealthPickup Replaces Stimpack 30164
-{
+Actor FDStimpack : HealthPickup Replaces Stimpack 30164 {
 	//$Category Final Duel-Health and Armour
 	//$Title Stimpack
 	Health 10
-	+FLOORCLIP
-	+InvBar
+	+FloorClip +InvBar
 	Inventory.MaxAmount 10
 	Inventory.InterHubAmount 10
 	Tag "Stimpack"
 	Inventory.Icon "ARTISTIM"
 	Inventory.PickupMessage "$GOTSTIM"
-	States
-	{
+	States {
 	Spawn:
 		STIM A -1
 		Stop
 	}
 }
 // Medikit
-Actor FDMedikit : HealthPickup Replaces Medikit 30165
-{
+Actor FDMedikit : HealthPickup Replaces Medikit 30165 {
 	//$Category Final Duel-Health and Armour
 	//$Title Medikit
 	Health 25
-	+FLOORCLIP
-	+InvBar
+	+FloorClip +InvBar
 	Inventory.MaxAmount 5
 	Inventory.InterHubAmount 5
 	Tag "Medikit"
 	Inventory.PickupMessage "$GOTMEDIKIT"
 	Inventory.Icon "ARTIMEDI"
 	HealthPickup.AutoUse 1
-	States
-	{
+	States {
 	Spawn:
 		MEDI A -1
 		Stop

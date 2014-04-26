@@ -1,3 +1,3 @@
-Actor XPSystemExperience : Counter { }
-Actor XPSystemLevel      : Counter { Inventory.MaxAmount 25 }
+Actor XPSystemExperience      : Counter { }
+Actor XPSystemLevel           : Counter { Inventory.MaxAmount 25 }
 Actor XPSystemAttributePoints : Counter { }

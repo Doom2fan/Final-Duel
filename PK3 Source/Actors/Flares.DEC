@@ -1,28 +1,24 @@
 // by Alex_Mercer
-Actor BlueFlare : Flare_General
-{
-	States
-	{
+Actor BlueFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LENB A 2 Bright
 		Stop
 	}
 }
-Actor LensFlare : Flare_General
-{
-	States
-	{
+
+Actor LensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LENS A 2 Bright
 		Stop
 	}
 }
-Actor YellowLensFlare : Flare_General
-{
-	States
-	{
+
+Actor YellowLensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LEYS A 2 Bright
@@ -30,10 +26,8 @@ Actor YellowLensFlare : Flare_General
 	}
 }
 
-Actor BlueLensFlare : Flare_General
-{
-	States
-	{
+Actor BlueLensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LEYS B 2 Bright
@@ -41,10 +35,8 @@ Actor BlueLensFlare : Flare_General
 	}
 }
 
-Actor GreenLensFlare : Flare_General
-{
-	States
-	{
+Actor GreenLensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LEYS G 2 Bright
@@ -52,10 +44,8 @@ Actor GreenLensFlare : Flare_General
 	}
 }
 
-Actor OrangeLensFlare : Flare_General
-{
-	States
-	{
+Actor OrangeLensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LEYS O 2 Bright
@@ -63,10 +53,8 @@ Actor OrangeLensFlare : Flare_General
 	}
 }
 
-Actor RedLensFlare : Flare_General
-{
-	States
-	{
+Actor RedLensFlare : Flare_General {
+	States {
 	Spawn:
 		TNT1 A 0
 		LEYS R 2 Bright
@@ -75,14 +63,12 @@ Actor RedLensFlare : Flare_General
 }
 
 // Plasma Rifle Flares
-Actor PlasFlare : Flare_General
-{
+Actor PlasFlare : Flare_General {
 	Alpha 0.3
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 NoDelay A_Jump (128, 2)
 		LENC A 2 Bright
 		Stop
 		LENC B 2 Bright
@@ -90,27 +76,23 @@ Actor PlasFlare : Flare_General
 	}
 }
 
-Actor PlasFlareSpawn
-{
+Actor PlasFlareSpawn {
 	Speed 20
 	Projectile
 	+NoClip
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AA 1 A_CustomMissile("PlasFlare",-5,0,-85,0,random(-10,10))
+		TNT1 AA 1 A_CustomMissile ("PlasFlare", -5, 0, -85, 0, random(-10, 10))
 		Stop
 	}
 }
 
-Actor PlasMissileFlare : Flare_General
-{
+Actor PlasMissileFlare : Flare_General {
 	Alpha 0.3
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 NoDelay A_Jump (128, 2)
 		LENY A 2 Bright
 		Stop
 		LENY B 2 Bright
@@ -118,28 +100,24 @@ Actor PlasMissileFlare : Flare_General
 	}
 }
 
-Actor PlasMissileFlareSpawn
-{
+Actor PlasMissileFlareSpawn {
 	Speed 20
 	Projectile
 	+NoClip
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AA 1 A_CustomMissile("PlasMissileFlare",-5,0,-85,0,random(-10,10))
+		TNT1 AA 1 A_CustomMissile ("PlasMissileFlare", -5, 0, -85, 0, random (-10, 10))
 		Stop
 	}
 }
 
-Actor PlasmaFlare : Flare_General
-{
+Actor PlasmaFlare : Flare_General {
 	Alpha 0.4
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_Jump (128, 2)
 		L2NC A 1 Bright
 		Stop
 		TNT1 A 0
@@ -148,15 +126,13 @@ Actor PlasmaFlare : Flare_General
 	}
 }
 
-Actor PlasmaMissileFlare : Flare_General
-{
+Actor PlasmaMissileFlare : Flare_General {
 	Alpha 0.4
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_Jump (128, 2)
 		L2NY A 1 Bright
 		Stop
 		TNT1 A 0
@@ -166,14 +142,12 @@ Actor PlasmaMissileFlare : Flare_General
 }
 
 // Weapon Flares
-Actor RedFiringFlare : Flare_General
-{
+Actor RedFiringFlare : Flare_General {
 	Alpha 0.3
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 NoDelay A_Jump (128, 2)
 		LENR A 2 Bright
 		Stop
 		LENR B 2 Bright
@@ -181,27 +155,23 @@ Actor RedFiringFlare : Flare_General
 	}
 }
 
-Actor RedFiringFlareSpawn
-{
+Actor RedFiringFlareSpawn {
 	Speed 20
 	Projectile
 	+NoClip
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AA 1 A_CustomMissile("RedFiringFlare",-5,0,-85,0,random(-10,10))
+		TNT1 AA 1 A_CustomMissile ("RedFiringFlare", -5, 0, -85, 0, random (-10, 10))
 		Stop
 	}
 }
 
-Actor YellowFiringFlare : Flare_General
-{
+Actor YellowFiringFlare : Flare_General {
 	Alpha 0.3
 	Scale 0.15
-	States
-	{
+	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 NoDelay A_Jump (128, 2)
 		LENR A 2 Bright
 		Stop
 		LENR B 2 Bright
@@ -209,15 +179,13 @@ Actor YellowFiringFlare : Flare_General
 	}
 }
 
-Actor YellowFiringFlareSpawn
-{
+Actor YellowFiringFlareSpawn {
 	Speed 20
 	Projectile
 	+NoClip
-	States
-	{
+	States {
 	Spawn:
-		TNT1 AA 1 A_CustomMissile("YellowFiringFlare",-5,0,-85,0,random(-10,10))
+		TNT1 AA 1 A_CustomMissile ("YellowFiringFlare", -5, 0, -85, 0, random (-10, 10))
 		Stop
 	}
 }

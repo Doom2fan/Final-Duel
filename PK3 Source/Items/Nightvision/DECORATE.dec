@@ -4,6 +4,7 @@ Actor PowerNightvision : PowerLightAmp {
 	Powerup.Duration -120
 	Powerup.Colormap 0.0, 0.0, 0.0, 1.0, 1.0, 1.0
 }
+
 Actor NVBattery: CustomInventory Replaces Infrared 20020 {
 	//$Category Final Duel-Items
 	Tag "Batteries(Nightvision goggles)"
@@ -12,10 +13,7 @@ Actor NVBattery: CustomInventory Replaces Infrared 20020 {
 	Inventory.InterHubAmount 100
 	Inventory.PickupMessage "Got some batteries for the nightvision goggles"
 	Inventory.Icon "ARTINBAT"
-	+UnDroppable
-	+InvBar
-	+Inventory.PersistentPower
-	+Inventory.KeepDepleted
+	+UnDroppable +InvBar +Inventory.PersistentPower +Inventory.KeepDepleted
 	States {
 	Spawn:
 		NVIS A -1
@@ -33,19 +31,18 @@ Actor FDNightvision : CustomInventory {
 	Inventory.MaxAmount 1
 	Inventory.InterHubAmount 1
 	Inventory.Icon "ARTINVIS"
-	+InvBar
-	+UnDroppable
+	+InvBar +UnDroppable
 	States {
     Use:
-		TNT1 A 0 A_JumpIfInventory("FDNightvisionOn",1,"Disable")
-		TNT1 A 0 A_JumpIfInventory("NVBattery",1,1)
+		TNT1 A 0 A_JumpIfInventory ("FDNightvisionOn", 1, "Disable")
+		TNT1 A 0 A_JumpIfInventory ("NVBattery", 1, 1)
 		Goto UseFail
-		TNT1 A 0 A_PlaySoundEx("Nightvision/On","Item")
-	    TNT1 A 0 A_GiveInventory("FDNightvisionOn",1)
+		TNT1 A 0 A_PlaySoundEx ("Nightvision/On", "Item")
+	    TNT1 A 0 A_GiveInventory ("FDNightvisionOn", 1)
 		Fail
 	Disable:
-		TNT1 A 0 A_TakeInventory("FDNightvisionOn",1)
-		TNT1 A 0 A_PlaySoundEx("Nightvision/Off","Item")
+		TNT1 A 0 A_TakeInventory ("FDNightvisionOn", 1)
+		TNT1 A 0 A_PlaySoundEx ("Nightvision/Off", "Item")
 		Fail
 	UseFail:
 		TNT1 A 0

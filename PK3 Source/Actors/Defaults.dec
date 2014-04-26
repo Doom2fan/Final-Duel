@@ -1,47 +1,37 @@
 // By PillowBlaster
-Actor TwerpmeisterAvenue //Inheritance for spawners
-{
-	+NoInteraction
-	+NoGravity
-}
+Actor TwerpmeisterAvenue { +NoInteraction +NoGravity } //Inheritance for spawners
 
-Actor RagingBattleHamster : TwerpmeisterAvenue  //Inheritance for effects
-{
+Actor RagingBattleHamster : TwerpmeisterAvenue { //Inheritance for effects
 	Renderstyle Add
 	Alpha 0.99	//Because on Alpha 1.0... uhhh... dunno why, but rendering them screws up a bit.
 }
+
 // From Samsara
-Actor Boolean: Inventory
-{
+Actor Boolean : Inventory {
     Inventory.MaxAmount 1
-    +UNDROPPABLE
-    -InvBar
+    +Undroppable -InvBar
 }
 
-Actor Counter: Inventory
-{
+Actor Counter : Inventory {
     Inventory.MaxAmount 0x7FFFFFFF
-    +UNDROPPABLE
-    -InvBar
+    +UNDROPPABLE -InvBar
 }
 
-Actor Trigger: CustomInventory
-{
+Actor Trigger : CustomInventory {
 	Inventory.MaxAmount 0
-    +AUTOACTIVATE
+    +AutoActivate
 }
+
 // By Alex_Mercer
-Actor FDFakeInv : Inventory
-{
+Actor FDFakeInv : Inventory {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
 	-InvBar
 }
-Actor WP : CustomInventory
-{
+
+Actor WP : CustomInventory {
 	Inventory.PickupSound "misc/gunpickup"
-	States
-	{
+	States {
 	Spawn:
 		TNT1 A 1
 		Loop
@@ -50,54 +40,38 @@ Actor WP : CustomInventory
 		Fail
 	}
 }
+
 // By Jekyll Grim Payne "Aka" zer0
-Actor DebrisGeneral
-{
+Actor DebrisGeneral {
 	Radius 1
 	Height 1
 	Mass 1
 	Damage 0
-	+MISSILE
-	+NoBlockmap
-	+NoGravity
-	+DROPOFF
-	+NoTeleport
-	+ForceXYBillboard
-	+NotDMatch
-	+GHOST
+	+Missile +NoBlockmap +NoGravity +DropOff
+	+NoTeleport +ForceXYBillboard +NotDMatch +Ghost
 }
-Actor Flare_General
-{
+
+Actor Flare_General {
 	Radius 1
 	Height 1
 	Alpha 0.4
-	scale 0.4
+	Scale 0.4
 	RenderStyle Add
-	+NoInteraction
-	+NoGravity
-	//+ForceXYBillboard
+	+NoInteraction +NoGravity //+ForceXYBillboard
 }
-Actor GibsSpawner
-{
-	+NoClip
-	+NoGravity
-}
-Actor Gibs_general : DebrisGeneral
-{
-	+DOOMBOUNCE
-	+CANBOUNCEWATER
-	+EXPLODEONWATER
-	+DROPPED
-	-NoBlockmap
-	-NoGravity
-	BounceFactor 0.3
-	SeeSound "gibs/splash"
-	+Shootable	Health 999999999999999999999
-	Gravity 0.7
-	Mass 50
+Actor GibsSpawner { +NoClip +NoGravity }
+
+Actor Gibs_General : DebrisGeneral {
+	Health 999999999999999999999
 	Radius 8
 	Height 5
+	BounceFactor 0.3
+	SeeSound "gibs/splash"
+	Gravity 0.7
+	Mass 50
 	Translation "0:255=0:255"
+	+DoomBounce +Shootable +CanBounceWater +ExplodeOnWater
+	+Dropped -NoBlockmap -NoGravity
 	States
 	{
 	Crush:
@@ -105,12 +79,10 @@ Actor Gibs_general : DebrisGeneral
 		Stop
 	}
 }
-Actor ParticleFire_General : DebrisGeneral
-{
+Actor ParticleFire_General : DebrisGeneral {
 	Speed 2
 	RenderStyle Add
 	Scale 0.5
 	Alpha 0.5
-	+NoClip
-	+NoInteraction
+	+NoClip +NoInteraction
 }

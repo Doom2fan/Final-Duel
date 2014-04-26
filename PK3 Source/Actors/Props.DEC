@@ -4,19 +4,18 @@ Actor LampFlare : LensFlare {
 	XScale 0.6
 	YScale 0.3
 }
+
 Actor YellowLampFlare : YellowLensFlare {
 	Alpha 0.5
 	XScale 0.6
 	YScale 0.2
 }
+
 Actor FDTechLamp : SwitchableDecoration Replaces TechLamp {
 	Radius 16
 	Height 80
 	Health 10
-	+Solid
-	+Shootable
-	+UseSpecial
-	+NoBlood
+	+Solid +Shootable +UseSpecial +NoBlood
 	Activation THINGSPEC_Switch|THINGSPEC_Deactivate
 	States {
 	Active:
@@ -42,10 +41,7 @@ Actor FDTechLamp2 : SwitchableDecoration Replaces TechLamp2 {
 	Radius 16
 	Height 60
 	Health 10
-	+Solid
-	+Shootable
-	+UseSpecial
-	+NoBlood
+	+Solid +Shootable +UseSpecial +NoBlood
 	Activation THINGSPEC_Switch|THINGSPEC_Deactivate
 	States
 	{
@@ -72,10 +68,7 @@ Actor FDColumn : SwitchableDecoration Replaces Column {
 	Radius 16
 	Height 48
 	Health 10
-	+Solid
-	+Shootable
-	+UseSpecial
-	+NoBlood
+	+Solid +Shootable +UseSpecial +NoBlood
 	Activation THINGSPEC_Switch|THINGSPEC_Deactivate
 	States {
 	Active:
@@ -99,15 +92,12 @@ Actor FDColumn : SwitchableDecoration Replaces Column {
 
 // Torches
 Actor RedTorchFire {
-	+NoGravity
-	+NoBlockmap
-	+NoTeleport
-	+ForceXYBillboard
-	+NoInteraction
 	Radius 0
 	Height 0
 	RenderStyle Add
 	Scale 0.1875
+	+NoGravity +NoBlockmap +NoTeleport +ForceXYBillboard
+	+NoInteraction
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump (256, "Spawn1", "Spawn2")

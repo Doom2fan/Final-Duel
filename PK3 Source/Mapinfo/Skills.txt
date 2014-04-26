@@ -1,6 +1,5 @@
 clearskills
-skill baby
-{
+skill baby {
 	AutoUseHealth
 	AmmoFactor = 2
 	DamageFactor = 0.5
@@ -13,8 +12,7 @@ skill baby
 	Key = "H"
 }
 
-skill easy
-{
+skill easy {
 	AutoUseHealth
 	EasyBossBrain
 	SpawnFilter = Easy
@@ -25,8 +23,7 @@ skill easy
 	Key = "S"
 }
 
-skill normal
-{
+skill normal {
 	AutoUseHealth
 	SpawnFilter = Normal
 	Name = "$SKILLZ_NORMAL"
@@ -36,8 +33,7 @@ skill normal
 	Key = "P"
 }
 
-skill hard
-{
+skill hard {
 	SpawnFilter = Hard
 	Name = "$SKILLZ_HARD"
 	PicName = "SKILL4"
@@ -46,8 +42,8 @@ skill hard
 	ACSReturn = 3
 	Key = "F"
 }
-skill veryhard
-{
+
+skill veryhard {
 	SpawnFilter = Hard
 	FastMonsters
 	Name = "$SKILLZ_HARDSPEED"
@@ -57,8 +53,8 @@ skill veryhard
 	ACSReturn = 4
 	Key = "L"
 }
-skill nnightmare
-{
+
+skill nnightmare {
 	AutoUseHealth
 	AmmoFactor = 2
 	FastMonsters
@@ -71,8 +67,8 @@ skill nnightmare
 	ACSReturn = 5
 	Key = "B"
 }
-skill brutal
-{
+
+skill brutal {
 	AutoUseHealth
 	AmmoFactor = 2
 	RespawnTime = 5

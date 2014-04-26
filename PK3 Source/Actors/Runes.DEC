@@ -1,8 +1,7 @@
 // Rune fade by Pillowblaster
 // Regeneration
 Actor RegenerationRuneFade {
-	+NoInteraction
-	+NoGravity
+	+NoInteraction +NoGravity
 	Renderstyle Add
 	States {
 	Spawn:
@@ -11,10 +10,12 @@ Actor RegenerationRuneFade {
 		Loop
 	}
 }
+
 Actor RegenerationRunePower : Powerup {
 	Powerup.Duration -30
 	Powerup.Color Purple 0.10
 }
+
 Actor RegenerationRune : CustomInventory {
 	//$Category Final Duel-Runes
 	Tag "Regeneration Rune"
@@ -25,9 +26,7 @@ Actor RegenerationRune : CustomInventory {
 	Inventory.UseSound "misc/UseRune"
 	Inventory.Icon RUNEREGN
 	Inventory.InterHubAmount 3
-	+Inventory.FancyPickupSound
-	+InvBar
-	+CountItem
+	+Inventory.FancyPickupSound +InvBar +CountItem
 	States {
 	Spawn:
 		PRNE A 1 A_SpawnItemEx ("RegenerationRuneFade", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_CLIENTSIDE)
@@ -50,11 +49,13 @@ Actor DoubleDamageRuneFade {
 		Loop
 	}
 }
+
 Actor PowerDoubleDamageRune : PowerDamage {
 	Powerup.Duration -30
 	Powerup.Color Red 0.00
 	DamageFactor 2.0
 }
+
 Actor DoubleDamageRune : PowerupGiver {
 	//$Category Final Duel-Runes
 	Tag "Double Damage Rune"
@@ -66,9 +67,7 @@ Actor DoubleDamageRune : PowerupGiver {
 	Inventory.Icon RUNEDDMG
 	Inventory.InterHubAmount 2
 	Powerup.Type DoubleDamageRune
-	+Inventory.FancyPickupSound
-	+InvBar
-	+CountItem
+	+Inventory.FancyPickupSound +InvBar +CountItem
 	States {
 	Spawn:
 		PRNE B 1 A_SpawnItemEx ("DoubleDamageRuneFade", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_CLIENTSIDE)

@@ -1,8 +1,5 @@
 // Cyber Baron created by Ben2k9/Virtue
-
-
-Actor Cyberbaron : Baronofhell 30116
-{
+Actor Cyberbaron : Baronofhell 30116 {
 	//$Category Final Duel-Monsters
 	//$Title Cyber Baron
 	Obituary "$OB_CYBERBARON"
@@ -19,19 +16,18 @@ Actor Cyberbaron : Baronofhell 30116
 	PainSound "cbaron/pain"
 	DeathSound "cbaron/death"
 	ActiveSound "cbaron/active"
-	MONSTER
-	+NORADIUSDMG
-	+DONTHURTSPECIES
+	Monster
+	+NoRadiusDMG
+	+DontHurtSpecies
 	DropItem "Energy"
-	States
-	{
+	States {
 	Spawn:
 		CBOS A 10 A_Look
 		Loop
 	See:
 		CBOS A 3 A_chase
 		CBOS A 3 A_chase   
-		CBOS B 0 A_playsound("cbaron/metal")
+		CBOS B 0 A_playsound ("cbaron/metal")
 		CBOS BB 3 A_chase
 		CBOS CC 3 A_chase    
 		CBOS D 3 A_chase
@@ -42,10 +38,10 @@ Actor Cyberbaron : Baronofhell 30116
 		CBOS R 8 A_BruisAttack
 		Goto See
 	Missile:
-		CBOS E 0 A_jump(80,5)
+		CBOS E 0 A_jump (80, 5)
 		CBOS E 10 A_FaceTarget
 		CBOS E 10 A_FaceTarget
-		CBOS F 10 Bright A_customMissile(cyberattack2,27,16,0)
+		CBOS F 10 Bright A_customMissile ("CyberAttack2", 27, 16, 0)
 		CBOS E 10 A_FaceTarget
 		Goto See
 		CBOS PQ 8 A_FaceTarget
@@ -56,10 +52,10 @@ Actor Cyberbaron : Baronofhell 30116
 		CBOS H 2 A_Pain
 		Goto See
 	Death:
-		TNT1 A 0 A_GiveToTarget("XPSystemExperience",800)
+		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 800)
 		CBOS I 8
 		CBOS J 8 A_Scream
-		CBOS K 8 Bright A_Playsound("world/barrelx")
+		CBOS K 8 Bright A_Playsound ("world/barrelx")
 		CBOS L 8 Bright A_NoBlocking
 		CBOS M 8 Bright
 		CBOS N 8 Bright
@@ -69,7 +65,5 @@ Actor Cyberbaron : Baronofhell 30116
 		CBOS ONMLKJI 8
 	}
 }          
-  
-Actor CyberAttack2 : FDRocket
-{
-}
+
+Actor CyberAttack2 : FDRocket { }

@@ -4,8 +4,7 @@ Actor PowerFlymo : PowerupGiver {
 	Powerup.Type PowerFLight
 	Powerup.Color White 0.00
 	Inventory.PickupMessage "I BELIEW I CAN FLEH!"
-	+Inventory.AutoActivate
-	+Inventory.AlwaysPickup
+	+Inventory.AutoActivate +Inventory.AlwaysPickup
 }
 
 Actor JetThruster : CustomInventory 30001 {
@@ -18,9 +17,7 @@ Actor JetThruster : CustomInventory 30001 {
 	Inventory.UseSound "misc/jetthruster"
 	Inventory.Icon ARTIJET
 	Inventory.InterHubAmount 5
-	+Inventory.FancyPickupSound
-	+InvBar
-	+CountItem
+	+Inventory.FancyPickupSound +InvBar +CountItem
 	States {
 	Spawn:
 		JETT A -1

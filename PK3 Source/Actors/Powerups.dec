@@ -1,14 +1,8 @@
-Actor PowerLight : PowerLightAmp {
-	Powerup.Color "77 77 77", 0.9
-}
+Actor PowerLight : PowerLightAmp { Powerup.Color "77 77 77", 0.9 }
 
 // Invulnerability
 Actor FDInvulnerabilitySphere : PowerupGiver Replaces InvulnerabilitySphere {
-	SpawnID 133
-	+CountItem
-	+Inventory.AutoActivate
-	+Inventory.AlwaysPickup
-	+Inventory.BigPowerup
+	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
 	Inventory.MaxAmount 0
 	Powerup.Type "Invulnerable"
 	Powerup.Color GoldMap
@@ -22,19 +16,14 @@ Actor FDInvulnerabilitySphere : PowerupGiver Replaces InvulnerabilitySphere {
 
 // Blursphere
 Actor PowerFDInvisibility : PowerInvisibility {
-	-Shadow
-	+CantSeek
+	-Shadow +CantSeek
 	Powerup.Duration -60
 	Powerup.Strength 80
 	Powerup.Mode Translucent
 }
+
 Actor FDBlursphere : CustomInventory Replaces Blursphere {
-	Game Doom
-	SpawnID 135
-	+CountItem
-	+Inventory.AutoActivate
-	+Inventory.AlwaysPickup
-	+Inventory.BigPowerup
+	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
 	Inventory.MaxAmount 0
 	RenderStyle Translucent
 	Inventory.PickupMessage "$GOTINVIS" // "Partial Invisibility"
@@ -49,4 +38,5 @@ Actor FDBlursphere : CustomInventory Replaces Blursphere {
 		Stop
 	}
 }
+
 Actor FDSoulsphere : Soulsphere { }

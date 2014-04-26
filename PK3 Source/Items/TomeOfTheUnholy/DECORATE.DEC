@@ -1,17 +1,13 @@
-Actor TomeOfTheUnholy : PowerupGiver 30056
-{
+Actor TomeOfTheUnholy : PowerupGiver 30056 {
 	//$Category Final Duel-Items
-	+CountItem
-	+FLOATBOB
-	+InvBar
+	+CountItem +FloatBob +InvBar
 	Inventory.MaxAmount 1
 	Inventory.Icon "ARTITOME"
 	Powerup.Type Weaponlevel2
 	Inventory.PickupMessage "$GOTTOME"
 	Tag "Tome Of The Unholy"
 	Inventory.UseSound "TomeOfTheUnholy/Use"
-	States
-	{
+	States {
 	Spawn:
 		TOME A 1
 		Loop
