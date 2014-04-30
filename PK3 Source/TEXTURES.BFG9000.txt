@@ -1,24 +1,49 @@
 Sprite BFGSA0, 320, 200
 {
-	Patch BFGGA0, 50, 89
+	Patch BFGGA0, 50, 81
 }
 
 Sprite BFGSB0, 320, 200
 {
-	Patch BFGGA0, 50, 105
+	Patch BFGGA0, 50, 89
 }
 
 Sprite BFGSC0, 320, 200
 {
-	Patch BFGGA0, 50, 121
+	Patch BFGGA0, 50, 97
 }
 
 Sprite BFGSD0, 320, 200
 {
-	Patch BFGGA0, 50, 137
+	Patch BFGGA0, 50, 105
 }
 
 Sprite BFGSE0, 320, 200
+{
+	Patch BFGGA0, 50, 113
+}
+
+Sprite BFGSF0, 320, 200
+{
+	Patch BFGGA0, 50, 121
+}
+
+Sprite BFGSG0, 320, 200
+{
+	Patch BFGGA0, 50, 129
+}
+
+Sprite BFGSH0, 320, 200
+{
+	Patch BFGGA0, 50, 137
+}
+
+Sprite BFGSI0, 320, 200
+{
+	Patch BFGGA0, 50, 145
+}
+
+Sprite BFGSJ0, 320, 200
 {
 	Patch BFGGA0, 50, 153
 }

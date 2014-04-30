@@ -5,7 +5,7 @@
 	// most of the sprites and sounds, any sound or sprite that I
 	// edited should be in the CREDITS or INFO lump)
 // Highest DoomEdNum: 30168
-	// Other unused DoomEdNums:
+	// Other unused DoomEdNums: 30069, 30163
  
 // Shared/Common
 	#include "Actors/Defaults.DEC" 									// Credits on the file
@@ -78,7 +78,6 @@
 		#include "Weapons/GrenadeLauncher/DECORATE.DEC"				// Credits in the folder
 		#include "Weapons/Shotgun/DECORATE.DEC"						// Credits in the folder
 		#include "Weapons/Revolver/DECORATE.DEC"					// Credits in the folder
-		#include "Weapons/BFG10K/DECORATE.DEC" 						// Credits in the folder
 		#include "Weapons/QuadShotgun/DECORATE.DEC" 				// Credits in the folder
 		#include "Weapons/Annihilator/DECORATE.DEC" 				// Credits in the folder
 		#include "Weapons/Minigun/DECORATE.DEC" 					// Credits in the folder

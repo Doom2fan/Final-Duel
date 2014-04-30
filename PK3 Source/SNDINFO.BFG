@@ -1,6 +1,8 @@
 BFG/Dryfire					BFGDRY
-BFG9000/BeginFire			BFGBEGIN
-BFG9000/Fire				BFGFIRE
-BFG9000/Explode				BFGBOOM
-BFG9000/Fly					BFGFLY
-BFG9000/ChargeExplosion		BFGXCHRG
+BFG/BeginFire				BFGBEGIN
+BFG/Fire					BFGFIRE
+BFG/Explode					BFGBOOM
+BFG/Fly						BFGFLY
+BFG/ChargeExplosion			BFGXCHRG
+BFG/CellOut					BFGOUT
+BFG/CellIn					BFGIN

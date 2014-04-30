@@ -500,4 +500,3 @@ generator FDRevenantTracer			RevenantScorch
 generator FDRocket					Scorch
 generator FDBFGBall					BFGLightning
 generator FDRocket					Scorch
-generator FDBFG10KShot              BFGLightning
