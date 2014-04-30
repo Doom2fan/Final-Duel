@@ -21,8 +21,10 @@ function int BasicButton (str image, str image2, int bx, int by, int bwidth, int
 		HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
 
 	if (mouseX > bx - bwidth && mouseX < bx + bwidth && mouseY > by - bheight && mouseY < by + bheight) {
-		if (keyPressed (BT_ATTACK) == 1) return 1;
-		else if (keyPressed (BT_ALTATTACK) == 1) return 2;
+		if (keyPressed (BT_ATTACK) == 1)
+			return 1;
+		else if (keyPressed (BT_ALTATTACK) == 1)
+			return 2;
 	}
 
 	return false;
@@ -36,8 +38,10 @@ function int BasicTextButton (str text, int bx, int by, int bwidth, int bheight,
 	else HudMessage (s:text; HUDMSG_FADEOUT, bid, CR_WHITE, bx*1.0, by*1.0, 0.1, 0.3);
 
 	if (mouseX > bx - bwidth && mouseX < bx + bwidth && mouseY > by - bheight && mouseY < by + bheight) {
-		if (keyPressed (BT_ATTACK) == 1) return 1;
-		else if (keyPressed (BT_ALTATTACK) == 1) return 2;
+		if (keyPressed (BT_ATTACK) == 1)
+			return 1;
+		else if (keyPressed (BT_ALTATTACK) == 1)
+			return 2;
 	}
 
 	return false;
@@ -71,7 +75,6 @@ script "ShopSystemz" (void) {
 	int mouseYadd = GetPlayerInput (-1, INPUT_PITCH);
 	
 	while (TRUE) {
-		
 		// move the cursor
 		mouseXadd = GetPlayerInput (-1, INPUT_YAW);
 		mouseYadd = GetPlayerInput (-1, INPUT_PITCH);
@@ -79,10 +82,14 @@ script "ShopSystemz" (void) {
 		mouseX -= mouseXadd / SENSITIVITY_X;
 		mouseY -= mouseYadd / SENSITIVITY_Y;
 		// prevent the cursor from going offscreen
-		if (mouseX < 0) mouseX = 0;
-        if (mouseX > SCREEN_WIDTH) mouseX = SCREEN_WIDTH;
-        if (mouseY < 0) mouseY = 0;
-        if (mouseY > SCREEN_HEIGHT) mouseY = SCREEN_HEIGHT;
+		if (mouseX < 0)
+			mouseX = 0;
+        if (mouseX > SCREEN_WIDTH)
+			mouseX = SCREEN_WIDTH;
+        if (mouseY < 0)
+			mouseY = 0;
+        if (mouseY > SCREEN_HEIGHT)
+			mouseY = SCREEN_HEIGHT;
 		
         SetFont ("CURSOR");
         HudMessage (s:"A"; HUDMSG_PLAIN, SHOPCURSORID, CR_UNTRANSLATED, mouseX*1.0+0.1, mouseY*1.0+0.1, 0.04);

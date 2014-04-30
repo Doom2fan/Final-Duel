@@ -34,7 +34,7 @@ Actor OmegaClass : BasePlayerClass {
   	Player.WeaponSlot 4, ActionMachineGun, FDMinigun
   	Player.WeaponSlot 5, FDRocketLauncher, Annihilator, FDGrenadeLauncher
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
-  	Player.WeaponSlot 7, BioForceGun, BFG10K
+  	Player.WeaponSlot 7, BioForceGun
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
 	Player.WeaponSlot 9, MancubusArm, Magic
 	States {

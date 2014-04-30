@@ -41,12 +41,12 @@ Actor Sword : FDWeapon 30072
 		SWRD A 1 A_WeaponReady
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
 		TNT1 A 0 A_FireCustomMissile("DroppedSword", 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("Sword", 1)
 		Stop
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		SRDS ABC 1
 		SRDS C 0 A_Lower
 		Wait

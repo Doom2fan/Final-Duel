@@ -1,22 +1,3 @@
-Actor MaxHealth : Health {
-	Inventory.MaxAmount 50
-	Inventory.PickupSound "misc/health_pkup"
-}
-
-Actor MaxHealthBonus : MaxHealth 30163 {
-	//$Category Final Duel-Health and Armour
-	//$Title Max. Health Bonus
-	+CountItem +Inventory.AlwaysPickup
-	Inventory.Amount 1
-	Inventory.MaxAmount 10
-	Health 200
-	Inventory.PickupMessage "$PICKUP_MAXHEALTHBONUS"
-	States {
-	Spawn:
-		BON3 ABCDCB 6
-		Loop
-	}
-}
 // Stimpack
 Actor FDStimpack : HealthPickup Replaces Stimpack 30164 {
 	//$Category Final Duel-Health and Armour

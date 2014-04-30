@@ -1,28 +1,23 @@
-Actor DroppedDoomSSG : DroppedWeaponBase
-{
-	States
-	{
+Actor DroppedDoomSSG : DroppedWeaponBase {
+	States {
 	Spawn:
 		SGN2 A 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("DoomSSGDropped")
+		TNT1 A 0 A_SpawnItemEx ("DoomSSGDropped")
 		Stop
 	}
 }
-Actor DoomSSGDropped : WeaponGiver
-{
+Actor DoomSSGDropped : WeaponGiver {
 	DropItem DoomSSG
 	Weapon.AmmoGive 0
-	States
-	{
+	States {
 	Spawn:
 		SGN2 A -1
 		Stop
 	}
 }
-Actor DoomSSG : FDWeapon 30002
-{
+Actor DoomSSG : FDWeapon 30002 {
 	//$Category Final Duel-Weapons
 	//$Title Double Shotgun
 	//$Sprite SGN2A0
@@ -33,60 +28,58 @@ Actor DoomSSG : FDWeapon 30002
 	Inventory.PickupSound "misc/gunpickup"
 	Inventory.PickupMessage "$GOTDOOMSSG"
 	Obituary "$OBDOOMSSG"
-	+NOAUTOFIRE
-	States
-	{
+	States {
 	Ready:
 		SSGS CBA 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
 		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		SSGR A 1 A_WeaponReady
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
-		TNT1 A 0 A_FireCustomMissile("DroppedDoomSSG", 0, 0, 0)
-		TNT1 A 0 A_TakeInventory("DoomSSG", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile ("DroppedDoomSSG", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory ("DoomSSG", 1)
 		Stop
 	Select:
 		SSGR A 0 A_Raise
 		Wait
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		SSGS ABC 1
 		TNT1 A 0 A_Lower
 		Wait
 	DryFire:
-		SSGR A 0 A_PlaySound("Weapons/empty")
+		SSGR A 12 A_PlaySound ("Weapons/empty", CHAN_WEAPON)
 		Goto Ready2
 	Fire:
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_FireCustomMissile("DoubleShotgunTracer", frandom(-3.5,3.5), 1, 0, -2, 0, frandom(-4.0,4.0))
-		TNT1 AAAAAAA 0 A_FireCustomMissile("DoubleShotgunTracer", frandom(-3.5,3.5), 0, 0, -4, 0, frandom(-4.0,4.0))
-		TNT1 A 0 A_SetPitch(pitch - 1.5)
-		TNT1 A 0 A_Recoil(cos(pitch) * 2.5)
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 1, 0, -2, 0, frandom(-4.0, 4.0))
+		TNT1 AAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 0, -4, 0, frandom (-4.0, 4.0))
+		TNT1 A 0 A_SetPitch (pitch - 1.5)
+		TNT1 A 0 A_Recoil (cos (pitch) * 2.5)
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Fire", 5)
 		SSGF A 2 Bright A_GunFlash
-		TNT1 AAAAAAAA 0 A_FireCustomMissile("DoubleShotgunTracer", frandom(-3.5,3.5), 0, 2, -4, 0, frandom(-4.0,4.0))
-		TNT1 A 0 A_SetPitch(pitch - 1.5)
-		TNT1 A 0 A_Recoil(cos(pitch) * 2.5)
+		TNT1 AAAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 2, -4, 0, frandom (-4.0, 4.0))
+		TNT1 A 0 A_SetPitch (pitch - 1.5)
+		TNT1 A 0 A_Recoil (cos (pitch) * 2.5)
 		SSGF U 2 Bright A_GunFlash
 		SSGR A 1
-		TNT1 A 0 A_JumpIfNoAmmo("Ready2")
-		TNT1 A 0 A_PlaySound("DoubleBarrelShotgun/Open", CHAN_Weapon)
+		TNT1 A 0 A_JumpIfNoAmmo ("Ready2")
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Open", CHAN_WEAPON)
 		SSGF BCDEFG 2
-		TNT1 AA 0 A_FireCustomMissile("ShellCasingSpawn2",0,0,-4,-4)
+		TNT1 AA 0 A_FireCustomMissile ("ShellCasingSpawn2", 0, 0, -4, -4)
 		SSGF HIJ 2
-		TNT1 A 0 A_PlaySound("DoubleBarrelShotgun/Load", CHAN_Weapon)
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Load", CHAN_WEAPON)
 		SSGF KLMN 2
-		TNT1 A 0 A_PlaySound("DoubleBarrelShotgun/Close", CHAN_Weapon)
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Close", CHAN_WEAPON)
 		SSGF OPQRST 2
 		TNT1 A 0 A_Refire
 		Goto Ready2
 	Spawn:
 		SGN2 A -1
 		Stop
-   }
+	}
 }

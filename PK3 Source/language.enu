@@ -81,8 +81,7 @@
 		GOTSONICRAIL			= "You got the Mjolnir MK IV Sonic Railgun. (Slot 6)";
 
 	// Slot 7
-		GOTBFG9000             	= "You got the Bio Force Gun MK XVI!  Oh, yes. (Slot 7)";
-		PICKUP_BFG10K          	= "You got the Plasmic Pulse Gun MK II!  Hell yeah. (Slot 7)";
+		GOTBFG	             	= "You got the Bio Force Gun MK XVI!  Oh, yes. (Slot 7)";
 
 	// Slot 8
 		PICKUP_SOULREAPER      	= "You got the Soul Reaper. (Slot 8)";
@@ -144,11 +143,9 @@
 
 // PvP
 	// Misc
-		OB_SHRAPNEL					= "%o was hit by a piece of shrapnel"
+		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel"
 	// Beretta
 		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
-	// BFG 10K
-		OB_BFG10K        		= "%o was deep fried by %k's Plasmic Pulse Gun MK II";
 	// Soul Reaper
 		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
 	// Mancubus Flamethrower
@@ -192,12 +189,13 @@
 		OBQUADSHOTGUN			= "%o is now full of holes made by %k's Quad-barrel Shotgun";
 	// Annihilator
 		OBANNIHILATOR			= "%o was annihilated by %k";
-	// BFG 9000
-		OBBFG9000				= "%o was erased from existance by %k's Bio Force Gun MK XVI";
+	// BFG
+		OBBFG					= "%o was erased from existance by %k's Bio Force Gun MK XVI";
+		OBBFGSELF				= "%o erased %hself from existance with %p Bio Force Gun MK XVI";
 	// Magnum Sniper Rifle
 		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
 	// Crossbow
-		OBCROSSBOW				= "%o now can't be an adventurer anymore, thanks to %k and %p Crossbow";
+		OBCROSSBOW				= "%o can't be an adventurer anymore, thanks to %k and %p Crossbow";
 
 // Default Strings
 	QUITMSG 					= "Are you sure you want to\nquit this awesome mod?";

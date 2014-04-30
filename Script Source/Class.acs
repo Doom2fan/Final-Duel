@@ -1,26 +1,23 @@
 script "FDNightvision" Enter { // Nightvision system
 	// Not needed or desired in TitleMaps.
-	if (GameType () == Game_Title_Map) Terminate;
+	if (GameType () == Game_Title_Map)
+		Terminate;
 	// FDNightvisionOn is used to turn on nightvision,
 	// NVBattery is the nightvision battery
 	int pln = PlayerNumber();
 	int FDNVTics = 0; // tic counter, used for taking battery and other tic related things
 	
 	while (TRUE) {
-		if (FDNVTics == 52 && checkInventory ("NightvisionUpgrade") == 0) { // if the tic counter is on tic 52(or whatever number is used on the comparison)...
+		if (FDNVTics == 52 && checkInventory ("NightvisionUpgrade") == 0) // if the tic counter is on tic 52(or whatever number is used on the comparison)...
 			FDNVTics = 0; // reset counter
-		}
-		else if (FDNVTics == 70 && checkInventory ("NightvisionUpgrade") == 1) {
+		else if (FDNVTics == 70 && checkInventory ("NightvisionUpgrade") == 1)
 			FDNVTics = 0; // reset counter
-		}
-		else if (FDNVTics == 87 && checkInventory ("NightvisionUpgrade") == 2) {
+		else if (FDNVTics == 87 && checkInventory ("NightvisionUpgrade") == 2)
 			FDNVTics = 0; // reset counter
-		}
 		if (checkInventory ("FDNightvisionOn") != 0 && checkInventory ("NVBattery") != 0) { // if nightvision is on and there's usable battery...
 			GiveInventory ("PowerNightvision", 1); // turn on nightvision
-			if (FDNVTics == 0) { // if FDNVTics is zero...
+			if (FDNVTics == 0) // if FDNVTics is zero...
 				TakeInventory ("NVBattery", 1); // take one battery point
-			}
 		}
 		else if (checkInventory ("FDNightvisionOn") != 0 && checkInventory ("NVBattery") == 0) { // if nightvision is on and there's no usable battery
 			TakeInventory ("PowerNightvision", 1); // take PowerNightvision
@@ -32,7 +29,8 @@ script "FDNightvision" Enter { // Nightvision system
 			TakeInventory ("FDNightvisionOn", 1); // take FDNightvisionOn
 		}		
 		Delay (1);
-		if (checkInventory ("FDNightvisionOn") != 0) FDNVTics++; // if nightvision on, add one tic
+		if (checkInventory ("FDNightvisionOn") != 0) // if nightvision on...
+			FDNVTics++; // add one tic.
 	}
 }
 
@@ -41,7 +39,8 @@ script "FDSprintSystem" ENTER {
 	int Sprinting, TookRegen, tics = 0;
 	While (TRUE) {
 		if (CheckInventory ("SprintWeapon") && Sprinting == 0) {
-			if (TookRegen == 1) GiveInventory ("StaminaRegen", 1);
+			if (TookRegen == 1)
+				GiveInventory ("StaminaRegen", 1);
 			PlayerSpeed (100);
 			DisableWeapon ("SprintWeapon");
 			Sprinting = 0;
@@ -56,14 +55,16 @@ script "FDSprintSystem" ENTER {
 			Sprinting = 1;
 		}
 		if (keyUp (BT_USER1) && Sprinting == 1) {
-			if (TookRegen == 1) GiveInventory ("StaminaRegen", 1);
+			if (TookRegen == 1)
+				GiveInventory ("StaminaRegen", 1);
 			PlayerSpeed (100);
 			DisableWeapon ("SprintWeapon");
 			Sprinting = 0;
 			tics = 0;
 		}
 		if (Sprinting == 1) {
-			if (tics == 5) tics = 0;
+			if (tics == 5)
+				tics = 0;
 			if (CheckInventory ("FDStamina") >= 5)
 			{
 				if (CheckInventory ("FDStamina") < 5) {
@@ -71,13 +72,17 @@ script "FDSprintSystem" ENTER {
 					DisableWeapon ("SprintWeapon");
 					restart;
 				}
-				if ((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)) SetActorProperty (0, APROP_Speed, 1.6);
-				else SetActorProperty (0, APROP_Speed, 2.6);
-				if (tics == 5) TakeInventory ("FDStamina", 5);
+				if ((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400))
+					SetActorProperty (0, APROP_Speed, 1.6);
+				else
+					SetActorProperty (0, APROP_Speed, 2.6);
+				if (tics == 5)
+					TakeInventory ("FDStamina", 5);
 			}
 		}
 		Delay (1);
-		if (Sprinting == 1) tics++;
+		if (Sprinting == 1)
+			tics++;
 	}
 }
 
@@ -88,10 +93,14 @@ script "FD_StaminaRegeneration" ENTER {
 	int StaminaTics = 0;
 	
 	while (TRUE) {
-		if (StaminaTics == 5 && CheckInventory ("FDStamina") != 100) StaminaTics = 0;
-		if (StaminaTics > 0 && CheckInventory ("FDStamina") == 100) StaminaTics = 0;
-		if (CheckInventory ("StaminaRegen") != 0 && CheckInventory ("FDStamina") != 100 && StaminaTics == 0) GiveInventory ("FDStamina", 5);
-		if (CheckInventory ("StaminaRegen") != 0) StaminaTics++;
+		if (StaminaTics == 5 && CheckInventory ("FDStamina") != 100)
+			StaminaTics = 0;
+		if (StaminaTics > 0 && CheckInventory ("FDStamina") == 100)
+			StaminaTics = 0;
+		if (CheckInventory ("StaminaRegen") != 0 && CheckInventory ("FDStamina") != 100 && StaminaTics == 0)
+			GiveInventory ("FDStamina", 5);
+		if (CheckInventory ("StaminaRegen") != 0)
+			StaminaTics++;
 		Delay(1);
 	}
 }

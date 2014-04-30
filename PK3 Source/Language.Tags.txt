@@ -33,7 +33,6 @@
 
 	// Slot 7
 		TAGBFG											= "Bio Force Gun MK XVI";
-		TAGBFG10K										= "Plasmatic Pulse Gun MK III";
 
 	// Slot 8
 		TAGSREAPER										= "Soul Reaper";

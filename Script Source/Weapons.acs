@@ -1,6 +1,7 @@
 script "ScriptReplace" ENTER { // replace weapons in scripts
 	// Not needed or desired in TitleMaps.
-	if (GameType() == Game_Title_Map) Terminate;
+	if (GameType() == Game_Title_Map)
+		Terminate;
 	While (TRUE) {
 		if (checkInventory("Fist")) {
 			TakeInventory ("Fist", 1);
@@ -13,8 +14,10 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 		else if (checkInventory("Pistol")) {
 			TakeInventory ("Pistol", 1);
 			GiveInventory ("Clip2", 1);
-			if (checkInventory("ChronosItem")) GiveInventory ("Beretta", 1);
-			else GiveInventory ("Enforcer", 1);
+			if (checkInventory("ChronosItem"))
+				GiveInventory ("Beretta", 1);
+			else
+				GiveInventory ("Enforcer", 1);
 		}
 		else if (checkInventory("Shotgun")) { // if the player has a shotgun...
 			TakeInventory ("Shotgun", 1); // take the shotgun
@@ -29,8 +32,10 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 		else if (checkInventory("Chaingun")) {
 			TakeInventory ("Chaingun", 1);
 			GiveInventory ("Clip2", 1);
-			if (checkInventory("ChronosItem")) GiveInventory ("ActionMachineGun", 1);
-			else GiveInventory ("AK47", 1);
+			if (checkInventory("ChronosItem"))
+				GiveInventory ("ActionMachineGun", 1);
+			else
+				GiveInventory ("AK47", 1);
 		}
 		else if (checkInventory("RocketLauncher")) {
 			TakeInventory ("RocketLauncher", 1);
@@ -42,7 +47,6 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 		}
 		else if (checkInventory("BFG9000")) {
 			TakeInventory ("BFG9000", 1);
-			GiveInventory ("BioForceGun", 1);
 		}
 		Delay (1);
 	}
@@ -51,8 +55,10 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 script "FDMeleeComboSystem" (void) {
 	While (TRUE) {
 		if (!CheckWeapon ("MeleeAttack")) terminate;
-		if (keyPressed (BT_ATTACK) && !keyPressed (BT_ALTATTACK)) GiveInventory ("MCSBFire", 1);
-		if (keyPressed (BT_ALTATTACK) && !keyPressed (BT_ATTACK)) GiveInventory ("MCSBAltFire", 1);
+		if (keyPressed (BT_ATTACK) && !keyPressed (BT_ALTATTACK))
+			GiveInventory ("MCSBFire", 1);
+		if (keyPressed (BT_ALTATTACK) && !keyPressed (BT_ATTACK))
+			GiveInventory ("MCSBAltFire", 1);
 		Delay (1);
 	}
 }

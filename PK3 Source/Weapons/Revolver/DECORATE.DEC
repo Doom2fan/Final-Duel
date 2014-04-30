@@ -64,7 +64,7 @@ Actor Magnum : FDWeapon 30083
 		REVG A 1 A_WeaponReady
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
 		TNT1 A 0 A_FireCustomMissile("DroppedMagnum", 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("Magnum", 1)
 		Stop
@@ -77,11 +77,11 @@ Actor Magnum : FDWeapon 30083
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("MagnumUpgrade",1,"Fire.Upgraded")
-		REVG A 0 A_JumpIfNoAmmo("DryFire")
+		REVG A 0 A_JumpIfNoAmmo ("DryFire")
 		REVG A 1
 		REVF A 2
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_Weapon)
+		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("RevolverTracer", frandom(-2.0,2.0), 1, 10, 2, 0, frandom(-2.5,2.5))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
 		REVF BB 1 Bright A_SetPitch(pitch - 3.0)
@@ -93,11 +93,11 @@ Actor Magnum : FDWeapon 30083
 		REVG A 1
 		Goto Ready2
 	Fire.Upgraded:
-		REVG A 0 A_JumpIfNoAmmo("DryFire")
+		REVG A 0 A_JumpIfNoAmmo ("DryFire")
 		REVG A 1
 		REVF A 2
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_Weapon)
+		TNT1 A 0 A_PlaySound("Magnum/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("UpgradedRevolverTracer", frandom(-0.5,0.5), 1, 10, 2, 0, frandom(-1.0,1.0))
 		TNT1 A 0 A_Recoil(cos(pitch) * 0.4)
 		REVF BB 1 Bright A_SetPitch(pitch - 1.5)
@@ -117,13 +117,13 @@ Actor Magnum : FDWeapon 30083
 		REVG A 0 A_JumpIfInventory("AmmoMagnum", 6, "Ready2")
 		TNT1 A 0 A_JumpIfInventory("MagnumClip", 1, 1)
 		Goto Ready2
-		TNT1 A 0 A_PlaySound("Magnum/Open", CHAN_Weapon)
+		TNT1 A 0 A_PlaySound("Magnum/Open", CHAN_WEAPON)
 		REVR ABCD 3
-		TNT1 A 0  A_PlaySound("Magnum/Out", CHAN_Weapon)
+		TNT1 A 0  A_PlaySound("Magnum/Out", CHAN_WEAPON)
 		REVR EEFFGG 1
 		REVR H 4 A_FireCustomMissile("MagnumCasingSpawner",-4,0,0,0)
 		REVR IIIJJ 1
-		TNT1 A 0 A_PlaySound("Magnum/In", CHAN_Weapon)
+		TNT1 A 0 A_PlaySound("Magnum/In", CHAN_WEAPON)
 		REVR KKCCCBBBAAA 1
 		TNT1 A 0 A_TakeInventory("AmmoMagnum", 6)
 		TNT1 A 0 A_TakeInventory("MagnumClip", 1)

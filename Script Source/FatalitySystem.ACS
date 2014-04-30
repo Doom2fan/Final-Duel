@@ -13,14 +13,12 @@ Script "FatalitySystem" (int end) {
 
 script "FatalityInvulnerability" (void) NET // by The Zombie Killer, edited by Alex_Mercer
 {
-	While (CheckInventory ("PowerInvulnerable") > 0) {
+	While (CheckInventory ("PowerInvulnerable") > 0)
 		Delay(1);
-	}
 	While (CheckInventory("GoFatality") > 0) {
 		Delay (1);
-		if(GetActorProperty (0, APROP_INVULNERABLE) != 1) {
+		if(GetActorProperty (0, APROP_INVULNERABLE) != 1)
 			SetActorProperty (0, APROP_INVULNERABLE, ON);
-		}
 	}
 	SetActorProperty (0, APROP_INVULNERABLE, OFF);
 }

@@ -19,13 +19,13 @@ script "RandomizerCVar" (void) {
 // Meh
 script "Water" Enter {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map) Terminate;
-	if (GetActorProperty(0,APROP_Waterlevel) > 2) { // if underwater...
+	If (GameType () == Game_Title_Map)
+		Terminate;
+	if (GetActorProperty(0,APROP_Waterlevel) > 2) // if underwater...
 		GiveInventory ("IsUnderwater", 1); // give IsUnderwater
-	}
-	else if (GetActorProperty(0,APROP_Waterlevel) <= 2) { // if not underwater
+	else if (GetActorProperty(0,APROP_Waterlevel) <= 2) // if not underwater
 		TakeInventory ("IsUnderwater", 1); // take IsUnderwater
-	}
+		
 	Delay (1);
 	restart;
 }
@@ -79,6 +79,7 @@ script "FD_TryingToDropFists" (void) {
 			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		TriedToDropFistsOnce[PlayerNumber ()] = 1;
 	}
+	
 	else {
 		int messageNumber = random (0, 5);
 		HudMessage (s:FD_TryingToDropFistsMessages[messageNumber];

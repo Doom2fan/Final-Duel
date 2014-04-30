@@ -1,28 +1,23 @@
-Actor DroppedCrossbow : DroppedWeaponBase
-{
-	States
-	{
+Actor DroppedCrossbow : DroppedWeaponBase {
+	States {
 	Spawn:
 		SBOW A 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("FDCrossbowDropped")
+		TNT1 A 0 A_SpawnItemEx ("FDCrossbowDropped")
 		Stop
 	}
 }
-Actor FDCrossbowDropped : WeaponGiver
-{
+Actor FDCrossbowDropped : WeaponGiver {
 	DropItem FDCrossbow
 	Weapon.AmmoGive 0
-	States
-	{
+	States {
 	Spawn:
 		SBOW A -1
 		Stop
 	}
 }
-Actor FDCrossbow : FDWeapon 30137
-{
+Actor FDCrossbow : FDWeapon 30137 {
 	//$Category Final Duel-Weapons
 	//$Title Crossbow
 	//$Sprite SBOWA0
@@ -31,38 +26,35 @@ Actor FDCrossbow : FDWeapon 30137
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 1
 	Weapon.AmmoType "CrossbowBolts"
-	+NoAlert
-	+Weapon.NoAutoFire
+	+Weapon.NoAlert
 	Inventory.PickupMessage "$GOTCROSSBOW"
 	Obituary "$OBCROSSBOW"
-	+Ammo_Optional
-	States
-	{
+	States {
 	Ready:
 		XBWS CBA 1 
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfNoAmmo("Ready2.Empty")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfNoAmmo ("Ready2.Empty")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		XBOW A 1 A_WeaponReady
 		Loop
 	Ready2.Empty:
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfInventory("CrossbowBolts",1,"Load")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("CrossbowBolts", 1, "Load")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		XBOW O 1 A_WeaponReady
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
-		TNT1 A 0 A_FireCustomMissile("DroppedCrossbow", 0, 0, 0)
-		TNT1 A 0 A_TakeInventory("FDCrossbow", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile ("DroppedCrossbow", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory ("FDCrossbow", 1)
 		Stop
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		XBWS ABC 1
 		TNT1 A 0 A_Lower
 		Wait
@@ -70,34 +62,34 @@ Actor FDCrossbow : FDWeapon 30137
 		TNT1 A 0 A_Raise
 		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_PlaySound("Crossbow/Fire", CHAN_Weapon)
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_PlaySound ("Crossbow/Fire", CHAN_WEAPON)
 		XBOW B 1 A_FireCustomMissile ("CrossbowBolt",0,1)
-		TNT1 A 0 A_JumpIfNoAmmo("Ready2.Empty")
+		TNT1 A 0 A_JumpIfNoAmmo ("Ready2.Empty")
 		XBOW CD 2
 		XBOW D 11
-		XBOW E 2 A_PlaySound("Crossbow/String", CHAN_Weapon)
+		XBOW E 2 A_PlaySound ("Crossbow/String", CHAN_WEAPON)
 		XBOW FGH 2
-		XBOW I 2 A_PlaySound("Crossbow/Cock", CHAN_Weapon)
+		XBOW I 2 A_PlaySound ("Crossbow/Cock", CHAN_WEAPON)
 		XBOW JK 2
 		XBOW L 8
-		XBOW M 3 A_PlaySound("Crossbow/Slide", CHAN_Weapon)
+		XBOW M 3 A_PlaySound ("Crossbow/Slide", CHAN_WEAPON)
 		XBOW N 3
 		Goto Ready2
 	Load:
 		XBOW B 1
 		XBOW CD 2
 		XBOW D 11
-		XBOW E 2 A_PlaySound("Crossbow/String", CHAN_Weapon)
+		XBOW E 2 A_PlaySound ("Crossbow/String", CHAN_WEAPON)
 		XBOW FGH 2
-		XBOW I 2 A_PlaySound("Crossbow/Cock", CHAN_Weapon)
+		XBOW I 2 A_PlaySound ("Crossbow/Cock", CHAN_WEAPON)
 		XBOW JK 2
 		XBOW L 8
-		XBOW M 3 A_PlaySound("Crossbow/Slide", CHAN_Weapon)
+		XBOW M 3 A_PlaySound ("Crossbow/Slide", CHAN_WEAPON)
 		XBOW N 3
 		Goto Ready2
 	DryFire:
-		XBOW A 0 A_PlaySound("Crossbow/empty")
+		XBOW A 0 A_PlaySound ("Crossbow/empty")
 		Goto Ready2
 	Spawn:
 		SBOW A -1
@@ -105,36 +97,31 @@ Actor FDCrossbow : FDWeapon 30137
 	}
 }
 
-Actor CrossbowBolt
-{
+Actor CrossbowBolt {
 	Radius 11
 	Height 8
 	Speed 50
-	Damage (random(1,8) * 20)
+	Damage (random (1, 8) * 20)
 	Projectile
-	+WINDTHRUST
-	+NoExtremeDeath
-	States
-	{
+	+WindThrust +NoExtremeDeath
+	States {
 	Spawn:
 		XBWB A 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("CrossbowBoltWall", 0.0, 0.0, 0.0,
+		TNT1 A 0 A_SpawnItemEx ("CrossbowBoltWall", 0.0, 0.0, 0.0,
 								0.0, 0.0, 0.0, 0.0, SXF_NOCHECKPOSITION)
-		XBWB A 1 A_PlaySound("Crossbow/Arrow/Hit", CHAN_BODY)
+		XBWB A 1 A_PlaySound ("Crossbow/Arrow/Hit", CHAN_BODY)
 		Stop
 	Crash:
 	XDeath:
-		TNT1 A 0 A_PlaySound("Crossbow/Arrow/Hit", CHAN_BODY)
+		TNT1 A 0 A_PlaySound ("Crossbow/Arrow/Hit", CHAN_BODY)
 		Stop
 	}
 }
-Actor CrossbowBoltWall: CrossbowBolts
-{
+Actor CrossbowBoltWall : CrossbowBolts {
 	+NoGravity
-	States
-	{
+	States {
 	Spawn:
 		XBWB A -1
 		Stop

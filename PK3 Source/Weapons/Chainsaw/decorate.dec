@@ -1,17 +1,14 @@
-Actor DroppedChainsaw : DroppedWeaponBase
-{
-	States
-	{
+Actor DroppedChainsaw : DroppedWeaponBase {
+	States {
 	Spawn:
 		SAWY A 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("FDChainsaw")
+		TNT1 A 0 A_SpawnItemEx ("FDChainsaw")
 		Stop
 	}
 }
-Actor FDChainsaw : FDWeapon
-{
+Actor FDChainsaw : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title Chainsaw
 	//$Sprite SAWYA0
@@ -21,30 +18,26 @@ Actor FDChainsaw : FDWeapon
 	Weapon.UpSound "Weapons/sawup"
 	Inventory.PickupMessage "$GOTSAW"
 	Obituary "$OBSAW"
-	DamageType Saw
-	+Weapon.MELEEWeapon
-	+NOALERT
-	+Ammo_Optional
-	States
-	{
+	+Weapon.MeleeWeapon +Weapon.NoAlert
+	States {
 	Ready:
 		CSAW GFE 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		TNT1 A 0 A_PlaySound("Weapons/saw2idle",CHAN_Weapon)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		TNT1 A 0 A_PlaySound("Weapons/saw2idle",CHAN_WEAPON)
 		CSAW AB 2 A_WeaponReady
 		TNT1 A 0
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
-		TNT1 A 0 A_FireCustomMissile("DroppedChainsaw", 0, 0, 0)
-		TNT1 A 0 A_TakeInventory("FDChainsaw", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
+		TNT1 A 0 A_FireCustomMissile ("DroppedChainsaw", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory ("FDChainsaw", 1)
 		Stop
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		CSAW EFG 1
 		CSAW A 0 A_Lower
 		Wait
@@ -52,7 +45,7 @@ Actor FDChainsaw : FDWeapon
 		CSAW A 1 A_Raise
 		Loop
 	Fire:
-		CSAW CD 2 A_Saw("Weapons/saw2full","Weapons/saw2hit",0,"SawPuff")
+		CSAW CD 2 A_Saw ("Weapons/saw2full", "Weapons/saw2hit", 0, "SawPuff")
 		TNT1 A 0 A_AlertMonsters
 		CSAW D 0 A_ReFire
 		Goto Ready2
@@ -61,14 +54,12 @@ Actor FDChainsaw : FDWeapon
 		Stop
 	}
 }
-Actor FDChainsawPowered : FDChainsaw
-{
+Actor FDChainsawPowered : FDChainsaw {
 	Weapon.SisterWeapon FDChainsaw
 	+POWERED_UP
-	States
-	{
+	States {
 	Fire:
-		CSAW CD 2 A_Saw("Weapons/saw2full","Weapons/saw2hit",0,"SawPuff", 0, 0, 0, 0, 0.5)
+		CSAW CD 2 A_Saw ("Weapons/saw2full", "Weapons/saw2hit", 0, "SawPuff", 0, 0, 0, 0, 0.5)
 		TNT1 A 0 A_AlertMonsters
 		CSAW D 0 A_ReFire
 		Goto Ready2

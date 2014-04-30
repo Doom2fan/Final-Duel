@@ -8,7 +8,8 @@ Script "FDKeys" Enter {
 	If (GameType() == Game_Title_Map) Terminate;
 	While (TRUE)
 	{
-		if (keyPressed (BT_RELOAD)) UseInventory ("FDReloadKey");
+		if (keyPressed (BT_RELOAD))
+			UseInventory ("FDReloadKey");
 		Delay (1);
 	}
 }

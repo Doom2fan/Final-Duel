@@ -1,24 +1,3 @@
-// Max. armor bonus
-Actor MaxArmorBonus : BasicArmorBonus 30069 {
-	//$Category Final Duel-Health and Armour
-	//$Title Max. Armor Bonus
-	Radius 20
-	Height 16
-	Inventory.Pickupmessage "$PICKUP_MAXARMORBONUS"
-	Inventory.Icon "ARM1A0"
-	Armor.SavePercent 33.33333
-	Armor.SaveAmount 1
-	Armor.MaxSaveAmount 200
-	Armor.MaxBonus 1
-	Armor.MaxBonusMax 100
-	+CountItem +Inventory.AlwaysPickup
-	States {
-	Spawn:
-		BON4 ABCDCB 6
-		Loop
-	}
-}
-
 // Green Armor
 Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
 	//$Category Final Duel-Health and Armour

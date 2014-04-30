@@ -3,54 +3,63 @@
 // They come in handy :>
 // by Ijon
 function int abs (int x) {
-    if (x < 0) { return -x; }
+    if (x < 0)
+		return -x;
     return x;
 }
 
 function int mod (int x, int y) {
     int ret = x - ((x / y) * y);
-    if (ret < 0) { ret = y + ret; }
+    if (ret < 0)
+		ret = y + ret;
     return ret;
 }
 
 function int pow (int x, int y) {
     int n = 1;
-    while (y-- > 0) { n *= x; }
+    while (y-- > 0)
+		n *= x;
     return n;
 }
 
 function int powFloat (int x, int y) {
     int n = 1.0;
-    while (y-- > 0) { n = FixedMul(n, x); }
+    while (y-- > 0)
+		n = FixedMul(n, x);
     return n;
 }
 
 function int min (int x, int y) {
-    if (x < y) { return x; }
+    if (x < y)
+		return x;
     return y;
 }
 
 function int max (int x, int y) {
-    if (x > y) { return x; }
+    if (x > y)
+		return x;
     return y;
 }
 
 function int middle (int x, int y, int z) {
-    if ((x < z) && (y < z)) { return min (max (x, y), z); }
+    if ((x < z) && (y < z))
+		return min (max (x, y), z);
     return max (min (x, y), z);
 }
 
 function int keyUp (int key) {
     int buttons = GetPlayerInput (-1, INPUT_BUTTONS);
 
-    if (~buttons & key) { return 1; }
+    if (~buttons & key)
+		return 1;
     return 0;
 }
 
 function int keyDown (int key) {
     int buttons = GetPlayerInput (-1, INPUT_BUTTONS);
 
-    if (buttons & key) { return 1; }
+    if (buttons & key)
+		return 1;
     return 0;
 }
 
@@ -59,20 +68,25 @@ function int keyPressed (int key) {
     int oldbuttons  = GetPlayerInput (-1, INPUT_OLDBUTTONS);
     int newbuttons  = (buttons ^ oldbuttons) & buttons;
 
-    if (newbuttons & key) { return 1; }
+    if (newbuttons & key)
+		return 1;
     return 0;
 }
 
 function int adjustBottom (int tmin, int tmax, int i) {
-    if (i < tmin) { tmin = i; }
-    if (i > tmax) { tmin += (i - tmax); }
+    if (i < tmin)
+		tmin = i;
+    if (i > tmax)
+		tmin += (i - tmax);
 
     return tmin;
 }
 
 function int adjustTop (int tmin, int tmax, int i) {
-    if (i < tmin) { tmax -= (tmin - i); }
-    if (i > tmax) { tmax = i; }
+    if (i < tmin)
+		tmax -= (tmin - i);
+    if (i > tmax)
+		tmax = i;
 
     return tmax;
 }
@@ -207,7 +221,8 @@ function void RestartLevelSystem (void) {
 	TakeInventory ("MinigunUpgrade", 1);
 	TakeInventory ("NightvisionUpgrade", 1);
 	TakeInventory ("PlasmaRifleUpgrade", 1);
-	if (CheckInventory ("XPSystemLevel") >= 7) HealthUnboost (-50);
+	if (CheckInventory ("XPSystemLevel") >= 7)
+		HealthUnboost (-50);
 	TakeInventory ("MagnumUpgrade", 1);
 	TakeInventory ("XPSystemLevel", 900000000);
 	TakeInventory ("XPSystemExperience", 900000000);
@@ -257,8 +272,10 @@ function void hudmessageonactor (int tid, int range, str sprite, str text) {
 	vang = VectorAngle (x,y);
 	ang = (vang - GetActorAngle (0) + 1.0) % 1.0;
 
-	if (((vang+0.125)%0.5) > 0.25) dist = FixedDiv (y, sin (vang));
-	else dist = FixedDiv (x, cos (vang));
+	if (((vang+0.125)%0.5) > 0.25)
+		dist = FixedDiv (y, sin (vang));
+	else
+		dist = FixedDiv (x, cos (vang));
 
 	if ((ang < 0.2 || ang > 0.8) && dist >> 16 < range) {
 		pitch = VectorAngle (dist, GetActorZ (tid) - (GetActorZ (0) + 41.0));
@@ -269,5 +286,6 @@ function void hudmessageonactor (int tid, int range, str sprite, str text) {
 
 		HudMessage (s:text; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, (x<<16)+offset, (y<<16)+offset, 0);
 	}
-	else HudMessage (s:""; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0, 0, 0);
+	else
+		HudMessage (s:""; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0, 0, 0);
 }

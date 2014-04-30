@@ -173,12 +173,10 @@ Function int GetVelocity (void) {
 	int y = GetActorVelY (0);
 	int angle = VectorAngle (x, y);
 	
-	if(((angle + 0.125) % 0.5) > 0.25) {
+	if (((angle + 0.125) % 0.5) > 0.25)
 		vel = FixedDiv (y, Sin (angle));
-	}
-	else {
+	else
 		vel = FixedDiv (x, Cos (angle));
-	}
 	return vel >> 16;
 }
 
@@ -200,9 +198,8 @@ Script "Footsteps" ENTER
 					SoundPlayed = 1;
 				}
 			}
-			if (SoundPlayed == 0) {
+			if (SoundPlayed == 0)
 				ActivatorSound (DefStepSound, 1.0);
-			}
 		}
 		SoundPlayed = 0;
 		Delay (DelayTime);

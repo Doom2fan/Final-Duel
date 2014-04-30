@@ -1,7 +1,7 @@
 script "ShowKeys" (void) { // show keys screen
 	SetHudSize (320, 200, 1);
 	if (checkInventory ("ShowKeys") == 1) { // if ShowKeys is true...
-		SetFont("DARKNESS");
+		SetFont ("DARKNESS");
 		HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 40000, 0, 0, 0, 0); // darken the screen
 	}
 	else if (checkInventory("ShowKeys") == 0) { // if ShowKeys is false...
@@ -15,10 +15,10 @@ script "Stats" ENTER {
 	int currentLVL;
 	int currentXP;
 	while (TRUE) {
-		currentLVL = checkInventory("XPSystemLevel");
-		currentXP = checkInventory("XPSystemExperience");
+		currentLVL = checkInventory ("XPSystemLevel");
+		currentXP = checkInventory ("XPSystemExperience");
 		if (checkInventory("ShowKeys") == 1) { // if ShowKeys is true...
-			SetFont("DBIGFONT");
+			SetFont ("DBIGFONT");
 			HudMessage (s:"Current level: ", d:currentLVL; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39999, CR_UNTRANSLATED, 0.5, 0.2, 0); // show current level
 			HudMessage (s:"Experience: ", d:currentXP; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP, 39998, CR_UNTRANSLATED, 0.5, 0.225, 0); // show experience
 		}
@@ -32,7 +32,8 @@ script "Stats" ENTER {
 
 script "HudWeapons" Enter { // HUD icons and stuff...
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map) Terminate;
+	If (GameType () == Game_Title_Map)
+		Terminate;
 	While (TRUE) {
 		if (GetCVar ("screenblocks") <= 11) { // if HUD shown...
 			/* Firing modes */
@@ -86,7 +87,7 @@ script "HudWeapons" Enter { // HUD icons and stuff...
 				if (checkInventory("SRMode2")) {
 					SetFont ("AUTO");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-			}
+				}
 				else if (checkInventory("SRMode3")) {
 					SetFont ("BURST");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
@@ -97,12 +98,12 @@ script "HudWeapons" Enter { // HUD icons and stuff...
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}
-			else HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
+			else
+				HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 		}
-		else {
+		else
 			HudMessage (s:""; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
-		}
-		Delay(1);
+		Delay (1);
 		
 	}
 }

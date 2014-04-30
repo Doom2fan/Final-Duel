@@ -44,7 +44,7 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		GLG1 A 1 A_WeaponReady
 		Loop
 	DropWeapon:
-		TNT1 A 0 A_TakeInventory("DropDatWeapon", 1)
+		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
 		TNT1 A 0 A_FireCustomMissile("DroppedGrenadeLauncher", 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("FDGrenadeLauncher", 1)
 		Stop
@@ -52,7 +52,7 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		GLG1 A 0 A_Raise
 		Wait
 	Deselect:
-		TNT1 A 0 A_JumpIfHealthLower(0,"DeselectDEAD")
+		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		GLGR ABCDEF 1
 		GLG1 A 0 A_Lower
 		Wait
@@ -64,19 +64,19 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		GLGR ABCDEF 1
 		GLGR F 8
 		TNT1 A 0 A_FireCustomMissile("GrenadeMagSpawn",0,0,0,0)
-		GLGR F 17 A_PlaySound("GrenadeLauncher/DrumOut", CHAN_Weapon)
+		GLGR F 17 A_PlaySound("GrenadeLauncher/DrumOut", CHAN_WEAPON)
 		TNT1 A 0 A_TakeInventory("AmmoGrenadeLauncher",6)
 		TNT1 A 0 A_GiveInventory("AmmoGrenadeLauncher",6)
 		TNT1 A 0 A_TakeInventory("GrenadeAmmo",1)
 		GLGR F 17
-		TNT1 A 0 A_PlaySound("GrenadeLauncher/DrumIn", CHAN_Weapon)
+		TNT1 A 0 A_PlaySound("GrenadeLauncher/DrumIn", CHAN_WEAPON)
 		GLGR F 17
 		GLGR FEDCBA 1
 		Goto Ready2
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("GrenadeLauncherExplode",1,"Fire.Explode")
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_PlaySound("GrenadeLauncher/Fire", CHAN_Weapon)
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_PlaySound("GrenadeLauncher/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_Recoil(cos(pitch) * 2.5)
 		GLGF A 3 Bright A_FireCustomMissile("FDGrenade",0,1,0,0,0,6)
 		GLGF B 3 Bright A_AlertMonsters
@@ -84,8 +84,8 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		TNT1 A 0 A_Refire
 		Goto Ready2
 	Fire.Explode:
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire")
-		TNT1 A 0 A_PlaySound("GrenadeLauncher/Fire", CHAN_Weapon)
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
+		TNT1 A 0 A_PlaySound("GrenadeLauncher/Fire", CHAN_WEAPON)
 		TNT1 A 0 ThrustThing(angle*256/360+128, cos(pitch) * 5, 0, 0)
 		TNT1 A 0 A_Recoil(cos(pitch) * 2.5)
 		GLGF A 3 A_FireCustomMissile("FDGrenade2",0,1,0,0,0,6)
@@ -97,12 +97,12 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 	Altfire:
 		TNT1 A 0 A_JumpIfInventory("GrenadeLauncherExplode",1,5)
 		TNT1 A 0 A_GiveInventory("GrenadeLauncherExplode",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Explode on impact -")
 		GLG1 A 6
 		Goto Ready2
 		TNT1 A 0 A_TakeInventory("GrenadeLauncherExplode",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_Weapon,1.5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Bounce -")
 		GLG1 A 6
 		Goto Ready2

@@ -27,21 +27,22 @@ function void StartStuff (void) {
 	GiveInventory ("AmmoGrenadeLauncher", 6);
 	GiveInventory ("AmmoPRifle", 80);
 	GiveInventory ("AmmoSRail", 80);
-	GiveInventory ("AmmoBFG10K", 80);
 	GiveInventory ("AmmoSR", 60);
 	GiveInventory ("AmmoSniperRifle", 5);
 }
 
 script "CVars" Enter {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map) Terminate;
+	If (GameType () == Game_Title_Map)
+		Terminate;
 	Delay (1);
 	restart;
 }
 
 script "FDEnter" ENTER {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map) Terminate;
+	If (GameType () == Game_Title_Map)
+		Terminate;
 	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
 	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
 	TakeInventory ("ShowKeys", 1);
@@ -52,7 +53,8 @@ script "FDEnter" ENTER {
 
 script "FDRespawn" RESPAWN {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map) Terminate;
+	If (GameType () == Game_Title_Map)
+		Terminate;
 	// Make sure our old dead body doesn't still have our tid
 	Thing_ChangeTID (PLAYER_TID_START+PlayerNumber (), 0);
 	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
