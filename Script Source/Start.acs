@@ -10,7 +10,6 @@ function void StartStuff (void) {
 	GiveInventory ("FDReloadKey", 1);
 	GiveInventory ("FDKickKey", 1);
 	GiveInventory ("FDDropWeaponKey", 1);
-	GiveInventory ("EnforcerClip", 24);
 	GiveInventory ("EnforcerClipR", 15);
 	GiveInventory ("EnforcerClipL", 15);
 	GiveInventory ("AmmoBeretta", 15);
