@@ -29,13 +29,6 @@ script "XPSystem" Enter {
 					HudMessage (s:"Beretta upgraded.\nBurstfire(press ",k:"+altattack",s:" to change firing modes)";
 						HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 			}
-			else {
-				GiveInventory ("EnforcerUpgrade",1);
-				SetFont ("SMALLFONT");
-				if (GetUserCVar (0, "FD_MsgsOn"))
-					HudMessage (s:"S18 Enforcer upgraded.\nAutomatic fire";
-						HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
-			}
 		}
 		if (currentXP >= 2800 && currentLVL == 1) {
 			LevelUp (2);

@@ -1,5 +1,4 @@
 Actor EnforcerFire2       : Boolean { }
-Actor EnforcerUpgrade     : Boolean { }
 Actor EnforcerReloadRight : Boolean { }
 Actor Enforcer            : FDWeapon
 {
