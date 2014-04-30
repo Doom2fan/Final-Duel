@@ -202,5 +202,7 @@ Actor DroppedWeaponBase {
 	DeathSound "Weapons/gundrop"
 }
 
-// Spare Ammo
-Actor PistolSpareAmmo : Counter { }
+// Synth-Fire Stuff
+Actor SynthFireActive : Boolean { }
+Actor SynthFireLeft   : Boolean { }
+Actor SynthFireRight  : Boolean { }
