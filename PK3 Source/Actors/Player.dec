@@ -202,7 +202,7 @@ Actor DroppedWeaponBase {
 	DeathSound "Weapons/gundrop"
 }
 
-// Synth-Fire Stuff
+// Synth-Fire|By Xaser
 Actor SynthFireActive : Boolean { }
 Actor SynthFireLeft   : Boolean { }
 Actor SynthFireRight  : Boolean { }

@@ -21,7 +21,7 @@ Actor Enforcer            : FDWeapon
 		ENFS EDCBA 1
 		TNT1 A 0 A_GiveInventory("SynthFireActive", 1)
 		TNT1 A 0 ACS_NamedExecute("FDSynthFire", 0)
-		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_GunFlash ("RightReady", GFF_NOEXTCHANGE )
 	LeftReady:
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon",1,"DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("Reloading",1,"Reload")
@@ -30,7 +30,6 @@ Actor Enforcer            : FDWeapon
 		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft",1,"LeftFire")
 		ENF1 A 1 A_WeaponReady (WRF_NOFIRE)
 		Loop
-	Flash:
 	RightReady:
 		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRight",1,"RightReload")
 		ENF2 A 1 A_JumpIfInventory ("SynthFireRight",1,"RightFire")
@@ -43,7 +42,7 @@ Actor Enforcer            : FDWeapon
 		TNT1 A 0 A_TakeInventory ("SynthFireActive",1)
 		TNT1 A 0 A_TakeInventory ("SynthFireLeft",1)
 		TNT1 A 0 A_TakeInventory ("SynthFireRight",1)
-		TNT1 A 0 A_GunFlash ("KillSynthFire")
+		TNT1 A 0 A_GunFlash ("KillSynthFire", GFF_NOEXTCHANGE )
 		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		ENFS ABCDE 1
 		ENFS E 0 A_Lower
@@ -99,12 +98,14 @@ Actor Enforcer            : FDWeapon
 		ENF1 A 0 A_JumpIfInventory("Clip2", 1, 1)
 		Goto LeftReady
 		ENF1 A 0 A_JumpIfInventory("EnforcerClipL", 15, "LeftReady")
-		ENF1 A 0 A_PlaySound("Weapons/EnforcerOut", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,-15,0)
-		ENF1 DEFGHIJKL 1
+		ENF1 A 0 A_PlaySound("Weapons/EnforcerOut", 5)
 		ENF1 A 0 A_TakeInventory("EnforcerClipL",15)
-		ENF2 A 0 A_GiveInventory("EnforcerClipL",15)
-		ENF1 A 0 A_PlaySound("Weapons/EnforcerIn", CHAN_WEAPON)
+		ENF1 DEFGHIJ 1
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
+		ENF1 KL 1
+		ENF1 A 0 A_TakeInventory("Clip2",1)
+		ENF1 A 0 A_GiveInventory("EnforcerClipL",15)
+		ENF1 A 0 A_PlaySound("Weapons/EnforcerIn", 5)
 		ENF1 MNOPQQ 1
 		Goto LeftReady
 	RightReload:
@@ -113,9 +114,11 @@ Actor Enforcer            : FDWeapon
 		Goto RightReady
 		ENF2 A 0 A_JumpIfInventory("EnforcerClipR", 15, "RightReady")
 		ENF2 A 0 A_PlaySound("Weapons/EnforcerOut", 5)
-		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
-		ENF2 DEFGHIJKL 1
 		ENF2 A 0 A_TakeInventory("EnforcerClipR",15)
+		ENF2 DEFGHIJ 1
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
+		ENF2 KL 1
+		ENF2 A 0 A_TakeInventory("Clip2",1)
 		ENF2 A 0 A_GiveInventory("EnforcerClipR",15)
 		ENF2 A 0 A_PlaySound("Weapons/EnforcerIn", 5)
 		ENF2 MNOPQQ 1
