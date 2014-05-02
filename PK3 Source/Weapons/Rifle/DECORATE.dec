@@ -29,7 +29,7 @@ Actor Rifle : FDWeapon 30033
 	Inventory.PickupMessage "$GOTRIFLE"
 	Obituary "$OBRIFLE"
 	+AMMO_OPTIONAL
-	+noalert
+	+NoAlert
 	States
 	{
 	Ready:
@@ -121,26 +121,24 @@ Actor Rifle : FDWeapon 30033
 		Goto Ready2
 	DryFire:
 		TNT1 A 0 A_ClearRefire
-		RIFL A 0 A_PlaySound("Weapons/empty")
+		RIFL A 12 A_PlaySound("Weapons/empty")
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2
     Reload:
 		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("AmmoRifle",30,"Ready2")
+		TNT1 A 0 A_JumpIfInventory("AmmoRifle",20,"Ready2")
         TNT1 A 0 A_JumpIfInventory("Clip2",1,1)
-        Goto NoAmmo
-		TNT1 A 0 A_TakeInventory("Clip2",1)
-		TNT1 A 0 A_TakeInventory("AmmoRifle",30)
+        Goto Ready2
 		RIFL BC 4
+		TNT1 A 0 A_TakeInventory("AmmoRifle",20)
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,0,0)
 		TNT1 A 0 A_PlaySound("Rifle/Out",CHAN_WEAPON)
 		RIFL DEF 4
+		TNT1 A 0 A_TakeInventory("Clip2",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_PlaySound("Rifle/In",CHAN_WEAPON)
-		RIFL GHI 4
-		TNT1 A 0 A_GiveInventory("AmmoRifle",30)
-		Goto Ready2
-	NoAmmo:
-		TNT1 A 0 A_PlaySound("Weapons/empty")
+		RIFL G 4
+		TNT1 A 0 A_GiveInventory("AmmoRifle",20)
+		RIFL HI 4
 		Goto Ready2
 	Spawn:
 		RIFL Z -1
@@ -149,7 +147,7 @@ Actor Rifle : FDWeapon 30033
 }
 Actor AmmoRifle : AMMO
 {
-	Inventory.MaxAmount 30
-	Ammo.BackpackMaxAmount 30
+	Inventory.MaxAmount 20
+	Ammo.BackpackMaxAmount 20
 	+IGNORESKILL
 }

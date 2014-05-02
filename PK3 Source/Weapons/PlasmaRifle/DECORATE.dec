@@ -100,22 +100,15 @@ Actor FDPlasmaRifle : FDWeapon 30034
 		TNT1 A 0 A_JumpIfInventory("Cell2",1,1)
         Goto Ready2
 		TNT1 A 0 A_JumpIfInventory("AmmoPRifle",80,"Ready2")
-		TNT1 A 0 A_TakeInventory("AmmoPRifle",80)
-		Goto Reloading
-	Reloading:
-		TNT1 A 0 A_JumpIfInventory("Cell2",1,1)
-        Goto DoneReload
-		TNT1 A 0 A_JumpIfInventory("AmmoPRifle",80,"DoneReload")
-		TNT1 A 0 A_GiveInventory("AmmoPRifle",80)
-		TNT1 A 0 A_TakeInventory("Cell2",1)
-		Goto Reloading
-	DoneReload:
 		PLSF E 4
 		PLSR ABC 3
-		TNT1 A 0 A_FireCustomMissile("PlasmaCaseSpawn",0,0,0,0)
+		TNT1 A 0 A_TakeInventory("AmmoPRifle",80)
 		PLSR D 3 A_PlaySound("PlasmaRifle/cellout",CHAN_WEAPON)
-		PLSR EFGH 3
+		PLSR EFG 3
+		PLSR H 3 A_FireCustomMissile("PlasmaCaseSpawn",0,0,0,0)
+		TNT1 A 0 A_TakeInventory("Cell2",1)
 		PLSR HGFE 3
+		TNT1 A 0 A_GiveInventory("AmmoPRifle",80)
 		PLSR D 3 A_PlaySound("PlasmaRifle/cellin",CHAN_WEAPON)
 		PLSR CBA 3
 		PLSF E 4
