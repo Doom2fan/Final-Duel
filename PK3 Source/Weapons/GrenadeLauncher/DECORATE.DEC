@@ -123,11 +123,10 @@ Actor FDGrenade
 	Speed 23
 	Damage 20
 	Projectile
-	+RANDOMIZE
-	-ROCKETTRAIL
+	-RocketTrail
 	-NoGravity
-	+RANDOMIZE
-	+QUARTERGRAVITY
+	+Randomize
+	+QuarterGravity
 	deathsound "GrenadeLauncher/Explode"
 	Obituary "$OBGRENADE"
 	DamageType Grenade
@@ -136,12 +135,12 @@ Actor FDGrenade
 	BounceCount 8
 	BounceFactor 0.7
 	WallBounceFactor 0.75
-	+BOUNCEONWALLS
-	+BOUNCEONFLOORS
-	+BOUNCEONCEILINGS
-	+CANBOUNCEWATER
-	+MBFBOUNCER
-	+ALLOWBOUNCEONActorS
+	+BounceOnWalls
+	+BounceOnFloors
+	+BounceOnCeilings
+	+CanBounceWater
+	+MBFBouncer
+	+AllowBounceOnActors
 	BounceSound "GrenadeLauncher/Bounce"
 	// Low momentum death
 	// +BOUNCEAUTOOFF
@@ -163,7 +162,7 @@ Actor FDGrenade
 		TNT1 A 0 A_ChangeFlag("QUARTERGRAVITY",0)
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_ChangeFlag("ForceXYBillboard",1)
-		TNT1 AAAAAAA 0 A_custommissile("SmokingPiece",random(0,16),random(-8,8),random(-360,360),2,random(10,70))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("FDShrapnel",random(0,16),random(-8,8),random(-360,360),2,random(10,70))
 		REXP G 2 Bright Light(ROCKET_X2) A_Explode
 		REXP HIJ 2 Bright Light(ROCKET_X2)
 		REXP KLMNO 2 Bright Light(ROCKET_X1)
@@ -178,10 +177,10 @@ Actor FDGrenade2 : FDGrenade
 	BounceFactor 0.0
 	WallBounceFactor 0.0
 	+DontSplash
-	-BOUNCEONWALLS
-	-BOUNCEONFLOORS
-	-BOUNCEONCEILINGS
-	-CANBOUNCEWATER
-	-MBFBOUNCER
-	-ALLOWBOUNCEONActorS
+	-BounceOnWalls
+	-BounceOnFloors
+	-BounceOnCeilings
+	-CanBounceWater
+	-MBFBouncer
+	-AllowBounceOnActors
 }
