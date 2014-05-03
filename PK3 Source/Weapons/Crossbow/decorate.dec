@@ -36,7 +36,7 @@ Actor FDCrossbow : FDWeapon 30137 {
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfNoAmmo ("Ready2.Empty")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
-		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		XBOW A 1 A_WeaponReady
 		Loop
@@ -44,7 +44,7 @@ Actor FDCrossbow : FDWeapon 30137 {
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("CrossbowBolts", 1, "Load")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
-		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		XBOW O 1 A_WeaponReady
 		Loop
