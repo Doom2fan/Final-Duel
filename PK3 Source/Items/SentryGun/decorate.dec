@@ -61,7 +61,7 @@ Actor SentryBox : CustomInventory 30036 {
 		SENB A -1
 		Stop
 	Use:
-		TNT1 A 1 A_SpawnItemEx ("SentryGun", 56, 0, 8, 0, 0, 0, 0, 1)
+		TNT1 A 1 A_SpawnItemEx ("SentryGun", 56, 0, 8, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION)
 		Stop
 	}
 }

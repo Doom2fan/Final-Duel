@@ -93,26 +93,6 @@ Actor FDZombieMan : ZombieMan 30094
 		POSH D 5
 		POSH E -1
 		Stop
-	Death.Fatality:
-		TNT1 A 0 A_Jump(256, "XDeath")
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_GiveToTarget("XPSystemExperience",60)
-		TNT1 A 0 A_ChangeVelocity (0.0, 0.0, 0.0, CVF_REPLACE)
-		TNT1 A 0 A_GiveToTarget("GoFatality", 1)
-		TNT1 A 0 A_Jump(256,"Death.Fatality1")
-		Goto Death.Fatality1
-	Death.Fatality1:
-		BURN ABC 5 Bright Light(BURNDEATH)
-		BURN D 5 Bright Light(BURNDEATH) A_PlaySound("grunt/pain")
-		BURN EFGHI 5 Bright Light(BURNDEATH)
-		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN JKLMN 5 Bright Light(BURNDEATH)
-		BURN O 5 Bright Light(BURNDEATH) A_NoBlocking
-		TNT1 A 0 A_PlaySound("grunt/pain")
-		BURN PQRSTU 5 Bright Light(BURNDEATH)
-		TNT1 A 0 A_TakeFromTarget("GoFatality", 1)
-		BURN V -1
-		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",30)
 		BURN ABC 5 Bright Light(BURNDEATH)
