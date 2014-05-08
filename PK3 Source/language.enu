@@ -57,8 +57,8 @@
 		GOTSAW                 	= "You got the Chainsaw. (Slot 1)";
 
 	// Slot 2
-		GOTRIFLE				= "You got the M9A10 Rifle. (Slot 2)";
 		GOTMAGNUM				= "You got the .357 Magnum. (Slot 2)";
+		GOTRIFLE				= "You got the M9A10 Rifle. (Slot 2)";
 
 	// Slot 3
 		GOTSHOTTY				= "You got the Shotgun. (Slot 3)";
@@ -92,15 +92,14 @@
 		GOTMANCUBUSARM			= "You got the Mancubus Flamethrower. (Slot 9)";
 
 // Deaths
+	OB_DEFAULT					= "%o was eaten by a grue.";
 
 // Self-Kills
 	OB_SUICIDE   				= "%o ate %p gun.";
 	OB_KILLEDSELF 				= "%o receives a Darwin Award.";
-	OB_DEFAULT					= "%o was eaten by a grue.";
 	OB_VOODOO 					= "%o killed his doppelganger without considering the consequences.";
-	OB_ROCKETSELF				= "%o rode his own rocket";
 
-// Player killed by Monster
+// MvP
 	// Archon Of Hell
 		OBAOH              		= "%o was no match for an Archon of Hell.";
 		OBAOHMELEE         		= "%o was ripped apart by an Archon of Hell.";
@@ -142,60 +141,54 @@
 
 
 // PvP
-	// Misc
-		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel"
-	// Beretta
+	// Slot 1
+		OBSWORD					= "%o was cut in half by %k's Sword";
+		OBMELEE					= "%o was beaten to death by %k";
+		OBSAW            		= "%o was mowed over by %k";
+	
+	// Slot 2
 		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
-	// Soul Reaper
-		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
-	// Mancubus Flamethrower
-		OBMANCUBUSARM   		= "%o was killed by %k";
-	// Melee
-		// Sword
-			OBSWORD					= "%k cut %o in half with his sword";
-		// Melee
-			OBMELEE					= "%o was beaten to death by %k";
-	// M9A15 Carbine
-		OBACTIONMACHINEGUN  	= "%k \cG> \cKM9A15 Carbine \cG> \cL%o";
-	// M8A17 Bullpup
-		OBAK47					= "%k \cG> \cKAK-47 \cG> \cL%o";
-	// Chainsaw
-		OBSAW            		= "%k \cG> \cKChainsaw \cG> \cL%o";
-	// Enforcer
-		OBENFORCER				= "%o was forced to die by %k's Enforcer";
-	// Sonic Railgun
-		OBSONICRAIL				= "%k \cG> \cKSonic Railgun \cG> \cL%o";
-	// Tactical Shotgun
-		OBPAS					= "%k \cG> \cKTactical Shotgun \cG> \cL%o";
-	// M9A10 Rifle
+		OBENFORCER				= "%o was forced to die by %k's Enforcer	
+		OBMAGNUM				= "%o thought %k's Magnum had a delicate taste of lead."; // by Bloax
 		OBRIFLE  				= "%k \cG> \cKM9A10 Rifle \cG> \cL%o";
-	// Rocket Launcher
-		OB_MPROCKET				= "%o rode %k's rocket";
-	// Plasma Rifle
-		OBPLASMARIFLE			= "%k \cG> \cKPlasma Rifle \cG> \cL%o";
-	// Double-Barrel Shotgun
-		OBDOOMSSG				= "%k \cG> \cKDouble-Barrel Shotgun \cG> \cL%o";
-	// Grenade Launcher
-		OBGRENADE				= "%k \cG> \cKGrenade Launcher \cG> \cL%o";
-	// Magic
-		OBMAGIC					= "%k \cG> \cKMagic \cG> \cL%o";
-	// Shotgun
+		
+	// Slot 3
 		OBSHOTTY				= "%k \cG> \cKShotgun \cG> \cL%o";
-	// Minigun
-		OBMINIGUN				= "%k \cG> \cK"Parias" Minigun \cG> \cL%o";
-	// .357 Magnum
-		OBMAGNUM				= "%k \cG> \cK.357 Magnum \cG> \cL%o";
-	// Quad Shotgun
+		OBPAS					= "%k \cG> \cKTactical Shotgun \cG> \cL%o";
+		OBDOOMSSG				= "%k \cG> \cKDouble-Barrel Shotgun \cG> \cL%o";
 		OBQUADSHOTGUN			= "%o is now full of holes made by %k's Quad-barrel Shotgun";
-	// Annihilator
+	
+	// Slot 4
+		OBACTIONMACHINEGUN  	= "%k \cG> \cKM9A15 Carbine \cG> \cL%o";
+		OBAK47					= "%k \cG> \cKAK-47 \cG> \cL%o";
+		OBMINIGUN				= "%o was churched the ways of the dead by %k's \"Parias\" Minigun"; // By Dusk
+	
+	// Slot 5
+		OB_MPROCKET				= "%o rode %k's rocket";
+		OB_ROCKETSELF			= "%o rode his own rocket";
+		OBGRENADE				= "%o caught %k's grenade";
+		OBGRENADE				= "%o tripped %p own grenade";
 		OBANNIHILATOR			= "%o was annihilated by %k";
-	// BFG
+	
+	// Slot 6
+		OBPLASMARIFLE			= "%k \cG> \cKPlasma Rifle \cG> \cL%o";
+		OBSONICRAIL				= "";
+	
+	// Slot 7
 		OBBFG					= "%o was erased from existance by %k's Bio Force Gun MK XVI";
 		OBBFGSELF				= "%o erased %hself from existance with %p Bio Force Gun MK XVI";
-	// Magnum Sniper Rifle
-		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
-	// Crossbow
+	
+	// Slot 8
+		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
 		OBCROSSBOW				= "%o can't be an adventurer anymore, thanks to %k and %p Crossbow";
+		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
+	
+	// Slot 9
+		OBMANCUBUSARM   		= "%o was killed by %k";
+		OBMAGIC					= "%k \cG> \cKMagic \cG> \cL%o";
+	
+	// Misc
+		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel"
 
 // Default Strings
 	QUITMSG 					= "Are you sure you want to\nquit this awesome mod?";
