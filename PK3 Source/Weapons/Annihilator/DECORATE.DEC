@@ -57,6 +57,7 @@ Actor Annihilator : FDWeapon 30090 {
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_PlaySound ("Annihilator/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_AlertMonsters
 		ANHG B 1 Bright A_FireCustomMissile ("AnnihilatorMissile")
 		TNT1 A 0 A_Recoil (cos (pitch) * 6.0)
 		ANHG CDEFG 1 A_SetPitch (pitch - 2.5)
@@ -93,6 +94,7 @@ Actor AnnihilatorMissile {
 	+ForceXYBillboard
 	+DontSplash
 	Obituary "$OBANNIHILATOR"
+	SelfObituary "$OBANNIHILATORSELF"
 	DeathSound "Annihilator/Explode"
 	States {
 	Spawn:
