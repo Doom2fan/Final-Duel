@@ -148,7 +148,7 @@
 	
 	// Slot 2
 		OBBERETTA				= "%o is now full of 9mm holes made by %k's Beretta";
-		OBENFORCER				= "%o was forced to die by %k's Enforcer	
+		OBENFORCER				= "%o was forced to die by %k's Enforcer";
 		OBMAGNUM				= "%o thought %k's Magnum had a delicate taste of lead."; // by Bloax
 		OBRIFLE  				= "%k \cG> \cKM9A10 Rifle \cG> \cL%o";
 		
