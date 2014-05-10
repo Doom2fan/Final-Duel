@@ -1,4 +1,4 @@
-Annihilator/Fire			ANHFIRE
-Annihilator/Out				ANHOUT 
-Annihilator/In				ANHIN 
-Annihilator/DryFire			ANHDRY // From Diaz: Last Hours of Purity
+Annihilator/Fire			"Sounds/Weapons/Annihilator/FDFire.ogg"
+Annihilator/Out				"Sounds/Weapons/Annihilator/FDOut.ogg"
+Annihilator/In				"Sounds/Weapons/Annihilator/FDIn.ogg"
+Annihilator/DryFire			"Sounds/Weapons/Annihilator/FDDry.ogg" // From Diaz: Last Hours of Purity

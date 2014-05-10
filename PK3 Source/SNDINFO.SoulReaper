@@ -1,4 +1,4 @@
-SoulReaper/Steam	SRSTEAM
-SoulReaper/Fire		SRXPL1
-SoulReaper/ClipOut	SRCLPOUT
-SoulReaper/ClipIn	SRCLPIN
+SoulReaper/Steam	"Sounds/Weapons/SoulReaper/FDSteam.ogg"
+SoulReaper/Fire		"Sounds/Weapons/SoulReaper/FDFire.ogg"
+SoulReaper/ClipOut	"Sounds/Weapons/SoulReaper/FDOut.ogg"
+SoulReaper/ClipIn	"Sounds/Weapons/SoulReaper/FDIn.ogg"

@@ -1,3 +1,3 @@
-Beretta/Fire			BRTAFIRE
-Beretta/ClipOut			BRTAOUT
-Beretta/ClipIn			BRTAIN
+Beretta/Fire			"Sounds/Weapons/Beretta/FDFire.ogg"
+Beretta/ClipOut			"Sounds/Weapons/Beretta/FDOut.ogg"
+Beretta/ClipIn			"Sounds/Weapons/Beretta/FDIn.ogg"

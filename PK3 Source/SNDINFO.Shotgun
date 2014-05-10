@@ -1,7 +1,7 @@
-Shotgun/Fire			SGFIRE
-Shotgun/Pump			SGPUMP
+Shotgun/Fire			"Sounds/Weapons/Shotgun/FDFire.ogg"
+Shotgun/Pump			"Sounds/Weapons/Shotgun/FDPump.ogg"
 $random Shotgun/InsertShell { Shotgun/InsertShell1 Shotgun/InsertShell2 Shotgun/InsertShell3 Shotgun/InsertShell4 }
-Shotgun/InsertShell1	SGSHELL1
-Shotgun/InsertShell2	SGSHELL2
-Shotgun/InsertShell3	SGSHELL3
-Shotgun/InsertShell4	SGSHELL4
+Shotgun/InsertShell1	"Sounds/Weapons/Shotgun/FDShell1.ogg"
+Shotgun/InsertShell2	"Sounds/Weapons/Shotgun/FDShell2.ogg"
+Shotgun/InsertShell3	"Sounds/Weapons/Shotgun/FDShell3.ogg"
+Shotgun/InsertShell4	"Sounds/Weapons/Shotgun/FDShell4.ogg"

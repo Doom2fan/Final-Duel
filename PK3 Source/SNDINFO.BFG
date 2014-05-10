@@ -1,8 +1,8 @@
-BFG/Dryfire					BFGDRY
-BFG/BeginFire				BFGBEGIN
-BFG/Fire					BFGFIRE
-BFG/Explode					BFGBOOM
-BFG/Fly						BFGFLY
-BFG/ChargeExplosion			BFGXCHRG
-BFG/CellOut					BFGOUT
-BFG/CellIn					BFGIN
+BFG/Dryfire					"Sounds/Weapons/BFG/FDDry.ogg"
+BFG/BeginFire				"Sounds/Weapons/BFG/FDBegin.ogg"
+BFG/Fire					"Sounds/Weapons/BFG/FDFire.ogg"
+BFG/Explode					"Sounds/Weapons/BFG/FDExpl.ogg"
+BFG/Fly						"Sounds/Weapons/BFG/FDFly.ogg"
+BFG/ChargeExplosion			"Sounds/Weapons/BFG/FDXChrg.ogg"
+BFG/CellOut					"Sounds/Weapons/BFG/FDOut.ogg"
+BFG/CellIn					"Sounds/Weapons/BFG/FDIn.ogg"

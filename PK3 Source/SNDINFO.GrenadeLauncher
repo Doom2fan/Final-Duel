@@ -1,11 +1,11 @@
 $random GrenadeLauncher/Explode { GrenadeLauncher/Explode1 GrenadeLauncher/Explode2 GrenadeLauncher/Explode3 GrenadeLauncher/Explode4 }
-GrenadeLauncher/Explode1			GRENEXP1
-GrenadeLauncher/Explode2			GRENEXP2
-GrenadeLauncher/Explode3			GRENEXP3
-GrenadeLauncher/Explode4			GRENEXP4
-GrenadeLauncher/Fire				GRENFIRE
-GrenadeLauncher/DrumIn				GRENIN
-GrenadeLauncher/DrumOut				GRENOUT
+GrenadeLauncher/Explode1			"Sounds/Weapons/GrenadeLauncher/FDExpl1.ogg"
+GrenadeLauncher/Explode2			"Sounds/Weapons/GrenadeLauncher/FDExpl2.ogg"
+GrenadeLauncher/Explode3			"Sounds/Weapons/GrenadeLauncher/FDExpl3.ogg"
+GrenadeLauncher/Explode4			"Sounds/Weapons/GrenadeLauncher/FDExpl4.ogg"
+GrenadeLauncher/Fire				"Sounds/Weapons/GrenadeLauncher/FDFire.ogg"
+GrenadeLauncher/DrumIn				"Sounds/Weapons/GrenadeLauncher/FDIn.ogg"
+GrenadeLauncher/DrumOut				"Sounds/Weapons/GrenadeLauncher/FDOut.ogg"
 $random GrenadeLauncher/Bounce	{ GrenadeLauncher/Bounce1 GrenadeLauncher/Bounce2 }
-GrenadeLauncher/Bounce1				GRENBNC1
-GrenadeLauncher/Bounce2				GRENBNC2
+GrenadeLauncher/Bounce1				"Sounds/Weapons/GrenadeLauncher/FDBnce1.ogg"
+GrenadeLauncher/Bounce2				"Sounds/Weapons/GrenadeLauncher/FDBnce2.ogg"

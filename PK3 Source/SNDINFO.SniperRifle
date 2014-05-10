@@ -1,5 +1,5 @@
-SniperRifle/Fire			SNPRFIRE
-SniperRifle/Out				SNPROUT
-SniperRifle/In				SNPRIN
-SniperRifle/Bolt1			SNPRBLT1
-SniperRifle/Bolt2			SNPRBLT2
+SniperRifle/Fire			"Sounds/Weapons/SniperRifle/FDFire.ogg"
+SniperRifle/Out				"Sounds/Weapons/SniperRifle/FDOut.ogg"
+SniperRifle/In				"Sounds/Weapons/SniperRifle/FDIn.ogg"
+SniperRifle/Bolt1			"Sounds/Weapons/SniperRifle/FDBolt1.ogg"
+SniperRifle/Bolt2			"Sounds/Weapons/SniperRifle/FDBolt2.ogg"

@@ -1,9 +1,9 @@
-$limit Chainsaw/Wall 0
+$limit Chainsaw/Wall 0 
 $random Chainsaw/Wall { Chainsaw/Wall1 Chainsaw/Wall2 Chainsaw/Wall3 Chainsaw/Wall4 }
-Chainsaw/Wall1			SAWWALL1
-Chainsaw/Wall2			SAWWALL2
-Chainsaw/Wall3			SAWWALL3
-Chainsaw/Wall4			SAWWALL4
+Chainsaw/Wall1			"Sounds/Weapons/Chainsaw/FDWall1.ogg"
+Chainsaw/Wall2			"Sounds/Weapons/Chainsaw/FDWall2.ogg"
+Chainsaw/Wall3			"Sounds/Weapons/Chainsaw/FDWall3.ogg"
+Chainsaw/Wall4			"Sounds/Weapons/Chainsaw/FDWall4.ogg"
 $pitchshiftrange 4
 weapons/saw2up			dssa2up
 weapons/saw2idle		dssa2idl

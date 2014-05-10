@@ -1,6 +1,6 @@
-Minigun/Fire			MGUNFIRE
-Minigun/WindUp			MGWNDUP
-Minigun/WindDown		MGWNDDWN
-Minigun/Spin			MGUNSPIN
-Minigun/Up				MGUNUP
-Minigun/Reload			MGUNRLD
+Minigun/Fire			"Sounds/Weapons/Minigun/FDFire.ogg"
+Minigun/WindUp			"Sounds/Weapons/Minigun/FDWindUp.ogg"
+Minigun/WindDown		"Sounds/Weapons/Minigun/FDWndDwn.ogg"
+Minigun/Spin			"Sounds/Weapons/Minigun/FDSpin.ogg"
+Minigun/Up				"Sounds/Weapons/Minigun/FDUp.ogg"
+Minigun/Reload			"Sounds/Weapons/Minigun/FDReload.ogg"

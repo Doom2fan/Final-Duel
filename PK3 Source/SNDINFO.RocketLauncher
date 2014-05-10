@@ -1,6 +1,5 @@
-RocketLauncher/bounce	DSGRNHIT
-weapons/rlan/fire	RLANSHOT
-weapons/rlan/explosion	RLANEXPL
+weapons/rlan/fire	"Sounds/Weapons/RocketLauncher/FDFire.ogg"
+weapons/rlan/explosion	"Sounds/Weapons/RocketLauncher/FDExpl.ogg"
 $limit weapons/rlan/fire 0
 $limit weapons/rlan/explosion 0
-weapons/rlan/draw	RLANDRAW
+weapons/rlan/draw	"Sounds/Weapons/RocketLauncher/FDDraw.ogg"

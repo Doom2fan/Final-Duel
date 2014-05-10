@@ -1,19 +1,19 @@
-	// Kick
-	$random weapons/kick/strong { weapons/kick/strong1 weapons/kick/strong2 weapons/kick/strong3 }
-	weapons/kick/strong1			KICKSTR1
-	weapons/kick/strong2			KICKSTR2
-	weapons/kick/strong3			KICKSTR3
-	weapons/kick/swing				KICKSW // from Diaz:Last Hours of Purity
-	weapons/kick/hitwall			KICKWAL // from Diaz:Last Hours of Purity
-	// Sword
-	Melee/Sword/HitThing			SWRDHIT // by 
-	Melee/Sword/HitWall				SWRDHITW // from the Sound Library
-	Melee/Sword/Swing				SWRDSWNG // by Langerium(a Freesound user)
-	// Fists
-	$random Melee/Fists/HitWall { Melee/Fists/HitWall1 Melee/Fists/HitWall2 Melee/Fists/HitWall3 Melee/Fists/HitWall4 }
-	Melee/Fists/HitWall1			FISTHIT1
-	Melee/Fists/HitWall2			FISTHIT2
-	Melee/Fists/HitWall3			FISTHIT3
-	Melee/Fists/HitWall4			FISTHIT4
-	// Berserk
-	pickups/berserk					BERSPKUP // from Beautiful Doom
+// Kick
+$random weapons/kick/strong { weapons/kick/strong1 weapons/kick/strong2 weapons/kick/strong3 }
+weapons/kick/strong1			"Sounds/Weapons/Melee/Kick/FDStrng1.ogg"
+weapons/kick/strong2			"Sounds/Weapons/Melee/Kick/FDStrng2.ogg"
+weapons/kick/strong3			"Sounds/Weapons/Melee/Kick/FDStrng3.ogg"
+weapons/kick/swing				"Sounds/Weapons/Melee/Kick/FDSwing.ogg" // from Diaz:Last Hours of Purity
+weapons/kick/hitwall			"Sounds/Weapons/Melee/Kick/FDWall.ogg"  // from Diaz:Last Hours of Purity
+// Sword
+Melee/Sword/HitThing			"Sounds/Weapons/Melee/Sword/FDHitBdy.ogg"      // by 
+Melee/Sword/HitWall				"Sounds/Weapons/Melee/Sword/FDWall.ogg" // from the Sound Library
+Melee/Sword/Swing				"Sounds/Weapons/Melee/Sword/FDSwing.ogg" // by Langerium(a Freesound user)
+// Fists
+$random Melee/Fists/HitWall { Melee/Fists/HitWall1 Melee/Fists/HitWall2 Melee/Fists/HitWall3 Melee/Fists/HitWall4 }
+Melee/Fists/HitWall1			"Sounds/Weapons/Melee/Melee/FDHit1.ogg"
+Melee/Fists/HitWall2			"Sounds/Weapons/Melee/Melee/FDHit2.ogg"
+Melee/Fists/HitWall3			"Sounds/Weapons/Melee/Melee/FDHit3.ogg"
+Melee/Fists/HitWall4			"Sounds/Weapons/Melee/Melee/FDHit4.ogg"
+// Berserk
+pickups/berserk					"Sounds/Weapons/Melee/Melee/FDBersrk.ogg" // from Beautiful Doom

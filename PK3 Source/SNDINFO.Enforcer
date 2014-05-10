@@ -1,5 +1,5 @@
-weapons/enforcerup	ENFCUP
-		weapons/enforcerfire	ENFCFIRE
-		weapons/enforcerdry	ENFCDRY
-		weapons/enforcerout	ENFCOUT
-		weapons/enforcerin	ENFCIN
+weapons/enforcerup			"Sounds/Weapons/Enforcer/FDUp.ogg"
+weapons/enforcerfire		"Sounds/Weapons/Enforcer/FDFire.ogg"
+weapons/enforcerdry			"Sounds/Weapons/Enforcer/FDDry.ogg"
+weapons/enforcerout			"Sounds/Weapons/Enforcer/FDOut.ogg"
+weapons/enforcerin			"Sounds/Weapons/Enforcer/FDIn.ogg"

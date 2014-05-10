@@ -1,4 +1,4 @@
-DoubleBarrelShotgun/Fire		SSGFIRE
-DoubleBarrelShotgun/Open		SSGOPEN
-DoubleBarrelShotgun/Load		SSGLOAD
-DoubleBarrelShotgun/Close		SSGCLOSE
+DoubleBarrelShotgun/Fire		"Sounds/Weapons/DoubleBarrelShotgun/FDFire.flac"
+DoubleBarrelShotgun/Open		"Sounds/Weapons/DoubleBarrelShotgun/FDOpen.flac"
+DoubleBarrelShotgun/Load		"Sounds/Weapons/DoubleBarrelShotgun/FDLoad.flac"
+DoubleBarrelShotgun/Close		"Sounds/Weapons/DoubleBarrelShotgun/FDClose.flac"

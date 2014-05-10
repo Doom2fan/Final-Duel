@@ -1,5 +1,5 @@
-Crossbow/Fire				XBOWFIRE // by Erdie(A Freesound user)
-Crossbow/String				XBOWSTRN // by Tripwire Interactive
-Crossbow/Cock				XBOWCOCK // by Tripwire Interactive
-Crossbow/Slide				XBOWSLDE // by Tripwire Interactive
-Crossbow/Arrow/Hit			XBOWHIT // by Walter_Odington(A Freesound user)
+Crossbow/Fire				"Sounds/Weapons/Crossbow/FDFire.ogg" // by Erdie(A Freesound user)
+Crossbow/String				"Sounds/Weapons/Crossbow/FDString.ogg" // by Tripwire Interactive
+Crossbow/Cock				"Sounds/Weapons/Crossbow/FDCock.ogg" // by Tripwire Interactive
+Crossbow/Slide				"Sounds/Weapons/Crossbow/FDSlide.ogg" // by Tripwire Interactive
+Crossbow/Arrow/Hit			"Sounds/Weapons/Crossbow/FDHit.ogg" // by Walter_Odington(A Freesound user)

@@ -1,5 +1,5 @@
-QuadShotgun/Fire				QSGFIRE
-QuadShotgun/AltFire				QSGALT
-QuadShotgun/Open				QSGOPEN
-QuadShotgun/Load				QSGLOAD
-QuadShotgun/Close				QSGCLOSE
+QuadShotgun/Fire				"Sounds/Weapons/QuadShotgun/FDFire.ogg"
+QuadShotgun/AltFire				"Sounds/Weapons/QuadShotgun/FDAlt.ogg"
+QuadShotgun/Open				"Sounds/Weapons/QuadShotgun/FDOpen.ogg"
+QuadShotgun/Load				"Sounds/Weapons/QuadShotgun/FDLoad.ogg"
+QuadShotgun/Close				"Sounds/Weapons/QuadShotgun/FDClose.ogg"

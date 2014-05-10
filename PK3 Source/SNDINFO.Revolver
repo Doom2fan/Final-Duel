@@ -1,7 +1,7 @@
 $random Magnum/Fire { Magnum/Fire1 Magnum/Fire2 Magnum/Fire3 }
-Magnum/Fire1	MAGFIRE1
-Magnum/Fire2 	MAGFIRE2
-Magnum/Fire3 	MAGFIRE3
-Magnum/Open 	MAGNMOPN
-Magnum/Out 		MAGNMOUT
-Magnum/In 		MAGNUMIN
+Magnum/Fire1	"Sounds/Weapons/Revolver/FDFire1.ogg"
+Magnum/Fire2 	"Sounds/Weapons/Revolver/FDFire2.ogg"
+Magnum/Fire3 	"Sounds/Weapons/Revolver/FDFire3.ogg"
+Magnum/Open 	"Sounds/Weapons/Revolver/FDOpen.ogg"
+Magnum/Out 		"Sounds/Weapons/Revolver/FDOut.ogg"
+Magnum/In 		"Sounds/Weapons/Revolver/FDIn.ogg"

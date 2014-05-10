@@ -1,16 +1,16 @@
 $random PlasmaRifle/fire { PlasmaRifle/fire1 PlasmaRifle/fire2 PlasmaRifle/fire3 }
 $limit PlasmaRifle/fire 0
-PlasmaRifle/Fire1		PLSSHOT1
-PlasmaRifle/Fire2		PLSSHOT2
-PlasmaRifle/Fire3		PLSSHOT3
-PlasmaRifle/Cool		PLSCOOL
-PlasmaRifle/Draw		PLSDRAW
-PlasmaRifle/CellIn		PLCLPIN
-PlasmaRifle/CellOut		PLCLPOUT
-PlasmaRifle/Dryfire 	PRDRY
-PlasmaRifle/Fly  		PLSFLY
+PlasmaRifle/Fire1		"Sounds/Weapons/PlasmaRifle/FDFire1.ogg"
+PlasmaRifle/Fire2		"Sounds/Weapons/PlasmaRifle/FDFire2.ogg"
+PlasmaRifle/Fire3		"Sounds/Weapons/PlasmaRifle/FDFire3.ogg"
+PlasmaRifle/Cool		"Sounds/Weapons/PlasmaRifle/FDCool.ogg"
+PlasmaRifle/Draw		"Sounds/Weapons/PlasmaRifle/FDDraw.ogg"
+PlasmaRifle/CellIn		"Sounds/Weapons/PlasmaRifle/FDIn.ogg"
+PlasmaRifle/CellOut		"Sounds/Weapons/PlasmaRifle/FDOut.ogg"
+PlasmaRifle/Dryfire 	"Sounds/Weapons/PlasmaRifle/FDDry.ogg"
+PlasmaRifle/Fly  		"Sounds/Weapons/PlasmaRifle/FDFly.ogg"
 $random PlasmaRifle/Altfire { PlasmaRifle/Altfire1 PlasmaRifle/Altfire2 PlasmaRifle/Altfire3 }
 $limit PlasmaRifle/Altfire 0
-PlasmaRifle/Altfire1	PLSSHT21
-PlasmaRifle/Altfire2	PLSSHT22
-PlasmaRifle/Altfire3	PLSSHT23
+PlasmaRifle/Altfire1	"Sounds/Weapons/PlasmaRifle/FDAlt1.ogg"
+PlasmaRifle/Altfire2	"Sounds/Weapons/PlasmaRifle/FDAlt2.ogg"
+PlasmaRifle/Altfire3	"Sounds/Weapons/PlasmaRifle/FDAlt3.ogg"

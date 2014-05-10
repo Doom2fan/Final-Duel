@@ -1,12 +1,7 @@
-	// Fire
-	$random PAShotgun/Fire { PAShotgun/Fire1 PAShotgun/Fire2 PAShotgun/Fire3 PAShotgun/Fire4 }
-	PAShotgun/Fire1					PASFIRE1
-	PAShotgun/Fire2					PASFIRE2
-	PAShotgun/Fire3					PASFIRE3
-	PAShotgun/Fire4					PASFIRE4
-
-	// Pump
-	PAShotgun/Pump					PASPUMP
-
-	// Shell
-	PAShotgun/Shell					PASSHELL
+$random PAShotgun/Fire { PAShotgun/Fire1 PAShotgun/Fire2 PAShotgun/Fire3 PAShotgun/Fire4 }
+PAShotgun/Fire1					"Sounds/Weapons/PumpActionShotgun/FDFire1.ogg"
+PAShotgun/Fire2					"Sounds/Weapons/PumpActionShotgun/FDFire2.ogg"
+PAShotgun/Fire3					"Sounds/Weapons/PumpActionShotgun/FDFire3.ogg"
+PAShotgun/Fire4					"Sounds/Weapons/PumpActionShotgun/FDFire4.ogg"
+PAShotgun/Pump					"Sounds/Weapons/PumpActionShotgun/FDPump.ogg"
+PAShotgun/Shell					"Sounds/Weapons/PumpActionShotgun/FDShell.ogg"
