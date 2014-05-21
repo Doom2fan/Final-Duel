@@ -16,7 +16,6 @@ Actor FDBelphegor 30132
 	PainChance 25
 	Monster
 	+FLOORCLIP
-	DamageFactor RifledSlug, 1.5
 	Species "Hell Noble"
 	SeeSound "baron/sight"
 	PainSound "baron/pain"
@@ -24,7 +23,8 @@ Actor FDBelphegor 30132
 	ActiveSound "baron/active"
 	Obituary "$OB_BELPHEGOR"
 	HitObituary "$OB_BELPHEGOR_MELEE"
-	bloodcolor "0 C8 0"
+	BloodColor "0 C8 0"
+	DamageFactor RifledSlug, 1.5
 	DropItem "Energy"
 	States
 	{

@@ -16,10 +16,7 @@ Actor Maephisto 30124
 	DeathSound "Maephisto/death"
 	ActiveSound "Maephisto/idle"
 	MONSTER
-	+BOSS
-	+FLOORCLIP
-	+NoBlood
-	+NORADIUSDMG
+	+Boss +FloorClip +NoBlood +NoRadiusDMG
 	States
 	{
 	Spawn:

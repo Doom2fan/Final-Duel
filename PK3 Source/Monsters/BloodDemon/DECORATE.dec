@@ -16,6 +16,7 @@ Actor FDBloodDemon : FDDemon 30113 {
 	Mass 400
 	DamageFactor RifledSlug, 1.5
 	Monster
+	Species "Bull Demon"
 	+FloorClip +Faster +FastMelee
 	Painchance "Kick", 255
 	Obituary "$OB_BLOODDEMON_MELEE"

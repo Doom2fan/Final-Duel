@@ -1,24 +1,24 @@
 Actor Cybruiser : BaronOfHell 30117 { 
 	//$Category Final Duel-Monsters
 	//$Title Cybruiser
-	Health 2000 
-	Radius 24 
-	Height 64 
-	Mass 1000 
-	Speed 8 
-	PainChance 20 
-	Monster
+	Health 2000
 	MeleeDamage 10
+	PainChance 20
+	Radius 24
+	Height 64
+	Mass 1000
+	Speed 8
+	Monster
 	DamageFactor RifledSlug, 1.5
 	DamageFactor Annihilator, 1.5
 	Obituary "$OB_CYBRUISER"
 	HitObituary "$OB_CYBRUISER_MELEE"
 	+FloorClip +MissileMore +Boss +DontHurtSpecies
-	SeeSound "monster/brusit" 
-	PainSound "baron/pain" 
+	SeeSound "monster/brusit"
+	PainSound "baron/pain"
 	DeathSound "monster/brudth"
 	MeleeSound "baron/melee"
-	DropItem "Energy"
+	Species "Hell Noble"
 	States { 
 	Spawn: 
 		BRUS A 10 A_Look 

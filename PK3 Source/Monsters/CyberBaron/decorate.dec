@@ -17,9 +17,8 @@ Actor Cyberbaron : Baronofhell 30116 {
 	DeathSound "cbaron/death"
 	ActiveSound "cbaron/active"
 	Monster
-	+NoRadiusDMG
-	+DontHurtSpecies
-	DropItem "Energy"
+	+NoRadiusDMG +DontHurtSpecies
+	Species "Hell Noble"
 	States {
 	Spawn:
 		CBOS A 10 A_Look

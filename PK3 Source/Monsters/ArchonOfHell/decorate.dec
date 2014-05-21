@@ -19,7 +19,7 @@ Actor ArchonOfHell : BaronOfHell 30112 {
 	PainSound "baron/pain" 
 	DeathSound "monster/ar2dth"
 	MeleeSound "baron/melee"
-	DropItem "Energy"
+	Species "Hell Noble"
 	States { 
 	Spawn: 
 		BOS4 A 10 A_Look 

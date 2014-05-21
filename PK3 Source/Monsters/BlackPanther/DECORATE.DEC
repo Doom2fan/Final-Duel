@@ -13,6 +13,7 @@ Actor BlackPanther : HellKnight 30141
 	DamageFactor TacticalShotgunTracer, 1.2
 	HitObituary "%o was shred to pieces by a Black Panther."
 	Obituary "%o was torn apart by a Black Panther"
+	Species "Hell Noble"
 	States
 	{
 	Spawn:

@@ -27,6 +27,7 @@ Actor FDBaronOfHell : BaronOfHell 30103
 	DamageFactor "Ice", 0.3
 	DamageFactor "SRType1", 1.0
 	DamageFactor "Saw", 1.7
+	DamageFactor RifledSlug, 1.5
 	bloodcolor "0 C8 0"
 	DropItem "Energy"
 	Species "Hell Noble"
