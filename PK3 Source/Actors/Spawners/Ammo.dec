@@ -114,7 +114,7 @@ Actor CellSpawner Replaces Cell {
 		Stop
 	}
 }
-Actor CellBoxSpawner Replaces CellBox {
+Actor CellBoxSpawner Replaces CellPack {
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
