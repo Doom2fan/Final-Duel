@@ -1,0 +1,19 @@
+Sprite CSAWE0, 320, 200
+{
+	Patch CSAWA0, 24, 88
+}
+
+Sprite CSAWF0, 320, 200
+{
+	Patch CSAWA0, 24, 112
+}
+
+Sprite CSAWG0, 320, 200
+{
+	Patch CSAWA0, 24, 136
+}
+
+Sprite CSAWH0, 320, 200
+{
+	Patch CSAWA0, 24, 160
+}
