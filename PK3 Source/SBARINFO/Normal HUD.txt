@@ -20,7 +20,7 @@ statusbar normal,fullscreenoffsets
 	// Invulnerability
 	InInventory PowerInvulnerable
 	{
-		drawbar "HPINV", "EMPTY2", PowerupTime FDInvulnerabilitySphere, Vertical, 56, -239;
+		drawbar "HPINV", "EMPTY2", PowerupTime FDInvulnerabilitySpherePower, Vertical, 56, -239;
 	}
 	
 	// Air supply

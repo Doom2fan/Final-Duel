@@ -1,29 +1,59 @@
 Actor PowerLight : PowerLightAmp { Powerup.Color "77 77 77", 0.9 }
 
 // Invulnerability
-Actor FDInvulnerabilitySphere : PowerupGiver Replaces InvulnerabilitySphere {
-	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
-	Inventory.MaxAmount 0
+Actor FDInvulnerabilitySpherePower : PowerupGiver {
 	Powerup.Type "Invulnerable"
 	Powerup.Color GoldMap
+}
+Actor FDInvulnerabilitySphere : CustomInventory Replaces InvulnerabilitySphere {
+	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
+	Inventory.MaxAmount 0
 	Inventory.PickupMessage "$GOTINVUL" // "Invulnerability!"
 	States {
 	Spawn:
 		PINV ABCD 6 Bright
+		Loop
+	Use:
+		TNT1 A 0 A_GiveInventory ("FDInvulnerabilitySpherePower", 1)
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile ("InvulnerabilitySphereSparks", 28, 0, random (0, 360), 2, random (180, 360))
+		Stop
+	}
+}
+
+Actor InvulnerabilitySphereSparks {
+	Height 0
+	Radius 0
+	Mass 0
+	+Missile +NoBlockMap -NoGravity +DontSplash
+	+DoomBounce +ForceXYBillboard
+	BounceFactor 0.2
+	Gravity 0.8
+	RenderStyle Add
+	Scale 0.035
+	Speed 12
+	States {
+	Spawn:
+	Death:
+		WSPK A 2 Bright A_FadeOut(0.04)
 		Loop
 	}
 }
 
 // Blursphere
 Actor PowerFDInvisibility : PowerInvisibility {
-	-Shadow +CantSeek
+	-Shadow +CantSeek +Shadow2
 	Powerup.Duration -60
 	Powerup.Strength 80
-	Powerup.Mode Translucent
+	Powerup.Mode Shadow
+}
+
+Actor PowerFDInvisibilityFrightener : PowerFrightener {
+	Powerup.Duration -60
 }
 
 Actor FDBlursphere : CustomInventory Replaces Blursphere {
-	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
+	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup
+	+Inventory.BigPowerup
 	Inventory.MaxAmount 0
 	RenderStyle Translucent
 	Inventory.PickupMessage "$GOTINVIS" // "Partial Invisibility"
@@ -34,7 +64,7 @@ Actor FDBlursphere : CustomInventory Replaces Blursphere {
 	Use:
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("PowerFDInvisibility", 1)
-		TNT1 A 0 A_GiveInventory ("PowerFrightener", 1)
+		TNT1 A 0 A_GiveInventory ("PowerFDInvisibilityFrightener", 1)
 		Stop
 	}
 }
