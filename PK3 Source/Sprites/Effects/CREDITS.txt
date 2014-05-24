@@ -13,6 +13,8 @@ Flares:
 	?FLRA0(B, G, L, R and Y) are from the KD ZDoom Resource Pack PK3 file.
 	LENSA0 and LEYS?0(A, B, G, O and R): I don't know where those sprites are from or who made them. IIRC I found them in the Brutal Doom PK3 file.
 	L2N?A0(B, C, G, R and Y): I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+	BSPKA0: I don't know who made this.
+	WSPKA0: An edit of BSPKA0 by Alex_Mercer.
 
 Nein:
 	NN01?0 was ripped by Neoworm.
