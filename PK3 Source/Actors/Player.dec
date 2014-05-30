@@ -121,7 +121,7 @@ Actor SprintWeapon : NullWeapon { }
 
 // Stamina Regeneration
 Actor StaminaRegen : Boolean { }
-Actor FDStamina : Counter { Inventory.Amount 100 }
+Actor FDStamina : Counter { Inventory.MaxAmount 100 }
 
 // Taunting
 Actor Taunting   : Boolean { }
