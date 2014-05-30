@@ -4,6 +4,7 @@ Actor PowerLight : PowerLightAmp { Powerup.Color "77 77 77", 0.9 }
 Actor FDInvulnerabilitySpherePower : PowerupGiver {
 	Powerup.Type "Invulnerable"
 	Powerup.Color GoldMap
+	+Inventory.AutoActivate +Inventory.AlwaysPickup
 }
 Actor FDInvulnerabilitySphere : CustomInventory Replaces InvulnerabilitySphere {
 	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
