@@ -40,12 +40,12 @@ script "HudWeapons" Enter { // HUD icons and stuff...
 			if (checkWeapon ("Beretta") || checkWeapon ("BerettaPowered")) { // Beretta
 				if (checkInventory ("BerettaUpgrade")) {
 					if (checkInventory ("BerettaMode2")) {
-						SetFont ("BURST");
+						SetFont ("Graphics/Statusbar/HUDIconsBurstFire.png");
 						HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 					}
 					//	---------------------------------------------------------------------------------------------------------------------------------
 					else {
-						SetFont ("SEMI");
+						SetFont ("Graphics/Statusbar/HUDIconsSemiAutoFire.png");
 						HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 					}
 				}
@@ -53,48 +53,48 @@ script "HudWeapons" Enter { // HUD icons and stuff...
 			}
 			else if (checkWeapon ("Rifle") || checkWeapon ("RiflePowered")) { // Rifle
 				if (checkInventory ("RifleBurst")) {
-					SetFont ("BURST");
+					SetFont ("Graphics/Statusbar/HUDIconsBurstFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				//	---------------------------------------------------------------------------------------------------------------------------------
 				else {
-					SetFont ("AUTO");
+					SetFont ("Graphics/Statusbar/HUDIconsFullAutoFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}
 			else if (checkWeapon ("ActionMachineGun") || checkWeapon ("ActionMachineGunPowered")) { // Carbine
 				if (checkInventory ("AMGMode2")) {
-					SetFont ("SEMI");
+					SetFont ("Graphics/Statusbar/HUDIconsSemiAutoFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				//	---------------------------------------------------------------------------------------------------------------------------------
 				else {
-					SetFont ("AUTO");
+					SetFont ("Graphics/Statusbar/HUDIconsFullAutoFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}
 			else if (checkWeapon ("PumpActionShotgun") || checkWeapon ("PumpActionShotgunPowered")) { // Tactical Shotgun
 				if (checkInventory ("PASSlugs")) {
-					SetFont ("SLUGSHEL");
+					SetFont ("Graphics/Statusbar/HUDIconsSlug.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				else {
-					SetFont ("BUCKSHEL");
+					SetFont ("Graphics/Statusbar/HUDIconsBuckshot.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}
 			else if (checkWeapon ("SoulReaper")) { // Soul Reaper
 				if (checkInventory("SRMode2")) {
-					SetFont ("AUTO");
+					SetFont ("Graphics/Statusbar/HUDIconsFullAutoFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				else if (checkInventory("SRMode3")) {
-					SetFont ("BURST");
+					SetFont ("Graphics/Statusbar/HUDIconsBurstFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 				//	---------------------------------------------------------------------------------------------------------------------------------
 				else {
-					SetFont ("SEMI");
+					SetFont ("Graphics/Statusbar/HUDIconsSemiAutoFire.png");
 					HudMessage (s:"A"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10001, 0, 0.0, 0.0, 0);
 				}
 			}

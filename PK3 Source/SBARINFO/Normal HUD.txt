@@ -1,47 +1,48 @@
-statusbar normal,fullscreenoffsets
+statusbar normal, fullscreenoffsets
 {
-	DrawImage "HPBARS", 20, -272; // 10 = a, -2 = b; health is drawn at a+26 and b-17, armor at a+6 and b-17
+	DrawImage "Graphics/Statusbar/StatsBars.png", 20, -272; // 10 = a, -2 = b; health is drawn at a+26 and b-17, armor at a+6 and b-17
 	
     // Health
-	DrawBar "HPBAR", "EMPTY1", Health, Vertical, 56, -239;
+	DrawBar "Graphics/Statusbar/SBHealthBar.png", "Graphics/Statusbar/SBEmpty.png", Health, Vertical, 56, -239;
     DrawNumber 3, BIGFONT, red, health, drawshadow, 80, -24;
 	
     // Armor
-	DrawBar "ARMORBAR", "EMPTY1", Armor, Vertical, 26, -239;
-	drawnumber 3, BIGFONT, green, armor, drawshadow, whennotzero, 48, -24;
+	DrawBar "Graphics/Statusbar/SBArmorBar.png", "Graphics/Statusbar/SBEmpty.png", Armor, Vertical, 26, -239;
+	DrawNumber 3, BIGFONT, green, armor, drawshadow, whennotzero, 48, -24;
 	
 	// Inventory
-	drawselectedinventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -105, untranslated;
+	DrawSelectedInventory centerbottom, drawshadow, INDEXFONT, -14, -100, -26, -105, untranslated;
+	
+	// Stamina
+	DrawImage "Graphics/Statusbar/StaminaBarBG.png", 5, -270;
+	DrawBar "Graphics/Statusbar/StaminaBarFG.png", "Graphics/Statusbar/StaminaBarBack.png", FDStamina, Horizontal, 6, -268;
 	
 	// Money
-	DrawImage "SOULCOUN", 5, -289;
-	drawnumber 8, BIGFONT, untranslated, Energy, drawshadow, 101, -283;
+	DrawImage "Graphics/Statusbar/MoneyCounter.png", 5, -301;
+	DrawNumber 8, BIGFONT, untranslated, Energy, drawshadow, 101, -295;
 	
 	// Invulnerability
 	InInventory PowerInvulnerable
 	{
-		drawbar "HPINV", "EMPTY2", PowerupTime FDInvulnerabilitySpherePower, Vertical, 56, -239;
+		DrawBar "Graphics/Statusbar/SBInvulnerabilityBar.png", "Graphics/Statusbar/SBEmpty2.png", PowerupTime FDInvulnerabilitySpherePower, Vertical, 56, -239;
 	}
 	
 	// Air supply
 	InInventory IsUnderwater, 1
 	{
-		InInventory Not PowerIronFeet, 1
-		{
-			drawbar "AIRBAR", "AIRNULL", AirTime, Vertical, -32, -280;
-		}
+		DrawBar "Graphics/Statusbar/OxygenMeter.png", "Graphics/Statusbar/OxygenMeterBack.png", AirTime, Vertical, -32, -280;
 	}
 	
 	// Radiation Suit
 	InInventory PowerIronFeet, 1
 	{
-		drawbar "AIRBAR", "AIRNULL", PowerupTime RadSuit, Vertical, -32, -280;
+		DrawBar "Graphics/Statusbar/OMRadsuit.png", "Graphics/Statusbar/OMRadsuitBack.png", PowerupTime RadSuit, Vertical, -32, -280;
 	}
 	
 	// Tome of the Unholy
 	InInventory PowerWeaponLevel2, 1
 	{
-		drawbar "AIRBAR", "AIRNULL", PowerupTime TomeOfTheUnholy, Vertical, 8, 64;
+		DrawBar "AIRBAR", "AIRNULL", PowerupTime TomeOfTheUnholy, Vertical, 8, 64;
 	}
 	
 	// Weapon Tag
@@ -55,10 +56,10 @@ statusbar normal,fullscreenoffsets
         {
 			IsSelected Enforcer //, EnforcerPowered
 			{
-				drawimage "AMOCOUN3", -85, -88;
-				drawnumber 8, BIGFONT, untranslated, Ammo Clip2, drawshadow, -10, -82;
-				drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
-				drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
+				DrawImage "Graphics/Statusbar/AmmoCounter3.png", -85, -88;
+				DrawNumber 8, BIGFONT, untranslated, Ammo Clip2, drawshadow, -10, -82;
+				DrawNumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
+				DrawNumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
 			}
 			IsSelected Not Enforcer //, EnforcerPowered
 			{
@@ -66,22 +67,22 @@ statusbar normal,fullscreenoffsets
 				{
 					InInventory PASSlugs
 					{
-						drawimage "AMOCOUN2", -85, -65;
-						drawnumber 8, BIGFONT, untranslated, Ammo Slug, drawshadow, -10, -59;
-						drawnumber 8, BIGFONT, untranslated, Ammo AmmoPAShotgunSlug, drawshadow, -10, -35;
+						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+						DrawNumber 8, BIGFONT, untranslated, Ammo Slug, drawshadow, -10, -59;
+						DrawNumber 8, BIGFONT, untranslated, Ammo AmmoPAShotgunSlug, drawshadow, -10, -35;
 					}
 					InInventory Not PASSlugs
 					{
-						drawimage "AMOCOUN2", -85, -65;
-						drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
-						drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
+						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+						DrawNumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
+						DrawNumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
 					}
 				}
 				IsSelected Not PumpActionShotgun //, PumpActionShotgunPowered
 				{
-					drawimage "AMOCOUN2", -85, -65;
-					drawnumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
-					drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
+					DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+					DrawNumber 8, BIGFONT, untranslated, ammo2, drawshadow, -10, -59;
+					DrawNumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
 				}
 			}
 		}
@@ -90,29 +91,29 @@ statusbar normal,fullscreenoffsets
         {
 			IsSelected Magic
 			{
-				drawimage "PSIBBG", -155, -39;
-				drawbar "PSIBBAR", "PSIBBACK", PsiEnergy, Horizontal, -153, -37;
+				DrawImage "Graphics/Statusbar/PSIBarBG.png", -155, -39;
+				DrawBar "Graphics/Statusbar/PSIBarFG.png", "Graphics/Statusbar/PSIBarBack.png", PsiEnergy, Horizontal, -153, -37;
 			}
 			IsSelected Not Magic
 			{
 				IsSelected QuadShotgun //, QuadShotgunPowered
 				{
-					drawimage "AMOCOUN2", -85, -65;
-					drawnumber 8, BIGFONT, untranslated, Ammo Shell2, drawshadow, -10, -59;
-					drawnumber 8, BIGFONT, untranslated, Ammo AmmoQuadShotgun, drawshadow, -10, -35;
+					DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+					DrawNumber 8, BIGFONT, untranslated, Ammo Shell2, drawshadow, -10, -59;
+					DrawNumber 8, BIGFONT, untranslated, Ammo AmmoQuadShotgun, drawshadow, -10, -35;
 				}
 				IsSelected Not QuadShotgun //, QuadShotgunPowered
 				{
 					IsSelected FDPlasmaRifle, FDPlasmaRiflePowered
 					{
-						drawimage "AMOCOUN2", -85, -65;
-						drawnumber 8, BIGFONT, untranslated, Ammo Cell2, drawshadow, -10, -59;
-						drawnumber 8, BIGFONT, untranslated, Ammo AmmoPRifle, drawshadow, -10, -35;
+						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+						DrawNumber 8, BIGFONT, untranslated, Ammo Cell2, drawshadow, -10, -59;
+						DrawNumber 8, BIGFONT, untranslated, Ammo AmmoPRifle, drawshadow, -10, -35;
 					}
 					IsSelected Not FDPlasmaRifle, FDPlasmaRiflePowered
 					{
-						drawimage "AMOCOUN1", -85, -41;
-						drawnumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
+						DrawImage "Graphics/Statusbar/AmmoCounter.png", -85, -41;
+						DrawNumber 8, BIGFONT, untranslated, ammo1, drawshadow, -10, -35;
 					}
 				}
 			}
@@ -121,11 +122,11 @@ statusbar normal,fullscreenoffsets
 	
 	gamemode deathmatch
     {
-        drawnumber 4, BIGFONT, untranslated, frags, drawshadow, -3, 1;
+        DrawNumber 4, BIGFONT, untranslated, frags, drawshadow, -3, 1;
     }
 	InInventory ShowKeys,1
 	{
 		DrawString BIGFONT, untranslated, "Keys:", 150, -300;
-		drawkeybar 400, vertical, reverserows, auto, 150, -280, 0, 3, auto;
+		DrawKeybar 400, vertical, reverserows, auto, 150, -280, 0, 3, auto;
 	}
 }
