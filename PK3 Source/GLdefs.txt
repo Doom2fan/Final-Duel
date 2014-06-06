@@ -7,6 +7,7 @@
 	#include "GLDefs/Magic.txt"
 	#include "GLDefs/MiscWeaponBrightmaps.txt"
 	#include "GLDefs/Scopes.txt"
+	#include "GLDefs/Projectiles.txt"
 
 // Monsters
 	#include "GLDefs/ArchonOfHell.txt"

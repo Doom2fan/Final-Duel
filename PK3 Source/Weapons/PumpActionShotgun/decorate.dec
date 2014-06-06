@@ -334,20 +334,11 @@ Actor TSRifledSlug
 	Crash:
 	Death: // Sprites by Neoworm
 		TNT1 A 0 A_ChangeFlag("ForceXYBillboard",1)
-		TNT1 A 0 A_SetScale(0.05)
-		TNT1 A 0 A_SetTranslucent(1.0, 1)
+		TNT1 A 0 A_SetScale(0.5)
 		TNT1 AAAA 0 A_CustomMissile("WallPart",0,0,random(0,360),2,random(-20,80))
 		TNT1 A 0 A_SpawnItem("ShotSmoke")
 		TNT1 A 0 A_Explode(64,64)
-		
-		Stop
-	XDeath:
-		TNT1 A 0 A_ChangeFlag("ForceXYBillboard",1)
-		TNT1 A 0 A_SetScale(0.05)
-		TNT1 A 0 A_SetTranslucent(1.0, 1)
-		TNT1 A 0 A_SpawnItem("ShotSmoke")
-		TNT1 A 0 A_Explode(64,64)
-		
+		XPL3 ABCDEFGHIJKLMNOPQ 1 Bright Light(RIFLSLUGEXPL)
 		Stop
 	}
 }
