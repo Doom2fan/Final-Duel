@@ -97,9 +97,9 @@ ListMenu "Help1"
 	Position 37, 30
 	StaticText 0, 0, "Help page 1"
 	Font "Smallfont", "Untranslated"
-	StaticText 4,35, "1) There is reloading, and it is clip-based, not bullet-based(except for some weapons)."
-	StaticText 4,45, "So keep those itchy reload fingers at bay"
-	StaticText 4,65, "2) This mod has custom keys,but none are bound when first running this mod,"
+	StaticText 4,35, "1) There is reloading, and it is clip-based, not bullet-based(except for some"
+	StaticText 4,45, "weapons). So keep those itchy reload fingers at bay"
+	StaticText 4,65, "2) This mod has custom keys, but none are bound when first running this mod,"
 	StaticText 4,75, "you must set them yourself"
 }
 
