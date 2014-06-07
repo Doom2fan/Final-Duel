@@ -1,5 +1,8 @@
-weapons/rlan/fire	"Sounds/Weapons/RocketLauncher/FDFire.ogg"
-weapons/rlan/explosion	"Sounds/Weapons/RocketLauncher/FDExpl.ogg"
+RocketLauncher/Fire				"Sounds/Weapons/RocketLauncher/FDFire.ogg"
+RocketLauncher/Explosion		"Sounds/Weapons/RocketLauncher/FDExpl.ogg"
+RocketLauncher/Draw				"Sounds/Weapons/RocketLauncher/FDDraw.ogg"
+RocketLauncher/Load				"Sounds/Weapons/RocketLauncher/FDLoad.ogg"
+RocketLauncher/MagOut			"Sounds/Weapons/RocketLauncher/FDMagOut.ogg"
+RocketLauncher/MagIn			"Sounds/Weapons/RocketLauncher/FDMagIn.ogg"
 $limit weapons/rlan/fire 0
 $limit weapons/rlan/explosion 0
-weapons/rlan/draw	"Sounds/Weapons/RocketLauncher/FDDraw.ogg"
