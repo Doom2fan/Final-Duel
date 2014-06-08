@@ -177,7 +177,7 @@ Actor SoulReaper : FDWeapon 9007
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Zoom")
 		Goto Ready2
 	DryFire:
-		SREA A 0 A_PlaySound("SoulReaper/Dryfire")
+		SREA A 0 A_PlaySound("SoulReaper/Dryfire", 7)
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2	
 	Reload:

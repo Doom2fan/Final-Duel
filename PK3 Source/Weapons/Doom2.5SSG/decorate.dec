@@ -52,7 +52,7 @@ Actor DoomSSG : FDWeapon 30002 {
 		TNT1 A 0 A_Lower
 		Wait
 	DryFire:
-		SSGR A 12 A_PlaySound ("Weapons/empty", CHAN_WEAPON)
+		SSGR A 12 A_PlaySound ("Weapons/empty", 7)
 		Goto Ready2
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")

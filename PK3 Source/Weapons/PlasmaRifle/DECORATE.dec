@@ -91,7 +91,7 @@ Actor FDPlasmaRifle : FDWeapon 30034
 		Goto Ready2	
 	DryFire:
 		TNT1 A 0 A_ClearRefire
-		PLSM A 0 A_PlaySound("PlasmaRifle/Dryfire", CHAN_WEAPON)
+		PLSM A 0 A_PlaySound("PlasmaRifle/Dryfire", 7)
 		TNT1 A 0 A_JumpIfInventory("AmmoPRifle",1,"Ready2")
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2

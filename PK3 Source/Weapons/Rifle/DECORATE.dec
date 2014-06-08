@@ -121,7 +121,7 @@ Actor Rifle : FDWeapon 30033
 		Goto Ready2
 	DryFire:
 		TNT1 A 0 A_ClearRefire
-		RIFL A 12 A_PlaySound("Weapons/empty")
+		RIFL A 12 A_PlaySound("Weapons/empty", 7)
 		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
 		Goto Ready2
     Reload:

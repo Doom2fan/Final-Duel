@@ -93,7 +93,7 @@ Actor FDShotgun : FDWeapon 30088
 		Goto Ready2 
   // Dryfire
 	DryFire:
-		TNT1 A 0 A_PlaySound ("Weapons/empty")
+		TNT1 A 0 A_PlaySound ("Weapons/empty", 7)
 		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "DryReload")
 		TNT1 A 0 A_JumpIfInventory ("ShotgunZoomed", 1, "Ready2.Zoom")
 		Goto Ready2

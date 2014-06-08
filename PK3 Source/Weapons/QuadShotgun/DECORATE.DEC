@@ -103,7 +103,7 @@ Actor QuadShotgun : FDWeapon 30089
 		QSGG A 2
 		Goto Ready2
 	DryFire:
-		QSGG A 0 A_PlaySound ("Weapons/empty")
+		QSGG A 0 A_PlaySound ("Weapons/empty", 7)
 		TNT1 A 0 A_JumpIfInventory ("AmmoQuadShotgun", 1, 1)
 		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload")
 		Goto Ready2

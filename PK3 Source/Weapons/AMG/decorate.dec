@@ -108,7 +108,7 @@ Actor ActionMachineGun : FDWeapon 30007 {
 		SNPS A 3
 		Goto Ready2
 	DryFire:
-		AMGG A 10 A_PlaySound ("Weapons/empty", CHAN_WEAPON)
+		AMGG A 10 A_PlaySound ("Weapons/empty", 7)
 		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload")
 		TNT1 A 0 A_JumpIfInventory ("AMGZoomed", 1, "ZReady")
 		Goto Ready2

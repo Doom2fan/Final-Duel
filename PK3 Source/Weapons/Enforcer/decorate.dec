@@ -81,11 +81,11 @@ Actor Enforcer            : FDWeapon
 		ENF2 C 3
 		Goto RightReady
 	LeftDryFire:
-		ENF1 A 12 A_PlaySound("Weapons/empty", CHAN_WEAPON)
+		ENF1 A 12 A_PlaySound("Weapons/empty", 6)
 		ENF1 A 0 A_JumpIfInventory("EnableAutoReload",1,"LeftReload")
 		Goto LeftReady
 	RightDryFire:
-		ENF2 A 12 A_PlaySound("Weapons/empty", 5)
+		ENF2 A 12 A_PlaySound("Weapons/empty", 7)
 		ENF2 A 0 A_JumpIfInventory("EnableAutoReload",1,"RightReload")
 		Goto RightReady
 	Reload:

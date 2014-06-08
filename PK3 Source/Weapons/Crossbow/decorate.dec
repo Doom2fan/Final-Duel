@@ -89,7 +89,7 @@ Actor FDCrossbow : FDWeapon 30137 {
 		XBOW N 3
 		Goto Ready2
 	DryFire:
-		XBOW A 0 A_PlaySound ("Crossbow/empty")
+		XBOW A 0 A_PlaySound ("Crossbow/empty", 7)
 		Goto Ready2
 	Spawn:
 		SBOW A -1
