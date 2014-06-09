@@ -3,3 +3,5 @@ server noarchive bool FD_NothingOnRespawn = false;
 server noarchive bool FD_DontRandomizeStuff = false;
 // User CVars
 user bool FD_MsgsOn = true;
+user bool FD_AutoReload = true;
+user bool FD_HeartbeatsOn = true;

@@ -6,7 +6,6 @@ addkeysection "Final Duel-Actions" FDActions
 	addmenukey "Kick"                                     "Use FDKickKey"
 	addmenukey "Sprint"                                   +user1
 	addmenukey "Drop Weapon"                              "Use FDDropWeaponKey"
-	addmenukey "Toggle Auto-Reload"                       "Use AutoReloadingToggle"
 	addmenukey "Show Player Info"                         "Use FDSSTKey"
 	
 addkeysection "Final Duel-Hotkeys" FDHotkeys

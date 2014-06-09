@@ -34,7 +34,14 @@ OptionMenu "FDSettings"
 	Title "FINAL DUEL OPTIONS"
 	StaticText "Visual Options"
 	Option "Mod messages on",																	"FD_MsgsOn", "OnOff"
+	StaticText " "
+	StaticText "Audio Options"
+	Option "Heartbeats on",																		"FD_HeartbeatsOn", "OnOff"
+	StaticText " "
+	StaticText "Gameplay Options"
+	Option "Auto-Reload",																		"FD_AutoReload", "OnOff"
 }
+
 // Main Menu
 LISTMENU "MainMenu"
 {
@@ -156,5 +163,5 @@ ListMenu "Credits2"
 	
 	StaticText 4, 130, "DoomNukem, Brutal Doom v19 SE, Revilution, Erdie(A Freesound user),"
 	StaticText 4, 140, "Strife, IMX, Tripwire Interactive, Walter_Odington(A Freesound user),"
-	StaticText 4, 150, "terranova."
+	StaticText 4, 150, "terranova, SoloSpaghetti, torridGristle."
 }

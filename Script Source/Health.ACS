@@ -4,12 +4,15 @@ script "Health1" Enter { // Health systems...
 		Terminate;
 	Int HeartbeatTics = 0;
 	Int Health;
+	int HeartbeatVolume;
 	while (true) {
+		if (GetCVar ("FD_HeartbeatsOn")) HeartbeatVolume = 127;
+		else HeartbeatVolume = 0;
 		Health = GetActorProperty (0, APROP_HEALTH);
 		if( Health < 2 && Health > 0) {
 			if (HeartbeatTics == 35) {
 				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", 127);
+				LocalAmbientSound ("Player/Heartbeat", HeartbeatVolume);
 			}
 			HeartbeatTics++;
 		}
