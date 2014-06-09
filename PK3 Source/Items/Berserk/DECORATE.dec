@@ -18,6 +18,7 @@ Actor BerserkProtection : PowerProtection {
 
 Actor FDBerserk: CustomInventory Replaces Berserk {
 	//$Category Final Duel-Items
+	//$Title Adrenaline Kit
 	Tag "$TAGBERSERK"
 	+CountItem +InvBar
 	Inventory.MaxAmount 5
