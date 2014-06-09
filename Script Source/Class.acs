@@ -36,37 +36,32 @@ script "FDNightvision" Enter { // Nightvision system
 
 script "FDSprintSystem" ENTER {
 	if (GameType () == Game_Title_Map) Terminate;
-	int Sprinting, TookRegen, tics = 0;
+	int Sprinting, tics = 0;
 	While (TRUE) {
 		if (CheckInventory ("SprintWeapon") && Sprinting == 0) {
-			if (TookRegen == 1)
-				GiveInventory ("StaminaRegen", 1);
 			PlayerSpeed (100);
 			DisableWeapon ("SprintWeapon");
 			Sprinting = 0;
 			tics = 0;
 		}
 		if (keyDown (BT_USER1) && Sprinting == 0 && CheckInventory ("FDStamina") >= 5) {
-			if (CheckInventory ("StaminaRegen")) {
-				TakeInventory ("StaminaRegen", 1);
-				TookRegen = 1;
-			}
 			DisableWeapon ("SprintWeapon");
 			Sprinting = 1;
 		}
 		if (keyUp (BT_USER1) && Sprinting == 1) {
-			if (TookRegen == 1)
-				GiveInventory ("StaminaRegen", 1);
 			PlayerSpeed (100);
 			DisableWeapon ("SprintWeapon");
 			Sprinting = 0;
 			tics = 0;
 		}
 		if (Sprinting == 1) {
-			if (tics == 5)
-				tics = 0;
 			if (CheckInventory ("FDStamina") >= 5)
 			{
+				if (tics == 5) {
+					tics = 0;
+					if (!CheckInventory("PowerAgilityRune") && GetVelocity () > 0)
+						TakeInventory ("FDStamina", 5);
+				}
 				if (CheckInventory ("FDStamina") < 5) {
 					PlayerSpeed (100);
 					DisableWeapon ("SprintWeapon");
@@ -76,8 +71,6 @@ script "FDSprintSystem" ENTER {
 					SetActorProperty (0, APROP_Speed, 1.6);
 				else
 					SetActorProperty (0, APROP_Speed, 2.6);
-				if (tics == 5)
-					TakeInventory ("FDStamina", 5);
 			}
 		}
 		Delay (1);
@@ -91,16 +84,24 @@ script "FD_StaminaRegeneration" ENTER {
 	if (GameType () == Game_Title_Map) Terminate;
 	int pln = PlayerNumber ();
 	int StaminaTics = 0;
+	int StaminaAmount, Health;
 	
 	while (TRUE) {
-		if (StaminaTics == 5 && CheckInventory ("FDStamina") != 100)
+		StaminaAmount = CheckInventory ("FDStamina");
+		Health = GetActorProperty (0, APROP_HEALTH);
+		if (Health >= 50 && StaminaTics == 2 && !CheckWeapon ("SprintWeapon")) {
 			StaminaTics = 0;
-		if (StaminaTics > 0 && CheckInventory ("FDStamina") == 100)
+			GiveInventory ("FDStamina", 1);
+		}
+		if (Health < 50 && StaminaTics == 5 && !CheckWeapon ("SprintWeapon")) {
 			StaminaTics = 0;
-		if (CheckInventory ("StaminaRegen") != 0 && CheckInventory ("FDStamina") != 100 && StaminaTics == 0)
-			GiveInventory ("FDStamina", 5);
-		if (CheckInventory ("StaminaRegen") != 0)
-			StaminaTics++;
+			GiveInventory ("FDStamina", 1);
+		}
+		if (StaminaTics > 0 && StaminaAmount == 100 || StaminaTics > 0 && CheckWeapon ("SprintWeapon"))
+			StaminaTics = 0;
 		Delay(1);
+		if (StaminaAmount != 100)
+			if (!CheckWeapon ("SprintWeapon"))
+				StaminaTics++;
 	}
 }

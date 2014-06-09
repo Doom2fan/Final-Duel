@@ -1,0 +1,24 @@
+script "FDRegenerationRune" (void) {
+	int RegenTics = 0;
+	int CurrentHP = GetActorProperty (ActivatorTID (), APROP_Health);
+	int MaxHP = GetActorProperty (ActivatorTID (), APROP_SpawnHealth);
+	
+	while (TRUE) {
+		CurrentHP = GetActorProperty (ActivatorTID (), APROP_Health);
+		MaxHP = GetActorProperty (ActivatorTID (), APROP_SpawnHealth);
+
+		if (!checkInventory ("RegenerationRunePower"))
+			terminate;
+		
+		if (CurrentHP >= MaxHP && CurrentHP <= 0)
+			RegenTics = 0;
+		
+		if (RegenTics == 35) {
+			RegenTics = 0;
+			HealThing(2);
+		}
+		Delay (1);
+		if (CurrentHP < MaxHP && CurrentHP > 0)
+			RegenTics++;
+	}
+}

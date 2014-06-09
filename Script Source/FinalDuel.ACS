@@ -23,6 +23,7 @@
 #include "HUD.ACS"
 #include "Misc.ACS"
 #include "WeaponStuff.ACS"
+#include "Runes.ACS"
 #include "ShopSystem.ACS"
 #include "Start.ACS"
 // #include "stralloc.ACS"
