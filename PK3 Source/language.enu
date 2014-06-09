@@ -1,19 +1,28 @@
 [default enu]
 // Dificulty Settings
 	SKILLZ_BABY     			= "Harmless";
-		SKILLZ_BABYTEXT					= "Damage is halved, ammo is doubled and health items are auto-used.\nUses the Baby spawn filter.";
+		SKILLZ_BABYTEXT					= "Damage is halved, ammo is doubled and health items are auto-used.\
+			Uses the Baby spawn filter.";
 	SKILLZ_EASY     			= "Slightly Harmful";
-		SKILLZ_EASYTEXT					= "Health items are auto-used.\nUses the Easy spawn filter.";
+		SKILLZ_EASYTEXT					= "Health items are auto-used.\
+			Uses the Easy spawn filter.";
 	SKILLZ_NORMAL  				= "Painful";
 		SKILLZ_NORMALTEXT				= "Uses the Normal spawn filter.";
 	SKILLZ_HARD     			= "Fatal";
-		SKILLZ_HARDTEXT					= "Enemies are slightly more aggressive.\nUses the Hard spawn filter.";
+		SKILLZ_HARDTEXT					= "Enemies are slightly more aggressive.\
+			Uses the Hard spawn filter.";
 	SKILLZ_HARDSPEED 			= "Lethal";
-		SKILLZ_HARDSPEEDTEXT			= "Enemies are faster and more aggressive.\nUses the Hard spawn filter.";
+		SKILLZ_HARDSPEEDTEXT			= "Enemies are faster and more aggressive.\
+			Uses the Hard spawn filter.";
 	SKILLZ_NIGHTMARE 			= "Brutal";
-		SKILLZ_NIGHTMARETEXT			= "Monsters are faster, are even more aggressive and respawn.\nHealth items are auto-used.\nUses the Nightmare spawn filter.";
+		SKILLZ_NIGHTMARETEXT			= "Monsters are faster, are even more aggressive and respawn.\
+			Health items are auto-used.\
+			Uses the Nightmare spawn filter.";
 	SKILLZ_NEIN   				= "Insane";
-		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled, ST Armour is replaced by GX Armour,\nGX Armour is replaced by XS Armour and health items are auto-used.\nMonsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\nUses the Nightmare spawn filter.";
+		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled, ST Armour is replaced by GX Armour,\
+			GX Armour is replaced by XS Armour and health items are auto-used.\
+			Monsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\
+			Uses the Nightmare spawn filter.";
 // Cheats
 	STSTR_DQDON    				= "You are now immortal";
 	STSTR_DQDOFF   				= "Back with the mortals";
@@ -171,8 +180,8 @@
 		OBANNIHILATOR			= "%o was annihilated by %k";
 	
 	// Slot 6
-		OBPLASMARIFLE			= "%k \cG> \cKPlasma Rifle \cG> \cL%o";
-		OBSONICRAIL				= "";
+		OBPLASMARIFLE			= "%o was deep fried by %k";
+		OBSONICRAIL				= "%o was railed by %k's Sonic Railgun";
 	
 	// Slot 7
 		OBBFG					= "%o was erased from existance by %k's Bio Force Gun MK XVI";
@@ -188,7 +197,7 @@
 		OBMAGIC					= "%k \cG> \cKMagic \cG> \cL%o";
 	
 	// Misc
-		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel"
+		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel";
 
 // Default Strings
 	QUITMSG 					= "Are you sure you want to\nquit this awesome mod?";
