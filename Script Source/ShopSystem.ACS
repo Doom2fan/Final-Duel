@@ -11,8 +11,9 @@
 int mouseX = SCREEN_WIDTH / 2;
 int mouseY = SCREEN_HEIGHT / 2;
 int ShopGUIOpen[MAXPLAYERS];
-/*
-function int BasicButton (str image, str image2, int bx, int by, int bwidth, int bheight, int bid) {
+
+function int BasicButton (str image, str image2, str image3, int bx, int by, int bwidth, int bheight, int bid) {
+	// BasicButton (Normal image, Hovered image, Clicked image, Button X, Button Y, Button width, Button height, Button ID)
 	SetHudSize (SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
 	SetFont (image);
@@ -21,16 +22,25 @@ function int BasicButton (str image, str image2, int bx, int by, int bwidth, int
 		HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
 
 	if (mouseX > bx - bwidth && mouseX < bx + bwidth && mouseY > by - bheight && mouseY < by + bheight) {
-		if (keyPressed (BT_ATTACK) == 1)
+		if (keyPressed (BT_ATTACK) == 1) {
+			SetFont (image3);
+			HudMessage (s:"A";
+				HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
 			return 1;
-		else if (keyPressed (BT_ALTATTACK) == 1)
+		}
+		else if (keyPressed (BT_ALTATTACK) == 1) {
+			SetFont (image3);
+			HudMessage (s:"A";
+				HUDMSG_FADEOUT, bid, 0, bx*1.0, by*1.0, 0.1, 0.3);
 			return 2;
+		}
 	}
 
 	return false;
 }
 
 function int BasicTextButton (str text, int bx, int by, int bwidth, int bheight, int bid) {
+	// BasicButton (Text, Button X, Button Y, Button width, Button height, Button ID)
 	SetHudSize (SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 
 	SetFont ("SMALLFONT");
@@ -93,42 +103,7 @@ script "ShopSystemz" (void) {
 		
         SetFont ("CURSOR");
         HudMessage (s:"A"; HUDMSG_PLAIN, SHOPCURSORID, CR_UNTRANSLATED, mouseX*1.0+0.1, mouseY*1.0+0.1, 0.04);
-		Delay (1);
-	}
-}
-*/
-
-script "ToggleShopSystem" (void) {
-	if (ShopGUIOpen[PlayerNumber ()] == 0) {
-		SetPlayerProperty (0, 1, PROP_TOTALLYFROZEN);
-		ACS_NamedExecute ("ShopSystemz", 0);
-		ShopGUIOpen[PlayerNumber ()] = 1;
-		terminate;
-	}
-	else if (ShopGUIOpen[PlayerNumber ()] == 1) {
-		SetPlayerProperty (0, 0, PROP_TOTALLYFROZEN);
-		ACS_NamedTerminate ("ShopSystemz", 0);
-		ShopGUIOpen[PlayerNumber ()] = 0;
-		terminate;
-	}
-}
-
-script "ShopSystemz" (void) {
-	int MenuX, MenuY = 0;
-	int MenuPage = 0;
-	SetHudSize (SCREEN_WIDTH, SCREEN_HEIGHT, 0);
-	While (TRUE) {
-		if (MenuPage == 0) {
-			SetFont ("SHPPG1"); HudMessage (s:"A"; HUDMSG_FADEOUT, SHOPBACKGROUNDID, 0, 0.0, 0.0+0.1, 0.1, 0.3); 
-			if (MenuX == 0 && MenuY == 0) SetFont ("SHPBT1"); HudMessage (s:"A"; HUDMSG_FADEOUT, 8000002, CR_RED, 0.0, 0.0+0.1, 0.1, 0.3);
-			if (keyPressed (BT_FORWARD)) { PlaySound (0, "menu/change", CHAN_UI); if (MenuX > 0) MenuX--; }
-			if (keyPressed (BT_BACK)) { PlaySound (0, "menu/change", CHAN_UI); if (MenuX < 4) MenuX++; }
-			if (keyPressed (BT_LEFT)) { PlaySound (0, "menu/change", CHAN_UI); if (MenuY > 0) MenuX--; }
-			if (keyPressed (BT_RIGHT)) { PlaySound (0, "menu/change", CHAN_UI); if (MenuY < 4) MenuX++; }
-			if (keyPressed (BT_USE)) {
-				if (MenuX == 0 && MenuY == 0) { PlaySound (0, "menu/change", CHAN_UI); }
-			}
-		}
+		//if (BasicButton ("Graphics/ShopSystem/Runes.png", "Graphics/ShopSystem/RunesHover.png", "Graphics/ShopSystem/RunesClick.png", ) == 1)
 		Delay (1);
 	}
 }
