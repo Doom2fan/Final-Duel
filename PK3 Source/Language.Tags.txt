@@ -42,6 +42,15 @@
 	// Slot 9
 		TAGFATARM										= "Mancubus Flamethrower";
 		TAGMAGIC										= "Magic";
-		TAGKUKRI										= "Kukri";
 // Inventory
-	TAGBERSERK											= "Adrenaline kit\nGrants higher speed, protection and strength";
+	TAGBERSERK											= "Adrenaline kit\
+		Grants higher speed, protection and strength";
+	// Runes
+		TAGRREGEN										= "Regeneration Rune\
+			Grants Health Regeneration";
+		TAGRDOUBLEDAMAGE								= "Double Damage Rune\
+			Grants Double Damage";
+		TAGRAGILITY										= "Agility Rune\
+			Grants High Jump and Infinite Stamina";
+		TAGRDRAIN										= "Drain Rune\
+			Grants vampirism (converts damage dealt to enemies into health)";
