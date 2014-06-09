@@ -131,27 +131,43 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall {
 		TNT1 A 0 A_Explode (128, 128)
 		TNT1 A 0 A_SetScale (2.0)
 		TNT1 A 0 A_PlaySound ("BFG/Explode", 5, 1.0, 0, 0.0)
-		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0,
-								0.0, 0.0, 0.0, 0.0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_CustomMissile ("FDBFGExtra", 0.0, 0, 0, CMF_AIMDIRECTION|CMF_TRACKOWNER)
 		BFE1 ABCDEF 3 Bright
-		Stop
+		Stop		
 	}
 }
 
 Actor FDBFGExtra {
-	Monster
-	Health -1
-	Speed 0
-	Mass 0x7fffffff
-	+NoDamage +NoBlockmap +NoGravity +ExtremeDeath
-	+LookAllAround +IsMonster
+	+NoGravity +ExtremeDeath +IsMonster +NoTarget
+	+NoBlockmap +NeverTarget +NotAutoaimed +Friendly
+	
+	var int user_BFGExtraLeft;
+	var int user_DegreesToTurn;
+	
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_RearrangePointers (AAPTR_NULL, AAPTR_TARGET, AAPTR_NULL)
-		TNT1 AAAAAAAAAA 0 A_LookEx
-		TNT1 AAAAAAAAAA 0 A_Chase
-		TNT1 AAAAA 0 A_FaceTarget
-		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomRailgun (random (1, 4) * 8, 0, none, 00FF00, RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 2.0, "FDBFGExtraPuff", 0, 0)
+		TNT1 A 0
+		TNT1 A 0 A_RearrangePointers (AAPTR_DEFAULT, AAPTR_TARGET, AAPTR_DEFAULT)
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SetAngle (0)
+		TNT1 A 0 A_SetUserVar ("user_BFGExtraLeft", 40)
+		TNT1 A 0 A_SetUserVar ("user_DegreesToTurn", 2)
+
+	Working:
+		TNT1 A 0 A_JumpIf (user_BFGExtraLeft == 0, "Finish")
+		TNT1 A 0 A_LookEx (LOF_NOSOUNDCHECK, 0, 0, 0, 1, "Fire")
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SetAngle (angle+user_DegreesToTurn)
+		TNT1 A 0 A_SetUserVar ("user_BFGExtraLeft", user_BFGExtraLeft - 1)
+		Loop
+	Fire:
+		TNT1 A 0 A_CustomRailgun (random (1, 4) * 8, 0, none, 00FF00, RGF_SILENT|RGF_FULLBRIGHT, 0, 2.0, "FDBFGExtraPuff", 0, 0)
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SetAngle (angle+user_DegreesToTurn)
+		TNT1 A 0 A_SetUserVar ("user_BFGExtraLeft", user_BFGExtraLeft - 1)
+		Goto Working
+	Finish:
+		TNT1 A 0
 		Stop
 	}
 }
