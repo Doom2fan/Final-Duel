@@ -1,8 +1,8 @@
-Actor D3Key : DoomKey {	-Inventory.InterHubStrip }
+Actor D3Key : DoomKey {	}
 
 Actor D3BlueCard : D3Key 30010 {
 	//$Category Final Duel-Keys
-	Tag "D3 Blue Card"
+	Tag "Blue Card"
 	Inventory.Pickupmessage "Picked up a blue keycard."
 	Inventory.Icon "D3KBA0"
 	States {
@@ -15,7 +15,7 @@ Actor D3BlueCard : D3Key 30010 {
 
 Actor D3RedCard : D3Key 30011 {
 	//$Category Final Duel-Keys
-	Tag "D3 Red Card"
+	Tag "Red Card"
 	Inventory.Pickupmessage "Picked up a red keycard."
 	Inventory.Icon "D3KRA0"
 	States {
@@ -28,7 +28,7 @@ Actor D3RedCard : D3Key 30011 {
 
 Actor D3YellowCard : D3Key 30012 {
 	//$Category Final Duel-Keys
-	Tag "D3 Yellow Card"
+	Tag "Yellow Card"
 	Inventory.Pickupmessage "Picked up a yellow keycard."
 	Inventory.Icon "D3KYA0"
 	States {
@@ -41,7 +41,7 @@ Actor D3YellowCard : D3Key 30012 {
 
 Actor D3BlackCard : D3Key 30013 {
 	//$Category Final Duel-Keys
-	Tag "D3 Black Card"
+	Tag "Black Card"
 	Inventory.Pickupmessage "Picked up a black keycard."
 	Inventory.Icon "D3KBB0"
 	States {
@@ -54,7 +54,7 @@ Actor D3BlackCard : D3Key 30013 {
 
 Actor D3GreenCard : D3Key 30014 {
 	//$Category Final Duel-Keys
-	Tag "D3 Green Card"
+	Tag "Green Card"
 	Inventory.Pickupmessage "Picked up a green keycard."
 	Inventory.Icon "D3KGA0"
 	States {
@@ -67,7 +67,7 @@ Actor D3GreenCard : D3Key 30014 {
 
 Actor D3OrangeCard : D3Key 30015 {
 	//$Category Final Duel-Keys
-	Tag "D3 Orange Card"
+	Tag "Orange Card"
 	Inventory.Pickupmessage "Picked up an orange keycard."
 	Inventory.Icon "D3KOA0"
 	States {
@@ -80,7 +80,7 @@ Actor D3OrangeCard : D3Key 30015 {
 
 Actor D3WhiteCard : D3Key 30016 {
 	//$Category Final Duel-Keys
-	Tag "D3 White Card"
+	Tag "White Card"
 	Inventory.Pickupmessage "Picked up a white keycard."
 	Inventory.Icon "D3KWA0"
 	States {
@@ -93,7 +93,7 @@ Actor D3WhiteCard : D3Key 30016 {
 
 Actor D3BrownCard : D3Key 30017 {
 	//$Category Final Duel-Keys
-	Tag "D3 Brown Card"
+	Tag "Brown Card"
 	Inventory.Pickupmessage "Picked up a brown keycard."
 	Inventory.Icon "D3KBC0"
 	States {
@@ -106,7 +106,7 @@ Actor D3BrownCard : D3Key 30017 {
 
 Actor D3VioletCard : D3Key 30018 {
 	//$Category Final Duel-Keys
-	Tag "D3 Violet Card"
+	Tag "Violet Card"
 	Inventory.Pickupmessage "Picked up a violet keycard."
 	Inventory.Icon "D3KVA0"
 	States {
@@ -119,9 +119,10 @@ Actor D3VioletCard : D3Key 30018 {
 
 Actor D3Keycard : D3Key 30019 {
 	//$Category Final Duel-Keys
-	Tag "D3 Keycard"
+	Tag "Keycard"
 	Inventory.Pickupmessage "Picked up the keycard."
 	Inventory.Icon "D3KCA0"
+	-Inventory.InterHubStrip
 	States {
 	Spawn:
 		D3KC A 10

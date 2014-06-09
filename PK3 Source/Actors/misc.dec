@@ -187,37 +187,34 @@ Actor Footstep {
 	}
 }
 
-Actor BlueKeyCard : CustomInventory replaces BlueCard {
+Actor BlueKeyCard : BlueCard replaces BlueCard {
 	Inventory.PickupMessage "Picked up a blue keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Species "BlueCard"
 	States {
 	Spawn:
 		BKEY A 10
 		BKEY B 10 Bright
 		Loop
-	Pickup:
-		TNT1 A 1 A_GiveInventory ("BlueCard", 1)
-		Stop
 	}
 }
 
-Actor RedKeyCard : CustomInventory replaces RedCard {
+Actor RedKeyCard : RedCard replaces RedCard {
 	Inventory.PickupMessage "Picked up a red keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Species "RedCard"
 	States {
 	Spawn:
 		RKEY A 10
 		RKEY B 10 Bright
 		Loop
-	Pickup:
-		TNT1 A 1 A_GiveInventory ("RedCard", 1)
-		Stop
 	}
 }
 
-Actor YellowKeyCard : CustomInventory replaces YellowCard {
+Actor YellowKeyCard : YellowCard replaces YellowCard {
 	Inventory.PickupMessage "Picked up a yellow keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Species "YellowCard"
 	States {
 	Spawn:
 		YKEY A 10
