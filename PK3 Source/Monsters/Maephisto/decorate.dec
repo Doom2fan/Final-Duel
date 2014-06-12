@@ -1,5 +1,4 @@
-Actor Maephisto 30124
-{
+Actor Maephisto 30124 {
 	//$Category Final Duel-Monsters
 	//$Title Maephisto
 	Obituary "$OB_MAEPHISTO"
@@ -15,10 +14,9 @@ Actor Maephisto 30124
 	PainSound "Maephisto/pain"
 	DeathSound "Maephisto/death"
 	ActiveSound "Maephisto/idle"
-	MONSTER
+	Monster
 	+Boss +FloorClip +NoBlood +NoRadiusDMG
-	States
-	{
+	States {
 	Spawn:
 		MMDR E 10 A_Look
 		Loop
@@ -26,44 +24,44 @@ Actor Maephisto 30124
 		MMDR AABBCCDD 4 A_Chase
 		Loop
 	Missile:
-		MMDR E 0 A_JumpIfHealthLower(1400,"Missile2")
-		MMDR E 0 A_Jump(256,"Chaingun","Bolt")
+		MMDR E 0 A_JumpIfHealthLower (1400, "Missile2")
+		MMDR E 0 A_Jump (256, "Chaingun", "Bolt")
 		Goto See
 	Missile2:
-		MMDR E 0 A_Jump(96,"Laser")
-		MMDR E 0 A_Jump(256,"Chaingun","Bolt")
+		MMDR E 0 A_Jump (96, "Laser")
+		MMDR E 0 A_Jump (256, "Chaingun", "Bolt")
 		Goto See
 	Chaingun:  
 		MMDR E 10 A_FaceTarget
-		MMDR H 0 A_PlaySound("Maephisto/Chaingn")
-		MMDR H 4 Bright A_CustomMissile("MonsterTracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
-		MMDR I 4 Bright A_CustomMissile("MonsterTracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
-		MMDR H 4 Bright A_CustomMissile("MonsterTracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
-		MMDR I 4 Bright A_CustomMissile("MonsterTracer", 91, -13, frandom(-4.0,4.0), 0, frandom(-4.5,4.5))
-		MMDR I 0 A_Jump(20,3)
+		MMDR H 0 A_PlaySound ("Maephisto/Chaingn")
+		MMDR H 4 Bright A_CustomMissile ("MonsterTracer", 91, -13, frandom(-4.0, 4.0), 0, frandom(-4.5, 4.5))
+		MMDR I 4 Bright A_CustomMissile ("MonsterTracer", 91, -13, frandom(-4.0, 4.0), 0, frandom(-4.5, 4.5))
+		MMDR H 4 Bright A_CustomMissile ("MonsterTracer", 91, -13, frandom(-4.0, 4.0), 0, frandom(-4.5, 4.5))
+		MMDR I 4 Bright A_CustomMissile ("MonsterTracer", 91, -13, frandom(-4.0, 4.0), 0, frandom(-4.5, 4.5))
+		MMDR I 0 A_Jump (20, 3)
 		MMDR I 0 A_CPosRefire    
 		Goto Chaingun+1
 	Bolt:
 		MMDR EEEE 5 A_FaceTarget     
-		MMDR F 0 Bright A_CustomMissile("EnergyBolt",50,30)
-		MMDR F 10 Bright A_CustomMissile("EnergyBolt",50,-30)    
+		MMDR F 0 Bright A_CustomMissile ("EnergyBolt", 50, 30)
+		MMDR F 10 Bright A_CustomMissile ("EnergyBolt", 50, -30)    
 		MMDR GG 3 Bright A_FaceTarget
 		Goto See
 	Laser:
 		MMDR EEEE 5 A_FaceTarget
-		MMDR E 0 A_PlaySound("Maephisto/Charge",CHAN_Weapon,1,0,0)
+		MMDR E 0 A_PlaySound ("Maephisto/Charge", CHAN_WEAPON, 1, 0, 0)
 		MMDR JKLKJ 5 Bright A_FaceTarget
 		MMDR JKLKJ 4 Bright A_FaceTarget
 		MMDR JKLKJ 3 Bright A_FaceTarget
 		MMDR JKLKJ 2 Bright A_FaceTarget
 		MMDR JKLKJ 1 Bright A_FaceTarget 
 		MMDR JKLKJ 1 Bright A_FaceTarget 
-		MMDR M 0 A_PlaySound("Maephisto/Laser",Chan_AUTO,1,0,0)
-		MMDR M 0 A_GiveToTarget("Flash")
-		MMDR MNOOOOOOOOO 1 Bright A_CustomMissile("Laserbeam",60,0,0)    
+		MMDR M 0 A_PlaySound ("Maephisto/Laser", Chan_AUTO, 1, 0, 0)
+		MMDR M 0 A_GiveToTarget ("Flash")
+		MMDR MNOOOOOOOOO 1 Bright A_CustomMissile ("Laserbeam", 60, 0, 0)    
 		Goto See        
 	Death:
-		TNT1 A 0 A_GiveToTarget("XPSystemExperience",1000)
+		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 1000)
 		MMDR P 10 Bright A_Scream
 		MMDR QRS 10 Bright
 		MMDR T 10 Bright A_NoBlocking
@@ -74,8 +72,7 @@ Actor Maephisto 30124
 	}
 }
 
-Actor EnergyBolt
-{
+Actor EnergyBolt {
 	Radius 6
 	Height 16
 	Speed 20
@@ -86,8 +83,7 @@ Actor EnergyBolt
 	DeathSound "Weapons/rocklx"
 	Decal "Scorch"
 	Projectile
-	States
-	{
+	States {
 	Spawn:
 		MMDB A 1 Bright
 		Loop
@@ -97,8 +93,7 @@ Actor EnergyBolt
 	}
 }
 
-Actor Laserbeam
-{
+Actor Laserbeam {
 	Radius 20
 	Height 20
 	Speed 40
@@ -107,9 +102,8 @@ Actor Laserbeam
 	Alpha 1
 	DeathSound "Weapons/bfgx"
 	Projectile
-	+RIPPER
-	States
-	{
+	+Ripper
+	States {
 	Spawn:
 		KAMS A 1 Bright
 		Loop
@@ -120,18 +114,13 @@ Actor Laserbeam
 	}
 }
 
-Actor Flash : CustomInventory
-{  
-	+Inventory.QUIET
-	+Inventory.UNDROPPABLE
-	+Inventory.AlwaysPickup
-	+Inventory.AUTOACTIVATE
+Actor Flash : CustomInventory {  
+	+Inventory.Quiet +Inventory.Undroppable +Inventory.AlwaysPickup +Inventory.AutoActivate
 	Inventory.Amount 1
 	Inventory.MaxAmount 0
-	States
-	{
+	States {
 	Pickup:
-		NULL A 1 A_SetBlend("white",1,100)    
+		NULL A 1 A_SetBlend ("white", 1, 100)    
 		Stop
 	}
 }
