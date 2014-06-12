@@ -97,15 +97,15 @@ Actor Laserbeam {
 	Radius 20
 	Height 20
 	Speed 40
-	Damage 20
+	Damage 0
 	RenderStyle Add
 	Alpha 1
 	DeathSound "Weapons/bfgx"
 	Projectile
-	+Ripper
+	+Ripper +DontSplash +ForceRadiusDMG
 	States {
 	Spawn:
-		KAMS A 1 Bright
+		KAMS A 1 Bright A_Explode ((random (1, 8) * 10), 20, 0, 0)
 		Loop
 	Death:
 		KAXP B 3 Bright A_Explode
