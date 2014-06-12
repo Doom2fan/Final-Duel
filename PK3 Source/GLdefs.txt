@@ -17,7 +17,6 @@
 	#include "GLDefs/DarkImpVoid.txt"
 	#include "GLDefs/Cybruiser.txt"
 	#include "GLDefs/ZSec.txt"
-	#include "GLDefs/InfernalSpider.txt"
 	#include "GLDefs/PyroSuccubus.txt"
 
 // Items

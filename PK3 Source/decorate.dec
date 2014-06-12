@@ -5,7 +5,7 @@
 	// most of the sprites and sounds, any sound or sprite that I
 	// edited should be in the CREDITS or INFO lump)
 // Highest DoomEdNum: 30168
-	// Other unused DoomEdNums: 30069
+	// Other unused DoomEdNums: 30069, 30120, 30121, 30122, 30123
  
 // Shared/Common
 	#include "Actors/Defaults.DEC" 									// Credits on the file
@@ -133,7 +133,6 @@
 		#include "Monsters/Trite/DECORATE.DEC" 						// Credits in the folder
 		#include "Monsters/ZSec/DECORATE.DEC" 						// Credits in the folder
 		#include "Monsters/Rottweiler/DECORATE.DEC" 				// Credits in the folder
-		#include "Monsters/InfernalSpider/DECORATE.DEC"				// Credits in the folder
 		#include "Monsters/PyroSuccubus/DECORATE.DEC" 				// Credits in the folder
 		#include "Monsters/BloodDemon/DECORATE.DEC"					// Credits in the folder
 		#include "Monsters/BlackPanther/DECORATE.DEC"				// Credits in the folder
