@@ -105,7 +105,7 @@ Actor Laserbeam {
 	+Ripper +DontSplash +ForceRadiusDMG
 	States {
 	Spawn:
-		KAMS A 1 Bright A_Explode ((random (1, 8) * 10), 20, 0, 0)
+		KAMS A 2 Bright A_Explode ((random (1, 8) * 10), 20, 0, 0)
 		Loop
 	Death:
 		KAXP B 3 Bright A_Explode
