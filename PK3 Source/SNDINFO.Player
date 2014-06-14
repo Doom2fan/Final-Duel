@@ -20,9 +20,10 @@
     Chronos/Offend1										COFFEND1
 	Chronos/Offend2										COFFEND2
 	Chronos/Offend3										COFFEND3
-    $random	Chronos/Taunt { Chronos/Taunt1 }
-    Chronos/Taunt1										CTAUNT1
-	
+    $random	Chronos/Taunt { Chronos/Taunt0 Chronos/Taunt1 }
+    Chronos/Taunt0										CLAUGH
+	Chronos/Taunt1										CTAUNT1
+
 	$random Chronos/Pain { Chronos/Pain1 Chronos/Pain2 Chronos/Pain3 Chronos/Pain4 Chronos/Pain5 }
 	Chronos/Pain1 CPAIN1
 	Chronos/Pain2 CPAIN2
