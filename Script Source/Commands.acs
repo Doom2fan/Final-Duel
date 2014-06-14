@@ -1,5 +1,5 @@
 // Action keys
-Script "FDTaunting" (void) {
+Script "FDTaunting" (void) NET {
 	PlaySound (0, "*taunt", CHAN_VOICE);
 }
 
