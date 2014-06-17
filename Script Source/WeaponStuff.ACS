@@ -57,3 +57,25 @@ script "FDSynthFire" (void) {
 			TakeInventory ("SynthFireRight", 1);
 	}
 }
+
+// BFG stuff
+script "SetTIDForBFGBall" (void) {
+	SetActivatorToTarget (0);
+	int result = -1000 - PlayerNumber ();
+	SetResultValue (result);
+}
+
+script "CheckBFGBall" (void) {
+	if (ClassifyActor (-1000) & ACTOR_MISSILE) {
+		SetResultValue (1);
+	}
+	else
+		SetResultValue (0);
+}
+
+script "KillBFGBall" (void) {
+	int BFGBallTID = -1000 - PlayerNumber ();
+	SetActorVelocity (BFGBallTID, 0.0, 0.0, 0.0, 0, 0);
+	SetActorState (BFGBallTID, "KilledByPlayer");
+	Thing_ChangeTID (BFGBallTID, 0);
+}

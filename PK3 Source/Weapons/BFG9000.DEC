@@ -126,21 +126,19 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall {
 	Obituary "$OBBFG"
 	SelfObituary "$OBBFGSELF"
 	DamageType BFG
-	+ExtremeDeath +DontSplash
+	+ExtremeDeath +DontSplash +SeekerMissile
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound ("BFG/Fly", CHAN_BODY, 1.0, 1) // Start flying sound loop
 		TNT1 A 0 Thing_ChangeTID (0, CallACS ("SetTIDForBFGBall")) // Set our TID
 	Spawn2:
-		BFS1 A 2 Bright
+		BFS1 AA 1 Bright A_SeekerMissile (25, 55, SMF_LOOK|SMF_PRECISE)
 		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0,
 			0.0, 0.0, 0.0, 0, SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS) // Spawn secondary effect
 		TNT1 A 0 A_SpawnItemEx ("BFGTrail") // Spawn trail
-		BFS1 AB 2 Bright
-		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0,
-			0.0, 0.0, 0.0, 0, SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS) // Spawn secondary effect
+		BFS1 AABB 1 Bright A_SeekerMissile (25, 55, SMF_LOOK|SMF_PRECISE)
 		TNT1 A 0 A_SpawnItemEx ("BFGTrail") // Spawn trail
-		BFS1 B 2 Bright
+		BFS1 BB 1 Bright A_SeekerMissile (25, 55, SMF_LOOK|SMF_PRECISE)
 		Loop
 	KilledByPlayer:
 		TNT1 A 0 A_Quake (8, 18, 0, 512, "") // Shake the ground
@@ -171,24 +169,12 @@ Actor FDBFGExtra {
 	+NeverTarget +NotAutoaimed +Friendly +NoDamage
 	+SpecialMonster
 	
-	var int user_TicsLeft; // Our tic counter
-
 	States {
 	Spawn:
 		TNT1 A 0 // This is here to make sure nothing fucks up
-		TNT1 A 0 A_SetUserVar ("user_TicsLeft", 17) // Set up our tic counter
-		TNT1 A 0 A_RearrangePointers (AAPTR_DEFAULT, AAPTR_TARGET, AAPTR_MASTER) // Set up our pointers
-		TNT1 A 0 A_ClearTarget // Clear the target so stuff doesn't fuck up
-
-	LookingForTargets:
-		TNT1 A 0 A_Warp (AAPTR_TRACER, 0.0, 0.0, 0.0, 0.0, WARPF_NOCHECKPOSITION) // Warp to where the BFGBall is
-		TNT1 AAAAAAAAAAAAAAA 0 A_LookEx (0, 0, 0, 0, 0, "Working") // [AGITATION INTENSIFIES]
-		TNT1 A 1 A_LookEx (0, 0, 0, 0, 0, "Working") // Look for targets (The line above does the same thing)
-		TNT1 A 0 A_SetUserVar ("user_TicsLeft", user_TicsLeft - 1) // Decrease the tic counter by one
-		Loop
+		TNT1 A 0 A_RearrangePointers (AAPTR_TRACER, AAPTR_TARGET, AAPTR_MASTER) // Set up our pointers
 
 	Working:
-		TNT1 A 0 A_FaceTarget // Face our target
 		TNT1 A 0 A_CustomRailgun (random (1, 4) * 4, 0, none, 00FF00, RGF_SILENT|RGF_FULLBRIGHT, 1, 1.0, "FDBFGExtraPuff") // Fire a railgun attack at the target
 		Stop
 	}
