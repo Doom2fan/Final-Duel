@@ -31,7 +31,7 @@ Actor PyroSuccubus 30126
 	+FLOORCLIP
 	+DONTHURTSPECIES
 	Species "Succubus"
-	DropItem "Energy"
+	DropItem "Energy200"
 	States 
 	{ 
 	Spawn:

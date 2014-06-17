@@ -28,7 +28,7 @@ Actor FDSuperShotgunGuy 30134
 	DamageFactor "SRType1", 1.0
 	PainChance "Kick", 255
 	DropItem "DoomSSG"
-	DropItem "Energy"
+	DropItem "Energy100"
 	States
 	{
     Spawn:

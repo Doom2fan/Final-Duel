@@ -24,7 +24,7 @@ Actor FDDoomImp : DoomImp 30097
 	DamageFactor "SRType1", 1.0
 	DamageFactor "Ice", 2.0
 	DamageFactor "Fire", 0.5
-	DropItem "Energy"
+	DropItem "Energy50" DropItem "Energy10" DropItem "Energy10" DropItem "Energy10" // 80
 	States
 	{
 	Spawn:

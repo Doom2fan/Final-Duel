@@ -27,7 +27,7 @@ Actor FDDemon : Demon 30098
 	Obituary "$OB_DEMONHIT"
 	DamageFactor "Ice", 1.0
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy100" // 100
 	States
 	{
 	Spawn:

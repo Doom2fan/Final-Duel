@@ -25,7 +25,7 @@ Actor Trite 30129
   +FloorClip
   +DontHurtSpecies
   +NoTarget
-  DropItem "Energy"
+  DropItem "Energy5"
   States
   {
   Spawn:

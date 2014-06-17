@@ -26,7 +26,7 @@ Actor FDHectebus 30133
 	Obituary "$OB_HECTEBUS"
 	DamageFactor "Ice", 0.0
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy500" DropItem "Energy200" // 700
 	States
 	{
 	Spawn:

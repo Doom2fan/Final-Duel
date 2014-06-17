@@ -19,6 +19,7 @@ Actor Cybruiser : BaronOfHell 30117 {
 	DeathSound "monster/brudth"
 	MeleeSound "baron/melee"
 	Species "Hell Noble"
+	DropItem "Energy500" DropItem "Energy500" DropItem "Energy200" DropItem "Energy100" DropItem "Energy50" // 1350
 	States { 
 	Spawn: 
 		BRUS A 10 A_Look 

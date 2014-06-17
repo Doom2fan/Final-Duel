@@ -26,6 +26,7 @@ Actor FDBloodDemon : FDDemon 30113 {
     PainSound "BloodDemon/Pain"
     DeathSound "BloodDemon/Death"
     ActiveSound "BloodDemon/Active"
+	DropItem "Energy200" DropItem "Energy100" // 300
 	States {
 	Spawn:
 		TNT1 A 0 Thing_SetTranslation (0, 10)

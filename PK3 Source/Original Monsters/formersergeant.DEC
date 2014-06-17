@@ -23,7 +23,7 @@ Actor FDShotgunGuy : ShotgunGuy 30095
 	ActiveSound "shotguy/active"
 	Obituary "$OB_SHOTGUY"
 	DropItem "FDShotgun"
-	DropItem "Energy"
+	DropItem "Energy50"
 	Species "Corrupted Human"
 	States
 	{

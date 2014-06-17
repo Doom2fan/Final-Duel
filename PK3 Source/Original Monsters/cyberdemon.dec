@@ -31,7 +31,7 @@ Actor FDCyberdemon : Cyberdemon replaces Cyberdemon 30110
 	Obituary "$OB_CYBORG"
 	DamageFactor "Ice", 0.0
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy3000" DropItem "Energy500" DropItem "Energy500" // 4000
 	States
 	{
 	Spawn:

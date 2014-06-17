@@ -19,6 +19,7 @@ Actor Cyberbaron : Baronofhell 30116 {
 	Monster
 	+NoRadiusDMG +DontHurtSpecies
 	Species "Hell Noble"
+	DropItem "Energy500" DropItem "Energy500" DropItem "Energy200" DropItem "Energy50" // 1250
 	States {
 	Spawn:
 		CBOS A 10 A_Look

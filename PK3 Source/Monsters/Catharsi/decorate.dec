@@ -18,7 +18,7 @@ Actor Catharsi 30114 {
 	Monster
 	+FloorClip
 	DropItem "HellClip"
-	DropItem "Energy"
+	DropItem "Energy100" DropItem "Energy50" // 150
 	States {
 	Pain.Kick:
 		SDDM A 1 A_Pain

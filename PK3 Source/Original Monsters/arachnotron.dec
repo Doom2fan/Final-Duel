@@ -24,7 +24,7 @@ Actor FDArachnotron : Arachnotron replaces Arachnotron 30104
 	Obituary "$OB_BABY"
 	DamageFactor "Ice", 0.5
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy500" DropItem "Energy10" DropItem "Energy10" DropItem "Energy5" // 525
 	States
 	{
 	Spawn:

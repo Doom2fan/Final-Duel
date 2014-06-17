@@ -23,7 +23,7 @@ Actor DemonDog 30127
   DeathSound "dog/death"
   ActiveSound "dog/active"
   AttackSound "dog/attack"
-  DropItem "Energy"
+  DropItem "Energy10" DropItem "Energy10"
   Obituary "$OB_ROTTWEILER"
   States
   {
