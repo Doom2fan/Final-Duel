@@ -1,14 +1,106 @@
+Actor EnergyPickupBase : CustomInventory {
+	+CountItem
+	States {
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
+	Spawn2:
+		ENRG A 1 Bright Light (EnergyLight1)
+		Loop
+	}
+}
 Actor Energy : Inventory 30140 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy"
+	Tag "Soul Energy(1)"
+	RenderStyle Add
 	Inventory.PickupMessage ""
 	Inventory.Amount 1
 	Inventory.MaxAmount 9999999
 	Inventory.Icon "ENERGY2"
-	+FloatBob
 	States {
 	Spawn:
-		ENRG A 1 Bright //A_SpawnItemEx ("SoulEnergyTrail")
+		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
+	Spawn2:
+		ENRG A 1 Bright Light (EnergyLight1)
 		Loop
+	}
+}
+
+Actor Energy5 : EnergyPickupBase 30069 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(5)"
+	States {
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 5)
+		Stop
+	}
+}
+
+Actor Energy10 : EnergyPickupBase 30120 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(10)"
+	States {
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 10)
+		Stop
+	}
+}
+
+Actor Energy50 : EnergyPickupBase 30121 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(50)"
+	States {
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
+	Spawn2:
+		ENRG A 1 Bright Light (EnergyLight2)
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 50)
+		Stop
+	}
+}
+
+Actor Energy100 : Energy50 30122 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(100)"
+	States {
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 100)
+		Stop
+	}
+}
+
+Actor Energy200 : Energy50 30123 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(200)"
+	States {
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 200)
+		Stop
+	}
+}
+
+Actor Energy500 : Energy50 30168 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(500)"
+	States {
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 500)
+		Stop
+	}
+}
+
+Actor Energy3000 : EnergyPickupBase 30169 {
+	//$Category Final Duel-Money
+	Tag "Soul Energy(3000)"
+	States {
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
+	Spawn2:
+		ENRG A 1 Bright Light (EnergyLight3)
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("Energy", 3000)
+		Stop
 	}
 }

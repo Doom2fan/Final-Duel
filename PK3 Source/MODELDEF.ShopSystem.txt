@@ -1,0 +1,87 @@
+Model Energy // Model by Alex_Mercer
+{			 // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy.png"
+	Scale 0.2 0.2 0.2
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy5 // Model by Alex_Mercer
+{			  // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy.png"
+	Scale 0.3 0.3 0.3
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy10 // Model by Alex_Mercer
+{			   // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy.png"
+	Scale 0.4 0.4 0.4
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy50 // Model by Alex_Mercer
+{			   // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy2.png"
+	Scale 0.2 0.2 0.2
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy100 // Model by Alex_Mercer
+{			    // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy2.png"
+	Scale 0.3 0.3 0.3
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy200 // Model by Alex_Mercer
+{			    // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy2.png"
+	Scale 0.4 0.4 0.4
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy500 // Model by Alex_Mercer
+{			    // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy2.png"
+	Scale 0.58 0.58 0.58
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}
+
+Model Energy3000 // Model by Alex_Mercer
+{			    // Texture by Alex_Mercer
+	Path "Models/Energy"
+	Model 0 "Energy.md3"
+	Skin 0 "Energy3.png"
+	Scale 0.9 0.9 0.9
+	Offset 0.0 0.0 7.0
+	
+	FrameIndex ENRG A 0 0
+}

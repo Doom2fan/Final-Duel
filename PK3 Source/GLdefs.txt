@@ -36,3 +36,4 @@
 // Misc
 	#include "GLDefs/Misc.txt"
 	#include "GLDefs/Skyboxes.txt"
+	#include "GLDefs/ShopSystem.txt"
