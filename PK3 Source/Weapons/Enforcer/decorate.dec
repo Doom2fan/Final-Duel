@@ -1,7 +1,7 @@
 Actor EnforcerFire2       : Boolean { }
 Actor EnforcerReloadRight : Boolean { }
-Actor Enforcer            : FDWeapon
-{
+Actor EnforcerReloadLeft  : Boolean { }
+Actor Enforcer            : FDWeapon {
 	Tag "$TAGENFORCER"
 	Obituary "$OBENFORCER"
 	Inventory.RestrictedTo MarineClass
@@ -14,34 +14,33 @@ Actor Enforcer            : FDWeapon
 	Weapon.Kickback 75
 	Weapon.UpSound "Weapons/enforcerup"
 	// AttackSound "Weapons/enforcerfire"
-	+NOALERT
-	States
-	{
+	+NoAlert
+	States {
 	Ready:
 		ENFS EDCBA 1
-		TNT1 A 0 A_GiveInventory("SynthFireActive", 1)
-		TNT1 A 0 ACS_NamedExecute("FDSynthFire", 0)
+		TNT1 A 0 A_GiveInventory ("SynthFireActive", 1)
+		TNT1 A 0 ACS_NamedExecute ("FDSynthFire", 0)
 		TNT1 A 0 A_GunFlash ("RightReady", GFF_NOEXTCHANGE)
 	LeftReady:
-		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfInventory ("Reloading",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory ("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory ("Taunting",1,"Taunt")
-		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft",1,"LeftFire")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "LeftFire")
 		ENF1 A 1 A_WeaponReady (WRF_NOFIRE)
 		Loop
 	RightReady:
-		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRight",1,"RightReload")
-		ENF2 A 1 A_JumpIfInventory ("SynthFireRight",1,"RightFire")
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRight", 1, "RightReload")
+		ENF2 A 1 A_JumpIfInventory ("SynthFireRight", 1, "RightFire")
 		Loop
 	DropWeapon:
 		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
-		ENF1 A 0 ACS_NamedExecute ("FD_CannotDropThisWeapon", 0)
+		TNT1 A 0 ACS_NamedExecute ("FD_CannotDropThisWeapon", 0)
 		Goto LeftReady
 	Deselect:
-		TNT1 A 0 A_TakeInventory ("SynthFireActive",1)
-		TNT1 A 0 A_TakeInventory ("SynthFireLeft",1)
-		TNT1 A 0 A_TakeInventory ("SynthFireRight",1)
+		TNT1 A 0 A_TakeInventory ("SynthFireActive", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireLeft", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireRight", 1)
 		TNT1 A 0 A_GunFlash ("KillSynthFire", GFF_NOEXTCHANGE)
 		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		ENFS ABCDE 1
@@ -53,17 +52,17 @@ Actor Enforcer            : FDWeapon
 	Fire:
 		Goto LeftReady
 	LeftFire:
-		TNT1 A 0 A_JumpIfInventory("EnforcerClipL",1,1)
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipL", 1, 1)
 		Goto LeftDryFire
 		ENF1 A 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_FireCustomMissile("PistolTracer", frandom(-2.0,3.0), 1, -10, 1, 0, frandom(-3.0,3.0))
-		TNT1 A 0 A_PlaySound("Weapons/enforcerfire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn2",5,0,-11,-4)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
-		TNT1 A 0 A_SetPitch(pitch - 0.25)
-		TNT1 A 0 A_TakeInventory("EnforcerClipL",1)
-		ENF1 BB 1 Bright A_SetPitch(pitch - 0.125)
+		TNT1 A 0 A_FireCustomMissile ("PistolTracer", frandom (-2.0, 3.0), 1, -10, 1, 0, frandom (-3.0, 3.0))
+		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, -11, -4)
+		TNT1 A 0 A_Recoil (cos (pitch) * 0.1)
+		TNT1 A 0 A_SetPitch (pitch - 0.25)
+		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 1)
+		ENF1 BB 1 Bright A_SetPitch (pitch - 0.125)
 		ENF1 C 3
 		Goto LeftReady
 	RightFire:
@@ -71,68 +70,79 @@ Actor Enforcer            : FDWeapon
 		Goto RightDryFire
 		ENF2 A 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_FireCustomMissile("PistolTracer", frandom(-2.0,3.0), 1, 10, 1, 0, frandom(-3.0,3.0))
-		TNT1 A 0 A_PlaySound("Weapons/enforcerfire", 5)
-		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn2",5,0,20,-4)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.1)
-		TNT1 A 0 A_SetPitch(pitch - 0.25)
-		TNT1 A 0 A_TakeInventory("EnforcerClipR",1)
-		ENF2 BB 1 Bright A_SetPitch(pitch - 0.125)
+		TNT1 A 0 A_FireCustomMissile ("PistolTracer", frandom (-2.0, 3.0), 1, 10, 1, 0, frandom (-3.0, 3.0))
+		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", 5)
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, 20, -4)
+		TNT1 A 0 A_Recoil (cos (pitch) * 0.1)
+		TNT1 A 0 A_SetPitch (pitch - 0.25)
+		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 1)
+		ENF2 BB 1 Bright A_SetPitch (pitch - 0.125)
 		ENF2 C 3
 		Goto RightReady
 	LeftDryFire:
-		ENF1 A 12 A_PlaySound("Weapons/empty", 6)
-		ENF1 A 0 A_JumpIfInventory("EnableAutoReload",1,"LeftReload")
+		ENF1 A 12 A_PlaySound ("Weapons/empty", 6)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, 1)
 		Goto LeftReady
+		TNT1 A 0 A_GiveInventory ("EnforcerReloadLeft", 1)
+		Goto LeftReload
 	RightDryFire:
-		ENF2 A 12 A_PlaySound("Weapons/empty", 7)
-		ENF2 A 0 A_JumpIfInventory("EnableAutoReload",1,"RightReload")
+		ENF2 A 12 A_PlaySound ("Weapons/empty", 7)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, 1)
 		Goto RightReady
+		TNT1 A 0 A_GiveInventory ("EnforcerReloadRight", 1)
+		Goto RightReload
 	Reload:
-		ENFR A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		ENF1 A 5
-		ENFR A 0 A_JumpIfInventory("Clip2", 2, 1)
+		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
 		Goto LeftReady
 		TNT1 A 0 A_GiveInventory ("EnforcerReloadRight", 1)
 	LeftReload:
-		ENF1 A 0 A_JumpIfInventory("Clip2", 1, 1)
-		Goto LeftReady
-		ENF1 A 0 A_JumpIfInventory("EnforcerClipL", 15, "LeftReady")
-		ENF1 A 0 A_PlaySound("Weapons/EnforcerOut", 5)
-		ENF1 A 0 A_TakeInventory("EnforcerClipL",15)
+		ENF1 A 3
+		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRight", 1, "LeftReloadFinish")
+		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
+		Goto LeftReloadFinish
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipL", 15, "LeftReloadFinish")
+		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", 5)
+		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 15)
 		ENF1 DEFGHIJ 1
-		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
+		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, -15, 0)
 		ENF1 KL 1
-		ENF1 A 0 A_TakeInventory("Clip2",1)
-		ENF1 A 0 A_GiveInventory("EnforcerClipL",15)
-		ENF1 A 0 A_PlaySound("Weapons/EnforcerIn", 5)
+		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerClipL", 15)
+		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", 5)
 		ENF1 MNOPQQ 1
+	LeftReloadFinish:
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadLeft", 1)
 		Goto LeftReady
 	RightReload:
-		ENFR A 0 A_TakeInventory("EnforcerReloadRight",1)
-		ENF2 A 0 A_JumpIfInventory("Clip2", 1, 1)
-		Goto RightReady
-		ENF2 A 0 A_JumpIfInventory("EnforcerClipR", 15, "RightReady")
-		ENF2 A 0 A_PlaySound("Weapons/EnforcerOut", 5)
-		ENF2 A 0 A_TakeInventory("EnforcerClipR",15)
+		ENF2 A 3
+		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLeft", 1, "RightReloadFinish")
+		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
+		Goto RightReloadFinish
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 15, "RightReloadFinish")
+		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", 5)
+		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 15)
 		ENF2 DEFGHIJ 1
-		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",0,0,15,0)
+		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, 15, 0)
 		ENF2 KL 1
-		ENF2 A 0 A_TakeInventory("Clip2",1)
-		ENF2 A 0 A_GiveInventory("EnforcerClipR",15)
-		ENF2 A 0 A_PlaySound("Weapons/EnforcerIn", 5)
+		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerClipR", 15)
+		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", 5)
 		ENF2 MNOPQQ 1
+	RightReloadFinish:
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadRight", 1)
 		Goto RightReady
 	}
 }
-Actor EnforcerClipR : Ammo
-{
+Actor EnforcerClipR : Ammo {
 	Inventory.MaxAmount 15
 	Ammo.BackpackMaxAmount 15
 	+IGNORESKILL
 }
-Actor EnforcerClipL : Ammo
-{
+Actor EnforcerClipL : Ammo {
 	Inventory.MaxAmount 15
 	Ammo.BackpackMaxAmount 15
 	+IGNORESKILL
