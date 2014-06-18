@@ -7,7 +7,7 @@
 
 	// Slot 2
 		TAGBERETTA										= "Beretta";
-		TAGENFORCER										= "S18 Enforcer";
+		TAGENFORCER										= "Dual S18 Enforcers";
 		TAGMAGNUM										= ".357 Magnum";
 		TAGRIFLE										= "Order Standard Issue M9A10 Rifle";
 
