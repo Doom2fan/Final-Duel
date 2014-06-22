@@ -1,5 +1,9 @@
 [default enu]
 // Dificulty Settings
+	SKILLZ_AAAAAAAAAAA			= "AAAAAAAAAAA";
+		SKILLZ_AAAAAAAAAAATEXT			= "Damage is divided by 4, ammo and armour are quadrupled, health items are auto-used,\
+			keys always show on automap and armor is replaced with the next armor type.\
+			Uses the Nightmare spawn filter.";
 	SKILLZ_BABY     			= "Harmless";
 		SKILLZ_BABYTEXT					= "Damage is halved, ammo is doubled and health items are auto-used.\
 			Uses the Baby spawn filter.";
@@ -19,8 +23,8 @@
 			Health items are auto-used.\
 			Uses the Nightmare spawn filter.";
 	SKILLZ_NEIN   				= "Insane";
-		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled, ST Armour is replaced by GX Armour,\
-			GX Armour is replaced by XS Armour and health items are auto-used.\
+		SKILLZ_NEINTEXT					= "Damage is higher, ammo is doubled,armor is replaced with the next armor type\
+			and health items are auto-used.\
 			Monsters are faster, extremely aggressive and respawn faster than in Nightmare(but are limited to 3 respawns).\
 			Uses the Nightmare spawn filter.";
 // Cheats

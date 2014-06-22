@@ -1,15 +1,34 @@
 clearskills
+skill AAAAAAAAAAA {
+	AutoUseHealth
+	AmmoFactor = 4
+	DoubleAmmoFactor = 8
+	ArmorFactor = 4
+	DamageFactor = 0.25
+	SpawnFilter = Nightmare
+	Name = "$SKILLZ_AAAAAAAAAAA"
+	PicName = "SKILL0"
+	MustConfirm = "$SKILLZ_AAAAAAAAAAATEXT"
+	ACSReturn = 0
+	Key = "A"
+	EasyKey
+	ReplaceActor = "GreenArmor","FDBlueArmor"
+	ReplaceActor = "BlueArmor","FDRedArmor"
+}
+
 skill baby {
 	AutoUseHealth
 	AmmoFactor = 2
+	ArmorFactor = 2
 	DamageFactor = 0.5
 	EasyBossBrain
 	SpawnFilter = Baby
 	Name = "$SKILLZ_BABY"
 	PicName = "SKILL1"
 	MustConfirm = "$SKILLZ_BABYTEXT"
-	ACSReturn = 0
+	ACSReturn = 1
 	Key = "H"
+	EasyKey
 }
 
 skill easy {
@@ -19,7 +38,7 @@ skill easy {
 	Name = "$SKILLZ_EASY"
 	PicName = "SKILL2"
 	MustConfirm = "$SKILLZ_EASYTEXT"
-	ACSReturn = 1
+	ACSReturn = 2
 	Key = "S"
 }
 
@@ -29,7 +48,7 @@ skill normal {
 	Name = "$SKILLZ_NORMAL"
 	PicName = "SKILL3"
 	MustConfirm = "$SKILLZ_NORMALTEXT"
-	ACSReturn = 2
+	ACSReturn = 3
 	Key = "P"
 }
 
@@ -39,7 +58,7 @@ skill hard {
 	PicName = "SKILL4"
 	Aggressiveness = 0.1
 	MustConfirm = "$SKILLZ_HARDTEXT"
-	ACSReturn = 3
+	ACSReturn = 4
 	Key = "F"
 }
 
@@ -50,7 +69,7 @@ skill veryhard {
 	PicName = "SKILL5"
 	Aggressiveness = 0.2
 	MustConfirm = "$SKILLZ_HARDSPEEDTEXT"
-	ACSReturn = 4
+	ACSReturn = 5
 	Key = "L"
 }
 
@@ -64,7 +83,7 @@ skill nnightmare {
 	Name = "$SKILLZ_NIGHTMARE"
 	Aggressiveness = 0.3
 	MustConfirm = "$SKILLZ_NIGHTMARETEXT"
-	ACSReturn = 5
+	ACSReturn = 6
 	Key = "B"
 }
 
@@ -80,7 +99,7 @@ skill brutal {
 	PicName = "SKILL7"
 	FastMonsters
 	MustConfirm = "$SKILLZ_NEINTEXT"
-	ACSReturn = 6
+	ACSReturn = 7
 	Key = "I"
 	ReplaceActor = "GreenArmor","FDBlueArmor"
 	ReplaceActor = "BlueArmor","FDRedArmor"
