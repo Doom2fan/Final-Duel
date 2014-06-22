@@ -1,92 +1,95 @@
-/
-	TEXTURES.AMG,BFG10K,FUEL,HUD,Items,PlasmaRifle,PumpActionShotgun,SonicRailgun and SoulReaper were made by Alex_Mercer.
-	ANIMDEFS.BeautifulDoom and TEXTURES.BeautifulDoom are from Beautiful Doom.
+NeuralStunner: Full 3D Recoil code.
 
-	Graphics/
-		ADVISOR, CONBACK and DARKNESS were made by Alex_Mercer.
-		HELP was made with graphics from Doom and Doom II.
+Files:
+	/
+		TEXTURES.AMG,BFG10K,FUEL,HUD,Items,PlasmaRifle,PumpActionShotgun,SonicRailgun and SoulReaper were made by Alex_Mercer.
+		ANIMDEFS.BeautifulDoom and TEXTURES.BeautifulDoom are from Beautiful Doom.
 
-		Graphics/Crosshairs/
-			xhairb8-11 were made by Alex_Mercer.
+		Graphics/
+			ADVISOR, CONBACK and DARKNESS were made by Alex_Mercer.
+			HELP was made with graphics from Doom and Doom II.
 
-		Graphics/Decals/
-			BSMEAR1-2, BSPLAT01-14, CHIP1-5, PLSPLAT1-6 and SAWMARK were made Nash.
+			Graphics/Crosshairs/
+				xhairb8-11 were made by Alex_Mercer.
 
-		Graphics/Effects/
-			FLAME_01, FLARE_01 and SMOKE_01 are from PillowBlaster's Guncaster.
+			Graphics/Decals/
+				BSMEAR1-2, BSPLAT01-14, CHIP1-5, PLSPLAT1-6 and SAWMARK were made Nash.
 
-		Graphics/Flashs/
-			FLASH001-FLASH004 were drawn by Uboa.
-			FLASH005-FLASH007 were drawn by me,Alex_Mercer.
+			Graphics/Effects/
+				FLAME_01, FLARE_01 and SMOKE_01 are from PillowBlaster's Guncaster.
 
-		Graphics/Fonts/
-			HUDNUM? was made by Alex_Mercer.
+			Graphics/Flashs/
+				FLASH001-FLASH004 were drawn by Uboa.
+				FLASH005-FLASH007 were drawn by me,Alex_Mercer.
 
-		Graphics/Icons/
-			ARTITOME is just a copy of TOMEA0 with changed offsets.
+			Graphics/Fonts/
+				HUDNUM? was made by Alex_Mercer.
 
-		Graphics/Menu/
-			FDCURS is just a copy of PLSMZ0 with changed offsets.
+			Graphics/Icons/
+				ARTITOME is just a copy of TOMEA0 with changed offsets.
 
-		Graphics/Runes/
-			RUNEAGLT, RUNEDDMG and RUNEDRAI were made by Alex_Mercer.
-			RUNEREGN is a resize of RUNEA0 by Alex_Mercer
+			Graphics/Menu/
+				FDCURS is just a copy of PLSMZ0 with changed offsets.
 
-		Graphics/StatusBar/
-			OMRadsuitBack, SBEmpty2, PSIBarBack, PSIBarFG, StaminaBarBack, StaminaBarFG and WATERREF were made by Alex_Mercer.
-			SBInvulnerabilityBar was made by Alex_Mercer with a texture by DrDoctor.
-			OxygenMeter, SBEmpty, SBHealthBar, StatsBars, PSIBarBG, AmmoCounter*, StaminaBarBG and OMRadsuit were made by Alex_Mercer with textures from Doom II.
-			SBArmorBar was made by Alex_Mercer with a texture by DrDoctor and a texture from Doom II.
-			HUDIconsFullAutoFire, HUDIconsBurstFire, HUDIconsSemiAutoFire and HUDIconsBuckshot were made by Marrub.
-			HUDIconsSlug was made by Marrub and recolored by Alex_Mercer.
-			MoneyCounter was made with a Doom II texture and a render of Energy.md3
+			Graphics/Runes/
+				RUNEAGLT, RUNEDDMG and RUNEDRAI were made by Alex_Mercer.
+				RUNEREGN is a resize of RUNEA0 by Alex_Mercer
 
-		Graphics/Stuff/
-			ENERGY1 and 2 are renders of Energy.md3
+			Graphics/StatusBar/
+				OMRadsuitBack, SBEmpty2, PSIBarBack, PSIBarFG, StaminaBarBack, StaminaBarFG and WATERREF were made by Alex_Mercer.
+				SBInvulnerabilityBar was made by Alex_Mercer with a texture by DrDoctor.
+				OxygenMeter, SBEmpty, SBHealthBar, StatsBars, PSIBarBG, AmmoCounter*, StaminaBarBG and OMRadsuit were made by Alex_Mercer with textures from Doom II.
+				SBArmorBar was made by Alex_Mercer with a texture by DrDoctor and a texture from Doom II.
+				HUDIconsFullAutoFire, HUDIconsBurstFire, HUDIconsSemiAutoFire and HUDIconsBuckshot were made by Marrub.
+				HUDIconsSlug was made by Marrub and recolored by Alex_Mercer.
+				MoneyCounter was made with a Doom II texture and a render of Energy.md3
 
-		Graphics/Weapons/
-			Graphics/Weapons/SonicRailgun/
-				scop was made by Xaser.
-				RGUNA0-RGUNH0: I don't know who made this.
+			Graphics/Stuff/
+				ENERGY1 and 2 are renders of Energy.md3
 
-	Sprites/
-		Sprites/Effects/
-			ENR1?0 is from Doom 64.
-			SMOK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
-			SSHK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
-			FIP??0 is from Beautiful Doom.
-			FIR??0?0(1 and 2) are from the KD ZDoom Resource Pack PK3 file.
-			FIR3?0?0 is a recolor of FIR??0?0 by Alex_Mercer
-			SPRKA0: I don't know who made this. I got it from Insanity's Requiem PK3 file.
-			FRG2?0 is from wildweasel's ww-stranger and was made by 3D Realms.
+			Graphics/Weapons/
+				Graphics/Weapons/SonicRailgun/
+					scop was made by Xaser.
+					RGUNA0-RGUNH0: I don't know who made this.
 
-			Sprites/Effects/Flares/
-				FLR1-3?0 is from the KD ZDoom Resource Pack PK3 file.
-				LEN?A0(B, C, G, R, W and Y): Some are from Beautiful Doom and some are from the Brutal Doom PK3 file.
-				?FLRA0(B, G, L, R and Y) are from the KD ZDoom Resource Pack PK3 file.
-				LENSA0 and LEYS?0(A, B, G, O and R): I don't know where those sprites are from or who made them. IIRC I found them in the Brutal Doom PK3 file.
-				L2N?A0(B, C, G, R and Y): I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
-				BSPKA0: I don't know who made this.
-				WSPKA0: An edit of BSPKA0 by Alex_Mercer.
+		Sprites/
+			Sprites/Effects/
+				ENR1?0 is from Doom 64.
+				SMOK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+				SSHK?0: I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+				FIP??0 is from Beautiful Doom.
+				FIR??0?0(1 and 2) are from the KD ZDoom Resource Pack PK3 file.
+				FIR3?0?0 is a recolor of FIR??0?0 by Alex_Mercer
+				SPRKA0: I don't know who made this. I got it from Insanity's Requiem PK3 file.
+				FRG2?0 is from wildweasel's ww-stranger and was made by 3D Realms.
 
-			Sprites/Effects/Nein/
-				NN01?0 was ripped by Neoworm.
+				Sprites/Effects/Flares/
+					FLR1-3?0 is from the KD ZDoom Resource Pack PK3 file.
+					LEN?A0(B, C, G, R, W and Y): Some are from Beautiful Doom and some are from the Brutal Doom PK3 file.
+					?FLRA0(B, G, L, R and Y) are from the KD ZDoom Resource Pack PK3 file.
+					LENSA0 and LEYS?0(A, B, G, O and R): I don't know where those sprites are from or who made them. IIRC I found them in the Brutal Doom PK3 file.
+					L2N?A0(B, C, G, R and Y): I don't know where this is from or who made this. IIRC I found this in the Brutal Doom PK3 file.
+					BSPKA0: I don't know who made this.
+					WSPKA0: An edit of BSPKA0 by Alex_Mercer.
 
-			Sprites/Effects/Explosions/
-				XPL1?0 and XPL2?0 were made by torridGristle.
-				XPL3?0 is from Beautiful Doom.
+				Sprites/Effects/Nein/
+					NN01?0 was ripped by Neoworm.
 
-		Sprites/Runes/
-			PRNEA0 was made by Alex_Mercer and SoloSpaghetti.
-			PRNEB-D0 were made by Alex_Mercer.
+				Sprites/Effects/Explosions/
+					XPL1?0 and XPL2?0 were made by torridGristle.
+					XPL3?0 is from Beautiful Doom.
 
-	Textures/
-		Textures/DrDoctorTex/
-			Author: DrDoctor.
-			Submitted by: Grymmoire.
-			Texture naming by Nightfall/Dusk.
+			Sprites/Runes/
+				PRNEA0 was made by Alex_Mercer and SoloSpaghetti.
+				PRNEB-D0 were made by Alex_Mercer.
 
-		Textures/Alex_Mercer/
-			BSIGN7 was made with Uboa's BSIGN* template.
-			WRNCOMP21-2 were made with parts of a texture by DrDoctor and parts of a texture by Zero X. Diamond.
-			The skyboxes were made with Spacescape.
+		Textures/
+			Textures/DrDoctorTex/
+				Author: DrDoctor.
+				Submitted by: Grymmoire.
+				Texture naming by Nightfall/Dusk.
+
+			Textures/Alex_Mercer/
+				BSIGN7 was made with Uboa's BSIGN* template.
+				WRNCOMP21-2 were made with parts of a texture by DrDoctor and parts of a texture by Zero X. Diamond.
+				The skyboxes were made with Spacescape.

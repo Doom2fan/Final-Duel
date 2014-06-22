@@ -105,7 +105,7 @@ Sprite FISTA0, 320, 200
 	}
 }
 
-Sprite FISTB0K0, 320, 200
+Sprite FISTB0I0, 320, 200
 {
 	Patch PUNCH1, 227, 134
 	Patch PUNCH2, -24, 110
@@ -114,7 +114,7 @@ Sprite FISTB0K0, 320, 200
 	}
 }
 
-Sprite FISTC0L0, 320, 200
+Sprite FISTC0J0, 320, 200
 {
 	Patch PUNCH1, 243, 150
 	Patch PUNCH3, -1, 98
@@ -123,69 +123,47 @@ Sprite FISTC0L0, 320, 200
 	}
 }
 
-Sprite FISTD0M0, 320, 200
-{
-	Patch PUNCH3, 29, 87
-	{
-		FlipX
-	}
-}
-
-Sprite FISTE0N0, 320, 200
+Sprite FISTD0K0, 320, 200
 {
 	Patch PUNCH4, 40, 82
 }
 
-Sprite FISTF0O0, 320, 200
+Sprite FISTE0L0, 320, 200
 {
-	Patch PUNCH4, 72, 82
+	Patch PUNCH4, 80, 82
 }
 
-Sprite FISTG0P0, 320, 200
+Sprite FISTF0M0, 320, 200
 {
-	Patch PUNCH4, 104, 98
+	Patch PUNCH4, 112, 98
 }
 
-Sprite FISTH0Q0, 320, 200
+Sprite FISTG0N0, 320, 200
 {
 	Patch PUNCH4, 136, 114
 }
 
-Sprite FISTI0R0, 320, 200
+Sprite FISTH0O0, 320, 200
 {
-	Patch PUNCH4, 168, 130
+	Patch PUNCH4, 176, 138
 }
 
-Sprite FISTJ0S0, 320, 200
-{
-	Patch PUNCH4, 200, 146
-}
 Sprite FST1A0, 320, 200
 {
-	Patch PUNCH5, -95, 160
+	Patch PUNCH5, -31, 144
 }
 
 Sprite FST1B0, 320, 200
 {
-	Patch PUNCH5, -71, 136
+	Patch PUNCH5, -9, 122
 }
 
 Sprite FST1C0, 320, 200
 {
-	Patch PUNCH5, -47, 112
+	Patch PUNCH5, 11, 103
 }
 
 Sprite FST1D0, 320, 200
 {
-	Patch PUNCH5, -23, 88
-}
-
-Sprite FST1E0, 320, 200
-{
-	Patch PUNCH5, 1, 64
-}
-
-Sprite FST1F0, 320, 200
-{
-	Patch PUNCH5, 25, 40
+	Patch PUNCH5, 33, 80
 }

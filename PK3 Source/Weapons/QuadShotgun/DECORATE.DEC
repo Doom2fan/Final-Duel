@@ -113,7 +113,7 @@ Actor QuadShotgun : FDWeapon 30089
 		Goto Fire2
 		TNT1 A 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-5.0,5.0), 1, 0, -2, 0, frandom(-7.0,7.0))
 		TNT1 AAAAAAAA 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-5.0,5.0), 0, 0, -2, 0, frandom(-7.0,7.0))
-		TNT1 A 0 A_Recoil(cos(pitch) * 5)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.0, 0, Sin(Pitch) * 5.0, 1)
 		TNT1 A 0 A_PlaySound("QuadShotgun/Fire", 5)
 		TNT1 A 0 A_AlertMonsters
 		QSGF AAAA 1 Bright A_SetPitch (pitch - 0.75)
@@ -123,7 +123,7 @@ Actor QuadShotgun : FDWeapon 30089
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-5.0,5.0), 1, 0, -2, 0, frandom(-7.0,7.0))
 		TNT1 AAAAAAAA 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-5.0,5.0), 0, 0, -2, 0, frandom(-7.0,7.0))
-		TNT1 A 0 A_Recoil(cos(pitch) * 5)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.0, 0, Sin(Pitch) * 5.0, 1)
 		TNT1 A 0 A_PlaySound("QuadShotgun/Fire", 6)
 		TNT1 A 0 A_AlertMonsters
 		QSGF BBBB 1 Bright A_SetPitch (pitch - 0.75)
@@ -133,7 +133,7 @@ Actor QuadShotgun : FDWeapon 30089
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-9.5,9.5), 1, 0, -2, 0, frandom(-12.5,12.5))
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("QuadShotgunTracer", frandom(-9.5,9.5), 0, 0, -2, 0, frandom(-12.5,12.5))
-		TNT1 A 0 A_Recoil(cos(pitch) * 10)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -10.0, 0, Sin(Pitch) * 10.0, 1)
 		TNT1 A 0 A_PlaySound("QuadShotgun/AltFire", 5)
 		TNT1 A 0 A_AlertMonsters
 		QSGF CCCC 1 Bright A_SetPitch (pitch - 1.5)

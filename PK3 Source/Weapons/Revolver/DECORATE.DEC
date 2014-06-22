@@ -74,7 +74,7 @@ Actor Magnum : FDWeapon 30083 {
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound ("Magnum/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("RevolverTracer", frandom (-2.0, 2.0), 1, 10, 2, 0, frandom (-2.5, 2.5))
-		TNT1 A 0 A_Recoil (cos (pitch) * 0.8)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.8, 0, Sin(Pitch) * 0.8, 1)
 		REVF BB 1 Bright A_SetPitch (pitch - 3.0)
 		REVF CD 1 A_SetPitch (pitch - 1.2)
 		REVF E 1 A_SetPitch (pitch + 1.8)
@@ -90,7 +90,7 @@ Actor Magnum : FDWeapon 30083 {
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound ("Magnum/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("UpgradedRevolverTracer", frandom (-0.5, 0.5), 1, 10, 2, 0, frandom (-1.0, 1.0))
-		TNT1 A 0 A_Recoil (cos (pitch) * 0.4)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.4, 0, Sin(Pitch) * 0.4, 1)
 		REVF BB 1 Bright A_SetPitch (pitch - 1.5)
 		REVF CD 1 A_SetPitch (pitch - 0.6)
 		REVF E 1 A_SetPitch (pitch + 0.9)

@@ -94,7 +94,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("MinigunTracer", frandom(-4.0,4.0), 1, 0, 0, 0, frandom(-4.5,4.5))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.4)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.4, 0, Sin(Pitch) * 0.4, 1)
 		MING E 1 Bright A_SetPitch(pitch - 0.625)
 		MING BCD 1 A_SetPitch(pitch - 0.625)
 		TNT1 A 0 A_Refire
@@ -109,7 +109,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("MinigunTracerUpgraded", frandom(-3.0,3.0), 1, 0, 0, 0, frandom(-3.5,3.5))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.3)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.3, 0, Sin(Pitch) * 0.3, 1)
 		MING E 1 Bright A_SetPitch(pitch - 0.500)
 		MING BCD 1 A_SetPitch(pitch - 0.500)
 		TNT1 A 0 A_Refire
@@ -125,7 +125,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_PlaySound("Minigun/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("MinigunTracer", frandom(-8.0,8.0), 1, 0, 0, 0, frandom(-9.0,9.0))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.8, 0, Sin(Pitch) * 0.8, 1)
 		MING E 1 Bright A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		MING C 1 A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		TNT1 A 0 A_Refire("Fire.Spin2")
@@ -137,7 +137,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_PlaySound("Minigun/Fire",6)
 		TNT1 A 0 A_FireCustomMissile("MinigunTracer", frandom(-8.0,8.0), 1, 0, 0, 0, frandom(-9.0,9.0))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.8, 0, Sin(Pitch) * 0.8, 1)
 		MING E 1 Bright A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		MING C 1 A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		TNT1 A 0 A_Refire("Fire.Spin")
@@ -148,7 +148,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_PlaySound("Minigun/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("MinigunTracerUpgraded", frandom(-7.0,7.0), 1, 0, 0, 0, frandom(-8.0,8.0))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.8, 0, Sin(Pitch) * 0.8, 1)
 		MING E 1 Bright A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		MING C 1 A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		TNT1 A 0 A_Refire("Fire.Spin.Upgrade2")
@@ -159,7 +159,7 @@ Actor FDMinigun : FDWeapon 30068
 		TNT1 A 0 A_PlaySound("Minigun/Fire",6)
 		TNT1 A 0 A_FireCustomMissile("MinigunTracerUpgraded", frandom(-7.0,7.0), 1, 0, 0, 0, frandom(-8.0,8.0))
 		TNT1 A 0 A_FireCustomMissile("9mmCasingSpawn",5,0,8,0)
-		TNT1 A 0 A_Recoil(cos(pitch) * 0.8)
+		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.8, 0, Sin(Pitch) * 0.8, 1)
 		MING E 1 Bright A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		MING C 1 A_SetPitch(pitch - 1.6666666666666666666666666666667)
 		TNT1 A 0 A_Refire("Fire.Spin.Upgrade")
