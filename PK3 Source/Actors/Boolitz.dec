@@ -10,7 +10,7 @@ Actor Tracer : FastProjectile {
 	Height 2
 	Speed 75
 	Projectile
-	+BloodSplatter +NoExtremeDeath +NoDamageThrust
+	+BloodSplatter +NoExtremeDeath +NoDamageThrust +AllowHeadshot
 	Scale 0.025
 	Damage (random (1, 3) * 4)
 	MissileType TracerTrail

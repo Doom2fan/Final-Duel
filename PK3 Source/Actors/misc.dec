@@ -1,7 +1,7 @@
 // By Jekyll Grim Payne "Aka" zer0, edited by Alex_Mercer
 Actor BulletPuff2 Replaces BulletPuff {
 	+NoGravity +ForceXYBillboard -DontSplash -AllowParticles
-	+NoExtremeDeath
+	+NoExtremeDeath +AllowHeadshot
 	RenderStyle Add
 	Scale 0.05
 	Alpha 1.0
