@@ -1,6 +1,6 @@
 // Green Armor
 Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
-	//$Category Final Duel-Health and Armour
+	//$Category ST Armour (Green Armour)
 	//$Title Max. health bonus
 	Inventory.PickupSound "Pickup/Armor"
 }
@@ -8,14 +8,14 @@ Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
 // Blue Armor
 Actor FDBlueArmor : BlueArmor Replaces BlueArmor 30167 {
 	//$Category Final Duel-Health and Armour
-	//$Title Max. health bonus
+	//$Title GX Armour (Blue Armour)
 	Inventory.PickupSound "Pickup/Armor"
 }
 
 // Red Armor
 Actor FDRedArmor : BasicArmorPickup 30119 {
 	//$Category Final Duel-Health and Armour
-	//$Title Red Armor
+	//$Title XS Armour (Red Armor)
 	Radius 20
 	Height 16
 	Armor.SavePercent 70.0
