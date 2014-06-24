@@ -29,17 +29,6 @@ function void StartStuff (void) {
 	GiveInventory ("AmmoSniperRifle", 5);
 }
 
-script "CVars" Enter {
-	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map)
-		Terminate;
-	while (true) {
-		if (GetCVar ("FD_AutoReload")) GiveInventory ("EnableAutoReload", 1);
-		else TakeInventory ("EnableAutoReload", 1);
-		Delay (1);
-	}
-}
-
 script "FDEnter" ENTER {
 	// Not needed or desired in TitleMaps.
 	If (GameType () == Game_Title_Map)

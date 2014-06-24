@@ -17,6 +17,7 @@
 #include "Chasecam.ACS"
 #include "Commands.ACS"
 #include "Class.ACS"
+#include "CVars.ACS"
 // #include "FatalitySystem.ACS"
 #include "Footsteps.ACS"
 #include "Health.ACS"

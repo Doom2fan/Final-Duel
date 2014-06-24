@@ -3,19 +3,6 @@ script "ThingDeactivate" (void) {
 	Thing_Deactivate (ActivatorTID ());
 }
 
-// Randomizer CVar state
-script "RandomizerCVar" (void) {
-	int result = GetCVar ("FD_DontRandomizeStuff");
-	if (result == 1) {
-		SetResultValue (0);
-		terminate;
-	}
-	if (result == 0) {
-		SetResultValue (1);
-		terminate;
-	}
-}
-
 // Meh
 script "Water" Enter {
 	// Not needed or desired in TitleMaps.
