@@ -4,7 +4,7 @@ skill AAAAAAAAAAA {
 	AmmoFactor = 4
 	DoubleAmmoFactor = 8
 	ArmorFactor = 4
-	DamageFactor = 0.25
+	DamageFactor = 0.0
 	SpawnFilter = Nightmare
 	Name = "$SKILLZ_AAAAAAAAAAA"
 	PicName = "SKILL0"

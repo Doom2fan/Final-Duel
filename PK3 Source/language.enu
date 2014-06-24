@@ -1,7 +1,7 @@
 [default enu]
 // Dificulty Settings
 	SKILLZ_AAAAAAAAAAA			= "AAAAAAAAAAA";
-		SKILLZ_AAAAAAAAAAATEXT			= "Damage is divided by 4, ammo and armour are quadrupled, health items are auto-used,\
+		SKILLZ_AAAAAAAAAAATEXT			= "Damage is negated, ammo and armour are quadrupled, health items are auto-used,\
 			keys always show on automap and armor is replaced with the next armor type.\
 			Uses the Nightmare spawn filter.";
 	SKILLZ_BABY     			= "Harmless";
