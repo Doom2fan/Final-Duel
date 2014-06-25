@@ -1,10 +1,12 @@
 // From Brutal Doom
-Actor BluePlasmaParticleSpawner {
+Actor ParticleSpawnerBase {
 	RenderStyle Add
 	Alpha 0.95
 	Scale 1.1
 	+NoClip +NoBlockMap +NoGravity +Missile
 	+ForceXYBillboard
+}
+Actor BluePlasmaParticleSpawner : ParticleSpawnerBase {
 	States {
 	Spawn:
 		TNT1 AA 0 A_CustomMissile ("BluePlasmaParticle", 0, 0, random (0, 360), 2, random (50, 130))
@@ -45,8 +47,7 @@ Actor BluePlasmaParticle {
 	Height 0
 	Radius 0
 	Mass 0
-	+Missile
-	+NoBlockMap -NoGravity +DontSplash +DoomBounce
+	+Missile +NoBlockMap +DontSplash +DoomBounce
 	+ForceXYBillboard
 	BounceFactor 0.2
 	Gravity 0.8
