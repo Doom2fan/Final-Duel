@@ -5,8 +5,8 @@ Actor MarineClass : BasePlayerClass
 	Player.MaxHealth 100
 	Player.DamageScreenColor red
 	// Speed related
-	Player.ForwardMove 1.0, 0.8
-    Player.SideMove 1.0, 0.8
+	Player.ForwardMove 1.1, 0.9
+    Player.SideMove 1.1, 0.9
 	// Misc
 	// Player.SpawnClass 1
 	Player.DisplayName "Nero"
