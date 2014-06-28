@@ -3,7 +3,7 @@
     $playeralias       chronos male *death            	Chronos/Death
     $playersound       chronos male *xdeath           	Chronos/Death
     $playersound       chronos male *crazydeath       	Chronos/Death
-    $playersound       chronos male *gibbed          	DSSLOP
+    $playeralias       chronos male *gibbed          	misc/gibbed
     $playeralias       chronos male *pain100          	Chronos/Pain
     $playersounddup    chronos male *pain75           	*pain100
     $playersounddup    chronos male *pain50           	*pain100
@@ -41,7 +41,7 @@
     $playersound       nero male *death               	Nero/Death
     $playersound       nero male *xdeath              	NDIEHI
     $playersound       nero male *crazydeath          	NDIEHI
-    $playersound       nero male *gibbed              	DSSLOP
+    $playeralias       nero male *gibbed          		misc/gibbed
     $playersound       nero male *pain100             	NPAIN100
     $playersounddup    nero male *pain75              	*pain100
     $playersounddup    nero male *pain50              	*pain100

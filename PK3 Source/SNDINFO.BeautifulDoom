@@ -11,3 +11,12 @@ gibs/blood5	DSBLOD5
 $random gibs/cybergibs { bounce bounce gibs/splash }
 $alias gibs/splash 	gibs/blooddrop
 bounce		BOUNCE
+$random misc/gibbed { misc/gibbed1 misc/gibbed2 misc/gibbed3 misc/gibbed4 misc/gibbed5 misc/gibbed6 misc/gibbed7 misc/gibbed8 }
+misc/gibbed1	DSGIB1
+misc/gibbed2	DSGIB2
+misc/gibbed3	DSGIB3
+misc/gibbed4	DSGIB4
+misc/gibbed5	DSGIB5
+misc/gibbed6	DSGIB6
+misc/gibbed7	DSGIB7
+misc/gibbed8	DSGIB8
