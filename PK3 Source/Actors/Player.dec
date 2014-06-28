@@ -117,7 +117,19 @@ Actor NullWeapon : FDWeapon {
 	}
 }
 
-Actor SprintWeapon : NullWeapon { }
+Actor Sprinting : Boolean { }
+Actor SprintWeapon : NullWeapon {
+	States {
+	Ready:
+		TNT1 A 0 A_GiveInventory ("Sprinting", 1)
+		TNT1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_NOBOB|WRF_NOSWITCH)
+		Wait
+	Deselect:
+		TNT1 A 0 A_TakeInventory ("Sprinting", 1)
+		TNT1 A 0 A_Lower
+		Wait
+	}
+}
 
 // Stamina Regeneration
 Actor StaminaRegen : Boolean { }
