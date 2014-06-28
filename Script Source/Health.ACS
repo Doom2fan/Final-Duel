@@ -10,35 +10,35 @@ script "Health1" Enter { // Health systems...
 		else HeartbeatVolume = 0;
 		Health = GetActorProperty (0, APROP_HEALTH);
 		if( Health < 2 && Health > 0) {
-			if (HeartbeatTics == 35) {
+			if (HeartbeatTics >= 35) {
 				HeartbeatTics = 0;
 				LocalAmbientSound ("Player/Heartbeat", HeartbeatVolume);
 			}
 			HeartbeatTics++;
 		}
 		else if (Health <= 5 && Health > 0) {
-			if (HeartbeatTics == 70) {
+			if (HeartbeatTics >= 70) {
 				HeartbeatTics = 0;
 				LocalAmbientSound ("Player/Heartbeat", 127);
 			}
 			HeartbeatTics++;
 		}
 		else if (Health <= 10 && Health > 0) {
-			if (HeartbeatTics == 105) {
+			if (HeartbeatTics >= 105) {
 				HeartbeatTics = 0;
 				LocalAmbientSound ("Player/Heartbeat", 127);
 			}
 			HeartbeatTics++;
 		}
 		else if (Health <= 15 && Health > 0) {
-			if (HeartbeatTics == 140) {
+			if (HeartbeatTics >= 140) {
 				HeartbeatTics = 0;
 				LocalAmbientSound ("Player/Heartbeat", 127);
 			}
 			HeartbeatTics++;
 		}
 		else if (Health <= 20 && Health > 0) {
-			if (HeartbeatTics == 175) {
+			if (HeartbeatTics >= 175) {
 				HeartbeatTics = 0;
 				LocalAmbientSound ("Player/Heartbeat", 127);
 			}
