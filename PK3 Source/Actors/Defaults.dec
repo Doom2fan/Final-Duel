@@ -79,10 +79,16 @@ Actor Gibs_General : DebrisGeneral {
 		Stop
 	}
 }
+
 Actor ParticleFire_General : DebrisGeneral {
 	Speed 2
 	RenderStyle Add
 	Scale 0.5
 	Alpha 0.5
 	+NoClip +NoInteraction
+}
+
+Actor FD_DeadBodyBase {
+	Health 35
+	+Corpse // Set 'Shootable' if you want it to be destroyable
 }

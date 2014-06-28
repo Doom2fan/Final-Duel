@@ -320,6 +320,7 @@ Actor SawPuff : BulletPuff2 {
 	Decal ChainsawMark
 	DamageType "Saw" 
 	AttackSound "Chainsaw/Wall"
+	-AllowHeadshot
 	States {
 	Spawn:
 		TNT1 A 0

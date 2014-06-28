@@ -85,19 +85,17 @@ Actor FDShotgunGuy : ShotgunGuy 30095
 		Goto See
 	Death:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
-		SPOS H 5
-		SPOS I 5 A_Scream
-		SPOS J 5 A_NoBlocking
-		SPOS K 5
-		SPOS L -1
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuyBody")
 		Stop
 	HeadshotDeath: // Sprites by The_Funktasm
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
-		SPOH A 5 A_Scream
-		SPOH B 5
-		SPOH C 5 A_NoBlocking
-		SPOH D 5
-		SPOH E -1
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuyBodyHeadshot")
 		Stop
 	Death.SRType1:
 	XDeath:
@@ -112,7 +110,7 @@ Actor FDShotgunGuy : ShotgunGuy 30095
 		SPOS P 0 A_SpawnItemEx ("NashGore_GibGenerator", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, SXF_USEBLOODCOLOR) //A_SpawnItem("NashGore_GibGenerator",0,0,0,0)
 		SPOS PQRST 5
 		SPOS U -1
-		stop
+		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
 		BURN ABC 5 Bright Light(BURNDEATH)
@@ -135,7 +133,14 @@ Actor FDShotgunGuy : ShotgunGuy 30095
 		TNT1 A 0 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
 		SPOS LLLLLLLLLLLLLLLLLL 5 A_SpawnItemEx("BlackSmoke",random(-16,16),random(-16,16),random(8,16),0,0,1)
 		SPOS L -1
-		stop
+		Stop
+	Death.Saw:
+		TNT1 A 0 A_GiveToTarget("XPSystemExperience",40)
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuyBodySawed")
+		Stop
 	Pain.Kick:
 	    SPOS A 1 A_Pain
         SPOS A 1 A_FaceTarget
@@ -144,11 +149,84 @@ Actor FDShotgunGuy : ShotgunGuy 30095
         Goto Spawn
 	Crush:
 		TNT1 A 1 A_SpawnItem("NashGore_CrushedSmall",0,0,0,0)
-		stop
+		Stop
 	Raise:
-		TNT1 A 0 Thing_SetTranslation(0,10)
-		SPOS L 5
-		SPOS KJIH 5
-		Goto See
+		Stop
+	}
+}
+
+Actor ShotgunGuyBody : FD_DeadBodyBase {
+	States {
+	Spawn:
+		SPOS H 5
+		SPOS I 5
+		SPOS J 5
+		SPOS K 5
+		SPOS L -1 A_ChangeFlag ("Shootable", TRUE)
+		Stop
+	Raise:
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuy")
+		TNT1 A 0 A_SpawnItemEx ("TeleportFog")
+	Death:
+		TNT1 A 0 A_PlaySound ("misc/gibbed", CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx ("NashGore_CrushedSmall")
+		Stop
+	}
+}
+
+Actor ShotgunGuyBodyHeadshot : FD_DeadBodyBase {
+	States {
+	Spawn:
+		SPOH A 5
+		SPOH B 5
+		SPOH C 5
+		SPOH D 5
+		SPOH E -1 A_ChangeFlag ("Shootable", TRUE)
+		Stop
+	Raise:
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuy")
+		TNT1 A 0 A_SpawnItemEx ("TeleportFog")
+	Death:
+		TNT1 A 0 A_PlaySound ("misc/gibbed", CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx ("NashGore_CrushedSmall")
+		Stop
+	}
+}
+
+Actor ShotgunGuyBodySawed : FD_DeadBodyBase {
+	+DontCorpse
+	States {
+	Spawn:
+		SPSC A 5
+		SPSC B 2
+		SPSC C 3 A_SpawnItemEx ("ShotgunGuyBodySawedTop", 0.0, 0.0, 28.0, -2.5, 0.0, 2.5)
+		SPSC DEFG 5
+		SPSC H -1 A_ChangeFlag ("Shootable", TRUE)
+		Stop
+	Raise:
+		TNT1 A 0 A_SpawnItemEx ("ShotgunGuy")
+		TNT1 A 0 A_SpawnItemEx ("TeleportFog")
+	Death:
+		TNT1 A 0 A_PlaySound ("misc/gibbed", CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx ("NashGore_CrushedSmall")
+		Stop
+	}
+}
+
+Actor ShotgunGuyBodySawedTop : FD_DeadBodyBase {
+	States {
+	Spawn:
+		SPSC I 1
+		Loop
+	Crash:
+		SPSC JKLM 5
+		SPSC N -1 A_ChangeFlag ("Shootable", TRUE)
+		Stop
+	Death:
+		TNT1 A 0 A_PlaySound ("misc/gibbed", CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx ("NashGore_CrushedSmall")
+		Stop
+	Raise:
+		Stop
 	}
 }
