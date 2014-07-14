@@ -22,7 +22,6 @@ Actor FDCrossbow : FDWeapon 30137 {
 	//$Title Crossbow
 	//$Sprite SBOWA0
 	Tag "$TAGCROSSBOW"
-	Inventory.PickupSound "misc/gunpickup"
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 1
 	Weapon.AmmoType "CrossbowBolts"
