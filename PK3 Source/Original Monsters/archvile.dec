@@ -28,7 +28,7 @@ Actor FDArchvile : Archvile replaces Archvile 30108
 	Obituary "$OB_VILE"
 	DamageFactor "Ice", 0.2
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy500" DropItem "Energy200" // 700
+	DropItem "Energy200" DropItem "Energy100"
 	States
 	{
 	Spawn:

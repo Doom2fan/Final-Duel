@@ -23,7 +23,7 @@ Actor FDPainElemental : PainElemental replaces PainElemental 30105
 	ActiveSound "pain/active"
 	DamageFactor "Ice", 0.5
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy50" DropItem "Energy10" DropItem "Energy10"
 	States
 	{
 	Spawn:

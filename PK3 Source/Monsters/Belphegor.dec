@@ -25,7 +25,7 @@ Actor FDBelphegor 30132
 	HitObituary "$OB_BELPHEGOR_MELEE"
 	BloodColor "0 C8 0"
 	DamageFactor RifledSlug, 1.5
-	DropItem "Energy500" DropItem "Energy500"
+	DropItem "Energy200" DropItem "Energy100"
 	States
 	{
 	Spawn:

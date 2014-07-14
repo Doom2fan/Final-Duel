@@ -25,7 +25,7 @@ Actor MauserNazi 30111
 	Obituary "$OB_WOLFSS"
 	DamageFactor "SRType1", 1.0
 	Dropitem "Clip2"
-	DropItem "Energy"
+	DropItem "Energy10" DropItem "Energy10" DropItem "Energy10" 192
 	Species "Nazi"
 	States
 	{
@@ -147,7 +147,7 @@ Actor MP40Nazi 30135
 	Obituary "$OB_WOLFSS"
 	DamageFactor "SRType1", 1.0
 	Dropitem "Clip2"
-	DropItem "Energy"
+	DropItem "Energy10" DropItem "Energy10" DropItem "Energy10" 128
 	Species "Nazi"
 	States
 	{

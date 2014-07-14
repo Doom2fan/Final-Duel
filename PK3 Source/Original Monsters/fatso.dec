@@ -24,7 +24,7 @@ Actor FDFatso : Fatso 30107
 	Obituary "$OB_FATSO"
 	DamageFactor "SRType1", 1.0
 	DropItem "MancubusArm"
-	DropItem "Energy500" // 500
+	DropItem "Energy100" DropItem "Energy50"
 	States
 	{
 	Spawn:

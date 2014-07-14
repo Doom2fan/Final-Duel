@@ -27,7 +27,7 @@ Actor FDCacodemon : Cacodemon replaces Cacodemon 30101
 	DamageFactor "SRType1", 1.0
 	bloodcolor "12 F0 F0"
 	translation "112:127=192:207"
-	DropItem "Energy500" // 500
+	DropItem "Energy50" DropItem "Energy50" 128
 	States
 	{
 	Spawn:

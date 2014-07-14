@@ -25,6 +25,7 @@ Actor DemonDog 30127
   AttackSound "dog/attack"
   DropItem "Energy10" DropItem "Energy10"
   Obituary "$OB_ROTTWEILER"
+  DropItem "Energy10" DropItem "Energy10"
   States
   {
   Spawn:

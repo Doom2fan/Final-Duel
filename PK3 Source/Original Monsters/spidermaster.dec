@@ -30,7 +30,7 @@ Actor FDSpiderMastermind : SpiderMastermind replaces SpiderMastermind 30109
 	Obituary "$OB_SPIDER"
 	DamageFactor "Ice", 0.0
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" 
 	States
 	{
 	Spawn:

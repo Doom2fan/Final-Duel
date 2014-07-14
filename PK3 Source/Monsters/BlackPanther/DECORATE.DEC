@@ -14,7 +14,7 @@ Actor BlackPanther : HellKnight 30141
 	HitObituary "%o was shred to pieces by a Black Panther."
 	Obituary "%o was torn apart by a Black Panther"
 	Species "Hell Noble"
-	DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" DropItem "Energy200" // 2200
+	DropItem "Energy200" DropItem "Energy100"
 	States
 	{
 	Spawn:

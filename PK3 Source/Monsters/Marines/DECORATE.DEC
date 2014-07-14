@@ -18,7 +18,7 @@ Actor FDViper1 30162 {
 	DeathSound "Viper/Death"
 	ActiveSound "Viper/Active"
 	DropItem "Clip"
-	DropItem "Energy100"
+	DropItem "Energy10" DropItem "Energy10" DropItem "Energy10"
 	States {
 	Spawn:
 	Idle:

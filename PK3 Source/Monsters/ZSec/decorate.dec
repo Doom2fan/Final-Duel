@@ -18,7 +18,7 @@ Actor ZSec 30131
 	deathsound "zsec/death"
 	activesound "zsec/active"
 	dropitem "Clip2" 256
-	dropitem "Energy100" dropitem "Energy20" // 120
+	dropitem "Energy10" dropitem "Energy10" dropitem "Energy10" dropitem "Energy5" 192
 	MONSTER
 	+FLOORCLIP
 	+MISSILEMORE

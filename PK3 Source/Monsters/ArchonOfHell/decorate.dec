@@ -20,7 +20,7 @@ Actor ArchonOfHell : BaronOfHell 30112 {
 	DeathSound "monster/ar2dth"
 	MeleeSound "baron/melee"
 	Species "Hell Noble"
-	DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" DropItem "Energy500" // 2500
+	DropItem "Energy500" DropItem "Energy500"
 	States { 
 	Spawn: 
 		BOS4 A 10 A_Look 

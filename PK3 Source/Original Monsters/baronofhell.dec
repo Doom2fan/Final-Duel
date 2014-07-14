@@ -29,7 +29,7 @@ Actor FDBaronOfHell : BaronOfHell 30103
 	DamageFactor "Saw", 1.7
 	DamageFactor RifledSlug, 1.5
 	bloodcolor "0 C8 0"
-	DropItem "Energy500" DropItem "Energy200" DropItem "Energy200" // 900
+	DropItem "Energy100" DropItem "Energy100"
 	Species "Hell Noble"
 	States
 	{

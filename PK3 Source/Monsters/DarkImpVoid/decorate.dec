@@ -20,7 +20,7 @@ Actor VoidDarkImp 30118 {
     HitObituary "$OB_DARKIMP_MELEE"
     MissileType DarkNormal
     MeleeDamage 3
-	DropItem "Energy100" DropItem "Energy20" DropItem "Energy5" // 125
+	DropItem "Energy10" DropItem "Energy10" DropItem "Energy10" DropItem "Energy10"
     States {
 	Spawn:
 	Idle:

@@ -31,7 +31,7 @@ Actor PyroSuccubus 30126
 	+FLOORCLIP
 	+DONTHURTSPECIES
 	Species "Succubus"
-	DropItem "Energy200"
+	DropItem "Energy100"
 	States 
 	{ 
 	Spawn:
@@ -170,7 +170,7 @@ Actor PyroSuccubusWalk 9481
   +FLOORCLIP
   +DONTHURTSPECIES
   Species "Succubus"
-	DropItem "Energy"
+	DropItem "Energy100"
    States 
    { 
    Spawn: 
@@ -257,7 +257,7 @@ Actor PyroSuccubusFly 9482
   +NoGravity
   +FLOAT
   Species "Succubus"
-	DropItem "Energy"
+	DropItem "Energy100"
    States 
    { 
    Spawn: 

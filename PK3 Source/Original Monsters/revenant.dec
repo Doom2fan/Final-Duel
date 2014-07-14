@@ -28,7 +28,7 @@ Actor FDRevenant : Revenant replaces Revenant 30106
 	HitObituary "$OB_UNDEADHIT"
 	Obituary "$OB_UNDEAD"
 	DamageFactor "SRType1", 1.0
-	DropItem "Energy"
+	DropItem "Energy50" DropItem "Energy10" DropItem "Energy10" DropItem "Energy10"
 	States
 	{
 	Spawn:

@@ -24,7 +24,7 @@ Actor FDZombieMan : ZombieMan 30094
 	DamageFactor "SRType1", 1.0
 	DamageFactor "Ice", 1.0
 	DropItem "Clip2"
-	DropItem "Energy10" DropItem "Energy10" // 20
+	DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy5" 128
 	Species "Corrupted Human"
 	States
 	{

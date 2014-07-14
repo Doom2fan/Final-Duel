@@ -16,7 +16,7 @@ Actor Maephisto 30124 {
 	ActiveSound "Maephisto/idle"
 	Monster
 	+Boss +FloorClip +NoBlood +NoRadiusDMG
-	DropItem "Energy3000"
+	DropItem "Energy500" DropItem "Energy500"
 	States {
 	Spawn:
 		MMDR E 10 A_Look

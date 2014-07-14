@@ -7,7 +7,7 @@ Actor ChaingunMajor : FDChaingunGuy 30115 {
 	Mass 5000
 	Obituary "$OB_CHAINMAJOR"
 	Decal Bullet
-	DropItem "Energy100"
+	DropItem "Energy10" DropItem "Energy10" DropItem "Energy5" 128
 	States {
 	Spawn:
 	Idle:
