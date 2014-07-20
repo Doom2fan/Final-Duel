@@ -1,0 +1,63 @@
+// Runes menu
+Graphic "Graphics/ShopSystem/Runes.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch RUNEAGLT, 36, 29
+	Patch RUNEDDMG, 27, 33
+}
+Graphic "Graphics/ShopSystem/RunesClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch RUNEAGLT, 36, 29
+	Patch RUNEDDMG, 27, 33
+}
+
+Graphic "Graphics/ShopSystem/Runes/Regeneration.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch RUNEREGN, 36, 26
+}
+Graphic "Graphics/ShopSystem/Runes/RegenerationClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch RUNEREGN, 36, 26
+}
+
+Graphic "Graphics/ShopSystem/Runes/DoubleDamage.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch RUNEDDMG, 34, 33
+}
+Graphic "Graphics/ShopSystem/Runes/DoubleDamageClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch RUNEDDMG, 34, 33
+}
+
+Graphic "Graphics/ShopSystem/Runes/Agility.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch RUNEAGLT, 28, 29
+}
+Graphic "Graphics/ShopSystem/Runes/AgilityClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch RUNEAGLT, 28, 29
+}
+
+Graphic "Graphics/ShopSystem/Runes/Drain.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch RUNEDRAI, 37, 28
+}
+Graphic "Graphics/ShopSystem/Runes/DrainClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch RUNEDRAI, 37, 28
+}
+
+
+// Spheres menu
+Graphic "Graphics/ShopSystem/SpheresIcon.png", 36, 38 {
+	XScale 0.7 YScale 0.7
+	Patch PINVA0, 0, 0
+	Patch PINSA0, 11, 13
+}
+Graphic "Graphics/ShopSystem/Spheres.png", 100, 100 {
+	Patch "Graphics/ShopSystem/NormalButton.png", 0, 0
+	Patch "Graphics/ShopSystem/SpheresIcon.png", 31, 31
+}
+Graphic "Graphics/ShopSystem/SpheresClicked.png", 100, 100 {
+	Patch "Graphics/ShopSystem/ClickedButton.png", 0, 0
+	Patch "Graphics/ShopSystem/SpheresIcon.png", 31, 31
+}

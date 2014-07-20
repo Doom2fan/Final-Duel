@@ -1,5 +1,6 @@
 Actor EnergyPickupBase : CustomInventory {
-	+CountItem
+	RenderStyle Add
+	+CountItem +DontGib
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
@@ -16,6 +17,7 @@ Actor Energy : Inventory 30140 {
 	Inventory.Amount 1
 	Inventory.MaxAmount 9999999
 	Inventory.Icon "ENERGY2"
+	+CountItem +DontGib
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
