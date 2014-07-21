@@ -5,6 +5,7 @@ Files:
 		DBIGFONT was made by Jimmy
 		TEXTURES.AMG,BFG10K,FUEL,HUD,Items,PlasmaRifle,PumpActionShotgun,SonicRailgun and SoulReaper were made by Alex_Mercer.
 		ANIMDEFS.BeautifulDoom and TEXTURES.BeautifulDoom are from Beautiful Doom.
+		SPRFIX14.WAD was made by Revenant100/Marphy Black. Some sprites originally found in the WAD were removed since they were not useful.
 
 		Graphics/
 			ADVISOR, CONBACK and DARKNESS were made by Alex_Mercer.
@@ -52,6 +53,11 @@ Files:
 				Graphics/Weapons/SonicRailgun/
 					scop was made by Xaser.
 					RGUNA0-RGUNH0: I don't know who made this.
+
+		Sounds/
+			Misc/
+				MENUHIGH, MENUINVL, MENUPICK, MENUPRMP and DSSECRET are from Diaz: Last Hours of Purity
+				BODY01-09 are from ww-terror. "I have no idea where a lot of these came from - I got half of them from Goldeneye for Nintendo 64; the other half from Woolie Wool's Mutiny Mod (which I believe were, in turn, borrowed from Doom Enhanced)." --wildweasel
 
 		Sprites/
 			Sprites/Effects/
