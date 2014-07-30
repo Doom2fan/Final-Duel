@@ -163,5 +163,5 @@ ListMenu "Credits2"
 	
 	StaticText 4, 130, "DoomNukem, Brutal Doom v19 SE, Revilution, Erdie(A Freesound user),"
 	StaticText 4, 140, "Strife, IMX, Tripwire Interactive, Walter_Odington(A Freesound user),"
-	StaticText 4, 150, "terranova, SoloSpaghetti, torridGristle, ItsNatureToDie."
+	StaticText 4, 150, "terranova, SoloSpaghetti, torridGristle, ItsNatureToDie, Revenant100/Marphy Black"
 }
