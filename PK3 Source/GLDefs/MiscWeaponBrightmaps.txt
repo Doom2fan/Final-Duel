@@ -4,11 +4,6 @@ BrightMap Sprite AMGFA0
 	Map brightmaps/Weapons/AMG/AMGFA0.png
 	DisableFullBright
 }
-BrightMap Sprite AMGFB0
-{
-	Map brightmaps/Weapons/AMG/AMGFA0.png
-	DisableFullBright
-}
 
 // AK-47
 BrightMap Sprite AK47B0
@@ -35,9 +30,9 @@ BrightMap Sprite ENF1B0
 	Map brightmaps/Weapons/Misc/ENF1B0.png
 	DisableFullBright
 }
-BrightMap Sprite ENF1D0
+BrightMap Sprite ENF2B0
 {
-	Map brightmaps/Weapons/Misc/ENF1D0.png
+	Map brightmaps/Weapons/Misc/ENF2B0.png
 	DisableFullBright
 }
 
@@ -92,6 +87,11 @@ BrightMap Sprite BFG2A0
 }
 
 // Minigun
+BrightMap Sprite MINGE0
+{
+	Map brightmaps/Weapons/Misc/MINGE0.png
+	DisableFullBright
+}
 BrightMap Sprite MINGZ0
 {
 	Map brightmaps/Weapons/Misc/MINGZ0.png
@@ -121,5 +121,34 @@ BrightMap Sprite GLGFA0
 BrightMap Sprite GLGFB0
 {
 	Map brightmaps/Weapons/Misc/GLGFB0.png
+	DisableFullBright
+}
+
+// Sniper Rifle
+BrightMap Sprite SNPGB0
+{
+	Map brightmaps/Weapons/Misc/SNPGB0.png
+	DisableFullBright
+}
+
+// Rocket Launcher
+BrightMap Sprite MISGB0
+{
+	Map brightmaps/Weapons/RocketLauncher/MISGB0.png
+	DisableFullBright
+}
+BrightMap Sprite MISGC0
+{
+	Map brightmaps/Weapons/RocketLauncher/MISGC0.png
+	DisableFullBright
+}
+BrightMap Sprite MISGD0
+{
+	Map brightmaps/Weapons/RocketLauncher/MISGD0.png
+	DisableFullBright
+}
+BrightMap Sprite MISGE0
+{
+	Map brightmaps/Weapons/RocketLauncher/MISGE0.png
 	DisableFullBright
 }

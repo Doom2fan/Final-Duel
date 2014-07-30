@@ -113,3 +113,23 @@ BrightMap Sprite REVPA0
 	Map brightmaps/Weapons/Revolver/REVPA0.png
 	DisableFullBright
 }
+BrightMap Sprite REVSA0
+{
+	Map brightmaps/Weapons/Revolver/REVSA0.png
+	DisableFullBright
+}
+BrightMap Sprite REVSB0
+{
+	Map brightmaps/Weapons/Revolver/REVSB0.png
+	DisableFullBright
+}
+BrightMap Sprite REVSC0
+{
+	Map brightmaps/Weapons/Revolver/REVSC0.png
+	DisableFullBright
+}
+BrightMap Sprite REVSD0
+{
+	Map brightmaps/Weapons/Revolver/REVSD0.png
+	DisableFullBright
+}
