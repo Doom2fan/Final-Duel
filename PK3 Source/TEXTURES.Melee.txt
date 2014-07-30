@@ -44,14 +44,16 @@ Sprite SWRDI0, 320, 200
 	Patch SWORD4, -7, 97
 }
 
-Sprite SWRDJ0, 320, 200
+Sprite SWRDJ0, 338, 200
 {
-	Patch SWORD4, -25, 104
+	Offset 18, 0
+	Patch SWORD4, -7, 104
 }
 
-Sprite SWRDK0, 320, 200
+Sprite SWRDK0, 355, 200
 {
-	Patch SWORD4, -42, 112
+	Offset 35, 0
+	Patch SWORD4, -7, 112
 }
 
 Sprite SRDSA0, 320, 200
@@ -69,46 +71,51 @@ Sprite SRDSC0, 320, 200
 }
 
 // Melee
-Sprite FSTSA0, 320, 200
+Sprite FSTSA0, 416, 200
 {
-	Patch PUNCH1, 227, 134
-	Patch PUNCH1, -48, 134
+	Offset 48, 0
+	Patch PUNCH1, 275, 134
+	Patch PUNCH1, 0, 134
 	{
 		FlipX
 	}
 }
 
-Sprite FSTSB0, 320, 200
+Sprite FSTSB0, 448, 200
 {
-	Patch PUNCH1, 243, 150
-	Patch PUNCH1, -64, 150
+	Offset 64, 0
+	Patch PUNCH1, 307, 150
+	Patch PUNCH1, 0, 150
 	{
 		FlipX
 	}
 }
 
-Sprite FSTSC0, 320, 200
+Sprite FSTSC0, 480, 200
 {
-	Patch PUNCH1, 259, 166
-	Patch PUNCH1, -80, 166
+	Offset 80, 0
+	Patch PUNCH1, 339, 166
+	Patch PUNCH1, 0, 166
 	{
 		FlipX
 	}
 }
 
-Sprite FISTA0, 320, 200
+Sprite FISTA0, 384, 200
 {
-	Patch PUNCH1, 211, 118
-	Patch PUNCH1, -32, 118
+	Offset 34, 0
+	Patch PUNCH1, 247, 118
+	Patch PUNCH1, 0, 118
 	{
 		FlipX
 	}
 }
 
-Sprite FISTB0I0, 320, 200
+Sprite FISTB0I0, 344, 200
 {
-	Patch PUNCH1, 227, 134
-	Patch PUNCH2, -24, 110
+	Offset 24, 0
+	Patch PUNCH1, 251, 134
+	Patch PUNCH2, 0, 110
 	{
 		FlipX
 	}
@@ -143,7 +150,7 @@ Sprite FISTG0N0, 320, 200
 	Patch PUNCH4, 136, 114
 }
 
-Sprite FISTH0O0, 320, 200
+Sprite FISTH0O0, 337, 200
 {
 	Patch PUNCH4, 176, 138
 }

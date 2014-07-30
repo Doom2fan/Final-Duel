@@ -1,0 +1,33 @@
+Sprite ENFSA0, 320, 200
+{
+	Patch ENF1A0, -16, 91
+	Patch ENF2A0, 240, 91
+}
+
+Sprite ENFSB0, 386, 200
+{
+	Offset 33, 0
+	Patch ENF1A0, 0, 107
+	Patch ENF2A0, 288, 107
+}
+
+Sprite ENFSC0, 386, 200
+{
+	Offset 33, 0
+	Patch ENF1A0, -17, 123
+	Patch ENF2A0, 303, 123
+}
+
+Sprite ENFSD0, 386, 200
+{
+	Offset 33, 0
+	Patch ENF1A0, -32, 139
+	Patch ENF2A0, 321, 139
+}
+
+Sprite ENFSE0, 386, 200
+{
+	Offset 33, 0
+	Patch ENF1A0, -48, 155
+	Patch ENF2A0, 337, 155
+}

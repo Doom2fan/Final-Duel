@@ -9,7 +9,7 @@ Sprite BRTSB0, 320, 200
 	Patch BRTAA0, 261, 122
 }
 
-Sprite BRTSC0, 320, 200
+Sprite BRTSC0, 339, 200
 {
 	Patch BRTAA0, 285, 146
 }

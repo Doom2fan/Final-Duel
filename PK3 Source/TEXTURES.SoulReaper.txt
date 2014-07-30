@@ -58,10 +58,11 @@ Sprite SRR3J0, 320, 200
 	Patch SRRTA0, 123, 80
 }
 
-Sprite SRR3K0, 320, 200
+Sprite SRR3K0, 352, 200
 {
-	Patch SRRTB0, -32, 151
-	Patch SRRTA0, 123, 80
+	Offset 32, 0
+	Patch SRRTB0, 0, 151
+	Patch SRRTA0, 155, 80
 }
 
 Sprite SRR3L0, 320, 200
@@ -130,10 +131,11 @@ Sprite SRR4J0, 320, 200
 	Patch SRRTA0, 123, 80
 }
 
-Sprite SRR4K0, 320, 200
+Sprite SRR4K0, 352, 200
 {
-	Patch SRRTC0, -31, 151
-	Patch SRRTA0, 123, 80
+	Offset 32, 0
+	Patch SRRTC0, 0, 151
+	Patch SRRTA0, 155, 80
 }
 
 Sprite SRR4L0, 320, 200

@@ -8,7 +8,7 @@ Sprite REVSB0, 320, 200
 	Patch REVGA0, 260, 115
 }
 
-Sprite REVSC0, 320, 200
+Sprite REVSC0, 330, 200
 {
 	Patch REVGA0, 284, 139
 }
