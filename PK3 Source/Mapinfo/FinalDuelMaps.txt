@@ -1,4 +1,4 @@
-map FDTRAIN "Training Facility" {
+map TRAINING "Training Facility" {
 	Next = "EndTitle"
 	LevelNum = 00
 	Sky1 = "FDSKY2"
