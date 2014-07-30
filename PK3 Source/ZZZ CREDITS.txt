@@ -3,7 +3,7 @@ NeuralStunner: Full 3D Recoil code.
 Files:
 	/
 		DBIGFONT was made by Jimmy
-		TEXTURES.AMG,BFG10K,FUEL,HUD,Items,PlasmaRifle,PumpActionShotgun,SonicRailgun and SoulReaper were made by Alex_Mercer.
+		TEXTURES.AMG, BFG10K, HUD, Items, PlasmaRifle, PumpActionShotgun, SonicRailgun and SoulReaper were made by Alex_Mercer.
 		ANIMDEFS.BeautifulDoom and TEXTURES.BeautifulDoom are from Beautiful Doom.
 		SPRFIX14.WAD was made by Revenant100/Marphy Black. Some sprites originally found in the WAD were removed since they were not useful.
 
@@ -22,7 +22,7 @@ Files:
 
 			Graphics/Flashs/
 				FLASH001-FLASH004 were drawn by Uboa.
-				FLASH005-FLASH007 were drawn by me,Alex_Mercer.
+				FLASH005-FLASH007 were drawn by me, Alex_Mercer.
 
 			Graphics/Fonts/
 				HUDNUM? was made by Alex_Mercer.
