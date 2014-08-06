@@ -190,40 +190,40 @@ Actor Footstep {
 Actor BlueKeyCard : BlueCard replaces BlueCard {
 	Inventory.PickupMessage "Picked up a blue keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Inventory.Icon "STKEYS0"
 	Species "BlueCard"
-	States {
-	Spawn:
-		BKEY A 10
-		BKEY B 10 Bright
-		Loop
-	}
 }
 
 Actor RedKeyCard : RedCard replaces RedCard {
 	Inventory.PickupMessage "Picked up a red keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Inventory.Icon "STKEYS1"
 	Species "RedCard"
-	States {
-	Spawn:
-		RKEY A 10
-		RKEY B 10 Bright
-		Loop
-	}
 }
 
 Actor YellowKeyCard : YellowCard replaces YellowCard {
 	Inventory.PickupMessage "Picked up a yellow keycard."
 	Inventory.PickupSound "pickups/keycard"
+	Inventory.Icon "STKEYS2"
 	Species "YellowCard"
-	States {
-	Spawn:
-		YKEY A 10
-		YKEY B 10 Bright
-		Loop
-	Pickup:
-		TNT1 A 1 A_GiveInventory ("YellowCard", 1)
-		Stop
-	}
+}
+
+Actor BlueSkullKey : BlueSkull replaces BlueSkull {
+	Inventory.PickupMessage "Picked up a blue skull key."
+	Inventory.Icon "STKEYS3"
+	Species "BlueSkull"
+}
+
+Actor RedSkullKey : RedSkull replaces RedSkull {
+	Inventory.PickupMessage "Picked up a red skull key."
+	Inventory.Icon "STKEYS4"
+	Species "RedSkull"
+}
+
+Actor YellowSkullKey : YellowSkull replaces YellowSkull {
+	Inventory.PickupMessage "Picked up a yellow skull key."
+	Inventory.Icon "STKEYS5"
+	Species "YellowSkull"
 }
 
 Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer

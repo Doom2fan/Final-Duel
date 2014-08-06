@@ -33,34 +33,3 @@ Graphic ARTINBAT, 17, 13
 	Offset -7, -4
 	Patch NVISA0, 0, 0
 }
-
-// Keys
-Graphic STKEYS0, 14, 16
-{
-	Patch BKEYA0, 0, 0
-}
-
-Graphic STKEYS1, 14, 16
-{
-	Patch YKEYA0, 0, 0
-}
-
-Graphic STKEYS2, 14, 16
-{
-	Patch RKEYA0, 0, 0
-}
-
-Graphic STKEYS3, 13, 16
-{
-	Patch BSKUA0, 0, 0
-}
-
-Graphic STKEYS4, 13, 16
-{
-	Patch YSKUA0, 0, 0
-}
-
-Graphic STKEYS5, 13, 16
-{
-	Patch RSKUA0, 0, 0
-}
