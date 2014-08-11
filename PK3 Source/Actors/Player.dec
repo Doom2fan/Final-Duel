@@ -92,7 +92,7 @@ Actor BasePlayerClass : PlayerPawn {
 }
 
 // Null Weapon
-Actor NullWeapon : FDWeapon {
+Actor NullWeapon : Weapon {
 	Tag "Unarmed"
 	+Inventory.Undroppable +Weapon.Wimpy_Weapon +Weapon.CheatNotWeapon +NoInteraction
 	+Weapon.NoAlert
@@ -118,17 +118,23 @@ Actor NullWeapon : FDWeapon {
 	}
 }
 
-Actor Sprinting : Boolean { }
+Actor FDSprinting : Boolean { }
 Actor SprintWeapon : NullWeapon {
 	States {
 	Ready:
+		TNT1 AA 1 A_WeaponReady (WRF_NOFIRE|WRF_NOBOB|WRF_NOSWITCH)
+		TNT1 A 1 A_GiveInventory ("FDSprinting", 1)
+	Ready2:
+		TNT1 A 0 A_JumpIfInventory ("FDSprinting", 1, 1)
+		Goto Ready3
 		TNT1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_NOBOB|WRF_NOSWITCH)
-		TNT1 A 1 A_GiveInventory ("Sprinting", 1)
-		TNT1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_NOBOB|WRF_NOSWITCH)
-		Wait
+		Loop
+	Ready3:
+		TNT1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_NOBOB)
+		Loop
 	Deselect:
+		TNT1 BB 1 A_TakeInventory ("FDSprinting", 99999)
 		TNT1 A 1 A_Lower
-		TNT1 A 0 A_TakeInventory ("Sprinting", 1)
 		TNT1 A 0 A_Lower
 		Wait
 	}
@@ -148,25 +154,6 @@ Actor FDTauntKey : CustomInventory {
 	Use:
         TNT1 A 0 A_GiveInventory ("Taunting", 1)
         Fail
-	}
-}
-
-// Show Stats(Original code by WildWeasel)
-Actor ShowKeys : Boolean { }
-Actor FDSSTKey : CustomInventory {
-	Inventory.Amount 1
-	Inventory.MaxAmount 1
-	-InvBar
-	States {
-	Use:
-	    TNT1 A 0 A_JumpIfInventory ("ShowKeys", 1, "Disable")
-        TNT1 A 0 A_GiveInventory ("ShowKeys", 1)
-		TNT1 A 0 ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0)
-        Fail
-	Disable:
-		TNT1 A 0 A_TakeInventory ("ShowKeys", 1)
-		TNT1 A 0 ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0)
-		Fail
 	}
 }
 
