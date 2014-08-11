@@ -9,11 +9,11 @@ script "FDNightvision" Enter { // Nightvision system
 	
 	while (TRUE) {
 		if (FDNVTics == 52 && checkInventory ("NightvisionUpgrade") == 0) // if the tic counter is on tic 52(or whatever number is used on the comparison)...
-			FDNVTics = 0; // reset counter
+			FDNVTics = 0; // reset the counter
 		else if (FDNVTics == 70 && checkInventory ("NightvisionUpgrade") == 1)
-			FDNVTics = 0; // reset counter
+			FDNVTics = 0;
 		else if (FDNVTics == 87 && checkInventory ("NightvisionUpgrade") == 2)
-			FDNVTics = 0; // reset counter
+			FDNVTics = 0;
 		if (checkInventory ("FDNightvisionOn") != 0 && checkInventory ("NVBattery") != 0) { // if nightvision is on and there's usable battery...
 			GiveInventory ("PowerNightvision", 1); // turn on nightvision
 			if (FDNVTics == 0) // if FDNVTics is zero...
@@ -25,8 +25,8 @@ script "FDNightvision" Enter { // Nightvision system
 			ActivatorSound ("Nightvision/Off", 127); // play turning off sound
 		}
 		else if (checkInventory ("FDNightvisionOn") == 0) { // if nightvision is off, turn off nightvision and take FDNightvisionON
-			TakeInventory ("PowerNightvision", 1); // take PowerNightvision
-			TakeInventory ("FDNightvisionOn", 1); // take FDNightvisionOn
+			TakeInventory ("PowerNightvision", 1);
+			TakeInventory ("FDNightvisionOn", 1);
 		}		
 		Delay (1);
 		if (checkInventory ("FDNightvisionOn") != 0) // if nightvision on...
@@ -41,43 +41,43 @@ script "FDSprintSystem" ENTER {
 	if (GameType () == Game_Title_Map) Terminate;
 	int tics = 0;
 	While (TRUE) {
-		if (CheckInventory ("SprintWeapon") && FD_SS_Sprinting [PlayerNumber ()] == 0) {
+		if (CheckWeapon ("SprintWeapon") && FD_SS_Sprinting [PlayerNumber ()] == 0) {
 			SetActorProperty (0, APROP_Speed, FD_SS_OldSpeed [PlayerNumber ()]);
-			DisableWeapon ("SprintWeapon");
 			FD_SS_Sprinting [PlayerNumber ()] = 0;
 			tics = 0;
+			DisableWeapon ("SprintWeapon", "FDSprinting");
 		}
 		if (keyDown (BT_USER1) && FD_SS_Sprinting [PlayerNumber ()] == 0 && CheckInventory ("FDStamina") >= 5 && !FD_SR_StaminaEmpty [PlayerNumber ()]) {
-			DisableWeapon ("SprintWeapon");
 			FD_SS_Sprinting [PlayerNumber ()] = 1;
 			FD_SS_OldSpeed [PlayerNumber ()] = GetActorProperty (0, APROP_Speed);
+			DisableWeapon ("SprintWeapon", "FDSprinting");
 		}
 		if (keyUp (BT_USER1) && FD_SS_Sprinting [PlayerNumber ()] && !FD_SR_StaminaEmpty [PlayerNumber ()]) {
 			SetActorProperty (0, APROP_Speed, FD_SS_OldSpeed [PlayerNumber ()]);
-			DisableWeapon ("SprintWeapon");
 			FD_SS_Sprinting [PlayerNumber ()] = 0;
 			tics = 0;
+			DisableWeapon ("SprintWeapon", "FDSprinting");
 		}
-		if (FD_SS_Sprinting [PlayerNumber ()] && CheckInventory ("Sprinting")) {
+		if (CheckInventory ("FDSprinting") && FD_SS_Sprinting [PlayerNumber ()]) {
 			if (CheckInventory ("FDStamina") >= 5)
 			{
-				if (tics == 5 && CheckInventory ("Sprinting")) {
+				if (CheckInventory ("FDSprinting") && tics >= 5) {
 					tics = 0;
-					if (!CheckInventory("PowerAgilityRune") && GetVelocity () > 0)
+					if (!CheckInventory ("PowerAgilityRune") && GetVelocity () > 0)
 						TakeInventory ("FDStamina", 5);
 				}
 				if (CheckInventory ("FDStamina") < 5) {
 					SetActorProperty (0, APROP_Speed, FD_SS_OldSpeed [PlayerNumber ()]);
-					DisableWeapon ("SprintWeapon");
 					FD_SS_Sprinting [PlayerNumber ()] = 0;
 					FD_SR_StaminaEmpty [PlayerNumber ()] = 1;
+					DisableWeapon ("SprintWeapon", "FDSprinting");
 					restart;
 				}
-				if (CheckInventory ("Sprinting") && ((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)))
+				if (CheckInventory ("FDSprinting") && ((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)))
 					SetActorProperty (0, APROP_Speed, 1.6);
-				else if (CheckInventory ("Sprinting") && !((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)))
+				else if (CheckInventory ("FDSprinting") && !((abs (GetPlayerInput (-1, INPUT_FORWARDMOVE)) > 6400) || (abs (GetPlayerInput(-1, INPUT_SIDEMOVE)) > 6400)))
 					SetActorProperty (0, APROP_Speed, 2.6);
-				else if (!CheckInventory ("Sprinting"))
+				else if (!CheckInventory ("FDSprinting"))
 					SetActorProperty (0, APROP_Speed, FD_SS_OldSpeed [PlayerNumber ()]);
 			}
 		}
@@ -97,6 +97,8 @@ script "FD_StaminaRegeneration" ENTER {
 	while (TRUE) {
 		StaminaAmount = CheckInventory ("FDStamina");
 		Health = GetActorProperty (0, APROP_HEALTH);
+		if (CheckInventory ("PowerAgilityRune") && StaminaAmount != 100)
+			GiveInventory ("FDStamina", 100000);
 		if (Health > 50 && StaminaTics >= 2 && !CheckWeapon ("SprintWeapon")) {
 			StaminaTics = 0;
 			GiveInventory ("FDStamina", 1);

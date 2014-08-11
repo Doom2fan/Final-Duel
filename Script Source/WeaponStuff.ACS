@@ -17,7 +17,8 @@ function int GetWeaponName (void) {
 
 function void LastWeapon (int mode) {
 	if (mode != 0) {
-		SetWeapon (FD_WeaponName[FD_LastWeapon[PlayerNumber ()]]);
+		int LastWeaponNo = FD_LastWeapon[PlayerNumber ()];
+		SetWeapon (FD_WeaponName[LastWeaponNo]);
 	}
 	else {
 		int WeaponNumber = GetWeaponName ();
@@ -28,12 +29,13 @@ function void LastWeapon (int mode) {
 	}
 }
 
-function void DisableWeapon (str meh) {
+function void DisableWeapon (str meh, str blah) {
 	if (meh == 0)
 		meh = "NullWeapon";
 	if (checkWeapon (meh)) {
+		if (blah != 0)
+			TakeInventory (blah, 99999);
 		LastWeapon (1);
-		TakeInventory (meh, 1);
 		return;
 	}
 	LastWeapon (0);
