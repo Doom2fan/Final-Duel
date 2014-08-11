@@ -86,7 +86,7 @@ Actor MauserNazi 30111
 		Stop
 	Pain.Kick:
 	    NAZ5 A 1 A_Pain
-        NAZ5 A 1 A_FaceTarget
+        NAZ5 A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
         Goto Spawn
@@ -159,12 +159,13 @@ Actor MP40Nazi 30135
 		SSWV AABBCCDD 3 A_Chase
 		Loop
 	Missile:
-		SSWV E 3 A_FaceTarget
+		SSWV EEF 1 A_FaceTarget
+	MissileLoop:
 		TNT1 A 0 A_PlaySound("MP40Nazi/Attack", CHAN_BODY)
-		SSWV F 5 Bright A_CustomMissile("Tracer", 29, 8, frandom(-2.5,2.5), 0, frandom(-2.5,2.5))
-		SSWV E 0 A_CustomMissile("9mmCasingSpawn", 32, 10, 0)
-		SSWV E 1 A_CPosRefire
-		Goto Missile+1
+		SSWV G 4 Bright A_CustomMissile("Tracer", 29, 8, frandom(-2.5,2.5), 0, frandom(-2.5,2.5))
+		SSWV F 0 A_CustomMissile("9mmCasingSpawn", 32, 10, 0)
+		SSWV F 2 A_CPosRefire
+		Goto MissileLoop
 	Pain:
 		SSWV H 3
 		SSWV H 3 A_Pain
@@ -193,7 +194,7 @@ Actor MP40Nazi 30135
 		Stop
 	Pain.Kick:
 	    SSWV A 1 A_Pain
-        SSWV A 1 A_FaceTarget
+        SSWV A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
         Goto Spawn

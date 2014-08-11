@@ -92,7 +92,7 @@ Actor ChaingunMajor : FDChaingunGuy 30115 {
 		Goto See
 	Pain.Kick:
 		CPS2 A 1 A_Pain
-		CPS2 A 1 A_FaceTarget
+		CPS2 A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
 		Goto Spawn

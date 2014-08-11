@@ -147,7 +147,7 @@ Actor FDZombieMan : ZombieMan 30094
 		Goto See
 	Pain.Kick:
 	    POSS A 1 A_Pain
-        POSS A 1 A_FaceTarget
+        POSS A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
         Goto Spawn

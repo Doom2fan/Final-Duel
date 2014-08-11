@@ -143,7 +143,7 @@ Actor FDShotgunGuy : ShotgunGuy 30095
 		Stop
 	Pain.Kick:
 	    SPOS A 1 A_Pain
-        SPOS A 1 A_FaceTarget
+        SPOS A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
         Goto Spawn

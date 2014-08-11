@@ -93,17 +93,12 @@ Actor FDRevenant : Revenant replaces Revenant 30106
 		SKEL Q 5
 		SKEL PONML 5
 		Goto See
-  	Pain.Stunner:
-    		SKEL L 2 A_ChangeFlag("NoPain", 1)
-    		SKEL L 250 A_Pain
-    		SKEL L 0 A_ChangeFlag("NoPain", 0)
-    		Goto See
 	Crush:
 		TNT1 A 1 A_SpawnItem("NashGore_CrushedMedium",0,0,0,0)
 		stop
 	Pain.Kick:
-	    SKEL A 1 A_Pain
-        SKEL A 1 A_FaceTarget
+		SKEL A 1 A_Pain
+        SKEL A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 15, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 10, 0, 0)
         Goto Spawn

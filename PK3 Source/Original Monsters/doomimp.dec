@@ -112,7 +112,7 @@ Actor FDDoomImp : DoomImp 30097
 		stop
 	Pain.Kick:
 	    TROO A 1 A_Pain
-        TROO A 1 A_FaceTarget
+        TROO A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing(angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
         Goto Spawn

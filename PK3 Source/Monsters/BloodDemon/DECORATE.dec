@@ -34,7 +34,7 @@ Actor FDBloodDemon : FDDemon 30113 {
 		Loop
 	Pain.Kick:
 		SRG2 A 1 A_Pain
-		SRG2 A 1 A_FaceTarget
+		SRG2 A 1 A_FaceTarget (0, 0, 1)
 		TNT1 A 0 ThrustThing (angle*256/360+128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
 		Goto Spawn
