@@ -1,3 +1,4 @@
+// (De)select
 Sprite QSGSA0, 320, 200
 {
 	Patch QSGGA0, 106, 101
@@ -11,4 +12,20 @@ Sprite QSGSB0, 320, 200
 Sprite QSGSC0, 320, 200
 {
 	Patch QSGGA0, 58, 149
+}
+
+// Recoil
+Sprite QSGFE0, 320, 200
+{
+	Patch QSGFC0, 130, 83
+}
+
+Sprite QSGFF0, 320, 200
+{
+	Patch QSGGA0, 130, 81
+}
+
+Sprite QSGFG0, 320, 200
+{
+	Patch QSGGA0, 130, 79
 }
