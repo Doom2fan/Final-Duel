@@ -69,6 +69,7 @@ Actor BFG9000Replacer {
 
 // Wolfenstein SS Replacer
 Actor WolfensteinSSReplacer Replaces WolfensteinSS {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump (256, "MP40", "Mauser")

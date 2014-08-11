@@ -1,5 +1,6 @@
 // Zombieman Spawner
 Actor ZombiemanSpawner replaces Zombieman {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
@@ -14,6 +15,7 @@ Actor ZombiemanSpawner replaces Zombieman {
 }
 // Shotgun Guy Spawner
 Actor ShotgunGuySpawner replaces ShotgunGuy {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
@@ -28,6 +30,7 @@ Actor ShotgunGuySpawner replaces ShotgunGuy {
 }
 // Chaingun Guy Spawner
 Actor ChaingunGuySpawner replaces ChaingunGuy {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
@@ -42,6 +45,7 @@ Actor ChaingunGuySpawner replaces ChaingunGuy {
 }
 // Imp Spawner
 Actor DoomImpSpawner replaces DoomImp {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
@@ -60,6 +64,7 @@ Actor DoomImpSpawner replaces DoomImp {
 }
 // Demon Spawner
 Actor DemonSpawner replaces Demon {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
@@ -74,6 +79,7 @@ Actor DemonSpawner replaces Demon {
 }
 // Hell Knight Spawner
 Actor HellKnightSpawner replaces HellKnight {
+	+IsMonster
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
