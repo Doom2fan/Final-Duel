@@ -1,16 +1,3 @@
-// Keys section
-addkeysection "Final Duel-Actions" FDActions
-	addmenukey "Reload"                                   "Use FDReloadKey"
-	addmenukey "Offend"                                   "Use FDTauntKey"
-	addmenukey "Taunt"                                    "PukeName FDTaunting"
-	addmenukey "Kick"                                     "Use FDKickKey"
-	addmenukey "Sprint"                                   +user1
-	addmenukey "Drop Weapon"                              "Use FDDropWeaponKey"
-	addmenukey "Show Player Info"                         "Use FDSSTKey"
-	
-addkeysection "Final Duel-Hotkeys" FDHotkeys
-	addmenukey "Nightvision"                              "Use FDNightvision"
-
 // Aliases
 	alias FDCheatGiveXP  "Give xpsystemexperience 1000000"
 	alias FDCheatGiveAll "Give all;Give megasphere;Give fdredarmor;Echo YOU GOT IT!"
