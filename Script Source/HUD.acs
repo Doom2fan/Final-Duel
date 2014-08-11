@@ -1,4 +1,4 @@
-script "ShowKeys" (void) { // show keys screen
+/*script "ShowKeys" (void) { // show keys screen
 	SetHudSize (320, 200, 1);
 	if (checkInventory ("ShowKeys") == 1) { // if ShowKeys is true...
 		SetFont ("DARKNESS");
@@ -28,7 +28,7 @@ script "Stats" ENTER {
 		}
 		Delay (1);
 	}
-}
+}*/
 
 script "HudWeapons" Enter { // HUD icons and stuff...
 	// Not needed or desired in TitleMaps.

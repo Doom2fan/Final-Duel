@@ -5,3 +5,4 @@ LowerHealthCap false;
 
 #include "SBARINFO/Fullscreen HUD.TXT"
 #include "SBARINFO/Normal HUD.TXT"
+#include "SBARINFO/Popup Lists.TXT"
