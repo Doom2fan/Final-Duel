@@ -157,7 +157,6 @@ function void HealthUnboost (int HP) {
 function void RestartInventory (void) {
 	Int Chronos = CheckInventory ("ChronosItem");
 	TakeInventory ("Sword", 1);
-	TakeInventory ("EnforcerFire2", 1);
 	TakeInventory ("Magnum", 1);
 	TakeInventory ("FDShotgun", 1);
 	TakeInventory ("PumpActionShotgun", 1);
@@ -168,10 +167,10 @@ function void RestartInventory (void) {
 	TakeInventory ("FDMinigun", 1);
 	TakeInventory ("FDRocketLauncher", 1);
 	TakeInventory ("FDGrenadeLauncher", 1);
+	TakeInventory ("Annihilator", 1);
 	TakeInventory ("FDPlasmaRifle", 1);
 	TakeInventory ("SonicRailgun", 1);
 	TakeInventory ("BioForceGun", 1);
-	TakeInventory ("BFG10K", 1);
 	TakeInventory ("SoulReaper", 1);
 	TakeInventory ("Magic", 1);
 	TakeInventory ("MancubusArm", 1);
@@ -192,7 +191,6 @@ function void RestartInventory (void) {
 		GiveInventory ("AmmoActionMachinegun", 50);
 	}
 	if (Chronos == 0) {
-		GiveInventory ("EnforcerClip", 12);
 		GiveInventory ("EnforcerClipL", 12);
 		GiveInventory ("EnforcerClipR", 12);
 	}
@@ -224,8 +222,8 @@ function void RestartLevelSystem (void) {
 	if (CheckInventory ("XPSystemLevel") >= 7)
 		HealthUnboost (-50);
 	TakeInventory ("MagnumUpgrade", 1);
-	TakeInventory ("XPSystemLevel", 900000000);
-	TakeInventory ("XPSystemExperience", 900000000);
+	TakeInventory ("XPSystemLevel", 999999999);
+	TakeInventory ("XPSystemExperience", 999999999);
 }
 
 // Player move speed script made by DoomRater

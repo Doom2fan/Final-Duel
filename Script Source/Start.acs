@@ -5,7 +5,6 @@ function void StartStuff (void) {
 	GiveInventory ("StaminaRegen", 1);
 	GiveInventory ("FDStamina", 100);
 	GiveInventory ("FDTauntKey", 1);
-	GiveInventory ("FDSSTKey", 1);
 	GiveInventory ("FDReloadKey", 1);
 	GiveInventory ("FDKickKey", 1);
 	GiveInventory ("FDDropWeaponKey", 1);
@@ -35,10 +34,9 @@ script "FDEnter" ENTER {
 		Terminate;
 	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
 	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
-	TakeInventory ("ShowKeys", 1);
-	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
 	TakeInventory ("NightvisionOn", 1);
-	StartStuff ();
+	if (!CheckInventory ("IsPlayer"))
+		StartStuff ();
 }
 
 script "FDRespawn" RESPAWN {
@@ -49,10 +47,8 @@ script "FDRespawn" RESPAWN {
 	Thing_ChangeTID (PLAYER_TID_START+PlayerNumber (), 0);
 	Thing_ChangeTID (0, PLAYER_TID_START+PlayerNumber ());
 	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
-	TakeInventory ("ShowKeys", 1);
-	ACS_NamedExecute ("ShowKeys", 0, 0, 0, 0);
 	TakeInventory ("NightvisionOn", 1);
-	StartStuff ();
+	//StartStuff ();
 	switch (GetCVar ("FD_NothingOnRespawn")) {
 		case 1:
 			RestartInventory ();
