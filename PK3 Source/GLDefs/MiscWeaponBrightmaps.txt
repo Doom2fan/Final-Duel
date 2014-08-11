@@ -79,13 +79,6 @@ BrightMap Sprite BFGGZ0
 	DisableFullBright
 }
 
-// BFG10K
-BrightMap Sprite BFG2A0
-{
-	Map brightmaps/Weapons/Misc/BFG2A0.png
-	DisableFullBright
-}
-
 // Minigun
 BrightMap Sprite MINGE0
 {
