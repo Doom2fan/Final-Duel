@@ -158,7 +158,6 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall {
 		TNT1 A 0 A_SeekerMissile (0, 0, SMF_LOOK, 256)
 	Spawn2:
 		BFS1 AA 1 Bright A_SpawnItemEx ("BFGParticleSpawner") // Spawn particles
-		TNT1 A 0 A_SeekerMissile (0, 0, SMF_LOOK, 256)
 		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0,
 			0.0, 0.0, 0.0, 0, SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS) // Spawn secondary effect
 		TNT1 A 0 A_SpawnItemEx ("BFGTrail") // Spawn trail
@@ -225,6 +224,7 @@ Actor FDBFGBallAlt : FDBFGBall {
 	MissileType "BFGAltEyecandySpawner"
 	+Ripper +BloodlessImpact
 	Damage 0
+	
 	var int user_ExplosionDMG;
 	States {
 	Spawn:
