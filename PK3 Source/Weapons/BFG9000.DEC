@@ -48,6 +48,7 @@ Actor BioForceGun : FDWeapon 30035 {
 	Zoom:
 		TNT1 A 0 A_JumpIfInventory ("PressingZoom", 1, "Ready2")
 		TNT1 A 0 A_GiveInventory ("PressingZoom", 1)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",5,1.5)
 		TNT1 A 0 A_JumpIfInventory ("BFGMode2", 1, "BFGMode1")
 		TNT1 A 0 A_Print ("- Seeking mode -")
 		BFGG A 10 A_GiveInventory ("BFGMode2", 1)
