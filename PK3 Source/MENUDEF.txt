@@ -258,7 +258,7 @@ ListMenu "Credits"
 	StaticText 4,60, "ClonedPickle, MidoriMan, Epic Games, Ubisoft, HellstormArchon, Necronixxus,"
 	
 	StaticText 4,80, "Sergeant_Mark_IV, Valve Software, JoeyTD, SuperSonix07, The Skulltag Team,"
-	StaticText 4,90, "zrrion the insect, osjclatchford, Blox, Rogue Entertainment, Banjo Software,"
+	StaticText 4,90, "zrrion the insect, osjclatchford, Blox/Bloax, Rogue Entertainment, Banjo Software,"
 	StaticText 4,100, "Lobotomy Software,Captain Toenail, ScubaSteve, Uboa, Aerial, Mike12,"
 	StaticText 4,110, "Jekyll Grim Payne \"Aka\" zer0, Blue Shadow, Infirnex, Nick Baker,"
 	
