@@ -178,10 +178,11 @@
 	
 	// Slot 5
 		OB_MPROCKET				= "%o rode %k's rocket";
-		OB_ROCKETSELF			= "%o rode his own rocket";
+		OB_ROCKETSELF			= "%o rode %p own rocket";
 		OBGRENADE				= "%o caught %k's grenade";
 		OBGRENADE				= "%o tripped %p own grenade";
 		OBANNIHILATOR			= "%o was annihilated by %k";
+		OBANNIHILATORSELF		= "$o annihilated %hself";
 	
 	// Slot 6
 		OBPLASMARIFLE			= "%o was deep fried by %k";
