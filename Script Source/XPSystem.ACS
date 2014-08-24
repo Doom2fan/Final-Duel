@@ -7,7 +7,7 @@ function void LevelUp (int level) {
 	}
 	PlaySound (0, "Player/LevelUp", CHAN_UI);
 	GiveInventory ("XPSystemLevel", 1);
-	GiveInventory ("XPSystemAttributePoints", 4);
+	GiveInventory ("XPSystemAttributePoints", random (4, 6));
 }
 
 script "XPSystem" Enter {
