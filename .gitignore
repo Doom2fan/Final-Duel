@@ -6,3 +6,5 @@ thumbs.db
 *.tmp*
 *.dbs
 acs.err
+Launcher Source\Project\bin\
+Launcher Source\Project\obj\
