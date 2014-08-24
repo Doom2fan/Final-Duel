@@ -92,12 +92,13 @@ script "FD_StaminaRegeneration" ENTER {
 	if (GameType () == Game_Title_Map) Terminate;
 	int pln = PlayerNumber ();
 	int StaminaTics = 0;
-	int StaminaAmount, Health;
+	int StaminaAmount, Health, MaxStamina;
 	
 	while (TRUE) {
 		StaminaAmount = CheckInventory ("FDStamina");
 		Health = GetActorProperty (0, APROP_HEALTH);
-		if (CheckInventory ("PowerAgilityRune") && StaminaAmount != 100)
+		MaxStamina = CheckInventoryMax ("FDStamina");
+		if (CheckInventory ("PowerAgilityRune") && StaminaAmount != MaxStamina)
 			GiveInventory ("FDStamina", 100000);
 		if (Health > 50 && StaminaTics >= 2 && !CheckWeapon ("SprintWeapon")) {
 			StaminaTics = 0;
@@ -107,12 +108,12 @@ script "FD_StaminaRegeneration" ENTER {
 			StaminaTics = 0;
 			GiveInventory ("FDStamina", 1);
 		}
-		if (StaminaTics > 0 && StaminaAmount == 100 || StaminaTics > 0 && CheckWeapon ("SprintWeapon"))
+		if (StaminaTics > 0 && StaminaAmount == MaxStamina || StaminaTics > 0 && CheckWeapon ("SprintWeapon"))
 			StaminaTics = 0;			
 		if (FD_SR_StaminaEmpty [PlayerNumber ()] == 1 && StaminaAmount >= 50)
 			FD_SR_StaminaEmpty [PlayerNumber ()] = 0;
 		Delay(1);
-		if (StaminaAmount != 100)
+		if (StaminaAmount != MaxStamina)
 			if (!CheckWeapon ("SprintWeapon"))
 				StaminaTics++;
 	}
