@@ -95,14 +95,13 @@ Actor FDGrenadeLauncher : FDWeapon 30059
 		TNT1 A 0 A_Refire
 		Goto Ready2
 	Altfire:
-		TNT1 A 0 A_JumpIfInventory("GrenadeLauncherExplode",1,5)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",5,1.5)
+		TNT1 A 0 A_JumpIfInventory("GrenadeLauncherExplode",1,4)
 		TNT1 A 0 A_GiveInventory("GrenadeLauncherExplode",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Explode on impact -")
 		GLG1 A 6
 		Goto Ready2
 		TNT1 A 0 A_TakeInventory("GrenadeLauncherExplode",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Bounce -")
 		GLG1 A 6
 		Goto Ready2

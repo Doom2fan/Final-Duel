@@ -18,7 +18,7 @@ Actor Enforcer            : FDWeapon {
 	States {
 	Ready:
 		TNT1 A 0 A_GiveInventory ("SynthFireActive", 1) // Give Synthfire token
-		TNT1 A 0 ACS_NamedExecute ("FDSynthFire", 0) // Start Synthfire ACS
+		TNT1 A 0 ACS_NamedExecuteAlways ("FDSynthFire", 0) // Start Synthfire ACS
 		TNT1 AA 1 A_GunFlash ("RightFAK", GFF_NOEXTCHANGE) // Start Synthfire DECORATE
 		ENFS EDCBA 1
 	LeftReady:
@@ -64,9 +64,9 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", CHAN_WEAPON) // Play the firing sound on channel CHAN_WEAPON
 		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, -11, -4) // Spawn a casing
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1) // Recoil
-		TNT1 A 0 A_SetPitch (pitch - 0.25) // Muzzle climb
+		TNT1 A 0 A_SetPitch (pitch - 0.25, SPF_INTERPOLATE) // Muzzle climb
 		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 1) // Take a bullet from the loaded clip
-		ENF1 BB 1 Bright A_SetPitch (pitch - 0.125)
+		ENF1 BB 1 Bright A_SetPitch (pitch - 0.125, SPF_INTERPOLATE)
 		ENF1 C 3
 		Goto LeftReady
 	RightFire:
@@ -78,9 +78,9 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", 5) // Play the firing sound on channel 5
 		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, 20, -4) // Spawn a casing
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1) // Recoil
-		TNT1 A 0 A_SetPitch (pitch - 0.25) // Muzzle climb
+		TNT1 A 0 A_SetPitch (pitch - 0.25, SPF_INTERPOLATE) // Muzzle climb
 		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 1) // Take a bullet from the loaded clip
-		ENF2 BB 1 Bright A_SetPitch (pitch - 0.125)
+		ENF2 BB 1 Bright A_SetPitch (pitch - 0.125, SPF_INTERPOLATE)
 		ENF2 C 3
 		Goto RightReady
 	LeftDryFire:
@@ -105,10 +105,10 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", CHAN_WEAPON)
 		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 15)
 		ENF1 DEFGHIJ 1
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCL", 9999)
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, -15, 0)
 		ENF1 KL 1
 		TNT1 A 0 A_TakeInventory ("Clip2", 1)
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCL", 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerClipL", 15)
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", CHAN_WEAPON)
 		ENF1 MNOPQQ 1
@@ -124,10 +124,10 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", 5)
 		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 15)
 		ENF2 DEFGHIJ 1
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 9999)
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, 15, 0)
 		ENF2 KL 1
 		TNT1 A 0 A_TakeInventory ("Clip2", 1)
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerClipR", 15)
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", 5)
 		ENF2 MNOPQQ 1

@@ -175,7 +175,7 @@ Actor SonicRailgun : FDWeapon 30008
 		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("SRailProjectile", 0, 1, 0)
 		TNT1 A 0 A_AlertMonsters
-		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5)
+		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
 		RGGF A 10
 		Goto Ready2
 	ZFire:
@@ -184,7 +184,7 @@ Actor SonicRailgun : FDWeapon 30008
 		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile("SRailProjectile", 0, 1, 0)
 		TNT1 A 0 A_AlertMonsters
-		SNPS BBB 1 A_SetPitch(pitch - 0.5)
+		SNPS BBB 1 A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
 		SNPS B 10
 		Goto Ready2
 	Fire.Ripper:
@@ -194,7 +194,7 @@ Actor SonicRailgun : FDWeapon 30008
 		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_RailAttack(random(1,4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
 		TNT1 A 0 A_AlertMonsters
-		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5)
+		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
 		RGGF A 10
 		Goto Ready2
 	ZFire.Ripper:
@@ -203,17 +203,17 @@ Actor SonicRailgun : FDWeapon 30008
 		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_RailAttack(random(1,4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
 		TNT1 A 0 A_AlertMonsters
-		SNPS BBB 1 A_SetPitch(pitch - 0.5)
+		SNPS BBB 1 A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
 		SNPS B 10
 		Goto Ready2
 	Altfire:
-		TNT1 A 0 A_JumpIfInventory("RGMode2",1,4)
+		TNT1 A 0 A_PlaySound("Weapons/Mode",5,1.5)
+		TNT1 A 0 A_JumpIfInventory("RGMode2",1,"Mode2")
 		TNT1 A 0 A_GiveInventory("RGMode2",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Ripper mode -")
 		Goto Ready2
+	Mode2:
 		TNT1 A 0 A_TakeInventory("RGMode2",1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",CHAN_WEAPON,1.5)
 		TNT1 A 0 A_Print ("- Explosive mode -")
 		Goto Ready2
 	Zoom:
@@ -224,7 +224,7 @@ Actor SonicRailgun : FDWeapon 30008
 		RGG1 A 0 A_GiveInventory("RGZoomed",1)
 		TNT1 A 0 A_ZoomFactor(2.3)
 		TNT1 A 0 A_SetCrosshair(99)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", 5)
 		SNPS B 10 A_SetBlend("00 00 00", 1.0, 20)
 		SNPS BBBBBBBBBB 1
 		Goto ZReady
@@ -233,7 +233,7 @@ Actor SonicRailgun : FDWeapon 30008
 		RGG1 A 0 A_TakeInventory("RGZoomed",999)
 		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
 		TNT1 A 0 A_SetCrosshair(0)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Weapons/Zoom", 5)
 		RGGF A 10 A_SetBlend("00 00 00", 1.0, 20)
 		RGGF A 10
 		Goto Ready2
