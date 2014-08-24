@@ -1,3 +1,4 @@
+Note: Sounds should have credits in the Artist tag/property.
 NeuralStunner: Full 3D Recoil code.
 
 Files:
