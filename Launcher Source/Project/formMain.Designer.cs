@@ -31,12 +31,9 @@
             this.openFileDialogDisPath = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.basicTab = new System.Windows.Forms.TabPage();
-            this.numericUpDownClass = new System.Windows.Forms.NumericUpDown();
-            this.textBoxClass = new System.Windows.Forms.TextBox();
             this.checkBoxClass = new System.Windows.Forms.CheckBox();
             this.labelClass = new System.Windows.Forms.Label();
             this.checkBoxMap = new System.Windows.Forms.CheckBox();
-            this.numericUpDownMap = new System.Windows.Forms.NumericUpDown();
             this.labelMap = new System.Windows.Forms.Label();
             this.numericUpDownSkill = new System.Windows.Forms.NumericUpDown();
             this.labelSkill = new System.Windows.Forms.Label();
@@ -52,27 +49,55 @@
             this.buttonDisPath = new System.Windows.Forms.Button();
             this.textBoxDisPath = new System.Windows.Forms.TextBox();
             this.textBoxMap = new System.Windows.Forms.TextBox();
+            this.checkBoxNoSkill = new System.Windows.Forms.CheckBox();
+            this.numericUpDownMap = new System.Windows.Forms.NumericUpDown();
+            this.textBoxClass = new System.Windows.Forms.TextBox();
+            this.numericUpDownClass = new System.Windows.Forms.NumericUpDown();
             this.multiplayerTab = new System.Windows.Forms.TabPage();
             this.advancedTab = new System.Windows.Forms.TabPage();
             this.tabPageMods = new System.Windows.Forms.TabPage();
+            this.buttonModFilelistMoveDown = new System.Windows.Forms.Button();
+            this.buttonModFilelistMoveUp = new System.Windows.Forms.Button();
+            this.buttonModFilelistRemove = new System.Windows.Forms.Button();
+            this.buttonModFilelistAdd = new System.Windows.Forms.Button();
+            this.labelModFile = new System.Windows.Forms.Label();
+            this.buttonModBrowseFile = new System.Windows.Forms.Button();
+            this.textBoxModFile = new System.Windows.Forms.TextBox();
+            this.listBoxModFilelist = new System.Windows.Forms.ListBox();
             this.tabPageUpdates = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonVersionBeta = new System.Windows.Forms.RadioButton();
+            this.radioButtonVersionRelease = new System.Windows.Forms.RadioButton();
             this.buttonCheckUpdates = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonUpdateMod = new System.Windows.Forms.RadioButton();
             this.radioButtonUpdateLauncher = new System.Windows.Forms.RadioButton();
             this.openFileDialogPK3Path = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialogIWADPath = new System.Windows.Forms.FolderBrowserDialog();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButtonVersionBeta = new System.Windows.Forms.RadioButton();
-            this.radioButtonVersionRelease = new System.Windows.Forms.RadioButton();
+            this.openFileDialogModFilePath = new System.Windows.Forms.OpenFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.buttonStartGame = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButtonHosting = new System.Windows.Forms.RadioButton();
+            this.radioButtonJoining = new System.Windows.Forms.RadioButton();
+            this.numericUpDownPlayerNum = new System.Windows.Forms.NumericUpDown();
+            this.labelHosting = new System.Windows.Forms.Label();
+            this.maskedTextBoxJoinTargetIP = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.basicTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSkill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).BeginInit();
+            this.multiplayerTab.SuspendLayout();
+            this.tabPageMods.SuspendLayout();
             this.tabPageUpdates.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialogDisPath
@@ -92,18 +117,15 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(548, 312);
+            this.tabControl1.Size = new System.Drawing.Size(560, 307);
             this.tabControl1.TabIndex = 1;
             // 
             // basicTab
             // 
             this.basicTab.CausesValidation = false;
-            this.basicTab.Controls.Add(this.numericUpDownClass);
-            this.basicTab.Controls.Add(this.textBoxClass);
             this.basicTab.Controls.Add(this.checkBoxClass);
             this.basicTab.Controls.Add(this.labelClass);
             this.basicTab.Controls.Add(this.checkBoxMap);
-            this.basicTab.Controls.Add(this.numericUpDownMap);
             this.basicTab.Controls.Add(this.labelMap);
             this.basicTab.Controls.Add(this.numericUpDownSkill);
             this.basicTab.Controls.Add(this.labelSkill);
@@ -119,33 +141,22 @@
             this.basicTab.Controls.Add(this.buttonDisPath);
             this.basicTab.Controls.Add(this.textBoxDisPath);
             this.basicTab.Controls.Add(this.textBoxMap);
+            this.basicTab.Controls.Add(this.checkBoxNoSkill);
+            this.basicTab.Controls.Add(this.numericUpDownMap);
+            this.basicTab.Controls.Add(this.textBoxClass);
+            this.basicTab.Controls.Add(this.numericUpDownClass);
             this.basicTab.Location = new System.Drawing.Point(4, 22);
             this.basicTab.Name = "basicTab";
             this.basicTab.Padding = new System.Windows.Forms.Padding(3);
-            this.basicTab.Size = new System.Drawing.Size(540, 286);
+            this.basicTab.Size = new System.Drawing.Size(552, 281);
             this.basicTab.TabIndex = 0;
             this.basicTab.Text = "Basic";
             this.basicTab.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownClass
-            // 
-            this.numericUpDownClass.Location = new System.Drawing.Point(302, 136);
-            this.numericUpDownClass.Name = "numericUpDownClass";
-            this.numericUpDownClass.Size = new System.Drawing.Size(94, 20);
-            this.numericUpDownClass.TabIndex = 20;
-            this.numericUpDownClass.Visible = false;
-            // 
-            // textBoxClass
-            // 
-            this.textBoxClass.Location = new System.Drawing.Point(302, 136);
-            this.textBoxClass.Name = "textBoxClass";
-            this.textBoxClass.Size = new System.Drawing.Size(94, 20);
-            this.textBoxClass.TabIndex = 19;
-            // 
             // checkBoxClass
             // 
             this.checkBoxClass.AutoSize = true;
-            this.checkBoxClass.Location = new System.Drawing.Point(333, 119);
+            this.checkBoxClass.Location = new System.Drawing.Point(378, 119);
             this.checkBoxClass.Name = "checkBoxClass";
             this.checkBoxClass.Size = new System.Drawing.Size(63, 17);
             this.checkBoxClass.TabIndex = 18;
@@ -156,7 +167,7 @@
             // labelClass
             // 
             this.labelClass.AutoSize = true;
-            this.labelClass.Location = new System.Drawing.Point(299, 119);
+            this.labelClass.Location = new System.Drawing.Point(344, 119);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(32, 13);
             this.labelClass.TabIndex = 17;
@@ -165,7 +176,7 @@
             // checkBoxMap
             // 
             this.checkBoxMap.AutoSize = true;
-            this.checkBoxMap.Location = new System.Drawing.Point(227, 119);
+            this.checkBoxMap.Location = new System.Drawing.Point(272, 119);
             this.checkBoxMap.Name = "checkBoxMap";
             this.checkBoxMap.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.checkBoxMap.Size = new System.Drawing.Size(76, 17);
@@ -174,17 +185,10 @@
             this.checkBoxMap.UseVisualStyleBackColor = true;
             this.checkBoxMap.CheckedChanged += new System.EventHandler(this.checkBoxMap_CheckedChanged);
             // 
-            // numericUpDownMap
-            // 
-            this.numericUpDownMap.Location = new System.Drawing.Point(196, 136);
-            this.numericUpDownMap.Name = "numericUpDownMap";
-            this.numericUpDownMap.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDownMap.TabIndex = 14;
-            // 
             // labelMap
             // 
             this.labelMap.AutoSize = true;
-            this.labelMap.Location = new System.Drawing.Point(193, 119);
+            this.labelMap.Location = new System.Drawing.Point(238, 119);
             this.labelMap.Name = "labelMap";
             this.labelMap.Size = new System.Drawing.Size(28, 13);
             this.labelMap.TabIndex = 13;
@@ -192,10 +196,12 @@
             // 
             // numericUpDownSkill
             // 
+            this.numericUpDownSkill.Enabled = false;
             this.numericUpDownSkill.Location = new System.Drawing.Point(138, 136);
             this.numericUpDownSkill.Name = "numericUpDownSkill";
-            this.numericUpDownSkill.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDownSkill.Size = new System.Drawing.Size(97, 20);
             this.numericUpDownSkill.TabIndex = 12;
+            this.numericUpDownSkill.ValueChanged += new System.EventHandler(this.numericUpDownSkill_ValueChanged);
             // 
             // labelSkill
             // 
@@ -237,11 +243,13 @@
             // 
             // comboBoxIWAD
             // 
+            this.comboBoxIWAD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIWAD.FormattingEnabled = true;
             this.comboBoxIWAD.Location = new System.Drawing.Point(11, 136);
             this.comboBoxIWAD.Name = "comboBoxIWAD";
             this.comboBoxIWAD.Size = new System.Drawing.Size(121, 21);
             this.comboBoxIWAD.TabIndex = 7;
+            this.comboBoxIWAD.SelectedValueChanged += new System.EventHandler(this.comboBoxIWAD_SelectedValueChanged);
             // 
             // labelIWAD
             // 
@@ -280,6 +288,7 @@
             this.textBoxPK3Path.Size = new System.Drawing.Size(466, 20);
             this.textBoxPK3Path.TabIndex = 3;
             this.textBoxPK3Path.Tag = "";
+            this.textBoxPK3Path.TextChanged += new System.EventHandler(this.textBoxPK3Path_TextChanged);
             // 
             // labelDisPath
             // 
@@ -308,21 +317,62 @@
             this.textBoxDisPath.Size = new System.Drawing.Size(466, 20);
             this.textBoxDisPath.TabIndex = 0;
             this.textBoxDisPath.Tag = "";
+            this.textBoxDisPath.TextChanged += new System.EventHandler(this.textBoxDisPath_TextChanged);
             // 
             // textBoxMap
             // 
-            this.textBoxMap.Location = new System.Drawing.Point(196, 136);
+            this.textBoxMap.Location = new System.Drawing.Point(241, 136);
             this.textBoxMap.Name = "textBoxMap";
             this.textBoxMap.Size = new System.Drawing.Size(100, 20);
             this.textBoxMap.TabIndex = 16;
             this.textBoxMap.Visible = false;
+            this.textBoxMap.TextChanged += new System.EventHandler(this.textBoxMap_TextChanged);
+            // 
+            // checkBoxNoSkill
+            // 
+            this.checkBoxNoSkill.AutoSize = true;
+            this.checkBoxNoSkill.Checked = true;
+            this.checkBoxNoSkill.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxNoSkill.Location = new System.Drawing.Point(167, 119);
+            this.checkBoxNoSkill.Name = "checkBoxNoSkill";
+            this.checkBoxNoSkill.Size = new System.Drawing.Size(79, 17);
+            this.checkBoxNoSkill.TabIndex = 21;
+            this.checkBoxNoSkill.Text = "Main Menu";
+            this.checkBoxNoSkill.UseVisualStyleBackColor = true;
+            this.checkBoxNoSkill.CheckedChanged += new System.EventHandler(this.checkBoxNoSkill_CheckedChanged);
+            // 
+            // numericUpDownMap
+            // 
+            this.numericUpDownMap.Location = new System.Drawing.Point(241, 136);
+            this.numericUpDownMap.Name = "numericUpDownMap";
+            this.numericUpDownMap.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDownMap.TabIndex = 14;
+            this.numericUpDownMap.ValueChanged += new System.EventHandler(this.numericUpDownMap_ValueChanged);
+            // 
+            // textBoxClass
+            // 
+            this.textBoxClass.Location = new System.Drawing.Point(347, 136);
+            this.textBoxClass.Name = "textBoxClass";
+            this.textBoxClass.Size = new System.Drawing.Size(94, 20);
+            this.textBoxClass.TabIndex = 19;
+            this.textBoxClass.TextChanged += new System.EventHandler(this.textBoxClass_TextChanged);
+            // 
+            // numericUpDownClass
+            // 
+            this.numericUpDownClass.Location = new System.Drawing.Point(347, 136);
+            this.numericUpDownClass.Name = "numericUpDownClass";
+            this.numericUpDownClass.Size = new System.Drawing.Size(94, 20);
+            this.numericUpDownClass.TabIndex = 20;
+            this.numericUpDownClass.Visible = false;
+            this.numericUpDownClass.ValueChanged += new System.EventHandler(this.numericUpDownClass_ValueChanged);
             // 
             // multiplayerTab
             // 
+            this.multiplayerTab.Controls.Add(this.groupBox3);
             this.multiplayerTab.Location = new System.Drawing.Point(4, 22);
             this.multiplayerTab.Name = "multiplayerTab";
             this.multiplayerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.multiplayerTab.Size = new System.Drawing.Size(540, 286);
+            this.multiplayerTab.Size = new System.Drawing.Size(552, 281);
             this.multiplayerTab.TabIndex = 1;
             this.multiplayerTab.Text = "Multiplayer";
             this.multiplayerTab.UseVisualStyleBackColor = true;
@@ -332,20 +382,104 @@
             this.advancedTab.Location = new System.Drawing.Point(4, 22);
             this.advancedTab.Name = "advancedTab";
             this.advancedTab.Padding = new System.Windows.Forms.Padding(3);
-            this.advancedTab.Size = new System.Drawing.Size(540, 286);
+            this.advancedTab.Size = new System.Drawing.Size(552, 281);
             this.advancedTab.TabIndex = 2;
             this.advancedTab.Text = "Advanced";
             this.advancedTab.UseVisualStyleBackColor = true;
             // 
             // tabPageMods
             // 
+            this.tabPageMods.Controls.Add(this.buttonModFilelistMoveDown);
+            this.tabPageMods.Controls.Add(this.buttonModFilelistMoveUp);
+            this.tabPageMods.Controls.Add(this.buttonModFilelistRemove);
+            this.tabPageMods.Controls.Add(this.buttonModFilelistAdd);
+            this.tabPageMods.Controls.Add(this.labelModFile);
+            this.tabPageMods.Controls.Add(this.buttonModBrowseFile);
+            this.tabPageMods.Controls.Add(this.textBoxModFile);
+            this.tabPageMods.Controls.Add(this.listBoxModFilelist);
             this.tabPageMods.Location = new System.Drawing.Point(4, 22);
             this.tabPageMods.Name = "tabPageMods";
             this.tabPageMods.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMods.Size = new System.Drawing.Size(540, 286);
+            this.tabPageMods.Size = new System.Drawing.Size(552, 281);
             this.tabPageMods.TabIndex = 3;
             this.tabPageMods.Text = "Mods";
             this.tabPageMods.UseVisualStyleBackColor = true;
+            // 
+            // buttonModFilelistMoveDown
+            // 
+            this.buttonModFilelistMoveDown.Location = new System.Drawing.Point(466, 123);
+            this.buttonModFilelistMoveDown.Name = "buttonModFilelistMoveDown";
+            this.buttonModFilelistMoveDown.Size = new System.Drawing.Size(78, 20);
+            this.buttonModFilelistMoveDown.TabIndex = 9;
+            this.buttonModFilelistMoveDown.Text = "Move down";
+            this.buttonModFilelistMoveDown.UseVisualStyleBackColor = true;
+            this.buttonModFilelistMoveDown.Click += new System.EventHandler(this.buttonModFilelistMoveDown_Click);
+            // 
+            // buttonModFilelistMoveUp
+            // 
+            this.buttonModFilelistMoveUp.Location = new System.Drawing.Point(466, 97);
+            this.buttonModFilelistMoveUp.Name = "buttonModFilelistMoveUp";
+            this.buttonModFilelistMoveUp.Size = new System.Drawing.Size(78, 20);
+            this.buttonModFilelistMoveUp.TabIndex = 8;
+            this.buttonModFilelistMoveUp.Text = "Move up";
+            this.buttonModFilelistMoveUp.UseVisualStyleBackColor = true;
+            this.buttonModFilelistMoveUp.Click += new System.EventHandler(this.buttonModFilelistMoveUp_Click);
+            // 
+            // buttonModFilelistRemove
+            // 
+            this.buttonModFilelistRemove.Location = new System.Drawing.Point(466, 71);
+            this.buttonModFilelistRemove.Name = "buttonModFilelistRemove";
+            this.buttonModFilelistRemove.Size = new System.Drawing.Size(78, 20);
+            this.buttonModFilelistRemove.TabIndex = 7;
+            this.buttonModFilelistRemove.Text = "Remove";
+            this.buttonModFilelistRemove.UseVisualStyleBackColor = true;
+            this.buttonModFilelistRemove.Click += new System.EventHandler(this.buttonModFilelistRemove_Click);
+            // 
+            // buttonModFilelistAdd
+            // 
+            this.buttonModFilelistAdd.Location = new System.Drawing.Point(466, 45);
+            this.buttonModFilelistAdd.Name = "buttonModFilelistAdd";
+            this.buttonModFilelistAdd.Size = new System.Drawing.Size(78, 20);
+            this.buttonModFilelistAdd.TabIndex = 6;
+            this.buttonModFilelistAdd.Text = "Add";
+            this.buttonModFilelistAdd.UseVisualStyleBackColor = true;
+            this.buttonModFilelistAdd.Click += new System.EventHandler(this.buttonModFilelistAdd_Click);
+            // 
+            // labelModFile
+            // 
+            this.labelModFile.AutoSize = true;
+            this.labelModFile.Location = new System.Drawing.Point(8, 3);
+            this.labelModFile.Name = "labelModFile";
+            this.labelModFile.Size = new System.Drawing.Size(63, 13);
+            this.labelModFile.TabIndex = 5;
+            this.labelModFile.Text = "File location";
+            // 
+            // buttonModBrowseFile
+            // 
+            this.buttonModBrowseFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModBrowseFile.Location = new System.Drawing.Point(466, 19);
+            this.buttonModBrowseFile.Name = "buttonModBrowseFile";
+            this.buttonModBrowseFile.Size = new System.Drawing.Size(78, 20);
+            this.buttonModBrowseFile.TabIndex = 4;
+            this.buttonModBrowseFile.Text = "Browse";
+            this.buttonModBrowseFile.UseVisualStyleBackColor = true;
+            this.buttonModBrowseFile.Click += new System.EventHandler(this.buttonModBrowseFile_Click);
+            // 
+            // textBoxModFile
+            // 
+            this.textBoxModFile.Location = new System.Drawing.Point(11, 19);
+            this.textBoxModFile.Name = "textBoxModFile";
+            this.textBoxModFile.Size = new System.Drawing.Size(449, 20);
+            this.textBoxModFile.TabIndex = 3;
+            this.textBoxModFile.Tag = "";
+            // 
+            // listBoxModFilelist
+            // 
+            this.listBoxModFilelist.FormattingEnabled = true;
+            this.listBoxModFilelist.Location = new System.Drawing.Point(11, 45);
+            this.listBoxModFilelist.Name = "listBoxModFilelist";
+            this.listBoxModFilelist.Size = new System.Drawing.Size(449, 225);
+            this.listBoxModFilelist.TabIndex = 0;
             // 
             // tabPageUpdates
             // 
@@ -355,10 +489,43 @@
             this.tabPageUpdates.Location = new System.Drawing.Point(4, 22);
             this.tabPageUpdates.Name = "tabPageUpdates";
             this.tabPageUpdates.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUpdates.Size = new System.Drawing.Size(540, 286);
+            this.tabPageUpdates.Size = new System.Drawing.Size(552, 281);
             this.tabPageUpdates.TabIndex = 4;
             this.tabPageUpdates.Text = "Updates";
             this.tabPageUpdates.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButtonVersionBeta);
+            this.groupBox2.Controls.Add(this.radioButtonVersionRelease);
+            this.groupBox2.Location = new System.Drawing.Point(109, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(95, 64);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Version";
+            // 
+            // radioButtonVersionBeta
+            // 
+            this.radioButtonVersionBeta.AutoSize = true;
+            this.radioButtonVersionBeta.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonVersionBeta.Name = "radioButtonVersionBeta";
+            this.radioButtonVersionBeta.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonVersionBeta.TabIndex = 2;
+            this.radioButtonVersionBeta.Text = "Beta";
+            this.radioButtonVersionBeta.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonVersionRelease
+            // 
+            this.radioButtonVersionRelease.AutoSize = true;
+            this.radioButtonVersionRelease.Checked = true;
+            this.radioButtonVersionRelease.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonVersionRelease.Name = "radioButtonVersionRelease";
+            this.radioButtonVersionRelease.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonVersionRelease.TabIndex = 1;
+            this.radioButtonVersionRelease.TabStop = true;
+            this.radioButtonVersionRelease.Text = "Release";
+            this.radioButtonVersionRelease.UseVisualStyleBackColor = true;
             // 
             // buttonCheckUpdates
             // 
@@ -414,61 +581,150 @@
             // 
             this.folderBrowserDialogIWADPath.ShowNewFolderButton = false;
             // 
-            // groupBox2
+            // openFileDialogModFilePath
             // 
-            this.groupBox2.Controls.Add(this.radioButtonVersionBeta);
-            this.groupBox2.Controls.Add(this.radioButtonVersionRelease);
-            this.groupBox2.Location = new System.Drawing.Point(109, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(95, 64);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Version";
+            this.openFileDialogModFilePath.Filter = "WAD files|*.WAD|PK3 files|*.PK3|PK7 files|*.PK7|All files|*.*";
             // 
-            // radioButtonVersionBeta
+            // statusStrip1
             // 
-            this.radioButtonVersionBeta.AutoSize = true;
-            this.radioButtonVersionBeta.Location = new System.Drawing.Point(6, 42);
-            this.radioButtonVersionBeta.Name = "radioButtonVersionBeta";
-            this.radioButtonVersionBeta.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonVersionBeta.TabIndex = 2;
-            this.radioButtonVersionBeta.Text = "Beta";
-            this.radioButtonVersionBeta.UseVisualStyleBackColor = true;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel,
+            this.toolStripProgressBar1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(560, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // radioButtonVersionRelease
+            // toolStripStatusLabel
             // 
-            this.radioButtonVersionRelease.AutoSize = true;
-            this.radioButtonVersionRelease.Checked = true;
-            this.radioButtonVersionRelease.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonVersionRelease.Name = "radioButtonVersionRelease";
-            this.radioButtonVersionRelease.Size = new System.Drawing.Size(64, 17);
-            this.radioButtonVersionRelease.TabIndex = 1;
-            this.radioButtonVersionRelease.TabStop = true;
-            this.radioButtonVersionRelease.Text = "Release";
-            this.radioButtonVersionRelease.UseVisualStyleBackColor = true;
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Text = "Ready";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.toolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripProgressBar1.AutoSize = false;
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 16);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // buttonStartGame
+            // 
+            this.buttonStartGame.Location = new System.Drawing.Point(5, 307);
+            this.buttonStartGame.Name = "buttonStartGame";
+            this.buttonStartGame.Size = new System.Drawing.Size(131, 25);
+            this.buttonStartGame.TabIndex = 3;
+            this.buttonStartGame.Text = "Launch game";
+            this.buttonStartGame.UseVisualStyleBackColor = true;
+            this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.maskedTextBoxJoinTargetIP);
+            this.groupBox3.Controls.Add(this.radioButtonJoining);
+            this.groupBox3.Controls.Add(this.labelHosting);
+            this.groupBox3.Controls.Add(this.numericUpDownPlayerNum);
+            this.groupBox3.Controls.Add(this.radioButtonHosting);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(134, 112);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mode";
+            // 
+            // radioButtonHosting
+            // 
+            this.radioButtonHosting.AutoSize = true;
+            this.radioButtonHosting.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonHosting.Name = "radioButtonHosting";
+            this.radioButtonHosting.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonHosting.TabIndex = 0;
+            this.radioButtonHosting.TabStop = true;
+            this.radioButtonHosting.Text = "Hosting";
+            this.radioButtonHosting.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonJoining
+            // 
+            this.radioButtonJoining.AutoSize = true;
+            this.radioButtonJoining.Location = new System.Drawing.Point(6, 58);
+            this.radioButtonJoining.Name = "radioButtonJoining";
+            this.radioButtonJoining.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonJoining.TabIndex = 1;
+            this.radioButtonJoining.TabStop = true;
+            this.radioButtonJoining.Text = "Joining";
+            this.radioButtonJoining.UseVisualStyleBackColor = true;
+            this.radioButtonJoining.CheckedChanged += new System.EventHandler(this.radioButtonJoining_CheckedChanged);
+            // 
+            // numericUpDownPlayerNum
+            // 
+            this.numericUpDownPlayerNum.Location = new System.Drawing.Point(69, 37);
+            this.numericUpDownPlayerNum.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDownPlayerNum.Name = "numericUpDownPlayerNum";
+            this.numericUpDownPlayerNum.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDownPlayerNum.TabIndex = 1;
+            this.numericUpDownPlayerNum.Tag = "";
+            this.numericUpDownPlayerNum.ValueChanged += new System.EventHandler(this.numericUpDownPlayerNum_ValueChanged);
+            // 
+            // labelHosting
+            // 
+            this.labelHosting.AutoSize = true;
+            this.labelHosting.Location = new System.Drawing.Point(22, 39);
+            this.labelHosting.Name = "labelHosting";
+            this.labelHosting.Size = new System.Drawing.Size(41, 13);
+            this.labelHosting.TabIndex = 2;
+            this.labelHosting.Text = "Players";
+            // 
+            // maskedTextBoxJoinTargetIP
+            // 
+            this.maskedTextBoxJoinTargetIP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.maskedTextBoxJoinTargetIP.Location = new System.Drawing.Point(6, 81);
+            this.maskedTextBoxJoinTargetIP.Mask = "000.000.000.000";
+            this.maskedTextBoxJoinTargetIP.Name = "maskedTextBoxJoinTargetIP";
+            this.maskedTextBoxJoinTargetIP.Size = new System.Drawing.Size(118, 20);
+            this.maskedTextBoxJoinTargetIP.TabIndex = 3;
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 350);
+            this.ClientSize = new System.Drawing.Size(560, 357);
+            this.Controls.Add(this.buttonStartGame);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "formMain";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Final Duel Launcher";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.basicTab.ResumeLayout(false);
             this.basicTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSkill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).EndInit();
+            this.multiplayerTab.ResumeLayout(false);
+            this.tabPageMods.ResumeLayout(false);
+            this.tabPageMods.PerformLayout();
             this.tabPageUpdates.ResumeLayout(false);
             this.tabPageUpdates.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -511,6 +767,26 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButtonVersionBeta;
         private System.Windows.Forms.RadioButton radioButtonVersionRelease;
+        private System.Windows.Forms.Label labelModFile;
+        private System.Windows.Forms.Button buttonModBrowseFile;
+        private System.Windows.Forms.TextBox textBoxModFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialogModFilePath;
+        private System.Windows.Forms.Button buttonModFilelistAdd;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.Button buttonModFilelistRemove;
+        private System.Windows.Forms.Button buttonStartGame;
+        private System.Windows.Forms.CheckBox checkBoxNoSkill;
+        private System.Windows.Forms.Button buttonModFilelistMoveUp;
+        private System.Windows.Forms.Button buttonModFilelistMoveDown;
+        private System.Windows.Forms.ListBox listBoxModFilelist;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radioButtonJoining;
+        private System.Windows.Forms.RadioButton radioButtonHosting;
+        private System.Windows.Forms.Label labelHosting;
+        private System.Windows.Forms.NumericUpDown numericUpDownPlayerNum;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxJoinTargetIP;
     }
 }
 
