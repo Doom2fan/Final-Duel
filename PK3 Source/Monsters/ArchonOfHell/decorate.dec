@@ -110,9 +110,9 @@ Actor ArchonComet {
 		ARCB AAAABBBBCCCC 1 Bright A_SpawnItemEx ("ArchonCometTrail", 0, 0, 0, 0, 0, 0, 0, 128)
 		Loop
 	Death:
-		ARCB J 0 Bright A_SetTranslucent (0.67,1)
+		ARCB J 0 Bright A_SetTranslucent (0.67, 1)
 		ARCB J 3 Bright
-		ARCB K 3 Bright A_Explode(128,128,0)
+		ARCB K 3 Bright A_Explode (128, 128, 0)
 		ARCB LMN 3 Bright
 		Stop
 	}

@@ -1,5 +1,4 @@
-Actor BlackPanther : HellKnight 30141
-{
+Actor BlackPanther : HellKnight 30141 {
 	//$Category Final Duel-Monsters
 	//$Title Black Panther
 	Health 1500
@@ -15,8 +14,7 @@ Actor BlackPanther : HellKnight 30141
 	Obituary "%o was torn apart by a Black Panther"
 	Species "Hell Noble"
 	DropItem "Energy200" DropItem "Energy100"
-	States
-	{
+	States {
 	Spawn:
 		BPNT A 10 A_Look 
 		Loop
@@ -26,7 +24,7 @@ Actor BlackPanther : HellKnight 30141
 	Melee:
 	Missile:
 		BPNT EF 8 A_FaceTarget
-		BPNT G 8 A_CustomComboAttack ("PantherBall", 32, 8 * random(1, 8), "baron/melee")
+		BPNT G 8 A_CustomComboAttack ("PantherBall", 32, 8 * random (1, 8), "baron/melee")
 		Goto See
 	Pain:
 		BPNT H 2
@@ -47,13 +45,11 @@ Actor BlackPanther : HellKnight 30141
 	}
 }
 
-Actor PantherBall : BaronBall
-{
+Actor PantherBall : BaronBall {
 	Damage (random (1, 4) * 16)
 	Speed 20
 	Alpha 1.0
-	States
-	{
+	States {
 	Spawn:
 		PNTB AB 2
 		Loop

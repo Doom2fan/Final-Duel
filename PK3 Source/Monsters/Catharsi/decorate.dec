@@ -23,7 +23,7 @@ Actor Catharsi 30114 {
 	Pain.Kick:
 		SDDM A 1 A_Pain
 		SDDM A 1 A_FaceTarget (0, 0, 1)
-		TNT1 A 0 ThrustThing (angle*256/360+128, 25, 0, 0)
+		TNT1 A 0 ThrustThing (angle * 256 / 360 + 128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
 		Goto Spawn
 	Spawn:
@@ -132,8 +132,10 @@ Actor CatharsiDetonator {
 	DeathSound "catharsi/shotdth"
 	Monster
 	+FloatBob +Randomize +NoGravity +NoBlood
+	var int user_Angle; // 340
 	States {
 	Spawn:
+		TNT1 A 0 A_SetUserVar ("user_Angle", 340)
 		THRM A 4 A_PlaySound ("catharsi/thermtick")
 		THRM B 16 
 		THRM A 4 A_PlaySound ("catharsi/thermtick")
@@ -145,24 +147,12 @@ Actor CatharsiDetonator {
 		THRM A 4 A_PlaySound ("catharsi/thermtick")  
 		THRM B 16
 		TNT1 A 0 A_PlaySound ("SoulReaper/Fire")
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 0, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 20, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 40, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 60, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 80, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 100, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 120, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 140, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 160, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 180, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 200, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 220, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 240, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 260, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 280, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 300, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 320, CMF_ABSOLUTEPITCH)
-		SDFB B 0 A_CustomMissile ("CatharsiBall", 4, 2, 340, CMF_ABSOLUTEPITCH)
+	Loople:
+		TNT1 A 0 A_JumpIf (user_Angle == 0, "End")
+		TNT1 A 0 A_CustomMissile ("CatharsiBall", 4, 2, user_Angle, CMF_ABSOLUTEPITCH)
+		TNT1 A 0 A_SetUserVar ("user_Angle", user_Angle - 20)
+		Loop
+	End:
 		SDFB BCDE 6 Bright A_Die
 		Stop
 	Death:

@@ -1,32 +1,3 @@
-/***** MONSTERS' DEAD BODIES *****/
-
-/*
-// ZombieMan
-Actor NashGore_ZombieManDeadBody
-{
-health 50
-+ISMONSTER
-+Shootable
-+CORPSE
-States
-	{
-    Spawn:
-     POSS L -1
-     stop
-   	Raise:
-     POSS KJIH 5
-	 TNT1 A 1 A_SpawnItem("NashGore_Zombieman",0,0,0,0)
-	 stop
-	Death:
-	 TNT1 A 1 A_SpawnItem("NashGore_CrushedSmall",0,0,0,0)
-     stop
-	Crush:
-	 TNT1 A 1 A_SpawnItem("NashGore_CrushedSmall",0,0,0,0)
-	 stop
-	}
-}
-*/
-
 /**** CRUSHED DEAD BODIES ****/
 
 // small

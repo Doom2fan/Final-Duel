@@ -35,7 +35,7 @@ Actor FDBloodDemon : FDDemon 30113 {
 	Pain.Kick:
 		SRG2 A 1 A_Pain
 		SRG2 A 1 A_FaceTarget (0, 0, 1)
-		TNT1 A 0 ThrustThing (angle*256/360+128, 25, 0, 0)
+		TNT1 A 0 ThrustThing (angle * 256 / 360 + 128, 25, 0, 0)
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
 		Goto Spawn
 	See:
@@ -64,7 +64,7 @@ Actor FDBloodDemon : FDDemon 30113 {
 		Stop
 	Death.Fire:
 		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 150)
-		TNT1 A 0 Thing_SetTranslation (0,7)
+		TNT1 A 0 Thing_SetTranslation (0, 7)
 		SRG2 I 8
 		SRG2 J 8 A_Scream
 		SRG2 K 4
