@@ -328,6 +328,7 @@ special
     // Dis'
     -10000:CheckInventoryMax(1),
     -10001:CheckActorInventoryMax(2),
+	-10002:SetInventoryMax(2),
 
     // Zandronum's
 	-100:ResetMap(0),
