@@ -22,6 +22,8 @@ script "Debug1" (int meh, int time) {
 	int heh = meh;	
 	int hue = heh * 2;
 	while (TRUE) {
+		if (heh == 0)
+			terminate;
 		hue = heh * 2;
 		heh = hue;
 		print (d:heh);	
@@ -40,8 +42,6 @@ script "Debug3" (int meh,int bla) {
 }
 
 script "Debug4" (void) {
-	int MuhDick = CheckInventoryMax ("Clip2");
-	print (d:MuhDick);
 }
 
 script "DKA" (void) {
@@ -55,13 +55,14 @@ script "FD_CannotDropThisWeapon" (void) {
 }
 
 int TriedToDropFistsOnce[MAXPLAYERS] = {0};
-str FD_TryingToDropFistsMessages[6] = {
+str FD_TryingToDropFistsMessages[7] = {
 		"You're not Zharkov.",
 		"Are you dumb?",
 		"WHAT THE FUCK DO YOU WANT ME TO DO?!",
 		"WAT.",
 		"If you do that you will not be able to use anything, since your hands will not grow back.",
-		"STAHP"
+		"STAHP",
+		"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 		};
 script "FD_TryingToDropFists" (void) {
 	if (TriedToDropFistsOnce[PlayerNumber ()] == 0) {
@@ -71,7 +72,7 @@ script "FD_TryingToDropFists" (void) {
 	}
 	
 	else {
-		int messageNumber = random (0, 5);
+		int messageNumber = random (0, 6);
 		HudMessage (s:FD_TryingToDropFistsMessages[messageNumber];
 			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 	}
