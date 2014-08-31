@@ -1,19 +1,56 @@
+// Select/Deselect
 Sprite REVSA0, 320, 200
 {
-	Patch REVGA0, 236, 91
+	Patch REVGA0, 160, 126
 }
 
 Sprite REVSB0, 320, 200
 {
-	Patch REVGA0, 260, 115
+	Patch REVGA0, 176, 142
 }
 
-Sprite REVSC0, 330, 200
+Sprite REVSC0, 320, 200
 {
-	Patch REVGA0, 284, 139
+	Patch REVGA0, 192, 158
 }
 
-Sprite REVSD0, 320, 200
+// Reload
+Sprite REVRA0, 320, 200
 {
-	Patch REVGA0, 308, 163
+	Patch REVGA0, 136, 102
+}
+
+Sprite REVRB0, 320, 200
+{
+	Patch REVGA0, 136, 110
+}
+
+Sprite REVRC0, 320, 200
+{
+	Patch REVGA0, 136, 118
+}
+
+Sprite REVRD0, 320, 200
+{
+	Patch REVFB0, 134, 122
+}
+
+Sprite REVRE0, 320, 200
+{
+	Patch REVFB0, 134, 130
+}
+
+Sprite REVRF0, 320, 200
+{
+	Patch REVFB0, 134, 138
+}
+
+Sprite REVRG0, 320, 200
+{
+	Patch REVFD0, 134, 146
+}
+
+Sprite REVRH0, 320, 200
+{
+	Patch REVFD0, 134, 154
 }

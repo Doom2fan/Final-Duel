@@ -86,7 +86,7 @@ script "XPSystem" Enter {
 			SetFont ("SMALLFONT");
 			GiveInventory ("MagnumUpgrade",1);
 			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:".357 Magnum Upgraded.\nRecoil --\nSpread --\nDamage ++";
+				HudMessage (s:".357 Magnum Upgraded.\nRecoil --\nSpread --\nDamage ++\nFiring speed ++";
 					HUDMSG_FADEINOUT, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
 		if (currentXP >= 14100 && currentLVL == 8) {
