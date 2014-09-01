@@ -34,9 +34,9 @@ script "FDNightvision" Enter { // Nightvision system
 	}
 }
 
-int FD_SS_OldSpeed [MAXPLAYERS];
-int FD_SS_Sprinting [MAXPLAYERS];
-int FD_SR_StaminaEmpty [MAXPLAYERS];
+global int 51:FD_SS_OldSpeed [];
+global int 52:FD_SS_Sprinting [];
+global int 53:FD_SR_StaminaEmpty [];
 script "FDSprintSystem" ENTER {
 	if (GameType () == Game_Title_Map) Terminate;
 	int tics = 0;
