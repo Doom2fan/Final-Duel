@@ -174,3 +174,57 @@ Sprite FST1D0, 320, 200
 {
 	Patch PUNCH5, 33, 80
 }
+
+// Knife
+Sprite KNFSA0, 348, 200
+{
+	Patch KNIFE1, 158, 144
+}
+
+Sprite KNFSB0, 356, 200
+{
+	Patch KNIFE1, 166, 152
+}
+
+Sprite KNFSC0, 364, 200
+{
+	Patch KNIFE1, 174, 160
+}
+
+Sprite KNF1A0, 340, 200
+{
+	Patch KNIFE1, 150, 136
+}
+
+Sprite KNF1B0, 329, 200
+{
+	Patch KNIFE1, 139, 132
+}
+
+Sprite KNF1C0, 329, 200
+{
+	Patch KNIFE1, 97, 126
+}
+
+Sprite KNF1D0, 329, 200
+{
+	Patch KNIFE1, 47, 122
+}
+
+Sprite KNF1E0, 329, 200
+{
+	Offset 9, 0
+	Patch KNIFE1, 0, 117
+}
+
+Sprite KNF1F0, 329, 200
+{
+	Offset 71, 0
+	Patch KNIFE1, 0, 111
+}
+
+Sprite KNF1G0, 329, 200
+{
+	Offset 131, 0
+	Patch KNIFE1, 0, 104
+}

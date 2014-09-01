@@ -2,6 +2,7 @@
 // Weapons
 	// Slot 1
 		TAGMELEE										= "Unarmed";
+		TAGKNIFE										= "Knife";
 		TAGSWORD										= "Sword";
 		TAGCHAINSAW										= "Chainsaw";
 

@@ -4,7 +4,7 @@
 	// please note that I have edited most of the files(Except for
 	// most of the sprites and sounds, any sound or sprite that I
 	// edited should be in the CREDITS or INFO lump)
-// Highest DoomEdNum: 30170
+// Highest DoomEdNum: 30171
 	// Other unused DoomEdNums: 
  
 // Shared/Common
@@ -89,6 +89,7 @@
 		// Melee Weapons (Credits in the files)
 			#include "Weapons/Melee/Sword.DEC"
 			#include "Weapons/Melee/Melee.DEC"
+			#include "Weapons/Melee/Knife.DEC"
 
 	// Items
 		#include "Items/Flares/DECORATE.DEC" 						// Credits in the folder
