@@ -1,3 +1,4 @@
 Decorate: Alex_Mercer
 Sprites: Eriance, JoeyTD, Neoworm
 Models: Alex_Mercer
+Sounds: NightmareMutant, ???? (Got some of the sounds from X-Weapon)

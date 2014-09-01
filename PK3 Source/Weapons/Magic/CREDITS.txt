@@ -1,3 +1,3 @@
 DECORATE: Alex_Mercer, Xim
 Sprites: Uboa, Glen Payne, Marshal Bostwick, Eriance, Marrub, Alex_Mercer, 3d Realms, Neoworm
-Sounds: TheDarkArchon, Raven Software, GvH, freeSFX, Brutal Doom v19 SE, ID Software, DaveOfDefeat2248(a Freesound user)
+Sounds: TheDarkArchon, Raven Software, GvH, freeSFX, Brutal Doom v19 SE, ID Software, DaveOfDefeat2248(Freesound user)

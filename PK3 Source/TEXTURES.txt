@@ -130,3 +130,12 @@ Sprite MODLW0, 1, 1 { }
 Sprite MODLX0, 1, 1 { }
 Sprite MODLY0, 1, 1 { }
 Sprite MODLZ0, 1, 1 { }
+
+// Rotated sprites
+Texture "FD/RotatedTex/METAL/90", 128, 64
+{
+	Patch METAL, 0, 0
+	{
+		Rotate 90
+	}
+}

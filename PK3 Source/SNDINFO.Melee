@@ -6,9 +6,9 @@ weapons/kick/strong3			"Sounds/Weapons/Melee/Kick/FDStrng3.ogg"
 weapons/kick/swing				"Sounds/Weapons/Melee/Kick/FDSwing.ogg" // from Diaz:Last Hours of Purity
 weapons/kick/hitwall			"Sounds/Weapons/Melee/Kick/FDWall.ogg"  // from Diaz:Last Hours of Purity
 // Sword
-Melee/Sword/HitThing			"Sounds/Weapons/Melee/Sword/FDHitBdy.ogg"      // by 
-Melee/Sword/HitWall				"Sounds/Weapons/Melee/Sword/FDWall.ogg" // from the Sound Library
-Melee/Sword/Swing				"Sounds/Weapons/Melee/Sword/FDSwing.ogg" // by Langerium(a Freesound user)
+Melee/Sword/HitThing			"Sounds/Weapons/Melee/Sword/FDHitBdy.ogg" // by 
+Melee/Sword/HitWall				"Sounds/Weapons/Melee/Sword/FDWall.ogg" // from Sound Library
+Melee/Sword/Swing				"Sounds/Weapons/Melee/Sword/FDSwing.ogg" // by Langerium(Freesound user)
 // Fists
 $random Melee/Fists/HitWall { Melee/Fists/HitWall1 Melee/Fists/HitWall2 Melee/Fists/HitWall3 Melee/Fists/HitWall4 }
 Melee/Fists/HitWall1			"Sounds/Weapons/Melee/Melee/FDHit1.ogg"
@@ -16,4 +16,11 @@ Melee/Fists/HitWall2			"Sounds/Weapons/Melee/Melee/FDHit2.ogg"
 Melee/Fists/HitWall3			"Sounds/Weapons/Melee/Melee/FDHit3.ogg"
 Melee/Fists/HitWall4			"Sounds/Weapons/Melee/Melee/FDHit4.ogg"
 // Berserk
-pickups/berserk					"Sounds/Weapons/Melee/Melee/FDBersrk.ogg" // from Beautiful Doom
+pickups/berserk					"Sounds/Weapons/Melee/FDBersrk.ogg" // from Beautiful Doom
+
+// Knife
+Melee/Knife/HitThing			"Sounds/Weapons/Melee/Knife/FDHitBdy.ogg" // by 
+Melee/Knife/HitWall				"Sounds/Weapons/Melee/Knife/FDWall.ogg" // from Sound Library
+$random Melee/Knife/Swing { Melee/Knife/Swing1 Melee/Knife/Swing2 }
+Melee/Knife/Swing1				"Sounds/Weapons/Melee/Knife/FDSwing1.ogg" // from FindSounds.com
+Melee/Knife/Swing2				"Sounds/Weapons/Melee/Knife/FDSwing2.ogg" // from FindSounds.com
