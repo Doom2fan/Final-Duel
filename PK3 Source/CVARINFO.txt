@@ -7,3 +7,4 @@ server noarchive bool FD_BloodForTheBloodGod = false;
 user bool FD_MsgsOn = true;
 user bool FD_AutoReload = true;
 user bool FD_HeartbeatsOn = true;
+user bool FD_LogLVLUpMsgs = true;
