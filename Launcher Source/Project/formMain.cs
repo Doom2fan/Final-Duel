@@ -104,17 +104,14 @@ namespace Launcher
             if (radioButtonVersionRelease.Checked)
             {
                 if (radioButtonUpdateLauncher.Checked)
-                {
-                    
+                {   
                 }
                 else
-                {
-
+                {   
                 }
             }
             else
             {
-
             }*/
         }
 
@@ -200,112 +197,135 @@ namespace Launcher
                 SaveModList();
             }
         }
-
+        
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
+            // Save the config
             Config.Save();
-        }
 
+            Process.Start(Config.DisPath, BuildCommandLine());
+        }
+        
         private string BuildCommandLine()
         {
-            string cmdline = string.Empty;
+            string cmdline = string.Empty; // Define cmdline
+            
+            // Add the IWAD
+            cmdline += " -iwad \"" + Config.IWADPath + "\\" + Config.IWAD + "\"";
 
-            // IWAD
-            cmdline += " -iwad " + textBoxIWADPath + Config.IWAD;
+            // Add the files
+            cmdline += " -file";
+            // Add the files from the modlist
+            for (int i = 0; i < Config.ModList.Count; i++)
+                cmdline += " \"" + Config.ModList[i] + "\"";
 
-            /*if (config.mapNumber > 0)
+            // Add Final Duel
+            cmdline += " \"" + Config.FDPath + "\"";
+
+            if (!Config.NoSkill)
             {
                 // Skill/Difficulty
-                cmdline += " -skill " + ((int)config.difficulty + 1);
+                cmdline += " -skill " + Config.Skill;
 
                 // Map Number
-                cmdline += " -warp " + config.mapNumber;
+                if (!Config.MapNameOn) // If Config.MapNameOn is false
+                    cmdline += " -warp " + Config.MapNumber; // Add the map number
+                else
+                    cmdline += " +map " + Config.MapName; // Add the map name
 
-                // DRLA Class
-                if (IsDRLAActive())
-                    cmdline += " +playerclass " + config.rlClass.ToString();
+                // Class
+                cmdline += " +playerclass ";
+                if (!Config.ClassNumberOn) // If Config.ClassNumberOn is false
+                    cmdline += Config.ClassName; // Add the class name
+                else
+                    cmdline += Config.ClassNumber; // Add the class number
             }
 
             // Multiplayer
-            if (config.multiplayer)
+            if (Config.MultiplayerOn)
             {
                 // Hosting/Joining
-                if (config.multiplayerMode == MultiplayerMode.Hosting)
-                    cmdline += " -host " + config.players;
-                if (config.multiplayerMode == MultiplayerMode.Joining)
-                    cmdline += " -join " + config.hostname;
-
+                if (!Config.MPJoining)
+                    cmdline += " -host " + Config.MPPlayers;
+                if (Config.MPJoining)
+                    cmdline += " -join " + Config.MPHostname;
+                cmdline += " -port " + Config.MPPort;
                 // Server-side stuff
-                if (config.multiplayerMode == MultiplayerMode.Hosting)
+                if (!Config.MPJoining)
                 {
                     // Server Type
-                    if (config.serverType == ServerType.PeerToPeer)
+                    if (Config.Netmode == false)
                         cmdline += " -netmode 0";
-                    if (config.serverType == ServerType.PacketServer)
+                    else if (Config.Netmode == true)
                         cmdline += " -netmode 1";
 
                     // Server Options
-                    if (config.extraTics)
+                    if (Config.ExtraTics)
                         cmdline += " -extratic";
-                    if (config.duplicate > 0)
-                        cmdline += " -dup " + config.duplicate;
+                    if (Config.MPDup > 0)
+                        cmdline += " -dup " + Config.MPDup;
+
+                    // Game mode
+                    if (Config.altdeath)
+                        cmdline += " -altdeath";
+                    if (Config.Deathmatch)
+                        cmdline += " -deathmatch";
                 }
             }
 
             // Enable Cheats
-            if (checkBoxEnableCheats.Checked)
-                cmdline += " +sv_cheats 1";
+            if (Config.sv_cheats)
+                cmdline += " +set sv_cheats 1";
 
             // Enable Logging to File
-            if (checkBoxLogging.Checked)
-                cmdline += " +logfile \"Doom RPG.log\"";
+            if (Config.LogToFile)
+                cmdline += " +set logfile \"Final Duel.log\"";
 
             // Load Savegame
-            if (comboBoxSaveGame.Text != "None")
-                cmdline += " -loadgame " + Path.GetDirectoryName(textBoxPortPath.Text) + "\\" + comboBoxSaveGame.Text;
-
-            // Record Demo
-            if (textBoxDemo.TextLength > 0)
-                cmdline += " -record " + textBoxDemo.Text + ".lmp";
-
-            // Mods & Patches
-            cmdline += " -file";
-
-            // Mods selected from the mods list
-            for (int i = 0; i < checkedListBoxMods.Items.Count; i++)
-                if (checkedListBoxMods.GetItemChecked(i))
-                    cmdline += " \"" + config.modsPath + "\\" + checkedListBoxMods.Items[i].ToString() + "\"";
-
-            // Doom RPG
-            cmdline += " \"" + config.DRPGPath + "\\DoomRPG\"";
+            if (Config.LoadGame != string.Empty)
+                cmdline += " -loadgame " + Config.DisPath + "\\" + Config.LoadGame;
 
             // Custom Commands
-            if (config.customCommands != string.Empty)
-                cmdline += " " + config.customCommands;*/
+            if (Config.CustomCommands != string.Empty)
+                cmdline += " " + Config.CustomCommands;
 
+            // Log the command line if we're debugging
+            Debug.WriteLine("BuildCommandLine returned \"" + cmdline + "\"");
+            
+            // Return cmdline
             return cmdline;
         }
 
         private void buttonModFilelistMoveUp_Click(object sender, EventArgs e)
         {
-            int oldSelectedIndex = listBoxModFilelist.SelectedIndex;
+            int oldSelectedIndex = listBoxModFilelist.SelectedIndex; // define oldSelectedIndex and assign listBoxModFilelist.SelectedIndex to it
+
+            // If the selected index is greater than 0
             if (listBoxModFilelist.SelectedIndex > 0)
             {
+                // Insert a new item to the listbox with the value of the selected item
                 listBoxModFilelist.Items.Insert(listBoxModFilelist.SelectedIndex - 1, listBoxModFilelist.SelectedItem);
-                listBoxModFilelist.Items.RemoveAt(listBoxModFilelist.SelectedIndex);
-                listBoxModFilelist.SelectedIndex = oldSelectedIndex - 1;
+                listBoxModFilelist.Items.RemoveAt(listBoxModFilelist.SelectedIndex); // Remove the selected item
+                listBoxModFilelist.SelectedIndex = oldSelectedIndex - 1; // Select the new item
+                // Save the modlist
                 SaveModList();
             }
         }
 
         private void buttonModFilelistMoveDown_Click(object sender, EventArgs e)
         {
-            int oldSelectedIndex = listBoxModFilelist.SelectedIndex;
+            int oldSelectedIndex = listBoxModFilelist.SelectedIndex; // Define oldSelectedIndex and assign listBoxModFilelist.SelectedIndex to it
+
+            // If the selected index is less than the highest index AND the selected index is greater than or equal to 0
             if (listBoxModFilelist.SelectedIndex < (listBoxModFilelist.Items.Count - 1) && listBoxModFilelist.SelectedIndex >= 0)
             {
+                // Insert a new item to the listbox with the value of the selected item
                 listBoxModFilelist.Items.Insert(listBoxModFilelist.SelectedIndex + 2, listBoxModFilelist.SelectedItem);
+                // Remove the selected item
                 listBoxModFilelist.Items.RemoveAt(listBoxModFilelist.SelectedIndex);
+                // Select the new item
                 listBoxModFilelist.SelectedIndex = oldSelectedIndex + 1;
+                // Save the modlist
                 SaveModList();
             }
         }
@@ -333,10 +353,8 @@ namespace Launcher
             List<string> NewModList = new List<string>();
 
             for (int i = 0; i < listBoxModFilelist.Items.Count; i++)
-            {
                 NewModList.Add(listBoxModFilelist.Items[i].ToString());
-            }
-            Config.ModList.RemoveRange(0, listBoxModFilelist.Items.Count - 1);
+            Config.ModList.RemoveRange(0, Config.ModList.Count);
             Config.ModList.AddRange(NewModList);
         }
 
@@ -368,14 +386,44 @@ namespace Launcher
 
         private void textBoxMap_TextChanged(object sender, EventArgs e) { Config.MapName = textBoxMap.Text; }
 
-        private void numericUpDownPlayerNum_ValueChanged(object sender, EventArgs e)
+        private void radioButtonHosting_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonHosting.Checked)
+            {
+                textBoxJoinTargetIP.Enabled = false;
+                numericUpDownPlayerNum.Enabled = true;
+                Config.MPJoining = false;
+            }
+            else
+            {
+                textBoxJoinTargetIP.Enabled = true;
+                numericUpDownPlayerNum.Enabled = false;
+                Config.MPJoining = true;
+            }
         }
 
-        private void radioButtonJoining_CheckedChanged(object sender, EventArgs e)
-        {
+        private void numericUpDownPlayerNum_ValueChanged(object sender, EventArgs e) { Config.MPPlayers = (int)numericUpDownPlayerNum.Value; }
 
+        private void textBoxJoinTargetIP_TextChanged(object sender, EventArgs e) { Config.MPHostname = textBoxJoinTargetIP.Text; }
+
+        private void radioButtonMPP2P_CheckedChanged(object sender, EventArgs e) { Config.Netmode = !radioButtonMPP2P.Checked; }
+
+        private void checkBoxExtraTics_CheckedChanged(object sender, EventArgs e) { Config.ExtraTics = checkBoxExtraTics.Checked; }
+
+        private void numericUpDownMPDup_ValueChanged(object sender, EventArgs e) { Config.MPDup = (int)numericUpDownMPDup.Value; }
+
+        private void checkBoxDeathmatch_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.Deathmatch = checkBoxDeathmatch.Checked;
+            if (checkBoxDeathmatch.Checked)
+                checkBoxAltdeath.Checked = false;
+        }
+
+        private void checkBoxAltdeath_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.altdeath = checkBoxAltdeath.Checked;
+            if (checkBoxAltdeath.Checked)
+                checkBoxDeathmatch.Checked = false;
         }
     }
 }

@@ -54,6 +54,11 @@
             this.textBoxClass = new System.Windows.Forms.TextBox();
             this.numericUpDownClass = new System.Windows.Forms.NumericUpDown();
             this.multiplayerTab = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButtonJoining = new System.Windows.Forms.RadioButton();
+            this.labelHosting = new System.Windows.Forms.Label();
+            this.numericUpDownPlayerNum = new System.Windows.Forms.NumericUpDown();
+            this.radioButtonHosting = new System.Windows.Forms.RadioButton();
             this.advancedTab = new System.Windows.Forms.TabPage();
             this.tabPageMods = new System.Windows.Forms.TabPage();
             this.buttonModFilelistMoveDown = new System.Windows.Forms.Button();
@@ -79,25 +84,30 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.buttonStartGame = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButtonHosting = new System.Windows.Forms.RadioButton();
-            this.radioButtonJoining = new System.Windows.Forms.RadioButton();
-            this.numericUpDownPlayerNum = new System.Windows.Forms.NumericUpDown();
-            this.labelHosting = new System.Windows.Forms.Label();
-            this.maskedTextBoxJoinTargetIP = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxJoinTargetIP = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButtonMPP2P = new System.Windows.Forms.RadioButton();
+            this.radioButtonMPPS = new System.Windows.Forms.RadioButton();
+            this.checkBoxExtraTics = new System.Windows.Forms.CheckBox();
+            this.checkBoxDeathmatch = new System.Windows.Forms.CheckBox();
+            this.numericUpDownMPDup = new System.Windows.Forms.NumericUpDown();
+            this.labelDup = new System.Windows.Forms.Label();
+            this.checkBoxAltdeath = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.basicTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSkill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).BeginInit();
             this.multiplayerTab.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).BeginInit();
             this.tabPageMods.SuspendLayout();
             this.tabPageUpdates.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialogDisPath
@@ -368,6 +378,12 @@
             // 
             // multiplayerTab
             // 
+            this.multiplayerTab.Controls.Add(this.checkBoxAltdeath);
+            this.multiplayerTab.Controls.Add(this.labelDup);
+            this.multiplayerTab.Controls.Add(this.numericUpDownMPDup);
+            this.multiplayerTab.Controls.Add(this.checkBoxDeathmatch);
+            this.multiplayerTab.Controls.Add(this.checkBoxExtraTics);
+            this.multiplayerTab.Controls.Add(this.groupBox4);
             this.multiplayerTab.Controls.Add(this.groupBox3);
             this.multiplayerTab.Location = new System.Drawing.Point(4, 22);
             this.multiplayerTab.Name = "multiplayerTab";
@@ -376,6 +392,76 @@
             this.multiplayerTab.TabIndex = 1;
             this.multiplayerTab.Text = "Multiplayer";
             this.multiplayerTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButtonJoining);
+            this.groupBox3.Controls.Add(this.labelHosting);
+            this.groupBox3.Controls.Add(this.numericUpDownPlayerNum);
+            this.groupBox3.Controls.Add(this.radioButtonHosting);
+            this.groupBox3.Controls.Add(this.textBoxJoinTargetIP);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(134, 112);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mode";
+            // 
+            // radioButtonJoining
+            // 
+            this.radioButtonJoining.AutoSize = true;
+            this.radioButtonJoining.Location = new System.Drawing.Point(6, 58);
+            this.radioButtonJoining.Name = "radioButtonJoining";
+            this.radioButtonJoining.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonJoining.TabIndex = 1;
+            this.radioButtonJoining.Text = "Joining";
+            this.radioButtonJoining.UseVisualStyleBackColor = true;
+            // 
+            // labelHosting
+            // 
+            this.labelHosting.AutoSize = true;
+            this.labelHosting.Location = new System.Drawing.Point(22, 39);
+            this.labelHosting.Name = "labelHosting";
+            this.labelHosting.Size = new System.Drawing.Size(41, 13);
+            this.labelHosting.TabIndex = 2;
+            this.labelHosting.Text = "Players";
+            // 
+            // numericUpDownPlayerNum
+            // 
+            this.numericUpDownPlayerNum.Location = new System.Drawing.Point(69, 37);
+            this.numericUpDownPlayerNum.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDownPlayerNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownPlayerNum.Name = "numericUpDownPlayerNum";
+            this.numericUpDownPlayerNum.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDownPlayerNum.TabIndex = 1;
+            this.numericUpDownPlayerNum.Tag = "";
+            this.numericUpDownPlayerNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownPlayerNum.ValueChanged += new System.EventHandler(this.numericUpDownPlayerNum_ValueChanged);
+            // 
+            // radioButtonHosting
+            // 
+            this.radioButtonHosting.AutoSize = true;
+            this.radioButtonHosting.Checked = true;
+            this.radioButtonHosting.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonHosting.Name = "radioButtonHosting";
+            this.radioButtonHosting.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonHosting.TabIndex = 0;
+            this.radioButtonHosting.TabStop = true;
+            this.radioButtonHosting.Text = "Hosting";
+            this.radioButtonHosting.UseVisualStyleBackColor = true;
+            this.radioButtonHosting.CheckedChanged += new System.EventHandler(this.radioButtonHosting_CheckedChanged);
             // 
             // advancedTab
             // 
@@ -622,74 +708,104 @@
             this.buttonStartGame.UseVisualStyleBackColor = true;
             this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
             // 
-            // groupBox3
+            // textBoxJoinTargetIP
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBoxJoinTargetIP);
-            this.groupBox3.Controls.Add(this.radioButtonJoining);
-            this.groupBox3.Controls.Add(this.labelHosting);
-            this.groupBox3.Controls.Add(this.numericUpDownPlayerNum);
-            this.groupBox3.Controls.Add(this.radioButtonHosting);
-            this.groupBox3.Location = new System.Drawing.Point(8, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(134, 112);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Mode";
+            this.textBoxJoinTargetIP.Enabled = false;
+            this.textBoxJoinTargetIP.Location = new System.Drawing.Point(6, 81);
+            this.textBoxJoinTargetIP.Name = "textBoxJoinTargetIP";
+            this.textBoxJoinTargetIP.Size = new System.Drawing.Size(118, 20);
+            this.textBoxJoinTargetIP.TabIndex = 1;
+            this.textBoxJoinTargetIP.TabStop = false;
+            this.textBoxJoinTargetIP.TextChanged += new System.EventHandler(this.textBoxJoinTargetIP_TextChanged);
             // 
-            // radioButtonHosting
+            // groupBox4
             // 
-            this.radioButtonHosting.AutoSize = true;
-            this.radioButtonHosting.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonHosting.Name = "radioButtonHosting";
-            this.radioButtonHosting.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonHosting.TabIndex = 0;
-            this.radioButtonHosting.TabStop = true;
-            this.radioButtonHosting.Text = "Hosting";
-            this.radioButtonHosting.UseVisualStyleBackColor = true;
+            this.groupBox4.Controls.Add(this.radioButtonMPPS);
+            this.groupBox4.Controls.Add(this.radioButtonMPP2P);
+            this.groupBox4.Location = new System.Drawing.Point(148, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(104, 63);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Server Type";
             // 
-            // radioButtonJoining
+            // radioButtonMPP2P
             // 
-            this.radioButtonJoining.AutoSize = true;
-            this.radioButtonJoining.Location = new System.Drawing.Point(6, 58);
-            this.radioButtonJoining.Name = "radioButtonJoining";
-            this.radioButtonJoining.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonJoining.TabIndex = 1;
-            this.radioButtonJoining.TabStop = true;
-            this.radioButtonJoining.Text = "Joining";
-            this.radioButtonJoining.UseVisualStyleBackColor = true;
-            this.radioButtonJoining.CheckedChanged += new System.EventHandler(this.radioButtonJoining_CheckedChanged);
+            this.radioButtonMPP2P.AutoSize = true;
+            this.radioButtonMPP2P.Checked = true;
+            this.radioButtonMPP2P.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonMPP2P.Name = "radioButtonMPP2P";
+            this.radioButtonMPP2P.Size = new System.Drawing.Size(84, 17);
+            this.radioButtonMPP2P.TabIndex = 0;
+            this.radioButtonMPP2P.TabStop = true;
+            this.radioButtonMPP2P.Text = "Peer-to-Peer";
+            this.radioButtonMPP2P.UseVisualStyleBackColor = true;
+            this.radioButtonMPP2P.CheckedChanged += new System.EventHandler(this.radioButtonMPP2P_CheckedChanged);
             // 
-            // numericUpDownPlayerNum
+            // radioButtonMPPS
             // 
-            this.numericUpDownPlayerNum.Location = new System.Drawing.Point(69, 37);
-            this.numericUpDownPlayerNum.Maximum = new decimal(new int[] {
-            8,
+            this.radioButtonMPPS.AutoSize = true;
+            this.radioButtonMPPS.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonMPPS.Name = "radioButtonMPPS";
+            this.radioButtonMPPS.Size = new System.Drawing.Size(93, 17);
+            this.radioButtonMPPS.TabIndex = 2;
+            this.radioButtonMPPS.Text = "Packet Server";
+            this.radioButtonMPPS.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxExtraTics
+            // 
+            this.checkBoxExtraTics.AutoSize = true;
+            this.checkBoxExtraTics.Location = new System.Drawing.Point(154, 75);
+            this.checkBoxExtraTics.Name = "checkBoxExtraTics";
+            this.checkBoxExtraTics.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxExtraTics.TabIndex = 2;
+            this.checkBoxExtraTics.Text = "Extra tics";
+            this.checkBoxExtraTics.UseVisualStyleBackColor = true;
+            this.checkBoxExtraTics.CheckedChanged += new System.EventHandler(this.checkBoxExtraTics_CheckedChanged);
+            // 
+            // checkBoxDeathmatch
+            // 
+            this.checkBoxDeathmatch.AutoSize = true;
+            this.checkBoxDeathmatch.Location = new System.Drawing.Point(258, 15);
+            this.checkBoxDeathmatch.Name = "checkBoxDeathmatch";
+            this.checkBoxDeathmatch.Size = new System.Drawing.Size(84, 17);
+            this.checkBoxDeathmatch.TabIndex = 3;
+            this.checkBoxDeathmatch.Text = "Deathmatch";
+            this.checkBoxDeathmatch.UseVisualStyleBackColor = true;
+            this.checkBoxDeathmatch.CheckedChanged += new System.EventHandler(this.checkBoxDeathmatch_CheckedChanged);
+            // 
+            // numericUpDownMPDup
+            // 
+            this.numericUpDownMPDup.Location = new System.Drawing.Point(184, 92);
+            this.numericUpDownMPDup.Maximum = new decimal(new int[] {
+            9,
             0,
             0,
             0});
-            this.numericUpDownPlayerNum.Name = "numericUpDownPlayerNum";
-            this.numericUpDownPlayerNum.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDownPlayerNum.TabIndex = 1;
-            this.numericUpDownPlayerNum.Tag = "";
-            this.numericUpDownPlayerNum.ValueChanged += new System.EventHandler(this.numericUpDownPlayerNum_ValueChanged);
+            this.numericUpDownMPDup.Name = "numericUpDownMPDup";
+            this.numericUpDownMPDup.Size = new System.Drawing.Size(28, 20);
+            this.numericUpDownMPDup.TabIndex = 4;
+            this.numericUpDownMPDup.ValueChanged += new System.EventHandler(this.numericUpDownMPDup_ValueChanged);
             // 
-            // labelHosting
+            // labelDup
             // 
-            this.labelHosting.AutoSize = true;
-            this.labelHosting.Location = new System.Drawing.Point(22, 39);
-            this.labelHosting.Name = "labelHosting";
-            this.labelHosting.Size = new System.Drawing.Size(41, 13);
-            this.labelHosting.TabIndex = 2;
-            this.labelHosting.Text = "Players";
+            this.labelDup.AutoSize = true;
+            this.labelDup.Location = new System.Drawing.Point(151, 94);
+            this.labelDup.Name = "labelDup";
+            this.labelDup.Size = new System.Drawing.Size(27, 13);
+            this.labelDup.TabIndex = 5;
+            this.labelDup.Text = "Dup";
             // 
-            // maskedTextBoxJoinTargetIP
+            // checkBoxAltdeath
             // 
-            this.maskedTextBoxJoinTargetIP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.maskedTextBoxJoinTargetIP.Location = new System.Drawing.Point(6, 81);
-            this.maskedTextBoxJoinTargetIP.Mask = "000.000.000.000";
-            this.maskedTextBoxJoinTargetIP.Name = "maskedTextBoxJoinTargetIP";
-            this.maskedTextBoxJoinTargetIP.Size = new System.Drawing.Size(118, 20);
-            this.maskedTextBoxJoinTargetIP.TabIndex = 3;
+            this.checkBoxAltdeath.AutoSize = true;
+            this.checkBoxAltdeath.Location = new System.Drawing.Point(258, 38);
+            this.checkBoxAltdeath.Name = "checkBoxAltdeath";
+            this.checkBoxAltdeath.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxAltdeath.TabIndex = 6;
+            this.checkBoxAltdeath.Text = "Alt Deathmatch";
+            this.checkBoxAltdeath.UseVisualStyleBackColor = true;
+            this.checkBoxAltdeath.CheckedChanged += new System.EventHandler(this.checkBoxAltdeath_CheckedChanged);
             // 
             // formMain
             // 
@@ -710,6 +826,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).EndInit();
             this.multiplayerTab.ResumeLayout(false);
+            this.multiplayerTab.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).EndInit();
             this.tabPageMods.ResumeLayout(false);
             this.tabPageMods.PerformLayout();
             this.tabPageUpdates.ResumeLayout(false);
@@ -720,9 +840,9 @@
             this.groupBox1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -786,7 +906,15 @@
         private System.Windows.Forms.RadioButton radioButtonHosting;
         private System.Windows.Forms.Label labelHosting;
         private System.Windows.Forms.NumericUpDown numericUpDownPlayerNum;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxJoinTargetIP;
+        private System.Windows.Forms.TextBox textBoxJoinTargetIP;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton radioButtonMPP2P;
+        private System.Windows.Forms.RadioButton radioButtonMPPS;
+        private System.Windows.Forms.CheckBox checkBoxExtraTics;
+        private System.Windows.Forms.CheckBox checkBoxDeathmatch;
+        private System.Windows.Forms.Label labelDup;
+        private System.Windows.Forms.NumericUpDown numericUpDownMPDup;
+        private System.Windows.Forms.CheckBox checkBoxAltdeath;
     }
 }
 
