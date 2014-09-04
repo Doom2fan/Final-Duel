@@ -1,7 +1,6 @@
 gameinfo {
 	titlepage = "TITLEPIC"
 	creditpage = "CREDIT"
-	titlemusic = "D_DTFAF"
 	playerclasses = "MarineClass", "OmegaClass"
 	titletime = 8
 	advisorytime = 6
