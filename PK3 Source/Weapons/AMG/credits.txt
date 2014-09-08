@@ -1,6 +1,3 @@
 Decorate: Alex_Mercer
-Sprites: ScubaSteve, Uboa, Alex_Mercer
+Sprites: ID Software, Rogue Entertainment, Seargant_Mark_IV, HazeBandicoot, Mike12, DoomNukem, Alex_Mercer
 Sounds: NightmareMutant
-Idea Base: Action Doom Machinegun
-
-Edited for Final Duel by Alex_Mercer

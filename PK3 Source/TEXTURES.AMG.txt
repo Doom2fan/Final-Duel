@@ -1,20 +1,26 @@
 // Select/Deselect
 Sprite AMGSA0, 320, 200
 {
-	Patch AMGGA0, 145, 84
+	Patch AMGGA0, 53, 109
 }
 
 Sprite AMGSB0, 320, 200
 {
-	Patch AMGGA0, 169, 108
+	Patch AMGGA0, 29, 133
 }
 
 Sprite AMGSC0, 320, 200
 {
-	Patch AMGGA0, 194, 132
+	Patch AMGGA0, 5, 157
 }
 
-Sprite AMGSD0, 320, 200
-{
-	Patch AMGGA0, 218, 156
-}
+// Brightmaps
+Graphic "brightmaps/Weapons/AMG/AMGGE0.png", 129, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 18, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGF0.png", 138, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 27, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGG0.png", 131, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 20, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGH0.png", 137, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 26, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGI0.png", 141, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 30, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGJ0.png", 140, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 29, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGK0.png", 147, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 36, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGL0.png", 154, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", 43, 0 }
+Graphic "brightmaps/Weapons/AMG/AMGGM0.png", 58, 83 { Patch "brightmaps/Weapons/AMG/AMGGA0.png", -53, 0 }
