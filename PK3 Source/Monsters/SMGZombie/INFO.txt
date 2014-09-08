@@ -1,0 +1,7 @@
+Name: SMG Zombie
+Difficulty: Easy
+Connections: Inherits sounds and code from ShotgunGuy
+Summon: SMGGuy
+Melee: None
+Distance: Hitscan
+Type: Human, undead

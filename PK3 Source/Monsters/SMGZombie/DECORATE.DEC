@@ -1,0 +1,40 @@
+ACTOR SMGZombie : ShotgunGuy 30031 {
+	Obituary "%o was shredded by a machine pistol zombie."
+	Health 65
+	DropItem "PistolMag" 256
+	AttackSound "SMGZombie/Attack"
+	States {
+	Spawn:
+		PDWP AB 10 A_Look
+		Loop
+	See:
+		PDWP AABBCCDD 4 A_Chase
+		Loop
+	Missile:
+		PDWP E 10 A_FaceTarget
+		PDWP F 2 Bright A_CustomMissile ("MonsterTracer", 0, 0, frandom (-10, 10), 0, frandom (-10, 10))
+		PDWP E 2 A_CPosRefire
+		Goto Missile+1
+	Pain:
+		PDWP G 3
+		PDWP G 3 A_Pain
+		Goto See
+	Death:
+		PDWP H 5 
+		PDWP I 5 A_Scream
+		PDWP J 5 A_NoBlocking
+		PDWP KLM 5
+		PDWP N -1
+		Stop
+	XDeath:
+		PDWP O 5
+		PDWP P 5 A_XScream
+		PDWP Q 5 A_NoBlocking
+		PDWP RSTUV 5
+		PDWP W -1
+		Stop
+	Raise:
+		PDWP NMLKJIH 5
+		Goto See
+	}
+}
