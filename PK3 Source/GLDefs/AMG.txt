@@ -1,0 +1,90 @@
+// Carbine
+BrightMap Sprite AMGFA0
+{
+	Map brightmaps/Weapons/AMG/AMGFA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGFB0
+{
+	Map brightmaps/Weapons/AMG/AMGFB0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGA0
+{
+	Map brightmaps/Weapons/AMG/AMGGA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGB0
+{
+	Map brightmaps/Weapons/AMG/AMGGA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGC0
+{
+	Map brightmaps/Weapons/AMG/AMGGA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGD0
+{
+	Map brightmaps/Weapons/AMG/AMGGA0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGE0
+{
+	Map brightmaps/Weapons/AMG/AMGGE0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGF0
+{
+	Map brightmaps/Weapons/AMG/AMGGF0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGG0
+{
+	Map brightmaps/Weapons/AMG/AMGGG0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGH0
+{
+	Map brightmaps/Weapons/AMG/AMGGH0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGI0
+{
+	Map brightmaps/Weapons/AMG/AMGGI0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGJ0
+{
+	Map brightmaps/Weapons/AMG/AMGGJ0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGK0
+{
+	Map brightmaps/Weapons/AMG/AMGGK0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGL0
+{
+	Map brightmaps/Weapons/AMG/AMGGL0.png
+	DisableFullBright
+}
+
+BrightMap Sprite AMGGM0
+{
+	Map brightmaps/Weapons/AMG/AMGGM0.png
+	DisableFullBright
+}

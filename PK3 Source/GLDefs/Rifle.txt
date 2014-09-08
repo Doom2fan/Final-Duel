@@ -1,5 +1,0 @@
-BrightMap Sprite RIFFA0
-{
-	Map brightmaps/Weapons/Rifle/RIFFA0.png
-	DisableFullBright
-}

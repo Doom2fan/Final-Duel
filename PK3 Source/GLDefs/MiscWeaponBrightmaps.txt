@@ -1,10 +1,3 @@
-// Carbine
-BrightMap Sprite AMGFA0
-{
-	Map brightmaps/Weapons/AMG/AMGFA0.png
-	DisableFullBright
-}
-
 // AK-47
 BrightMap Sprite AK47B0
 {
@@ -12,15 +5,24 @@ BrightMap Sprite AK47B0
 	DisableFullBright
 }
 
-// SSG
-BrightMap Sprite SSGFA0
+// Annihilator
+BrightMap Sprite ANHGB0
 {
-	Map brightmaps/Weapons/Misc/SSGFA0.png
+	Map brightmaps/Weapons/Misc/ANHGB0.png
 	DisableFullBright
 }
-BrightMap Sprite SSGFU0
+
+// Beretta
+BrightMap Sprite BRTAB0
 {
-	Map brightmaps/Weapons/Misc/SSGFU0.png
+	Map brightmaps/Weapons/Misc/BRTAB0.png
+	DisableFullBright
+}
+
+// BFG 9000
+BrightMap Sprite BFGGZ0
+{
+	Map brightmaps/Weapons/Misc/BFGGZ0.png
 	DisableFullBright
 }
 
@@ -36,22 +38,27 @@ BrightMap Sprite ENF2B0
 	DisableFullBright
 }
 
-// Shotgun
-BrightMap Sprite SHTFA0
+// Grenade Launcher
+BrightMap Sprite GLGFA0
 {
-	Map brightmaps/Weapons/Misc/SHTFA0.png
+	Map brightmaps/Weapons/Misc/GLGFA0.png
+	DisableFullBright
+}
+BrightMap Sprite GLGFB0
+{
+	Map brightmaps/Weapons/Misc/GLGFB0.png
 	DisableFullBright
 }
 
-// Tactical Shotgun
-BrightMap Sprite SGGFA0
+// Minigun
+BrightMap Sprite MINGE0
 {
-	Map brightmaps/Weapons/Misc/SGGFA0.png
+	Map brightmaps/Weapons/Misc/MINGE0.png
 	DisableFullBright
 }
-BrightMap Sprite SGGFB0
+BrightMap Sprite MINGZ0
 {
-	Map brightmaps/Weapons/Misc/SGGFB0.png
+	Map brightmaps/Weapons/Misc/MINGZ0.png
 	DisableFullBright
 }
 
@@ -72,55 +79,17 @@ BrightMap Sprite QSGFC0
 	DisableFullBright
 }
 
-// BFG 9000
-BrightMap Sprite BFGGZ0
+// Revolver
+BrightMap Sprite REVFA0
 {
-	Map brightmaps/Weapons/Misc/BFGGZ0.png
+	Map brightmaps/Weapons/Misc/REVFA0.png
 	DisableFullBright
 }
 
-// Minigun
-BrightMap Sprite MINGE0
+// Rifle
+BrightMap Sprite RIFFA0
 {
-	Map brightmaps/Weapons/Misc/MINGE0.png
-	DisableFullBright
-}
-BrightMap Sprite MINGZ0
-{
-	Map brightmaps/Weapons/Misc/MINGZ0.png
-	DisableFullBright
-}
-
-// Annihilator
-BrightMap Sprite ANHGB0
-{
-	Map brightmaps/Weapons/Misc/ANHGB0.png
-	DisableFullBright
-}
-
-// Beretta
-BrightMap Sprite BRTAB0
-{
-	Map brightmaps/Weapons/Misc/BRTAB0.png
-	DisableFullBright
-}
-
-// Grenade Launcher
-BrightMap Sprite GLGFA0
-{
-	Map brightmaps/Weapons/Misc/GLGFA0.png
-	DisableFullBright
-}
-BrightMap Sprite GLGFB0
-{
-	Map brightmaps/Weapons/Misc/GLGFB0.png
-	DisableFullBright
-}
-
-// Sniper Rifle
-BrightMap Sprite SNPGB0
-{
-	Map brightmaps/Weapons/Misc/SNPGB0.png
+	Map brightmaps/Weapons/Misc/RIFFA0.png
 	DisableFullBright
 }
 
@@ -143,5 +112,43 @@ BrightMap Sprite MISGD0
 BrightMap Sprite MISGE0
 {
 	Map brightmaps/Weapons/RocketLauncher/MISGE0.png
+	DisableFullBright
+}
+
+// Shotgun
+BrightMap Sprite SHTFA0
+{
+	Map brightmaps/Weapons/Misc/SHTFA0.png
+	DisableFullBright
+}
+
+// Sniper Rifle
+BrightMap Sprite SNPGB0
+{
+	Map brightmaps/Weapons/Misc/SNPGB0.png
+	DisableFullBright
+}
+
+// SSG
+BrightMap Sprite SSGFA0
+{
+	Map brightmaps/Weapons/Misc/SSGFA0.png
+	DisableFullBright
+}
+BrightMap Sprite SSGFU0
+{
+	Map brightmaps/Weapons/Misc/SSGFU0.png
+	DisableFullBright
+}
+
+// Tactical Shotgun
+BrightMap Sprite SGGFA0
+{
+	Map brightmaps/Weapons/Misc/SGGFA0.png
+	DisableFullBright
+}
+BrightMap Sprite SGGFB0
+{
+	Map brightmaps/Weapons/Misc/SGGFB0.png
 	DisableFullBright
 }

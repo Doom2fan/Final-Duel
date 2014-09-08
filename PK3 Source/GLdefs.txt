@@ -1,6 +1,5 @@
 // Weapons
-	#include "GLDefs/Rifle.txt"
-	#include "GLDefs/Revolver.txt"
+	#include "GLDefs/AMG.txt"
 	#include "GLDefs/PlasmaRifle.txt"
 	#include "GLDefs/SonicRailgun.txt"
 	#include "GLDefs/SoulReaper.txt"
@@ -18,6 +17,7 @@
 	#include "GLDefs/Cybruiser.txt"
 	#include "GLDefs/ZSec.txt"
 	#include "GLDefs/PyroSuccubus.txt"
+	#include "GLDefs/SMGZombie.txt"
 
 // Items
 	#include "GLDefs/Flares.txt"
