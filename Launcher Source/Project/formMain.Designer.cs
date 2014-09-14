@@ -49,21 +49,31 @@
             this.textBoxClass = new System.Windows.Forms.TextBox ();
             this.numericUpDownClass = new System.Windows.Forms.NumericUpDown ();
             this.multiplayerTab = new System.Windows.Forms.TabPage ();
-            this.checkBoxAltdeath = new System.Windows.Forms.CheckBox ();
-            this.labelDup = new System.Windows.Forms.Label ();
-            this.numericUpDownMPDup = new System.Windows.Forms.NumericUpDown ();
-            this.checkBoxDeathmatch = new System.Windows.Forms.CheckBox ();
-            this.checkBoxExtraTics = new System.Windows.Forms.CheckBox ();
-            this.groupBox4 = new System.Windows.Forms.GroupBox ();
-            this.radioButtonMPPS = new System.Windows.Forms.RadioButton ();
-            this.radioButtonMPP2P = new System.Windows.Forms.RadioButton ();
-            this.groupBox3 = new System.Windows.Forms.GroupBox ();
+            this.groupBoxMPMode = new System.Windows.Forms.GroupBox ();
+            this.checkBoxMultiplayerOn = new System.Windows.Forms.CheckBox ();
             this.radioButtonJoining = new System.Windows.Forms.RadioButton ();
             this.labelHosting = new System.Windows.Forms.Label ();
             this.numericUpDownPlayerNum = new System.Windows.Forms.NumericUpDown ();
             this.radioButtonHosting = new System.Windows.Forms.RadioButton ();
             this.textBoxJoinTargetIP = new System.Windows.Forms.TextBox ();
+            this.groupBoxHosting = new System.Windows.Forms.GroupBox ();
+            this.checkBoxAltdeath = new System.Windows.Forms.CheckBox ();
+            this.numericUpDownPort = new System.Windows.Forms.NumericUpDown ();
+            this.checkBoxDeathmatch = new System.Windows.Forms.CheckBox ();
+            this.checkBoxExtraTics = new System.Windows.Forms.CheckBox ();
+            this.groupBoxServerType = new System.Windows.Forms.GroupBox ();
+            this.radioButtonMPPS = new System.Windows.Forms.RadioButton ();
+            this.radioButtonMPP2P = new System.Windows.Forms.RadioButton ();
+            this.label2 = new System.Windows.Forms.Label ();
+            this.numericUpDownMPDup = new System.Windows.Forms.NumericUpDown ();
+            this.labelDup = new System.Windows.Forms.Label ();
             this.advancedTab = new System.Windows.Forms.TabPage ();
+            this.buttonCompatOptions = new System.Windows.Forms.Button ();
+            this.buttonGameplayOptionsMenu = new System.Windows.Forms.Button ();
+            this.checkBoxLogToFile = new System.Windows.Forms.CheckBox ();
+            this.checkBoxCheatsOn = new System.Windows.Forms.CheckBox ();
+            this.textBoxCustomCommands = new System.Windows.Forms.TextBox ();
+            this.label1 = new System.Windows.Forms.Label ();
             this.tabPageMods = new System.Windows.Forms.TabPage ();
             this.buttonModFilelistMoveDown = new System.Windows.Forms.Button ();
             this.buttonModFilelistMoveUp = new System.Windows.Forms.Button ();
@@ -74,11 +84,11 @@
             this.textBoxModFile = new System.Windows.Forms.TextBox ();
             this.listBoxModFilelist = new System.Windows.Forms.ListBox ();
             this.tabPageUpdates = new System.Windows.Forms.TabPage ();
-            this.groupBox2 = new System.Windows.Forms.GroupBox ();
+            this.groupBoxUpdaterVer = new System.Windows.Forms.GroupBox ();
             this.radioButtonVersionBeta = new System.Windows.Forms.RadioButton ();
             this.radioButtonVersionRelease = new System.Windows.Forms.RadioButton ();
             this.buttonCheckUpdates = new System.Windows.Forms.Button ();
-            this.groupBox1 = new System.Windows.Forms.GroupBox ();
+            this.groupBoxUpdater1 = new System.Windows.Forms.GroupBox ();
             this.radioButtonUpdateMod = new System.Windows.Forms.RadioButton ();
             this.radioButtonUpdateLauncher = new System.Windows.Forms.RadioButton ();
             this.openFileDialogPK3Path = new System.Windows.Forms.OpenFileDialog ();
@@ -94,14 +104,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).BeginInit ();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).BeginInit ();
             this.multiplayerTab.SuspendLayout ();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).BeginInit ();
-            this.groupBox4.SuspendLayout ();
-            this.groupBox3.SuspendLayout ();
+            this.groupBoxMPMode.SuspendLayout ();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).BeginInit ();
+            this.groupBoxHosting.SuspendLayout ();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit ();
+            this.groupBoxServerType.SuspendLayout ();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).BeginInit ();
+            this.advancedTab.SuspendLayout ();
             this.tabPageMods.SuspendLayout ();
             this.tabPageUpdates.SuspendLayout ();
-            this.groupBox2.SuspendLayout ();
-            this.groupBox1.SuspendLayout ();
+            this.groupBoxUpdaterVer.SuspendLayout ();
+            this.groupBoxUpdater1.SuspendLayout ();
             this.statusStrip1.SuspendLayout ();
             this.SuspendLayout ();
             // 
@@ -373,13 +386,8 @@
             // 
             // multiplayerTab
             // 
-            this.multiplayerTab.Controls.Add (this.checkBoxAltdeath);
-            this.multiplayerTab.Controls.Add (this.labelDup);
-            this.multiplayerTab.Controls.Add (this.numericUpDownMPDup);
-            this.multiplayerTab.Controls.Add (this.checkBoxDeathmatch);
-            this.multiplayerTab.Controls.Add (this.checkBoxExtraTics);
-            this.multiplayerTab.Controls.Add (this.groupBox4);
-            this.multiplayerTab.Controls.Add (this.groupBox3);
+            this.multiplayerTab.Controls.Add (this.groupBoxMPMode);
+            this.multiplayerTab.Controls.Add (this.groupBoxHosting);
             this.multiplayerTab.Location = new System.Drawing.Point (4, 22);
             this.multiplayerTab.Name = "multiplayerTab";
             this.multiplayerTab.Padding = new System.Windows.Forms.Padding (3);
@@ -388,113 +396,36 @@
             this.multiplayerTab.Text = "Multiplayer";
             this.multiplayerTab.UseVisualStyleBackColor = true;
             // 
-            // checkBoxAltdeath
+            // groupBoxMPMode
             // 
-            this.checkBoxAltdeath.AutoSize = true;
-            this.checkBoxAltdeath.Location = new System.Drawing.Point (258, 38);
-            this.checkBoxAltdeath.Name = "checkBoxAltdeath";
-            this.checkBoxAltdeath.Size = new System.Drawing.Size (99, 17);
-            this.checkBoxAltdeath.TabIndex = 6;
-            this.checkBoxAltdeath.Text = "Alt Deathmatch";
-            this.checkBoxAltdeath.UseVisualStyleBackColor = true;
-            this.checkBoxAltdeath.CheckedChanged += new System.EventHandler (this.checkBoxAltdeath_CheckedChanged);
+            this.groupBoxMPMode.Controls.Add (this.checkBoxMultiplayerOn);
+            this.groupBoxMPMode.Controls.Add (this.radioButtonJoining);
+            this.groupBoxMPMode.Controls.Add (this.labelHosting);
+            this.groupBoxMPMode.Controls.Add (this.numericUpDownPlayerNum);
+            this.groupBoxMPMode.Controls.Add (this.radioButtonHosting);
+            this.groupBoxMPMode.Controls.Add (this.textBoxJoinTargetIP);
+            this.groupBoxMPMode.Location = new System.Drawing.Point (8, 6);
+            this.groupBoxMPMode.Name = "groupBoxMPMode";
+            this.groupBoxMPMode.Size = new System.Drawing.Size (134, 133);
+            this.groupBoxMPMode.TabIndex = 0;
+            this.groupBoxMPMode.TabStop = false;
+            this.groupBoxMPMode.Text = "Mode";
             // 
-            // labelDup
+            // checkBoxMultiplayerOn
             // 
-            this.labelDup.AutoSize = true;
-            this.labelDup.Location = new System.Drawing.Point (151, 94);
-            this.labelDup.Name = "labelDup";
-            this.labelDup.Size = new System.Drawing.Size (27, 13);
-            this.labelDup.TabIndex = 5;
-            this.labelDup.Text = "Dup";
-            // 
-            // numericUpDownMPDup
-            // 
-            this.numericUpDownMPDup.Location = new System.Drawing.Point (184, 92);
-            this.numericUpDownMPDup.Maximum = new decimal (new int[] {
-            9,
-            0,
-            0,
-            0});
-            this.numericUpDownMPDup.Name = "numericUpDownMPDup";
-            this.numericUpDownMPDup.Size = new System.Drawing.Size (28, 20);
-            this.numericUpDownMPDup.TabIndex = 4;
-            this.numericUpDownMPDup.ValueChanged += new System.EventHandler (this.numericUpDownMPDup_ValueChanged);
-            // 
-            // checkBoxDeathmatch
-            // 
-            this.checkBoxDeathmatch.AutoSize = true;
-            this.checkBoxDeathmatch.Location = new System.Drawing.Point (258, 15);
-            this.checkBoxDeathmatch.Name = "checkBoxDeathmatch";
-            this.checkBoxDeathmatch.Size = new System.Drawing.Size (84, 17);
-            this.checkBoxDeathmatch.TabIndex = 3;
-            this.checkBoxDeathmatch.Text = "Deathmatch";
-            this.checkBoxDeathmatch.UseVisualStyleBackColor = true;
-            this.checkBoxDeathmatch.CheckedChanged += new System.EventHandler (this.checkBoxDeathmatch_CheckedChanged);
-            // 
-            // checkBoxExtraTics
-            // 
-            this.checkBoxExtraTics.AutoSize = true;
-            this.checkBoxExtraTics.Location = new System.Drawing.Point (154, 75);
-            this.checkBoxExtraTics.Name = "checkBoxExtraTics";
-            this.checkBoxExtraTics.Size = new System.Drawing.Size (69, 17);
-            this.checkBoxExtraTics.TabIndex = 2;
-            this.checkBoxExtraTics.Text = "Extra tics";
-            this.checkBoxExtraTics.UseVisualStyleBackColor = true;
-            this.checkBoxExtraTics.CheckedChanged += new System.EventHandler (this.checkBoxExtraTics_CheckedChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add (this.radioButtonMPPS);
-            this.groupBox4.Controls.Add (this.radioButtonMPP2P);
-            this.groupBox4.Location = new System.Drawing.Point (148, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size (104, 63);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Server Type";
-            // 
-            // radioButtonMPPS
-            // 
-            this.radioButtonMPPS.AutoSize = true;
-            this.radioButtonMPPS.Location = new System.Drawing.Point (6, 42);
-            this.radioButtonMPPS.Name = "radioButtonMPPS";
-            this.radioButtonMPPS.Size = new System.Drawing.Size (93, 17);
-            this.radioButtonMPPS.TabIndex = 2;
-            this.radioButtonMPPS.Text = "Packet Server";
-            this.radioButtonMPPS.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMPP2P
-            // 
-            this.radioButtonMPP2P.AutoSize = true;
-            this.radioButtonMPP2P.Checked = true;
-            this.radioButtonMPP2P.Location = new System.Drawing.Point (6, 19);
-            this.radioButtonMPP2P.Name = "radioButtonMPP2P";
-            this.radioButtonMPP2P.Size = new System.Drawing.Size (84, 17);
-            this.radioButtonMPP2P.TabIndex = 0;
-            this.radioButtonMPP2P.TabStop = true;
-            this.radioButtonMPP2P.Text = "Peer-to-Peer";
-            this.radioButtonMPP2P.UseVisualStyleBackColor = true;
-            this.radioButtonMPP2P.CheckedChanged += new System.EventHandler (this.radioButtonMPP2P_CheckedChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add (this.radioButtonJoining);
-            this.groupBox3.Controls.Add (this.labelHosting);
-            this.groupBox3.Controls.Add (this.numericUpDownPlayerNum);
-            this.groupBox3.Controls.Add (this.radioButtonHosting);
-            this.groupBox3.Controls.Add (this.textBoxJoinTargetIP);
-            this.groupBox3.Location = new System.Drawing.Point (8, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size (134, 112);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Mode";
+            this.checkBoxMultiplayerOn.AutoSize = true;
+            this.checkBoxMultiplayerOn.Location = new System.Drawing.Point (6, 20);
+            this.checkBoxMultiplayerOn.Name = "checkBoxMultiplayerOn";
+            this.checkBoxMultiplayerOn.Size = new System.Drawing.Size (91, 17);
+            this.checkBoxMultiplayerOn.TabIndex = 7;
+            this.checkBoxMultiplayerOn.Text = "Multiplayer on";
+            this.checkBoxMultiplayerOn.UseVisualStyleBackColor = true;
+            this.checkBoxMultiplayerOn.CheckedChanged += new System.EventHandler (this.checkBoxMultiplayerOn_CheckedChanged);
             // 
             // radioButtonJoining
             // 
             this.radioButtonJoining.AutoSize = true;
-            this.radioButtonJoining.Location = new System.Drawing.Point (6, 58);
+            this.radioButtonJoining.Location = new System.Drawing.Point (6, 81);
             this.radioButtonJoining.Name = "radioButtonJoining";
             this.radioButtonJoining.Size = new System.Drawing.Size (58, 17);
             this.radioButtonJoining.TabIndex = 1;
@@ -504,7 +435,7 @@
             // labelHosting
             // 
             this.labelHosting.AutoSize = true;
-            this.labelHosting.Location = new System.Drawing.Point (22, 39);
+            this.labelHosting.Location = new System.Drawing.Point (22, 62);
             this.labelHosting.Name = "labelHosting";
             this.labelHosting.Size = new System.Drawing.Size (41, 13);
             this.labelHosting.TabIndex = 2;
@@ -512,7 +443,7 @@
             // 
             // numericUpDownPlayerNum
             // 
-            this.numericUpDownPlayerNum.Location = new System.Drawing.Point (69, 37);
+            this.numericUpDownPlayerNum.Location = new System.Drawing.Point (69, 60);
             this.numericUpDownPlayerNum.Maximum = new decimal (new int[] {
             8,
             0,
@@ -538,7 +469,7 @@
             // 
             this.radioButtonHosting.AutoSize = true;
             this.radioButtonHosting.Checked = true;
-            this.radioButtonHosting.Location = new System.Drawing.Point (6, 19);
+            this.radioButtonHosting.Location = new System.Drawing.Point (6, 42);
             this.radioButtonHosting.Name = "radioButtonHosting";
             this.radioButtonHosting.Size = new System.Drawing.Size (61, 17);
             this.radioButtonHosting.TabIndex = 0;
@@ -550,15 +481,153 @@
             // textBoxJoinTargetIP
             // 
             this.textBoxJoinTargetIP.Enabled = false;
-            this.textBoxJoinTargetIP.Location = new System.Drawing.Point (6, 81);
+            this.textBoxJoinTargetIP.Location = new System.Drawing.Point (6, 104);
             this.textBoxJoinTargetIP.Name = "textBoxJoinTargetIP";
             this.textBoxJoinTargetIP.Size = new System.Drawing.Size (118, 20);
             this.textBoxJoinTargetIP.TabIndex = 1;
             this.textBoxJoinTargetIP.TabStop = false;
             this.textBoxJoinTargetIP.TextChanged += new System.EventHandler (this.textBoxJoinTargetIP_TextChanged);
             // 
+            // groupBoxHosting
+            // 
+            this.groupBoxHosting.Controls.Add (this.checkBoxAltdeath);
+            this.groupBoxHosting.Controls.Add (this.numericUpDownPort);
+            this.groupBoxHosting.Controls.Add (this.checkBoxDeathmatch);
+            this.groupBoxHosting.Controls.Add (this.checkBoxExtraTics);
+            this.groupBoxHosting.Controls.Add (this.groupBoxServerType);
+            this.groupBoxHosting.Controls.Add (this.label2);
+            this.groupBoxHosting.Controls.Add (this.numericUpDownMPDup);
+            this.groupBoxHosting.Controls.Add (this.labelDup);
+            this.groupBoxHosting.Location = new System.Drawing.Point (148, 6);
+            this.groupBoxHosting.Name = "groupBoxHosting";
+            this.groupBoxHosting.Size = new System.Drawing.Size (222, 165);
+            this.groupBoxHosting.TabIndex = 9;
+            this.groupBoxHosting.TabStop = false;
+            this.groupBoxHosting.Text = "Hosting settings";
+            // 
+            // checkBoxAltdeath
+            // 
+            this.checkBoxAltdeath.AutoSize = true;
+            this.checkBoxAltdeath.Location = new System.Drawing.Point (116, 42);
+            this.checkBoxAltdeath.Name = "checkBoxAltdeath";
+            this.checkBoxAltdeath.Size = new System.Drawing.Size (99, 17);
+            this.checkBoxAltdeath.TabIndex = 6;
+            this.checkBoxAltdeath.Text = "Alt Deathmatch";
+            this.checkBoxAltdeath.UseVisualStyleBackColor = true;
+            this.checkBoxAltdeath.CheckedChanged += new System.EventHandler (this.checkBoxAltdeath_CheckedChanged);
+            // 
+            // numericUpDownPort
+            // 
+            this.numericUpDownPort.Location = new System.Drawing.Point (35, 63);
+            this.numericUpDownPort.Maximum = new decimal (new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownPort.Name = "numericUpDownPort";
+            this.numericUpDownPort.Size = new System.Drawing.Size (51, 20);
+            this.numericUpDownPort.TabIndex = 8;
+            this.numericUpDownPort.Value = new decimal (new int[] {
+            5029,
+            0,
+            0,
+            0});
+            // 
+            // checkBoxDeathmatch
+            // 
+            this.checkBoxDeathmatch.AutoSize = true;
+            this.checkBoxDeathmatch.Location = new System.Drawing.Point (116, 19);
+            this.checkBoxDeathmatch.Name = "checkBoxDeathmatch";
+            this.checkBoxDeathmatch.Size = new System.Drawing.Size (84, 17);
+            this.checkBoxDeathmatch.TabIndex = 3;
+            this.checkBoxDeathmatch.Text = "Deathmatch";
+            this.checkBoxDeathmatch.UseVisualStyleBackColor = true;
+            this.checkBoxDeathmatch.CheckedChanged += new System.EventHandler (this.checkBoxDeathmatch_CheckedChanged);
+            // 
+            // checkBoxExtraTics
+            // 
+            this.checkBoxExtraTics.AutoSize = true;
+            this.checkBoxExtraTics.Location = new System.Drawing.Point (6, 19);
+            this.checkBoxExtraTics.Name = "checkBoxExtraTics";
+            this.checkBoxExtraTics.Size = new System.Drawing.Size (69, 17);
+            this.checkBoxExtraTics.TabIndex = 2;
+            this.checkBoxExtraTics.Text = "Extra tics";
+            this.checkBoxExtraTics.UseVisualStyleBackColor = true;
+            this.checkBoxExtraTics.CheckedChanged += new System.EventHandler (this.checkBoxExtraTics_CheckedChanged);
+            // 
+            // groupBoxServerType
+            // 
+            this.groupBoxServerType.Controls.Add (this.radioButtonMPPS);
+            this.groupBoxServerType.Controls.Add (this.radioButtonMPP2P);
+            this.groupBoxServerType.Location = new System.Drawing.Point (6, 89);
+            this.groupBoxServerType.Name = "groupBoxServerType";
+            this.groupBoxServerType.Size = new System.Drawing.Size (104, 63);
+            this.groupBoxServerType.TabIndex = 1;
+            this.groupBoxServerType.TabStop = false;
+            this.groupBoxServerType.Text = "Server Type";
+            // 
+            // radioButtonMPPS
+            // 
+            this.radioButtonMPPS.AutoSize = true;
+            this.radioButtonMPPS.Location = new System.Drawing.Point (6, 42);
+            this.radioButtonMPPS.Name = "radioButtonMPPS";
+            this.radioButtonMPPS.Size = new System.Drawing.Size (93, 17);
+            this.radioButtonMPPS.TabIndex = 2;
+            this.radioButtonMPPS.Text = "Packet Server";
+            this.radioButtonMPPS.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMPP2P
+            // 
+            this.radioButtonMPP2P.AutoSize = true;
+            this.radioButtonMPP2P.Checked = true;
+            this.radioButtonMPP2P.Location = new System.Drawing.Point (6, 19);
+            this.radioButtonMPP2P.Name = "radioButtonMPP2P";
+            this.radioButtonMPP2P.Size = new System.Drawing.Size (84, 17);
+            this.radioButtonMPP2P.TabIndex = 0;
+            this.radioButtonMPP2P.TabStop = true;
+            this.radioButtonMPP2P.Text = "Peer-to-Peer";
+            this.radioButtonMPP2P.UseVisualStyleBackColor = true;
+            this.radioButtonMPP2P.CheckedChanged += new System.EventHandler (this.radioButtonMPP2P_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point (3, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size (26, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Port";
+            // 
+            // numericUpDownMPDup
+            // 
+            this.numericUpDownMPDup.Location = new System.Drawing.Point (35, 36);
+            this.numericUpDownMPDup.Maximum = new decimal (new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numericUpDownMPDup.Name = "numericUpDownMPDup";
+            this.numericUpDownMPDup.Size = new System.Drawing.Size (28, 20);
+            this.numericUpDownMPDup.TabIndex = 4;
+            this.numericUpDownMPDup.ValueChanged += new System.EventHandler (this.numericUpDownMPDup_ValueChanged);
+            // 
+            // labelDup
+            // 
+            this.labelDup.AutoSize = true;
+            this.labelDup.Location = new System.Drawing.Point (3, 39);
+            this.labelDup.Name = "labelDup";
+            this.labelDup.Size = new System.Drawing.Size (27, 13);
+            this.labelDup.TabIndex = 5;
+            this.labelDup.Text = "Dup";
+            // 
             // advancedTab
             // 
+            this.advancedTab.Controls.Add (this.buttonCompatOptions);
+            this.advancedTab.Controls.Add (this.buttonGameplayOptionsMenu);
+            this.advancedTab.Controls.Add (this.checkBoxLogToFile);
+            this.advancedTab.Controls.Add (this.checkBoxCheatsOn);
+            this.advancedTab.Controls.Add (this.textBoxCustomCommands);
+            this.advancedTab.Controls.Add (this.label1);
             this.advancedTab.Location = new System.Drawing.Point (4, 22);
             this.advancedTab.Name = "advancedTab";
             this.advancedTab.Padding = new System.Windows.Forms.Padding (3);
@@ -566,6 +635,64 @@
             this.advancedTab.TabIndex = 2;
             this.advancedTab.Text = "Advanced";
             this.advancedTab.UseVisualStyleBackColor = true;
+            // 
+            // buttonCompatOptions
+            // 
+            this.buttonCompatOptions.Location = new System.Drawing.Point (110, 29);
+            this.buttonCompatOptions.Name = "buttonCompatOptions";
+            this.buttonCompatOptions.Size = new System.Drawing.Size (114, 23);
+            this.buttonCompatOptions.TabIndex = 5;
+            this.buttonCompatOptions.Text = "Compatibility options";
+            this.buttonCompatOptions.UseVisualStyleBackColor = true;
+            // 
+            // buttonGameplayOptionsMenu
+            // 
+            this.buttonGameplayOptionsMenu.Location = new System.Drawing.Point (8, 29);
+            this.buttonGameplayOptionsMenu.Name = "buttonGameplayOptionsMenu";
+            this.buttonGameplayOptionsMenu.Size = new System.Drawing.Size (96, 23);
+            this.buttonGameplayOptionsMenu.TabIndex = 4;
+            this.buttonGameplayOptionsMenu.Text = "Gamplay options";
+            this.buttonGameplayOptionsMenu.UseVisualStyleBackColor = true;
+            this.buttonGameplayOptionsMenu.Click += new System.EventHandler (this.buttonGameplayOptionsMenu_Click);
+            // 
+            // checkBoxLogToFile
+            // 
+            this.checkBoxLogToFile.AutoSize = true;
+            this.checkBoxLogToFile.Location = new System.Drawing.Point (8, 6);
+            this.checkBoxLogToFile.Name = "checkBoxLogToFile";
+            this.checkBoxLogToFile.Size = new System.Drawing.Size (72, 17);
+            this.checkBoxLogToFile.TabIndex = 3;
+            this.checkBoxLogToFile.Text = "Log to file";
+            this.checkBoxLogToFile.UseVisualStyleBackColor = true;
+            this.checkBoxLogToFile.CheckedChanged += new System.EventHandler (this.checkBoxLogToFile_CheckedChanged);
+            // 
+            // checkBoxCheatsOn
+            // 
+            this.checkBoxCheatsOn.AutoSize = true;
+            this.checkBoxCheatsOn.Location = new System.Drawing.Point (110, 6);
+            this.checkBoxCheatsOn.Name = "checkBoxCheatsOn";
+            this.checkBoxCheatsOn.Size = new System.Drawing.Size (75, 17);
+            this.checkBoxCheatsOn.TabIndex = 2;
+            this.checkBoxCheatsOn.Text = "sv_cheats";
+            this.checkBoxCheatsOn.UseVisualStyleBackColor = true;
+            this.checkBoxCheatsOn.CheckedChanged += new System.EventHandler (this.checkBoxCheatsOn_CheckedChanged);
+            // 
+            // textBoxCustomCommands
+            // 
+            this.textBoxCustomCommands.Location = new System.Drawing.Point (8, 255);
+            this.textBoxCustomCommands.Name = "textBoxCustomCommands";
+            this.textBoxCustomCommands.Size = new System.Drawing.Size (536, 20);
+            this.textBoxCustomCommands.TabIndex = 1;
+            this.textBoxCustomCommands.TextChanged += new System.EventHandler (this.textBoxCustomCommands_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point (214, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size (96, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Custom commands";
             // 
             // tabPageMods
             // 
@@ -663,9 +790,9 @@
             // 
             // tabPageUpdates
             // 
-            this.tabPageUpdates.Controls.Add (this.groupBox2);
+            this.tabPageUpdates.Controls.Add (this.groupBoxUpdaterVer);
             this.tabPageUpdates.Controls.Add (this.buttonCheckUpdates);
-            this.tabPageUpdates.Controls.Add (this.groupBox1);
+            this.tabPageUpdates.Controls.Add (this.groupBoxUpdater1);
             this.tabPageUpdates.Location = new System.Drawing.Point (4, 22);
             this.tabPageUpdates.Name = "tabPageUpdates";
             this.tabPageUpdates.Padding = new System.Windows.Forms.Padding (3);
@@ -674,16 +801,16 @@
             this.tabPageUpdates.Text = "Updates";
             this.tabPageUpdates.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBoxUpdaterVer
             // 
-            this.groupBox2.Controls.Add (this.radioButtonVersionBeta);
-            this.groupBox2.Controls.Add (this.radioButtonVersionRelease);
-            this.groupBox2.Location = new System.Drawing.Point (109, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size (95, 64);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Version";
+            this.groupBoxUpdaterVer.Controls.Add (this.radioButtonVersionBeta);
+            this.groupBoxUpdaterVer.Controls.Add (this.radioButtonVersionRelease);
+            this.groupBoxUpdaterVer.Location = new System.Drawing.Point (109, 6);
+            this.groupBoxUpdaterVer.Name = "groupBoxUpdaterVer";
+            this.groupBoxUpdaterVer.Size = new System.Drawing.Size (95, 64);
+            this.groupBoxUpdaterVer.TabIndex = 3;
+            this.groupBoxUpdaterVer.TabStop = false;
+            this.groupBoxUpdaterVer.Text = "Version";
             // 
             // radioButtonVersionBeta
             // 
@@ -718,16 +845,16 @@
             this.buttonCheckUpdates.UseVisualStyleBackColor = true;
             this.buttonCheckUpdates.Click += new System.EventHandler (this.buttonCheckUpdates_Click);
             // 
-            // groupBox1
+            // groupBoxUpdater1
             // 
-            this.groupBox1.Controls.Add (this.radioButtonUpdateMod);
-            this.groupBox1.Controls.Add (this.radioButtonUpdateLauncher);
-            this.groupBox1.Location = new System.Drawing.Point (8, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size (95, 64);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "What to update";
+            this.groupBoxUpdater1.Controls.Add (this.radioButtonUpdateMod);
+            this.groupBoxUpdater1.Controls.Add (this.radioButtonUpdateLauncher);
+            this.groupBoxUpdater1.Location = new System.Drawing.Point (8, 6);
+            this.groupBoxUpdater1.Name = "groupBoxUpdater1";
+            this.groupBoxUpdater1.Size = new System.Drawing.Size (95, 64);
+            this.groupBoxUpdater1.TabIndex = 2;
+            this.groupBoxUpdater1.TabStop = false;
+            this.groupBoxUpdater1.Text = "What to update";
             // 
             // radioButtonUpdateMod
             // 
@@ -780,8 +907,10 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size (39, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size (343, 17);
+            this.toolStripStatusLabel.Spring = true;
             this.toolStripStatusLabel.Text = "Ready";
+            this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripProgressBar
             // 
@@ -811,8 +940,10 @@
             this.Controls.Add (this.statusStrip1);
             this.Controls.Add (this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "formMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Final Duel Launcher";
             this.tabControl1.ResumeLayout (false);
             this.basicTab.ResumeLayout (false);
@@ -821,21 +952,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMap)).EndInit ();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClass)).EndInit ();
             this.multiplayerTab.ResumeLayout (false);
-            this.multiplayerTab.PerformLayout ();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).EndInit ();
-            this.groupBox4.ResumeLayout (false);
-            this.groupBox4.PerformLayout ();
-            this.groupBox3.ResumeLayout (false);
-            this.groupBox3.PerformLayout ();
+            this.groupBoxMPMode.ResumeLayout (false);
+            this.groupBoxMPMode.PerformLayout ();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlayerNum)).EndInit ();
+            this.groupBoxHosting.ResumeLayout (false);
+            this.groupBoxHosting.PerformLayout ();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit ();
+            this.groupBoxServerType.ResumeLayout (false);
+            this.groupBoxServerType.PerformLayout ();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMPDup)).EndInit ();
+            this.advancedTab.ResumeLayout (false);
+            this.advancedTab.PerformLayout ();
             this.tabPageMods.ResumeLayout (false);
             this.tabPageMods.PerformLayout ();
             this.tabPageUpdates.ResumeLayout (false);
             this.tabPageUpdates.PerformLayout ();
-            this.groupBox2.ResumeLayout (false);
-            this.groupBox2.PerformLayout ();
-            this.groupBox1.ResumeLayout (false);
-            this.groupBox1.PerformLayout ();
+            this.groupBoxUpdaterVer.ResumeLayout (false);
+            this.groupBoxUpdaterVer.PerformLayout ();
+            this.groupBoxUpdater1.ResumeLayout (false);
+            this.groupBoxUpdater1.PerformLayout ();
             this.statusStrip1.ResumeLayout (false);
             this.statusStrip1.PerformLayout ();
             this.ResumeLayout (false);
@@ -877,9 +1012,9 @@
         private System.Windows.Forms.TabPage tabPageUpdates;
         private System.Windows.Forms.Button buttonCheckUpdates;
         private System.Windows.Forms.RadioButton radioButtonUpdateLauncher;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxUpdater1;
         private System.Windows.Forms.RadioButton radioButtonUpdateMod;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxUpdaterVer;
         private System.Windows.Forms.RadioButton radioButtonVersionBeta;
         private System.Windows.Forms.RadioButton radioButtonVersionRelease;
         private System.Windows.Forms.Label labelModFile;
@@ -896,13 +1031,13 @@
         private System.Windows.Forms.Button buttonModFilelistMoveUp;
         private System.Windows.Forms.Button buttonModFilelistMoveDown;
         private System.Windows.Forms.ListBox listBoxModFilelist;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxMPMode;
         private System.Windows.Forms.RadioButton radioButtonJoining;
         private System.Windows.Forms.RadioButton radioButtonHosting;
         private System.Windows.Forms.Label labelHosting;
         private System.Windows.Forms.NumericUpDown numericUpDownPlayerNum;
         private System.Windows.Forms.TextBox textBoxJoinTargetIP;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBoxServerType;
         private System.Windows.Forms.RadioButton radioButtonMPP2P;
         private System.Windows.Forms.RadioButton radioButtonMPPS;
         private System.Windows.Forms.CheckBox checkBoxExtraTics;
@@ -910,6 +1045,16 @@
         private System.Windows.Forms.Label labelDup;
         private System.Windows.Forms.NumericUpDown numericUpDownMPDup;
         private System.Windows.Forms.CheckBox checkBoxAltdeath;
+        private System.Windows.Forms.TextBox textBoxCustomCommands;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxCheatsOn;
+        private System.Windows.Forms.CheckBox checkBoxLogToFile;
+        private System.Windows.Forms.CheckBox checkBoxMultiplayerOn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDownPort;
+        private System.Windows.Forms.GroupBox groupBoxHosting;
+        private System.Windows.Forms.Button buttonCompatOptions;
+        private System.Windows.Forms.Button buttonGameplayOptionsMenu;
     }
 }
 
