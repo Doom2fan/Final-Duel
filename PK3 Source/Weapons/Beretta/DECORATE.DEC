@@ -38,52 +38,54 @@ Actor Beretta         : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("BerettaMode2", 1, "Fire.Burst")
 		TNT1 A 0 A_JumpIfInventory ("BerettaUpgrade2", 1, "Fire.Upgrade")
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom (-1.0, 1.0), 1, 9, 1, 0, frandom (-2.0, 2.0))
-		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 14, -2)
+		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom (-1.0, 1.0), 1, 0, -1, 0, frandom (-2.0, 2.0))
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 0, -3)
 		TNT1 A 0 A_PlaySound ("Beretta/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1)
-		BRTA BBB 1 Bright A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
-		BRTA CDEAA 1
+		BRTA BB 1 Bright A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
+		BRTA EDCAA 1
 		Goto Ready2
 	Fire.Upgrade:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom (-1.0,1.0), 1, 9, 1, 0, frandom (-2.0, 2.0))
-		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 14, -2)
+		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom (-1.0,1.0), 1, 0, -1, 0, frandom (-2.0, 2.0))
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 0, -3)
 		TNT1 A 0 A_PlaySound ("Beretta/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1)
-		BRTA BBB 1 Bright A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
-		BRTA DEA 1
+		BRTA BB 1 Bright A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch (pitch - 0.16666666666666666666666666666667, SPF_INTERPOLATE)
+		BRTA EDA 1
 		Goto Ready2
 	Fire.Burst:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 9, 1, 0, frandom (-3.5, 3.5))
-		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 14, -2)
+		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 0, -1, 0, frandom (-3.5, 3.5))
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 0, -3)
 		TNT1 A 0 A_PlaySound ("Beretta/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.18, 0, Sin(Pitch) * 0.18, 1)
 		BRTA BB 1 Bright A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
 		TNT1 A 0 A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
-		BRTA CDEA 1
+		BRTA EDA 1
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 9, 1, 0, frandom (-3.5, 3.5))
-		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 14, -2)
+		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 0, -1, 0, frandom (-3.5, 3.5))
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 0, -3)
 		TNT1 A 0 A_PlaySound ("Beretta/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.18, 0, Sin(Pitch) * 0.18, 1)
 		BRTA B 1 Bright A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
 		TNT1 A 0 A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
-		BRTA CDEA 1
+		BRTA EDA 1
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 9, 1, 0, frandom (-3.5, 3.5))
-		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 14, -2)
+		BRTA A 0 A_FireCustomMissile ("PistolTracer", frandom(-3.0, 3.0), 1, 0, -1, 0, frandom (-3.5, 3.5))
+		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn", 5, 0, 0, -3)
 		TNT1 A 0 A_PlaySound ("Beretta/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.18, 0, Sin(Pitch) * 0.18, 1)
 		BRTA B 1 Bright A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
 		TNT1 A 0 A_SetPitch (pitch - 0.35, SPF_INTERPOLATE)
-		BRTA CDEAA 1
+		BRTA EDAA 1
 		Goto Ready2
 	Altfire:
 		TNT1 A 0

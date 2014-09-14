@@ -1,3 +1,21 @@
+Actor SpawnedMagnum : BaseSpawnedWeapon 30083 {
+	Inventory.PickupMessage "$GOTMAGNUM"
+	States {
+	Spawn:
+		REVP A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("Magnum", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoMagnum", 999999999)
+		TNT1 A 0 A_GiveInventory ("Magnum", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoMagnum", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("MagnumClip", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("MagnumClip", 1)
+		Stop
+	}
+}
 Actor MagnumCasingSpawner {
 	Speed 20
 	PROJECTILE
@@ -30,7 +48,7 @@ Actor DroppedMagnum : DroppedWeaponBase {
 	}
 }
 Actor MagnumUpgrade : Boolean { }
-Actor Magnum : FDWeapon 30083 {
+Actor Magnum : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title .357 Magnum
 	Tag "$TAGMAGNUM"

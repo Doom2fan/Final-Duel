@@ -16,7 +16,6 @@ Actor MarineClass : BasePlayerClass
 	Player.StartItem Rifle
 	Player.StartItem Enforcer
 	Player.StartItem MeleeAttack
-	Player.StartItem Clip2, 6
 	Player.StartItem PsiEnergy, 100
 	Player.StartItem FDNightvision
 	Player.StartItem NVBattery, 100
@@ -24,7 +23,7 @@ Actor MarineClass : BasePlayerClass
 	Player.StartItem FDStimpack, 5
 	Player.StartItem NeroItem
 	// Weapon Slots
-  	Player.WeaponSlot 1, MeleeAttack, Sword, FDChainsaw
+  	Player.WeaponSlot 1, MeleeAttack, Knife, Sword, FDChainsaw
   	Player.WeaponSlot 2, Enforcer, Magnum, Rifle
   	Player.WeaponSlot 3, FDShotgun, PumpActionShotgun, DoomSSG, QuadShotgun
   	Player.WeaponSlot 4, AK47, FDMinigun
@@ -32,5 +31,5 @@ Actor MarineClass : BasePlayerClass
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
   	Player.WeaponSlot 7, BioForceGun
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
-	Player.WeaponSlot 9, MancubusArm, Magic
+	Player.WeaponSlot 9, Magic
 }

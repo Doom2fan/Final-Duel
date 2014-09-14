@@ -1,4 +1,23 @@
 //******** Sonic Railgun ********
+Actor SpawnedSonicRailgun : BaseSpawnedWeapon 30008 {
+	Inventory.PickupMessage "$GOTSONICRAIL"
+	States {
+	Spawn:
+		RGUN X -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("SonicRailgun", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoSRail", 999999999)
+		TNT1 A 0 A_GiveInventory ("SonicRailgun", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoSRail", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("Cell2", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("Cell2", 1)
+		Stop
+	}
+}
+
 Actor SRailFlare
 {
 	+ForceXYBillBoard
@@ -77,7 +96,7 @@ Actor DroppedSonicRailgun : DroppedWeaponBase
 }
 Actor RGZoomed : Boolean { }
 Actor RGMode2  : Boolean { }
-Actor SonicRailgun : FDWeapon 30008
+Actor SonicRailgun : FDWeapon
 {
 	//$Category Final Duel-Weapons
 	//$Title Mjolnir MK IV Sonic Railgun

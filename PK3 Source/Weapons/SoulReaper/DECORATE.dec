@@ -1,4 +1,23 @@
 #include "Weapons/SoulReaper/SRProjectile.DEC"
+Actor SpawnedSoulReaper : BaseSpawnedWeapon 9007 {
+	Inventory.PickupMessage "$GOTLAUNCHER"
+	States {
+	Spawn:
+		SREA Z -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("SoulReaper", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoSR", 999999999)
+		TNT1 A 0 A_GiveInventory ("SoulReaper", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoSR", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("HellClip", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("HellClip", 1)
+		Stop
+	}
+}
+
 Actor SRMode2 : Boolean { }
 Actor SRMode3 : Boolean { }
 Actor SRHeat : Counter
@@ -17,7 +36,7 @@ Actor DroppedSoulReaper : DroppedWeaponBase
 		Stop
 	}
 }
-Actor SoulReaper : FDWeapon 9007
+Actor SoulReaper : FDWeapon
 {
 	//$Category Final Duel-Weapons
 	//$Title Soul Reaper

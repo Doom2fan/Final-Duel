@@ -71,3 +71,17 @@ Actor TauntAlert {
 		Stop
 	}
 }
+
+Actor BaseSpawnedWeapon : CustomInventory {
+	Inventory.Amount 0
+	Inventory.MaxAmount 1
+	+Inventory.AutoActivate +Inventory.IgnoreSkill
+	States {
+	Failed:
+		TNT1 A 0
+		Fail
+	Use:
+		TNT1 A 0
+		Stop
+	}
+}

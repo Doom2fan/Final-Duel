@@ -14,7 +14,7 @@ Actor Boolean : Inventory {
 
 Actor Counter : Inventory {
     Inventory.MaxAmount 0x7FFFFFFF
-    +UNDROPPABLE -InvBar
+    +Undroppable -InvBar
 }
 
 Actor Trigger : CustomInventory {
@@ -59,6 +59,7 @@ Actor Flare_General {
 	RenderStyle Add
 	+NoInteraction +NoGravity //+ForceXYBillboard
 }
+
 Actor GibsSpawner { +NoClip +NoGravity }
 
 Actor Gibs_General : DebrisGeneral {
@@ -72,8 +73,7 @@ Actor Gibs_General : DebrisGeneral {
 	Translation "0:255=0:255"
 	+DoomBounce +Shootable +CanBounceWater +ExplodeOnWater
 	+Dropped -NoBlockmap -NoGravity
-	States
-	{
+	States {
 	Crush:
 		CRS1 A -1
 		Stop
@@ -88,7 +88,17 @@ Actor ParticleFire_General : DebrisGeneral {
 	+NoClip +NoInteraction
 }
 
+Actor FD_DeadBodyBlood : Blood {
+	States {
+	Spawn:
+		TNT1 A 0 NoDelay A_ChangeVelocity (0.0, 0.0, 0.0, CVF_REPLACE)
+		BLUD CBA 8
+		Stop
+	}
+}
 Actor FD_DeadBodyBase {
-	Health 35
-	+Corpse // Set 'Shootable' if you want it to be destroyable
+	Health 50
+	Mass 0x7FFFFFFF
+	BloodType FD_DeadBodyBlood, FD_DeadBodyBlood
+	+Corpse +NotAutoAimed // Set 'Shootable' if you want it to be destroyable
 }

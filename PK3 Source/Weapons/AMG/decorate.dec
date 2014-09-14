@@ -1,3 +1,22 @@
+// Spawned ActionMachineGun
+Actor SpawnedActionMachineGun : BaseSpawnedWeapon 30007 {
+	Inventory.PickupMessage "$GOTACTIONMACHINEGUN"
+	States {
+	Spawn:
+		AGUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("ActionMachineGun", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoActionMachinegun", 999999999)
+		TNT1 A 0 A_GiveInventory ("ActionMachineGun", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoActionMachinegun", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("RifleMag", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("RifleMag", 1)
+		Stop
+	}
+}
 Actor DroppedAMG : DroppedWeaponBase {
 	States {
 	Spawn:
@@ -8,7 +27,7 @@ Actor DroppedAMG : DroppedWeaponBase {
 		Stop
 	}
 }
-Actor ActionMachineGun : FDWeapon 30007 {
+Actor ActionMachineGun : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title M9A15 Carbine
 	//$Sprite AGUNA0

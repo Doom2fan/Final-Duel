@@ -2,6 +2,25 @@
 // DECORATE: Alex_Mercer, parts from zandronum.pk3
 // Sprites: zrrion the insect, ID Software, Midway, Blox, Freedoom, Z86, Alex_Mercer, Xim, torridGristle
 // Sounds: Beautiful Doom
+Actor SpawnedRocketLauncher : BaseSpawnedWeapon 30057 {
+	Inventory.PickupMessage "$GOTLAUNCHER"
+	States {
+	Spawn:
+		LAUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("FDRocketLauncher", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoRocketLauncher", 999999999)
+		TNT1 A 0 A_GiveInventory ("FDRocketLauncher", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoRocketLauncher", 4)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("RocketAmmo2", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("RocketAmmo2", 4)
+		Stop
+	}
+}
+
 Actor DroppedRocketLauncher : DroppedWeaponBase {
 	States {
 	Spawn:
@@ -20,7 +39,7 @@ Actor AmmoRocketLauncher : AMMO {
 }
 
 Actor RLUpgrade : Boolean { }
-Actor FDRocketLauncher : FDWeapon 30057 {
+Actor FDRocketLauncher : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title Rocket Launcher
 	//$Sprite LAUNA0

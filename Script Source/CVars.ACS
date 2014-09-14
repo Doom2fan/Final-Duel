@@ -10,19 +10,6 @@ script "CVars" Enter {
 	}
 }
 
-// Randomizer CVar state
-script "RandomizerCVar" (void) {
-	int result = GetCVar ("FD_DontRandomizeStuff");
-	if (result == 1) {
-		SetResultValue (0);
-		terminate;
-	}
-	if (result == 0) {
-		SetResultValue (1);
-		terminate;
-	}
-}
-
 // Blood For The Blood God
 script "FD_BloodForTheBloodGod" (void) {
 	int result = GetCVar ("FD_BloodForTheBloodGod");

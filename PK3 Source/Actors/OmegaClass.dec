@@ -19,7 +19,6 @@ Actor OmegaClass : BasePlayerClass {
 	Player.StartItem Rifle
 	Player.StartItem Beretta
 	Player.StartItem MeleeAttack
-	Player.StartItem Clip2, 5
 	Player.StartItem PsiEnergy, 100
 	Player.StartItem FDNightvision, 1
 	Player.StartItem NVBattery, 100
@@ -28,7 +27,7 @@ Actor OmegaClass : BasePlayerClass {
 	Player.StartItem FDMedikit
 	Player.StartItem ChronosItem
 	// Weapon Slots
-  	Player.WeaponSlot 1, MeleeAttack, Sword, FDChainsaw
+  	Player.WeaponSlot 1, MeleeAttack, Knife, Sword, FDChainsaw
   	Player.WeaponSlot 2, Beretta, Magnum, Rifle
   	Player.WeaponSlot 3, FDShotgun, PumpActionShotgun, DoomSSG, QuadShotgun
   	Player.WeaponSlot 4, ActionMachineGun, FDMinigun
@@ -36,5 +35,5 @@ Actor OmegaClass : BasePlayerClass {
   	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
   	Player.WeaponSlot 7, BioForceGun
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
-	Player.WeaponSlot 9, MancubusArm, Magic
+	Player.WeaponSlot 9, Magic
 }

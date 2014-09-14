@@ -1,122 +1,45 @@
 // Chainsaw Spawner
-Actor ChainsawSpawner Replaces Chainsaw {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (128, "Sword")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("FDChainsaw", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	Sword:
-		TNT1 A 0 A_SpawnItemEx ("Sword", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor ChainsawSpawner : RandomSpawner replaces Chainsaw {
+	DropItem "Knife" 255 2
+	DropItem "Sword" 255 1
 }
+
 // Shotgun Spawner
-Actor ShotgunSpawner Replaces Shotgun {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (128,"PAS", "Magnum", "Crossbow")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("ShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	PAS:
-		TNT1 A 0 A_SpawnItemEx ("PumpActionShotgun", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 AA 0 A_SpawnItemEx ("Shell2", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	Magnum:
-		TNT1 A 0 A_SpawnItemEx ("Magnum", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 AA 0 A_SpawnItemEx ("MagnumClip", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	Crossbow:
-		TNT1 A 0 A_SpawnItemEx ("FDCrossbow", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("CrossbowBoltsQuiver", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor ShotgunSpawner : RandomSpawner replaces Shotgun {
+	DropItem "SpawnedShotgun" 255 6
+	DropItem "SpawnedMagnum" 255 5
+	DropItem "SpawnedPAShotgun" 255 4
+	DropItem "FDCrossbow" 255 3
 }
+
 // Super Shotgun Spawner
-Actor SuperShotgunSpawner Replaces SuperShotgun {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (128, "QuadShotgun")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("SuperShotgunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	QuadShotgun:
-		TNT1 A 0 A_SpawnItemEx ("QuadShotgun", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 AA 0 A_SpawnItemEx ("Shell2", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor SuperShotgunSpawner : RandomSpawner replaces SuperShotgun {
+	DropItem "SpawnedSSG" 255 2
+	DropItem "SpawnedQuadShotgun" 255 1
 }
+
 // Chaingun Spawner
-Actor ChaingunSpawner Replaces Chaingun {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (192, "Minigun")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("ChaingunReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	Minigun:
-		TNT1 A 0 A_SpawnItemEx ("FDMinigun", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("MinigunAmmo", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor ChaingunSpawner : RandomSpawner replaces Chaingun {
+	DropItem "ChaingunReplacer" 255 
+	DropItem "SpawnedMinigun" 255 1
 }
+
 // Rocket Launcher Spawner
-Actor RocketLauncherSpawner Replaces RocketLauncher {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (64, "SoulReaperDrop")
-		TNT1 A 0 A_Jump (128, "Grenade")
-		TNT1 A 0 A_Jump (192, "Annihilator")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("RocketLauncherReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	Grenade:
-		TNT1 A 0 A_SpawnItemEx ("FDGrenadeLauncher", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("GrenadeAmmo", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	SoulReaperDrop:
-		TNT1 A 0 A_SpawnItemEx ("SoulReaper", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("HellClip", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	Annihilator:
-		TNT1 A 0 A_SpawnItemEx ("Annihilator", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("Cell2", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor RocketLauncherSpawner : RandomSpawner replaces RocketLauncher {
+	DropItem "SpawnedRocketLauncher" 255 6
+	DropItem "SpawnedGrenadeLauncher" 255 5
+	DropItem "SpawnedAnnihilator" 255 4
+	DropItem "SpawnedSoulReaper" 255 3
 }
+
 // Plasma Gun Replacer
-Actor PlasmaRifleSpawner Replaces PlasmaRifle {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (128, "SonicRailgun")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("PlasmaRifleReplacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	SonicRailgun:
-		TNT1 A 0 A_SpawnItemEx ("SonicRailgun", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("Cell2", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor PlasmaRifleSpawner : RandomSpawner replaces PlasmaRifle {
+	DropItem "SpawnedPlasmaRifle" 255 3
+	DropItem "SpawnedSonicRailgun" 255 1
 }
+
 // BFG 9000 Replacer
-Actor BFG9000Spawner Replaces BFG9000 {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf (CallACS ("RandomizerCVar") == 0, "Normal")
-		TNT1 A 0 A_Jump (96, "SniperRifle")
-	Normal:
-		TNT1 A 0 A_SpawnItemEx ("BFG9000Replacer", 0, 0, 0, 0.0, 0.0, 0.0, 0, SXF_NoCheckPosition)
-		Stop
-	SniperRifle:
-		TNT1 A 0 A_SpawnItemEx ("SniperRifle", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		TNT1 A 0 A_SpawnItemEx ("SniperRifleClip", 0, 0, 0, frandom (-2.0, 2.0), frandom (-2.0, 2.0), 1.0, random (0, 359), SXF_NoCheckPosition)
-		Stop
-	}
+Actor BFG9000Spawner : RandomSpawner replaces BFG9000 {
+	DropItem "SpawnedBFG9000" 255 3
+	DropItem "SpawnedSniperRifle" 255 1
 }

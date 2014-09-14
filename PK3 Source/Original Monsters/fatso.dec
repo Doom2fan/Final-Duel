@@ -6,10 +6,8 @@
 Actor MancubusArm {
 	States {
 	Spawn:
-		FARM A 500
-	Fade:
-		"----" A 3 A_FadeOut (0.03) 
-		Wait
+		FARM A -1
+		Stop
 	}
 }
 

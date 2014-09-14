@@ -1,15 +1,15 @@
 // Select/Deselect
 Sprite BRTSA0, 320, 200
 {
-	Patch BRTAA0, 237, 98
+	Patch BRTAA0, 146, 112
 }
 
 Sprite BRTSB0, 320, 200
 {
-	Patch BRTAA0, 261, 122
+	Patch BRTAA0, 162, 128
 }
 
-Sprite BRTSC0, 339, 200
+Sprite BRTSC0, 320, 200
 {
-	Patch BRTAA0, 285, 146
+	Patch BRTAA0, 178, 144
 }

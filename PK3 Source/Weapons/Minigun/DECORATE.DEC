@@ -1,15 +1,31 @@
+Actor SpawnedMinigun : BaseSpawnedWeapon 30068 {
+	Inventory.PickupMessage "$GOTMINIGUN"
+	States {
+	Spawn:
+		MING Z -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("FDMinigun", 0, "GrabAmmo")
+		TNT1 A 0 A_TakeInventory ("AmmoMinigun", 999999999)
+		TNT1 A 0 A_GiveInventory ("FDMinigun", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoMinigun", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("MinigunAmmo", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("MinigunAmmo", 1)
+		Stop
+	}
+}
+
 Actor MinigunUpgrade : Boolean { }
 Actor MinigunSpin : Boolean { }
-Actor AmmoMinigun : AMMO
-{
+Actor AmmoMinigun : Ammo {
 	Inventory.MaxAmount 120
 	Ammo.BackpackMaxAmount 120
 	+IGNORESKILL
 }
-Actor DroppedMinigun : DroppedWeaponBase
-{
-	States
-	{
+Actor DroppedMinigun : DroppedWeaponBase {
+	States {
 	Spawn:
 		MING Z 1
 		Loop
@@ -18,8 +34,7 @@ Actor DroppedMinigun : DroppedWeaponBase
 		Stop
 	}
 }
-Actor FDMinigun : FDWeapon 30068
-{
+Actor FDMinigun : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Sprite MINGZ0
 	//$Title "Parias" Minigun
@@ -32,8 +47,7 @@ Actor FDMinigun : FDWeapon 30068
 	Inventory.PickupMessage "$GOTMINIGUN"
 	Obituary "$OBMINIGUN"
 	+Weapon.NoAlert
-	States
-	{
+	States {
 	Ready:
 		TNT1 A 0 A_PlaySound("Minigun/Up", CHAN_WEAPON)
 		MINS CBA 1

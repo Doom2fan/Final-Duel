@@ -58,6 +58,7 @@ Actor Knife : FDWeapon 30170 {
 		Stop
 	}
 }
+
 Actor KnifePuff {
 	+NoGravity +ForceXYBillboard +NoExtremeDeath
 	RenderStyle Add

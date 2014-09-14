@@ -40,7 +40,7 @@
 	STSTR_CLEV             		= "Changing Level...\n";
 
 // STARTUP*
-	STARTUP1					= "\"Tell me if you find any errors, bugs, glitches or crashes.\" --Alex_Mercer";
+	STARTUP1					= "Tell phantombeta on the forums or on the IRC channel if you find any errors, bugs, glitches or crashes.";
 
 // Levels
 
@@ -157,7 +157,7 @@
 // PvP
 	// Slot 1
 		OBMELEE					= "%o was beaten to death by %k";
-		GOTKNIFE				= "%o was stabbed by %k.";
+		OBKNIFE					= "%o was stabbed by %k.";
 		OBSWORD					= "%o was cut in half by %k's Sword";
 		OBSAW            		= "%o was mowed over by %k";
 	
