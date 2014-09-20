@@ -1,0 +1,1 @@
+-Change the AK-47 and Sniper Rifle's sprites to centered ones
