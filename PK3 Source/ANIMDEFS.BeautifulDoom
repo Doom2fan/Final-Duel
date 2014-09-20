@@ -1,554 +1,548 @@
-//*******************\\
-//*******************\\
-//|||||| FALLS ||||||||
-//*******************//
-//*******************//
+Warp2 Texture WFALL01
+Warp2 Texture WFALL02
+Warp2 Texture WFALL03
+Warp2 Texture WFALL04
+Warp2 Texture WFALL05
+Warp2 Texture WFALL06
+Warp2 Texture WFALL07
+Warp2 Texture WFALL08
+Warp2 Texture WFALL09
+Warp2 Texture WFALL10
+Warp2 Texture WFALL11
+Warp2 Texture WFALL12
+Warp2 Texture WFALL13
+Warp2 Texture WFALL14
+Warp2 Texture WFALL15
+Warp2 Texture WFALL16
+Warp2 Texture WFALL17
+Warp2 Texture WFALL18
+Warp2 Texture WFALL19
+Warp2 Texture WFALL20
+Warp2 Texture WFALL21
+Warp2 Texture WFALL22
+Warp2 Texture WFALL23
+Warp2 Texture WFALL24
+Warp2 Texture WFALL25
+Warp2 Texture WFALL26
+Warp2 Texture WFALL27
+Warp2 Texture WFALL28
+Warp2 Texture WFALL29
+Warp2 Texture WFALL30
+Warp2 Texture WFALL31
+Warp2 Texture WFALL32
 
-warp2 texture WFALL01
-warp2 texture WFALL02
-warp2 texture WFALL03
-warp2 texture WFALL04
-warp2 texture WFALL05
-warp2 texture WFALL06
-warp2 texture WFALL07
-warp2 texture WFALL08
-warp2 texture WFALL09
-warp2 texture WFALL10
-warp2 texture WFALL11
-warp2 texture WFALL12
-warp2 texture WFALL13
-warp2 texture WFALL14
-warp2 texture WFALL15
-warp2 texture WFALL16
-warp2 texture WFALL17
-warp2 texture WFALL18
-warp2 texture WFALL19
-warp2 texture WFALL20
-warp2 texture WFALL21
-warp2 texture WFALL22
-warp2 texture WFALL23
-warp2 texture WFALL24
-warp2 texture WFALL25
-warp2 texture WFALL26
-warp2 texture WFALL27
-warp2 texture WFALL28
-warp2 texture WFALL29
-warp2 texture WFALL30
-warp2 texture WFALL31
-warp2 texture WFALL32
+Warp2 Texture SFALL01
+Warp2 Texture SFALL02
+Warp2 Texture SFALL03
+Warp2 Texture SFALL04
+Warp2 Texture SFALL05
+Warp2 Texture SFALL06
+Warp2 Texture SFALL07
+Warp2 Texture SFALL08
+Warp2 Texture SFALL09
+Warp2 Texture SFALL10
+Warp2 Texture SFALL11
+Warp2 Texture SFALL12
+Warp2 Texture SFALL13
+Warp2 Texture SFALL14
+Warp2 Texture SFALL15
+Warp2 Texture SFALL16
+Warp2 Texture SFALL17
+Warp2 Texture SFALL18
+Warp2 Texture SFALL19
+Warp2 Texture SFALL20
+Warp2 Texture SFALL21
+Warp2 Texture SFALL22
+Warp2 Texture SFALL23
+Warp2 Texture SFALL24
+Warp2 Texture SFALL25
+Warp2 Texture SFALL26
+Warp2 Texture SFALL27
+Warp2 Texture SFALL28
+Warp2 Texture SFALL29
+Warp2 Texture SFALL30
+Warp2 Texture SFALL31
+Warp2 Texture SFALL32
 
-warp2 texture SFALL01
-warp2 texture SFALL02
-warp2 texture SFALL03
-warp2 texture SFALL04
-warp2 texture SFALL05
-warp2 texture SFALL06
-warp2 texture SFALL07
-warp2 texture SFALL08
-warp2 texture SFALL09
-warp2 texture SFALL10
-warp2 texture SFALL11
-warp2 texture SFALL12
-warp2 texture SFALL13
-warp2 texture SFALL14
-warp2 texture SFALL15
-warp2 texture SFALL16
-warp2 texture SFALL17
-warp2 texture SFALL18
-warp2 texture SFALL19
-warp2 texture SFALL20
-warp2 texture SFALL21
-warp2 texture SFALL22
-warp2 texture SFALL23
-warp2 texture SFALL24
-warp2 texture SFALL25
-warp2 texture SFALL26
-warp2 texture SFALL27
-warp2 texture SFALL28
-warp2 texture SFALL29
-warp2 texture SFALL30
-warp2 texture SFALL31
-warp2 texture SFALL32
-
-warp2 texture BFALL01
-warp2 texture BFALL02
-warp2 texture BFALL03
-warp2 texture BFALL04
-warp2 texture BFALL05
-warp2 texture BFALL06
-warp2 texture BFALL07
-warp2 texture BFALL08
-warp2 texture BFALL09
-warp2 texture BFALL10
-warp2 texture BFALL11
-warp2 texture BFALL12
-warp2 texture BFALL13
-warp2 texture BFALL14
-warp2 texture BFALL15
-warp2 texture BFALL16
-warp2 texture BFALL17
-warp2 texture BFALL18
-warp2 texture BFALL19
-warp2 texture BFALL20
-warp2 texture BFALL21
-warp2 texture BFALL22
-warp2 texture BFALL23
-warp2 texture BFALL24
-warp2 texture BFALL25
-warp2 texture BFALL26
-warp2 texture BFALL27
-warp2 texture BFALL28
-warp2 texture BFALL29
-warp2 texture BFALL30
-warp2 texture BFALL31
-warp2 texture BFALL32
+Warp2 Texture BFALL01
+Warp2 Texture BFALL02
+Warp2 Texture BFALL03
+Warp2 Texture BFALL04
+Warp2 Texture BFALL05
+Warp2 Texture BFALL06
+Warp2 Texture BFALL07
+Warp2 Texture BFALL08
+Warp2 Texture BFALL09
+Warp2 Texture BFALL10
+Warp2 Texture BFALL11
+Warp2 Texture BFALL12
+Warp2 Texture BFALL13
+Warp2 Texture BFALL14
+Warp2 Texture BFALL15
+Warp2 Texture BFALL16
+Warp2 Texture BFALL17
+Warp2 Texture BFALL18
+Warp2 Texture BFALL19
+Warp2 Texture BFALL20
+Warp2 Texture BFALL21
+Warp2 Texture BFALL22
+Warp2 Texture BFALL23
+Warp2 Texture BFALL24
+Warp2 Texture BFALL25
+Warp2 Texture BFALL26
+Warp2 Texture BFALL27
+Warp2 Texture BFALL28
+Warp2 Texture BFALL29
+Warp2 Texture BFALL30
+Warp2 Texture BFALL31
+Warp2 Texture BFALL32
 
 
 
-texture optional BFALL1
-pic BFALL01	tics 1
-pic BFALL02	tics 1
-pic BFALL03	tics 1
-pic BFALL04	tics 1
-pic BFALL05	tics 1
-pic BFALL06	tics 1
-pic BFALL07	tics 1
-pic BFALL08	tics 1
-pic BFALL09	tics 1
-pic BFALL10	tics 1
-pic BFALL11	tics 1
-pic BFALL12	tics 1
-pic BFALL13	tics 1
-pic BFALL14	tics 1
-pic BFALL15	tics 1
-pic BFALL16	tics 1
-pic BFALL17	tics 1
-pic BFALL18	tics 1
-pic BFALL19	tics 1
-pic BFALL20	tics 1
-pic BFALL21	tics 1
-pic BFALL22	tics 1
-pic BFALL23	tics 1
-pic BFALL24	tics 1
-pic BFALL25	tics 1
-pic BFALL26	tics 1
-pic BFALL27	tics 1
-pic BFALL28	tics 1
-pic BFALL29	tics 1
-pic BFALL30	tics 1
-pic BFALL31	tics 1
-pic BFALL32	tics 1
+Texture Optional BFALL1
+Pic BFALL01	Tics 1
+Pic BFALL02	Tics 1
+Pic BFALL03	Tics 1
+Pic BFALL04	Tics 1
+Pic BFALL05	Tics 1
+Pic BFALL06	Tics 1
+Pic BFALL07	Tics 1
+Pic BFALL08	Tics 1
+Pic BFALL09	Tics 1
+Pic BFALL10	Tics 1
+Pic BFALL11	Tics 1
+Pic BFALL12	Tics 1
+Pic BFALL13	Tics 1
+Pic BFALL14	Tics 1
+Pic BFALL15	Tics 1
+Pic BFALL16	Tics 1
+Pic BFALL17	Tics 1
+Pic BFALL18	Tics 1
+Pic BFALL19	Tics 1
+Pic BFALL20	Tics 1
+Pic BFALL21	Tics 1
+Pic BFALL22	Tics 1
+Pic BFALL23	Tics 1
+Pic BFALL24	Tics 1
+Pic BFALL25	Tics 1
+Pic BFALL26	Tics 1
+Pic BFALL27	Tics 1
+Pic BFALL28	Tics 1
+Pic BFALL29	Tics 1
+Pic BFALL30	Tics 1
+Pic BFALL31	Tics 1
+Pic BFALL32	Tics 1
 
-texture optional BFALL2
-pic BFALL01	tics 1
-pic BFALL02	tics 1
-pic BFALL03	tics 1
-pic BFALL04	tics 1
-pic BFALL05	tics 1
-pic BFALL06	tics 1
-pic BFALL07	tics 1
-pic BFALL08	tics 1
-pic BFALL09	tics 1
-pic BFALL10	tics 1
-pic BFALL11	tics 1
-pic BFALL12	tics 1
-pic BFALL13	tics 1
-pic BFALL14	tics 1
-pic BFALL15	tics 1
-pic BFALL16	tics 1
-pic BFALL17	tics 1
-pic BFALL18	tics 1
-pic BFALL19	tics 1
-pic BFALL20	tics 1
-pic BFALL21	tics 1
-pic BFALL22	tics 1
-pic BFALL23	tics 1
-pic BFALL24	tics 1
-pic BFALL25	tics 1
-pic BFALL26	tics 1
-pic BFALL27	tics 1
-pic BFALL28	tics 1
-pic BFALL29	tics 1
-pic BFALL30	tics 1
-pic BFALL31	tics 1
-pic BFALL32	tics 1
+Texture Optional BFALL2
+Pic BFALL01	Tics 1
+Pic BFALL02	Tics 1
+Pic BFALL03	Tics 1
+Pic BFALL04	Tics 1
+Pic BFALL05	Tics 1
+Pic BFALL06	Tics 1
+Pic BFALL07	Tics 1
+Pic BFALL08	Tics 1
+Pic BFALL09	Tics 1
+Pic BFALL10	Tics 1
+Pic BFALL11	Tics 1
+Pic BFALL12	Tics 1
+Pic BFALL13	Tics 1
+Pic BFALL14	Tics 1
+Pic BFALL15	Tics 1
+Pic BFALL16	Tics 1
+Pic BFALL17	Tics 1
+Pic BFALL18	Tics 1
+Pic BFALL19	Tics 1
+Pic BFALL20	Tics 1
+Pic BFALL21	Tics 1
+Pic BFALL22	Tics 1
+Pic BFALL23	Tics 1
+Pic BFALL24	Tics 1
+Pic BFALL25	Tics 1
+Pic BFALL26	Tics 1
+Pic BFALL27	Tics 1
+Pic BFALL28	Tics 1
+Pic BFALL29	Tics 1
+Pic BFALL30	Tics 1
+Pic BFALL31	Tics 1
+Pic BFALL32	Tics 1
 
-texture optional BFALL3
-pic BFALL01	tics 1
-pic BFALL02	tics 1
-pic BFALL03	tics 1
-pic BFALL04	tics 1
-pic BFALL05	tics 1
-pic BFALL06	tics 1
-pic BFALL07	tics 1
-pic BFALL08	tics 1
-pic BFALL09	tics 1
-pic BFALL10	tics 1
-pic BFALL11	tics 1
-pic BFALL12	tics 1
-pic BFALL13	tics 1
-pic BFALL14	tics 1
-pic BFALL15	tics 1
-pic BFALL16	tics 1
-pic BFALL17	tics 1
-pic BFALL18	tics 1
-pic BFALL19	tics 1
-pic BFALL20	tics 1
-pic BFALL21	tics 1
-pic BFALL22	tics 1
-pic BFALL23	tics 1
-pic BFALL24	tics 1
-pic BFALL25	tics 1
-pic BFALL26	tics 1
-pic BFALL27	tics 1
-pic BFALL28	tics 1
-pic BFALL29	tics 1
-pic BFALL30	tics 1
-pic BFALL31	tics 1
-pic BFALL32	tics 1
+Texture Optional BFALL3
+Pic BFALL01	Tics 1
+Pic BFALL02	Tics 1
+Pic BFALL03	Tics 1
+Pic BFALL04	Tics 1
+Pic BFALL05	Tics 1
+Pic BFALL06	Tics 1
+Pic BFALL07	Tics 1
+Pic BFALL08	Tics 1
+Pic BFALL09	Tics 1
+Pic BFALL10	Tics 1
+Pic BFALL11	Tics 1
+Pic BFALL12	Tics 1
+Pic BFALL13	Tics 1
+Pic BFALL14	Tics 1
+Pic BFALL15	Tics 1
+Pic BFALL16	Tics 1
+Pic BFALL17	Tics 1
+Pic BFALL18	Tics 1
+Pic BFALL19	Tics 1
+Pic BFALL20	Tics 1
+Pic BFALL21	Tics 1
+Pic BFALL22	Tics 1
+Pic BFALL23	Tics 1
+Pic BFALL24	Tics 1
+Pic BFALL25	Tics 1
+Pic BFALL26	Tics 1
+Pic BFALL27	Tics 1
+Pic BFALL28	Tics 1
+Pic BFALL29	Tics 1
+Pic BFALL30	Tics 1
+Pic BFALL31	Tics 1
+Pic BFALL32	Tics 1
 
-texture optional BFALL4
-pic BFALL01	tics 1
-pic BFALL02	tics 1
-pic BFALL03	tics 1
-pic BFALL04	tics 1
-pic BFALL05	tics 1
-pic BFALL06	tics 1
-pic BFALL07	tics 1
-pic BFALL08	tics 1
-pic BFALL09	tics 1
-pic BFALL10	tics 1
-pic BFALL11	tics 1
-pic BFALL12	tics 1
-pic BFALL13	tics 1
-pic BFALL14	tics 1
-pic BFALL15	tics 1
-pic BFALL16	tics 1
-pic BFALL17	tics 1
-pic BFALL18	tics 1
-pic BFALL19	tics 1
-pic BFALL20	tics 1
-pic BFALL21	tics 1
-pic BFALL22	tics 1
-pic BFALL23	tics 1
-pic BFALL24	tics 1
-pic BFALL25	tics 1
-pic BFALL26	tics 1
-pic BFALL27	tics 1
-pic BFALL28	tics 1
-pic BFALL29	tics 1
-pic BFALL30	tics 1
-pic BFALL31	tics 1
-pic BFALL32	tics 1
+Texture Optional BFALL4
+Pic BFALL01	Tics 1
+Pic BFALL02	Tics 1
+Pic BFALL03	Tics 1
+Pic BFALL04	Tics 1
+Pic BFALL05	Tics 1
+Pic BFALL06	Tics 1
+Pic BFALL07	Tics 1
+Pic BFALL08	Tics 1
+Pic BFALL09	Tics 1
+Pic BFALL10	Tics 1
+Pic BFALL11	Tics 1
+Pic BFALL12	Tics 1
+Pic BFALL13	Tics 1
+Pic BFALL14	Tics 1
+Pic BFALL15	Tics 1
+Pic BFALL16	Tics 1
+Pic BFALL17	Tics 1
+Pic BFALL18	Tics 1
+Pic BFALL19	Tics 1
+Pic BFALL20	Tics 1
+Pic BFALL21	Tics 1
+Pic BFALL22	Tics 1
+Pic BFALL23	Tics 1
+Pic BFALL24	Tics 1
+Pic BFALL25	Tics 1
+Pic BFALL26	Tics 1
+Pic BFALL27	Tics 1
+Pic BFALL28	Tics 1
+Pic BFALL29	Tics 1
+Pic BFALL30	Tics 1
+Pic BFALL31	Tics 1
+Pic BFALL32	Tics 1
 
-texture optional SFALL1
-pic SFALL01	tics 1
-pic SFALL02	tics 1
-pic SFALL03	tics 1
-pic SFALL04	tics 1
-pic SFALL05	tics 1
-pic SFALL06	tics 1
-pic SFALL07	tics 1
-pic SFALL08	tics 1
-pic SFALL09	tics 1
-pic SFALL10	tics 1
-pic SFALL11	tics 1
-pic SFALL12	tics 1
-pic SFALL13	tics 1
-pic SFALL14	tics 1
-pic SFALL15	tics 1
-pic SFALL16	tics 1
-pic SFALL17	tics 1
-pic SFALL18	tics 1
-pic SFALL19	tics 1
-pic SFALL20	tics 1
-pic SFALL21	tics 1
-pic SFALL22	tics 1
-pic SFALL23	tics 1
-pic SFALL24	tics 1
-pic SFALL25	tics 1
-pic SFALL26	tics 1
-pic SFALL27	tics 1
-pic SFALL28	tics 1
-pic SFALL29	tics 1
-pic SFALL30	tics 1
-pic SFALL31	tics 1
-pic SFALL32	tics 1
+Texture Optional SFALL1
+Pic SFALL01	Tics 1
+Pic SFALL02	Tics 1
+Pic SFALL03	Tics 1
+Pic SFALL04	Tics 1
+Pic SFALL05	Tics 1
+Pic SFALL06	Tics 1
+Pic SFALL07	Tics 1
+Pic SFALL08	Tics 1
+Pic SFALL09	Tics 1
+Pic SFALL10	Tics 1
+Pic SFALL11	Tics 1
+Pic SFALL12	Tics 1
+Pic SFALL13	Tics 1
+Pic SFALL14	Tics 1
+Pic SFALL15	Tics 1
+Pic SFALL16	Tics 1
+Pic SFALL17	Tics 1
+Pic SFALL18	Tics 1
+Pic SFALL19	Tics 1
+Pic SFALL20	Tics 1
+Pic SFALL21	Tics 1
+Pic SFALL22	Tics 1
+Pic SFALL23	Tics 1
+Pic SFALL24	Tics 1
+Pic SFALL25	Tics 1
+Pic SFALL26	Tics 1
+Pic SFALL27	Tics 1
+Pic SFALL28	Tics 1
+Pic SFALL29	Tics 1
+Pic SFALL30	Tics 1
+Pic SFALL31	Tics 1
+Pic SFALL32	Tics 1
 
-texture optional SFALL2
-pic SFALL01	tics 1
-pic SFALL02	tics 1
-pic SFALL03	tics 1
-pic SFALL04	tics 1
-pic SFALL05	tics 1
-pic SFALL06	tics 1
-pic SFALL07	tics 1
-pic SFALL08	tics 1
-pic SFALL09	tics 1
-pic SFALL10	tics 1
-pic SFALL11	tics 1
-pic SFALL12	tics 1
-pic SFALL13	tics 1
-pic SFALL14	tics 1
-pic SFALL15	tics 1
-pic SFALL16	tics 1
-pic SFALL17	tics 1
-pic SFALL18	tics 1
-pic SFALL19	tics 1
-pic SFALL20	tics 1
-pic SFALL21	tics 1
-pic SFALL22	tics 1
-pic SFALL23	tics 1
-pic SFALL24	tics 1
-pic SFALL25	tics 1
-pic SFALL26	tics 1
-pic SFALL27	tics 1
-pic SFALL28	tics 1
-pic SFALL29	tics 1
-pic SFALL30	tics 1
-pic SFALL31	tics 1
-pic SFALL32	tics 1
+Texture Optional SFALL2
+Pic SFALL01	Tics 1
+Pic SFALL02	Tics 1
+Pic SFALL03	Tics 1
+Pic SFALL04	Tics 1
+Pic SFALL05	Tics 1
+Pic SFALL06	Tics 1
+Pic SFALL07	Tics 1
+Pic SFALL08	Tics 1
+Pic SFALL09	Tics 1
+Pic SFALL10	Tics 1
+Pic SFALL11	Tics 1
+Pic SFALL12	Tics 1
+Pic SFALL13	Tics 1
+Pic SFALL14	Tics 1
+Pic SFALL15	Tics 1
+Pic SFALL16	Tics 1
+Pic SFALL17	Tics 1
+Pic SFALL18	Tics 1
+Pic SFALL19	Tics 1
+Pic SFALL20	Tics 1
+Pic SFALL21	Tics 1
+Pic SFALL22	Tics 1
+Pic SFALL23	Tics 1
+Pic SFALL24	Tics 1
+Pic SFALL25	Tics 1
+Pic SFALL26	Tics 1
+Pic SFALL27	Tics 1
+Pic SFALL28	Tics 1
+Pic SFALL29	Tics 1
+Pic SFALL30	Tics 1
+Pic SFALL31	Tics 1
+Pic SFALL32	Tics 1
 
-texture optional SFALL3
-pic SFALL01	tics 1
-pic SFALL02	tics 1
-pic SFALL03	tics 1
-pic SFALL04	tics 1
-pic SFALL05	tics 1
-pic SFALL06	tics 1
-pic SFALL07	tics 1
-pic SFALL08	tics 1
-pic SFALL09	tics 1
-pic SFALL10	tics 1
-pic SFALL11	tics 1
-pic SFALL12	tics 1
-pic SFALL13	tics 1
-pic SFALL14	tics 1
-pic SFALL15	tics 1
-pic SFALL16	tics 1
-pic SFALL17	tics 1
-pic SFALL18	tics 1
-pic SFALL19	tics 1
-pic SFALL20	tics 1
-pic SFALL21	tics 1
-pic SFALL22	tics 1
-pic SFALL23	tics 1
-pic SFALL24	tics 1
-pic SFALL25	tics 1
-pic SFALL26	tics 1
-pic SFALL27	tics 1
-pic SFALL28	tics 1
-pic SFALL29	tics 1
-pic SFALL30	tics 1
-pic SFALL31	tics 1
-pic SFALL32	tics 1
+Texture Optional SFALL3
+Pic SFALL01	Tics 1
+Pic SFALL02	Tics 1
+Pic SFALL03	Tics 1
+Pic SFALL04	Tics 1
+Pic SFALL05	Tics 1
+Pic SFALL06	Tics 1
+Pic SFALL07	Tics 1
+Pic SFALL08	Tics 1
+Pic SFALL09	Tics 1
+Pic SFALL10	Tics 1
+Pic SFALL11	Tics 1
+Pic SFALL12	Tics 1
+Pic SFALL13	Tics 1
+Pic SFALL14	Tics 1
+Pic SFALL15	Tics 1
+Pic SFALL16	Tics 1
+Pic SFALL17	Tics 1
+Pic SFALL18	Tics 1
+Pic SFALL19	Tics 1
+Pic SFALL20	Tics 1
+Pic SFALL21	Tics 1
+Pic SFALL22	Tics 1
+Pic SFALL23	Tics 1
+Pic SFALL24	Tics 1
+Pic SFALL25	Tics 1
+Pic SFALL26	Tics 1
+Pic SFALL27	Tics 1
+Pic SFALL28	Tics 1
+Pic SFALL29	Tics 1
+Pic SFALL30	Tics 1
+Pic SFALL31	Tics 1
+Pic SFALL32	Tics 1
 
-texture optional SFALL4
-pic SFALL01	tics 1
-pic SFALL02	tics 1
-pic SFALL03	tics 1
-pic SFALL04	tics 1
-pic SFALL05	tics 1
-pic SFALL06	tics 1
-pic SFALL07	tics 1
-pic SFALL08	tics 1
-pic SFALL09	tics 1
-pic SFALL10	tics 1
-pic SFALL11	tics 1
-pic SFALL12	tics 1
-pic SFALL13	tics 1
-pic SFALL14	tics 1
-pic SFALL15	tics 1
-pic SFALL16	tics 1
-pic SFALL17	tics 1
-pic SFALL18	tics 1
-pic SFALL19	tics 1
-pic SFALL20	tics 1
-pic SFALL21	tics 1
-pic SFALL22	tics 1
-pic SFALL23	tics 1
-pic SFALL24	tics 1
-pic SFALL25	tics 1
-pic SFALL26	tics 1
-pic SFALL27	tics 1
-pic SFALL28	tics 1
-pic SFALL29	tics 1
-pic SFALL30	tics 1
-pic SFALL31	tics 1
-pic SFALL32	tics 1
+Texture Optional SFALL4
+Pic SFALL01	Tics 1
+Pic SFALL02	Tics 1
+Pic SFALL03	Tics 1
+Pic SFALL04	Tics 1
+Pic SFALL05	Tics 1
+Pic SFALL06	Tics 1
+Pic SFALL07	Tics 1
+Pic SFALL08	Tics 1
+Pic SFALL09	Tics 1
+Pic SFALL10	Tics 1
+Pic SFALL11	Tics 1
+Pic SFALL12	Tics 1
+Pic SFALL13	Tics 1
+Pic SFALL14	Tics 1
+Pic SFALL15	Tics 1
+Pic SFALL16	Tics 1
+Pic SFALL17	Tics 1
+Pic SFALL18	Tics 1
+Pic SFALL19	Tics 1
+Pic SFALL20	Tics 1
+Pic SFALL21	Tics 1
+Pic SFALL22	Tics 1
+Pic SFALL23	Tics 1
+Pic SFALL24	Tics 1
+Pic SFALL25	Tics 1
+Pic SFALL26	Tics 1
+Pic SFALL27	Tics 1
+Pic SFALL28	Tics 1
+Pic SFALL29	Tics 1
+Pic SFALL30	Tics 1
+Pic SFALL31	Tics 1
+Pic SFALL32	Tics 1
 
-texture optional WFALL1
-pic WFALL01	tics 1
-pic WFALL02	tics 1
-pic WFALL03	tics 1
-pic WFALL04	tics 1
-pic WFALL05	tics 1
-pic WFALL06	tics 1
-pic WFALL07	tics 1
-pic WFALL08	tics 1
-pic WFALL09	tics 1
-pic WFALL10	tics 1
-pic WFALL11	tics 1
-pic WFALL12	tics 1
-pic WFALL13	tics 1
-pic WFALL14	tics 1
-pic WFALL15	tics 1
-pic WFALL16	tics 1
-pic WFALL17	tics 1
-pic WFALL18	tics 1
-pic WFALL19	tics 1
-pic WFALL20	tics 1
-pic WFALL21	tics 1
-pic WFALL22	tics 1
-pic WFALL23	tics 1
-pic WFALL24	tics 1
-pic WFALL25	tics 1
-pic WFALL26	tics 1
-pic WFALL27	tics 1
-pic WFALL28	tics 1
-pic WFALL29	tics 1
-pic WFALL30	tics 1
-pic WFALL31	tics 1
-pic WFALL32	tics 1
+Texture Optional WFALL1
+Pic WFALL01	Tics 1
+Pic WFALL02	Tics 1
+Pic WFALL03	Tics 1
+Pic WFALL04	Tics 1
+Pic WFALL05	Tics 1
+Pic WFALL06	Tics 1
+Pic WFALL07	Tics 1
+Pic WFALL08	Tics 1
+Pic WFALL09	Tics 1
+Pic WFALL10	Tics 1
+Pic WFALL11	Tics 1
+Pic WFALL12	Tics 1
+Pic WFALL13	Tics 1
+Pic WFALL14	Tics 1
+Pic WFALL15	Tics 1
+Pic WFALL16	Tics 1
+Pic WFALL17	Tics 1
+Pic WFALL18	Tics 1
+Pic WFALL19	Tics 1
+Pic WFALL20	Tics 1
+Pic WFALL21	Tics 1
+Pic WFALL22	Tics 1
+Pic WFALL23	Tics 1
+Pic WFALL24	Tics 1
+Pic WFALL25	Tics 1
+Pic WFALL26	Tics 1
+Pic WFALL27	Tics 1
+Pic WFALL28	Tics 1
+Pic WFALL29	Tics 1
+Pic WFALL30	Tics 1
+Pic WFALL31	Tics 1
+Pic WFALL32	Tics 1
 
-texture optional WFALL2
-pic WFALL01	tics 1
-pic WFALL02	tics 1
-pic WFALL03	tics 1
-pic WFALL04	tics 1
-pic WFALL05	tics 1
-pic WFALL06	tics 1
-pic WFALL07	tics 1
-pic WFALL08	tics 1
-pic WFALL09	tics 1
-pic WFALL10	tics 1
-pic WFALL11	tics 1
-pic WFALL12	tics 1
-pic WFALL13	tics 1
-pic WFALL14	tics 1
-pic WFALL15	tics 1
-pic WFALL16	tics 1
-pic WFALL17	tics 1
-pic WFALL18	tics 1
-pic WFALL19	tics 1
-pic WFALL20	tics 1
-pic WFALL21	tics 1
-pic WFALL22	tics 1
-pic WFALL23	tics 1
-pic WFALL24	tics 1
-pic WFALL25	tics 1
-pic WFALL26	tics 1
-pic WFALL27	tics 1
-pic WFALL28	tics 1
-pic WFALL29	tics 1
-pic WFALL30	tics 1
-pic WFALL31	tics 1
-pic WFALL32	tics 1
+Texture Optional WFALL2
+Pic WFALL01	Tics 1
+Pic WFALL02	Tics 1
+Pic WFALL03	Tics 1
+Pic WFALL04	Tics 1
+Pic WFALL05	Tics 1
+Pic WFALL06	Tics 1
+Pic WFALL07	Tics 1
+Pic WFALL08	Tics 1
+Pic WFALL09	Tics 1
+Pic WFALL10	Tics 1
+Pic WFALL11	Tics 1
+Pic WFALL12	Tics 1
+Pic WFALL13	Tics 1
+Pic WFALL14	Tics 1
+Pic WFALL15	Tics 1
+Pic WFALL16	Tics 1
+Pic WFALL17	Tics 1
+Pic WFALL18	Tics 1
+Pic WFALL19	Tics 1
+Pic WFALL20	Tics 1
+Pic WFALL21	Tics 1
+Pic WFALL22	Tics 1
+Pic WFALL23	Tics 1
+Pic WFALL24	Tics 1
+Pic WFALL25	Tics 1
+Pic WFALL26	Tics 1
+Pic WFALL27	Tics 1
+Pic WFALL28	Tics 1
+Pic WFALL29	Tics 1
+Pic WFALL30	Tics 1
+Pic WFALL31	Tics 1
+Pic WFALL32	Tics 1
 
-texture optional WFALL3
-pic WFALL01	tics 1
-pic WFALL02	tics 1
-pic WFALL03	tics 1
-pic WFALL04	tics 1
-pic WFALL05	tics 1
-pic WFALL06	tics 1
-pic WFALL07	tics 1
-pic WFALL08	tics 1
-pic WFALL09	tics 1
-pic WFALL10	tics 1
-pic WFALL11	tics 1
-pic WFALL12	tics 1
-pic WFALL13	tics 1
-pic WFALL14	tics 1
-pic WFALL15	tics 1
-pic WFALL16	tics 1
-pic WFALL17	tics 1
-pic WFALL18	tics 1
-pic WFALL19	tics 1
-pic WFALL20	tics 1
-pic WFALL21	tics 1
-pic WFALL22	tics 1
-pic WFALL23	tics 1
-pic WFALL24	tics 1
-pic WFALL25	tics 1
-pic WFALL26	tics 1
-pic WFALL27	tics 1
-pic WFALL28	tics 1
-pic WFALL29	tics 1
-pic WFALL30	tics 1
-pic WFALL31	tics 1
-pic WFALL32	tics 1
+Texture Optional WFALL3
+Pic WFALL01	Tics 1
+Pic WFALL02	Tics 1
+Pic WFALL03	Tics 1
+Pic WFALL04	Tics 1
+Pic WFALL05	Tics 1
+Pic WFALL06	Tics 1
+Pic WFALL07	Tics 1
+Pic WFALL08	Tics 1
+Pic WFALL09	Tics 1
+Pic WFALL10	Tics 1
+Pic WFALL11	Tics 1
+Pic WFALL12	Tics 1
+Pic WFALL13	Tics 1
+Pic WFALL14	Tics 1
+Pic WFALL15	Tics 1
+Pic WFALL16	Tics 1
+Pic WFALL17	Tics 1
+Pic WFALL18	Tics 1
+Pic WFALL19	Tics 1
+Pic WFALL20	Tics 1
+Pic WFALL21	Tics 1
+Pic WFALL22	Tics 1
+Pic WFALL23	Tics 1
+Pic WFALL24	Tics 1
+Pic WFALL25	Tics 1
+Pic WFALL26	Tics 1
+Pic WFALL27	Tics 1
+Pic WFALL28	Tics 1
+Pic WFALL29	Tics 1
+Pic WFALL30	Tics 1
+Pic WFALL31	Tics 1
+Pic WFALL32	Tics 1
 
-texture optional WFALL4
-pic WFALL01	tics 1
-pic WFALL02	tics 1
-pic WFALL03	tics 1
-pic WFALL04	tics 1
-pic WFALL05	tics 1
-pic WFALL06	tics 1
-pic WFALL07	tics 1
-pic WFALL08	tics 1
-pic WFALL09	tics 1
-pic WFALL10	tics 1
-pic WFALL11	tics 1
-pic WFALL12	tics 1
-pic WFALL13	tics 1
-pic WFALL14	tics 1
-pic WFALL15	tics 1
-pic WFALL16	tics 1
-pic WFALL17	tics 1
-pic WFALL18	tics 1
-pic WFALL19	tics 1
-pic WFALL20	tics 1
-pic WFALL21	tics 1
-pic WFALL22	tics 1
-pic WFALL23	tics 1
-pic WFALL24	tics 1
-pic WFALL25	tics 1
-pic WFALL26	tics 1
-pic WFALL27	tics 1
-pic WFALL28	tics 1
-pic WFALL29	tics 1
-pic WFALL30	tics 1
-pic WFALL31	tics 1
-pic WFALL32	tics 1
+Texture Optional WFALL4
+Pic WFALL01	Tics 1
+Pic WFALL02	Tics 1
+Pic WFALL03	Tics 1
+Pic WFALL04	Tics 1
+Pic WFALL05	Tics 1
+Pic WFALL06	Tics 1
+Pic WFALL07	Tics 1
+Pic WFALL08	Tics 1
+Pic WFALL09	Tics 1
+Pic WFALL10	Tics 1
+Pic WFALL11	Tics 1
+Pic WFALL12	Tics 1
+Pic WFALL13	Tics 1
+Pic WFALL14	Tics 1
+Pic WFALL15	Tics 1
+Pic WFALL16	Tics 1
+Pic WFALL17	Tics 1
+Pic WFALL18	Tics 1
+Pic WFALL19	Tics 1
+Pic WFALL20	Tics 1
+Pic WFALL21	Tics 1
+Pic WFALL22	Tics 1
+Pic WFALL23	Tics 1
+Pic WFALL24	Tics 1
+Pic WFALL25	Tics 1
+Pic WFALL26	Tics 1
+Pic WFALL27	Tics 1
+Pic WFALL28	Tics 1
+Pic WFALL29	Tics 1
+Pic WFALL30	Tics 1
+Pic WFALL31	Tics 1
+Pic WFALL32	Tics 1
 
-texture optional DBRAIN1
-pic DBRAIN1 tics 1
-pic DBRAIN2 tics 1
-pic DBRAIN3 tics 1
-pic DBRAIN4 tics 1
-pic DBRAIN5 tics 1
-pic DBRAIN6 tics 1
-pic DBRAIN7 tics 1
-pic DBRAIN8 tics 1
+Texture Optional DBRAIN1
+Pic DBRAIN1 Tics 1
+Pic DBRAIN2 Tics 1
+Pic DBRAIN3 Tics 1
+Pic DBRAIN4 Tics 1
+Pic DBRAIN5 Tics 1
+Pic DBRAIN6 Tics 1
+Pic DBRAIN7 Tics 1
+Pic DBRAIN8 Tics 1
 
-texture optional DBRAIN2
-pic DBRAIN1 tics 1
-pic DBRAIN2 tics 1
-pic DBRAIN3 tics 1
-pic DBRAIN4 tics 1
-pic DBRAIN5 tics 1
-pic DBRAIN6 tics 1
-pic DBRAIN7 tics 1
-pic DBRAIN8 tics 1
+Texture Optional DBRAIN2
+Pic DBRAIN1 Tics 1
+Pic DBRAIN2 Tics 1
+Pic DBRAIN3 Tics 1
+Pic DBRAIN4 Tics 1
+Pic DBRAIN5 Tics 1
+Pic DBRAIN6 Tics 1
+Pic DBRAIN7 Tics 1
+Pic DBRAIN8 Tics 1
 
-texture optional DBRAIN3
-pic DBRAIN1 tics 1
-pic DBRAIN2 tics 1
-pic DBRAIN3 tics 1
-pic DBRAIN4 tics 1
-pic DBRAIN5 tics 1
-pic DBRAIN6 tics 1
-pic DBRAIN7 tics 1
-pic DBRAIN8 tics 1
+Texture Optional DBRAIN3
+Pic DBRAIN1 Tics 1
+Pic DBRAIN2 Tics 1
+Pic DBRAIN3 Tics 1
+Pic DBRAIN4 Tics 1
+Pic DBRAIN5 Tics 1
+Pic DBRAIN6 Tics 1
+Pic DBRAIN7 Tics 1
+Pic DBRAIN8 Tics 1
 
-texture optional DBRAIN4
-pic DBRAIN1 tics 1
-pic DBRAIN2 tics 1
-pic DBRAIN3 tics 1
-pic DBRAIN4 tics 1
-pic DBRAIN5 tics 1
-pic DBRAIN6 tics 1
-pic DBRAIN7 tics 1
-pic DBRAIN8 tics 1
+Texture Optional DBRAIN4
+Pic DBRAIN1 Tics 1
+Pic DBRAIN2 Tics 1
+Pic DBRAIN3 Tics 1
+Pic DBRAIN4 Tics 1
+Pic DBRAIN5 Tics 1
+Pic DBRAIN6 Tics 1
+Pic DBRAIN7 Tics 1
+Pic DBRAIN8 Tics 1

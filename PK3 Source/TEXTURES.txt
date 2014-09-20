@@ -1,9 +1,9 @@
-Texture SKIN3, 64, 128
+Texture Optional SKIN3, 64, 128
 {
 	Patch HELL6_3, 0, 0
 }
 
-Texture SHAWN1, 128, 128
+Texture Optional SHAWN1, 128, 128
 {
 	Patch W13_1, 64, 56
 	Patch W13_1, 64, 0
@@ -13,91 +13,91 @@ Texture SHAWN1, 128, 128
 }
 
 // Water
-Flat FWATER1, 64, 64
+Flat Optional FWATER1, 64, 64
 {
 	Patch FWATER1, 0, 0
 }
-Flat FWATER2, 64, 64
+Flat Optional FWATER2, 64, 64
 {
 	Patch FWATER1, 0, 0
 }
-Flat FWATER3, 64, 64
+Flat Optional FWATER3, 64, 64
 {
 	Patch FWATER1, 0, 0
 }
-Flat FWATER4, 64, 64
+Flat Optional FWATER4, 64, 64
 {
 	Patch FWATER1, 0, 0
 }
-Flat NUKAGE1, 64, 64
+Flat Optional NUKAGE1, 64, 64
 {
 	Patch NUKAGE1, 0, 0
 }
-Flat NUKAGE2, 64, 64
+Flat Optional NUKAGE2, 64, 64
 {
 	Patch NUKAGE1, 0, 0
 }
-Flat NUKAGE3, 64, 64
+Flat Optional NUKAGE3, 64, 64
 {
 	Patch NUKAGE1, 0, 0
 }
-Flat LAVA1, 64, 64
+Flat Optional LAVA1, 64, 64
 {
 	Patch LAVA1, 0, 0
 }
-Flat LAVA2, 64, 64
+Flat Optional LAVA2, 64, 64
 {
 	Patch LAVA1, 0, 0
 }
-Flat LAVA3, 64, 64
+Flat Optional LAVA3, 64, 64
 {
 	Patch LAVA1, 0, 0
 }
-Flat LAVA4, 64, 64
+Flat Optional LAVA4, 64, 64
 {
 	Patch LAVA1, 0, 0
 }
-Flat SLIME1, 64, 64
+Flat Optional SLIME1, 64, 64
 {
 	Patch SLIME01, 0, 0
 }
-Flat SLIME2, 64, 64
+Flat Optional SLIME2, 64, 64
 {
 	Patch SLIME01, 0, 0
 }
-Flat SLIME3, 64, 64
+Flat Optional SLIME3, 64, 64
 {
 	Patch SLIME01, 0, 0
 }
-Flat SLIME4, 64, 64
+Flat Optional SLIME4, 64, 64
 {
 	Patch SLIME01, 0, 0
 }
-Flat SLIME5, 64, 64
+Flat Optional SLIME5, 64, 64
 {
 	Patch SLIME05, 0, 0
 }
-Flat SLIME6, 64, 64
+Flat Optional SLIME6, 64, 64
 {
 	Patch SLIME05, 0, 0
 }
-Flat SLIME7, 64, 64
+Flat Optional SLIME7, 64, 64
 {
 	Patch SLIME05, 0, 0
 }
-Flat SLIME8, 64, 64
+Flat Optional SLIME8, 64, 64
 {
 	Patch SLIME05, 0, 0
 }
-Flat BLOOD1, 64, 64
+Flat Optional BLOOD1, 64, 64
 {
 	Patch BLOOD1, 0, 0
 }
-Flat BLOOD2, 64, 64
+Flat Optional BLOOD2, 64, 64
 {
 	Patch BLOOD1, 0, 0
 }
-Flat BLOOD3, 64, 64
+Flat Optional BLOOD3, 64, 64
 {
 	Patch BLOOD1, 0, 0
 }
@@ -132,7 +132,7 @@ Sprite MODLY0, 1, 1 { }
 Sprite MODLZ0, 1, 1 { }
 
 // Rotated sprites
-Texture "FD/RotatedTex/METAL/90", 128, 64
+Texture Optional "FD/RotatedTex/METAL/90", 128, 64
 {
 	Patch METAL, 0, 0
 	{
