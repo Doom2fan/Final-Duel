@@ -34,7 +34,7 @@ Actor DoomSSG : FDWeapon 30002 {
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_TakeInventory ("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		SSGR A 1 A_WeaponReady
 		Loop
@@ -56,26 +56,27 @@ Actor DoomSSG : FDWeapon 30002 {
 		Goto Ready2
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 1, 0, -2, 0, frandom(-4.0, 4.0))
+		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 1, 0, -2, 0, frandom (-4.0, 4.0))
 		TNT1 AAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 0, -4, 0, frandom (-4.0, 4.0))
 		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -2.5, 0, Sin(Pitch) * 2.5, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Fire", 5)
 		SSGF A 2 Bright A_GunFlash
 		TNT1 AAAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 2, -4, 0, frandom (-4.0, 4.0))
 		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -2.5, 0, Sin(Pitch) * 2.5, 1)
-		SSGF U 2 Bright A_GunFlash
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
+		SSGF B 2 Bright A_GunFlash
 		SSGR A 1
 		TNT1 A 0 A_JumpIfNoAmmo ("Ready2")
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Open", CHAN_WEAPON)
-		SSGF BCDEFG 2
+		SSGF CDEFGH 2
 		TNT1 AA 0 A_FireCustomMissile ("ShellCasingSpawn2", 0, 0, -4, -4)
-		SSGF HIJ 2
+		SSGF I 7
+		SSGF JKLM 2
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Load", CHAN_WEAPON)
-		SSGF KLMN 2
+		SSGF NOPQ 2
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Close", CHAN_WEAPON)
-		SSGF OPQRST 2
+		SSGF RSTUV 2
 		TNT1 A 0 A_Refire
 		Goto Ready2
 	Spawn:
