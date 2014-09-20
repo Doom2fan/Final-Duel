@@ -32,7 +32,7 @@ Actor DemonSpawner : RandomSpawner replaces Demon {
 
 // Hell Knight Spawner
 Actor HellKnightSpawner : RandomSpawner replaces HellKnight {
-	DropItem "HellKnight"
+	DropItem "FDHellKnight"
 }
 
 // Mancubus Spawner
