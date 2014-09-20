@@ -10,6 +10,7 @@ using System.Data;
 using System.Text;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
@@ -473,6 +474,40 @@ namespace Launcher {
             }
         }
 
+        // Extract zip file
+        private void ExtractZip (string archiveFilenameIn, string outFolder, string FileName = null) {
+            ZipFile zf = null;
+            try {
+                FileStream fs = File.OpenRead (archiveFilenameIn);
+                zf = new ZipFile (fs);
+                foreach (ZipEntry zipEntry in zf) {
+                    if (!zipEntry.IsFile || FileName != null && !zipEntry.Name.Equals (FileName))
+                        continue;
+                    string entryFileName = zipEntry.Name;
+
+                    byte[] buffer = new byte[4096]; //4K is optimum
+                    Stream zipStream = zf.GetInputStream (zipEntry);
+
+                    // Manipulate the output filename here as desired
+                    string fullZipToPath = Path.Combine (outFolder, entryFileName);
+                    string directoryName = Path.GetDirectoryName (fullZipToPath);
+                    if (directoryName.Length > 0)
+                        Directory.CreateDirectory (directoryName);
+
+                    // Unzip file in buffered chunks. This is just as fast as unpacking to a buffer the full size
+                    // of the file, but does not waste memory.
+                    // The "using" will close the stream even if an exception occurs.
+                    using (FileStream streamWriter = File.Create (fullZipToPath))
+                        StreamUtils.Copy (zipStream, streamWriter, buffer);
+                }
+            } finally {
+                if (zf != null) {
+                    zf.IsStreamOwner = true; // Makes close also shut the underlying stream
+                    zf.Close (); // Ensure we release resources
+                }
+            }
+        }
+
         #region ============ Final Duel ============
 
         private void UpdaterGetNewestFDRelease_DownloadFileCompleted (object sender, System.ComponentModel.AsyncCompletedEventArgs e) {
@@ -526,40 +561,6 @@ namespace Launcher {
             toolStripStatusLabel.ForeColor = Color.FromKnownColor (KnownColor.ControlText);
             toolStripStatusLabel.Text = "Downloading... " + (e.BytesReceived / 1024) + "KB / " + (e.TotalBytesToReceive / 1024) + "KB (" + e.ProgressPercentage + "%)";
             toolStripProgressBar.Value = e.ProgressPercentage;
-        }
-
-        // Extract zip file
-        private void ExtractZip (string archiveFilenameIn, string outFolder, string FileName = null) {
-            ZipFile zf = null;
-            try {
-                FileStream fs = File.OpenRead (archiveFilenameIn);
-                zf = new ZipFile (fs);
-                foreach (ZipEntry zipEntry in zf) {
-                    if (!zipEntry.IsFile || FileName != null && !zipEntry.Name.Equals (FileName))
-                        continue;
-                    string entryFileName = zipEntry.Name;
-
-                    byte[] buffer = new byte[4096]; //4K is optimum
-                    Stream zipStream = zf.GetInputStream (zipEntry);
-
-                    // Manipulate the output filename here as desired
-                    string fullZipToPath = Path.Combine (outFolder, entryFileName);
-                    string directoryName = Path.GetDirectoryName (fullZipToPath);
-                    if (directoryName.Length > 0)
-                        Directory.CreateDirectory (directoryName);
-
-                    // Unzip file in buffered chunks. This is just as fast as unpacking to a buffer the full size
-                    // of the file, but does not waste memory.
-                    // The "using" will close the stream even if an exception occurs.
-                    using (FileStream streamWriter = File.Create (fullZipToPath))
-                        StreamUtils.Copy (zipStream, streamWriter, buffer);
-                }
-            } finally {
-                if (zf != null) {
-                    zf.IsStreamOwner = true; // Makes close also shut the underlying stream
-                    zf.Close (); // Ensure we release resources
-                }
-            }
         }
 
         #endregion
@@ -662,7 +663,7 @@ namespace Launcher {
         // Gameplay options button - Clicked
         private void buttonGameplayOptionsMenu_Click (object sender, EventArgs e) {
             FormGameplayOptions FGameplayOptions = new FormGameplayOptions ();
-            FGameplayOptions.Show ();
+            FGameplayOptions.ShowDialog ();
         }
 
         // Custom commands testbox - Text changed
@@ -674,11 +675,29 @@ namespace Launcher {
 
         // Start game button - Clicked
         private void buttonStartGame_Click (object sender, EventArgs e) {
-            // Save the config
-            Config.Save ();
+            Config.Save (); // Save the config
+            buttonStartGame.Enabled = false; // Disable the start game button
+            Process Dis = Process.Start (Config.DisPath, BuildCommandLine ()); // Start the game
+            Game.Running = true; // Set Game.Running to true
+            Game.ProcessID = Dis.Id; // Set Game.ProcessID to the game process' ID
+            Task WaitForExit = new Task (delegate {
+                while (!Dis.HasExited) {
+                    Thread.Sleep (150);
+                }
+                Game.Running = false;
+                EnableStartGameButton ();
+            });
 
-            // Start the game
-            Process.Start (Config.DisPath, BuildCommandLine ());
+            WaitForExit.Start ();
+        }
+
+        delegate void EnableStartGameButtonCallback ();
+        private void EnableStartGameButton () {
+            if (buttonStartGame.InvokeRequired) {
+                EnableStartGameButtonCallback d = new EnableStartGameButtonCallback (EnableStartGameButton);
+                this.Invoke (d);
+            } else
+                buttonStartGame.Enabled = true;
         }
         
         #endregion
