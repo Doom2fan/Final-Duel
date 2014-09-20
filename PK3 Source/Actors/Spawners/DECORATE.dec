@@ -13,17 +13,7 @@ Actor ChaingunReplacer : RandomSpawner {
 // Monster Replacers
 
 // Wolfenstein SS Replacer
-Actor WolfensteinSSReplacer Replaces WolfensteinSS {
-	+IsMonster
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_Jump (256, "MP40", "Mauser")
-		Loop
-	MP40:
-		TNT1 A 0 A_SpawnItemEx ("MP40Nazi")
-		Stop
-	Mauser:
-		TNT1 A 0 A_SpawnItemEx ("MauserNazi")
-		Stop
-	}
+Actor WolfensteinSSReplacer : RandomSpawner Replaces WolfensteinSS {
+	DropItem "MP40Nazi"
+	DropItem "MauserNazi"
 }
