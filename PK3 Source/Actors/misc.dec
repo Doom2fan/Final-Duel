@@ -234,6 +234,7 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 	Scale .5
 	Mass 0
 	Damage (random (1, 5))
+	DamageType Shrapnel
 	ReactionTime 3
 	Projectile
 	+DoomBounce +DontSplash +NoDamageThrust

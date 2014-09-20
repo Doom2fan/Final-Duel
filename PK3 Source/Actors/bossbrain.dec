@@ -4,7 +4,9 @@ Actor FDBossBrain : BossBrain Replaces BossBrain {
 	Mass 10000000
 	PainChance 255
 	+Solid +Shootable +NoIceDeath +OldRadiusDmg
-	DamageFactor BFG, 0.5
+	DamageFactor BFG, 0.3
+	DamageFactor Shrapnel, 0.0
+	PainChance Shrapnel, 0
 	PainSound "brain/pain"
 	DeathSound "brain/death"
 	States {
