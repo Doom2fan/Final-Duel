@@ -26,6 +26,8 @@ namespace Auto_Indentation_Tool {
                     List<string> Output = new List<string> ();
                     bool InActor = false;
                     bool InStates = false;
+                    int LineCount = 0;
+
                     try {
                         Input.AddRange (File.ReadAllLines (file));
                     } catch {
@@ -34,6 +36,8 @@ namespace Auto_Indentation_Tool {
 
                         foreach (string line in Input) {
                             string parsedline = line;
+
+                            LineCount++;
 
                             if (line.Contains ('}') && InStates)
                                 InStates = false;
@@ -60,7 +64,8 @@ namespace Auto_Indentation_Tool {
                             Debug.WriteLine (Regex.IsMatch (parsedline, "(\t\b:)").ToString ());
 
                             // Add a newline character to the end of the line
-                            parsedline += '\n';
+                            if (LineCount != Input.Count)
+                                parsedline += '\n';
 
                             Debug.WriteLine (parsedline);
                             Output.Add (parsedline);
@@ -125,6 +130,11 @@ namespace Auto_Indentation_Tool {
 
         private void listBoxFiles_KeyDown (object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Delete && listBoxFiles.SelectedIndex >= 0)
+                listBoxFiles.Items.RemoveAt (listBoxFiles.SelectedIndex);
+        }
+
+        private void removeToolStripMenuItem_Click (object sender, EventArgs e) {
+            if (listBoxFiles.SelectedIndex >= 0)
                 listBoxFiles.Items.RemoveAt (listBoxFiles.SelectedIndex);
         }
     }

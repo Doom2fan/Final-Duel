@@ -55,7 +55,7 @@
             this.addToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.contextMenuStripFilesList.Name = "contextMenuStripFilesList";
-            this.contextMenuStripFilesList.Size = new System.Drawing.Size (118, 48);
+            this.contextMenuStripFilesList.Size = new System.Drawing.Size (153, 70);
             // 
             // addToolStripMenuItem
             // 
@@ -83,8 +83,9 @@
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size (117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size (152, 22);
             this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler (this.removeToolStripMenuItem_Click);
             // 
             // buttonParse
             // 
