@@ -1,104 +1,79 @@
-Actor HelmA 30076
-{
-  //$Category Final Duel-Props
-  Tag "Helmet A"
-  Radius 8
-  Height 10
-  +Solid
-  States
-  {
-  Spawn:
-    AHLM A -1
-    Stop
-  }
+Actor HelmA 30076 {
+	//$Category Final Duel-Props
+	Tag "Helmet A"
+	Radius 8
+	Height 10
+	+Solid
+	States {
+	Spawn:
+		AHLM A -1
+		Stop
+	}
 }
 
-Actor HelmB 30077
-{
-  //$Category Final Duel-Props
-  Tag "Helmet B"
-  Radius 8
-  Height 10
-  +Solid
-  States
-  {
-  Spawn:
-    BHLM A -1
-    Stop
-  }
+Actor HelmB : HelmA 30077 {
+	//$Category Final Duel-Props
+	Tag "Helmet B"
+	States {
+	Spawn:
+		BHLM A -1
+		Stop
+	}
 }
 
-Actor HelmC 30078
-{
-  //$Category Final Duel-Props
-  Tag "Helmet C"
-  Radius 8
-  Height 10
-  +Solid
-  States
-  {
-  Spawn:
-    CHLM A -1
-    Stop
-  }
+Actor HelmC : HelmA 30078 {
+	//$Category Final Duel-Props
+	Tag "Helmet C"
+	States {
+	Spawn:
+		CHLM A -1
+		Stop
+	}
 }
 
-Actor HelmD 30079
-{
-  //$Category Final Duel-Props
-  Tag "Helmet D"
-  Radius 6
-  Height 10
-  +Solid
-  States
-  {
-  Spawn:
-    DHLM A -1
-    Stop
-  }
+Actor HelmD : HelmA 30079 {
+	//$Category Final Duel-Props
+	Tag "Helmet D"
+	States
+	{
+	Spawn:
+		DHLM A -1
+		Stop
+	}
 }
 
-Actor Boots 30080
-{
-  //$Category Final Duel-Props
-  Tag "Boots"
-  Radius 8
-  Height 11
-  +Solid
-  States
-  {
-  Spawn:
-    BOOT A -1
-    Stop
-  }
+Actor Boots 30080 {
+	//$Category Final Duel-Props
+	Tag "Boots"
+	Radius 8
+	Height 11
+	+Solid
+	States {
+	Spawn:
+		BOOT A -1
+		Stop
+	}
 }
 
-Actor UniformA 30081
-{
-  //$Category Final Duel-Props
-  Tag "Uniform A"
-  Radius 12
-  Height 11
-  +Solid
-  States
-  {
-  Spawn:
-    UNIF A -1
-    Stop
-  }
+Actor UniformA 30081 {
+	//$Category Final Duel-Props
+	Tag "Uniform A"
+	Radius 12
+	Height 11
+	+Solid
+	States {
+	Spawn:
+		UNIF A -1
+		Stop
+	}
 }
 
-Actor UniformB 30082
-{
-  //$Category Final Duel-Props
-  Tag "Uniform B"
-  Radius 12
-  Height 11
-  +Solid
-  States
-  {
-  Spawn:
-    UNIF B -1
-    Stop
-  }
+Actor UniformB : UniformA 30082 {
+	//$Category Final Duel-Props
+	Tag "Uniform B"
+	States {
+	Spawn:
+		UNIF B -1
+		Stop
+	}
 }

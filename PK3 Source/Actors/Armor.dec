@@ -1,7 +1,7 @@
 // Green Armor
 Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
-	//$Category ST Armour (Green Armour)
-	//$Title Max. health bonus
+	//$Category Final Duel-Health and Armour
+	//$Title ST Armour (Green Armour)
 	Inventory.PickupSound "Pickup/Armor"
 }
 

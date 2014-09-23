@@ -6,6 +6,7 @@ Actor ParticleSpawnerBase {
 	+NoClip +NoBlockMap +NoGravity +Missile
 	+ForceXYBillboard
 }
+
 Actor BluePlasmaParticleSpawner : ParticleSpawnerBase {
 	States {
 	Spawn:
@@ -16,8 +17,9 @@ Actor BluePlasmaParticleSpawner : ParticleSpawnerBase {
 		Stop
 	}
 }
+
 Actor PlasmaSmoke {
-    +NoBlockmap +NoTeleport +DontSplash +Missile
+	+NoBlockmap +NoTeleport +DontSplash +Missile
 	+ForceXYBillboard +ClientsideOnly +NoInteraction +NoGravity
 	+DoomBounce +ThruActors
 	BounceFactor 0.5
@@ -28,7 +30,7 @@ Actor PlasmaSmoke {
 	Scale 0.5
 	Alpha 0.1
 	States {
-    Spawn:
+	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_JumpIf (waterlevel > 1, "Stap")
 		SMOK A 20
@@ -36,13 +38,14 @@ Actor PlasmaSmoke {
 		SMOK AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_FadeOut (0.01)
 		Goto Death
 	Death:
-	    TNT1 A 0
-		Stop
-	Stap:		
 		TNT1 A 0
 		Stop
-    }
+	Stap:
+		TNT1 A 0
+		Stop
+	}
 }
+
 Actor BluePlasmaParticle {
 	Height 0
 	Radius 0
@@ -53,7 +56,6 @@ Actor BluePlasmaParticle {
 	Gravity 0.8
 	RenderStyle Add
 	Scale 0.035
-	//Speed 2
 	Speed 12
 	States {
 	Spawn:

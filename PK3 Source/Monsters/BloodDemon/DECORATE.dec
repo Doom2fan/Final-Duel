@@ -21,11 +21,11 @@ Actor FDBloodDemon : FDDemon 30113 {
 	Painchance "Kick", 255
 	Obituary "$OB_BLOODDEMON_MELEE"
 	DamageFactor "Ice", 1.0
-	DamageFactor "SRType1",1.0
+	DamageFactor "SRType1", 1.0
 	SeeSound "BloodDemon/Sight"
-    PainSound "BloodDemon/Pain"
-    DeathSound "BloodDemon/Death"
-    ActiveSound "BloodDemon/Active"
+	PainSound "BloodDemon/Pain"
+	DeathSound "BloodDemon/Death"
+	ActiveSound "BloodDemon/Active"
 	DropItem "Energy10" DropItem "Energy10" DropItem "Energy10" 128
 	States {
 	Spawn:

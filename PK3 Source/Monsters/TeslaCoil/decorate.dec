@@ -33,7 +33,7 @@ Actor TeslaCoil 30128 {
 		TESL A 1 Bright A_SpawnItemEx ("Boom", 0, 0, 60, 0, 0, 0, 0, 160)
 		TESL A 0 Bright A_StopSoundEx ("SoundSlot5")
 		TESL A 0 Bright A_PlaySound ("Weapons/rocklx")
-		TESL B -1 
+		TESL B -1
 		Stop
 	Raise:
 		Stop

@@ -1,6 +1,6 @@
 Actor EnforcerFire2       : Boolean { }
-Actor EnforcerReloadLCL   : Boolean { }
 Actor EnforcerReloadLCR   : Boolean { }
+Actor EnforcerReloadRCR   : Boolean { }
 Actor Enforcer            : FDWeapon {
 	Tag "$TAGENFORCER"
 	Obituary "$OBENFORCER"
@@ -14,7 +14,7 @@ Actor Enforcer            : FDWeapon {
 	Weapon.Kickback 75
 	Weapon.UpSound "Weapons/enforcerup"
 	// AttackSound "Weapons/enforcerfire"
-	+NoAlert
+	+Weapon.NoAlert
 	States {
 	Ready:
 		TNT1 A 0 A_GiveInventory ("SynthFireActive", 1) // Give Synthfire token
@@ -63,21 +63,21 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_FireCustomMissile ("PistolTracer", frandom (-2.0, 3.0), 1, -10, 1, 0, frandom (-3.0, 3.0)) // Fire a pistol tracer
 		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", CHAN_WEAPON) // Play the firing sound on channel CHAN_WEAPON
 		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, -11, -4) // Spawn a casing
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1) // Recoil
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.1, 0, Sin (Pitch) * 0.1, 1) // Recoil
 		TNT1 A 0 A_SetPitch (pitch - 0.25, SPF_INTERPOLATE) // Muzzle climb
 		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 1) // Take a bullet from the loaded clip
 		ENF1 BB 1 Bright A_SetPitch (pitch - 0.125, SPF_INTERPOLATE)
 		ENF1 C 3
 		Goto LeftReady
 	RightFire:
-		TNT1 A 0 A_JumpIfInventory("EnforcerClipR", 1, 1) // Check for EnforcerClipR...
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 1, 1) // Check for EnforcerClipR...
 		Goto RightDryFire // Jump to RightDryFire if EnforcerClipR is zero
 		ENF2 A 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile ("PistolTracer", frandom (-2.0, 3.0), 1, 10, 1, 0, frandom (-3.0, 3.0)) // Fire a pistol tracer
 		TNT1 A 0 A_PlaySound ("Weapons/enforcerfire", 5) // Play the firing sound on channel 5
 		TNT1 A 0 A_FireCustomMissile ("9mmCasingSpawn2", 5, 0, 20, -4) // Spawn a casing
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.1, 0, Sin(Pitch) * 0.1, 1) // Recoil
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.1, 0, Sin (Pitch) * 0.1, 1) // Recoil
 		TNT1 A 0 A_SetPitch (pitch - 0.25, SPF_INTERPOLATE) // Muzzle climb
 		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 1) // Take a bullet from the loaded clip
 		ENF2 BB 1 Bright A_SetPitch (pitch - 0.125, SPF_INTERPOLATE)
@@ -95,52 +95,52 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("PressingZoom", 1, "LeftReady")
 		TNT1 A 0 A_GiveInventory ("PressingZoom", 1)
 	LeftReload:
-		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLCR", 1, "LeftReady")
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRCR", 1, "LeftReady")
 		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
-		TNT1 A 0 A_GiveInventory ("EnforcerReloadLCL", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerReloadLCR", 1)
 		ENF1 A 3
 		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
 		Goto LeftReady
 		TNT1 A 0 A_JumpIfInventory ("EnforcerClipL", 15, "LeftReady")
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", CHAN_WEAPON)
-		TNT1 A 0 A_TakeInventory ("EnforcerClipL", 15)
 		ENF1 DEFGHIJ 1
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCL", 9999)
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, -15, 0)
 		ENF1 KL 1
-		TNT1 A 0 A_TakeInventory ("Clip2", 1)
-		TNT1 A 0 A_GiveInventory ("EnforcerClipL", 15)
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", CHAN_WEAPON)
 		ENF1 MNOPQQ 1
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 9999)
+		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerClipL", 15)
 		Goto LeftReady
 	RightReload:
 		ENF2 A 3 A_TakeInventory ("Reloading", 1)
-		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLCL", 1, "RightReady")
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLCR", 1, "RightReady")
 		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
-		TNT1 A 0 A_GiveInventory ("EnforcerReloadLCR", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerReloadRCR", 1)
 		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
 		Goto RightReady
 		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 15, "RightReady")
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", 5)
-		TNT1 A 0 A_TakeInventory ("EnforcerClipR", 15)
-		ENF2 DEFGHIJ 1
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 9999)
+		ENF2 DEFGHIJ 1		
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, 15, 0)
 		ENF2 KL 1
-		TNT1 A 0 A_TakeInventory ("Clip2", 1)
-		TNT1 A 0 A_GiveInventory ("EnforcerClipR", 15)
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", 5)
 		ENF2 MNOPQQ 1
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadRCR", 9999)
+		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_GiveInventory ("EnforcerClipR", 15)
 		Goto RightReady
 	}
 }
+
 Actor EnforcerClipR : Ammo {
-	Inventory.MaxAmount 15
-	Ammo.BackpackMaxAmount 15
-	+IGNORESKILL
+	Inventory.MaxAmount 16
+	Ammo.BackpackMaxAmount 16
+	+IgnoreSkill
 }
+
 Actor EnforcerClipL : Ammo {
-	Inventory.MaxAmount 15
-	Ammo.BackpackMaxAmount 15
-	+IGNORESKILL
+	Inventory.MaxAmount 16
+	Ammo.BackpackMaxAmount 16
+	+IgnoreSkill
 }

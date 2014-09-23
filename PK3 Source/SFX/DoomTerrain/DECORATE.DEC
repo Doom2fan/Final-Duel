@@ -1,17 +1,10 @@
 //mud--a brown variant of the "sludge" that better fits Doom's brown sludgy textures
-Actor MudChunk
-{
+Actor MudChunk {
 	Radius 2
 	Height 4
-	+NoBlockmap 
-	+MISSILE 
-	+DROPOFF
-	+NoTeleport
-	+LOWGRAVITY
-	+CANNOTPUSH
-	+DontSplash
-	States
-	{
+	+NoBlockmap +Missile +DropOff +NoTeleport
+	+LowGravity +CannotPush +DontSplash
+	States {
 	Spawn:
 		MUDS ABCD 8
 		Stop
@@ -21,14 +14,9 @@ Actor MudChunk
 	}
 }
 
-Actor MudSplash
-{
-	+NoBlockmap
-	+NoClip
-	+NoGravity
-	+DontSplash
-	States
-	{
+Actor MudSplash {
+	+NoBlockmap +NoClip +NoGravity +DontSplash
+	States {
 	Spawn:
 		MUDS EFGH 6
 		Stop

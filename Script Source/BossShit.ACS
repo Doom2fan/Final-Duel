@@ -1,0 +1,25 @@
+bool BossBrainMonologueDone;
+
+script "FD_BossBrainMonologue" (void) {
+	if (!GetCVar ("FD_NoBossMonologues")) {
+		SetHudSize (640, 400, 0);
+        SetFont ("BIGFONT");
+        HudMessageBold (s:"In all my aeons"; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
+		Delay (154);
+		HudMessageBold (s:"I've never met anyone as foolish as you."; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
+		Delay (154);
+		HudMessageBold (s:"You might think the end is nigh"; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
+		Delay (154);
+		HudMessageBold (s:"But this is only the beginning."; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
+		Delay (154);
+	}
+	BossBrainMonologueDone = 1;
+	SetActorState (0, "BossStart");
+}
+
+script "FD_BossBrainWaitForMonologue" (void) {
+	while (!BossBrainMonologueDone) {
+		Delay (1);
+	}
+	SetActorState (0, "BossStart");
+}

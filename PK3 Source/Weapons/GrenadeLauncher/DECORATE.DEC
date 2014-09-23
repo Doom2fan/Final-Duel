@@ -47,7 +47,7 @@ Actor FDGrenadeLauncher : FDWeapon {
 	Weapon.AmmoGive1 0
 	Weapon.AmmoUse 1
 	Weapon.AmmoUse2 0
-	+Ammo_Optional +NoAutofire +NoAlert
+	+Weapon.Ammo_Optional +Weapon.NoAutofire +Weapon.NoAlert
 	States {
 	Ready:
 		GLGS EDCBA 1
@@ -74,19 +74,18 @@ Actor FDGrenadeLauncher : FDWeapon {
 	Reload:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("AmmoGrenadeLauncher", 6, "Ready2")
-        TNT1 A 0 A_JumpIfInventory ("GrenadeAmmo", 1, 1)
-        Goto Ready2
+		TNT1 A 0 A_JumpIfInventory ("GrenadeAmmo", 1, 1)
+		Goto Ready2
 		GLGS ABCDE 1
 		GLGS F 4
 		TNT1 A 0 A_FireCustomMissile ("GrenadeMagSpawn", 0, 0, 0, 0)
-		TNT1 A 0 A_TakeInventory ("AmmoGrenadeLauncher", 6)
 		GLGS F 21 A_PlaySound ("GrenadeLauncher/DrumOut", CHAN_WEAPON)
 		GLGS F 17
 		TNT1 A 0 A_PlaySound ("GrenadeLauncher/DrumIn", CHAN_WEAPON)
-		TNT1 A 0 A_GiveInventory ("AmmoGrenadeLauncher", 6)
-		TNT1 A 0 A_TakeInventory ("GrenadeAmmo", 1)
 		GLGS F 17
 		GLGS EDCBA 1
+		TNT1 A 0 A_GiveInventory ("AmmoGrenadeLauncher", 6)
+		TNT1 A 0 A_TakeInventory ("GrenadeAmmo", 1)
 		Goto Ready2
 	Fire:
 		TNT1 A 0 A_JumpIfInventory ("GrenadeLauncherExplode", 1, "Fire.Explode")
@@ -152,24 +151,25 @@ Actor FDGrenade {
 		GRND A 2
 		Loop
 	Death:
-		TNT1 A 0 A_ChangeFlag("DontSplash", 1)
-	    TNT1 A 0 A_ChangeFlag("AllowBounceOnActors",0)
-		TNT1 A 0 A_ChangeFlag("MBFBouncer",0)
-		TNT1 A 0 A_ChangeFlag("BounceOnWalls",0)
-		TNT1 A 0 A_ChangeFlag("BounceOnCeilings",0)
-		TNT1 A 0 A_ChangeFlag("BounceOnFloors",0)
-		TNT1 A 0 A_ChangeFlag("NoGravity",1)
-		TNT1 A 0 A_ChangeFlag("QuarterGravity",0)
+		TNT1 A 0 A_ChangeFlag ("DontSplash", 1)
+		TNT1 A 0 A_ChangeFlag ("AllowBounceOnActors", 0)
+		TNT1 A 0 A_ChangeFlag ("MBFBouncer", 0)
+		TNT1 A 0 A_ChangeFlag ("BounceOnWalls", 0)
+		TNT1 A 0 A_ChangeFlag ("BounceOnCeilings", 0)
+		TNT1 A 0 A_ChangeFlag ("BounceOnFloors", 0)
+		TNT1 A 0 A_ChangeFlag ("NoGravity", 1)
+		TNT1 A 0 A_ChangeFlag ("QuarterGravity", 0)
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_ChangeFlag("ForceXYBillboard",1)
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("FDShrapnel",random(0,16),random(-8,8),random(-360,360),2,random(10,70))
-		XPL3 G 2 Bright Light(ROCKET_X2) A_Explode
-		XPL3 HIJ 2 Bright Light(ROCKET_X2)
-		XPL3 KLMNO 2 Bright Light(ROCKET_X1)
+		TNT1 A 0 A_ChangeFlag ("ForceXYBillboard", 1)
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile ("FDShrapnel", random (0, 16), random (-8, 8), random (-360, 360), 2, random (10, 70))
+		XPL3 G 2 Bright Light (ROCKET_X2) A_Explode
+		XPL3 HIJ 2 Bright Light (ROCKET_X2)
+		XPL3 KLMNO 2 Bright Light (ROCKET_X1)
 		XPL3 PQRSTUVW 2 Bright
 		Stop
 	}
 }
+
 Actor FDGrenade2 : FDGrenade {
 	BounceType "None"
 	BounceCount 0

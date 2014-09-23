@@ -37,13 +37,13 @@ Actor AmmoBFG : AMMO {
 	Ammo.BackpackMaxAmount 80
 	+IgnoreSkill
 }
+
 Actor BFGMode2 : Boolean { }
 Actor BioForceGun : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title Bio Force Gun MK XVI
 	//$Sprite BFGGZ0
 	Tag "$TAGBFG"
-	Game Doom
 	Height 20
 	Weapon.AmmoUse 40
 	Weapon.AmmoUse2 0
@@ -51,7 +51,7 @@ Actor BioForceGun : FDWeapon {
 	Weapon.AmmoType "AmmoBFG"
 	Weapon.AmmoType2 "Cell2"
 	Inventory.PickupMessage "$GOTBFG"
-	+Alt_Ammo_Optional
+	+Weapon.Alt_Ammo_Optional
 	States {
 	Ready:
 		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 75)
@@ -67,7 +67,7 @@ Actor BioForceGun : FDWeapon {
 	Zoom:
 		TNT1 A 0 A_JumpIfInventory ("PressingZoom", 1, "Ready2")
 		TNT1 A 0 A_GiveInventory ("PressingZoom", 1)
-		TNT1 A 0 A_PlaySound("Weapons/Mode",5,1.5)
+		TNT1 A 0 A_PlaySound ("Weapons/Mode", 5, 1.5)
 		TNT1 A 0 A_JumpIfInventory ("BFGMode2", 1, "BFGMode1")
 		TNT1 A 0 A_Print ("- Seeking mode -")
 		BFGG A 10 A_GiveInventory ("BFGMode2", 1)
@@ -99,7 +99,7 @@ Actor BioForceGun : FDWeapon {
 		BFGG EFG 4 Bright
 		TNT1 A 0 Bright A_PlaySound ("BFG/Fire", CHAN_WEAPON)
 		TNT1 A 0 Bright A_FireCustomMissile ("FDBFGBall")
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -15.0, 0, Sin(Pitch) * 15.0, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -15.0, 0, Sin (Pitch) * 15.0, 1)
 		BFGG HIJK 4 Bright
 		Goto Ready2
 	Fire2:
@@ -108,7 +108,7 @@ Actor BioForceGun : FDWeapon {
 		BFGG EFG 4 Bright
 		TNT1 A 0 Bright A_PlaySound ("BFG/Fire", CHAN_WEAPON)
 		TNT1 A 0 Bright A_FireCustomMissile ("FDBFGBall2")
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -15.0, 0, Sin(Pitch) * 15.0, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -15.0, 0, Sin (Pitch) * 15.0, 1)
 		BFGG HIJK 4 Bright
 		Goto Ready2
 	AltFire:
@@ -121,7 +121,7 @@ Actor BioForceGun : FDWeapon {
 		TNT1 A 0 A_PlaySound ("BFG/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("FDBFGBallAlt")
 		TNT1 A 0 A_TakeInventory ("AmmoBFG", 80)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -25.0, 0, Sin(Pitch) * 25.0, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -25.0, 0, Sin (Pitch) * 25.0, 1)
 		BFGG HIJK 4 Bright
 		Goto Ready2
 	KillBFGBall:
@@ -131,7 +131,7 @@ Actor BioForceGun : FDWeapon {
 	Reload:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Cell2", 1, 1)
-        Goto Ready2
+		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory ("AmmoBFG", 80, "Ready2")
 		TNT1 A 0 A_JumpIfInventory ("AmmoBFG", 1, 1)
 		BFGG AAAAAAAAAA 2 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random (-15, 15), random (0, 3))
@@ -139,12 +139,11 @@ Actor BioForceGun : FDWeapon {
 		BFGS ABCDEFGHI 1
 		TNT1 A 1
 		TNT1 A 0 A_FireCustomMissile ("PlasmaCaseSpawn", 0, 0, 0, 0)
-		TNT1 A 0 A_TakeInventory ("AmmoBFG", 80)
 		TNT1 A 52 A_PlaySound ("BFG/CellOut", CHAN_WEAPON)
-		TNT1 A 0 A_GiveInventory ("AmmoBFG", 80)
-		TNT1 A 0 A_TakeInventory ("Cell2", 1)
 		TNT1 A 30 A_PlaySound ("BFG/CellIn", CHAN_WEAPON)
 		BFGS IHGFEDCBA 1
+		TNT1 A 0 A_GiveInventory ("AmmoBFG", 80)
+		TNT1 A 0 A_TakeInventory ("Cell2", 1)
 		Goto Ready2
 	DryFire:
 		BFGG A 12 A_PlaySound ("BFG/Dryfire", 7)
@@ -178,8 +177,8 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall {
 		TNT1 A 0 A_SeekerMissile (0, 0, SMF_LOOK, 256)
 	Spawn2:
 		BFS1 AA 1 Bright A_SpawnItemEx ("BFGParticleSpawner") // Spawn particles
-		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0,
-			0.0, 0.0, 0.0, 0, SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS) // Spawn secondary effect
+		TNT1 A 0 A_SpawnItemEx ("FDBFGExtra", 0.0, 0.0, 0.0, 
+		0.0, 0.0, 0.0, 0, SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS) // Spawn secondary effect
 		TNT1 A 0 A_SpawnItemEx ("BFGTrail") // Spawn trail
 		BFS1 AABB 1 Bright A_SpawnItemEx ("BFGParticleSpawner") // Spawn particles
 		TNT1 A 0 A_SpawnItemEx ("BFGTrail") // Spawn trail
@@ -273,7 +272,7 @@ Actor FDBFGBallAlt : FDBFGBall {
 
 Actor FDBFGExtra {
 	Health -1
-
+	
 	+NoGravity +ExtremeDeath +IsMonster +NoTarget
 	+NeverTarget +NotAutoaimed +Friendly +NoDamage
 	+SpecialMonster
@@ -282,7 +281,7 @@ Actor FDBFGExtra {
 	Spawn:
 		TNT1 A 0 // This is here to make sure nothing fucks up
 		TNT1 A 0 A_RearrangePointers (AAPTR_TRACER, AAPTR_TARGET, AAPTR_MASTER) // Set up our pointers
-
+		
 	Working:
 		TNT1 A 0 A_CustomRailgun (random (1, 4) * 4, 0, none, 00FF00, RGF_SILENT|RGF_FULLBRIGHT, 1, 1.0, "FDBFGExtraPuff") // Fire a railgun attack at the target
 		TNT1 A 0 A_CustomBulletAttack (0.0, 0.0, 1, 0, "FDBFGExtraPuff2", 0, CBAF_NORANDOMPUFFZ)
@@ -334,7 +333,7 @@ Actor BFGShockwave {
 Actor BFGParticleSpawner : ParticleSpawnerBase {
 	States {
 	Spawn:
-		TNT1 A 0 NoDelay A_CustomMissile ("BFGParticle", 0, random (-40,40), 180, 2)
+		TNT1 A 0 NoDelay A_CustomMissile ("BFGParticle", 0, random (-40, 40), 180, 2)
 		Stop
 	}
 }

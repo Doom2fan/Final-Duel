@@ -8,6 +8,7 @@ Actor DroppedChainsaw : DroppedWeaponBase {
 		Stop
 	}
 }
+
 Actor FDChainsaw : FDWeapon 30163 {
 	//$Category Final Duel-Weapons
 	//$Title Chainsaw
@@ -29,7 +30,7 @@ Actor FDChainsaw : FDWeapon 30163 {
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
-		TNT1 A 0 A_PlaySound("Weapons/saw2idle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound ("Weapons/saw2idle", CHAN_WEAPON)
 		CSAW AB 2 A_WeaponReady
 		Loop
 	DropWeapon:
@@ -56,9 +57,10 @@ Actor FDChainsaw : FDWeapon 30163 {
 		Stop
 	}
 }
+
 Actor FDChainsawPowered : FDChainsaw {
 	Weapon.SisterWeapon FDChainsaw
-	+POWERED_UP
+	+Weapon.Powered_Up
 	States {
 	Fire:
 		CSAW CD 2 A_Saw ("Weapons/saw2full", "Weapons/saw2hit", 0, "SawPuff", 0, 0, 0, 0, 0.5)

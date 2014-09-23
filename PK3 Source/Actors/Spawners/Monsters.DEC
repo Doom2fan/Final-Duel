@@ -1,7 +1,7 @@
 // Zombieman Spawner
 Actor ZombiemanSpawner : RandomSpawner replaces Zombieman {
-	DropItem "SMGZombie" 255 7
-	DropItem "FDZombieman" 255 5
+	DropItem "SMGZombie" 255 6
+	DropItem "FDZombieman" 255 1
 }
 
 // Shotgun Guy Spawner

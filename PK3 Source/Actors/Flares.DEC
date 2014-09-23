@@ -82,7 +82,7 @@ Actor PlasFlareSpawn {
 	+NoClip
 	States {
 	Spawn:
-		TNT1 AA 1 A_CustomMissile ("PlasFlare", -5, 0, -85, 0, random(-10, 10))
+		TNT1 AA 1 A_CustomMissile ("PlasFlare", -5, 0, -85, 0, random (-10, 10))
 		Stop
 	}
 }

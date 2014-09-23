@@ -8,6 +8,7 @@ Actor DroppedCrossbow : DroppedWeaponBase {
 		Stop
 	}
 }
+
 Actor FDCrossbowDropped : WeaponGiver {
 	DropItem FDCrossbow
 	Weapon.AmmoGive 0
@@ -17,6 +18,7 @@ Actor FDCrossbowDropped : WeaponGiver {
 		Stop
 	}
 }
+
 Actor FDCrossbow : FDWeapon 30137 {
 	//$Category Final Duel-Weapons
 	//$Title Crossbow
@@ -30,7 +32,7 @@ Actor FDCrossbow : FDWeapon 30137 {
 	Obituary "$OBCROSSBOW"
 	States {
 	Ready:
-		XBWS CBA 1 
+		XBWS CBA 1
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfNoAmmo ("Ready2.Empty")
@@ -63,7 +65,7 @@ Actor FDCrossbow : FDWeapon 30137 {
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_PlaySound ("Crossbow/Fire", CHAN_WEAPON)
-		XBOW B 1 A_FireCustomMissile ("CrossbowBolt",0,1)
+		XBOW B 1 A_FireCustomMissile ("CrossbowBolt", 0, 1)
 		TNT1 A 0 A_JumpIfNoAmmo ("Ready2.Empty")
 		XBOW CD 2
 		XBOW D 11
@@ -108,8 +110,8 @@ Actor CrossbowBolt {
 		XBWB A 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx ("CrossbowBoltWall", 0.0, 0.0, 0.0,
-								0.0, 0.0, 0.0, 0.0, SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx ("CrossbowBoltWall", 0.0, 0.0, 0.0, 
+		0.0, 0.0, 0.0, 0.0, SXF_NOCHECKPOSITION)
 		XBWB A 1 A_PlaySound ("Crossbow/Arrow/Hit", CHAN_BODY)
 		Stop
 	Crash:
@@ -118,6 +120,7 @@ Actor CrossbowBolt {
 		Stop
 	}
 }
+
 Actor CrossbowBoltWall : CrossbowBolts {
 	+NoGravity
 	States {

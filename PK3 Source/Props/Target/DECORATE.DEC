@@ -1,5 +1,4 @@
-Actor ZombieTarget 30071
-{
+Actor ZombieTarget 30071 {
 	//$category Final Duel-Props
 	//$title Zombie Target
 	Health 50
@@ -8,11 +7,8 @@ Actor ZombieTarget 30071
 	Speed 0
 	Height 66
 	Radius 19
-	+NOPAIN
-	+NoBlood
-	+NODAMAGETHRUST
-	States
-	{
+	+NoPain +NoBlood +NoDamageThrust
+	States {
 	Spawn:
 		TRGT A 1
 		Loop

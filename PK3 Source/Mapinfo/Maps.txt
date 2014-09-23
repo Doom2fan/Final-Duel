@@ -1,1 +1,1 @@
-include Mapinfo/FinalDuelMaps.TXT
+Include "Mapinfo/FinalDuelMaps.txt"

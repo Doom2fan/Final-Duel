@@ -1,11 +1,11 @@
-episode FDMAP01 {
-	name = "Final Duel"
-	key = "f"
-	optional
+Episode FDMAP01 {
+	Name = "Final Duel"
+	Key = "f"
+	Optional
 }
 
-episode TRAINING {
-	name = "Final Duel-Training Course"
-	key = "a"
-	optional
+Episode TRAINING {
+	Name = "Final Duel-Training Course"
+	Key = "a"
+	Optional
 }

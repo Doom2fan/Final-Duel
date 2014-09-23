@@ -13,3 +13,131 @@ Sprite BRTSC0, 320, 200
 {
 	Patch BRTAA0, 178, 144
 }
+
+// No ammo
+Sprite BERETTA5, 58, 67
+{
+	Patch BERETTA4, 14, 35
+	Patch BERETTA3, 0, 0
+}
+
+Sprite BRTAF0, 320, 200
+{
+	Patch BERETTA5, 130, 101
+}
+
+Sprite BERETTA6, 58, 67
+{
+	Patch BERETTA4, 14, 37
+	Patch BERETTA3, 0, 0
+}
+
+Sprite BRTAG0, 320, 200
+{
+	Patch BERETTA6, 130, 101
+}
+
+Sprite BERETTA7, 58, 67
+{
+	Patch BERETTA4, 14, 36
+	Patch BERETTA3, 0, 0
+}
+
+Sprite BRTAH0, 320, 200
+{
+	Patch BERETTA7, 130, 101
+}
+
+// Reload
+Sprite BRTRA0, 122, 103
+{
+	Offset -152, -85
+	Patch BERETTA1, 0, 0
+}
+
+Sprite BRR2A0, 320, 200
+{
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2B0, 320, 200
+{
+	Patch BERETTA8, 166, 113
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2C0, 320, 200
+{
+	Patch BERETTA8, 162, 125
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2D0, 320, 200
+{
+	Patch BERETTA8, 158, 136
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2E0, 320, 200
+{
+	Patch BERETTA8, 153, 152
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2F0, 320, 200
+{
+	Patch BERETTA8, 150, 162
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2G0, 320, 200
+{
+	Patch BERETTA8, 148, 169
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2H0, 320, 200
+{
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2I0, 320, 200
+{
+	Patch BERETTA9, 117, 174
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2J0, 320, 200
+{
+	Patch BERETTA9, 123, 167
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2K0, 320, 200
+{
+	Patch BERETTA9, 129, 156
+	Patch BERETTA2, 152, 83
+}
+
+Sprite BRR2L0, 320, 200
+{
+	Patch BERETTA9, 135, 144
+	Patch BERETTA2, 156, 79
+}
+
+Sprite BRR2M0, 320, 200
+{
+	Patch BERETTA9, 140, 136
+	Patch BERETTA2, 160, 75
+}
+
+Sprite BRR2N0, 320, 200
+{
+	Patch BERETTA9, 150, 116
+	Patch BERETTA2, 164, 71
+}
+
+Sprite BRR2O0, 320, 200
+{
+	Patch BRTRP0, 168, 68
+}

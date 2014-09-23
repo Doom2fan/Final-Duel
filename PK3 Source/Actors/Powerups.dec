@@ -6,6 +6,7 @@ Actor FDInvulnerabilitySpherePower : PowerupGiver {
 	Powerup.Color GoldMap
 	+Inventory.AutoActivate +Inventory.AlwaysPickup
 }
+
 Actor FDInvulnerabilitySphere : CustomInventory Replaces InvulnerabilitySphere {
 	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
 	Inventory.MaxAmount 0
@@ -35,7 +36,7 @@ Actor InvulnerabilitySphereSparks {
 	States {
 	Spawn:
 	Death:
-		WSPK A 2 Bright A_FadeOut(0.04)
+		WSPK A 2 Bright A_FadeOut (0.04)
 		Loop
 	}
 }

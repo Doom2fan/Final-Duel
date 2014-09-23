@@ -156,7 +156,10 @@ function void HealthUnboost (int HP) {
 // Take all stuff
 function void RestartInventory (void) {
 	Int Chronos = CheckInventory ("ChronosItem");
+	TakeInventory ("EnforcerReloadLCR", 15);
+	TakeInventory ("EnforcerReloadRCR", 15);
 	TakeInventory ("Sword", 1);
+	TakeInventory ("Knife", 1);
 	TakeInventory ("Magnum", 1);
 	TakeInventory ("FDShotgun", 1);
 	TakeInventory ("PumpActionShotgun", 1);
@@ -191,15 +194,15 @@ function void RestartInventory (void) {
 		GiveInventory ("AmmoActionMachinegun", 50);
 	}
 	if (Chronos == 0) {
-		GiveInventory ("EnforcerClipL", 12);
-		GiveInventory ("EnforcerClipR", 12);
+		GiveInventory ("EnforcerClipL", 15);
+		GiveInventory ("EnforcerClipR", 15);
 	}
 	GiveInventory ("Clip2", 5);
 	GiveInventory ("Energy",100);
 	GiveInventory ("NVBattery", 100);
 	GiveInventory ("FDBerserk", 1);
 	GiveInventory ("AmmoMagnum", 6);
-	GiveInventory ("AmmoRifle", 30);
+	GiveInventory ("AmmoRifle", 20);
 	GiveInventory ("AmmoFDShotgun", 8);
 	GiveInventory ("AmmoPAShotgun", 6);
 	GiveInventory ("AmmoPAShotgunSlug", 6);
@@ -214,14 +217,14 @@ function void RestartInventory (void) {
 }
 
 function void RestartLevelSystem (void) {
-	TakeInventory ("BerettaUpgrade", 1);
-	TakeInventory ("EnforcerUpgrade", 1);
-	TakeInventory ("MinigunUpgrade", 1);
-	TakeInventory ("NightvisionUpgrade", 1);
-	TakeInventory ("PlasmaRifleUpgrade", 1);
+	TakeInventory ("BerettaUpgrade", 99999);
+	TakeInventory ("EnforcerUpgrade", 99999);
+	TakeInventory ("MinigunUpgrade", 99999);
+	TakeInventory ("NightvisionUpgrade", 99999);
+	TakeInventory ("PlasmaRifleUpgrade", 99999);
 	if (CheckInventory ("XPSystemLevel") >= 7)
 		HealthUnboost (-50);
-	TakeInventory ("MagnumUpgrade", 1);
+	TakeInventory ("MagnumUpgrade", 99999);
 	TakeInventory ("XPSystemLevel", 999999999);
 	TakeInventory ("XPSystemExperience", 999999999);
 }
@@ -229,7 +232,7 @@ function void RestartLevelSystem (void) {
 // Player move speed script made by DoomRater
 // transformed into a function by Alex_Mercer
 function void PlayerSpeed (int movespeed) {
-	SetActorProperty (0, APROP_Speed, movespeed*65535/100);
+	SetActorProperty (0, APROP_Speed, movespeed * 65535 / 100);
 }
 
 // I dunno who made this...

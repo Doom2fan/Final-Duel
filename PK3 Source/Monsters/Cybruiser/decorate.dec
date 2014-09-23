@@ -1,4 +1,4 @@
-Actor Cybruiser : BaronOfHell 30117 { 
+Actor Cybruiser : BaronOfHell 30117 {
 	//$Category Final Duel-Monsters
 	//$Title Cybruiser
 	Health 2000
@@ -20,10 +20,10 @@ Actor Cybruiser : BaronOfHell 30117 {
 	MeleeSound "baron/melee"
 	Species "Hell Noble"
 	DropItem "Energy100" DropItem "Energy100" DropItem "Energy100"
-	States { 
-	Spawn: 
-		BRUS A 10 A_Look 
-		Loop 
+	States {
+	Spawn:
+		BRUS A 10 A_Look
+		Loop
 	See:
 		BRUS A 1 A_PlaySound ("monster/bruwlk")
 		BRUS A 2 A_Chase
@@ -31,11 +31,11 @@ Actor Cybruiser : BaronOfHell 30117 {
 		BRUS BB 3 A_Chase
 		BRUS C 1 A_PlaySound ("monster/bruwlk")
 		BRUS C 2 A_Chase
-		BRUS C 3 A_Chase 
+		BRUS C 3 A_Chase
 		BRUS DD 3 A_Chase
-		Loop 
+		Loop
 	Missile:
-		BRUS E 8 A_FaceTarget 
+		BRUS E 8 A_FaceTarget
 		BRUS F 12 Bright A_CustomMissile ("BruiserMissile", 38, 15, 0, 0)
 		BRUS E 12 A_FaceTarget
 		BRUS F 12 Bright A_CustomMissile ("BruiserMissile", 38, 15, 0, 0)
@@ -46,11 +46,11 @@ Actor Cybruiser : BaronOfHell 30117 {
 		BRUS GH 8 A_FaceTarget
 		BRUS I 8 A_MeleeAttack
 		Goto See
-	Pain: 
-		BRUS J 2 
-		BRUS J 2 A_Pain 
-		Goto See 
-	Death: 
+	Pain:
+		BRUS J 2
+		BRUS J 2 A_Pain
+		Goto See
+	Death:
 		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 800)
 		BRUS K 6 Bright A_Scream
 		BRUS LMN 6 Bright
@@ -61,7 +61,7 @@ Actor Cybruiser : BaronOfHell 30117 {
 		Stop
 	Raise:
 		BRUS TSRQONMLK 8
-	} 
+	}
 }
 
 Actor BruiserMissile {
@@ -78,7 +78,7 @@ Actor BruiserMissile {
 	DontHurtShooter
 	Decal Scorch
 	States {
-	Spawn: 
+	Spawn:
 		FBRS A 1 Bright
 		FBRS A 1 Bright A_SpawnItemEx ("BruiserTrail", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 128)
 		Loop
@@ -91,7 +91,7 @@ Actor BruiserMissile {
 	}
 }
 
-Actor BruiserTrail {   
+Actor BruiserTrail {
 	Radius 3
 	Height 3
 	RenderStyle Translucent
@@ -101,6 +101,6 @@ Actor BruiserTrail {
 	Spawn:
 		TNT1 A 3 Bright
 		PUFF ABCD 4 Bright
-		Stop 
+		Stop
 	}
 }

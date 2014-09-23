@@ -44,7 +44,6 @@ Actor FDRocketLauncher : FDWeapon {
 	//$Title Rocket Launcher
 	//$Sprite LAUNA0
 	Tag "$TAGRLAUNCHER"
-	Game Doom
 	Weapon.AmmoUse 0
 	Weapon.AmmoUse2 0
 	Weapon.AmmoGive 0
@@ -79,12 +78,12 @@ Actor FDRocketLauncher : FDWeapon {
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory ("AmmoRocketLauncher", 1, 1)
-        Goto DryFire
+		Goto DryFire
 		MISG B 0 A_PlaySound ("RocketLauncher/Fire", CHAN_WEAPON)
 		MISG B 0 A_FireCustomMissile ("FDRocket")
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_TakeInventory ("AmmoRocketLauncher", 1, TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.0, 0, Sin(Pitch) * 5.0, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -5.0, 0, Sin (Pitch) * 5.0, 1)
 		MISG BBB 1 Bright A_SetPitch (pitch - 3.3333333333333333333333333333333, SPF_INTERPOLATE)
 		MISG CDE 3 Bright
 		MISG F 2
@@ -95,17 +94,17 @@ Actor FDRocketLauncher : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("RLUpgrade", 1, 1)
 		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory ("AmmoRocketLauncher", 1, 1)
-        Goto DryFire
+		Goto DryFire
 		TNT1 A 0 A_JumpIfTargetInLOS ("TrueAltFire", 1.0, JLOSF_PROJECTILE)
 		MISG A 1
 		TNT1 A 0 A_Refire
-	    Goto Ready2
+		Goto Ready2
 	TrueAltFire:
 		MISG B 0 A_PlaySound ("RocketLauncher/Fire", CHAN_WEAPON)
 		MISG B 0 A_FireCustomMissile ("FDRocketSeeker")
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_TakeInventory ("AmmoRocketLauncher", 1, TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.0, 0, Sin(Pitch) * 5.0, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -5.0, 0, Sin (Pitch) * 5.0, 1)
 		MISG BBB 1 Bright A_SetPitch (pitch - 3.3333333333333333333333333333333, SPF_INTERPOLATE)
 		MISG CDE 3 Bright
 		MISG F 2
@@ -122,7 +121,7 @@ Actor FDRocketLauncher : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, 1)
 		Goto Reload.Fail
 		TNT1 A 0 A_JumpIfInventory ("RocketAmmo2", 1, 1)
-        Goto Reload.Fail
+		Goto Reload.Fail
 		TNT1 A 0 A_JumpIfInventory ("AmmoRocketLauncher", 6, "Reload.Fail")
 		MISG J 3
 		MISG K 3 A_PlaySound ("RocketLauncher/MagOut", CHAN_WEAPON)
@@ -134,10 +133,10 @@ Actor FDRocketLauncher : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("RocketAmmo2", 1, 1)
 		Goto Reload.Done
 		MISG P 7
-		TNT1 A 0 A_GiveInventory ("AmmoRocketLauncher", 1)
-		TNT1 A 0 A_TakeInventory ("RocketAmmo2", 1)
 		TNT1 A 0 A_PlaySound ("RocketLauncher/Load", 5)
 		MISG P 7
+		TNT1 A 0 A_GiveInventory ("AmmoRocketLauncher", 1)
+		TNT1 A 0 A_TakeInventory ("RocketAmmo2", 1)
 		Loop
 	Reload.Fail:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
@@ -174,7 +173,7 @@ Actor FDRocket Replaces Rocket {
 		//TNT1 A 0 A_CheckFloor ("SpawnFire")
 	XDeath:
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_ChangeFlag ("ForceXYBillboard",1)
+		TNT1 A 0 A_ChangeFlag ("ForceXYBillboard", 1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("FDShrapnel", random (0, 16), random (-8, 8), random (-360, 360), 2, random (10, 70))
 		TNT1 A 0 A_Explode (224, 224)
 		XPL1 ABCEDFGHIJKLMNOPQRSTUVWXYZ 1 Bright Light (ROCKET_X1)
@@ -203,7 +202,7 @@ Actor FDRocketLauncherPowered : FDRocketLauncher {
 	States {
 	Fire:
 		TNT1 A 0 A_JumpIfInventory ("AmmoRocketLauncher", 1, 1)
-        Goto DryFire
+		Goto DryFire
 		MISG B 0 A_PlaySound ("RocketLauncher/Fire", CHAN_WEAPON)
 		MISG B 0 A_FireCustomMissile ("FDRocketPowered", -5, 0)
 		MISG B 0 A_FireCustomMissile ("FDRocketPowered", -2.5, 0)
@@ -212,7 +211,7 @@ Actor FDRocketLauncherPowered : FDRocketLauncher {
 		MISG B 0 A_FireCustomMissile ("FDRocketPowered", 5, 0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_TakeInventory ("AmmoRocketLauncher", 1, TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.8, 0, Sin(Pitch) * 5.8, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -5.8, 0, Sin (Pitch) * 5.8, 1)
 		MISG BBB 1 Bright A_SetPitch (pitch - 2.0, SPF_INTERPOLATE)
 		MISG CDE 3 Bright
 		MISG F 2
@@ -223,21 +222,21 @@ Actor FDRocketLauncherPowered : FDRocketLauncher {
 		TNT1 A 0 A_JumpIfInventory ("RLUpgrade", 1, 1)
 		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory ("AmmoRocketLauncher", 1, 1)
-        Goto DryFire
+		Goto DryFire
 		TNT1 A 0 A_JumpIfTargetInLOS ("TrueAltFire", 1.0, JLOSF_PROJECTILE)
 		MISG A 1
 		TNT1 A 0 A_Refire
-	    Goto Ready2
+		Goto Ready2
 	TrueAltFire:
 		MISG B 0 A_PlaySound ("RocketLauncher/Fire", CHAN_WEAPON)
-		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker",-5,0)
-		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker",-2.5,0)
+		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker", -5, 0)
+		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker", -2.5, 0)
 		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker")
-		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker",2.5,0)
-		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker",5,0)
+		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker", 2.5, 0)
+		MISG B 0 A_FireCustomMissile ("FDRocketPoweredSeeker", 5, 0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_TakeInventory ("AmmoRocketLauncher", 1, TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -5.8, 0, Sin(Pitch) * 5.8, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -5.8, 0, Sin (Pitch) * 5.8, 1)
 		MISG BBB 1 Bright A_SetPitch (pitch - 2.0, SPF_INTERPOLATE)
 		MISG CDE 3 Bright
 		MISG F 2
@@ -263,7 +262,7 @@ Actor FDRocketPowered : FDRocket {
 		XPL1 ABCEDFGHIJKLMNOPQRSTUVWXYZ 1 Bright Light (ROCKET_X1)
 		XPL2 ABCEDFGHIJK 1 Bright Light (ROCKET_X1)
 		XPL2 LMNOPQRSTU 1 Bright Light (ROCKET_X1)
-		stop
+		Stop
 	}
 }
 

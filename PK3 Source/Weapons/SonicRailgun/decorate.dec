@@ -18,8 +18,7 @@ Actor SpawnedSonicRailgun : BaseSpawnedWeapon 30008 {
 	}
 }
 
-Actor SRailFlare
-{
+Actor SRailFlare {
 	+ForceXYBillBoard
 	+NoInteraction
 	Radius 4
@@ -33,12 +32,12 @@ Actor SRailFlare
 		Stop
 	}
 }
-Actor SRailProjectile : FastProjectile
-{
+
+Actor SRailProjectile : FastProjectile {
 	Radius 4
 	Height 8
 	Speed 1
-	Damage (random(1,4) * 20)
+	Damage (random (1, 4) * 20)
 	Projectile
 	RenderStyle Add
 	Alpha 0.9
@@ -50,54 +49,49 @@ Actor SRailProjectile : FastProjectile
 	MissileHeight 8
 	Decal "PlasmaScorchLower"
 	Obituary "$OBSONICRAIL"
-	States
-	{
+	States {
 	Spawn:
 		TNT1 A 0 NoDelay
-		TNT1 A 0 A_ScaleVelocity(160)
-		TNT1 A 0 A_PlaySound("PlasmaRifle/Fly", CHAN_BODY|256)
+		TNT1 A 0 A_ScaleVelocity (160)
+		TNT1 A 0 A_PlaySound ("PlasmaRifle/Fly", CHAN_BODY|256)
 	Spawn2:
 		RGP2 A 1 Bright
 		Loop
 	Death:
-		TNT1 AAAA 0 A_SpawnItemEx("SRailPSmoke", 0, 0, 0, 0, random(-2,2), 0, 0, 0)
-		TNT1 A 0 A_Explode(128,128)
+		TNT1 AAAA 0 A_SpawnItemEx ("SRailPSmoke", 0, 0, 0, 0, random (-2, 2), 0, 0, 0)
+		TNT1 A 0 A_Explode (128, 128)
 		RGP1 ABCDEFG 2 Bright
 		Stop
 	}
 }
-Actor SRailPSmoke : ShotSmoke
-{
+
+Actor SRailPSmoke : ShotSmoke {
 	Renderstyle Translucent
 	Alpha 0.20
 	VSpeed 0
 	Scale 1.5
-	States
-	{
+	States {
 	Spawn:
 		TNT1 A 0
 		SMOK AAAAAAAAAAAAAAAAA 1
-		SMOK A 1 A_FadeOut(0.02)
+		SMOK A 1 A_FadeOut (0.02)
 		Wait
 	}
 }
 
-Actor DroppedSonicRailgun : DroppedWeaponBase
-{
-	States
-	{
+Actor DroppedSonicRailgun : DroppedWeaponBase {
+	States {
 	Spawn:
 		RGUN X 1
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("SonicRailgun")
+		TNT1 A 0 A_SpawnItemEx ("SonicRailgun")
 		Stop
 	}
 }
 Actor RGZoomed : Boolean { }
 Actor RGMode2  : Boolean { }
-Actor SonicRailgun : FDWeapon
-{
+Actor SonicRailgun : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title Mjolnir MK IV Sonic Railgun
 	//$Sprite RGUNX0
@@ -111,199 +105,186 @@ Actor SonicRailgun : FDWeapon
 	Weapon.Ammotype2 "Cell2"
 	Weapon.Ammogive1 0
 	+Weapon.NoAlert
-	+AMMO_OPTIONAL
-	+NOAUTOFIRE
-	+NOAUTOAIM
-	States
-	{
+	+Weapon.Ammo_Optional
+	+NoAutoFire
+	+NoAutoAim
+	States {
 	Spawn:
 		RGUN X -1
 		Stop
 	Ready:
 		RGG2 GFEDCBA 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory("RGZoomed",1,"ZReady")
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		RGG1 AAA 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_TakeInventory("PressingZoom", 999)
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		RGG1 BBB 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"DropWeapon")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kicking")
-		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
-		RGG1 CCC 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("RGZoomed", 1, "ZReady")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		RGG1 AAA 1 A_WeaponReady (WRF_ALLOWZOOM)
+		TNT1 A 0 A_TakeInventory ("PressingZoom", 999)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		RGG1 BBB 1 A_WeaponReady (WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
+		RGG1 CCC 1 A_WeaponReady (WRF_ALLOWZOOM)
 		Loop
 	ZReady:
-		TNT1 A 0 A_JumpIfInventory("RGZoomed",1,1)
+		TNT1 A 0 A_JumpIfInventory ("RGZoomed", 1, 1)
 		Goto Ready2
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"Unzoom")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_TakeInventory("Kicking",1)
-		TNT1 A 0 A_TakeInventory("Taunting",1)
-		SNPS BBB 1 A_WeaponReady(WRF_NOBOB|WRF_ALLOWZOOM)
-		TNT1 A 0 A_TakeInventory("PressingZoom", 999)
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"Unzoom")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_TakeInventory("Kicking",1)
-		TNT1 A 0 A_TakeInventory("Taunting",1)
-		SNPS BBB 1 A_WeaponReady(WRF_NOBOB|WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("DropDatWeapon",1,"Unzoom")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
-		TNT1 A 0 A_TakeInventory("Kicking",1)
-		TNT1 A 0 A_TakeInventory("Taunting",1)
-		SNPS BBB 1 A_WeaponReady(WRF_NOBOB|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "Unzoom")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Kicking", 1)
+		TNT1 A 0 A_TakeInventory ("Taunting", 1)
+		SNPS BBB 1 A_WeaponReady (WRF_NOBOB|WRF_ALLOWZOOM)
+		TNT1 A 0 A_TakeInventory ("PressingZoom", 999)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "Unzoom")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Kicking", 1)
+		TNT1 A 0 A_TakeInventory ("Taunting", 1)
+		SNPS BBB 1 A_WeaponReady (WRF_NOBOB|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "Unzoom")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
+		TNT1 A 0 A_TakeInventory ("Kicking", 1)
+		TNT1 A 0 A_TakeInventory ("Taunting", 1)
+		SNPS BBB 1 A_WeaponReady (WRF_NOBOB|WRF_ALLOWZOOM)
 		Loop
 	DropWeapon:
 		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
-		TNT1 A 0 A_FireCustomMissile("DroppedSonicRailgun", 0, 0, 0)
-		TNT1 A 0 A_TakeInventory("SonicRailgun", 1)
+		TNT1 A 0 A_FireCustomMissile ("DroppedSonicRailgun", 0, 0, 0)
+		TNT1 A 0 A_TakeInventory ("SonicRailgun", 1)
 		Stop
 	Deselect:
-		RGG1 A 0 A_JumpIfInventory("RGZoomed",1,"Deselect.Unzoom")
+		RGG1 A 0 A_JumpIfInventory ("RGZoomed", 1, "Deselect.Unzoom")
 		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
-		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_TakeInventory("RGZoomed",999)
+		TNT1 A 0 A_ZoomFactor (1.0)
+		TNT1 A 0 A_TakeInventory ("RGZoomed", 999)
 		RGG2 ABCDEFG 1
 		TNT1 A 0 A_Lower
 		Wait
 	Deselect.Unzoom:
-		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 100)
-		RGG1 A 0 A_TakeInventory("RGZoomed",999)
-		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
-		TNT1 A 0 A_SetCrosshair(0)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
-		RGGF A 10 A_SetBlend("00 00 00", 1.0, 20)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		RGG1 A 0 A_TakeInventory ("RGZoomed", 999)
+		TNT1 A 0 A_ZoomFactor (1.0, ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair (0)
+		TNT1 A 0 A_PlaySound ("Weapons/Zoom", CHAN_WEAPON)
+		RGGF A 10 A_SetBlend ("00 00 00", 1.0, 20)
 		RGGF A 10
 		Goto Deselect
 	Select:
-		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_ZoomFactor (1.0)
 		TNT1 A 0 A_Raise
-		Wait	
+		Wait
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("RGMode2",1,"Fire.Ripper")
-		RGG1 A 0 A_JumpIfInventory("RGZoomed",1,"ZFire")
-		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")	
+		TNT1 A 0 A_JumpIfInventory ("RGMode2", 1, "Fire.Ripper")
+		RGG1 A 0 A_JumpIfInventory ("RGZoomed", 1, "ZFire")
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		RGG1 D 2 Bright
-		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("SRailProjectile", 0, 1, 0)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile ("SRailProjectile", 0, 1, 0)
 		TNT1 A 0 A_AlertMonsters
-		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
+		RGGF AAB 1 Bright A_SetPitch (pitch - 0.5, SPF_INTERPOLATE)
 		RGGF A 10
 		Goto Ready2
 	ZFire:
-		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")	
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		SNPS B 2
-		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile("SRailProjectile", 0, 1, 0)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile ("SRailProjectile", 0, 1, 0)
 		TNT1 A 0 A_AlertMonsters
-		SNPS BBB 1 A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
+		SNPS BBB 1 A_SetPitch (pitch - 0.5, SPF_INTERPOLATE)
 		SNPS B 10
 		Goto Ready2
 	Fire.Ripper:
-		RGG1 A 0 A_JumpIfInventory("RGZoomed",1,"ZFire.Ripper")
+		RGG1 A 0 A_JumpIfInventory ("RGZoomed", 1, "ZFire.Ripper")
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		RGG1 D 2 Bright
-		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_RailAttack(random(1,4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_RailAttack (random (1, 4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
 		TNT1 A 0 A_AlertMonsters
-		RGGF AAB 1 Bright A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
+		RGGF AAB 1 Bright A_SetPitch (pitch - 0.5, SPF_INTERPOLATE)
 		RGGF A 10
 		Goto Ready2
 	ZFire.Ripper:
-		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")	
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		SNPS B 2
-		TNT1 A 0 A_PlaySound("SonicRailgun/Fire", CHAN_WEAPON)
-		TNT1 A 0 A_RailAttack(random(1,4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_RailAttack (random (1, 4) * 40, 0, 1, 64FFFF, 00FFFF, RGF_SILENT|RGF_FULLBright|RGF_DOUBLEHELIX, 0, "none", 0.0, 0.0, 0, 0, 1.0, 1.0, "none", -5)
 		TNT1 A 0 A_AlertMonsters
-		SNPS BBB 1 A_SetPitch(pitch - 0.5, SPF_INTERPOLATE)
+		SNPS BBB 1 A_SetPitch (pitch - 0.5, SPF_INTERPOLATE)
 		SNPS B 10
 		Goto Ready2
 	Altfire:
-		TNT1 A 0 A_PlaySound("Weapons/Mode",5,1.5)
-		TNT1 A 0 A_JumpIfInventory("RGMode2",1,"Mode2")
-		TNT1 A 0 A_GiveInventory("RGMode2",1)
+		TNT1 A 0 A_PlaySound ("Weapons/Mode", 5, 1.5)
+		TNT1 A 0 A_JumpIfInventory ("RGMode2", 1, "Mode2")
+		TNT1 A 0 A_GiveInventory ("RGMode2", 1)
 		TNT1 A 0 A_Print ("- Ripper mode -")
 		Goto Ready2
 	Mode2:
-		TNT1 A 0 A_TakeInventory("RGMode2",1)
+		TNT1 A 0 A_TakeInventory ("RGMode2", 1)
 		TNT1 A 0 A_Print ("- Explosive mode -")
 		Goto Ready2
 	Zoom:
-		TNT1 A 0 A_JumpIfInventory("PressingZoom", 1, "Ready2")
-		TNT1 A 0 A_GiveInventory("PressingZoom", 1)
-		RGG1 A 0 A_JumpIfInventory("RGZoomed",1,"Unzoom")
-		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 70)
-		RGG1 A 0 A_GiveInventory("RGZoomed",1)
-		TNT1 A 0 A_ZoomFactor(2.3)
-		TNT1 A 0 A_SetCrosshair(99)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", 5)
-		SNPS B 10 A_SetBlend("00 00 00", 1.0, 20)
+		TNT1 A 0 A_JumpIfInventory ("PressingZoom", 1, "Ready2")
+		TNT1 A 0 A_GiveInventory ("PressingZoom", 1)
+		RGG1 A 0 A_JumpIfInventory ("RGZoomed", 1, "Unzoom")
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 70)
+		RGG1 A 0 A_GiveInventory ("RGZoomed", 1)
+		TNT1 A 0 A_ZoomFactor (2.3)
+		TNT1 A 0 A_SetCrosshair (99)
+		TNT1 A 0 A_PlaySound ("Weapons/Zoom", 5)
+		SNPS B 10 A_SetBlend ("00 00 00", 1.0, 20)
 		SNPS BBBBBBBBBB 1
 		Goto ZReady
 	Unzoom:
-		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 100)
-		RGG1 A 0 A_TakeInventory("RGZoomed",999)
-		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
-		TNT1 A 0 A_SetCrosshair(0)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", 5)
-		RGGF A 10 A_SetBlend("00 00 00", 1.0, 20)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		RGG1 A 0 A_TakeInventory ("RGZoomed", 999)
+		TNT1 A 0 A_ZoomFactor (1.0, ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair (0)
+		TNT1 A 0 A_PlaySound ("Weapons/Zoom", 5)
+		RGGF A 10 A_SetBlend ("00 00 00", 1.0, 20)
 		RGGF A 10
 		Goto Ready2
 	Reload:
-		TNT1 A 0 A_TakeInventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("AmmoSRail",80,"REnd")
-		TNT1 A 0 A_JumpIfInventory("Cell2",1,1)
-		Goto REnd
-		TNT1 A 0 A_JumpIfInventory("RGZoomed", 1, "Reload.Unzoom")
-		TNT1 A 0 A_TakeInventory("RGZoomed",1)
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoSRail", 80, "Ready2")
+		TNT1 A 0 A_JumpIfInventory ("Cell2", 1, 1)
+		Goto Ready2
+		TNT1 A 0 A_JumpIfInventory ("RGZoomed", 1, "Reload.Unzoom")
+		TNT1 A 0 A_TakeInventory ("RGZoomed", 1)
 		RGG2 ABCDEFG 1
 		RGG2 G 6
-		TNT1 A 0 A_PlaySound("SonicRailgun/CellOut", CHAN_WEAPON)
-		RGG2 G 52 A_FireCustomMissile("PlasmaCaseSpawn",0,0,0,0)
-		TNT1 A 0 A_PlaySound("SonicRailgun/CellIn", CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/CellOut", CHAN_WEAPON)
+		RGG2 G 52 A_FireCustomMissile ("PlasmaCaseSpawn", 0, 0, 0, 0)
+		TNT1 A 0 A_PlaySound ("SonicRailgun/CellIn", CHAN_WEAPON)
 		RGG2 G 50
-		TNT1 A 0 A_TakeInventory("AmmoSRail",80)
-		Goto Reloading
+		RGG2 GFEDCBA 1
+		TNT1 A 0 A_GiveInventory ("AmmoSRail", 80)
+		TNT1 A 0 A_TakeInventory ("Cell2", 1)
+		Goto Ready2
 	Reload.Unzoom:
-		TNT1 A 0 ACS_NamedExecute("PlayerSpeed", 0, 100)
-		RGG1 A 0 A_TakeInventory("RGZoomed",999)
-		TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
-		TNT1 A 0 A_SetCrosshair(0)
-		TNT1 A 0 A_PlaySound("Weapons/Zoom", CHAN_WEAPON)
-		RGGF A 10 A_SetBlend("00 00 00", 1.0, 20)
+		TNT1 A 0 ACS_NamedExecute ("PlayerSpeed", 0, 100)
+		RGG1 A 0 A_TakeInventory ("RGZoomed", 999)
+		TNT1 A 0 A_ZoomFactor (1.0, ZOOM_INSTANT)
+		TNT1 A 0 A_SetCrosshair (0)
+		TNT1 A 0 A_PlaySound ("Weapons/Zoom", CHAN_WEAPON)
+		RGGF A 10 A_SetBlend ("00 00 00", 1.0, 20)
 		RGGF A 10
 		Goto Reload
-	Reloading:
-		TNT1 A 0 A_JumpIfInventory("AmmoSRail",80,"DoneReload")
-		TNT1 A 0 A_JumpIfInventory("Cell2",1,1)
-		Goto DoneReload
-		TNT1 A 0 A_GiveInventory("AmmoSRail",80)
-		TNT1 A 0 A_TakeInventory("Cell2",1)
-		Goto Reloading
 	DryFire:
-		TNT1 A 0 A_PlaySound("PlasmaRifle/Dryfire", 7)
-		TNT1 A 0 A_JumpIfInventory("EnableAutoReload",1,"Reload")
-		TNT1 A 0 A_JumpIfInventory("RGZoomed",1,"ZReady")
-		Goto Ready2
-	DoneReload:    
-		RGG2 GFEDCBA 1
-		TNT1 A 0 A_TakeInventory("Reloading",1)
-		Goto Ready2
-	REnd:
-		TNT1 A 0 A_JumpIfInventory("RGZoomed",1,"ZReady")
+		TNT1 A 0 A_PlaySound ("PlasmaRifle/Dryfire", 7)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload")
+		TNT1 A 0 A_JumpIfInventory ("RGZoomed", 1, "ZReady")
 		Goto Ready2
 	}
 }
-Actor AmmoSRail : AMMO
-{
+
+Actor AmmoSRail : AMMO {
 	Inventory.MaxAmount 80
 	Ammo.BackpackMaxAmount 80
-	+IGNORESKILL
+	+IgnoreSkill
 }

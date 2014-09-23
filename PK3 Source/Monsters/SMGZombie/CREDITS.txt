@@ -1,7 +1,7 @@
 Submitted: Woolie Wool
 Decorate: Woolie Wool
 GLDefs: Woolie Wool
-Sounds: Rogue Entertainment
+Sounds: NightmareMutant, Turtle Rock Studios, Alex_Mercer
 Sprites: Id Software
 Sprite Edit: Xim, Woolie Wool, Toke
 Idea Base: Mutiny PDW Marine

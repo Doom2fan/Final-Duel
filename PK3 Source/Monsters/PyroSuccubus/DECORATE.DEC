@@ -1,9 +1,8 @@
 //===========================================================================
 //
-// Pyro Succubus 
+// Pyro Succubus
 //
 //===========================================================================
-
 
 Actor PyroSuccubus 30126 {
 	//$Category Final Duel-Monsters
@@ -17,13 +16,13 @@ Actor PyroSuccubus 30126 {
 	Speed 12
 	Scale 0.95
 	MissileType FireBall1
-    DamageFactor Ice,1.5
-	DamageFactor Fire,0.2
+	DamageFactor Ice, 1.5
+	DamageFactor Fire, 0.2
 	PainChance 95
-    SeeSound "pyr/sight"
-    PainSound "pyr/pain"
-    DeathSound "pyr/death"
-    ActiveSound "pyr/active"
+	SeeSound "pyr/sight"
+	PainSound "pyr/pain"
+	DeathSound "pyr/death"
+	ActiveSound "pyr/active"
 	RenderStyle Translucent
 	Monster
 	+NoTarget +FloorClip +DontHurtSpecies
@@ -33,7 +32,7 @@ Actor PyroSuccubus 30126 {
 	Spawn:
 	Idle:
 		SUC1 A 10 Bright A_Look
-		Loop 
+		Loop
 	Pain.Kick:
 		SUC1 A 1 A_Pain
 		SUC1 A 1 A_FaceTarget (0, 0, 1)
@@ -41,9 +40,9 @@ Actor PyroSuccubus 30126 {
 		TNT1 A 0 ThrustThingZ (0, 25, 0, 0)
 		Goto Spawn
 	See:
-		TNT1 A 0 A_ChangeFlag ("Float",0)
-		TNT1 A 0 A_ChangeFlag ("NoGravity",0)
-		TNT1 A 0 A_ChangeFlag ("DropOff",0)
+		TNT1 A 0 A_ChangeFlag ("Float", 0)
+		TNT1 A 0 A_ChangeFlag ("NoGravity", 0)
+		TNT1 A 0 A_ChangeFlag ("DropOff", 0)
 		SUC1 AA 3 Bright A_Chase
 		SUC1 A 0 Bright A_SpawnItemEx ("WalkFire1", 0, 0, 0, 1, 0, 0, 0, 128)
 		SUC1 BB 3 Bright A_Chase
@@ -56,21 +55,21 @@ Actor PyroSuccubus 30126 {
 		Loop
 	Grav:
 		TNT1 A 0 A_JumpIf (Z + height + 100 >= CeilingZ, "See")
-		TNT1 A 0 A_ChangeFlag ("NoGravity",1)
-		TNT1 A 0 A_ChangeFlag ("DropOff",1)
-		TNT1 A 0 A_ChangeFlag ("Float",1)
+		TNT1 A 0 A_ChangeFlag ("NoGravity", 1)
+		TNT1 A 0 A_ChangeFlag ("DropOff", 1)
+		TNT1 A 0 A_ChangeFlag ("Float", 1)
 		Goto Fly
-    Fly:
+	Fly:
 		SUFY AA 4 Bright ThrustThingZ (0, 15, 0, 0)
 		SUFY AABBCCDD 2 Bright
 		Goto Hover
-    Land:
+	Land:
 		SUFY AA 4 Bright ThrustThingZ (0, -20, 0, 0)
 		SUFY A 1 Bright A_CheckFloor ("See")
 		SUFY AABBCCDD 2 Bright
 		SUFY A 1 Bright A_CheckFloor ("See")
 		Goto Hover
-    Hover:
+	Hover:
 		SUFY AABBCCDD 2 Bright A_Chase (0, "MissileF")
 		SUFY A 0 Bright A_Jump (64, "Fly")
 		SUFY A 0 Bright A_Jump (32, "Land")
@@ -79,20 +78,20 @@ Actor PyroSuccubus 30126 {
 		TNT1 A 0 A_Jump (85, "TripleShot")
 		Goto QuadrupleShot
 	QuadrupleShot:
-		SUC1 E 8 Bright A_FaceTarget 
-		SUC1 F 8 Bright A_FaceTarget 
-		SUC1 G 8 Bright A_ComboAttack
-		SUC1 E 8 Bright A_FaceTarget 
+		SUC1 E 8 Bright A_FaceTarget
 		SUC1 F 8 Bright A_FaceTarget
-		SUC1 G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8) 
+		SUC1 G 8 Bright A_ComboAttack
+		SUC1 E 8 Bright A_FaceTarget
+		SUC1 F 8 Bright A_FaceTarget
+		SUC1 G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8)
 		SUC1 G 0 Bright A_ComboAttack
 		SUC1 G 8 Bright A_CustomMissile ("FireBall1", 27, 0, -8)
 		SUC1 E 8 Bright
 		Goto See
 	TripleShot:
-		SUC1 E 8 Bright A_FaceTarget 
+		SUC1 E 8 Bright A_FaceTarget
 		SUC1 F 8 Bright A_FaceTarget
-		SUC1 G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8) 
+		SUC1 G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8)
 		SUC1 G 0 Bright A_ComboAttack
 		SUC1 G 8 Bright A_CustomMissile ("FireBall1", 27, 0, -8)
 		SUC1 E 8 Bright
@@ -101,43 +100,43 @@ Actor PyroSuccubus 30126 {
 		TNT1 A 0 A_Jump (85, "TripleShotF")
 		Goto QuadrupleShotF
 	QuadrupleShotF:
-		SUFY E 8 Bright A_FaceTarget 
-		SUFY F 8 Bright A_FaceTarget 
-		SUFY G 8 Bright A_ComboAttack
-		SUFY E 8 Bright A_FaceTarget 
+		SUFY E 8 Bright A_FaceTarget
 		SUFY F 8 Bright A_FaceTarget
-		SUFY G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8) 
+		SUFY G 8 Bright A_ComboAttack
+		SUFY E 8 Bright A_FaceTarget
+		SUFY F 8 Bright A_FaceTarget
+		SUFY G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8)
 		SUFY G 0 Bright A_ComboAttack
 		SUFY G 8 Bright A_CustomMissile ("FireBall1", 27, 0, -8)
 		SUFY E 8 Bright
 		Goto Hover
 	TripleShotF:
-		SUFY E 8 Bright A_FaceTarget 
+		SUFY E 8 Bright A_FaceTarget
 		SUFY F 8 Bright A_FaceTarget
-		SUFY G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8) 
+		SUFY G 0 Bright A_CustomMissile ("FireBall1", 27, 0, 8)
 		SUFY G 0 Bright A_ComboAttack
 		SUFY G 8 Bright A_CustomMissile ("FireBall1", 27, 0, -8)
 		SUFY E 8 Bright
 		Goto Hover
-	Pain: 
-		SUC1 L 2 Bright 
-		SUC1 L 2 Bright A_Pain 
-		Goto See 
-	Death: 
+	Pain:
+		SUC1 L 2 Bright
+		SUC1 L 2 Bright A_Pain
+		Goto See
+	Death:
 		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 200)
 		SUC1 M 7 Bright
-		SUC1 N 7 Bright A_Scream 
+		SUC1 N 7 Bright A_Scream
 		SUC1 O 7 Bright
-		SUC1 P 7  A_NoBlocking 
+		SUC1 P 7  A_NoBlocking
 		SUC1 QRST 7
-		SUC1 U -1 
+		SUC1 U -1
 		Stop
 	Raise:
 		SUC1 UTSRQ 8 Bright
 		SUC1 P 0 A_PlaySoundEx ("pyr/resurrected", 3)
 		SUC1 PONM 8 Bright
-		Goto See 
- 	}
+		Goto See
+	}
 }
 
 Actor PyroSuccubusWalk : PyroSuccubus 9481 {
@@ -146,8 +145,7 @@ Actor PyroSuccubusWalk : PyroSuccubus 9481 {
 	SpawnId 166
 	Species "Succubus"
 	DropItem "Energy100"
-	States 
-	{ 
+	States {
 	Spawn:
 		SUC1 AB 10 Bright A_Look
 		Loop
@@ -161,7 +159,7 @@ Actor PyroSuccubusWalk : PyroSuccubus 9481 {
 		SUC1 DD 3 Bright A_Chase
 		SUC1 D 0 Bright A_SpawnItemEx ("WalkFire1", 0, 0, 0, 1, 0, 0, 0, 128)
 		Loop
- 	}
+	}
 }
 
 Actor PyroSuccubusFly : PyroSuccubus 9482 {

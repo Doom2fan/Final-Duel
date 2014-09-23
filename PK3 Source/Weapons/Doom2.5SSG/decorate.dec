@@ -8,6 +8,7 @@ Actor DroppedDoomSSG : DroppedWeaponBase {
 		Stop
 	}
 }
+
 Actor DoomSSGDropped : WeaponGiver {
 	DropItem DoomSSG
 	Weapon.AmmoGive 0
@@ -17,6 +18,7 @@ Actor DoomSSGDropped : WeaponGiver {
 		Stop
 	}
 }
+
 Actor DoomSSG : FDWeapon 30002 {
 	//$Category Final Duel-Weapons
 	//$Title Double Shotgun
@@ -34,7 +36,7 @@ Actor DoomSSG : FDWeapon 30002 {
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
-		TNT1 A 0 A_TakeInventory ("Reloading",1)
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		SSGR A 1 A_WeaponReady
 		Loop

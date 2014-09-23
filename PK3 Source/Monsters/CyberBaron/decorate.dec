@@ -26,10 +26,10 @@ Actor Cyberbaron : Baronofhell 30116 {
 		Loop
 	See:
 		CBOS A 3 A_Chase
-		CBOS A 3 A_Chase   
+		CBOS A 3 A_Chase
 		CBOS B 0 A_PlaySound ("cbaron/metal")
 		CBOS BB 3 A_Chase
-		CBOS CC 3 A_Chase    
+		CBOS CC 3 A_Chase
 		CBOS D 3 A_Chase
 		CBOS D 3 A_hoof
 		Loop
@@ -46,7 +46,7 @@ Actor Cyberbaron : Baronofhell 30116 {
 		Goto See
 		CBOS PQ 8 A_FaceTarget
 		CBOS R 8 A_BruisAttack
-		Goto See      
+		Goto See
 	Pain:
 		CBOS H 2
 		CBOS H 2 A_Pain
@@ -65,6 +65,6 @@ Actor Cyberbaron : Baronofhell 30116 {
 		CBOS ONMLKJI 8
 		Goto See
 	}
-}          
+}
 
 Actor CyberAttack2 : FDRocket { }

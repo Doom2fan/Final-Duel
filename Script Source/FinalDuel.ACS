@@ -14,21 +14,22 @@
 #define MAXPLAYERS 8
 
 // Includes
+#include "BossShit.ACS"
 #include "Chasecam.ACS"
-#include "Commands.ACS"
 #include "Class.ACS"
+#include "Commands.ACS"
 #include "CVars.ACS"
 // #include "FatalitySystem.ACS"
 #include "Footsteps.ACS"
 #include "Health.ACS"
 #include "HUD.ACS"
 #include "Misc.ACS"
-#include "WeaponStuff.ACS"
 #include "Runes.ACS"
 #include "ShopSystem.ACS"
 #include "Start.ACS"
 // #include "stralloc.ACS"
 #include "Weapons.ACS"
+#include "WeaponStuff.ACS"
 #include "XPSystem.ACS"
 
 script "Translations" OPEN { // the translations

@@ -1,8 +1,9 @@
-// Credits: 
+// Credits:
 // Decorate: WildWeasel, Alex_Mercer
 // Sprites: WildWeasel
 // Weapons: A_FireCustomMissile (tracerName, frandom (-, horizontalSpread), 1, horizontalOffset, verticalOffset, 0, frandom (-, verticalSpread))
 // Monsters: A_CustomMissile (tracerName, verticalOffset, horizontalOffset, frandom (-, horizontalSpread), 0, frandom (-, verticalSpread))
+
 Actor Tracer : FastProjectile {
 	Alpha 1.0
 	RenderStyle Add
@@ -32,7 +33,8 @@ Actor Tracer : FastProjectile {
 		Stop
 	}
 }
-Actor TracerTrail { 
+
+Actor TracerTrail {
 	Alpha 1.0
 	RenderStyle Add
 	Speed 0
@@ -48,22 +50,22 @@ Actor TracerTrail {
 
 // Custom tracers
 
-	// Weapon tracers
-		Actor PistolTracer				: Tracer { Speed 120 Damage (random (1, 3) * 6) }
-		Actor RifleTracer 				: Tracer { Speed 100 Damage (random (1, 3) * 6) }
-		Actor ShotgunTracer				: Tracer { Speed 150 Damage (random (1, 3) * 6) }
-		Actor DoubleShotgunTracer		: Tracer { Speed 125 Damage (random (1, 3) * 5) }
-		Actor TacticalShotgunTracer		: Tracer { Speed 150 Damage (random (1, 5) * 6) DamageType TacticalShotgunTracer }
-		Actor QuadShotgunTracer			: Tracer { Speed 150 Damage (random (1, 5) * 3) }
-		Actor AK47Tracer  				: Tracer { Speed 130 }
-		Actor AMGTracer   				: Tracer { Speed 130 Damage (random (1, 4) * 4) }
-		Actor MinigunTracer				: Tracer { Speed 180 Damage (random (1, 2) * 3) }
-		Actor MinigunTracerUpgraded		: Tracer { Speed 180 Damage (random (1, 3) * 4) }
-		Actor RevolverTracer			: Tracer { Speed 160 Damage (random (2, 6) * 20) }
-		Actor UpgradedRevolverTracer	: Tracer { Speed 160 Damage (random (2, 5) * 32) }
-		Actor MagnumTracer				: Tracer { DamageType MagnumTracer Speed 200 Damage (random (1, 4) * 40) }
+// Weapon tracers
+Actor PistolTracer				: Tracer { Speed 120 Damage (random (1, 3) * 6) }
+Actor RifleTracer 				: Tracer { Speed 100 Damage (random (1, 3) * 6) }
+Actor ShotgunTracer				: Tracer { Speed 150 Damage (random (1, 3) * 6) }
+Actor DoubleShotgunTracer		: Tracer { Speed 125 Damage (random (1, 3) * 5) }
+Actor TacticalShotgunTracer		: Tracer { Speed 150 Damage (random (1, 5) * 6) DamageType TacticalShotgunTracer }
+Actor QuadShotgunTracer			: Tracer { Speed 150 Damage (random (1, 5) * 3) }
+Actor AK47Tracer  				: Tracer { Speed 130 }
+Actor AMGTracer   				: Tracer { Speed 130 Damage (random (1, 4) * 4) }
+Actor MinigunTracer				: Tracer { Speed 180 Damage (random (1, 2) * 3) }
+Actor MinigunTracerUpgraded		: Tracer { Speed 180 Damage (random (1, 3) * 4) }
+Actor RevolverTracer			: Tracer { Speed 160 Damage (random (2, 6) * 20) }
+Actor UpgradedRevolverTracer	: Tracer { Speed 160 Damage (random (2, 5) * 32) }
+Actor MagnumTracer				: Tracer { DamageType MagnumTracer Speed 200 Damage (random (1, 4) * 40) }
 
-	// Monster tracers
-		Actor MonsterTracer				: Tracer { Damage (random (1, 3) * 3) }
-		Actor ShotgunnerTracer			: Tracer { Damage (random (1, 3) * 2) }
-		Actor SMGZombieTracer			: Tracer { Speed 83 Damage (random (1, 3) * 1.5) }
+// Monster tracers
+Actor MonsterTracer				: Tracer { Damage (random (1, 3) * 3) }
+Actor ShotgunnerTracer			: Tracer { Damage (random (1, 3) * 2) }
+Actor SMGZombieTracer			: Tracer { Speed 83 Damage (random (1, 2)) }

@@ -8,18 +8,18 @@ Actor RagingBattleHamster : TwerpmeisterAvenue { //Inheritance for effects
 
 // From Samsara
 Actor Boolean : Inventory {
-    Inventory.MaxAmount 1
-    +Undroppable -InvBar
+	Inventory.MaxAmount 1
+	+Undroppable -InvBar
 }
 
 Actor Counter : Inventory {
-    Inventory.MaxAmount 0x7FFFFFFF
-    +Undroppable -InvBar
+	Inventory.MaxAmount 0x7FFFFFFF
+	+Undroppable -InvBar
 }
 
 Actor Trigger : CustomInventory {
 	Inventory.MaxAmount 0
-    +AutoActivate
+	+AutoActivate
 }
 
 // By Alex_Mercer
@@ -57,7 +57,7 @@ Actor Flare_General {
 	Alpha 0.4
 	Scale 0.4
 	RenderStyle Add
-	+NoInteraction +NoGravity //+ForceXYBillboard
+	+NoInteraction +NoGravity
 }
 
 Actor GibsSpawner { +NoClip +NoGravity }

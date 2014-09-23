@@ -1,5 +1,4 @@
-Actor Flare : CustomInventory 30005
-{
+Actor Flare : CustomInventory 30005 {
 	//$Category Final Duel-Items
 	Tag "Flare"
 	Radius 4
@@ -10,8 +9,7 @@ Actor Flare : CustomInventory 30005
 	Inventory.PickupMessage "You picked up a flare."
 	Inventory.InterHubAmount 20
 	Inventory.PickupSound "misc/p_pkup"
-	States
-	{
+	States {
 	Spawn:
 		FLAR D -1
 		Stop
@@ -21,30 +19,26 @@ Actor Flare : CustomInventory 30005
 	}
 }
 
-Actor ActiveFlare 30006
-{
+Actor ActiveFlare 30006 {
 	//$Category Final Duel-Props
 	//$Title Flare
 	Radius 22
 	Height 11
-	States
-	{
+	States {
 	Spawn:
-		FLAR A 0 Bright
-		FLAR A 0 Bright A_PlaySound ("Flare/Light")
-		FLAR A 0 Bright A_PlaySoundEx ("Flare/Loop", "SoundSlot7", 1, -1)
+		FLAR A 0 Bright NoDelay A_PlaySound ("Flare/Light")
+		FLAR A 0 Bright A_PlaySound ("Flare/Loop", CHAN_BODY, 1.0, 1)
+	Spawn2:
 		FLAR AB 1 Bright
-		Goto Spawn+3
+		Loop
 	}
 }
 
-Actor FlareBox : CustomInventory 30009
-{
+Actor FlareBox : CustomInventory 30009 {
 	Radius 28
 	Height 16
 	Inventory.PickupMessage "You picked up a box of flares."
-	States
-	{
+	States {
 	Spawn:
 		FLAR C -1
 		Stop

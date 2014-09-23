@@ -8,19 +8,19 @@ Actor ChainsawSpawner : RandomSpawner replaces Chainsaw {
 Actor ShotgunSpawner : RandomSpawner replaces Shotgun {
 	DropItem "SpawnedShotgun" 255 6
 	DropItem "SpawnedMagnum" 255 5
-	DropItem "SpawnedPAShotgun" 255 4
+	DropItem "SpawnedPumpActionShotgun" 255 4
 	DropItem "FDCrossbow" 255 3
 }
 
 // Super Shotgun Spawner
 Actor SuperShotgunSpawner : RandomSpawner replaces SuperShotgun {
-	DropItem "SpawnedSSG" 255 2
+	DropItem "DoomSSG" 255 2
 	DropItem "SpawnedQuadShotgun" 255 1
 }
 
 // Chaingun Spawner
 Actor ChaingunSpawner : RandomSpawner replaces Chaingun {
-	DropItem "ChaingunReplacer" 255 
+	DropItem "ChaingunReplacer" 255 5
 	DropItem "SpawnedMinigun" 255 1
 }
 

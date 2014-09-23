@@ -8,7 +8,7 @@ Actor OmegaClass : BasePlayerClass {
 	DamageFactor 0.9
 	// Speed related
 	Player.ForwardMove 0.9, 0.8
-    Player.SideMove 0.9,0.8
+	Player.SideMove 0.9, 0.8
 	// Misc
 	// Player.SpawnClass 2
 	// Mass 80
@@ -27,13 +27,13 @@ Actor OmegaClass : BasePlayerClass {
 	Player.StartItem FDMedikit
 	Player.StartItem ChronosItem
 	// Weapon Slots
-  	Player.WeaponSlot 1, MeleeAttack, Knife, Sword, FDChainsaw
-  	Player.WeaponSlot 2, Beretta, Magnum, Rifle
-  	Player.WeaponSlot 3, FDShotgun, PumpActionShotgun, DoomSSG, QuadShotgun
-  	Player.WeaponSlot 4, ActionMachineGun, FDMinigun
-  	Player.WeaponSlot 5, FDRocketLauncher, Annihilator, FDGrenadeLauncher
-  	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
-  	Player.WeaponSlot 7, BioForceGun
+	Player.WeaponSlot 1, MeleeAttack, Knife, Sword, FDChainsaw
+	Player.WeaponSlot 2, Beretta, Magnum, Rifle
+	Player.WeaponSlot 3, FDShotgun, PumpActionShotgun, DoomSSG, QuadShotgun
+	Player.WeaponSlot 4, ActionMachineGun, FDMinigun
+	Player.WeaponSlot 5, FDRocketLauncher, Annihilator, FDGrenadeLauncher
+	Player.WeaponSlot 6, FDPlasmaRifle, SonicRailgun
+	Player.WeaponSlot 7, BioForceGun
 	Player.WeaponSlot 8, SoulReaper, SniperRifle, FDCrossbow
 	Player.WeaponSlot 9, Magic
 }

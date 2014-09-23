@@ -9,9 +9,10 @@ Actor EnergyPickupBase : CustomInventory {
 		Loop
 	}
 }
+
 Actor Energy : Inventory 30140 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(1)"
+	Tag "Soul Energy (1)"
 	RenderStyle Add
 	Inventory.PickupMessage ""
 	Inventory.Amount 1
@@ -29,7 +30,7 @@ Actor Energy : Inventory 30140 {
 
 Actor Energy5 : EnergyPickupBase 30069 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(5)"
+	Tag "Soul Energy (5)"
 	States {
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Energy", 5)
@@ -39,7 +40,7 @@ Actor Energy5 : EnergyPickupBase 30069 {
 
 Actor Energy10 : EnergyPickupBase 30120 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(10)"
+	Tag "Soul Energy (10)"
 	States {
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Energy", 10)
@@ -49,7 +50,7 @@ Actor Energy10 : EnergyPickupBase 30120 {
 
 Actor Energy50 : EnergyPickupBase 30121 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(50)"
+	Tag "Soul Energy (50)"
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)
@@ -64,7 +65,7 @@ Actor Energy50 : EnergyPickupBase 30121 {
 
 Actor Energy100 : Energy50 30122 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(100)"
+	Tag "Soul Energy (100)"
 	States {
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Energy", 100)
@@ -74,7 +75,7 @@ Actor Energy100 : Energy50 30122 {
 
 Actor Energy200 : Energy50 30123 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(200)"
+	Tag "Soul Energy (200)"
 	States {
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Energy", 200)
@@ -84,7 +85,7 @@ Actor Energy200 : Energy50 30123 {
 
 Actor Energy500 : Energy50 30168 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(500)"
+	Tag "Soul Energy (500)"
 	States {
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Energy", 500)
@@ -94,7 +95,7 @@ Actor Energy500 : Energy50 30168 {
 
 Actor Energy3000 : EnergyPickupBase 30169 {
 	//$Category Final Duel-Money
-	Tag "Soul Energy(3000)"
+	Tag "Soul Energy (3000)"
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySound ("ShopSystem/Energy/Hum", CHAN_BODY, 1.0, 1)

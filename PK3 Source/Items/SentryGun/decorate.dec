@@ -40,11 +40,10 @@ Actor SentryBoom {
 	Height 2
 	RenderStyle Add
 	+NoInteraction +ClientsideOnly
-	States
-	{
+	States {
 	Spawn:
 		SENT DEFGHI 3 Bright
-		stop
+		Stop
 	}
 }
 

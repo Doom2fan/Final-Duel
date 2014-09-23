@@ -16,7 +16,7 @@ Actor BlackPanther : HellKnight 30141 {
 	DropItem "Energy200" DropItem "Energy100"
 	States {
 	Spawn:
-		BPNT A 10 A_Look 
+		BPNT A 10 A_Look
 		Loop
 	See:
 		BPNT AABBCCDD 2 A_Chase

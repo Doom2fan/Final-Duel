@@ -20,7 +20,7 @@ Actor Sparker 30066 {
 	Spawning:
 		TNT1 A 0 A_JumpIfInventory ("SparkerSparkCounter", 1, 1)
 		Goto Finish
-		TNT1 A 0 A_SpawnItemEx ("SparkerSparks", 0, 0, 0, random(0, 5))
+		TNT1 A 0 A_SpawnItemEx ("SparkerSparks", 0, 0, 0, random (0, 5))
 		TNT1 A 0 A_TakeInventory ("SparkerSparkCounter", 1)
 		Loop
 	Default:
@@ -39,6 +39,7 @@ Actor Sparker 30066 {
 		Goto Spawn
 	}
 }
+
 Actor SparkerSparks {
 	Height 0
 	Radius 0

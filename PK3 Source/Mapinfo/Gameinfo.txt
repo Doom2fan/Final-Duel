@@ -1,22 +1,18 @@
-gameinfo {
-	titlepage = "TITLEPIC"
-	creditpage = "CREDIT"
-	playerclasses = "MarineClass", "OmegaClass"
-	titletime = 8
-	advisorytime = 6
-	pagetime = 5
-	chatsound = "misc/chat"
-	finalemusic = "D_READ_2"
-	finaleflat = "SLIME16"
-	finalepage = "CREDIT"
-	infopage = "HELP", "CREDIT"
-	quitsound = "menu/quit2"
-	borderflat = "FLAT5_6"
-	border = DoomBorder
-	telefogheight = 0
-	defkickback = 100
-	skyflatname = "F_SKY1"
-	translator = "xlat/doom.txt"
-	backpacktype = "Backpack"
-	gibfactor = 0.5
+Gameinfo {
+	TitlePage = "TITLEPIC"
+	CreditPage = "CREDIT"
+	PlayerClasses = "MarineClass", "OmegaClass"
+	TitleTime = 8
+	AdvisoryTime = 6
+	PageTime = 5
+	ChatSound = "misc/chat"
+	FinaleMusic = "D_READ_2"
+	FinaleFlat = "SLIME16"
+	FinalePage = "CREDIT"
+	InfoPage = "HELP", "CREDIT"
+	QuitSound = "menu/quit2"
+	TelefogHeight = 0
+	DefKickback = 100
+	BackpackType = "Backpack"
+	GibFactor = 0.5
 }

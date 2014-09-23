@@ -15,6 +15,7 @@ Actor FDStimpack : HealthPickup Replaces Stimpack 30164 {
 		Stop
 	}
 }
+
 // Medikit
 Actor FDMedikit : HealthPickup Replaces Medikit 30165 {
 	//$Category Final Duel-Health and Armour

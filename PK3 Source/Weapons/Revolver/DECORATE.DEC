@@ -16,13 +16,14 @@ Actor SpawnedMagnum : BaseSpawnedWeapon 30083 {
 		Stop
 	}
 }
+
 Actor MagnumCasingSpawner {
 	Speed 20
-	PROJECTILE
+	Projectile
 	+NoClip
 	States {
 	Spawn:
-        TNT1 A 0
+		TNT1 A 0
 		TNT1 A 0 A_CustomMissile ("9mmCasing", -5, -1, 0, 2, -90)
 		TNT1 A 0 A_CustomMissile ("9mmCasing", -5, -3, 0, 2, -90)
 		TNT1 A 0 A_CustomMissile ("9mmCasing", -5, -5, 0, 2, -90)
@@ -32,11 +33,13 @@ Actor MagnumCasingSpawner {
 		Stop
 	}
 }
+
 Actor AmmoMagnum : Ammo {
 	Inventory.MaxAmount 6
 	Ammo.BackpackMaxAmount 6
-	+IGNORESKILL
+	+IgnoreSkill
 }
+
 Actor DroppedMagnum : DroppedWeaponBase {
 	States {
 	Spawn:
@@ -47,6 +50,7 @@ Actor DroppedMagnum : DroppedWeaponBase {
 		Stop
 	}
 }
+
 Actor MagnumUpgrade : Boolean { }
 Actor Magnum : FDWeapon {
 	//$Category Final Duel-Weapons
@@ -60,7 +64,7 @@ Actor Magnum : FDWeapon {
 	Weapon.AmmoGive2 0
 	Weapon.AmmoUse1 1
 	Weapon.AmmoUse2 0
-	+Ammo_Optional +NoAlert
+	+Weapon.Ammo_Optional +Weapon.NoAlert
 	States {
 	Ready:
 		REVS CBA 1
@@ -90,7 +94,7 @@ Actor Magnum : FDWeapon {
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound ("Magnum/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("RevolverTracer", frandom (-2.0, 2.0), 1, 0, -3, 0, frandom (-2.5, 2.5))
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.6, 0, Sin(Pitch) * 0.6, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.6, 0, Sin (Pitch) * 0.6, 1)
 		REVF AA 1 Bright A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
 		REVF CE 1 A_SetPitch (pitch - 0.8, SPF_INTERPOLATE)
 		REVF D 1 A_SetPitch (pitch + 1.1, SPF_INTERPOLATE)
@@ -104,7 +108,7 @@ Actor Magnum : FDWeapon {
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound ("Magnum/Fire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("UpgradedRevolverTracer", frandom (-0.5, 0.5), 1, 0, -3, 0, frandom (-1.0, 1.0))
-		TNT1 A 0 A_ChangeVelocity (Cos(Pitch) * -0.3, 0, Sin(Pitch) * 0.3, 1)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.3, 0, Sin (Pitch) * 0.3, 1)
 		REVF AA 1 Bright A_SetPitch (pitch - 0.75, SPF_INTERPOLATE)
 		REVF CE 1 A_SetPitch (pitch - 0.4, SPF_INTERPOLATE)
 		REVF D 1 A_SetPitch (pitch + 0.55, SPF_INTERPOLATE)
@@ -126,13 +130,12 @@ Actor Magnum : FDWeapon {
 		TNT1 A 0 A_PlaySound ("Magnum/Open", CHAN_WEAPON)
 		TNT1 A 5
 		TNT1 A 0 A_PlaySound ("Magnum/Out", CHAN_WEAPON)
-		TNT1 A 0 A_TakeInventory ("AmmoMagnum", 6)
 		TNT1 A 18 A_FireCustomMissile ("MagnumCasingSpawner", -4, 0, 0, 0)
-		TNT1 A 0 A_TakeInventory ("MagnumClip", 1)
-		TNT1 A 0 A_GiveInventory ("AmmoMagnum", 6)
 		TNT1 A 0 A_PlaySound ("Magnum/In", CHAN_WEAPON)
 		TNT1 A 12
 		REVR HGFEDCBA 1
+		TNT1 A 0 A_TakeInventory ("MagnumClip", 1)
+		TNT1 A 0 A_GiveInventory ("AmmoMagnum", 6)
 		Goto Ready2
 	Spawn:
 		REVP A -1

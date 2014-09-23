@@ -20,7 +20,7 @@ Actor FDTechLamp : SwitchableDecoration Replaces TechLamp {
 	States {
 	Active:
 	Spawn:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		TLMP AABBCCDD 2 Bright Light (BIGLAMP) A_SpawnItemEx ("LampFlare", 0.0, 0.0, 70.0)
 		Loop
 	Spawn2:
@@ -47,7 +47,7 @@ Actor FDTechLamp2 : SwitchableDecoration Replaces TechLamp2 {
 	{
 	Active:
 	Spawn:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		TLP2 AABBCCDD 2 Bright Light (SMALLLAMP) A_SpawnItemEx ("LampFlare", 0.0, 0.0, 52.5)
 		Loop
 	Spawn2:
@@ -73,7 +73,7 @@ Actor FDColumn : SwitchableDecoration Replaces Column {
 	States {
 	Active:
 	Spawn:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		COLU A 2 Bright Light (LAMP) A_SpawnItemEx ("YellowLampFlare", 0.0, 0.0, 44.0)
 		Loop
 	Spawn2:
@@ -112,12 +112,13 @@ Actor RedTorchFire {
 		Stop
 	}
 }
+
 Actor TallTorch_Red : RedTorch replaces RedTorch {
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySoundEx ("Decoration/TorchBurn", CHAN_BODY, 1)
 	Looper:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		TATO A 1 Bright A_SpawnItemEx ("RedTorchFire", Random (-2, 2), Random (-2, 2), Random (56, 58), 0.001 * Random (10, 200), 0.001 * Random (10, 200), 0.001 * Random (100, 2000), 0, 128, 0)
 		Loop
 	Spawn2:
@@ -141,12 +142,13 @@ Actor GreenTorchFire : RedTorchFire {
 		Stop
 	}
 }
+
 Actor TallTorch_Green : GreenTorch replaces GreenTorch {
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySoundEx ("Decoration/TorchBurn", CHAN_BODY, 1)
 	Looper:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		TATO A 1 Bright A_SpawnItemEx ("GreenTorchFire", Random (-2, 2), Random (-2, 2), Random (56, 58), 0.001 * Random (10, 200), 0.001 * Random (10, 200), 0.001 * Random (100, 2000), 0, 128, 0)
 		Loop
 	Spawn2:
@@ -170,12 +172,13 @@ Actor BlueTorchFire : RedTorchFire {
 		Stop
 	}
 }
+
 Actor TallTorch_Blue : BlueTorch replaces BlueTorch {
 	States {
 	Spawn:
 		TNT1 A 0 NoDelay A_PlaySoundEx ("Decoration/TorchBurn", CHAN_BODY, 1)
 	Looper:
-        TNT1 A 0 A_CheckSight ("Spawn2")
+		TNT1 A 0 A_CheckSight ("Spawn2")
 		TATO A 1 Bright A_SpawnItemEx ("BlueTorchFire", Random (-2, 2), Random (-2, 2), Random (56, 58), 0.001 * Random (10, 200), 0.001 * Random (10, 200), 0.001 * Random (100, 2000), 0, 128, 0)
 		Loop
 	Spawn2:

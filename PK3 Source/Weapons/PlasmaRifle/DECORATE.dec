@@ -10,7 +10,7 @@ Actor SpawnedPlasmaRifle : BaseSpawnedWeapon 30034 {
 		TNT1 A 0 A_JumpIfInventory ("PlasmaRifle", 0, "GrabAmmo")
 		TNT1 A 0 A_TakeInventory ("AmmoPRifle", 999999999)
 		TNT1 A 0 A_GiveInventory ("PlasmaRifle", 1)
-		TNT1 A 0 A_GiveInventory ("AmmoPRifle", 2)
+		TNT1 A 0 A_GiveInventory ("AmmoPRifle", 999999999)
 		Stop
 	GrabAmmo:
 		TNT1 A 0 A_JumpIfInventory ("Cell2", 0, "Failed")
@@ -49,7 +49,7 @@ Actor FDPlasmaRifle : FDWeapon {
 	Weapon.AmmoType "AmmoPRifle"
 	Weapon.AmmoType2 "AmmoPRifle"
 	Tag "$TAGPRIFLE"
-	+Ammo_Optional +Alt_Ammo_Optional +NoAlert +NoAutofire
+	+Weapon.Ammo_Optional +Weapon.Alt_Ammo_Optional +Weapon.NoAlert +Weapon.NoAutofire
 	Inventory.PickupMessage "$GOTPLASMA"
 	Inventory.PickupSound "misc/gunpickup"
 	Weapon.UpSound "PlasmaRifle/draw"
@@ -57,7 +57,7 @@ Actor FDPlasmaRifle : FDWeapon {
 	Ready:
 		PLSS DCBA 1
 	Ready2:
-		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1 ,"DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1 , "DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
 		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
@@ -85,7 +85,7 @@ Actor FDPlasmaRifle : FDWeapon {
 		PLSF A 0 A_AlertMonsters
 		PLSF G 2
 		PLSF H 1
-		TNT1 A 0 A_JumpIfNoAmmo("DryFire1")
+		TNT1 A 0 A_JumpIfNoAmmo ("DryFire1")
 		PLSF B 0 A_ReFire
 		PLSF E 4 A_PlaySound ("PlasmaRifle/cool", 6)
 		TNT1 AAAAA 0 A_FireCustomMissile ("HeatSmokeSpawner", 0, 0, random (10, 15), random (0, 3))
@@ -100,7 +100,7 @@ Actor FDPlasmaRifle : FDWeapon {
 		PLSM BABA 2
 		PLSM A 14 A_PlaySound ("PlasmaRifle/Dryfire", CHAN_WEAPON)
 		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload")
-		Goto Ready2	
+		Goto Ready2
 	DryFire:
 		TNT1 A 0 A_ClearRefire
 		PLSM A 0 A_PlaySound ("PlasmaRifle/Dryfire", 7)
@@ -110,17 +110,14 @@ Actor FDPlasmaRifle : FDWeapon {
 	Reload:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("Cell2", 1, 1)
-        Goto Ready2
+		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory ("AmmoPRifle", 80, "Ready2")
 		PLSF E 4
 		PLSR ABC 3
-		TNT1 A 0 A_TakeInventory ("AmmoPRifle", 80)
-		TNT1 A 0 A_TakeInventory ("Cell2", 1)
 		PLSR D 3 A_PlaySound ("PlasmaRifle/cellout", CHAN_WEAPON)
 		PLSR EFG 3
 		TNT1 A 0 A_FireCustomMissile ("PlasmaCaseSpawn", 0, 0, 0, 0)
 		PLSR HHHHGFE 3
-		TNT1 A 0 A_GiveInventory ("AmmoPRifle", 80)
 		PLSR D 3 A_PlaySound ("PlasmaRifle/cellin", CHAN_WEAPON)
 		PLSR CBA 3
 		PLSF E 4
@@ -128,6 +125,8 @@ Actor FDPlasmaRifle : FDWeapon {
 		PLSM CB 1
 		TNT1 A 0 A_PlaySound ("Weapons/Beep", CHAN_WEAPON)
 		PLSM A 1
+		TNT1 A 0 A_GiveInventory ("AmmoPRifle", 80)
+		TNT1 A 0 A_TakeInventory ("Cell2", 1)
 		Goto Ready2
 	AltFire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
@@ -178,7 +177,7 @@ Actor FDPlasmaRifle : FDWeapon {
 
 Actor FDPlasmaRiflePowered : FDPlasmaRifle {
 	Weapon.SisterWeapon FDPlasmaRifle
-	+Powered_Up
+	+Weapon.Powered_Up
 	States {
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")

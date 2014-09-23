@@ -7,7 +7,7 @@ Actor PowerNightvision : PowerLightAmp {
 
 Actor NVBattery: CustomInventory Replaces Infrared 20020 {
 	//$Category Final Duel-Items
-	Tag "Batteries(Nightvision goggles)"
+	Tag "Batteries (Nightvision goggles)"
 	Inventory.Amount 100
 	Inventory.MaxAmount 100
 	Inventory.InterHubAmount 100
@@ -23,6 +23,7 @@ Actor NVBattery: CustomInventory Replaces Infrared 20020 {
 		Fail
 	}
 }
+
 Actor FDNightvisionOn : Boolean { }
 
 Actor FDNightvision : CustomInventory {
@@ -33,12 +34,12 @@ Actor FDNightvision : CustomInventory {
 	Inventory.Icon "ARTINVIS"
 	+InvBar +UnDroppable
 	States {
-    Use:
+	Use:
 		TNT1 A 0 A_JumpIfInventory ("FDNightvisionOn", 1, "Disable")
 		TNT1 A 0 A_JumpIfInventory ("NVBattery", 1, 1)
 		Goto UseFail
 		TNT1 A 0 A_PlaySoundEx ("Nightvision/On", "Item")
-	    TNT1 A 0 A_GiveInventory ("FDNightvisionOn", 1)
+		TNT1 A 0 A_GiveInventory ("FDNightvisionOn", 1)
 		Fail
 	Disable:
 		TNT1 A 0 A_TakeInventory ("FDNightvisionOn", 1)
