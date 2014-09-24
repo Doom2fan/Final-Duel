@@ -160,7 +160,6 @@ Actor Beretta         : FDWeapon {
 		"####" A 0 A_PlaySound ("Beretta/ClipIn", CHAN_WEAPON)
 		"####" IJKLMNO 2
 		BRTR P 3
-		BRTR Q 5
 		BRTR A 0 A_GiveInventory ("AmmoBeretta", 15)
 		Goto Ready2
 	}
