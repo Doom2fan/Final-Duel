@@ -78,6 +78,11 @@ BrightMap Sprite QSGFC0
 	Map brightmaps/Weapons/Misc/QSGFC0.png
 	DisableFullBright
 }
+BrightMap Sprite QSGFD0
+{
+	Map brightmaps/Weapons/Misc/QSGFD0.png
+	DisableFullBright
+}
 
 // Revolver
 BrightMap Sprite REVFA0
