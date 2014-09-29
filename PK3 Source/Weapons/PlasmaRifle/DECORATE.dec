@@ -7,9 +7,9 @@ Actor SpawnedPlasmaRifle : BaseSpawnedWeapon 30034 {
 		PLSM Z -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory ("PlasmaRifle", 0, "GrabAmmo")
+		TNT1 A 0 A_JumpIfInventory ("FDPlasmaRifle", 0, "GrabAmmo")
 		TNT1 A 0 A_TakeInventory ("AmmoPRifle", 999999999)
-		TNT1 A 0 A_GiveInventory ("PlasmaRifle", 1)
+		TNT1 A 0 A_GiveInventory ("FDPlasmaRifle", 1)
 		TNT1 A 0 A_GiveInventory ("AmmoPRifle", 999999999)
 		Stop
 	GrabAmmo:

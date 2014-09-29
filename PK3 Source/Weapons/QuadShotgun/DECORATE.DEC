@@ -2,7 +2,7 @@ Actor SpawnedQuadShotgun : BaseSpawnedWeapon 30089 {
 	Inventory.PickupMessage "$GOTQUADSHOTGUN"
 	States {
 	Spawn:
-		REVP A -1
+		QSGG Z -1
 		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory ("QuadShotgun", 0, "GrabAmmo")
