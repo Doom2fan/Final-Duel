@@ -16,7 +16,7 @@ Actor ShellSpawner : RandomSpawner replaces Shell {
 	DropItem "Shell2" 255 4
 	DropItem "Slug" 255 3
 	DropItem "MagnumClip" 255 2
-	DropItem "CrossbowBolt" 255 1
+	DropItem "CrossbowBolts" 255 1
 }
 
 // Shell Box Spawner
