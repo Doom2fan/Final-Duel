@@ -5,6 +5,12 @@ thumbs.db
 *.wad.bak*
 *.tmp*
 *.dbs
+*.ncb
+*.suo
+*.pdb
+*.ilk
+*.aps
+*.user
 acs.err
 Launcher Source/Project/bin/
 Launcher Source/Project/obj/
