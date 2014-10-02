@@ -2,17 +2,17 @@
 // Dificulty Settings
 	SKILLZ_AAAAAAAAAAA			= "AAAAAAAAAAA";
 		SKILLZ_AAAAAAAAAAATEXT		=
-			"Damage is negated, ammo is quadrupled and keys always show on automap"
+			"Damage is negated, ammo is quadrupled and keys always show on automap.\n"
 			"Uses the Nightmare spawn filter.";
 	
 	SKILLZ_BABY     			= "Harmless";
 		SKILLZ_BABYTEXT				=
-			"Damage is halved, ammo is doubled and health items are auto-used."
+			"Damage is halved, ammo is doubled and health items are auto-used.\n"
 			"Uses the Baby spawn filter.";
 	
 	SKILLZ_EASY     			= "Painful";
 		SKILLZ_EASYTEXT				=
-			"Health items are auto-used."
+			"Health items are auto-used.\n"
 			"Uses the Easy spawn filter.";
 	
 	SKILLZ_NORMAL  				= "Dangerous";
@@ -21,26 +21,26 @@
 	
 	SKILLZ_HARD     			= "Fatal";
 		SKILLZ_HARDTEXT				=
-			"Enemies are more aggressive."
+			"Enemies are more aggressive.\n"
 			"Uses the Hard spawn filter.";
 	
 	SKILLZ_HARDSPEED 			= "Lethal";
 		SKILLZ_HARDSPEEDTEXT		=
-			"Enemies are faster and more aggressive."
+			"Enemies are faster and more aggressive.\n"
 			"Uses the Hard spawn filter.";
 	
 	SKILLZ_NIGHTMARE			= "Brutal";
 		SKILLZ_NIGHTMARETEXT		=
-			"Monsters are faster, even more aggressive and respawn."
-			"Health items are auto-used."
+			"Monsters are faster, even more aggressive and respawn.\n"
+			"Health items are auto-used.\n"
 			"Uses the Nightmare spawn filter.";
 	
 	SKILLZ_NEIN   				= "Insane";
 		SKILLZ_NEINTEXT 			=
-			"Damage is higher, ammo is doubled, armour is replaced with the next armour type"
-			"and health items are auto-used."
-			"Monsters are faster, extremely aggressive and respawn faster than in Nightmare"
-			"(but are limited to 12 respawns)."
+			"Damage is higher, ammo is doubled, armour is replaced with the next armour type\n"
+			"and health items are auto-used.\n"
+			"Monsters are faster, extremely aggressive and respawn faster than in Nightmare\n"
+			"(but are limited to 12 respawns).\n"
 			"Uses the Nightmare spawn filter.";
 	
 // Cheats

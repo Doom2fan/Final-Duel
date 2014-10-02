@@ -47,7 +47,7 @@ Skill FDNormal {
 	Name = "$SKILLZ_NORMAL"
 	PicName = "SKILL3"
 	MustConfirm = "$SKILLZ_NORMALTEXT"
-	Key = "P"
+	Key = "D"
 }
 
 Skill FDHard {
@@ -57,6 +57,7 @@ Skill FDHard {
 	Aggressiveness = 0.025
 	MustConfirm = "$SKILLZ_HARDTEXT"
 	Key = "F"
+	DefaultSkill
 }
 
 Skill FDVeryHard {
