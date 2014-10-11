@@ -1,5 +1,5 @@
 // Server CVars
-server noarchive bool FD_NothingOnRespawn = false;
+server noarchive bool FD_PistolStart = false;
 server noarchive bool FD_BloodForTheBloodGod = false;
 server noarchive bool FD_NoBossMonologues = false;
 

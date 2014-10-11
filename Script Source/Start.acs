@@ -51,7 +51,7 @@ script "FDRespawn" RESPAWN {
 	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
 	TakeInventory ("NightvisionOn", 1);
 	//StartStuff ();
-	switch (GetCVar ("FD_NothingOnRespawn")) {
+	switch (GetCVar ("FD_PistolStart")) {
 		case 1:
 			RestartInventory ();
 			RestartLevelSystem ();
