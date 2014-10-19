@@ -30,8 +30,8 @@ namespace Auto_Indentation_Tool {
 
                     try {
                         Input.AddRange (File.ReadAllLines (file));
-                    } catch {
-                        MessageBox.Show ("File is in use", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } catch (Exception exception) {
+                        MessageBox.Show (exception.Message, "File read exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     } finally {
 
                         foreach (string line in Input) {
@@ -64,8 +64,12 @@ namespace Auto_Indentation_Tool {
                             Debug.WriteLine (Regex.IsMatch (parsedline, "(\t\b:)").ToString ());
 
                             // Add a newline character to the end of the line
-                            if (LineCount != Input.Count)
-                                parsedline += '\n';
+                            if (LineCount != Input.Count) {
+                                if (radioButtonLF.Checked == true)
+                                    parsedline += '\n';
+                                else
+                                    parsedline += "\r\n";
+                            }
 
                             Debug.WriteLine (parsedline);
                             Output.Add (parsedline);
@@ -94,8 +98,8 @@ namespace Auto_Indentation_Tool {
 
                         try {
                             File.WriteAllBytes (file, OutputBytes.ToArray ());
-                        } catch {
-                            MessageBox.Show ("File is in use", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        } catch (Exception exception) {
+                            MessageBox.Show (exception.Message, "File write exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
