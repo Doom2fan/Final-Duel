@@ -6,6 +6,9 @@ script "CVars" Enter {
 	while (true) {
 		if (GetCVar ("FD_AutoReload")) GiveInventory ("EnableAutoReload", 1);
 		else TakeInventory ("EnableAutoReload", 1);
+		
+		if (GetCVar ("FD_AutoReloadSSG")) GiveInventory ("AutoReloadSSG", 1);
+		else TakeInventory ("AutoReloadSSG", 1);
 		Delay (1);
 	}
 }

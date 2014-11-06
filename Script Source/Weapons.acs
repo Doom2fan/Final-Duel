@@ -13,7 +13,7 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 		}
 		else if (checkInventory("Pistol")) {
 			TakeInventory ("Pistol", 1);
-			GiveInventory ("Clip2", 1);
+			GiveInventory ("PistolMag", 1);
 			if (checkInventory("ChronosItem"))
 				GiveInventory ("Beretta", 1);
 			else
@@ -31,7 +31,7 @@ script "ScriptReplace" ENTER { // replace weapons in scripts
 		}
 		else if (checkInventory("Chaingun")) {
 			TakeInventory ("Chaingun", 1);
-			GiveInventory ("Clip2", 1);
+			GiveInventory ("RifleMag", 1);
 			if (checkInventory("ChronosItem"))
 				GiveInventory ("ActionMachineGun", 1);
 			else

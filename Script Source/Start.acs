@@ -1,8 +1,11 @@
 #define PLAYER_TID_START 30000
 
 function void StartStuff (void) {
-	TakeInventory ("EnforcerReloadLCR", 15);
-	TakeInventory ("EnforcerReloadRCR", 15);
+	int PistolMags = GetCVar ("FD_GSS_PistolMags");
+	int RifleMags = GetCVar ("FD_GSS_RifleMags");
+	
+	TakeInventory ("EnforcerReloadLCR", 1);
+	TakeInventory ("EnforcerReloadRCR", 1);
 	GiveInventory ("IsPlayer", 1);
 	GiveInventory ("StaminaRegen", 1);
 	GiveInventory ("FDStamina", 100);
@@ -14,20 +17,8 @@ function void StartStuff (void) {
 	GiveInventory ("EnforcerClipL", 15);
 	GiveInventory ("AmmoBeretta", 15);
 	GiveInventory ("AmmoRifle", 20);
-	GiveInventory ("AmmoMagnum", 6);
-	GiveInventory ("AmmoFDShotgun", 8);
-	GiveInventory ("AmmoPAShotgun", 6);
-	GiveInventory ("AmmoPAShotgunSlug", 6);
-	GiveInventory ("AmmoQuadShotgun", 4);
-	GiveInventory ("AmmoActionMachineGun", 50);
-	GiveInventory ("AmmoAK47", 50);
-	GiveInventory ("AmmoMinigun", 120);
-	GiveInventory ("AmmoAnnihilator", 80);
-	GiveInventory ("AmmoGrenadeLauncher", 6);
-	GiveInventory ("AmmoPRifle", 80);
-	GiveInventory ("AmmoSRail", 80);
-	GiveInventory ("AmmoSR", 60);
-	GiveInventory ("AmmoSniperRifle", 5);
+	GiveInventory ("PistolMag", PistolMags);
+	GiveInventory ("ACPRifleMag", RifleMags);
 }
 
 script "FDEnter" ENTER {
@@ -51,12 +42,4 @@ script "FDRespawn" RESPAWN {
 	SetPlayerProperty (1, 1, PROP_INSTANTWEAPONSWITCH);
 	TakeInventory ("NightvisionOn", 1);
 	//StartStuff ();
-	switch (GetCVar ("FD_PistolStart")) {
-		case 1:
-			RestartInventory ();
-			RestartLevelSystem ();
-			break;
-		case 0:
-			break;
-	}
 }

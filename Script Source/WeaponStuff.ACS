@@ -1,11 +1,12 @@
-#define FD_WEAPONMAX 26
+/*#define FD_WEAPONMAX 26
 str FD_WeaponName[FD_WEAPONMAX] = { "MeleeAttack", "Sword", "FDChainsaw", "Enforcer", "Beretta", "Magnum", "Rifle", "FDShotgun", "PumpActionShotgun", "DoomSSG", "QuadShotgun", "AK47", "ActionMachineGun", "FDMinigun", "FDRocketLauncher", "Annihilator", "FDGrenadeLauncher", "FDPlasmaRifle", "SonicRailgun", "BioForceGun", "SoulReaper", "SniperRifle", "FDCrossbow", "MancubusArm", "Magic", "Knife" };
-int FD_WeaponNumber[FD_WEAPONMAX] = { 1          , 2      , 3           , 4         , 5        , 6       , 7      , 8          , 9                  , 10       , 11           , 12    , 13                , 14         , 15                , 16           , 17                 , 18             , 19            , 20           , 21          , 22           , 23          , 24           , 25     , 26 };
-str FD_DummyWeapons[2] = { "NullWeapon", "SprintWeapon" };
-global int 54:FD_LastWeapon[];
+int FD_WeaponNumber[FD_WEAPONMAX] = { 1          , 2      , 3           , 4         , 5        , 6       , 7      , 8          , 9                  , 10       , 11           , 12    , 13                , 14         , 15                , 16           , 17                 , 18             , 19            , 20           , 21          , 22           , 23          , 24           , 25     , 26 };*/
+#define FD_DUMMYWEAPONMAX 2
+str FD_DummyWeapons[2] = { "SprintWeapon", "NullWeapon" };
+global str 54:FD_LastWeapon[];
 
 // Functions
-function int GetWeaponName (void) {
+/*function int GetWeaponName (void) {
 	for (int i = 0; i<FD_WEAPONMAX; i++) {
 		if (CheckWeapon (FD_DummyWeapons[i])) 
 			return -1;
@@ -27,6 +28,19 @@ function void LastWeapon (int mode) {
 		else
 			FD_LastWeapon[PlayerNumber ()] = WeaponNumber;
 	}
+}*/
+
+function void LastWeapon (int mode) {
+	if (mode != 0) {
+		SetWeapon (FD_LastWeapon[PlayerNumber ()]);
+	}
+	else {
+		for (int i = 0; i < FD_DUMMYWEAPONMAX; i++) {
+			if (StrIcmp (FD_LastWeapon[PlayerNumber ()], FD_DummyWeapons[i]) == 0)
+				return;
+		}
+		FD_LastWeapon[PlayerNumber ()] = GetWeapon ();
+	}
 }
 
 function void DisableWeapon (str meh, str blah) {
@@ -44,6 +58,7 @@ function void DisableWeapon (str meh, str blah) {
 }
 
 // Scripts
+// SynthFire stuff
 script "FDSynthFire" (void) {
 	While (TRUE) {
 		if (!CheckInventory ("SynthFireActive"))
@@ -58,6 +73,27 @@ script "FDSynthFire" (void) {
 		if (!keyPressed (BT_ALTATTACK) && CheckInventory ("SynthFireRight"))
 			TakeInventory ("SynthFireRight", 1);
 	}
+}
+
+script "FDSynthFire2" (void) {
+	While (TRUE) {
+		if (!CheckInventory ("SynthFireActive"))
+			Terminate;
+		if (keyDown (BT_ATTACK) && !CheckInventory ("SynthFireLeft"))
+			GiveInventory ("SynthFireLeft", 1);
+		if (keyDown (BT_ALTATTACK) && !CheckInventory ("SynthFireRight"))
+			GiveInventory ("SynthFireRight", 1);		
+		Delay (1);
+		if (!keyDown (BT_ATTACK) && CheckInventory ("SynthFireLeft"))
+			TakeInventory ("SynthFireLeft", 1);
+		if (!keyDown (BT_ALTATTACK) && CheckInventory ("SynthFireRight"))
+			TakeInventory ("SynthFireRight", 1);
+	}
+}
+
+script "FDSynthFireAllowChange" (void) {
+	int result = !CheckInventory ("SynthFireRightReady");
+	SetResultValue (result);
 }
 
 // BFG stuff
