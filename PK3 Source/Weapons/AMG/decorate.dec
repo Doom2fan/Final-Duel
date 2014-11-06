@@ -10,10 +10,11 @@ Actor SpawnedActionMachineGun : BaseSpawnedWeapon 30007 {
 		TNT1 A 0 A_TakeInventory ("AmmoActionMachinegun", 999999999)
 		TNT1 A 0 A_GiveInventory ("ActionMachineGun", 1)
 		TNT1 A 0 A_GiveInventory ("AmmoActionMachinegun", 999999999)
+		TNT1 A 0 A_GiveInventory ("RifleMag", 1)
 		Stop
 	GrabAmmo:
 		TNT1 A 0 A_JumpIfInventory ("RifleMag", 0, "Failed")
-		TNT1 A 0 A_GiveInventory ("RifleMag", 1)
+		TNT1 A 0 A_GiveInventory ("RifleMag", 2)
 		Stop
 	}
 }
@@ -40,7 +41,7 @@ Actor ActionMachineGun : FDWeapon {
 	Weapon.AmmoGive 0
 	Weapon.AmmoGive2 0
 	Weapon.AmmoType "AmmoActionMachinegun"
-	Weapon.AmmoType2 "Clip2"
+	Weapon.AmmoType2 "RifleMag"
 	Inventory.RestrictedTo OmegaClass
 	Inventory.PickupMessage "$GOTACTIONMACHINEGUN"
 	Obituary "$OBACTIONMACHINEGUN"
@@ -99,7 +100,7 @@ Actor ActionMachineGun : FDWeapon {
 	Reload:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("AmmoActionMachinegun", 50, "Ready2")
-		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
+		TNT1 A 0 A_JumpIfInventory ("RifleMag", 1, 1)
 		Goto Ready2
 		AMGG ABCDEFG 2
 		AMGG H 3 A_PlaySound ("AMG/ClipOut", CHAN_WEAPON)
@@ -108,7 +109,7 @@ Actor ActionMachineGun : FDWeapon {
 		AMGG LKJIH 2
 		AMGG G 3 A_PlaySound ("AMG/ClipIn", CHAN_WEAPON)
 		AMGG FEDCBA 2
-		TNT1 A 0 A_TakeInventory ("Clip2", 1, TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_TakeInventory ("RifleMag", 1, TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_GiveInventory ("AmmoActionMachinegun", 50)
 		Goto Ready2
 	Altfire:
