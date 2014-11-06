@@ -1,7 +1,7 @@
 Final Duel is a Doom mod for the Dis (G)ZDoom fork.
 
 Launcher Source:
-	The uncompiled C# source of the launcher. This requires MSVC# 2010 to be compiled.
+	The uncompiled C# source of the launcher. This requires MSVS 2012/.NET Framework 4.5 to be compiled.
 
 PK3 Source:
 	The uncompiled PK3 source.
