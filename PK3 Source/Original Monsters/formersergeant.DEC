@@ -6,7 +6,7 @@ Actor FDShotgunGuy : ShotgunGuy 30095 {
 	GibHealth -15
 	HeadshotHeight 44
 	PainChance "Kick", 255
-	DropItem "FDShotgun"
+	DropItem "SpawnedShotgun2"
 	DropItem "Energy5" DropItem "Energy5" 128
 	Species "Corrupted Human"
 	States {

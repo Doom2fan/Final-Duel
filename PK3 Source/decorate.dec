@@ -1,11 +1,10 @@
 // Info
-// You can use anything from here just credit the author
-// (They are in the CREDITS or in the INFO file of the WAD or folder
-// please note that I have edited most of the files (Except for
-// most of the sprites and sounds, any sound or sprite that I
-// edited should be in the CREDITS or INFO lump)
-// Highest DoomEdNum: 30171
-// Other unused DoomEdNums: 30032
+// You can use anything from here just credit the author (They are in the
+// CREDITS or in the INFO file of the WAD or folder. Please note that I
+// have edited most of the files (Except for most of the sprites and sounds,
+// any sound or sprite that I edited should be in the CREDITS or INFO lump)
+// Highest DoomEdNum: 30172
+// Other unused DoomEdNums: 
 
 // Shared/Common
 #include "Actors/Defaults.DEC" 									// Credits on the file

@@ -111,68 +111,89 @@ Sprite FISTA0, 384, 200
 	}
 }
 
-Sprite FISTB0I0, 344, 200
+Sprite FISTB0G0, 320, 200
 {
-	Offset 24, 0
-	Patch PUNCH1, 251, 134
-	Patch PUNCH2, 0, 110
+	Offset 56, 0
+	Patch PUNCH2, -44, 146
 	{
 		FlipX
 	}
 }
 
-Sprite FISTC0J0, 320, 200
+Sprite FISTC0H0, 320, 200
 {
-	Patch PUNCH1, 243, 150
-	Patch PUNCH3, -1, 98
+	Offset 8, 0
+	Patch PUNCH3, -29, 111
 	{
 		FlipX
 	}
 }
 
-Sprite FISTD0K0, 320, 200
+Sprite FISTD0I0, 320, 200
 {
-	Patch PUNCH4, 40, 82
+	Patch PUNCH3, 69, 89
+	{
+		FlipX
+	}
 }
 
-Sprite FISTE0L0, 320, 200
+Sprite FISTE0J0, 320, 200
 {
-	Patch PUNCH4, 80, 82
+	Patch PUNCH4, 155, 76
 }
 
-Sprite FISTF0M0, 320, 200
+Sprite FISTF0K0, 415, 200
 {
-	Patch PUNCH4, 112, 98
+	Patch PUNCH4, 253, 86
 }
 
-Sprite FISTG0N0, 320, 200
+Sprite FISTG0K0, 460, 200
 {
-	Patch PUNCH4, 136, 114
-}
-
-Sprite FISTH0O0, 337, 200
-{
-	Patch PUNCH4, 176, 138
+	Patch PUNCH4, 298, 113
 }
 
 Sprite FST1A0, 320, 200
 {
-	Patch PUNCH5, -31, 144
+	Offset -24, 0
+	Patch PUNCH5, 241, 153
+	{
+		FlipX
+	}
 }
 
 Sprite FST1B0, 320, 200
 {
-	Patch PUNCH5, -9, 122
+	Patch PUNCH5, 182, 111
+	{
+		FlipX
+	}
 }
 
 Sprite FST1C0, 320, 200
 {
-	Patch PUNCH5, 11, 103
+	Patch PUNCH5, 110, 53
+	{
+		FlipX
+	}
 }
 
 Sprite FST1D0, 320, 200
 {
-	Patch PUNCH5, 33, 80
+	Patch PUNCH5, 92, 55
+	{
+		FlipX
+	}
+}
+
+Sprite FST1E0, 320, 200
+{
+	Patch PUNCH6, 11, 89
+}
+
+Sprite FST1F0, 320, 200
+{
+	Offset 48, 0
+	Patch PUNCH6, 0, 137
 }
 
 // Knife
@@ -227,4 +248,50 @@ Sprite KNF1G0, 329, 200
 {
 	Offset 131, 0
 	Patch KNIFE1, 0, 104
+}
+
+// Kick
+Sprite KICKA0, 320, 200
+{
+	Patch KICK1, 205, 141
+}
+
+Sprite KICKB0, 320, 200
+{
+	Patch KICK1, 199, 137
+}
+
+Sprite KICKC0, 320, 200
+{
+	Patch KICK1, 194, 132
+}
+
+Sprite KICKD0, 320, 200
+{
+	Patch KICK2, 164, 118
+}
+
+Sprite KICKE0, 320, 200
+{
+	Patch KICK2, 159, 111
+}
+
+Sprite KICKF0, 320, 200
+{
+	Patch KICK3, 155, 113
+}
+
+Sprite KICKG0, 320, 200
+{
+	Patch KICK3, 146, 110
+}
+
+Sprite KICKH0, 320, 200
+{
+	Patch KICK4, 137, 41
+}
+
+Sprite KICKI0, 320, 200
+{
+	Patch KICK4, 139, 50
 }

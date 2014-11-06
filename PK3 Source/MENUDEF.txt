@@ -1,12 +1,10 @@
-DEFAULTLISTMENU
-{
+DefaultListMenu {
 	Font "DBIGFONT", "Untranslated"
 	Selector "FDCURS", -32, -4
 	Linespacing 19
 }
 
-OptionMenu "OptionsMenu"
-{
+OptionMenu "OptionsMenu" {
 	Title "OPTIONS"
 	Submenu "Final Duel Options",		"FDSettings"
 	StaticText " "
@@ -29,8 +27,7 @@ OptionMenu "OptionsMenu"
 	Command "Go to console",			"menuconsole"
 }
 
-OptionMenu "CustomizeControls"
-{
+OptionMenu "CustomizeControls" {
 	Title "CUSTOMIZE CONTROLS"
 	ScrollTop 2
 	StaticTextSwitchable 	"ENTER to change, BACKSPACE to clear", "Press new key for control, ESC to cancel", "ControlMessage"
@@ -119,8 +116,7 @@ OptionMenu "CustomizeControls"
 //
 //-------------------------------------------------------------------------------------------
 
-OptionMenu "FDSettings"
-{
+OptionMenu "FDSettings" {
 	Title "FINAL DUEL OPTIONS"
 	StaticText "Visual Options"
 	Option "Mod messages on",																	"FD_MsgsOn", "OnOff"
@@ -131,6 +127,7 @@ OptionMenu "FDSettings"
 	StaticText " "
 	StaticText "Gameplay Options"
 	Option "Auto-Reload",																		"FD_AutoReload", "OnOff"
+	Option "Auto-Reload SSG",																	"FD_AutoReloadSSG", "OnOff"
 }
 
 //-------------------------------------------------------------------------------------------
@@ -139,8 +136,7 @@ OptionMenu "FDSettings"
 //
 //-------------------------------------------------------------------------------------------
 
-LISTMENU "MainMenu"
-{
+LISTMENU "MainMenu" {
 	Font "DBIGFONT", "Untranslated"
 	StaticText 17, 8, "Final Duel"
 	Font "Smallfont", "Untranslated"
@@ -159,8 +155,7 @@ LISTMENU "MainMenu"
 //
 //-------------------------------------------------------------------------------------------
 
-ListMenu "SkillMenu"
-{
+ListMenu "SkillMenu" {
 	StaticText 126, 14, "New Game"
 	Font "BigFont"
 	StaticText 34, 32, "Choose your skill"
@@ -175,8 +170,7 @@ ListMenu "SkillMenu"
 //
 //-------------------------------------------------------------------------------------------
 
-ListMenu "EpisodeMenu"
-{
+ListMenu "EpisodeMenu" {
 	Font "BigFont", "Untranslated"
 	NetgameMessage "$NETGAME"
 	Position 48, 63
@@ -190,8 +184,7 @@ ListMenu "EpisodeMenu"
 //
 //-------------------------------------------------------------------------------------------
 
-ListMenu "PlayerclassMenu"
-{
+ListMenu "PlayerclassMenu" {
 	Font "BigFont", "Untranslated"
 	Position 48, 63
 	StaticText 84, 38, "Choose your class"
@@ -207,8 +200,7 @@ ListMenu "PlayerclassMenu"
 //
 //-------------------------------------------------------------------------------------------
 
-ListMenu "HelpTopicsMenu"
-{
+ListMenu "HelpTopicsMenu" {
 	Font "Dbigfont", "Untranslated"
 	Position 37, 30
 	StaticText 0, 0, "Help"
@@ -218,8 +210,7 @@ ListMenu "HelpTopicsMenu"
 	TextItem "3. Credits.","3","Credits"
 }
 
-ListMenu "Help1"
-{
+ListMenu "Help1" {
 	Font "Dbigfont", "Untranslated"
 	Position 37, 30
 	StaticText 0, 0, "Help page 1"
@@ -230,8 +221,7 @@ ListMenu "Help1"
 	StaticText 4,75, "you must set them yourself"
 }
 
-ListMenu "HelpDamage"
-{
+ListMenu "HelpDamage" {
 	Font "Dbigfont", "Untranslated"
 	Position 37, 30
 	StaticText 0, 0, "Damage"
@@ -247,8 +237,7 @@ ListMenu "HelpDamage"
 //
 //-------------------------------------------------------------------------------------------
 
-ListMenu "Credits"
-{
+ListMenu "Credits" {
 	Font "Dbigfont", "Untranslated"
 	Position 37, 20
 	StaticText 0, 0, "Credits"
@@ -270,8 +259,7 @@ ListMenu "Credits"
 	Position 20, 190
 	TextItem "Next page","n","Credits2"
 }
-ListMenu "Credits2"
-{
+ListMenu "Credits2" {
 	Font "Dbigfont", "Untranslated"
 	Position 37, 20
 	StaticText 0, 0, "Credits"
@@ -283,11 +271,11 @@ ListMenu "Credits2"
 	
 	StaticText 4,80, "HellCattX, Xaser, Captain J, Batandy, Team TNT, hnsolo77, Partners in Rhyme,"
 	StaticText 4,90, "Jobro, Nintendo, CroTeam, Espi, Monolith Software, the freeSFX users,"
-	StaticText 4,100, "NightmareMutant(GAMEBANANA user), Bane, abbuw, NiGHTMARE, FuzzballFox,"
-	StaticText 4,110, "Langerium(Freesound user), Sound Library, Killing Floor, DavidRaven,"
+	StaticText 4,100, "NightmareMutant (GAMEBANANA user), Bane, abbuw, NiGHTMARE, FuzzballFox,"
+	StaticText 4,110, "Langerium (Freesound user), Sound Library, Killing Floor, DavidRaven,"
 	
-	StaticText 4, 130, "DoomNukem, Brutal Doom v19 SE, Revilution, Erdie(Freesound user),"
-	StaticText 4, 140, "Strife, IMX, Tripwire Interactive, Walter_Odington(Freesound user),"
+	StaticText 4, 130, "DoomNukem, Brutal Doom v19 SE, Revilution, Erdie (Freesound user),"
+	StaticText 4, 140, "Strife, IMX, Tripwire Interactive, Walter_Odington (Freesound user),"
 	StaticText 4, 150, "terranova, SoloSpaghetti, torridGristle, ItsNatureToDie, Revenant100/Marphy Black,"
-	StaticText 4, 160, "DaveOfDefeat2248(Freesound user)"
+	StaticText 4, 160, "DaveOfDefeat2248 (Freesound user), Qent"
 }

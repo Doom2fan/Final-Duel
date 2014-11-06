@@ -8,7 +8,7 @@ Actor FDChaingunGuy : ChaingunGuy 30096 {
 	//$title Corrupted Commando
 	GibHealth -35
 	PainChance "Kick", 255
-	Dropitem "FDMinigun"
+	Dropitem "SpawnedMinigun" 32
 	DropItem "Energy10" DropItem "Energy10" 192
 	Species "Corrupted Human"
 	States {

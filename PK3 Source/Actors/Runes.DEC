@@ -39,7 +39,7 @@ Actor RegenerationRune : RuneBase {
 	//$Category Final Duel-Runes
 	//$Title Regeneration Rune
 	Tag "$TAGRREGEN"
-	Inventory.PickupMessage "You got a Regeneration Rune."
+	Inventory.PickupMessage "Regeneration Rune"
 	Inventory.Icon RUNEREGN
 	States {
 	Spawn:
@@ -74,7 +74,7 @@ Actor DoubleDamageRune : RuneBase {
 	//$Category Final Duel-Runes
 	//$Title Double Damage Rune
 	Tag "$TAGRDOUBLEDAMAGE"
-	Inventory.PickupMessage "You got a Double Damage Rune."
+	Inventory.PickupMessage "Double Damage Rune"
 	Inventory.Icon RUNEDDMG
 	States {
 	Spawn:
@@ -107,7 +107,7 @@ Actor AgilityRune : RuneBase {
 	//$Category Final Duel-Runes
 	//$Title Agility Rune
 	Tag "$TAGRAGILITY"
-	Inventory.PickupMessage "You got a Agility Rune."
+	Inventory.PickupMessage "Agility Rune"
 	Inventory.Icon RUNEAGLT
 	States {
 	Spawn:
@@ -140,7 +140,7 @@ Actor DrainRune : RuneBase {
 	//$Category Final Duel-Runes
 	//$Title Drain Rune
 	Tag "$TAGRDRAIN"
-	Inventory.PickupMessage "You got a Drain Rune."
+	Inventory.PickupMessage "Drain Rune"
 	Inventory.Icon RUNEDRAI
 	States {
 	Spawn:

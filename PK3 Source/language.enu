@@ -37,11 +37,12 @@
 	
 	SKILLZ_NEIN   				= "Insane";
 		SKILLZ_NEINTEXT 			=
-			"Damage is higher, ammo is doubled, armour is replaced with the next armour type\n"
+			"Prepare to die.";
+			/*"Damage is higher, ammo is doubled, armour is replaced with the next armour type\n"
 			"and health items are auto-used.\n"
 			"Monsters are faster, extremely aggressive and respawn faster than in Nightmare\n"
 			"(but are limited to 12 respawns).\n"
-			"Uses the Nightmare spawn filter.";
+			"Uses the Nightmare spawn filter.";*/
 	
 // Cheats
 	STSTR_DQDON    				= "You are now immortal";
@@ -62,66 +63,78 @@
 
 // Pick Ups
 	// Armour
-		GOTARMOR 					= "Picked up the ST Armour.";
-		GOTMEGA 					= "Picked up the GX Armour.";
-		PICKUP_REDARMOR				= "Picked up the Prototype XS Armour.";
+		GOTARMOR 					= "ST Armour.";
+		GOTMEGA 					= "GX Armour.";
+		PICKUP_REDARMOR				= "Prototype XS Armour.";
+	
 	// Inventory
-		GOT_NIGHTVISION	       		= "Picked up a Nightvision goggle.";
-		GOTTOME						= "Picked up a Tome of the Unholy.";
+		GOT_NIGHTVISION	       		= "Nightvision goggle.";
+		GOTTOME						= "Tome of the Unholy.";
+	
+	// Health
+		GOTSTIM						= "Stimpack";
+		GOTMEDIKIT					= "Medikit";
+		
 	// Ammo
-		GOTHELLCLIP					= "Picked up a Inferno clip."; // Inferno clip
-		GOTGRENADES					= "Picked up a Grenade Launcher magazine."; // GL mag
-		GOTSHELLS 					= "Picked up 4 shells."; // 4 buckshot shells
-		GOTSHELLBOX					= "Picked up a box of 00 Buckshot."; // Buckshot box
-		GOTMGUNAMMO					= "Picked up a Minigun magazine"; // Minigun mag
-		GOTMAGNUMAMMO				= "Picked up a Magnum speedloader"; // Magnum speedloader
-		GOTSLUGS					= "Picked up 4 explosive slugs"; // 4 explosive slugs
-		GOTSLUGSBOX					= "Picked up a box of explosive slugs"; // Slug box
-		GOTXBOWBOLT					= "Picked up a crossbow bolt"; // Crossbow bolt
-		GOTXBOWBOLTS				= "Picked up a quiver of crossbow bolts"; // Quiver of crossbow bolts
-		GOT9MMMAG					= "Picked up a 9mm magazine"; // Pistol mag
-		GOT9MMRIFLEMAG				= "Picked up a 9mm Parabellum magazine"; // Rifle mag
+		// Pistols/Rifles/Machineguns/Revolvers
+		GOTHELLCLIP					= "Inferno clip"; // Inferno clip
+		GOTMGUNAMMO					= "Minigun magazine"; // Minigun mag
+		GOTMAGNUMAMMO				= "Magnum speedloader"; // Magnum speedloader
+		GOT9MMMAG					= "9x19mm/9mm Parabellum magazine"; // Pistol mag
+		GOTACPRIFLEMAG				= ".45 ACP magazine"; // Rifle mag
+		
+		// Shotguns
+		GOTSHELLS 					= "Shells."; // 4 buckshot shells
+		GOTSHELLBOX					= "00 Buckshot box"; // Buckshot box
+		GOTSLUGS					= "Explosive slugs"; // 4 explosive slugs
+		GOTSLUGSBOX					= "Explosive slugs box"; // Slug box
+		
+		// Etc
+		GOTCELL						= "Cell"; // Cell
+		GOTROCKET					= "Missile";
+		GOTROCKBOX					= "Missile box";
+		GOTXBOWBOLT					= "Crossbow bolt"; // Crossbow bolt
+		GOTXBOWBOLTS				= "Crossbow bolts quiver"; // Quiver of crossbow bolts
+		GOTGRENADES					= "Grenade Launcher magazine."; // GL mag
+		GOTBACKPACK					= "Backpack"; // Backpack
 
 // Weapon Pickups
 	// Slot 1
-		GOTKNIFE				= "You got the Knife. (Slot 1)";
-		GOTSWORD				= "You got the Sword. (Slot 1)";
-		GOTSAW                 	= "You got the Chainsaw. (Slot 1)";
+		GOTKNIFE				= "Knife (Slot 1)";
+		GOTSWORD				= "Sword (Slot 1)";
+		GOTSAW                 	= "Chainsaw (Slot 1)";
 
 	// Slot 2
-		GOTMAGNUM				= "You got the .357 Magnum. (Slot 2)";
-		GOTRIFLE				= "You got the M9A10 Rifle. (Slot 2)";
+		GOTMAGNUM				= ".357 Magnum (Slot 2)";
+		GOTRIFLE				= "M9A10 Rifle (Slot 2)";
 
 	// Slot 3
-		GOTSHOTTY				= "You got the Shotgun. (Slot 3)";
-		GOTPAS					= "You got the Tactical Shotgun. (Slot 3)";
-		GOTDOOMSSG				= "You got the Double-Barrel Shotgun. (Slot 3)";
-		GOTQUADSHOTGUN			= "You got the Quad-Barrel Shotgun. (Slot 3)";
+		GOTSHOTTY				= "Shotgun (Slot 3)";
+		GOTPAS					= "Tactical Shotgun (Slot 3)";
+		GOTDOOMSSG				= "Double-Barrel Shotgun (Slot 3)";
+		GOTQUADSHOTGUN			= "Quad-Barrel Shotgun (Slot 3)";
 
 	// Slot 4
-		GOTACTIONMACHINEGUN    	= "You got the M9A15 Carbine. (Slot 4)";
-		GOTAK47				   	= "You got the AK-47. (Slot 4)";
-		GOTMINIGUN				= "You got the UAC "Parias" Minigun. (Slot 4)";
+		GOTACTIONMACHINEGUN    	= "M9A15 Carbine (Slot 4)";
+		GOTAK47				   	= "AK-47 (Slot 4)";
+		GOTMINIGUN				= "UAC "Parias" Minigun (Slot 4)";
 
 	// Slot 5
-		GOTLAUNCHER            	= "You got the Rocket Launcher. (Slot 5)";
-		GOTGLAUNCHER           	= "You got the GT Grenade Launcher. (Slot 5)";
-		GOTANNIHILATOR			= "You got the Annihilator MK II. (Slot 5)";
+		GOTLAUNCHER            	= "Rocket Launcher (Slot 5)";
+		GOTGLAUNCHER           	= "GT Grenade Launcher (Slot 5)";
+		GOTANNIHILATOR			= "Annihilator MK II (Slot 5)";
 
 	// Slot 6
-		GOTPLASMA              	= "You got the Plasma Rifle. (Slot 6)";
-		GOTSONICRAIL			= "You got the Mjolnir MK IV Sonic Railgun. (Slot 6)";
+		GOTPLASMA              	= "Plasma Rifle (Slot 6)";
+		GOTSONICRAIL			= "Mjolnir MK IV Sonic Railgun (Slot 6)";
 
 	// Slot 7
-		GOTBFG	             	= "You got the Bio Force Gun MK XVI!  Oh, yes. (Slot 7)";
+		GOTBFG	             	= "Bio Force Gun MK XVI (Slot 7)";
 
 	// Slot 8
-		PICKUP_SOULREAPER      	= "You got the Soul Reaper. (Slot 8)";
-		GOTCROSSBOW				= "You got the Crossbow. (Slot 8)";
-		GOTSNIPERRIFLE			= "You got the Magnum Sniper Rifle. (Slot 8)";
-
-	// Slot 9
-		GOTMANCUBUSARM			= "You got the Mancubus Flamethrower. (Slot 9)";
+		PICKUP_SOULREAPER      	= "Soul Reaper (Slot 8)";
+		GOTCROSSBOW				= "Crossbow (Slot 8)";
+		GOTSNIPERRIFLE			= "Magnum Sniper Rifle (Slot 8)";
 
 // Deaths
 	OB_DEFAULT					= "%o was eaten by a grue.";
@@ -200,7 +213,7 @@
 		OB_MPROCKET				= "%o rode %k's rocket";
 		OB_ROCKETSELF			= "%o rode %p own rocket";
 		OBGRENADE				= "%o caught %k's grenade";
-		OBGRENADE				= "%o tripped %p own grenade";
+		OBGRENADESELF			= "%o tripped %p own grenade";
 		OBANNIHILATOR			= "%o was annihilated by %k";
 		OBANNIHILATORSELF		= "%o annihilated %hself";
 	
@@ -214,7 +227,7 @@
 	
 	// Slot 8
 		OBSOULREAPER   			= "%o had his soul reaped by %k's Soul Reaper";
-		OBCROSSBOW				= "%o can't be an adventurer anymore, thanks to %k and %p Crossbow";
+		OBCROSSBOW				= "%o can't be an adventurer anymore, thanks to %k";
 		OBSNIPERRIFLE			= "%o was perforated by a .337 Lapua Magnum from %k's Sniper Rifle";
 	
 	// Slot 9

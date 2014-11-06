@@ -3,7 +3,7 @@ Actor D3Key : DoomKey {	}
 Actor D3BlueCard : D3Key 30010 {
 	//$Category Final Duel-Keys
 	Tag "Blue Card"
-	Inventory.Pickupmessage "Picked up a blue keycard."
+	Inventory.Pickupmessage "Blue keycard"
 	Inventory.Icon "HUDKYBLU"
 	States {
 	Spawn:
@@ -16,7 +16,7 @@ Actor D3BlueCard : D3Key 30010 {
 Actor D3RedCard : D3Key 30011 {
 	//$Category Final Duel-Keys
 	Tag "Red Card"
-	Inventory.Pickupmessage "Picked up a red keycard."
+	Inventory.Pickupmessage "Red keycard"
 	Inventory.Icon "HUDKYRED"
 	States {
 	Spawn:
@@ -29,7 +29,7 @@ Actor D3RedCard : D3Key 30011 {
 Actor D3YellowCard : D3Key 30012 {
 	//$Category Final Duel-Keys
 	Tag "Yellow Card"
-	Inventory.Pickupmessage "Picked up a yellow keycard."
+	Inventory.Pickupmessage "Yellow keycard"
 	Inventory.Icon "HUDKYYLW"
 	States {
 	Spawn:
@@ -42,7 +42,7 @@ Actor D3YellowCard : D3Key 30012 {
 Actor D3BlackCard : D3Key 30013 {
 	//$Category Final Duel-Keys
 	Tag "Black Card"
-	Inventory.Pickupmessage "Picked up a black keycard."
+	Inventory.Pickupmessage "Black keycard"
 	Inventory.Icon "HUDKYBLK"
 	States {
 	Spawn:
@@ -55,7 +55,7 @@ Actor D3BlackCard : D3Key 30013 {
 Actor D3GreenCard : D3Key 30014 {
 	//$Category Final Duel-Keys
 	Tag "Green Card"
-	Inventory.Pickupmessage "Picked up a green keycard."
+	Inventory.Pickupmessage "Green keycard"
 	Inventory.Icon "HUDKYGRN"
 	States {
 	Spawn:
@@ -81,7 +81,7 @@ Actor D3OrangeCard : D3Key 30015 {
 Actor D3WhiteCard : D3Key 30016 {
 	//$Category Final Duel-Keys
 	Tag "White Card"
-	Inventory.Pickupmessage "Picked up a white keycard."
+	Inventory.Pickupmessage "White keycard"
 	Inventory.Icon "HUDKYWIT"
 	States {
 	Spawn:
@@ -94,7 +94,7 @@ Actor D3WhiteCard : D3Key 30016 {
 Actor D3BrownCard : D3Key 30017 {
 	//$Category Final Duel-Keys
 	Tag "Brown Card"
-	Inventory.Pickupmessage "Picked up a brown keycard."
+	Inventory.Pickupmessage "Brown keycard"
 	Inventory.Icon "HUDKYBWN"
 	States {
 	Spawn:
@@ -107,7 +107,7 @@ Actor D3BrownCard : D3Key 30017 {
 Actor D3VioletCard : D3Key 30018 {
 	//$Category Final Duel-Keys
 	Tag "Violet Card"
-	Inventory.Pickupmessage "Picked up a violet keycard."
+	Inventory.Pickupmessage "Violet keycard"
 	Inventory.Icon "HUDKYVLT"
 	States {
 	Spawn:
@@ -120,7 +120,7 @@ Actor D3VioletCard : D3Key 30018 {
 Actor D3Keycard : D3Key 30019 {
 	//$Category Final Duel-Keys
 	Tag "Keycard"
-	Inventory.Pickupmessage "Picked up the keycard."
+	Inventory.Pickupmessage "Keycard"
 	Inventory.Icon "HUDKCARD"
 	-Inventory.InterHubStrip
 	States {

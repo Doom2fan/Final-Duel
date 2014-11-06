@@ -10,7 +10,7 @@ Actor PowerFlymo : PowerupGiver {
 Actor JetThruster : CustomInventory 30001 {
 	//$Category Final Duel-Items
 	Tag "Jet Thruster"
-	Inventory.PickupMessage "You got a Jet Thruster."
+	Inventory.PickupMessage "Jet Thruster."
 	Inventory.Amount 1
 	Inventory.MaxAmount 5
 	Inventory.PickupSound "misc/p_pkup"

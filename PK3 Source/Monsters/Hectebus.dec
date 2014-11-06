@@ -17,11 +17,10 @@ Actor FDHectebus 30133 {
 	PainSound "fatso/pain"
 	DeathSound "fatso/death"
 	ActiveSound "fatso/active"
-	Health 1200
-	GibHealth -600
-	PainChance 20
+	Health 900
+	GibHealth -450
+	PainChance 60
 	Obituary "$OB_HECTEBUS"
-	DamageFactor "Ice", 0.0
 	DamageFactor "SRType1", 1.0
 	DropItem "Energy200"
 	States {

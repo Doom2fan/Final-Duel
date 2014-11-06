@@ -149,7 +149,7 @@ Actor Taunting   : Boolean { }
 Actor FDTauntKey : CustomInventory {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-InvBar
+	+Inventory.Undroppable -InvBar
 	States {
 	Use:
 		TNT1 A 0 A_GiveInventory ("Taunting", 1)
@@ -168,7 +168,7 @@ Actor Reloading   : Boolean { }
 Actor FDReloadKey : CustomInventory {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-InvBar
+	+Inventory.Undroppable -InvBar
 	States {
 	Use:
 		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, 2)
@@ -184,7 +184,7 @@ Actor Kicking   : Boolean { }
 Actor FDKickKey : CustomInventory {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-InvBar
+	+Inventory.Undroppable -InvBar
 	States {
 	Use:
 		TNT1 A 0 A_GiveInventory ("Kicking", 1)
@@ -200,7 +200,7 @@ Actor DropDatWeapon   : Boolean { }
 Actor FDDropWeaponKey : CustomInventory {
 	Inventory.Amount 1
 	Inventory.MaxAmount 1
-	-InvBar
+	+Inventory.Undroppable -InvBar
 	States {
 	Use:
 		TNT1 A 0 A_GiveInventory ("DropDatWeapon", 1)
@@ -246,8 +246,3 @@ Actor DroppedWeaponBase {
 	Speed 9
 	DeathSound "Weapons/gundrop"
 }
-
-// Synth-Fire|By Xaser
-Actor SynthFireActive : Boolean { }
-Actor SynthFireLeft   : Boolean { }
-Actor SynthFireRight  : Boolean { }

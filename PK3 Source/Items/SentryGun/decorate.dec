@@ -54,7 +54,7 @@ Actor SentryBox : CustomInventory 30036 {
 	Inventory.MaxAmount 3
 	Inventory.InterHubAmount 3
 	Inventory.Icon "SENBB0"
-	Inventory.PickupMessage "You picked up a sentry gun!"
+	Inventory.PickupMessage "Sentry gun"
 	States {
 	Spawn:
 		SENB A -1

@@ -7,10 +7,10 @@ Actor FDInvulnerabilitySpherePower : PowerupGiver {
 	+Inventory.AutoActivate +Inventory.AlwaysPickup
 }
 
-Actor FDInvulnerabilitySphere : CustomInventory Replaces InvulnerabilitySphere {
+Actor FDInvulnerabilitySphere : CustomInventory {
 	+CountItem +Inventory.AutoActivate +Inventory.AlwaysPickup +Inventory.BigPowerup
 	Inventory.MaxAmount 0
-	Inventory.PickupMessage "$GOTINVUL" // "Invulnerability!"
+	Inventory.PickupMessage "$GOTINVUL"
 	States {
 	Spawn:
 		PINV ABCD 6 Bright
@@ -54,7 +54,7 @@ Actor FDBlursphere : CustomInventory Replaces Blursphere {
 	+Inventory.BigPowerup
 	Inventory.MaxAmount 0
 	RenderStyle Translucent
-	Inventory.PickupMessage "$GOTINVIS" // "Partial Invisibility"
+	Inventory.PickupMessage "$GOTINVIS"
 	States {
 	Spawn:
 		PINS ABCD 6 Bright

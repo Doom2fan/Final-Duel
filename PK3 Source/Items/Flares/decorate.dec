@@ -6,7 +6,7 @@ Actor Flare : CustomInventory 30005 {
 	+Inventory.InvBar
 	Inventory.MaxAmount 20
 	Inventory.Icon "ARTIFLAR"
-	Inventory.PickupMessage "You picked up a flare."
+	Inventory.PickupMessage "Flare"
 	Inventory.InterHubAmount 20
 	Inventory.PickupSound "misc/p_pkup"
 	States {
@@ -37,7 +37,7 @@ Actor ActiveFlare 30006 {
 Actor FlareBox : CustomInventory 30009 {
 	Radius 28
 	Height 16
-	Inventory.PickupMessage "You picked up a box of flares."
+	Inventory.PickupMessage "Box of flares."
 	States {
 	Spawn:
 		FLAR C -1

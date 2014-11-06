@@ -23,7 +23,7 @@ Actor FDBerserk: CustomInventory Replaces Berserk {
 	+CountItem +InvBar
 	Inventory.MaxAmount 5
 	Inventory.Icon "ARTIBSRK"
-	Inventory.PickupMessage "You got an adrenaline kit!"
+	Inventory.PickupMessage "Adrenaline kit"
 	Inventory.InterHubAmount 5
 	Inventory.PickupSound "misc/p_pkup"
 	Inventory.UseSound "pickups/berserk"

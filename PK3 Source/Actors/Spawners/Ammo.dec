@@ -1,14 +1,20 @@
 // Clip Spawner
 Actor ClipAmmoSpawner : RandomSpawner replaces Clip {
-	DropItem "PistolMag" 255 5
-	DropItem "RifleMag" 255 3
+	DropItem "PistolMag" 255 2
+	DropItem "ACPRifleMag" 255 2
+	DropItem "RifleMag" 255 1
 }
 
 // Clip Box Spawner
 Actor ClipBoxSpawner : RandomSpawner replaces ClipBox {
-	DropItem "PistolMagStack" 255 6
+	DropItem "ClipBoxSpawnerPart2" 255 6
 	DropItem "RifleMagStack" 255 4
 	DropItem "MinigunAmmo" 255 1
+}
+
+Actor ClipBoxSpawnerPart2 : RandomSpawner replaces ClipBox {
+	DropItem "PistolMagStack" 255 3
+	DropItem "ACPRifleMagStack" 255 1
 }
 
 // Shell Spawner

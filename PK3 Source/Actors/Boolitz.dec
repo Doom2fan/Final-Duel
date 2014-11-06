@@ -51,8 +51,8 @@ Actor TracerTrail {
 // Custom tracers
 
 // Weapon tracers
-Actor PistolTracer				: Tracer { Speed 120 Damage (random (1, 3) * 6) }
-Actor RifleTracer 				: Tracer { Speed 100 Damage (random (1, 3) * 6) }
+Actor PistolTracer				: Tracer { Speed 125 Damage (random (1, 3) * 6) }
+Actor RifleTracer 				: Tracer { Speed 95 Damage (random (1, 3) * 6) }
 Actor ShotgunTracer				: Tracer { Speed 150 Damage (random (1, 3) * 6) }
 Actor DoubleShotgunTracer		: Tracer { Speed 125 Damage (random (1, 3) * 5) }
 Actor TacticalShotgunTracer		: Tracer { Speed 150 Damage (random (1, 5) * 6) DamageType TacticalShotgunTracer }
@@ -63,7 +63,7 @@ Actor MinigunTracer				: Tracer { Speed 180 Damage (random (1, 2) * 3) }
 Actor MinigunTracerUpgraded		: Tracer { Speed 180 Damage (random (1, 3) * 4) }
 Actor RevolverTracer			: Tracer { Speed 160 Damage (random (2, 6) * 20) }
 Actor UpgradedRevolverTracer	: Tracer { Speed 160 Damage (random (2, 5) * 32) }
-Actor MagnumTracer				: Tracer { DamageType MagnumTracer Speed 200 Damage (random (1, 4) * 40) }
+Actor MagnumTracer				: Tracer { Speed 200 Damage (random (1, 4) * 40) DamageType MagnumTracer }
 
 // Monster tracers
 Actor MonsterTracer				: Tracer { Damage (random (1, 3) * 3) }
