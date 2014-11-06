@@ -1,6 +1,5 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Project\Launcher.csproj", "{DF8EBDE7-D44E-4CCB-9931-57389375A57E}"
 EndProject
 Global

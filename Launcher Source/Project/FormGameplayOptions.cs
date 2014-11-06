@@ -16,126 +16,126 @@ namespace Launcher {
         #region ============ General ============
 
         private void comboBoxFallingDamage_SelectedIndexChanged (object sender, EventArgs e) {
-            Config.sv_fallingdamage = comboBoxFallingDamage.Text;
+            Game.Configurations.sv_fallingdamage = comboBoxFallingDamage.Text;
         }
 
         private void checkBoxDoubleAmmo_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_doubleammo = checkBoxDoubleAmmo.Checked;
+            Game.Configurations.sv_doubleammo = checkBoxDoubleAmmo.Checked;
         }
 
         private void checkBoxDropWeapon_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_weapondrop = checkBoxDropWeapon.Checked;
+            Game.Configurations.sv_weapondrop = checkBoxDropWeapon.Checked;
         }
 
         private void checkBoxInfiniteAmmo_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_infiniteammo = checkBoxInfiniteAmmo.Checked;
+            Game.Configurations.sv_infiniteammo = checkBoxInfiniteAmmo.Checked;
         }
 
         private void checkBoxInfiniteInventory_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_infiniteinventory = checkBoxInfiniteInventory.Checked;
+            Game.Configurations.sv_infiniteinventory = checkBoxInfiniteInventory.Checked;
         }
 
         private void checkBoxNoMonsters_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_nomonsters = checkBoxNoMonsters.Checked;
+            Game.Configurations.sv_nomonsters = checkBoxNoMonsters.Checked;
         }
 
         private void checkBoxKillAllMonsters_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_killallmonsters = checkBoxKillAllMonsters.Checked;
+            Game.Configurations.sv_killallmonsters = checkBoxKillAllMonsters.Checked;
         }
 
         private void checkBoxMonstersRespawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_monsterrespawn = checkBoxMonstersRespawn.Checked;
+            Game.Configurations.sv_monsterrespawn = checkBoxMonstersRespawn.Checked;
         }
 
         private void checkBoxNoRespawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_norespawn = checkBoxNoRespawn.Checked;
+            Game.Configurations.sv_norespawn = checkBoxNoRespawn.Checked;
         }
 
         private void checkBoxItemsRespawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_itemsrespawn = checkBoxItemsRespawn.Checked;
+            Game.Configurations.sv_itemsrespawn = checkBoxItemsRespawn.Checked;
         }
 
         private void checkBoxRespawnSuper_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_respawnsuper = checkBoxRespawnSuper.Checked;
+            Game.Configurations.sv_respawnsuper = checkBoxRespawnSuper.Checked;
         }
 
         private void checkBoxFastMonsters_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_fastmonsters = checkBoxFastMonsters.Checked;
+            Game.Configurations.sv_fastmonsters = checkBoxFastMonsters.Checked;
         }
 
         private void checkBoxDegeneration_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_degeneration = checkBoxDegeneration.Checked;
+            Game.Configurations.sv_degeneration = checkBoxDegeneration.Checked;
         }
 
         private void checkBoxAllowAutoaim_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noautoaim = !checkBoxAllowAutoaim.Checked;
+            Game.Configurations.sv_noautoaim = !checkBoxAllowAutoaim.Checked;
         }
 
         private void checkBoxAllowSuicide_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_disallowsuicide = !checkBoxAllowSuicide.Checked;
+            Game.Configurations.sv_disallowsuicide = !checkBoxAllowSuicide.Checked;
         }
 
         private void checkBoxAllowJump_CheckStateChanged (object sender, EventArgs e) {
             if (checkBoxAllowJump.CheckState == CheckState.Indeterminate)
-                Config.sv_jump = Trilean.Indeterminate;
+                Game.Configurations.sv_jump = Trilean.Indeterminate;
             else if (checkBoxAllowJump.CheckState == CheckState.Checked)
-                Config.sv_jump = Trilean.True;
+                Game.Configurations.sv_jump = Trilean.True;
             else if (checkBoxAllowJump.CheckState == CheckState.Unchecked)
-                Config.sv_jump = Trilean.False;
+                Game.Configurations.sv_jump = Trilean.False;
         }
 
         private void checkBoxAllowCrouch_CheckStateChanged (object sender, EventArgs e) {
             if (checkBoxAllowCrouch.CheckState == CheckState.Indeterminate)
-                Config.sv_crouch = Trilean.Indeterminate;
+                Game.Configurations.sv_crouch = Trilean.Indeterminate;
             else if (checkBoxAllowCrouch.CheckState == CheckState.Checked)
-                Config.sv_crouch = Trilean.True;
+                Game.Configurations.sv_crouch = Trilean.True;
             else if (checkBoxAllowCrouch.CheckState == CheckState.Unchecked)
-                Config.sv_crouch = Trilean.False;
+                Game.Configurations.sv_crouch = Trilean.False;
         }
 
         private void checkBoxAllowFreelook_CheckStateChanged (object sender, EventArgs e) {
             if (checkBoxAllowFreelook.CheckState == CheckState.Indeterminate)
-                Config.sv_freelook = Trilean.Indeterminate;
+                Game.Configurations.sv_freelook = Trilean.Indeterminate;
             else if (checkBoxAllowFreelook.CheckState == CheckState.Checked)
-                Config.sv_freelook = Trilean.True;
+                Game.Configurations.sv_freelook = Trilean.True;
             else if (checkBoxAllowFreelook.CheckState == CheckState.Unchecked)
-                Config.sv_freelook = Trilean.False;
+                Game.Configurations.sv_freelook = Trilean.False;
         }
 
         private void checkBoxAllowFOV_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_nofov = !checkBoxAllowFOV.Checked;
+            Game.Configurations.sv_nofov = !checkBoxAllowFOV.Checked;
         }
 
         private void checkBoxBFGAiming_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_nobfgaim = !checkBoxBFGAiming.Checked;
+            Game.Configurations.sv_nobfgaim = !checkBoxBFGAiming.Checked;
         }
 
         private void checkBoxAllowAutomap_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noautomap = !checkBoxAllowAutomap.Checked;
+            Game.Configurations.sv_noautomap = !checkBoxAllowAutomap.Checked;
         }
 
         private void checkBoxAutomapAllies_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noautomapallies = !checkBoxAutomapAllies.Checked;
+            Game.Configurations.sv_noautomapallies = !checkBoxAutomapAllies.Checked;
         }
 
         private void checkBoxAllowSpying_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_disallowspying = !checkBoxAllowSpying.Checked;
+            Game.Configurations.sv_disallowspying = !checkBoxAllowSpying.Checked;
         }
 
         private void checkBoxChasecamCheat_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_chasecam = checkBoxChasecamCheat.Checked;
+            Game.Configurations.sv_chasecam = checkBoxChasecamCheat.Checked;
         }
 
         private void checkBoxDontCheckAmmo_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_dontcheckammo = !checkBoxDontCheckAmmo.Checked;
+            Game.Configurations.sv_dontcheckammo = !checkBoxDontCheckAmmo.Checked;
         }
 
         private void checkBoxKillBossMonst_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_killbossmonst = checkBoxKillBossMonst.Checked;
+            Game.Configurations.sv_killbossmonst = checkBoxKillBossMonst.Checked;
         }
 
         private void checkBoxNoCountEndMonst_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_nocountendmonst = !checkBoxNoCountEndMonst.Checked;
+            Game.Configurations.sv_nocountendmonst = !checkBoxNoCountEndMonst.Checked;
         }
 
         #endregion
@@ -143,55 +143,55 @@ namespace Launcher {
         #region ============ Deathmatch ============
 
         private void checkBoxWeaponsStay_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_weaponstay = checkBoxWeaponsStay.Checked;
+            Game.Configurations.sv_weaponstay = checkBoxWeaponsStay.Checked;
         }
 
         private void checkBoxAllowPowerups_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noitems = !checkBoxAllowPowerups.Checked;
+            Game.Configurations.sv_noitems = !checkBoxAllowPowerups.Checked;
         }
 
         private void checkBoxAllowHealth_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_nohealth = !checkBoxAllowHealth.Checked;
+            Game.Configurations.sv_nohealth = !checkBoxAllowHealth.Checked;
         }
 
         private void checkBoxAllowArmor_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noarmor = !checkBoxAllowArmor.Checked;
+            Game.Configurations.sv_noarmor = !checkBoxAllowArmor.Checked;
         }
 
         private void checkBoxSpawnFarthest_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_spawnfarthest = checkBoxSpawnFarthest.Checked;
+            Game.Configurations.sv_spawnfarthest = checkBoxSpawnFarthest.Checked;
         }
 
         private void checkBoxSameMap_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_samelevel = checkBoxSameMap.Checked;
+            Game.Configurations.sv_samelevel = checkBoxSameMap.Checked;
         }
 
         private void checkBoxForceRespawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_forcerespawn = checkBoxForceRespawn.Checked;
+            Game.Configurations.sv_forcerespawn = checkBoxForceRespawn.Checked;
         }
 
         private void checkBoxAllowExit_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noexit = !checkBoxAllowExit.Checked;
+            Game.Configurations.sv_noexit = !checkBoxAllowExit.Checked;
         }
 
         private void checkBoxBarrelsRespawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_barrelrespawn = checkBoxBarrelsRespawn.Checked;
+            Game.Configurations.sv_barrelrespawn = checkBoxBarrelsRespawn.Checked;
         }
 
         private void checkBoxRespawnProtection_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_respawnprotect = checkBoxRespawnProtection.Checked;
+            Game.Configurations.sv_respawnprotect = checkBoxRespawnProtection.Checked;
         }
 
         private void checkBoxLoseFrag_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_losefrag = checkBoxLoseFrag.Checked;
+            Game.Configurations.sv_losefrag = checkBoxLoseFrag.Checked;
         }
 
         private void checkBoxKeepFrags_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_keepfrag = checkBoxKeepFrags.Checked;
+            Game.Configurations.sv_keepfrag = checkBoxKeepFrags.Checked;
         }
 
         private void checkBoxNoSwitching_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noteamswitch = checkBoxNoSwitching.Checked;
+            Game.Configurations.sv_noteamswitch = checkBoxNoSwitching.Checked;
         }
 
         #endregion
@@ -199,39 +199,39 @@ namespace Launcher {
         #region ============ Cooperative ============
 
         private void checkBoxNoWeaponSpawn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_noweaponspawn = !checkBoxNoWeaponSpawn.Checked;
+            Game.Configurations.sv_noweaponspawn = !checkBoxNoWeaponSpawn.Checked;
         }
 
         private void checkBoxLoseInventory_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooploseinventory = checkBoxLoseInventory.Checked;
+            Game.Configurations.sv_cooploseinventory = checkBoxLoseInventory.Checked;
         }
 
         private void checkBoxKeepKeys_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooplosekeys = !checkBoxKeepKeys.Checked;
+            Game.Configurations.sv_cooplosekeys = !checkBoxKeepKeys.Checked;
         }
 
         private void checkBoxKeepWeapons_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooploseweapons = !checkBoxKeepWeapons.Checked;
+            Game.Configurations.sv_cooploseweapons = !checkBoxKeepWeapons.Checked;
         }
 
         private void checkBoxKeepArmor_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooplosearmor = !checkBoxKeepArmor.Checked;
+            Game.Configurations.sv_cooplosearmor = !checkBoxKeepArmor.Checked;
         }
 
         private void checkBoxKeepPowerups_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooplosepowerups = !checkBoxKeepPowerups.Checked;
+            Game.Configurations.sv_cooplosepowerups = !checkBoxKeepPowerups.Checked;
         }
 
         private void checkBoxKeepAmmo_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cooploseammo = !checkBoxKeepAmmo.Checked;
+            Game.Configurations.sv_cooploseammo = !checkBoxKeepAmmo.Checked;
         }
 
         private void checkBoxHalfAmmo_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_coophalveammo = checkBoxHalfAmmo.Checked;
+            Game.Configurations.sv_coophalveammo = checkBoxHalfAmmo.Checked;
         }
 
         private void checkBoxSameSpawnSpot_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_samespawnspot = !checkBoxSameSpawnSpot.Checked;
+            Game.Configurations.sv_samespawnspot = !checkBoxSameSpawnSpot.Checked;
         }
 
         #endregion

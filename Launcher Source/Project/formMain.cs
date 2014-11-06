@@ -22,7 +22,8 @@ namespace Launcher {
         public formMain () {
             InitializeComponent ();
 
-            Config.Load ();
+            Game.Configurations.Initialize ();
+            Game.Configurations.Load (Game.Configurations.ConfigName);
 
             PopulateFields ();
         }
@@ -33,205 +34,227 @@ namespace Launcher {
         private void PopulateFields () {
             // Paths
             // Dis path
-            textBoxDisPath.Text = Config.DisPath;
+            textBoxDisPath.Text = Game.Configurations.DisPath;
 
             // IWAD path
-            textBoxIWADPath.Text = Config.IWADPath;
+            textBoxIWADPath.Text = Game.Configurations.IWADPath;
             comboBoxIWAD.BeginUpdate ();
             comboBoxIWAD.Items.Clear ();
-            if (File.Exists (Config.IWADPath + "\\doom.wad"))
-                comboBoxIWAD.Items.Add ("Doom");
-            if (File.Exists (Config.IWADPath + "\\bfgdoom.wad"))
-                comboBoxIWAD.Items.Add ("Doom BFG Edition");
-            if (File.Exists (Config.IWADPath + "\\doomu.wad"))
-                comboBoxIWAD.Items.Add ("Ultimate Doom");
-            if (File.Exists (Config.IWADPath + "\\doom2.wad"))
+			if (File.Exists (Game.Configurations.IWADPath + "\\doom2.wad") || File.Exists (Game.Configurations.IWADPath + "\\bfgdoom2.wad") || File.Exists (Game.Configurations.IWADPath + "\\tnt.wad") || File.Exists (Game.Configurations.IWADPath + "\\plutonia.wad")) {
+				if (File.Exists (Game.Configurations.IWADPath + "\\doom.wad"))
+					comboBoxIWAD.Items.Add ("Doom");
+				if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom.wad"))
+					comboBoxIWAD.Items.Add ("Doom BFG Edition");
+				if (File.Exists (Game.Configurations.IWADPath + "\\doomu.wad"))
+					comboBoxIWAD.Items.Add ("Ultimate Doom");
+			}
+            if (File.Exists (Game.Configurations.IWADPath + "\\doom2.wad"))
                 comboBoxIWAD.Items.Add ("Doom 2");
-            if (File.Exists (Config.IWADPath + "\\bfgdoom2.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom2.wad"))
                 comboBoxIWAD.Items.Add ("Doom 2 BFG Edition");
-            if (File.Exists (Config.IWADPath + "\\tnt.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\tnt.wad"))
                 comboBoxIWAD.Items.Add ("TNT");
-            if (File.Exists (Config.IWADPath + "\\plutonia.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\plutonia.wad"))
                 comboBoxIWAD.Items.Add ("Plutonia");
             comboBoxIWAD.EndUpdate ();
 
             // PK3 path
-            textBoxPK3Path.Text = Config.FDPath;
+            textBoxPK3Path.Text = Game.Configurations.FDPath;
 
             // Basic
             // Selected IWAD
-            numericUpDownMap.Value = Config.MapNumber;
-            if (Config.IWAD.Equals ("doom.wad"))
+            numericUpDownMap.Value = Game.Configurations.MapNumber;
+            if (Game.Configurations.IWAD.Equals ("doom.wad"))
                 comboBoxIWAD.SelectedItem = "Doom";
-            if (Config.IWAD == "bfgdoom.wad")
+            if (Game.Configurations.IWAD == "bfgdoom.wad")
                 comboBoxIWAD.SelectedItem = "Doom BFG Edition";
-            if (Config.IWAD == "doomu.wad")
+            if (Game.Configurations.IWAD == "doomu.wad")
                 comboBoxIWAD.SelectedItem = "Ultimate Doom";
-            if (Config.IWAD == "doom2.wad")
+            if (Game.Configurations.IWAD == "doom2.wad")
                 comboBoxIWAD.SelectedItem = "Doom 2";
-            if (Config.IWAD == "bfgdoom2.wad")
+            if (Game.Configurations.IWAD == "bfgdoom2.wad")
                 comboBoxIWAD.SelectedItem = "Doom 2 BFG Edition";
-            if (Config.IWAD == "tnt.wad")
+            if (Game.Configurations.IWAD == "tnt.wad")
                 comboBoxIWAD.SelectedItem = "TNT";
-            if (Config.IWAD == "plutonia.wad")
+            if (Game.Configurations.IWAD == "plutonia.wad")
                 comboBoxIWAD.SelectedItem = "Plutonia";
 
             // Main menu checkbox
-            checkBoxNoSkill.Checked = Config.NoSkill;
+            checkBoxNoSkill.Checked = Game.Configurations.NoSkill;
 
             // Skill/Difficulty
-            numericUpDownSkill.Value = Config.Skill;
+            numericUpDownSkill.Value = Game.Configurations.Skill;
 
             // Map name checkbox
-            checkBoxMap.Checked = Config.MapNameOn;
+            checkBoxMap.Checked = Game.Configurations.MapNameOn;
 
             // Map number
-            numericUpDownMap.Value = Config.MapNumber;
+            numericUpDownMap.Value = Game.Configurations.MapNumber;
 
             // Map name
-            textBoxMap.Text = Config.MapName;
+            textBoxMap.Text = Game.Configurations.MapName;
 
             // Class number checkbox
-            checkBoxClass.Checked = Config.ClassNumberOn;
+            checkBoxClass.Checked = Game.Configurations.ClassNumberOn;
 
             // Class name
-            textBoxClass.Text = Config.ClassName;
+            textBoxClass.Text = Game.Configurations.ClassName;
 
             // Class number
-            numericUpDownClass.Value = Config.ClassNumber;
+            numericUpDownClass.Value = Game.Configurations.ClassNumber;
 
 
             // Multiplayer
             // Multiplayer on checkbox
-            checkBoxMultiplayerOn.Checked = Config.MultiplayerOn;
+            checkBoxMultiplayerOn.Checked = Game.Configurations.MultiplayerOn;
 
             // Port number
-            numericUpDownPort.Value = Config.MPPort;
+            numericUpDownPort.Value = Game.Configurations.MPPort;
 
             // Joining
-            radioButtonJoining.Checked = Config.MPJoining;
+            radioButtonJoining.Checked = Game.Configurations.MPJoining;
 
             // Hostname
-            textBoxJoinTargetIP.Text = Config.MPHostname;
+            textBoxJoinTargetIP.Text = Game.Configurations.MPHostname;
 
             // Players number
-            numericUpDownPlayerNum.Value = Config.MPPlayers;
+            numericUpDownPlayerNum.Value = Game.Configurations.MPPlayers;
 
             // Netmode
-            radioButtonMPP2P.Checked = !Config.Netmode;
+            radioButtonMPP2P.Checked = !Game.Configurations.Netmode;
 
             // Extra tics checkbox
-            checkBoxExtraTics.Checked = Config.ExtraTics;
+            checkBoxExtraTics.Checked = Game.Configurations.ExtraTics;
 
             // Dup number
-            numericUpDownMPDup.Value = Config.MPDup;
+            numericUpDownMPDup.Value = Game.Configurations.MPDup;
 
             // Altdeath checkbox
-            checkBoxAltdeath.Checked = Config.altdeath;
+            checkBoxAltdeath.Checked = Game.Configurations.altdeath;
 
             // Deathmatch checkbox
-            checkBoxDeathmatch.Checked = Config.Deathmatch;
+            checkBoxDeathmatch.Checked = Game.Configurations.Deathmatch;
 
 
             // Mods
             listBoxModFilelist.BeginUpdate ();
-            foreach (string line in Config.ModList)
+            foreach (string line in Game.Configurations.ModList)
                 listBoxModFilelist.Items.Add (line);
             listBoxModFilelist.EndUpdate ();
 
             // Advanced
             // sv_cheats checkbox
-            checkBoxCheatsOn.Checked = Config.sv_cheats;
+            checkBoxCheatsOn.Checked = Game.Configurations.sv_cheats;
 
             // Log to file checkbox
-            checkBoxLogToFile.Checked = Config.LogToFile;
+            checkBoxLogToFile.Checked = Game.Configurations.LogToFile;
 
             // Custom commands textbox
-            textBoxCustomCommands.Text = Config.CustomCommands;
+            textBoxCustomCommands.Text = Game.Configurations.CustomCommands;
         }
 
         // Build the command line
         private string BuildCommandLine () {
-            string cmdline = string.Empty; // Define cmdline
+            StringBuilder cmdline = new StringBuilder (); // Define cmdline
 
             // Add the IWAD
-            cmdline += " -iwad \"" + Config.IWADPath + "\\" + Config.IWAD + "\"";
+			if (!Game.Configurations.IWAD.Equals ("doom.wad") && !Game.Configurations.IWAD.Equals ("udoom.wad") && !Game.Configurations.IWAD.Equals ("bfgdoom.wad"))
+				cmdline.Append (" -iwad \"" + Game.Configurations.IWADPath + "\\" + Game.Configurations.IWAD + "\"");
+			else {
+				string IWAD = null;
+
+				if (File.Exists (Game.Configurations.IWADPath + "\\doom2.wad"))
+					IWAD = "\\doom2.wad";
+				else if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom2.wad"))
+					IWAD = "\\bfgdoom2.wad";
+				else if (File.Exists (Game.Configurations.IWADPath + "\\tnt.wad"))
+					IWAD = "\\tnt.wad";
+				else if (File.Exists (Game.Configurations.IWADPath + "\\plutonia.wad"))
+					IWAD = "\\plutonia.wad";
+
+				if (!string.IsNullOrEmpty (IWAD))
+					cmdline.Append ("-iwad \"" + Game.Configurations.IWADPath + IWAD);
+			}
 
             // Add the files
-            cmdline += " -file";
+            cmdline.Append (" -file");
+
+			// Add the IWAD if we're using Doom 1 or Ultimate Doom
+			cmdline.Append (Game.Configurations.IWADPath + Game.Configurations.IWAD);
+
             // Add the files from the modlist
-            foreach (string line in Config.ModList)
-                cmdline += " \"" + line + "\"";
+            foreach (string line in Game.Configurations.ModList)
+                cmdline.Append (" \"" + line + "\"");
 
             // Add Final Duel
-            cmdline += " \"" + Config.FDPath + "\"";
+            cmdline.Append (" \"" + Game.Configurations.FDPath + "\"");
 
-            if (!Config.NoSkill) {
+            if (!Game.Configurations.NoSkill) {
                 // Skill/Difficulty
-                cmdline += " -skill " + Config.Skill;
+                cmdline.Append (" -skill " + Game.Configurations.Skill);
 
                 // Map Number
-                if (!Config.MapNameOn) // If Config.MapNameOn is false
-                    cmdline += " -warp " + Config.MapNumber; // Add the map number
+                if (!Game.Configurations.MapNameOn) // If Game.Configurations.MapNameOn is false
+                    cmdline.Append (" -warp " + Game.Configurations.MapNumber); // Add the map number
                 else
-                    cmdline += " +map " + Config.MapName; // Add the map name
+					cmdline.Append (" +map " + Game.Configurations.MapName); // Add the map name
 
                 // Class
-                cmdline += " +playerclass ";
-                if (!Config.ClassNumberOn) // If Config.ClassNumberOn is false
-                    cmdline += Config.ClassName; // Add the class name
+                cmdline.Append (" +playerclass ");
+                if (!Game.Configurations.ClassNumberOn) // If Game.Configurations.ClassNumberOn is false
+                    cmdline.Append (Game.Configurations.ClassName); // Add the class name
                 else
-                    cmdline += Config.ClassNumber; // Add the class number
+                    cmdline.Append (Game.Configurations.ClassNumber); // Add the class number
             }
 
             // Multiplayer
-            if (Config.MultiplayerOn) {
+            if (Game.Configurations.MultiplayerOn) {
                 // Hosting/Joining
-                if (!Config.MPJoining)
-                    cmdline += " -host " + Config.MPPlayers;
-                if (Config.MPJoining)
-                    cmdline += " -join " + Config.MPHostname;
-                cmdline += " -port " + Config.MPPort;
+                if (!Game.Configurations.MPJoining)
+                    cmdline.Append (" -host " + Game.Configurations.MPPlayers);
+                if (Game.Configurations.MPJoining)
+                    cmdline.Append (" -join " + Game.Configurations.MPHostname);
+                cmdline.Append (" -port " + Game.Configurations.MPPort);
 
                 // Server-side stuff
-                if (!Config.MPJoining) {
+                if (!Game.Configurations.MPJoining) {
                     // Server Type
-                    if (Config.Netmode == false)
-                        cmdline += " -netmode 0";
-                    else if (Config.Netmode == true)
-                        cmdline += " -netmode 1";
+                    if (Game.Configurations.Netmode == false)
+                        cmdline.Append (" -netmode 0");
+                    else if (Game.Configurations.Netmode == true)
+                        cmdline.Append (" -netmode 1");
 
                     // Server Options
-                    if (Config.ExtraTics)
-                        cmdline += " -extratic";
-                    if (Config.MPDup > 0)
-                        cmdline += " -dup " + Config.MPDup;
+                    if (Game.Configurations.ExtraTics)
+                        cmdline.Append (" -extratic");
+                    if (Game.Configurations.MPDup > 0)
+                        cmdline.Append (" -dup " + Game.Configurations.MPDup);
 
                     // Game mode
-                    if (Config.altdeath)
-                        cmdline += " -altdeath";
-                    if (Config.Deathmatch)
-                        cmdline += " -deathmatch";
+                    if (Game.Configurations.altdeath)
+                        cmdline.Append (" -altdeath");
+                    if (Game.Configurations.Deathmatch)
+                        cmdline.Append (" -deathmatch");
                 }
             }
 
             // Enable Cheats
-            if (Config.sv_cheats)
-                cmdline += " +set sv_cheats 1";
+            if (Game.Configurations.sv_cheats)
+                cmdline.Append (" +set sv_cheats 1");
 
             // Enable Logging to File
-            if (Config.LogToFile)
-                cmdline += " +set logfile \"Final Duel.log\"";
+            if (Game.Configurations.LogToFile)
+                cmdline.Append (" +set logfile \"Final Duel.log\"");
 
             // Custom Commands
-            if (Config.CustomCommands != string.Empty)
-                cmdline += " " + Config.CustomCommands;
+            if (Game.Configurations.CustomCommands != string.Empty)
+                cmdline.Append (" " + Game.Configurations.CustomCommands);
 
             // Log the command line if we're debugging
             Debug.WriteLine ("BuildCommandLine returned \"" + cmdline + "\"");
 
             // Return cmdline
-            return cmdline;
+            return cmdline.ToString ();
         }
 
         // Save the modlist
@@ -240,8 +263,8 @@ namespace Launcher {
 
             foreach (string line in listBoxModFilelist.Items)
                 NewModList.Add (line);
-            Config.ModList.RemoveRange (0, Config.ModList.Count);
-            Config.ModList.AddRange (NewModList);
+            Game.Configurations.ModList.RemoveRange (0, Game.Configurations.ModList.Count);
+            Game.Configurations.ModList.AddRange (NewModList);
         }
 
         #endregion
@@ -252,7 +275,7 @@ namespace Launcher {
 
         // Dis path textbox - Text changed
         private void textBoxDisPath_TextChanged (object sender, EventArgs e) {
-            Config.DisPath = textBoxDisPath.Text;
+            Game.Configurations.DisPath = textBoxDisPath.Text;
         }
 
         // Browse Dis path button - Clicked
@@ -263,7 +286,7 @@ namespace Launcher {
 
         // PK3 path testbox - Text changed
         private void textBoxPK3Path_TextChanged (object sender, EventArgs e) {
-            Config.FDPath = textBoxPK3Path.Text;
+            Game.Configurations.FDPath = textBoxPK3Path.Text;
         }
 
         // Browse PK3 path button - Clicked
@@ -280,22 +303,22 @@ namespace Launcher {
 
         // IWAD path textbox - Text changed
         private void textBoxIWADPath_TextChanged (object sender, EventArgs e) {
-            Config.IWADPath = textBoxIWADPath.Text;
+            Game.Configurations.IWADPath = textBoxIWADPath.Text;
             comboBoxIWAD.BeginUpdate ();
             comboBoxIWAD.Items.Clear ();
-            if (File.Exists (Config.IWADPath + "\\doom.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\doom.wad"))
                 comboBoxIWAD.Items.Add ("Doom");
-            if (File.Exists (Config.IWADPath + "\\bfgdoom.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom.wad"))
                 comboBoxIWAD.Items.Add ("Doom BFG Edition");
-            if (File.Exists (Config.IWADPath + "\\doomu.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\doomu.wad"))
                 comboBoxIWAD.Items.Add ("Ultimate Doom");
-            if (File.Exists (Config.IWADPath + "\\doom2.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\doom2.wad"))
                 comboBoxIWAD.Items.Add ("Doom 2");
-            if (File.Exists (Config.IWADPath + "\\bfgdoom2.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom2.wad"))
                 comboBoxIWAD.Items.Add ("Doom 2 BFG Edition");
-            if (File.Exists (Config.IWADPath + "\\tnt.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\tnt.wad"))
                 comboBoxIWAD.Items.Add ("TNT");
-            if (File.Exists (Config.IWADPath + "\\plutonia.wad"))
+            if (File.Exists (Game.Configurations.IWADPath + "\\plutonia.wad"))
                 comboBoxIWAD.Items.Add ("Plutonia");
             comboBoxIWAD.EndUpdate ();
         }
@@ -304,86 +327,97 @@ namespace Launcher {
 
         #region ============ Basic settings ============
 
+        // IWAD combo box - Selected value changed
         private void comboBoxIWAD_SelectedValueChanged (object sender, EventArgs e) {
             if ((string)comboBoxIWAD.SelectedItem == "Doom")
-                Config.IWAD = "doom.wad";
+                Game.Configurations.IWAD = "doom.wad";
             if ((string)comboBoxIWAD.SelectedItem == "Doom BFG Edition")
-                Config.IWAD = "bfgdoom.wad";
+                Game.Configurations.IWAD = "bfgdoom.wad";
             if ((string)comboBoxIWAD.SelectedItem == "Ultimate Doom")
-                Config.IWAD = "doomu.wad";
+                Game.Configurations.IWAD = "doomu.wad";
             if ((string)comboBoxIWAD.SelectedItem == "Doom 2")
-                Config.IWAD = "doom2.wad";
+                Game.Configurations.IWAD = "doom2.wad";
             if ((string)comboBoxIWAD.SelectedItem == "Doom 2 BFG Edition")
-                Config.IWAD = "bfgdoom2.wad";
+                Game.Configurations.IWAD = "bfgdoom2.wad";
             if ((string)comboBoxIWAD.SelectedItem == "TNT")
-                Config.IWAD = "tnt.wad";
+                Game.Configurations.IWAD = "tnt.wad";
             if ((string)comboBoxIWAD.SelectedItem == "Plutonia")
-                Config.IWAD = "plutonia.wad";
+                Game.Configurations.IWAD = "plutonia.wad";
         }
 
-        // Main menu checkbox
+        // Main menu checkbox - Checked changed
         private void checkBoxNoSkill_CheckedChanged (object sender, EventArgs e) {
             if (checkBoxNoSkill.Checked) {
-                Config.NoSkill = true;
+                Game.Configurations.NoSkill = true;
                 numericUpDownSkill.Enabled = false;
             } else {
-                Config.NoSkill = false;
+                Game.Configurations.NoSkill = false;
                 numericUpDownSkill.Enabled = true;
             }
         }
 
-        // Skill number
-        private void numericUpDownSkill_ValueChanged (object sender, EventArgs e) { Config.Skill = (short)numericUpDownSkill.Value; }
+        // Skill numeric up down - Value changed
+        private void numericUpDownSkill_ValueChanged (object sender, EventArgs e) {
+            Game.Configurations.Skill = (short)numericUpDownSkill.Value;
+        }
 
-        // Map name checkbox
+        // Map name checkbox - Checked changed
         private void checkBoxMap_CheckedChanged (object sender, EventArgs e) {
             if (checkBoxMap.Checked) {
                 numericUpDownMap.Visible = false;
                 textBoxMap.Visible = true;
-                Config.MapNameOn = true;
+                Game.Configurations.MapNameOn = true;
             } else {
                 textBoxMap.Visible = false;
                 numericUpDownMap.Visible = true;
-                Config.MapNameOn = false;
+                Game.Configurations.MapNameOn = false;
             }
         }
 
-        // Map number
-        private void numericUpDownMap_ValueChanged (object sender, EventArgs e) { Config.MapNumber = (short)numericUpDownMap.Value; }
+        // Map numeric up down - Value changed
+        private void numericUpDownMap_ValueChanged (object sender, EventArgs e) {
+            Game.Configurations.MapNumber = (short)numericUpDownMap.Value;
+        }
 
-        // Map name
-        private void textBoxMap_TextChanged (object sender, EventArgs e) { Config.MapName = textBoxMap.Text; }
+        // Map textbox - Text changed
+        private void textBoxMap_TextChanged (object sender, EventArgs e) {
+            Game.Configurations.MapName = textBoxMap.Text;
+        }
 
-        // Class number checkbox
+        // Class number checkbox - Checked changed
         private void checkBoxClass_CheckedChanged (object sender, EventArgs e) {
             if (checkBoxClass.Checked) {
                 textBoxClass.Visible = false;
                 numericUpDownClass.Visible = true;
-                Config.ClassNumberOn = true;
+                Game.Configurations.ClassNumberOn = true;
             } else {
                 numericUpDownClass.Visible = false;
                 textBoxClass.Visible = true;
-                Config.ClassNumberOn = false;
+                Game.Configurations.ClassNumberOn = false;
             }
         }
 
-        // Class number
-        private void numericUpDownClass_ValueChanged (object sender, EventArgs e) { Config.ClassNumber = (short)numericUpDownClass.Value; }
+        // Class numeric up down - Value changed
+        private void numericUpDownClass_ValueChanged (object sender, EventArgs e) {
+            Game.Configurations.ClassNumber = (short)numericUpDownClass.Value;
+        }
 
-        // Class name
-        private void textBoxClass_TextChanged (object sender, EventArgs e) { Config.ClassName = textBoxClass.Text; }
+        // Class textbox - Text changed
+        private void textBoxClass_TextChanged (object sender, EventArgs e) {
+            Game.Configurations.ClassName = textBoxClass.Text;
+        }
 
         #endregion
 
         #region ============ Modlist ============
 
-        // Browse button
+        // Browse button - Clicked
         private void buttonModBrowseFile_Click (object sender, EventArgs e) {
             if (openFileDialogModFilePath.ShowDialog () == DialogResult.OK)
                 textBoxModFile.Text = openFileDialogModFilePath.FileName;
         }
 
-        // Add button
+        // Add button - Clicked
         private void buttonModFilelistAdd_Click (object sender, EventArgs e) {
             string ModFilePath = textBoxModFile.Text;
             if (File.Exists (ModFilePath)) {
@@ -397,7 +431,7 @@ namespace Launcher {
                 MessageBox.Show ("Invalid path", "Invalid file path", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        // Remove button
+        // Remove button - Clicked
         private void buttonModFilelistRemove_Click (object sender, EventArgs e) {
             if (listBoxModFilelist.SelectedIndex >= 0) {
                 listBoxModFilelist.Items.RemoveAt (listBoxModFilelist.SelectedIndex);
@@ -405,7 +439,7 @@ namespace Launcher {
             }
         }
 
-        // Move up button
+        // Move up button - Clicked
         private void buttonModFilelistMoveUp_Click (object sender, EventArgs e) {
             int oldSelectedIndex = listBoxModFilelist.SelectedIndex; // define oldSelectedIndex and assign listBoxModFilelist.SelectedIndex to it
 
@@ -420,7 +454,7 @@ namespace Launcher {
             }
         }
 
-        // Move down button
+        // Move down button - Clicked
         private void buttonModFilelistMoveDown_Click (object sender, EventArgs e) {
             int oldSelectedIndex = listBoxModFilelist.SelectedIndex; // Define oldSelectedIndex and assign listBoxModFilelist.SelectedIndex to it
 
@@ -442,7 +476,7 @@ namespace Launcher {
         #region ============ Updater ============
 
         // Check updates button - Clicked
-        private void buttonCheckUpdates_Click (object sender, EventArgs e) // Directory.GetCurrentDirectory()
+        private void buttonCheckUpdates_Click (object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = "Checking for updates...";
             toolStripProgressBar.Style = ProgressBarStyle.Marquee;
@@ -450,10 +484,10 @@ namespace Launcher {
             if (radioButtonVersionRelease.Checked) {
                 if (radioButtonUpdateLauncher.Checked) {
                 } else {
-                    if (!File.Exists (Config.FDPath)) {
+                    if (!File.Exists (Game.Configurations.FDPath)) {
                         toolStripStatusLabel.Text = "Ready";
                         toolStripProgressBar.Style = ProgressBarStyle.Continuous;
-                        if (Config.FDPath == string.Empty)
+                        if (Game.Configurations.FDPath == string.Empty)
                             if (MessageBox.Show ("PK3 path not set.\nDo you want to download the file to the launcher's folder?", "PK3 path not set", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
                                 //goto DownloadFD;
                             } else
@@ -474,39 +508,12 @@ namespace Launcher {
             }
         }
 
-        // Extract zip file
-        private void ExtractZip (string archiveFilenameIn, string outFolder, string FileName = null) {
-            ZipFile zf = null;
-            try {
-                FileStream fs = File.OpenRead (archiveFilenameIn);
-                zf = new ZipFile (fs);
-                foreach (ZipEntry zipEntry in zf) {
-                    if (!zipEntry.IsFile || FileName != null && !zipEntry.Name.Equals (FileName))
-                        continue;
-                    string entryFileName = zipEntry.Name;
-
-                    byte[] buffer = new byte[4096]; //4K is optimum
-                    Stream zipStream = zf.GetInputStream (zipEntry);
-
-                    // Manipulate the output filename here as desired
-                    string fullZipToPath = Path.Combine (outFolder, entryFileName);
-                    string directoryName = Path.GetDirectoryName (fullZipToPath);
-                    if (directoryName.Length > 0)
-                        Directory.CreateDirectory (directoryName);
-
-                    // Unzip file in buffered chunks. This is just as fast as unpacking to a buffer the full size
-                    // of the file, but does not waste memory.
-                    // The "using" will close the stream even if an exception occurs.
-                    using (FileStream streamWriter = File.Create (fullZipToPath))
-                        StreamUtils.Copy (zipStream, streamWriter, buffer);
-                }
-            } finally {
-                if (zf != null) {
-                    zf.IsStreamOwner = true; // Makes close also shut the underlying stream
-                    zf.Close (); // Ensure we release resources
-                }
-            }
-        }
+        // Client - Download progress changed
+		private void client_DownloadProgressChanged (object sender, DownloadProgressChangedEventArgs e) {
+			toolStripStatusLabel.ForeColor = Color.FromKnownColor (KnownColor.ControlText);
+			toolStripStatusLabel.Text = "Downloading... " + (e.BytesReceived / 1024) + "KB / " + (e.TotalBytesToReceive / 1024) + "KB (" + e.ProgressPercentage + "%)";
+			toolStripProgressBar.Value = e.ProgressPercentage;
+		}
 
         #region ============ Final Duel ============
 
@@ -517,7 +524,7 @@ namespace Launcher {
 
             Directory.CreateDirectory (tempPath);
             using (var md5 = MD5.Create ()) {
-                using (var stream = File.OpenRead (Config.FDPath)) {
+                using (var stream = File.OpenRead (Game.Configurations.FDPath)) {
                     byte[] Hash = md5.ComputeHash (stream);
                     for (int i = 0; i < (Hash.Count () - 1); i++)
                         md5Hash += Hash.ElementAt (i);
@@ -525,7 +532,7 @@ namespace Launcher {
             }
 
             string[] UploadedVersion = File.ReadAllLines (tempPath + "\\UploadedVersion.txt");
-            ExtractZip (Config.FDPath, tempPath, "FDVERSION.txt");
+            Utils.Zip.ExtractZip (Game.Configurations.FDPath, tempPath, "FDVERSION.txt");
             foreach (string line in UploadedVersion) {
                 if (!File.Exists (tempPath + "\\FDVERSION.txt"))
                     return;
@@ -556,13 +563,6 @@ namespace Launcher {
 
         }
 
-        // Client - Download progress changed
-        private void client_DownloadProgressChanged (object sender, DownloadProgressChangedEventArgs e) {
-            toolStripStatusLabel.ForeColor = Color.FromKnownColor (KnownColor.ControlText);
-            toolStripStatusLabel.Text = "Downloading... " + (e.BytesReceived / 1024) + "KB / " + (e.TotalBytesToReceive / 1024) + "KB (" + e.ProgressPercentage + "%)";
-            toolStripProgressBar.Value = e.ProgressPercentage;
-        }
-
         #endregion
 
         #region ============ Launcher ============
@@ -587,7 +587,7 @@ namespace Launcher {
 
         // Multiplayer on checkbox - Checked changed
         private void checkBoxMultiplayerOn_CheckedChanged (object sender, EventArgs e) {
-            Config.MultiplayerOn = checkBoxMultiplayerOn.Checked;
+            Game.Configurations.MultiplayerOn = checkBoxMultiplayerOn.Checked;
         }
 
         // Hosting radio button - Checked changed
@@ -599,51 +599,51 @@ namespace Launcher {
                 numericUpDownPort.Enabled = true;
                 checkBoxExtraTics.Enabled = true;
                 groupBoxServerType.Enabled = false;
-                Config.MPJoining = false;
+                Game.Configurations.MPJoining = false;
             } else {
                 textBoxJoinTargetIP.Enabled = true;
                 numericUpDownPlayerNum.Enabled = false;
-                Config.MPJoining = true;
+                Game.Configurations.MPJoining = true;
             }
         }
 
         // Player number numeric up down - Value changed
         private void numericUpDownPlayerNum_ValueChanged (object sender, EventArgs e) {
-            Config.MPPlayers = (short)numericUpDownPlayerNum.Value;
+            Game.Configurations.MPPlayers = (short)numericUpDownPlayerNum.Value;
         }
 
         // Hostname textbox - Text changed
         private void textBoxJoinTargetIP_TextChanged (object sender, EventArgs e) {
-            Config.MPHostname = textBoxJoinTargetIP.Text;
+            Game.Configurations.MPHostname = textBoxJoinTargetIP.Text;
         }
 
         // Extra tics checkbox - Checked changed
         private void checkBoxExtraTics_CheckedChanged (object sender, EventArgs e) {
-            Config.ExtraTics = checkBoxExtraTics.Checked;
+            Game.Configurations.ExtraTics = checkBoxExtraTics.Checked;
         }
 
         // Dup numeric up down - Value changed
         private void numericUpDownMPDup_ValueChanged (object sender, EventArgs e) {
-            Config.MPDup = (short)numericUpDownMPDup.Value;
+            Game.Configurations.MPDup = (short)numericUpDownMPDup.Value;
         }
 
         // Deathmatch checkbox - Checked changed
         private void checkBoxDeathmatch_CheckedChanged (object sender, EventArgs e) {
-            Config.Deathmatch = checkBoxDeathmatch.Checked;
+            Game.Configurations.Deathmatch = checkBoxDeathmatch.Checked;
             if (checkBoxDeathmatch.Checked)
                 checkBoxAltdeath.Checked = false;
         }
 
         // Altdeath checkbox - Checked changed
         private void checkBoxAltdeath_CheckedChanged (object sender, EventArgs e) {
-            Config.altdeath = checkBoxAltdeath.Checked;
+            Game.Configurations.altdeath = checkBoxAltdeath.Checked;
             if (checkBoxAltdeath.Checked)
                 checkBoxDeathmatch.Checked = false;
         }
 
         // Peer-to-Peer radio button - Checked changed
         private void radioButtonMPP2P_CheckedChanged (object sender, EventArgs e) {
-            Config.Netmode = !radioButtonMPP2P.Checked;
+            Game.Configurations.Netmode = !radioButtonMPP2P.Checked;
         }
 
         #endregion
@@ -652,12 +652,12 @@ namespace Launcher {
 
         // sv_cheats checkbox - Checked changed
         private void checkBoxCheatsOn_CheckedChanged (object sender, EventArgs e) {
-            Config.sv_cheats = checkBoxCheatsOn.Checked;
+            Game.Configurations.sv_cheats = checkBoxCheatsOn.Checked;
         }
 
         // Log to file checkbox - Checked changed
         private void checkBoxLogToFile_CheckedChanged (object sender, EventArgs e) {
-            Config.LogToFile = checkBoxLogToFile.Checked;
+            Game.Configurations.LogToFile = checkBoxLogToFile.Checked;
         }
 
         // Gameplay options button - Clicked
@@ -668,27 +668,34 @@ namespace Launcher {
 
         // Custom commands testbox - Text changed
         private void textBoxCustomCommands_TextChanged (object sender, EventArgs e) {
-            Config.CustomCommands = textBoxCustomCommands.Text;
+            Game.Configurations.CustomCommands = textBoxCustomCommands.Text;
         }
 
         #endregion
 
         // Start game button - Clicked
         private void buttonStartGame_Click (object sender, EventArgs e) {
-            Config.Save (); // Save the config
-            buttonStartGame.Enabled = false; // Disable the start game button
-            Process Dis = Process.Start (Config.DisPath, BuildCommandLine ()); // Start the game
-            Game.Running = true; // Set Game.Running to true
-            Game.ProcessID = Dis.Id; // Set Game.ProcessID to the game process' ID
-            Task WaitForExit = new Task (delegate {
-                while (!Dis.HasExited) {
-                    Thread.Sleep (150);
-                }
-                Game.Running = false;
-                EnableStartGameButton ();
-            });
+			try {
+				Game.Configurations.Save ("Default"); // Save the configurations
+				buttonStartGame.Enabled = false; // Disable the start game button
+				ProcessStartInfo DisStartInfo = new ProcessStartInfo ();
+				DisStartInfo.FileName = Game.Configurations.DisPath; // Set the file path
+				DisStartInfo.Arguments = BuildCommandLine ();
+				Process Dis = Process.Start (DisStartInfo); // Start the game;
+				Game.Running = true; // Set Game.Running to true
+				Game.ProcessID = Dis.Id; // Set Game.ProcessID to the game process' ID
+				Task StartGame = new Task (delegate {
+					while (!Dis.HasExited) {
+						Thread.Sleep (150);
+					}
+					Game.Running = false;
+					EnableStartGameButton ();
+				});
 
-            WaitForExit.Start ();
+				StartGame.Start ();
+			} catch (Exception exception) {
+				Utils.ShowError (exception);
+			}
         }
 
         delegate void EnableStartGameButtonCallback ();
@@ -699,7 +706,17 @@ namespace Launcher {
             } else
                 buttonStartGame.Enabled = true;
         }
-        
+
+        // Save configuration button - Clicked
+        private void buttonSaveConfiguration_Click (object sender, EventArgs e) {
+            Game.Configurations.Save (Game.Configurations.ConfigName); // Save the configuration
+        }
+
+        // Configuration combo box - Text changed.
+        private void comboBoxConfiguration_TextChanged (object sender, EventArgs e) {
+            Game.Configurations.ConfigName = comboBoxConfiguration.Text;
+        }
+
         #endregion
     }
 }
