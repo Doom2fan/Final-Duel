@@ -19,28 +19,58 @@ Actor DoomSSGDropped : WeaponGiver {
 	}
 }
 
-Actor DoomSSG : FDWeapon 30002 {
+Actor SpawnedDoomSSG : BaseSpawnedWeapon 30002 {
+	Inventory.PickupMessage "$GOTDOOMSSG"
+	States {
+	Spawn:
+		SGN2 A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory ("DoomSSG", 0, "GrabAmmo")
+		TNT1 A 0 A_GiveInventory ("DoomSSG", 1)
+		TNT1 A 0 A_GiveInventory ("DoomSSGLoaded", 999999999)
+		Stop
+	GrabAmmo:
+		TNT1 A 0 A_JumpIfInventory ("Shell2", 0, "Failed")
+		TNT1 A 0 A_GiveInventory ("Shell2", 2)
+		Stop
+	}
+}
+
+Actor DoomSSGLoaded : Ammo {
+	Inventory.MaxAmount 2
+	Ammo.BackpackMaxAmount 2
+	+IgnoreSkill
+}
+
+Actor AutoReloadSSG : Boolean { }
+Actor DoomSSG : FDWeapon {
 	//$Category Final Duel-Weapons
 	//$Title Double Shotgun
 	//$Sprite SGN2A0
 	Tag "$TAGSSG"
 	Weapon.AmmoUse 2
-	Weapon.AmmoGive 2
-	Weapon.AmmoType "Shell2"
+	Weapon.AmmoType "DoomSSGLoaded"
+	Weapon.AmmoType2 "Shell2"
 	Inventory.PickupSound "misc/gunpickup"
 	Inventory.PickupMessage "$GOTDOOMSSG"
 	Obituary "$OBDOOMSSG"
+	+Weapon.NoAlert
 	States {
 	Ready:
 		SSGS CBA 1
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
-		TNT1 A 0 A_TakeInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload")
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		SSGR A 1 A_WeaponReady
 		Loop
 	DropWeapon:
+		TNT1 A 0 A_TakeInventory ("SynthFireActive", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireLeft", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireRight", 1)
+		TNT1 A 0 A_GunFlash ("KillSynthFire", GFF_NOEXTCHANGE)
 		TNT1 A 0 A_TakeInventory ("DropDatWeapon", 1)
 		TNT1 A 0 A_FireCustomMissile ("DroppedDoomSSG", 0, 0, 0)
 		TNT1 A 0 A_TakeInventory ("DoomSSG", 1)
@@ -49,27 +79,36 @@ Actor DoomSSG : FDWeapon 30002 {
 		SSGR A 0 A_Raise
 		Wait
 	Deselect:
+		TNT1 A 0 A_JumpIfInventory ("SynthFireActive", 1, "Deselect.SynthFire")
 		TNT1 A 0 A_JumpIfHealthLower (0, "DeselectDEAD")
 		SSGS ABC 1
 		TNT1 A 0 A_Lower
 		Wait
 	DryFire:
 		SSGR A 12 A_PlaySound ("Weapons/empty", 7)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload")
 		Goto Ready2
 	Fire:
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
-		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 1, 0, -2, 0, frandom (-4.0, 4.0))
-		TNT1 AAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 0, -4, 0, frandom (-4.0, 4.0))
+		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 1, -2, -4, 0, frandom (-4.0, 4.0))
+		TNT1 AAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, -2, -4, 0, frandom (-4.0, 4.0))
 		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
 		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Fire", 5)
+		TNT1 A 0 A_AlertMonsters
 		SSGF A 2 Bright A_GunFlash
 		TNT1 AAAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (-3.5, 3.5), 0, 2, -4, 0, frandom (-4.0, 4.0))
 		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
 		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
 		SSGF B 2 Bright A_GunFlash
 		SSGR A 1
-		TNT1 A 0 A_JumpIfNoAmmo ("Ready2")
+		TNT1 A 0 A_JumpIfInventory ("AutoReloadSSG", 1, "Reload")
+		Goto Ready2
+	Reload:
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("Shell2", 2, 1)
+		Goto Ready2
+		TNT1 A 0 A_JumpIfInventory ("DoomSSGLoaded", 2, "Ready2")
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Open", CHAN_WEAPON)
 		SSGF CDEFGH 2
 		TNT1 AA 0 A_FireCustomMissile ("ShellCasingSpawn2", 0, 0, -4, -4)
@@ -79,10 +118,135 @@ Actor DoomSSG : FDWeapon 30002 {
 		SSGF NOPQ 2
 		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Close", CHAN_WEAPON)
 		SSGF RSTUV 2
+		TNT1 A 0 A_GiveInventory ("DoomSSGLoaded", 2)
+		TNT1 A 0 A_TakeInventory ("Shell2", 2, TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_Refire
 		Goto Ready2
 	Spawn:
 		SGN2 A -1
 		Stop
+	
+	// Synth-Fire
+	Deselect.SynthFire:
+		TNT1 A 0 A_GunFlash ("KillSynthFire", GFF_NOEXTCHANGE)
+		SGSS ABC 1
+		TNT1 A 0 A_TakeInventory ("SynthFireActive", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireLeft", 1)
+		TNT1 A 0 A_TakeInventory ("SynthFireRight", 1)
+		TNT1 A 0 A_Lower
+		Wait
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory ("Rifle", 1, 1)
+		Goto Ready2
+		TNT1 A 0 A_GiveInventory ("SynthFireActive", 1) // Give Synthfire token
+		TNT1 A 0 ACS_NamedExecuteAlways ("FDSynthFire2", 0) // Start Synthfire ACS
+		SGSS J 1 A_GunFlash ("RightFAK", GFF_NOEXTCHANGE) // Start Synthfire DECORATE
+		SGSS KL 1
+		SGSF AAAA 1 A_TakeInventory ("SynthFireLeft", 1)
+	Ready.SynthFire.Left:
+		TNT1 A 0 A_JumpIfInventory ("DropDatWeapon", 1, "DropWeapon")
+		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "Fire.SynthFire.Left")
+		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "Reload.Left")
+		SGSF A 1 A_WeaponReady (WRF_NOFIRE|CallACS ("FDSynthFireAllowChange") * WRF_NOSWITCH)
+		Loop
+	Reload.Left:
+		TNT1 A 0 A_TakeInventory ("Reloading", 1)
+		TNT1 A 0 A_JumpIfInventory ("AmmoRifle", 20, "Ready.SynthFire.Left")
+		TNT1 A 0 A_JumpIfInventory ("ACPRifleMag", 1, 1)
+		Goto Ready.SynthFire.Left
+		SGSS DEF 1
+		TNT1 AA 4
+		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, -2, 0)
+		TNT1 A 0 A_PlaySound ("Rifle/Out", CHAN_WEAPON)
+		TNT1 AAA 4
+		TNT1 A 0 A_PlaySound ("Rifle/In", CHAN_WEAPON)
+		TNT1 A 4
+		TNT1 AA 4
+		SGSS FED 1
+		TNT1 A 0 A_GiveInventory ("AmmoRifle", 20)
+		TNT1 A 0 A_TakeInventory ("ACPRifleMag", 1, TIF_NOTAKEINFINITE)
+		Goto Ready.SynthFire.Left
+	Fire.SynthFire.Left:
+		TNT1 A 0 A_JumpIfInventory ("AmmoRifle", 1, 1)
+		Goto DryFire.SynthFire.Left
+		TNT1 A 0 A_FireCustomMissile ("RifleTracer", frandom (9.6, 0.0), 0, -5, -2, 0, frandom (-4.8, 4.8))
+		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawn", 5, 0, -3, -10)
+		TNT1 A 0 A_PlaySound ("Rifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.1, 0, Sin (Pitch) * 0.1, 1)
+		TNT1 A 0 A_TakeInventory ("AmmoRifle", 1, TIF_NOTAKEINFINITE)
+		SGSF BB 1 Bright A_SetPitch (pitch - 0.20, SPF_INTERPOLATE)
+		SGSF C 1
+		SGSF A 1
+		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "Fire.SynthFire.Left.FullAuto")
+		Goto Ready.SynthFire.Left
+	Fire.SynthFire.Left.FullAuto:
+		TNT1 A 0 A_JumpIfInventory ("AmmoRifle", 1, 1)
+		Goto DryFire.SynthFire.Left
+		TNT1 A 0 A_FireCustomMissile ("RifleTracer", frandom (10.0, 0.0), 0, -5, -2, 0, frandom (-5.0, 5.0))
+		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawn", 5, 0, -3, -10)
+		TNT1 A 0 A_PlaySound ("Rifle/Fire", CHAN_WEAPON)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -0.1, 0, Sin (Pitch) * 0.1, 1)
+		TNT1 A 0 A_TakeInventory ("AmmoRifle", 1, TIF_NOTAKEINFINITE)
+		SGSF BB 1 Bright A_SetPitch (pitch - 0.20, SPF_INTERPOLATE)
+		SGSF C 1
+		SGSF A 1
+		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "Fire.SynthFire.Left.FullAuto")
+		Goto Ready.SynthFire.Left
+	DryFire.SynthFire.Left:
+		SGSF A 12 A_PlaySound ("Weapons/empty", 6)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload.Left")
+		Goto Ready.SynthFire.Left
+		
+	// Right
+	RightFAK:
+		TNT1 AAA 1 A_TakeInventory ("SynthFireRight")
+		SGSF DDDD 1 A_TakeInventory ("SynthFireRight")
+	Ready.SynthFire.Right:
+		TNT1 A 0 A_GiveInventory ("SynthFireRightReady", 9999)
+		SGSF D 1 NoFastWeaps A_JumpIfInventory ("SynthFireRight", 1, "Fire.SynthFire.Right") // The NoFastWeaps keyword is here so it doesn't glitch when sv_fastweapons is on
+		Loop
+	Fire.SynthFire.Right:
+		TNT1 A 0 A_TakeInventory ("SynthFireRightReady", 9999)
+		TNT1 A 0 A_JumpIfInventory ("DoomSSGLoaded", 2, 1)
+		Goto DryFire.SynthFire.Right
+		TNT1 A 0 A_TakeInventory ("DoomSSGLoaded", 2)
+		TNT1 A 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (0.0, -7.0), 0, 8, -4, 0, frandom (-4.0, 4.0))
+		TNT1 AAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (0.0, -7.0), 0, 8, -4, 0, frandom (-4.0, 4.0))
+		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Fire", 5)
+		TNT1 A 0 A_AlertMonsters
+		SGSF E 2 Bright
+		TNT1 AAAAAAAA 0 A_FireCustomMissile ("DoubleShotgunTracer", frandom (0.0, -7.0), 0, 4, -4, 0, frandom (-4.0, 4.0))
+		TNT1 A 0 A_SetPitch (pitch - 1.5, SPF_INTERPOLATE)
+		TNT1 A 0 A_ChangeVelocity (Cos (Pitch) * -2.5, 0, Sin (Pitch) * 2.5, 1)
+		SGSF F 2 Bright
+		SGSF D 1
+		TNT1 A 0 A_JumpIfInventory ("AutoReloadSSG", 1, "Reload.Right")
+		Goto Ready.SynthFire.Right
+	Reload.Right:
+		TNT1 A 0 A_JumpIfInventory ("Shell2", 2, 1)
+		Goto Ready.SynthFire.Right
+		SGSS GHI 1
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Open", 7)
+		TNT1 AAAAAA 2
+		TNT1 AA 0 A_FireCustomMissile ("ShellCasingSpawn2", 0, 0, 0, -8)
+		TNT1 A 7
+		TNT1 AAAA 2
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Load", 7)
+		TNT1 AAAA 2
+		TNT1 A 0 A_PlaySound ("DoubleBarrelShotgun/Close", 7)
+		TNT1 AAAAA 2
+		SGSS IHG 1
+		TNT1 A 0 A_GiveInventory ("DoomSSGLoaded", 2)
+		TNT1 A 0 A_TakeInventory ("Shell2", 2, TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory ("SynthFireRight", 1, "Fire.SynthFire.Right")
+		Goto Ready.SynthFire.Right
+	DryFire.SynthFire.Right:
+		SGSF D 12 A_PlaySound ("Weapons/empty", 7)
+		TNT1 A 0 A_JumpIfInventory ("EnableAutoReload", 1, "Reload.Right")
+		Goto Ready.SynthFire.Right
 	}
 }

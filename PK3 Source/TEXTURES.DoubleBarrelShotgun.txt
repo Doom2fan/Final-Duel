@@ -13,3 +13,74 @@ Sprite SSGSC0, 320, 200
 {
 	Patch SSGRA0, 86, 161
 }
+
+// Synth-Fire
+// Deselect
+Sprite SGSSA0, 320, 200
+{
+	Patch SGSFA0, 78, 115
+	Patch SGSFD0, 183, 129
+}
+
+Sprite SGSSB0, 320, 200
+{
+	Patch SGSFA0, 62, 131
+	Patch SGSFD0, 199, 145
+}
+
+Sprite SGSSC0, 320, 200
+{
+	Patch SGSFA0, 46, 147
+	Patch SGSFD0, 215, 161
+}
+
+// Reload left
+Sprite SGSSD0, 320, 200
+{
+	Patch SGSFA0, 78, 115
+}
+
+Sprite SGSSE0, 320, 200
+{
+	Patch SGSFA0, 62, 131
+}
+
+Sprite SGSSF0, 320, 200
+{
+	Patch SGSFA0, 46, 147
+}
+
+// Reload right
+Sprite SGSSG0, 320, 200
+{
+	Patch SGSFD0, 183, 129
+}
+
+Sprite SGSSH0, 320, 200
+{
+	Patch SGSFD0, 199, 145
+}
+
+Sprite SGSSI0, 320, 200
+{
+	Patch SGSFD0, 215, 161
+}
+
+// Activate
+Sprite SGSSJ0, 320, 200
+{
+	Patch SGSFA0, 46, 147
+	Patch SGSFD0, 134, 113
+}
+
+Sprite SGSSK0, 320, 200
+{
+	Patch SGSFA0, 62, 131
+	Patch SGSFD0, 150, 113
+}
+
+Sprite SGSSL0, 320, 200
+{
+	Patch SGSFA0, 78, 115
+	Patch SGSFD0, 166, 113
+}
