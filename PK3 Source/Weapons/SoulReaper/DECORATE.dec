@@ -191,7 +191,7 @@ Actor SoulReaper : FDWeapon {
 	Reload:
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_JumpIfInventory ("HellClip", 1, 1)
-		Goto NoAmmo
+		Goto Ready2
 		TNT1 A 0 A_JumpIfInventory ("AmmoSR", 50, "Ready2")
 		SRR1 A 4 A_PlaySound ("SoulReaper/Steam", CHAN_WEAPON)
 		SRR1 BCDEF 4

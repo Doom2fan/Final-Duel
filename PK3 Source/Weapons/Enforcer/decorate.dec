@@ -26,14 +26,15 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
 		TNT1 A 0 A_JumpIfInventory ("Taunting", 1, "Taunt")
 		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "LeftFire")
-		ENF1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_ALLOWZOOM)
+		ENF1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_ALLOWZOOM|CallACS ("FDSynthFireAllowChange") * WRF_NOSWITCH)
 		TNT1 A 0 A_JumpIfInventory ("SynthFireLeft", 1, "LeftFire") // Firing is more important than kicking and taunting, so it's the only one copied.
-		ENF1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_ALLOWZOOM)
+		ENF1 A 1 A_WeaponReady (WRF_NOFIRE|WRF_ALLOWZOOM|CallACS ("FDSynthFireAllowChange") * WRF_NOSWITCH)
 		TNT1 A 0 A_TakeInventory ("PressingZoom", 999)
 		Loop
 	RightFAK:
 		TNT1 AAAAAA 1 // Wait while the selection animation plays
 	RightReady:
+		TNT1 A 0 A_GiveInventory ("SynthFireRightReady", 9999)
 		TNT1 A 0 A_JumpIfInventory ("Reloading", 1, "RightReload")
 		ENF2 A 1 NoFastWeaps A_JumpIfInventory ("SynthFireRight", 1, "RightFire") // The NoFastWeaps keyword is here so it doesn't glitch when sv_fastweapons is on
 		Loop
@@ -70,6 +71,7 @@ Actor Enforcer            : FDWeapon {
 		ENF1 C 3
 		Goto LeftReady
 	RightFire:
+		TNT1 A 0 A_TakeInventory ("SynthFireRightReady", 9999)
 		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 1, 1) // Check for EnforcerClipR...
 		Goto RightDryFire // Jump to RightDryFire if EnforcerClipR is zero
 		ENF2 A 1
@@ -95,40 +97,43 @@ Actor Enforcer            : FDWeapon {
 		TNT1 A 0 A_JumpIfInventory ("PressingZoom", 1, "LeftReady")
 		TNT1 A 0 A_GiveInventory ("PressingZoom", 1)
 	LeftReload:
-		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRCR", 1, "LeftReady")
-		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadRCR", 1, "LeftReloadEnd")
+		TNT1 A 0 A_JumpIfInventory ("PistolMag", 1, 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerReloadLCR", 1)
 		ENF1 A 3
-		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
-		Goto LeftReady
-		TNT1 A 0 A_JumpIfInventory ("EnforcerClipL", 15, "LeftReady")
+		TNT1 A 0 A_JumpIfInventory ("PistolMag", 1, 1)
+		Goto LeftReloadEnd
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipL", 15, "LeftReloadEnd")
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", CHAN_WEAPON)
 		ENF1 DEFGHIJ 1
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, -15, 0)
 		ENF1 KL 1
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", CHAN_WEAPON)
 		ENF1 MNOPQQ 1
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 9999)
-		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_TakeInventory ("PistolMag", 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerClipL", 15)
+	LeftReloadEnd:
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadLCR", 9999)
 		Goto LeftReady
 	RightReload:
+		TNT1 A 0 A_TakeInventory ("SynthFireRightReady", 9999)
 		ENF2 A 3 A_TakeInventory ("Reloading", 1)
-		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLCR", 1, "RightReady")
-		TNT1 A 0 A_JumpIfInventory ("Clip2", 2, 1)
+		TNT1 A 0 A_JumpIfInventory ("EnforcerReloadLCR", 1, "RightReloadEnd")
+		TNT1 A 0 A_JumpIfInventory ("PistolMag", 1, 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerReloadRCR", 1)
-		TNT1 A 0 A_JumpIfInventory ("Clip2", 1, 1)
-		Goto RightReady
-		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 15, "RightReady")
+		TNT1 A 0 A_JumpIfInventory ("PistolMag", 1, 1)
+		Goto RightReloadEnd
+		TNT1 A 0 A_JumpIfInventory ("EnforcerClipR", 15, "RightReloadEnd")
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerOut", 5)
 		ENF2 DEFGHIJ 1		
 		TNT1 A 0 A_FireCustomMissile ("EmptyClipSpawn", 0, 0, 15, 0)
 		ENF2 KL 1
 		TNT1 A 0 A_PlaySound ("Weapons/EnforcerIn", 5)
 		ENF2 MNOPQQ 1
-		TNT1 A 0 A_TakeInventory ("EnforcerReloadRCR", 9999)
-		TNT1 A 0 A_TakeInventory ("Clip2", 1)
+		TNT1 A 0 A_TakeInventory ("PistolMag", 1)
 		TNT1 A 0 A_GiveInventory ("EnforcerClipR", 15)
+	RightReloadEnd:
+		TNT1 A 0 A_TakeInventory ("EnforcerReloadRCR", 9999)
 		Goto RightReady
 	}
 }
