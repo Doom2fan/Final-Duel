@@ -180,7 +180,8 @@ namespace Launcher {
             cmdline.Append (" -file");
 
 			// Add the IWAD if we're using Doom 1 or Ultimate Doom
-			cmdline.Append (Game.Configurations.IWADPath + Game.Configurations.IWAD);
+			if (Game.Configurations.IWAD.Equals ("doom.wad") || Game.Configurations.IWAD.Equals ("udoom.wad") || Game.Configurations.IWAD.Equals ("bfgdoom.wad"))
+				cmdline.Append (" \"" + Game.Configurations.IWADPath + Game.Configurations.IWAD + "\"");
 
             // Add the files from the modlist
             foreach (string line in Game.Configurations.ModList)
@@ -251,7 +252,7 @@ namespace Launcher {
                 cmdline.Append (" " + Game.Configurations.CustomCommands);
 
             // Log the command line if we're debugging
-            Debug.WriteLine ("BuildCommandLine returned \"" + cmdline + "\"");
+            Debug.WriteLine ("BuildCommandLine returned \"" + cmdline.ToString () + "\"");
 
             // Return cmdline
             return cmdline.ToString ();
