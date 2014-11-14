@@ -31,13 +31,19 @@ StatusBar Normal, FullscreenOffsets {
 	}
 	
 	// Air supply
-	InInventory IsUnderwater, 1 {
+	InInventory IsUnderwater {
 		DrawBar "Graphics/Statusbar/OxygenMeter.png", "Graphics/Statusbar/OxygenMeterBack.png", AirTime, Vertical, -32, -280;
+		// Radiation Suit
+		InInventory PowerIronFeet {
+			DrawBar "Graphics/Statusbar/OMRadsuit.png", "Graphics/Statusbar/OMRadsuitBack.png", PowerupTime RadSuit, Vertical, -32, -280;
+		}
 	}
-	
-	// Radiation Suit
-	InInventory PowerIronFeet, 1 {
-		DrawBar "Graphics/Statusbar/OMRadsuit.png", "Graphics/Statusbar/OMRadsuitBack.png", PowerupTime RadSuit, Vertical, -32, -280;
+	Else {
+		// Radiation Suit
+		InInventory PowerIronFeet {
+			DrawBar "Graphics/Statusbar/OxygenMeter.png", "Graphics/Statusbar/OxygenMeterBack.png", AirTime, Vertical, -32, -280;
+			DrawBar "Graphics/Statusbar/OMRadsuit.png", "Graphics/Statusbar/OMRadsuitBack.png", PowerupTime RadSuit, Vertical, -32, -280;
+		}
 	}
 	
 	// Tome of the Unholy
@@ -54,27 +60,41 @@ StatusBar Normal, FullscreenOffsets {
         UsesSecondaryAmmo {
 			IsSelected Enforcer {
 				DrawImage "Graphics/Statusbar/AmmoCounter3.png", -85, -88;
-				DrawNumber 8, BIGFONT, Untranslated, Ammo Clip2, DrawShadow, -10, -82;
+				DrawNumber 8, BIGFONT, Untranslated, Ammo PistolMag, DrawShadow, -10, -82;
 				DrawNumber 8, BIGFONT, Untranslated, Ammo2, DrawShadow, -10, -59;
 				DrawNumber 8, BIGFONT, Untranslated, Ammo1, DrawShadow, -10, -35;
 			}
-			IsSelected Not Enforcer {
+			Else {
 				IsSelected PumpActionShotgun {
 					InInventory PASSlugs {
 						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo Slug, DrawShadow, -10, -59;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo AmmoPAShotgunSlug, DrawShadow, -10, -35;
 					}
-					InInventory Not PASSlugs {
+					Else {
 						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo2, DrawShadow, -10, -59;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo1, DrawShadow, -10, -35;
 					}
 				}
-				IsSelected Not PumpActionShotgun {
-					DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
-					DrawNumber 8, BIGFONT, Untranslated, Ammo2, DrawShadow, -10, -59;
-					DrawNumber 8, BIGFONT, Untranslated, Ammo1, DrawShadow, -10, -35;
+				Else {
+					IsSelected DoomSSG {
+						InInventory SynthFireActive {
+							DrawImage "Graphics/Statusbar/AmmoCounter3.png", -85, -88;
+							DrawNumber 8, BIGFONT, Untranslated, Ammo ACPRifleMag, DrawShadow, -10, -82;
+							DrawNumber 8, BIGFONT, Untranslated, Ammo AmmoRifle, DrawShadow, -10, -59;
+							DrawNumber 8, BIGFONT, Untranslated, Ammo Shell2, DrawShadow, -10, -35;
+							}
+						Else {
+							DrawImage "Graphics/Statusbar/AmmoCounter.png", -85, -41;
+							DrawNumber 8, BIGFONT, Untranslated, Ammo Shell2, DrawShadow, -10, -35;
+						}
+					}
+					Else {
+						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
+						DrawNumber 8, BIGFONT, Untranslated, Ammo2, DrawShadow, -10, -59;
+						DrawNumber 8, BIGFONT, Untranslated, Ammo1, DrawShadow, -10, -35;
+					}
 				}
 			}
 		}
@@ -84,19 +104,19 @@ StatusBar Normal, FullscreenOffsets {
 				DrawImage "Graphics/Statusbar/PSIBarBG.png", -155, -39;
 				DrawBar "Graphics/Statusbar/PSIBarFG.png", "Graphics/Statusbar/PSIBarBack.png", PsiEnergy, Horizontal, -153, -37;
 			}
-			IsSelected Not Magic {
+			Else {
 				IsSelected QuadShotgun {
 					DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
 					DrawNumber 8, BIGFONT, Untranslated, Ammo Shell2, DrawShadow, -10, -59;
 					DrawNumber 8, BIGFONT, Untranslated, Ammo AmmoQuadShotgun, DrawShadow, -10, -35;
 				}
-				IsSelected Not QuadShotgun {
+				Else {
 					IsSelected FDPlasmaRifle, FDPlasmaRiflePowered {
 						DrawImage "Graphics/Statusbar/AmmoCounter2.png", -85, -65;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo Cell2, DrawShadow, -10, -59;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo AmmoPRifle, DrawShadow, -10, -35;
 					}
-					IsSelected Not FDPlasmaRifle, FDPlasmaRiflePowered {
+					Else {
 						DrawImage "Graphics/Statusbar/AmmoCounter.png", -85, -41;
 						DrawNumber 8, BIGFONT, Untranslated, Ammo1, DrawShadow, -10, -35;
 					}
