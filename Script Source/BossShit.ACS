@@ -12,6 +12,8 @@ script "FD_BossBrainMonologue" (void) {
 		Delay (154);
 		HudMessageBold (s:"But this is only the beginning."; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
 		Delay (154);
+		HudMessageBold (s:"Prepare to meet your doom."; HUDMSG_FADEOUT, 15, CR_WHITE, 320.4, 150.0, 5.5, 1.0);
+		Delay (154);
 	}
 	BossBrainMonologueDone = 1;
 	SetActorState (0, "BossStart");
