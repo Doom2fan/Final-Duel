@@ -50,7 +50,7 @@ Actor Sword : FDWeapon 30072 {
 		TNT1 A 0 A_JumpIfInventory ("PowerFDStrength", 1, "Fire.Berserk")
 		TNT1 A 0 A_PlaySound ("Melee/Sword/Swing", CHAN_WEAPON)
 		SWRD BCDE 1
-		TNT1 A 0 A_CustomPunch (random (30, 50), 1, CPF_NORANDOMPUFFZ, "SwordPuff")
+		TNT1 A 0 A_CustomPunch (CallACS ("FD_StrengthStatSword", random (30, 50)), 1, CPF_NORANDOMPUFFZ, "SwordPuff")
 		SWRD FGHIJK 1
 		SRDS CBA 1
 		SWRD A 1
@@ -58,7 +58,7 @@ Actor Sword : FDWeapon 30072 {
 	Fire.Berserk:
 		TNT1 A 0 A_PlaySound ("Melee/Sword/Swing", CHAN_WEAPON)
 		SWRD BDE 1
-		TNT1 A 0 A_CustomPunch (6 * random (30, 50), 1, CPF_NORANDOMPUFFZ, "BerserkSwordPuff")
+		TNT1 A 0 A_CustomPunch (6 * CallACS ("FD_StrengthStatSword", random (30, 50)), 1, CPF_NORANDOMPUFFZ, "BerserkSwordPuff")
 		SWRD GHJK 1
 		SRDS CBA 1
 		SWRD A 1

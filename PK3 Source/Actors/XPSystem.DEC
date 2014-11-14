@@ -1,3 +1,21 @@
-Actor XPSystemExperience      : Counter { Inventory.MaxAmount 400000 }
-Actor XPSystemLevel           : Counter { Inventory.MaxAmount 25 }
-Actor XPSystemAttributePoints : Counter { }
+//-------------------------------------------------------------------------------------------
+//
+// XP System
+//
+//-------------------------------------------------------------------------------------------
+
+Actor XPSystemExperience      : Counter            { Inventory.MaxAmount 400000 }
+Actor XPSystemLevel           : Counter            { Inventory.MaxAmount 25 }
+Actor XPSystemAttributePoints : Counter            { }
+
+//-------------------------------------------------------------------------------------------
+//
+// Stat System
+//
+//-------------------------------------------------------------------------------------------
+
+Actor StatSystemBaseStat      : Counter            { Inventory.MaxAmount 10 }
+Actor StatSystemStrength      : StatSystemBaseStat { }
+Actor StatSystemStamina       : StatSystemBaseStat { }
+Actor StatSystemMagic         : StatSystemBaseStat { }
+Actor StatSystemCorruption    : StatSystemBaseStat { }
