@@ -176,7 +176,7 @@ namespace Launcher {
 							List<string> strings = (List<string>) field.GetValue (this);
 							List<string> StringList = new List<string> ();
 
-							StringList.Add (field.Name + " ► {");
+							StringList.Add (field.Name + " ► " + strings.Count + " ► {");
 							foreach (string line in strings)
 								StringList.Add (line);
 							StringList.Add ("}");
@@ -206,53 +206,48 @@ namespace Launcher {
 
 				if (File.Exists (CFGFilePath + file + ".cfg")) {
 					FieldInfo [] fields = this.GetType ().GetFields ();
-					string [] lines = File.ReadAllLines (CFGFilePath + file + ".cfg");
-					List<string> ListContents = new List<string> ();
-					bool parsingList = false;
+					List<string> lines = File.ReadAllLines (CFGFilePath + file + ".cfg").ToList ();
 
 					foreach (string option in lines) {
-						if (parsingList) {
-							if (option.StartsWith ("}")) {
+						int lineNumber = lines.FindIndex (x => x.Equals (option));
 
-								parsingList = false;
-							} else
-								ListContents.Add (option);
-						} else {
-							string [] s = option.Split ('►');
+						string [] s = option.Split ('►');
 
-							s [0] = s [0].Trim ();
-							s [1] = s [1].Trim ();
+						if (s.Length < 2)
+							continue;
 
-							if (s.Length != 2)
-								continue;
+						for (int i = 0; i < s.Count (); i++)
+							s [i] = s [i].Trim ();
 
-							if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath"))
-								continue;
+						if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath"))
+							continue;
 
-							FieldInfo field = fields.FirstOrDefault (o => o.Name == s [0]);
+						FieldInfo field = fields.FirstOrDefault (o => o.Name == s [0]);
 
-							if (field != null) {
-								// Basic Types
-								if (field.FieldType == typeof (bool))
-									field.SetValue (this, bool.Parse (s [1]));
-								if (field.FieldType == typeof (int))
-									field.SetValue (this, int.Parse (s [1]));
-								if (field.FieldType == typeof (float))
-									field.SetValue (this, float.Parse (s [1]));
-								if (field.FieldType == typeof (Trilean))
-									field.SetValue (this, Trilean.Parse (s [1]));
-								if (field.FieldType == typeof (string))
-									field.SetValue (this, s [1]);
+						if (field != null) {
+							// Basic Types
+							if (field.FieldType == typeof (bool))
+								field.SetValue (this, bool.Parse (s [1]));
+							if (field.FieldType == typeof (int))
+								field.SetValue (this, int.Parse (s [1]));
+							if (field.FieldType == typeof (float))
+								field.SetValue (this, float.Parse (s [1]));
+							if (field.FieldType == typeof (Trilean))
+								field.SetValue (this, Trilean.Parse (s [1]));
+							if (field.FieldType == typeof (string))
+								field.SetValue (this, s [1]);
 
-								// String List
-								if (field.FieldType == typeof (List<string>)) {
-									List<string> listStrings = new List<string> ();
-									string [] entries = s [1].Split (';');
-									if (entries.Length > 0 && entries [0] != string.Empty)
-										foreach (string entry in entries)
-											listStrings.Add (entry.Trim (new char [] { '{', '}' }));
-									field.SetValue (this, listStrings);
-								}
+							// String List
+							if (field.FieldType == typeof (List<string>)) {
+								int lineCount = int.Parse (s [1]);
+								List<string> listContents = new List<string> ();
+
+								Debug.WriteLine ("lineNumber: " + lineNumber);
+								for (int i = 0; i < lineCount; i++)
+									if (!lines [lineNumber + 1 + i].StartsWith ("}"))
+										listContents.Add (lines [lineNumber + 1 + i]);
+
+								field.SetValue (this, listContents);
 							}
 						}
 					}

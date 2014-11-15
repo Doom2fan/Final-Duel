@@ -11,11 +11,104 @@ namespace Launcher {
     public partial class FormGameplayOptions : Form {
         public FormGameplayOptions () {
             InitializeComponent ();
+
+			PopulateFields ();
         }
 
-        #region ============ General ============
+		#region ============ Functions ============
 
-        private void comboBoxFallingDamage_SelectedIndexChanged (object sender, EventArgs e) {
+		// Populate the form's fields
+		private void PopulateFields () {
+			#region ============ General ============
+
+			comboBoxFallingDamage.Text = Game.Configurations.sv_fallingdamage;
+			checkBoxDoubleAmmo.Checked = Game.Configurations.sv_doubleammo;
+			checkBoxDropWeapon.Checked = Game.Configurations.sv_weapondrop;
+			checkBoxInfiniteAmmo.Checked = Game.Configurations.sv_infiniteammo;
+			checkBoxInfiniteInventory.Checked = Game.Configurations.sv_infiniteinventory;
+			checkBoxNoMonsters.Checked = Game.Configurations.sv_nomonsters;
+			checkBoxKillAllMonsters.Checked = Game.Configurations.sv_killallmonsters;
+			checkBoxMonstersRespawn.Checked = Game.Configurations.sv_monsterrespawn;
+			checkBoxNoRespawn.Checked = Game.Configurations.sv_norespawn;
+			checkBoxItemsRespawn.Checked = Game.Configurations.sv_itemsrespawn;
+			checkBoxRespawnSuper.Checked = Game.Configurations.sv_respawnsuper;
+			checkBoxFastMonsters.Checked = Game.Configurations.sv_fastmonsters;
+			checkBoxDegeneration.Checked = Game.Configurations.sv_degeneration;
+			checkBoxAllowAutoaim.Checked = !Game.Configurations.sv_noautoaim;
+
+			if (Game.Configurations.sv_jump == Trilean.Indeterminate)
+				checkBoxAllowJump.CheckState = CheckState.Indeterminate;
+			else if (Game.Configurations.sv_jump == Trilean.True)
+				checkBoxAllowJump.CheckState = CheckState.Checked;
+			else if (Game.Configurations.sv_jump == Trilean.False)
+				checkBoxAllowJump.CheckState = CheckState.Unchecked;
+
+			if (Game.Configurations.sv_crouch == Trilean.Indeterminate)
+				checkBoxAllowCrouch.CheckState = CheckState.Indeterminate;
+			else if (Game.Configurations.sv_crouch == Trilean.True)
+				checkBoxAllowCrouch.CheckState = CheckState.Checked;
+			else if (Game.Configurations.sv_crouch == Trilean.False)
+				checkBoxAllowCrouch.CheckState = CheckState.Unchecked;
+
+			if (Game.Configurations.sv_freelook == Trilean.Indeterminate)
+				checkBoxAllowFreelook.CheckState = CheckState.Indeterminate;
+			else if (Game.Configurations.sv_freelook == Trilean.True)
+				checkBoxAllowFreelook.CheckState = CheckState.Checked;
+			else if (Game.Configurations.sv_freelook == Trilean.False)
+				checkBoxAllowFreelook.CheckState = CheckState.Unchecked;
+
+			checkBoxAllowFOV.Checked = !Game.Configurations.sv_nofov;
+			checkBoxBFGAiming.Checked = !Game.Configurations.sv_nobfgaim;
+			checkBoxAllowAutomap.Checked = !Game.Configurations.sv_noautomap;
+			checkBoxAutomapAllies.Checked = !Game.Configurations.sv_noautomapallies;
+			checkBoxAllowSpying.Checked = !Game.Configurations.sv_disallowspying;
+			checkBoxChasecamCheat.Checked = Game.Configurations.sv_chasecam;
+			checkBoxDontCheckAmmo.Checked = !Game.Configurations.sv_dontcheckammo;
+			checkBoxKillBossMonst.Checked = Game.Configurations.sv_killbossmonst;
+			checkBoxNoCountEndMonst.Checked = !Game.Configurations.sv_nocountendmonst;
+
+			#endregion
+
+			#region ============ Deathmatch ============
+
+			checkBoxWeaponsStay.Checked = Game.Configurations.sv_weaponstay;
+			checkBoxAllowPowerups.Checked = !Game.Configurations.sv_noitems;
+			checkBoxAllowHealth.Checked = !Game.Configurations.sv_nohealth;
+			checkBoxAllowArmor.Checked = !Game.Configurations.sv_noarmor;
+			checkBoxSpawnFarthest.Checked = Game.Configurations.sv_spawnfarthest;
+			checkBoxSameMap.Checked = Game.Configurations.sv_samelevel;
+			checkBoxForceRespawn.Checked = Game.Configurations.sv_forcerespawn;
+			checkBoxAllowExit.Checked = !Game.Configurations.sv_noexit;
+			checkBoxBarrelsRespawn.Checked = Game.Configurations.sv_barrelrespawn;
+			checkBoxRespawnProtection.Checked = Game.Configurations.sv_respawnprotect;
+			checkBoxLoseFrag.Checked = Game.Configurations.sv_losefrag;
+			checkBoxKeepFrags.Checked = Game.Configurations.sv_keepfrag;
+			checkBoxNoSwitching.Checked = Game.Configurations.sv_noteamswitch;
+
+			#endregion
+
+			#region ============ Cooperative ============
+
+			checkBoxNoWeaponSpawn.Checked = !Game.Configurations.sv_noweaponspawn;
+			checkBoxLoseInventory.Checked = Game.Configurations.sv_cooploseinventory;
+			checkBoxKeepKeys.Checked = !Game.Configurations.sv_cooplosekeys;
+			checkBoxKeepWeapons.Checked = !Game.Configurations.sv_cooploseweapons;
+			checkBoxKeepArmor.Checked = !Game.Configurations.sv_cooplosearmor;
+			checkBoxKeepPowerups.Checked = !Game.Configurations.sv_cooplosepowerups;
+			checkBoxKeepAmmo.Checked = !Game.Configurations.sv_cooploseammo;
+			checkBoxHalfAmmo.Checked = Game.Configurations.sv_coophalveammo;
+			checkBoxSameSpawnSpot.Checked = Game.Configurations.sv_samespawnspot;
+
+			#endregion
+		}
+
+		#endregion
+
+		#region ============ Form code ============
+
+		#region ============ General ============
+
+		private void comboBoxFallingDamage_SelectedIndexChanged (object sender, EventArgs e) {
             Game.Configurations.sv_fallingdamage = comboBoxFallingDamage.Text;
         }
 
@@ -235,5 +328,7 @@ namespace Launcher {
         }
 
         #endregion
-    }
+
+		#endregion
+	}
 }
