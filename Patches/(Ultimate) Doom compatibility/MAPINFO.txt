@@ -1,0 +1,38 @@
+ClearEpisodes
+
+Episode E1M1 {
+	PicName = "M_EPI1"
+	Name = "Knee-Deep in the Dead"
+	Key = "k"
+}
+
+Episode E2M1 {
+	PicName = "M_EPI2"
+	Name = "The Shores of Hell"
+	Key = "t"
+}
+
+Episode E3M1 {
+	PicName = "M_EPI3"
+	Name = "Inferno"
+	Key = "i"
+}
+
+Episode E4M1 {
+	PicName = "M_EPI4"
+	Name = "Thy Flesh Consumed"
+	Key = "t"
+	Optional
+}
+
+Episode FDMAP01 {
+	Name = "Final Duel"
+	Key = "f"
+	Optional
+}
+
+Episode TRAINING {
+	Name = "Final Duel - Training Course"
+	Key = "a"
+	Optional
+}
