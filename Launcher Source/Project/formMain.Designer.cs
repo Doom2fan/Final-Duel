@@ -644,12 +644,14 @@
 			// 
 			// buttonCompatOptions
 			// 
+			this.buttonCompatOptions.Enabled = false;
 			this.buttonCompatOptions.Location = new System.Drawing.Point(110, 29);
 			this.buttonCompatOptions.Name = "buttonCompatOptions";
 			this.buttonCompatOptions.Size = new System.Drawing.Size(114, 23);
 			this.buttonCompatOptions.TabIndex = 5;
 			this.buttonCompatOptions.Text = "Compatibility options";
 			this.buttonCompatOptions.UseVisualStyleBackColor = true;
+			this.buttonCompatOptions.Visible = false;
 			// 
 			// buttonGameplayOptionsMenu
 			// 

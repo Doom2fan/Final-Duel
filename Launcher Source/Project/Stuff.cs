@@ -10,6 +10,7 @@ using System.IO;
 
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
+using System.Reflection;
 
 namespace Launcher {
 	public class Trilean {
@@ -162,9 +163,22 @@ namespace Launcher {
 				this.richTextBoxExceptionOverview.Text = e.Message + Environment.NewLine + e.StackTrace + Environment.NewLine + e.InnerException;
 				if (this.ShowDialog () == DialogResult.OK) {
 					if (SaveReportDialog.ShowDialog () == DialogResult.OK) {
+						string tempPath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location) + "\\Temp\\Report\\";
 
+						if (!Directory.Exists (Path.GetFullPath (SaveReportDialog.FileName)))
+							Directory.CreateDirectory (Path.GetFullPath (SaveReportDialog.FileName));
+
+						Directory.CreateDirectory (tempPath);
+						File.WriteAllText (tempPath + "Report.txt", this.richTextBoxExceptionOverview.Text);
+						Zip.CreateSample (SaveReportDialog.FileName, tempPath, 6);
+						Directory.Delete (tempPath);
+
+						if (radioButtonQuit.Checked)
+							Application.Exit ();
 					}
 				} else {
+					if (radioButtonQuit.Checked)
+						Application.Exit ();
 				}
 			}
 		}
@@ -209,6 +223,74 @@ namespace Launcher {
 						zf.IsStreamOwner = true; // Makes close also shut the underlying stream
 						zf.Close (); // Ensure we release resources
 					}
+				}
+			}
+
+			/// <summary>
+			/// Compresses the files in the nominated folder, and creates a zip file on disk named as outPathname.
+			/// </summary>
+			/// <param name="outPathname">The path to the file</param>
+			/// <param name="password">The file's password</param>
+			/// <param name="folderName">The path to the folder to be compressed</param>
+			public static void CreateSample (string outPathname, string folderName, short compressionLevel = 3, string password = null) {
+
+				FileStream fsOut = File.Create (outPathname);
+				ZipOutputStream zipStream = new ZipOutputStream (fsOut);
+
+				zipStream.SetLevel (compressionLevel); //0-9, 9 being the highest level of compression
+
+				zipStream.Password = password;  // optional. Null is the same as not setting. Required if using AES.
+
+				// This setting will strip the leading part of the folder path in the entries, to
+				// make the entries relative to the starting folder.
+				// To include the full path for each entry up to the drive root, assign folderOffset = 0.
+				int folderOffset = folderName.Length + (folderName.EndsWith ("\\") ? 0 : 1);
+
+				CompressFolder (folderName, zipStream, folderOffset);
+
+				zipStream.IsStreamOwner = true; // Makes the Close also Close the underlying stream
+				zipStream.Close ();
+			}
+
+			/// <summary>
+			/// Recurses down the folder structure
+			/// </summary>
+			/// <param name="path">Path to the folder</param>
+			/// <param name="zipStream">The zip stream to write to</param>
+			/// <param name="folderOffset">I dunno</param>
+			public static void CompressFolder (string path, ZipOutputStream zipStream, int folderOffset) {
+
+				string [] files = Directory.GetFiles (path);
+
+				foreach (string filename in files) {
+
+					FileInfo fi = new FileInfo (filename);
+
+					string entryName = filename.Substring (folderOffset); // Makes the name in zip based on the folder
+					entryName = ZipEntry.CleanName (entryName); // Removes drive from name and fixes slash direction
+					ZipEntry newEntry = new ZipEntry (entryName);
+					newEntry.DateTime = fi.LastWriteTime; // Note the zip format stores 2 second granularity
+
+					// To permit the zip to be unpacked by built-in extractor in WinXP and Server2003, WinZip 8, Java, and other older code,
+					// you need to do one of the following: Specify UseZip64.Off, or set the Size.
+					// If the file may be bigger than 4GB, or you do not need WinXP built-in compatibility, you do not need either,
+					// but the zip will be in Zip64 format which not all utilities can understand.
+					zipStream.UseZip64 = UseZip64.Off;
+					newEntry.Size = fi.Length;
+
+					zipStream.PutNextEntry (newEntry);
+
+					// Zip the file in buffered chunks
+					// the "using" will close the stream even if an exception occurs
+					byte [] buffer = new byte [4096];
+					using (FileStream streamReader = File.OpenRead (filename)) {
+						StreamUtils.Copy (streamReader, zipStream, buffer);
+					}
+					zipStream.CloseEntry ();
+				}
+				string [] folders = Directory.GetDirectories (path);
+				foreach (string folder in folders) {
+					CompressFolder (folder, zipStream, folderOffset);
 				}
 			}
 		}

@@ -9,6 +9,7 @@ namespace Launcher {
 	public class Config {
 		public string ProgramPath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location);
 		public string CFGFilePath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location) + "\\Config\\";
+		public string PatchesPath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location) + "\\Patches\\";
 		public string ConfigName = "Default";
 
 		// Paths
@@ -44,7 +45,6 @@ namespace Launcher {
 		// Advanced
 		public bool sv_cheats = false;
 		public bool LogToFile = false;
-		//public bool 
 		public string CustomCommands = string.Empty;
 
 		// Gameplay options
@@ -104,6 +104,8 @@ namespace Launcher {
 		// Mods
 		public List<string> ModList = new List<string> ();
 
+		public List<string> patchesList = new List<string> ();
+
 		/*public void Save () {
 			List<string> FileData = new List<string> ();
 
@@ -156,6 +158,7 @@ namespace Launcher {
 			File.Delete (CFGFilePath);
 			File.WriteAllLines (CFGFilePath, FileData);
 		}*/
+
 		public void Save2 (string path, string file) {
 			List<string> data = new List<string> ();
 			List<string> data2 = new List<string> ();
@@ -169,7 +172,7 @@ namespace Launcher {
 				foreach (FieldInfo field in fields) {
 					if (field.Name.Equals ("ConfigName")) {
 						data2.Add (field.Name + " ► " + field.GetValue (this));
-					} else if (field.Name.Equals ("CFGFilePath") || field.Name.Equals ("ProgramPath"))
+					} else if (field.Name.Equals ("CFGFilePath") || field.Name.Equals ("ProgramPath") || field.Name.Equals (PatchesPath))
 						continue;
 					else {
 						if (field.FieldType == typeof (List<string>)) {
@@ -195,6 +198,7 @@ namespace Launcher {
 				Utils.ShowError (e);
 			}
 		}
+
 		public void Save (string file) {
 			Save2 (CFGFilePath, file);
 		}
@@ -219,7 +223,7 @@ namespace Launcher {
 						for (int i = 0; i < s.Count (); i++)
 							s [i] = s [i].Trim ();
 
-						if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath"))
+						if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath") || field.Name.Equals (PatchesPath))
 							continue;
 
 						FieldInfo field = fields.FirstOrDefault (o => o.Name == s [0]);
@@ -242,7 +246,6 @@ namespace Launcher {
 								int lineCount = int.Parse (s [1]);
 								List<string> listContents = new List<string> ();
 
-								Debug.WriteLine ("lineNumber: " + lineNumber);
 								for (int i = 0; i < lineCount; i++)
 									if (!lines [lineNumber + 1 + i].StartsWith ("}"))
 										listContents.Add (lines [lineNumber + 1 + i]);
@@ -265,20 +268,20 @@ namespace Launcher {
 
 				if (File.Exists (ProgramPath + "Config.cfg")) {
 					FieldInfo [] fields = this.GetType ().GetFields ();
-					string [] lines = File.ReadAllLines (ProgramPath + "Config.cfg");
-					List<string> ListContents = new List<string> ();
-					bool parsingList = false;
+					List<string> lines = File.ReadAllLines (ProgramPath + "Config.cfg").ToList ();
 
 					foreach (string option in lines) {
+						int lineNumber = lines.FindIndex (x => x.Equals (option));
+
 						string [] s = option.Split ('►');
 
-						s [0] = s [0].Trim ();
-						s [1] = s [1].Trim ();
-
-						if (s.Length != 2)
+						if (s.Length < 2)
 							continue;
 
-						if (s [0].Equals ("ConfigName"))
+						for (int i = 0; i < s.Count (); i++)
+							s [i] = s [i].Trim ();
+
+						if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath") || field.Name.Equals (PatchesPath))
 							continue;
 
 						FieldInfo field = fields.FirstOrDefault (o => o.Name == s [0]);
@@ -297,13 +300,15 @@ namespace Launcher {
 								field.SetValue (this, s [1]);
 
 							// String List
-							if (field.GetValue (this).GetType () == typeof (List<string>)) {
-								List<string> listStrings = new List<string> ();
-								string [] entries = s [1].Split (';');
-								if (entries.Length > 0 && entries [0] != string.Empty)
-									foreach (string entry in entries)
-										listStrings.Add (entry.Trim (new char [] { '{', '}' }));
-								field.SetValue (this, listStrings);
+							if (field.FieldType == typeof (List<string>)) {
+								int lineCount = int.Parse (s [1]);
+								List<string> listContents = new List<string> ();
+
+								for (int i = 0; i < lineCount; i++)
+									if (!lines [lineNumber + 1 + i].StartsWith ("}"))
+										listContents.Add (lines [lineNumber + 1 + i]);
+
+								field.SetValue (this, listContents);
 							}
 						}
 					}

@@ -268,6 +268,35 @@ namespace Launcher {
             Game.Configurations.ModList.AddRange (NewModList);
         }
 
+		public class ErrorChecker {
+			/// <summary>
+			/// The error list
+			/// </summary>
+			public List<string> errorList = new List<string> ();
+
+			/// <summary>
+			/// The error window
+			/// </summary>
+			public partial class errorForm : Form {
+			}
+
+			/// <summary>
+			/// Checks for errors
+			/// </summary>
+			/// <param name="showErrorWindow">Shows the error window if true</param>
+			public void CheckForErrors (bool showErrorWindow = false) {
+				if ((Game.Configurations.IWAD.Equals ("doom.wad") ||
+					Game.Configurations.IWAD.Equals ("udoom.wad") ||
+					Game.Configurations.IWAD.Equals ("bfgdoom.wad"))) {
+					if (!File.Exists (Game.Configurations.PatchesPath + "Doom Compat.PK3"))
+						errorList.Add ("Compat►(Ultimate) Doom requires the Doom Compatibility patch.");
+					else {
+						
+					}
+				}
+			}
+		}
+
         #endregion
 
         #region ============ Form code ============
@@ -677,6 +706,8 @@ namespace Launcher {
         // Start game button - Clicked
         private void buttonStartGame_Click (object sender, EventArgs e) {
 			try {
+				ErrorChecker errorChecker = new ErrorChecker ();
+				errorChecker.CheckForErrors ();
 				Game.Configurations.Save ("Default"); // Save the configurations
 				buttonStartGame.Enabled = false; // Disable the start game button
 				ProcessStartInfo DisStartInfo = new ProcessStartInfo ();
