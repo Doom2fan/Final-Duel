@@ -1,6 +1,7 @@
 // Server CVars
 server noarchive bool FD_BloodForTheBloodGod = false;
 server noarchive bool FD_NoBossMonologues = false;
+server noarchive bool FD_IDontBelieveInGod = false;
 server noarchive int FD_GSS_PistolMags = 5;
 server noarchive int FD_GSS_RifleMags = 3;
 

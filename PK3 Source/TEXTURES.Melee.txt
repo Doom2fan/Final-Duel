@@ -196,6 +196,42 @@ Sprite FST1F0, 320, 200
 	Patch PUNCH6, 0, 137
 }
 
+Sprite FST2A0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, -2, 27
+}
+
+Sprite FST2B0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, 44, 36
+}
+
+Sprite FST2C0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, 90, 55
+}
+
+Sprite FST2D0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, 144, 78
+}
+
+Sprite FST2E0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, 190, 110
+}
+
+Sprite FST2F0, 320, 200
+{
+	Offset 48, 0
+	Patch KICK4, 232, 148
+}
+
 // Knife
 Sprite KNFSA0, 348, 200
 {

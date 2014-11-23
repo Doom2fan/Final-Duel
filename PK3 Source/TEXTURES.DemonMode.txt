@@ -100,3 +100,18 @@ Sprite DMF2F0L0, 320, 200
 {
 	Patch DEMON2, 244, 134
 }
+
+Sprite DMNAA0, 256, 256
+{
+	Offset 128, 128
+	Patch LENCA0, 0, 0
+	Patch L2NCA0, 0, 0
+	{
+		Alpha 0.55
+		Style Subtract
+	}
+	Patch LENSA0, 0, 0
+	{
+		Style Add
+	}
+}

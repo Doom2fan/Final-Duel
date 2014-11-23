@@ -1,4 +1,7 @@
 Actor DemonModeOn : Boolean { }
+Actor DemonModeComboCounter : Counter { }
+Actor DemonModeAltfireThingy : Boolean { }
+Actor DemonModeAltfireFiring : Boolean { }
 Actor DemonMode : FDWeapon {
 	Tag "$TAGDEMONMODE"
 	Obituary "$OBDEMONMODE"
@@ -13,6 +16,8 @@ Actor DemonMode : FDWeapon {
 		TNT1 A 0 A_TakeInventory ("Reloading", 1)
 		TNT1 A 0 A_TakeInventory ("Taunting", 1)
 		TNT1 A 0 A_JumpIfInventory ("Kicking", 1, "Kicking")
+		TNT1 A 0 A_TakeInventory ("DemonModeComboCounter", 999999999)
+		TNT1 A 0 A_TakeInventory ("DemonModeAltfireFiring", 1)
 		FIST A 1 A_WeaponReady (WRF_DISABLESWITCH)
 		Loop
 	KillDemonMode:
@@ -31,58 +36,88 @@ Actor DemonMode : FDWeapon {
 		
 	// Attack
 	Fire:
+		TNT1 A 0 A_JumpIfInventory ("DemonModeComboCounter", 2, "Combo1Finish")
+		TNT1 A 0 A_JumpIfInventory ("DemonModeComboCounter", 1, "Combo1P2")
+		TNT1 A 0 A_GiveInventory ("DemonModeComboCounter", 1)
 		FSTS ABC 1
 		DMNF BC 1
-		TNT1 A 0 A_CustomPunch (random (30, 40) * CallACS ("FD_StrengthStatMelee", 10), 1, 0, "FistPuff")
+		TNT1 A 0 A_CustomPunch (random (9, 12) * CallACS ("FD_StrengthStatMelee", 10), 1, 0, "FistPuff")
 		DMNF DE 1
 		DMNF FG 1 A_SetAngle(angle - 1.25)
-		TNT1 A 5 A_Refire ("Combo1P2")
-		TNT1 A 0 A_Refire ("Combo1P2")
+		TNT1 AAAAAAAAAA 1 A_WeaponReady (WRF_NOSECONDARY | WRF_DISABLESWITCH | WRF_NOBOB)
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
 	AltFire:
+		TNT1 A 0 A_JumpIfInventory ("DemonModeAltfireFiring", 1, "RealAltfire")
 		FSTS ABC 1
+	RealAltfire:
+		TNT1 A 0 A_GiveInventory ("DemonModeAltfireFiring", 1)
+		TNT1 A 0 A_JumpIfInventory ("DemonModeAltfireThingy", 1, "AltFire2")
+		TNT1 A 0 A_GiveInventory ("DemonModeAltfireThingy", 1)
 		DMF2 ABC 1
 		TNT1 A 0 A_PlaySound ("DemonMode/Altfire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile ("DemonModeAltfire", 0.0, 0, -5, 2)
+		TNT1 A 0 A_FireCustomMissile ("DemonModeAltfire", 0.0, 0, 5, 2)
 		DMF2 DEF 1
-		TNT1 A 5 A_Refire ("AltFire2")
-		TNT1 A 0 A_Refire ("AltFire2")
+		TNT1 AAAAAAAAAA 1 A_WeaponReady (WRF_NOPRIMARY | WRF_DISABLESWITCH | WRF_NOBOB)
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
 	AltFire2:
+		TNT1 A 0 A_TakeInventory ("DemonModeAltfireThingy", 1)
 		DMF2 HIJ 1
 		TNT1 A 0 A_PlaySound ("DemonMode/Altfire", CHAN_WEAPON)
-		TNT1 A 0 A_FireCustomMissile ("DemonModeAltfire", 0.0, 0, 5, 2)
+		TNT1 A 0 A_FireCustomMissile ("DemonModeAltfire", 0.0, 0, -5, 2)
 		DMF2 KLM 1
-		TNT1 A 5 A_Refire ("AltFire")
-		TNT1 A 0 A_Refire ("AltFire")
+		TNT1 AAAAAAAAAA 1 A_WeaponReady (WRF_NOPRIMARY | WRF_DISABLESWITCH | WRF_NOBOB)
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
 		
 	// Combos
 	Combo1P2:
+		TNT1 A 0 A_GiveInventory ("DemonModeComboCounter", 1)
 		DMF1 AB 1
-		TNT1 A 0 A_CustomPunch (random (30, 40) * CallACS ("FD_StrengthStatMelee", 15), 1, 0, "FistPuff")
+		TNT1 A 0 A_CustomPunch (random (9, 12) * CallACS ("FD_StrengthStatMelee", 15), 1, 0, "FistPuff")
 		TNT1 A 0 
 		DMF1 CD 1
 		DMF1 EF 1 A_SetAngle (angle + 1.25)
-		TNT1 A 5 A_Refire ("Combo1Finish")
-		TNT1 A 0 A_Refire ("Combo1Finish")
+		TNT1 AAAAAAAAAA 1 A_WeaponReady (WRF_NOSECONDARY | WRF_DISABLESWITCH | WRF_NOBOB)
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
 	Combo1Finish:
-		TNT1 A 0 A_ChangeVelocity (50.0, 0, 10.0, CVF_RELATIVE)
-		DMF1 ABCD 1
-		TNT1 A 0 A_CustomPunch (random (40, 50) * CallACS ("FD_StrengthStatMelee", 20), 1, 0, "FistPuff")
-		DMF1 DCBA 1
-		TNT1 A 5
+		TNT1 A 0 A_TakeInventory ("DemonModeComboCounter", 999999999)
+		TNT1 A 0 A_ChangeVelocity (0.0, 0.0, 10.0, CVF_RELATIVE)
+		FST2 AB 1
+		FST2 C 1 A_CustomPunch (random (12, 15) * CallACS ("FD_StrengthStatMelee", 20), 1, 0, "MeleePuff")
+		FST2 DEF 1
+		TNT1 AAAAAAAAAA 1
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
+	}
+}
+
+Actor DemonModeAltfire : FastProjectile {
+	RenderStyle Add
+	Radius 13
+	Height 13
+	Scale 0.1
+	Speed 1
+	Damage (CallACS ("FDDemonModeAltDamage"))
+	Projectile
+	States {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag (ExtremeDeath, Random (Random (1, 0), 1))
+		TNT1 A 0 A_ScaleVelocity (35.0)
+	Spawn2:
+		DMNA A 1 Bright
+		Loop
+	Death:
+		TNT1 A 0 A_RadiusThrust (CallACS ("FDDemonModeAltExpRT"), 128, RTF_AFFECTSOURCE * CallACS ("FDDemonModeAltExpFlagRandomizer"))
+		TNT1 A 0 A_Explode (CallACS ("FDDemonModeAltExpDamage"), CallACS ("FDDemonModeAltExpRadius"), XF_HURTSOURCE * CallACS ("FDDemonModeAltExpFlagRandomizer"))
+		Stop
 	}
 }

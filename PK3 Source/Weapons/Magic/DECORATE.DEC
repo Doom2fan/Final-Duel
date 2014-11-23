@@ -144,10 +144,10 @@ Actor Magic : FDWeapon {
 		TNT1 A 0 A_SelectWeapon ("DemonMode")
 		TNT1 A 1 A_WeaponReady (WRF_NOFIRE)
 		Loop
-	Burnout:
+	Burnout.DemonMode:
 		TNT1 A 0 A_PlaySound ("Magic/Burnout", CHAN_WEAPON)
 		TNT1 A 0 A_SetBlend ("FF FF FF", 1, 20)
-		TNT1 A 0 A_ThingDamage (10, "PsiBurnout", TDF_PIERCEARMOR|TDF_IGNOREFACTOR)
+		TNT1 A 0 A_ThingDamage (30, "PsiBurnout", TDF_PIERCEARMOR|TDF_IGNOREFACTOR)
 		MAGI A 36
 		Goto Ready2
 	Burnout.Fire:
