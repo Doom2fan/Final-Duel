@@ -12,10 +12,10 @@ Actor FDBlueArmor : BlueArmor Replaces BlueArmor 30167 {
 	Inventory.PickupSound "Pickup/Armor"
 }
 
-// Red Armor
+// Red Armour
 Actor FDRedArmor : BasicArmorPickup 30119 {
 	//$Category Final Duel-Health and Armour
-	//$Title XS Armour (Red Armor)
+	//$Title XS Armour (Black Armour)
 	Radius 20
 	Height 16
 	Armor.SavePercent 70.0
