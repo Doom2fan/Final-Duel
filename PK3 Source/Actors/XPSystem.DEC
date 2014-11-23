@@ -15,7 +15,8 @@ Actor XPSystemAttributePoints : Counter            { }
 //-------------------------------------------------------------------------------------------
 
 Actor StatSystemBaseStat      : Counter            { Inventory.MaxAmount 10 }
-Actor StatSystemStrength      : StatSystemBaseStat { }
-Actor StatSystemStamina       : StatSystemBaseStat { }
-Actor StatSystemMagic         : StatSystemBaseStat { }
-Actor StatSystemCorruption    : StatSystemBaseStat { }
+Actor StatSystemStrength      : StatSystemBaseStat { } // Should be obvious
+Actor StatSystemStamina       : StatSystemBaseStat { } // Increases max stamina
+Actor StatSystemMagic         : StatSystemBaseStat { } // Increases max energy
+Actor StatSystemCorruption    : StatSystemBaseStat { } // Increases Soul Reaper damage and shit
+// Oh, and maxing Magic and Corruption unlocks the Demon mode

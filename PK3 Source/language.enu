@@ -232,6 +232,7 @@
 	
 	// Slot 9
 		OBMAGIC					= "%k \cG> \cKMagic \cG> \cL%o";
+		OBDEMONMODE				= "%o dIeD fROm HiS iNjuRiEs";
 	
 	// Misc
 		OB_SHRAPNEL				= "%o was hit by a piece of shrapnel";

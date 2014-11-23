@@ -43,6 +43,7 @@
 	// Slot 9
 		TAGFATARM										= "Mancubus Flamethrower";
 		TAGMAGIC										= "Magic";
+		TAGDEMONMODE									= "uNarMEd";
 // Inventory
 	TAGBERSERK											= "Adrenaline kit\
 		Grants higher speed, protection and strength";

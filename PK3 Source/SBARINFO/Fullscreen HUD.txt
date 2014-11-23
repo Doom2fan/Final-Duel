@@ -13,12 +13,23 @@ StatusBar Fullscreen, FullscreenOffsets {
 	DrawSelectedInventory CenterBottom, DrawShadow, INDEXFONT, -14, -100, -26, -105, Untranslated;
 	
 	// Stamina
-	DrawImage "Graphics/Statusbar/StaminaBarBG.png", 5, -270;
+	InInventory Not DemonModeOn {
+		DrawImage "Graphics/Statusbar/StaminaBarBG.png", 5, -270;
+	}
+	Else {
+		DrawImage "Graphics/Statusbar/DemonModeBarBG.png", 5, -270;
+	}
+	
 	InInventory Not PowerAgilityRune {
 		DrawBar "Graphics/Statusbar/StaminaBarFG.png", "Graphics/Statusbar/StaminaBarBack.png", FDStamina, Horizontal, 6, -268;
 	}
 	Else {
-		DrawBar "Graphics/Statusbar/AgilityBar.png", "Graphics/Statusbar/StaminaBarBack.png", FDStamina, Horizontal, 6, -268;
+		InInventory Not DemonModeOn {
+			DrawBar "Graphics/Statusbar/AgilityBar.png", "Graphics/Statusbar/StaminaBarBack.png", FDStamina, Horizontal, 6, -268;
+		}
+		Else {
+			DrawBar "Graphics/Statusbar/DemonModeBar.png", "Graphics/Statusbar/StaminaBarBack.png", Ammo PsiEnergy, Horizontal, 6, -268;
+		}
 	}
 	
 	// Money

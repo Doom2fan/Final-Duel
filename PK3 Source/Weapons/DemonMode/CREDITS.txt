@@ -1,0 +1,3 @@
+DECORATE: Alex_Mercer
+Sprites: ID Software, ???, Alex_Mercer
+Sounds: (None right now)

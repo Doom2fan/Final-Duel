@@ -1,0 +1,102 @@
+Sprite DMNFB0G0, 320, 200
+{
+	Offset 56, 0
+	Patch DEMON5, -44, 146
+	{
+		FlipX
+	}
+}
+
+Sprite DMNFC0H0, 320, 200
+{
+	Offset 8, 0
+	Patch DEMON6, -29, 111
+	{
+		FlipX
+	}
+}
+
+Sprite DMNFD0I0, 320, 200
+{
+	Patch DEMON6, 69, 89
+	{
+		FlipX
+	}
+}
+
+Sprite DMNFE0J0, 320, 200
+{
+	Patch DEMON7, 155, 76
+}
+
+Sprite DMNFF0K0, 415, 200
+{
+	Patch DEMON7, 253, 86
+}
+
+Sprite DMNFG0K0, 460, 200
+{
+	Patch DEMON7, 298, 113
+}
+
+Sprite DMF1A0, 320, 200
+{
+	Offset -24, 0
+	Patch DEMON3, 241, 153
+}
+
+Sprite DMF1B0, 320, 200
+{
+	Patch DEMON3, 182, 111
+}
+
+Sprite DMF1C0, 320, 200
+{
+	Patch DEMON3, 110, 53
+}
+
+Sprite DMF1D0, 320, 200
+{
+	Patch DEMON3, 92, 55
+}
+
+Sprite DMF1E0, 320, 200
+{
+	Patch DEMON4, 11, 89
+}
+
+Sprite DMF1F0, 320, 200
+{
+	Offset 48, 0
+	Patch DEMON4, 0, 137
+}
+
+Sprite DMF2A0G0, 320, 200
+{
+	Patch DEMON1, 259, 147
+}
+
+Sprite DMF2B0H0, 320, 200
+{
+	Patch DEMON1, 224, 113
+}
+
+Sprite DMF2C0I0, 320, 200
+{
+	Patch DEMON2, 208, 85
+}
+
+Sprite DMF2D0J0, 320, 200
+{
+	Patch DEMON2, 192, 65
+}
+
+Sprite DMF2E0K0, 320, 200
+{
+	Patch DEMON2, 223, 96
+}
+
+Sprite DMF2F0L0, 320, 200
+{
+	Patch DEMON2, 244, 134
+}

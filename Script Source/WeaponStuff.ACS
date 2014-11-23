@@ -117,3 +117,23 @@ script "KillBFGBall" (void) {
 	SetActorState (BFGBallTID, "KilledByPlayer");
 	Thing_ChangeTID (BFGBallTID, 0);
 }
+
+// Demon mode
+script "FDDemonMode" (void) {
+	int ticCounter = 0;
+	while (true) {
+		if (!CheckInventory ("DemonModeOn") && !CheckWeapon ("DemonMode")) {
+			TakeInventory ("DemonMode", 1);
+			terminate;
+		}
+		if (CheckInventory ("PsiEnergy") < 5) {
+			TakeInventory ("DemonModeOn", 1);
+		}
+		ticCounter++;
+		Delay (1);
+		if (ticCounter >= 35) {
+			TakeInventory ("PsiEnergy", 5);
+			ticCounter = 0;
+		}
+	}
+}

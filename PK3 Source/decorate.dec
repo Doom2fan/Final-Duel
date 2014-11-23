@@ -81,6 +81,7 @@
 #include "Weapons/Minigun/DECORATE.DEC" 					// Credits in the folder
 #include "Weapons/SniperRifle/DECORATE.DEC"					// Credits in the folder
 #include "Weapons/Crossbow/DECORATE.DEC"					// Credits in the folder
+#include "Weapons/DemonMode/DECORATE.DEC"					// Credits in the folder
 #include "Weapons/RocketLauncher.DEC" 						// Credits on the file
 #include "Weapons/BFG9000.DEC" 								// Credits on the file
 
