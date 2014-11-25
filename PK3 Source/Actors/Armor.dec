@@ -3,6 +3,11 @@ Actor FDGreenArmor : GreenArmor Replaces GreenArmor 30166 {
 	//$Category Final Duel-Health and Armour
 	//$Title ST Armour (Green Armour)
 	Inventory.PickupSound "Pickup/Armor"
+	States {
+	Spawn:
+		ARM1 A 6
+		Loop
+	}
 }
 
 // Blue Armor
@@ -10,6 +15,11 @@ Actor FDBlueArmor : BlueArmor Replaces BlueArmor 30167 {
 	//$Category Final Duel-Health and Armour
 	//$Title GX Armour (Blue Armour)
 	Inventory.PickupSound "Pickup/Armor"
+	States {
+	Spawn:
+		ARM2 A 6
+		Loop
+	}
 }
 
 // Red Armour
@@ -26,7 +36,6 @@ Actor FDRedArmor : BasicArmorPickup 30119 {
 	States {
 	Spawn:
 		ARM3 A 6
-		ARM3 B 6 Bright
-		Goto Spawn
+		Loop
 	}
 }

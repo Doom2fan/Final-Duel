@@ -366,30 +366,6 @@ object RedSkull
     frame RSKU { light REDKEY }
 }
 
-// Green armour
-pointlight GREENARMOR
-{
-    color 0.0 0.6 0.0
-    size 32
-}
-object FDGreenArmor
-{
-    frame ARM1A { light GREENARMOR }
-    frame ARM1B { light GREENARMOR }
-}
-
-// Blue armour
-pointlight BLUEARMOR
-{
-    color 0.0 0.6 0.6
-    size 32
-}
-object FDBlueArmor
-{
-    frame ARM2A { light BLUEARMOR }
-    frame ARM2B { light BLUEARMOR }
-}
-
 // ------------------
 // -- Doom Enemies --
 // ------------------
@@ -859,25 +835,15 @@ object FDTeleportFog
     frame TFOGI { light DTFOG4 }
     frame TFOGJ { light DTFOG3 }
 }
-// By Alex_Mercer
-// Red armour
-pointlight REDARMOR
-{
-    color 0.6 0.0 0.0
-    size 32
-}
-object FDRedArmor
-{
-    frame ARM3A { light REDARMOR }
-    frame ARM3B { light REDARMOR }
-}
 
+// By Alex_Mercer
 // Soul Reaper
 pointlight SRLASER
 {
     color 1.0 0.0 0.0
     size 32
 }
+
 // From Beautiful Doom
 pointlight ROCKET
 {

@@ -110,13 +110,13 @@ Actor DemonModeAltfire : FastProjectile {
 	States {
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_ChangeFlag (ExtremeDeath, Random (Random (1, 0), 1))
+		TNT1 A 0 A_ChangeFlag ("ExtremeDeath", Random (0, 1))
 		TNT1 A 0 A_ScaleVelocity (35.0)
 	Spawn2:
 		DMNA A 1 Bright
 		Loop
 	Death:
-		TNT1 A 0 A_RadiusThrust (CallACS ("FDDemonModeAltExpRT"), 128, RTF_AFFECTSOURCE * CallACS ("FDDemonModeAltExpFlagRandomizer"))
+		TNT1 A 0 A_RadiusThrust (CallACS ("FDDemonModeAltExpRT"), 128, RTF_AFFECTSOURCE)
 		TNT1 A 0 A_Explode (CallACS ("FDDemonModeAltExpDamage"), CallACS ("FDDemonModeAltExpRadius"), XF_HURTSOURCE * CallACS ("FDDemonModeAltExpFlagRandomizer"))
 		Stop
 	}
