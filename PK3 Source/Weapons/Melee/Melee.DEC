@@ -79,10 +79,11 @@ Actor MeleeAttack : FDWeapon {
 	Combo1Finish:
 		TNT1 A 0 A_TakeInventory ("MCSBFire")
 		TNT1 A 0 A_JumpIfInventory ("PowerFDStrength", 1, "Combo1Finish.Berserk")
-		TNT1 A 0 A_ChangeVelocity (50.0, 0, 10.0, CVF_RELATIVE)
-		FST1 ABCD 1
-		TNT1 A 0 A_CustomPunch (random (4, 5) * CallACS ("FD_StrengthStatMelee", 20), 1, 0, "FistPuff")
-		FST1 DCBA 1
+		TNT1 A 0 A_ChangeVelocity (0.0, 0.0, 10.0, CVF_RELATIVE)
+		FST2 AB 1
+		FST2 C 1 A_CustomPunch (random (4, 5) * CallACS ("FD_StrengthStatMelee", 20), 1, 0, "MeleePuff")
+		FST2 DEF 1
+		TNT1 AAAAAAAAAA 1
 		FSTS CBA 1
 		FIST AAA 1
 		Goto Ready2
@@ -126,11 +127,14 @@ Actor MeleeAttack : FDWeapon {
 		Goto Ready2
 	Combo1Finish.Berserk:
 		TNT1 A 0 A_TakeInventory ("MCSBFire", 1)
-		FST1 ABCD 1
-		TNT1 A 0 A_CustomPunch (random (4, 5) * CallACS ("FD_StrengthStatMelee", 60), 1, 0, "FistPuffStrong")
-		FST1 DCBA 1
+		TNT1 A 0 A_ChangeVelocity (0.0, 0.0, 10.0, CVF_RELATIVE)
+		FST2 AB 1
+		FST2 C 1 A_CustomPunch (random (4, 5) * CallACS ("FD_StrengthStatMelee", 60), 1, 0, "MeleePuffStrong")
+		FST2 DEF 1
+		TNT1 AAAAAAAAAA 1
+		FSTS CBA 1
 		FIST AAA 1
-		Goto Ready
+		Goto Ready2
 	}
 }
 
