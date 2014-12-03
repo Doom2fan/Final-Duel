@@ -2,9 +2,9 @@
 // reformated and edited by Alex_Mercer
 
 // Defines
-#define MaxStepSounds 159
-#define DefStepSound "floor/footstep"
-str StepSound[MaxStepSounds][2] = {
+#DEFINE MAXSTEPSOUNDS 159
+#DEFINE DEFSTEPSOUND "floor/footstep"
+str stepSound [MAXSTEPSOUNDS] [2] = {
 	{ "CEIL1_1", "floor/wood" },
 	{ "CEIL1_1", "floor/wood" },
 	{ "CEIL1_2", "floor/metal" },
@@ -166,42 +166,41 @@ str StepSound[MaxStepSounds][2] = {
 	{ "slime12", "none" }
 };
 
-// Functions
-Function int GetVelocity (void) {
+// functions
+function int getVelocity (void) {
 	int vel;
-	int x = GetActorVelX (0);
-	int y = GetActorVelY (0);
-	int angle = VectorAngle (x, y);
+	int x = getActorVelX (0);
+	int y = getActorVelY (0);
+	int angle = vectorAngle (x, y);
 	
 	if (((angle + 0.125) % 0.5) > 0.25)
-		vel = FixedDiv (y, Sin (angle));
+		vel = fixedDiv (y, sin (angle));
 	else
-		vel = FixedDiv (x, Cos (angle));
+		vel = fixedDiv (x, cos (angle));
 	return vel >> 16;
 }
 
 // Scripts
-Script "Footsteps" ENTER
-{
-	int DelayTime;
+script "Footsteps" ENTER {
+	int delayTime;
 	//int StepVolume;
 	int i;
-	int SoundPlayed;
-	While (TRUE) {
-		Delay (1);
-		DelayTime = 16 - GetVelocity () / 2;
-		// StepVolume = 7 * GetVelocity ();
-		if (GetActorZ (0) - GetActorFloorZ (0) == 0 && GetVelocity () > 0) {
-			for (i=0; i<MaxStepSounds; i++) {
-				if (CheckActorFloorTexture (0, StepSound[i][0])) {
-					ActivatorSound (StepSound[i][1], 4.0);
-					SoundPlayed = 1;
+	int soundPlayed;
+	while (TRUE) {
+		delay (1);
+		delayTime = 16 - getVelocity () / 2;
+		// StepVolume = 7 * getVelocity ();
+		if (GetActorZ (0) - getActorFloorZ (0) == 0 && getVelocity () > 0) {
+			for (i = 0; i < MAXSTEPSOUNDS; i++) {
+				if (checkActorFloorTexture (0, stepSound [i] [0])) {
+					activatorSound (stepSound [i] [1], 4.0);
+					soundPlayed = 1;
 				}
 			}
-			if (SoundPlayed == 0)
-				ActivatorSound (DefStepSound, 1.0);
+			if (soundPlayed == 0)
+				activatorSound (DEFSTEPSOUND, 1.0);
 		}
-		SoundPlayed = 0;
-		Delay (DelayTime);
+		soundPlayed = 0;
+		delay (delayTime);
 	}
 }

@@ -1,19 +1,21 @@
 // Action keys
-Script "FDTaunting" (void) NET {
-	PlaySound (0, "*taunt", CHAN_VOICE);
+script "FDTaunting" (void) NET {
+	playSound (0, "*taunt", CHAN_VOICE);
 }
 
-Script "FDKeys" Enter {
+script "FDKeys" ENTER {
 	// Not needed or desired in TitleMaps.
-	If (GameType() == Game_Title_Map) Terminate;
-	While (TRUE)
-	{
+	if (gameType () == Game_Title_Map)
+		terminate;
+	
+	while (TRUE) {
 		if (keyPressed (BT_RELOAD))
-			UseInventory ("FDReloadKey");
-		Delay (1);
+			useInventory ("FDReloadKey");
+		
+		delay (1);
 	}
 }
 // Player move speed script made by DoomRater
-Script "PlayerSpeed" (int movespeed) {
-	SetActorProperty (0, APROP_Speed, movespeed*65535/100);
+script "PlayerSpeed" (int movespeed) {
+	playerSpeed (movespeed);
 }

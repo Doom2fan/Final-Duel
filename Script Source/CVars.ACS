@@ -1,20 +1,24 @@
-// Misc user CVars
-script "CVars" Enter {
+// Misc user CVARs
+script "CVARs" Enter {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map)
-		Terminate;
-	while (true) {
-		if (GetCVar ("FD_AutoReload")) GiveInventory ("EnableAutoReload", 1);
-		else TakeInventory ("EnableAutoReload", 1);
+	if (gameType () == Game_Title_Map)
+		terminate;
+	while (TRUE) {
+		if (getCVAR ("FD_AutoReload"))
+			giveInventory ("EnableAutoReload", 1);
+		else
+			takeInventory ("EnableAutoReload", 1);
 		
-		if (GetCVar ("FD_AutoReloadSSG")) GiveInventory ("AutoReloadSSG", 1);
-		else TakeInventory ("AutoReloadSSG", 1);
-		Delay (1);
+		if (getCVAR ("FD_AutoReloadSSG"))
+			giveInventory ("AutoReloadSSG", 1);
+		else
+			takeInventory ("AutoReloadSSG", 1);
+		delay (1);
 	}
 }
 
 // Blood For The Blood God
 script "FD_BloodForTheBloodGod" (void) {
-	int result = GetCVar ("FD_BloodForTheBloodGod");
-	SetResultValue (result);
+	int result = getCVAR ("FD_BloodForTheBloodGod");
+	setResultValue (result);
 }

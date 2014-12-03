@@ -4,118 +4,118 @@
 	if(checkWeapon("ActionMachineGun"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"M9A15 Carbine"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"M9A15 Carbine"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("Bullpup"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"M8A17 Bullpup"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"M8A17 Bullpup"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("Rifle"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"M9A10 Rifle"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"M9A10 Rifle"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("DoomSSG"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Double-Barreled Shotgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Double-Barreled Shotgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("DoubleBladedChainsaw"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Double-Bladed Chainsaw"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Double-Bladed Chainsaw"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("Enforcer"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Enforcer"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Enforcer"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("MancubusArm"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Mancubus Arm"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Mancubus Arm"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("PumpActionShotgun"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Tactical Shotgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Tactical Shotgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("SonicRailgun"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Sonic Railgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Sonic Railgun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("SoulReaper"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Soul Reaper"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Soul Reaper"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("BFG10K"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"BFG10K"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"BFG10K"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("FDRocketLauncher"))
 	{
-		if(checkInventory("RLSpeedBounce"))
+		if(checkInventory ("RLSpeedBounce"))
 		{
 		SetFont("BIGFONT");
-		hudmessage (s:"Rocket Launcher-Grenade:Speed"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Rocket Launcher-Grenade:Speed"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 		}
 		else
 		{
 		SetFont("BIGFONT");
-		hudmessage (s:"Rocket Launcher-Grenade:Bounce"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Rocket Launcher-Grenade:Bounce"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 		}
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("BFG9000"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"BFG 9000"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"BFG 9000"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("GrenadeLauncher"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Grenade Launcher"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Grenade Launcher"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("Magic"))
 	{
-		if(checkInventory("MStun"))
+		if(checkInventory ("MStun"))
 		{
 		SetFont("BIGFONT");
-		hudmessage (s:"Magic:Stun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Magic:Stun"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 		} else
 		{
 		SetFont("BIGFONT");
-		hudmessage (s:"Magic:Freeze"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Magic:Freeze"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 		}
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("MeleeAttack"))
 	{
 		SetFont("BIGFONT");
-		hudmessage (s:"Melee"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+		hudMessage (s:"Melee"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 	}
 	//	---------------------------------------------------------------------------------------------------------------------------------
 	if(checkWeapon("OPlasmaRifle"))
 	{
 		SetFont("BIGFONT");
-			hudmessage (s:"Plasma Rifle"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
+			hudMessage (s:"Plasma Rifle"; HUDMSG_PLAIN | HUDMSG_NOTWITHFULLMAP | HUDMSG_LAYER_UNDERHUD, 10000, CR_GREEN, 0.5, 0.0, 0);
 		}
 		//	---------------------------------------------------------------------------------------------------------------------------------
 */
@@ -123,14 +123,14 @@
 /*
 	// Mana regeneration
 	// It's here in case I want to add mana regeneration back in
-	script "Mana Regeneration" Enter // Mana Regeneration
-	{
+	script "Mana Regeneration" ENTER { // Mana Regeneration
 		// Not needed or desired in TitleMaps.
-		If (GameType() == Game_Title_Map) Terminate;
-		while(TRUE)
-		{
-			GiveInventory("Energy",1);	// Give one Mana point
-			Delay(8);
+		if (gameType () == Game_Title_Map)
+			terminate;
+		
+		while(TRUE) {
+			giveInventory ("Energy",1);	// Give one Mana point
+			delay(8);
 		}
 	}
 */
@@ -138,31 +138,33 @@
 /*
 	// Stamina regeneration
 	// This is not used anymore, so I will just leave it here
-	script "StaminaRegen" (void)
-	{
-	// Not needed or desired in TitleMaps.
-		If (GameType() == Game_Title_Map) Terminate;
-		int pln = PlayerNumber();
-		int StaminaTics = 0;
+	script "StaminaRegen" (void) {
+		// Not needed or desired in TitleMaps.
+		if (gameType () == Game_Title_Map)
+			terminate;
 		
-		while (TRUE)
-		{
-			if (StaminaTics == 4) // 
-			{
-				StaminaTics = 0;
+		int pln = playerNumber();
+		int staminaTics = 0;
+		
+		while (TRUE) {
+			if (staminaTics == 4) {
+				staminaTics = 0;
 			}
-			if (checkInventory("StaminaRegen") != 0 && checkInventory("stamina") != 100)
-			{
-				if (StaminaTics == 0)
-				{
-					GiveInventory("stamina",1);
+			
+			if (checkInventory ("StaminaRegen") != 0 && checkInventory ("stamina") != 100) {
+				if (staminaTics == 0) {
+					giveInventory ("stamina",1);
 				}
-				Delay(1);
+				delay(1);
 			}
-			Delay(1);
-			if (checkInventory("StaminaRegen") != 0) { StaminaTics++; }
+			
+			delay(1);
+			
+			if (checkInventory ("StaminaRegen") != 0) 
+				staminaTics++;
 		}
-		Delay(1);
+		
+		delay(1);
 	}
 */
 
@@ -171,20 +173,19 @@
 	// This was used for Chronos' HP regeneration, but he doesn't have health regeneration anymore
 	script "HPRegen" (void)
 	{
-		int pln = PlayerNumber();
+		int pln = playerNumber();
 		
-		while (TRUE)
-		{
-			if (checkInventory("ChronosItem") && checkInventory("Regeneration") && PlayerInGame(pln))
-			{
-				if (GetActorProperty (1000+pln, APROP_Health) < 100 && GetActorProperty (1000+pln, APROP_Health) > 0)
-				{
-					SetActorProperty(1000+pln, APROP_Health, (GetActorProperty (1000+pln, APROP_Health))+1);
-					Delay(8);
+		while (TRUE) {
+			if (checkInventory ("ChronosItem") && checkInventory ("Regeneration") && PlayerInGame(pln)) {
+				if (getActorProperty (1000 + pln, APROP_HEALTH) < 100 && getActorProperty (1000 + pln, APROP_HEALTH) > 0) {
+					setActorProperty (1000 + pln, APROP_HEALTH, (getActorProperty (1000 + pln, APROP_HEALTH)) + 1);
+					delay(8);
 				}
 			}
-			Delay(1);
+			
+			delay(1);
 		}
-		Delay(1);
+		
+		delay(1);
 	}
 */

@@ -4,122 +4,137 @@
 //
 //-------------------------------------------------------------------------------------------
 
-function void LevelUp (int level) {
+function void levelUp (int level) {
 	int Chronos = checkInventory ("ChronosItem");
-	SetFont ("DBIGFONT");
-	if (GetCVar ("FD_MsgsOn")) {
-		HudMessage (s:"You reached level ", d:level, s:".";
-			HUDMSG_FADEINOUT|GetCVar ("FD_LogLVLUpMsgs") * HUDMSG_LOG, 10000, CR_UNTRANSLATED, 0.5, 0.5, 3.0, 0.3, 0.3);
-	}
-	PlaySound (0, "Player/LevelUp", CHAN_UI);
-	GiveInventory ("XPSystemLevel", 1);
-	GiveInventory ("XPSystemAttributePoints", random (4, 6));
+	setFont ("DBIGFONT");
+	
+	if (getCVAR ("FD_MsgsOn"))
+		hudMessage (s:"You reached level ", d:level, s:"."; HUDMSG_FADEINOUT|getCVAR ("FD_LogLVLUpMsgs") * HUDMSG_LOG, 10000, CR_UNTRANSLATED, 0.5, 0.5, 3.0, 0.3, 0.3);
+	
+	playSound (0, "Player/LevelUp", CHAN_UI);
+	giveInventory ("XPSystemLevel", 1);
+	giveInventory ("XPSystemAttributePoints", random (4, 6));
 }
 
-script "XPSystem" Enter {
-	If (GameType() == Game_Title_Map)
-		Terminate;
+script "XPSystem" ENTER {
+	if (gameType () == Game_Title_Map)
+		terminate;
+	
 	int currentLVL, currentXP, currentHP;
-	int LogMessages = GetCVar ("FD_LogLVLUpMsgs");
+	int logMessages = getCVAR ("FD_LogLVLUpMsgs");
 	int Chronos = checkInventory ("ChronosItem");
+	
 	while (TRUE) {
 		currentLVL = checkInventory ("XPSystemLevel");
 		currentXP = checkInventory ("XPSystemExperience");
-		LogMessages = GetCVar ("FD_LogLVLUpMsgs");
+		logMessages = getCVAR ("FD_LogLVLUpMsgs");
+		
 		if (currentXP >= 1000 && currentLVL == 0) {
-			LevelUp (1);
+			levelUp (1);
+			
 			if (Chronos == 1) {
-				GiveInventory ("BerettaUpgrade", 1);
-				SetFont ("SMALLFONT");
-				if (GetCVar ("FD_MsgsOn"))
-					HudMessage (s:"Beretta upgraded.\nBurstfire(press ", k:"+altattack", s:" to change firing modes)";
-						HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+				giveInventory ("BerettaUpgrade", 1);
+				setFont ("SMALLFONT");
+				if (getCVAR ("FD_MsgsOn"))
+					hudMessage (s:"Beretta upgraded.\nBurstfire(press ", k:"+altattack", s:" to change firing modes)";
+						HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 			}
 		}
+		
 		if (currentXP >= 2800 && currentLVL == 1) {
-			LevelUp (2);
+			levelUp (2);
 			if (Chronos == 1) {
-				GiveInventory ("BerettaUpgrade2", 1);
-				SetFont ("SMALLFONT");
-				if (GetCVar ("FD_MsgsOn"))
-					HudMessage (s:"Beretta upgraded.\nFiring speed++";
-						HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+				giveInventory ("BerettaUpgrade2", 1);
+				setFont ("SMALLFONT");
+				if (getCVAR ("FD_MsgsOn"))
+					hudMessage (s:"Beretta upgraded.\nFiring speed++";
+						HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 			}			
 		}
+		
 		if (currentXP >= 3900 && currentLVL == 2) {
-			LevelUp (3);
-			GiveInventory ("MinigunUpgrade", 1);
-			SetFont ("SMALLFONT");
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"UAC \"Parias\" Minigun upgraded.\nDamage ++\nSpread --\nRecoil(with altfire off) --";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (3);
+			giveInventory ("MinigunUpgrade", 1);
+			setFont ("SMALLFONT");
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"UAC \"Parias\" Minigun upgraded.\nDamage ++\nSpread --\nRecoil(with altfire off) --";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 4700 && currentLVL == 3) {
-			LevelUp (4);
-			GiveInventory ("NightvisionUpgrade", 1);
-			SetFont ("SMALLFONT");
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"Nightvision upgraded.\nNightvision now uses battery each 2 seconds instead of each 1.5 seconds.";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (4);
+			giveInventory ("NightvisionUpgrade", 1);
+			setFont ("SMALLFONT");
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"Nightvision upgraded.\nNightvision now uses battery each 2 seconds instead of each 1.5 seconds.";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 6000 && currentLVL == 4) {
-			LevelUp (5);
-			GiveInventory ("Magic", 1);
-			SetFont ("SMALLFONT");
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"New weapon.\nSpellbook(Slot 9)";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (5);
+			giveInventory ("Magic", 1);
+			setFont ("SMALLFONT");
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"New weapon.\nSpellbook(Slot 9)";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 7800 && currentLVL == 5) {
-			LevelUp (6);
-			GiveInventory ("PlasmaRifleUpgrade", 1);
-			SetFont ("SMALLFONT");
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"Plasma Rifle upgraded.\nOverload now doesn't take health";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (6);
+			giveInventory ("PlasmaRifleUpgrade", 1);
+			setFont ("SMALLFONT");
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"Plasma Rifle upgraded.\nOverload now doesn't take health";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 9200 && currentLVL == 6) {
-			LevelUp (7);
-			HealthBoost (50);
-			currentHP = GetActorProperty(0, APROP_SpawnHealth);
-			SetFont ("SMALLFONT");
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"Maximum health increased.\nMaximum health is now ", d:currentHP;
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (7);
+			healthBoost (50);
+			currentHP = getActorProperty(0, APROP_SPAWNHEALTH);
+			setFont ("SMALLFONT");
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"Maximum health increased.\nMaximum health is now ", d:currentHP;
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 11500 && currentLVL == 7) {
-			LevelUp (8);
-			SetFont ("SMALLFONT");
-			GiveInventory ("MagnumUpgrade", 1);
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:".357 Magnum Upgraded.\nRecoil --\nSpread --\nDamage ++\nFiring speed ++";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (8);
+			setFont ("SMALLFONT");
+			giveInventory ("MagnumUpgrade", 1);
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:".357 Magnum Upgraded.\nRecoil --\nSpread --\nDamage ++\nFiring speed ++";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 14100 && currentLVL == 8) {
-			LevelUp (9);
-			SetFont ("SMALLFONT");
-			GiveInventory ("MagicUnlock", 1);
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"New magic unlocked.\nFire magic";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (9);
+			setFont ("SMALLFONT");
+			giveInventory ("MagicUnlock", 1);
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"New magic unlocked.\nFire magic";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 17500 && currentLVL == 9) {
-			LevelUp (10);
-			SetFont ("SMALLFONT");
-			GiveInventory ("MagicUnlock", 1);
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"New magic unlocked.\nLava magic";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (10);
+			setFont ("SMALLFONT");
+			giveInventory ("MagicUnlock", 1);
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"New magic unlocked.\nLava magic";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
+		
 		if (currentXP >= 24500 && currentLVL == 10) {
-			LevelUp (11);
-			SetFont ("SMALLFONT");
-			GiveInventory ("RLUpgrade", 1);
-			if (GetCVar ("FD_MsgsOn"))
-				HudMessage (s:"Rocket Launcher upgraded.\nSeeker rockets(press ", k:"+altattack", s:" to shoot seeker rockets)";
-					HUDMSG_FADEINOUT|LogMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+			levelUp (11);
+			setFont ("SMALLFONT");
+			giveInventory ("RLUpgrade", 1);
+			if (getCVAR ("FD_MsgsOn"))
+				hudMessage (s:"Rocket Launcher upgraded.\nSeeker rockets(press ", k:"+altattack", s:" to shoot seeker rockets)";
+					HUDMSG_FADEINOUT|logMessages * HUDMSG_LOG, 9999, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 		}
-		Delay (1);
+		
+		delay (1);
 	}
 }
 
@@ -129,22 +144,22 @@ script "XPSystem" Enter {
 //
 //-------------------------------------------------------------------------------------------
 
-// Strength
-function int FD_StrengthStat (int BaseDamage, int Multiplier) {
-	int StrengthStat = CheckInventory ("StatSystemStrength");
-	int result = BaseDamage * (1.0 + (Multiplier * StrengthStat));
+// strength
+function int FD_StrengthStat (int baseDamage, int multiplier) {
+	int strengthStat = checkInventory ("StatSystemstrength");
+	int result = baseDamage * (1.0 + (multiplier * strengthStat));
 	
 	return result >> 16;
 }
 
-script "FD_StrengthStatMelee" (int BaseDamage) {
-	SetResultValue (FD_StrengthStat (BaseDamage, 0.09));
+script "FD_StrengthStatMelee" (int baseDamage) {
+	setResultValue (FD_StrengthStat (baseDamage, 0.09));
 }
 
-script "FD_StrengthStatSword" (int BaseDamage) {
-	SetResultValue (FD_StrengthStat (BaseDamage, 0.06));
+script "FD_StrengthStatSword" (int baseDamage) {
+	setResultValue (FD_StrengthStat (baseDamage, 0.06));
 }
 
-script "FD_StrengthStatKnife" (int BaseDamage) {
-	SetResultValue (FD_StrengthStat (BaseDamage, 0.03));
+script "FD_StrengthStatKnife" (int baseDamage) {
+	setResultValue (FD_StrengthStat (baseDamage, 0.03));
 }

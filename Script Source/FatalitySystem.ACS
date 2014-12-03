@@ -1,24 +1,24 @@
 Script "FatalitySystem" (int end) {
-	if(end == 1) {
-		SetPlayerProperty (0, OFF, PROP_TOTALLYFROZEN);
-		SetActorProperty (0, APROP_MASS, 100);
+	if (end == 1) {
+		setPlayerProperty (0, OFF, PROP_TOTALLYFROZEN);
+		setActorProperty (0, APROP_MASS, 100);
 		ACS_NamedExecute ("FDChasecamOff", 0);
 		terminate;
 	}
-	SetPlayerProperty (0, ON, PROP_TOTALLYFROZEN);
-	SetActorProperty (0, APROP_MASS, 0x7FFFFFFF);
+	setPlayerProperty (0, ON, PROP_TOTALLYFROZEN);
+	setActorProperty (0, APROP_MASS, 0x7FFFFFFF);
 	ACS_NamedExecute ("FDChasecamOn", 0);
 	ACS_NamedExecute ("FatalityInvulnerability", 0);
 }
 
 script "FatalityInvulnerability" (void) NET // by The Zombie Killer, edited by Alex_Mercer
 {
-	While (CheckInventory ("PowerInvulnerable") > 0)
-		Delay(1);
-	While (CheckInventory("GoFatality") > 0) {
-		Delay (1);
-		if(GetActorProperty (0, APROP_INVULNERABLE) != 1)
-			SetActorProperty (0, APROP_INVULNERABLE, ON);
+	while (checkInventory ("PowerInvulnerable") > 0)
+		delay(1);
+	while (checkInventory ("GoFatality") > 0) {
+		delay (1);
+		if(getActorProperty (0, APROP_INVULNERABLE) != 1)
+			setActorProperty (0, APROP_INVULNERABLE, ON);
 	}
-	SetActorProperty (0, APROP_INVULNERABLE, OFF);
+	setActorProperty (0, APROP_INVULNERABLE, OFF);
 }

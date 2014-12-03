@@ -1,79 +1,87 @@
-script "Health1" Enter { // Health systems...
+script "Health1" ENTER { // Health systems...
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map)
-		Terminate;
-	Int HeartbeatTics = 0;
-	Int Health;
-	int HeartbeatVolume;
-	while (true) {
-		if (GetCVar ("FD_HeartbeatsOn")) HeartbeatVolume = 127;
-		else HeartbeatVolume = 0;
-		Health = GetActorProperty (0, APROP_HEALTH);
-		if( Health < 2 && Health > 0) {
-			if (HeartbeatTics >= 35) {
-				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", HeartbeatVolume);
+	if (gameType () == Game_Title_Map)
+		terminate;
+	
+	int heartbeatTics = 0;
+	int health;
+	int heartbeatVolume;
+	
+	while (TRUE) {
+		if (getCVAR ("FD_HeartbeatsOn"))
+			heartbeatVolume = 127;
+		else
+			heartbeatVolume = 0;
+		
+		health = getActorProperty (0, APROP_HEALTH);
+		
+		if (health < 2 && health > 0) {
+			if (heartbeatTics >= 35) {
+				heartbeatTics = 0;
+				localAmbientSound ("Player/Heartbeat", heartbeatVolume);
 			}
-			HeartbeatTics++;
-		}
-		else if (Health <= 5 && Health > 0) {
-			if (HeartbeatTics >= 70) {
-				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", 127);
+			heartbeatTics++;
+		} else if (health <= 5 && health > 0) {
+			if (heartbeatTics >= 70) {
+				heartbeatTics = 0;
+				localAmbientSound ("Player/Heartbeat", 127);
 			}
-			HeartbeatTics++;
-		}
-		else if (Health <= 10 && Health > 0) {
-			if (HeartbeatTics >= 105) {
-				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", 127);
+			heartbeatTics++;
+		} else if (health <= 10 && health > 0) {
+			if (heartbeatTics >= 105) {
+				heartbeatTics = 0;
+				localAmbientSound ("Player/Heartbeat", 127);
 			}
-			HeartbeatTics++;
-		}
-		else if (Health <= 15 && Health > 0) {
-			if (HeartbeatTics >= 140) {
-				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", 127);
+			heartbeatTics++;
+		} else if (health <= 15 && health > 0) {
+			if (heartbeatTics >= 140) {
+				heartbeatTics = 0;
+				localAmbientSound ("Player/Heartbeat", 127);
 			}
-			HeartbeatTics++;
-		}
-		else if (Health <= 20 && Health > 0) {
-			if (HeartbeatTics >= 175) {
-				HeartbeatTics = 0;
-				LocalAmbientSound ("Player/Heartbeat", 127);
+			heartbeatTics++;
+		} else if (health <= 20 && health > 0) {
+			if (heartbeatTics >= 175) {
+				heartbeatTics = 0;
+				localAmbientSound ("Player/Heartbeat", 127);
 			}
-			HeartbeatTics++;
-		}
-		else if (GetActorProperty (0, APROP_HEALTH) > 20 && HeartbeatTics > 0)
-			HeartbeatTics = 0;		
-		Delay(1);
+			heartbeatTics++;
+		} else if (getActorProperty (0, APROP_HEALTH) > 20 && heartbeatTics > 0)
+			heartbeatTics = 0;
+		
+		delay(1);
 	}
 }
 
-script "TimedHPRegen" (int seconds,int amount,int blah) {
-	int TicsPassed = 0; // How many tics have passed since script start
-	int SecsPassed = 0; // How many seconds have passed since script start
-	int Bleh = 0; // Second counter
-	int Health; // Max health
-	int MaxHealth; // Current health
+script "TimedHPRegen" (int seconds, int amount, int blah) {
+	int ticsPassed = 0; // How many tics have passed since script start
+	int secsPassed = 0; // How many seconds have passed since script start
+	int bleh = 0; // Second counter
+	int health; // Max health
+	int maxHealth; // Current health
+	
 	while (TRUE) {
-		MaxHealth = GetActorProperty (0, APROP_SPAWNHEALTH); // Set MaxHealth to maximum health
-		Health = GetActorProperty (0, APROP_HEALTH); // Set Health to current health
-		// HudMessage(s:"seconds:", d:seconds, s:"\namount:", d:amount, s:"\nblah:", d:blah, s:"\nTicsPassed:", d:TicsPassed, s:"\nSecsPassed:", d:SecsPassed, s:"\nbleh:", d:bleh; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.0, 0.0, 1); // Debug info
-		if (Health == 0)
+		maxHealth = getActorProperty (0, APROP_SPAWNHEALTH); // Set maxHealth to maximum health
+		health = getActorProperty (0, APROP_HEALTH); // Set health to current health		
+		// hudMessage(s:"seconds:", d:seconds, s:"\namount:", d:amount, s:"\nblah:", d:blah, s:"\nTicsPassed:", d:TicsPassed, s:"\nSecsPassed:", d:SecsPassed, s:"\nbleh:", d:bleh; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.0, 0.0, 1); // Debug info
+		
+		if (health == 0)
 			terminate;
-		if (SecsPassed == seconds)
+		
+		if (secsPassed == seconds)
 			terminate;
-		if (TicsPassed == 35) {
-			SecsPassed++;
-			Bleh++;
-			TicsPassed = 0;
+		
+		if (ticsPassed == 35) {
+			secsPassed++;
+			bleh++;
+			ticsPassed = 0;
 		}
-		if (Bleh == blah) {
-			if (Health != MaxHealth) SetActorProperty (0, APROP_Health, Health + amount);
-			Bleh = 0;
+		
+		if (bleh == blah) {
+			if (health != maxHealth) setActorProperty (0, APROP_HEALTH, health + amount);
+			bleh = 0;
 		}
-		TicsPassed++;
-		Delay (1);
+		
+		ticsPassed++;
+		delay (1);
 	}
 }

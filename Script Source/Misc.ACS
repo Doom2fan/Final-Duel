@@ -1,29 +1,34 @@
-// Thing_Deactivate
+// thing_Deactivate
 script "ThingDeactivate" (void) {
-	Thing_Deactivate (ActivatorTID ());
+	thing_Deactivate (activatorTID ());
 }
 
 // Meh
-script "Water" Enter {
+script "Water" ENTER {
 	// Not needed or desired in TitleMaps.
-	If (GameType () == Game_Title_Map)
-		Terminate;
-	if (GetActorProperty(0,APROP_Waterlevel) > 2) // if underwater...
-		GiveInventory ("IsUnderwater", 1); // give IsUnderwater
-	else if (GetActorProperty(0,APROP_Waterlevel) <= 2) // if not underwater
-		TakeInventory ("IsUnderwater", 1); // take IsUnderwater
-		
-	Delay (1);
-	restart;
+	if (gameType () == Game_Title_Map)
+		terminate;
+	
+	while (TRUE) {
+		if (getActorProperty(0, APROP_WATERLEVEL) > 2) // if underwater...
+			giveInventory ("IsUnderwater", 1); // give IsUnderwater
+
+		else if (getActorProperty(0, APROP_WATERLEVEL) <= 2) // if not underwater
+			takeInventory ("IsUnderwater", 1); // take IsUnderwater
+			
+		delay (1);
+	}
 }
 
 // Debug
 script "Debug1" (int meh, int time) {
 	int heh = meh;	
 	int hue = heh * 2;
+	
 	while (TRUE) {
 		if (heh == 0)
 			terminate;
+		
 		hue = heh * 2;
 		heh = hue;
 		print (d:heh);	
@@ -33,15 +38,14 @@ script "Debug1" (int meh, int time) {
 
 script "Debug2" (int meh, int bla) {
 	int heh = meh << bla;
+	
 	print (d:heh);
 }
 
 script "Debug3" (int meh,int bla) {
 	int heh = meh >> bla;
+	
 	print (d:heh);
-}
-
-script "Debug4" (void) {
 }
 
 script "DKA" (void) {
@@ -50,12 +54,12 @@ script "DKA" (void) {
 
 // Stuff
 script "FD_CannotDropThisWeapon" (void) {
-	HudMessage (s:"You cannot drop this weapon!";
-				HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+	hudMessage (s:"You cannot drop this weapon!"; HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 }
 
-int TriedToDropFistsOnce[MAXPLAYERS] = {0};
-str FD_TryingToDropFistsMessages[7] = {
+int triedToDropFistsOnce [MAXPLAYERS] = {0};
+#DEFINE FD_DropFstsMsgsCount 7
+str FD_DropFstsMsgs [FD_DropFstsMsgsCount] = {
 		"You're not Zharkov.",
 		"Are you dumb?",
 		"WHAT THE FUCK DO YOU WANT ME TO DO?!",
@@ -63,17 +67,14 @@ str FD_TryingToDropFistsMessages[7] = {
 		"If you do that you will not be able to use anything, since your hands will not grow back.",
 		"STAHP",
 		"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-		};
+};
+
 script "FD_TryingToDropFists" (void) {
-	if (TriedToDropFistsOnce[PlayerNumber ()] == 0) {
-		HudMessage (s:"You can't drop your fists!";
-			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
-		TriedToDropFistsOnce[PlayerNumber ()] = 1;
-	}
-	
-	else {
-		int messageNumber = random (0, 6);
-		HudMessage (s:FD_TryingToDropFistsMessages[messageNumber];
-			HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+	if (triedToDropFistsOnce [playerNumber ()] == 0) {
+		hudMessage (s:"You can't drop your fists!"; HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
+		triedToDropFistsOnce [playerNumber ()] = 1;
+	} else {
+		int messageNumber = random (0, FD_DropFstsMsgsCount - 1);
+		hudMessage (s:FD_DropFstsMsgs [messageNumber]; HUDMSG_FADEINOUT, 198198119, CR_UNTRANSLATED, 0.5, 0.6, 3.0, 0.3, 0.3);
 	}
 }

@@ -1,171 +1,187 @@
-/*#define FD_WEAPONMAX 26
+/*#DEFINE FD_WEAPONMAX 26
 str FD_WeaponName [FD_WEAPONMAX] = { "MeleeAttack", "Sword", "FDChainsaw", "Enforcer", "Beretta", "Magnum", "Rifle", "FDShotgun", "PumpActionShotgun", "DoomSSG", "QuadShotgun", "AK47", "ActionMachineGun", "FDMinigun", "FDRocketLauncher", "Annihilator", "FDGrenadeLauncher", "FDPlasmaRifle", "SonicRailgun", "BioForceGun", "SoulReaper", "SniperRifle", "FDCrossbow", "MancubusArm", "Magic", "Knife" };
 int FD_WeaponNumber [FD_WEAPONMAX] = { 1          , 2      , 3           , 4         , 5        , 6       , 7      , 8          , 9                  , 10       , 11           , 12    , 13                , 14         , 15                , 16           , 17                 , 18             , 19            , 20           , 21          , 22           , 23          , 24           , 25     , 26 };*/
-#define FD_DUMMYWEAPONMAX 2
-str FD_DummyWeapons [2] = { "SprintWeapon", "NullWeapon" };
+#DEFINE FD_DUMMYWEAPONMAX 2
+str FD_DummyWeapons [FD_DUMMYWEAPONMAX] = { "SprintWeapon", "NullWeapon" };
 global str 54:FD_LastWeapon [];
 
-// Functions
-/*function int GetWeaponName (void) {
-	for (int i = 0; i<FD_WEAPONMAX; i++) {
-		if (CheckWeapon (FD_DummyWeapons[i])) 
+// functions
+/*function int getWeaponName (void) {
+	for (int i = 0; i < FD_WEAPONMAX; i++) {
+		if (checkWeapon (FD_DummyWeapons [i])) 
 			return -1;
-		if (CheckWeapon (FD_WeaponName[i]))
-			return FD_WeaponNumber[i]-1;
+		
+		if (checkWeapon (FD_WeaponName [i]))
+			return FD_WeaponNumber [i]-1;
 	}
+	
 	return -1;
 }
 
-function void LastWeapon (int mode) {
+function void lastWeapon (int mode) {
 	if (mode != 0) {
-		int LastWeaponNo = FD_LastWeapon[PlayerNumber ()];
-		SetWeapon (FD_WeaponName[LastWeaponNo]);
-	}
-	else {
-		int WeaponNumber = GetWeaponName ();
+		int lastWeaponNo = FD_LastWeapon [playerNumber ()];
+		setWeapon (FD_LastWeapon [lastWeaponNo]);
+	} else {
+		int WeaponNumber = getWeaponName ();
 		if (WeaponNumber == -1)
 			return;
 		else
-			FD_LastWeapon[PlayerNumber ()] = WeaponNumber;
+			FD_LastWeapon [playerNumber ()] = WeaponNumber;
 	}
 }*/
 
-function void LastWeapon (int mode) {
+function void lastWeapon (int mode) {
 	if (mode != 0) {
-		SetWeapon (FD_LastWeapon[PlayerNumber ()]);
-	}
-	else {
+		setWeapon (FD_LastWeapon [playerNumber ()]);
+	} else {
 		for (int i = 0; i < FD_DUMMYWEAPONMAX; i++) {
-			if (StrIcmp (FD_LastWeapon[PlayerNumber ()], FD_DummyWeapons[i]) == 0)
+			if (strIcmp (FD_lastWeapon [playerNumber ()], FD_DummyWeapons [i]) == 0)
 				return;
 		}
-		FD_LastWeapon[PlayerNumber ()] = GetWeapon ();
+		FD_LastWeapon [playerNumber ()] = getWeapon ();
 	}
 }
 
-function void DisableWeapon (str meh, str blah) {
+function void disableWeapon (str meh, str blah) {
 	if (meh == 0)
 		meh = "NullWeapon";
+	
 	if (checkWeapon (meh)) {
 		if (blah != 0)
-			TakeInventory (blah, 99999);
-		LastWeapon (1);
+			takeInventory (blah, 99999);
+		lastWeapon (1);
 		return;
 	}
-	LastWeapon (0);
-	GiveInventory (meh, 1);
-	SetWeapon (meh);
+	
+	lastWeapon (0);
+	giveInventory (meh, 1);
+	setWeapon (meh);
 }
 
 // Scripts
 // SynthFire stuff
 script "FDSynthFire" (void) {
-	While (TRUE) {
-		if (!CheckInventory ("SynthFireActive"))
-			Terminate;
-		if (keyPressed (BT_ATTACK) && !CheckInventory ("SynthFireLeft"))
-			GiveInventory ("SynthFireLeft", 1);
-		if (keyPressed (BT_ALTATTACK) && !CheckInventory ("SynthFireRight"))
-			GiveInventory ("SynthFireRight", 1);		
-		Delay (1);
-		if (!keyPressed (BT_ATTACK) && CheckInventory ("SynthFireLeft"))
-			TakeInventory ("SynthFireLeft", 1);
-		if (!keyPressed (BT_ALTATTACK) && CheckInventory ("SynthFireRight"))
-			TakeInventory ("SynthFireRight", 1);
+	while (TRUE) {
+		if (!checkInventory ("SynthFireActive"))
+			terminate;
+		
+		if (keyPressed (BT_ATTACK) && !checkInventory ("SynthFireLeft"))
+			giveInventory ("SynthFireLeft", 1);
+		
+		if (keyPressed (BT_ALTATTACK) && !checkInventory ("SynthFireRight"))
+			giveInventory ("SynthFireRight", 1);
+		
+		delay (1);
+		
+		if (!keyPressed (BT_ATTACK) && checkInventory ("SynthFireLeft"))
+			takeInventory ("SynthFireLeft", 1);
+		
+		if (!keyPressed (BT_ALTATTACK) && checkInventory ("SynthFireRight"))
+			takeInventory ("SynthFireRight", 1);
 	}
 }
 
 script "FDSynthFire2" (void) {
-	While (TRUE) {
-		if (!CheckInventory ("SynthFireActive"))
-			Terminate;
-		if (keyDown (BT_ATTACK) && !CheckInventory ("SynthFireLeft"))
-			GiveInventory ("SynthFireLeft", 1);
-		if (keyDown (BT_ALTATTACK) && !CheckInventory ("SynthFireRight"))
-			GiveInventory ("SynthFireRight", 1);		
-		Delay (1);
-		if (!keyDown (BT_ATTACK) && CheckInventory ("SynthFireLeft"))
-			TakeInventory ("SynthFireLeft", 1);
-		if (!keyDown (BT_ALTATTACK) && CheckInventory ("SynthFireRight"))
-			TakeInventory ("SynthFireRight", 1);
+	while (TRUE) {
+		if (!checkInventory ("SynthFireActive"))
+			terminate;
+		
+		if (keyDown (BT_ATTACK) && !checkInventory ("SynthFireLeft"))
+			giveInventory ("SynthFireLeft", 1);
+		
+		if (keyDown (BT_ALTATTACK) && !checkInventory ("SynthFireRight"))
+			giveInventory ("SynthFireRight", 1);
+		
+		delay (1);
+		
+		if (!keyDown (BT_ATTACK) && checkInventory ("SynthFireLeft"))
+			takeInventory ("SynthFireLeft", 1);
+		
+		if (!keyDown (BT_ALTATTACK) && checkInventory ("SynthFireRight"))
+			takeInventory ("SynthFireRight", 1);
 	}
 }
 
 script "FDSynthFireAllowChange" (void) {
-	int result = !CheckInventory ("SynthFireRightReady");
-	SetResultValue (result);
+	int result = !checkInventory ("SynthFireRightReady");
+	
+	setResultValue (result);
 }
 
 // BFG stuff
 script "SetTIDForBFGBall" (void) {
-	SetActivatorToTarget (0);
-	int result = -1000 - PlayerNumber ();
-	SetResultValue (result);
+	setActivatorToTarget (0);
+	int result = -1000 - playerNumber ();
+	
+	setResultValue (result);
 }
 
 script "CheckBFGBall" (void) {
 	if (ClassifyActor (-1000) & ACTOR_MISSILE)
-		SetResultValue (1);
+		setResultValue (1);
 	else
-		SetResultValue (0);
+		setResultValue (0);
 }
 
 script "KillBFGBall" (void) {
-	int BFGBallTID = -1000 - PlayerNumber ();
-	SetActorVelocity (BFGBallTID, 0.0, 0.0, 0.0, 0, 0);
-	SetActorState (BFGBallTID, "KilledByPlayer");
-	Thing_ChangeTID (BFGBallTID, 0);
+	int BFGBallTID = -1000 - playerNumber ();
+	setActorVelocity (BFGBallTID, 0.0, 0.0, 0.0, 0, 0);
+	setActorState (BFGBallTID, "KilledByPlayer");
+	thing_ChangeTID (BFGBallTID, 0);
 }
 
 // Demon mode
 script "FDDemonMode" (void) {
 	int ticCounter = 0;
-	while (true) {
-		if (!CheckInventory ("DemonModeOn") && !CheckWeapon ("DemonMode")) {
-			TakeInventory ("DemonMode", 1);
+	while (TRUE) {
+		if (!checkInventory ("DemonModeOn") && !checkWeapon ("DemonMode")) {
+			takeInventory ("DemonMode", 1);
 			terminate;
 		}
-		if (CheckInventory ("PsiEnergy") < 5) {
-			TakeInventory ("DemonModeOn", 1);
+		if (checkInventory ("PsiEnergy") < 5) {
+			takeInventory ("DemonModeOn", 1);
 		}
+		
 		ticCounter++;
-		Delay (1);
+		delay (1);
+		
 		if (ticCounter >= 35) {
-			TakeInventory ("PsiEnergy", 5);
+			takeInventory ("PsiEnergy", 5);
 			ticCounter = 0;
 		}
 	}
 }
 
 script "FDDemonModeAltDamage" (void) {
-	int Randomizer = Random (0, 2);
+	int randomizer = random (0, 2);
 	int Result = 50;
 	
-	int x = Random (1, 10) * Random (1, 8);
+	int x = random (1, 10) * random (1, 8);
 	
-	Switch (Randomizer) {
-	Case 1:
-		Result = (x * Random (2, 4)) + ((x / Random (2, 5)) * Random (1, 2));
+	switch (randomizer) {
+	case 1:
+		Result = (x * random (2, 4)) + ((x / random (2, 5)) * random (1, 2));
 	
-	Case 2:
-		Result = (x + Random (2, 4)) * (x / Random (2, 5));
+	case 2:
+		Result = (x + random (2, 4)) * (x / random (2, 5));
 	
 	Default:
-		Result = x * Random (2, 3);
+		Result = x * random (2, 3);
 	}
 	
-	SetResultValue (Result);
+	setResultValue (Result);
 }
 
 script "FDDemonModeAltExpDamage" (void) {
-	SetResultValue (256 / Random (1, 4));
+	setResultValue (256 / random (1, 4));
 }
 
 script "FDDemonModeAltExpRadius" (void) {
-	SetResultValue (128 / Random (1, 4));
+	setResultValue (128 / random (1, 4));
 }
 
-#define FDDemonModeAltExpRTMass_Count 13
+#DEFINE FDDemonModeAltExpRTMass_Count 13
 int FDDemonModeAltExpRTMass [FDDemonModeAltExpRTMass_Count] = {
 	100,
 	250,
@@ -174,45 +190,44 @@ int FDDemonModeAltExpRTMass [FDDemonModeAltExpRTMass_Count] = {
 	158,
 	190,
 	129,
-	1598,
-	2000,
-	1299,
-	1598,
-	159,
-	1795
+	185,
+	200,
+	138,
+	391,
+	519,
+	579
 };
  
-#define FDDemonModeAltExpRTForce_Count 12
+#DEFINE FDDemonModeAltExpRTForce_Count 11
 int FDDemonModeAltExpRTForce [FDDemonModeAltExpRTForce_Count] = {
 	25,
 	30,
 	45,
 	10,
-	100,
-	94,
+	56,
+	75,
 	38,
 	19,
 	67,
-	198,
-	279,
+	28,
 	17
 };
 
 script "FDDemonModeAltExpRT" (void) {
 	// Mass randomizer
-	int Randomizer1 = Random (1, FDDemonModeAltExpRTMass_Count) - 1;
+	int randomizer1 = random (1, FDDemonModeAltExpRTMass_Count) - 1;
 	// Force randomizer
-	int Randomizer2 = Random (1, FDDemonModeAltExpRTForce_Count) - 1;
+	int randomizer2 = random (1, FDDemonModeAltExpRTForce_Count) - 1;
 
 	// Result = Force * (2 * Mass)
-	int Result = FDDemonModeAltExpRTForce [Randomizer2] * (2 * FDDemonModeAltExpRTMass [Randomizer1]);
+	int Result = FDDemonModeAltExpRTForce [randomizer2] * (2 * FDDemonModeAltExpRTMass [randomizer1]);
 
-	SetResultValue (Result);
+	setResultValue (Result);
 }
 
-script "FDDemonModeAltExpFlagRandomizer" (void) {
-	if (GetCVar ("FD_IDontBelieveInGod"))
-		SetResultValue (0);
+script "FDDemonModeAltExpFlagrandomizer" (void) {
+	if (getCVAR ("FD_IDontBelieveInGod"))
+		setResultValue (0);
 	else
-		SetResultValue (Random (0, 1));
+		setResultValue (random (0, 1));
 }
