@@ -116,7 +116,7 @@ Actor DemonModeAltfire : FastProjectile {
 		DMNA A 1 Bright
 		Loop
 	Death:
-		TNT1 A 0 A_RadiusThrust (CallACS ("FDDemonModeAltExpRT"), 128, RTF_AFFECTSOURCE)
+		TNT1 A 0 A_RadiusThrust (CallACS ("FDDemonModeAltExpRT"), 128, 0)
 		TNT1 A 0 A_Explode (CallACS ("FDDemonModeAltExpDamage"), CallACS ("FDDemonModeAltExpRadius"), XF_HURTSOURCE * CallACS ("FDDemonModeAltExpFlagRandomizer"))
 		Stop
 	}
