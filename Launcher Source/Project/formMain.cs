@@ -158,98 +158,98 @@ namespace Launcher {
             StringBuilder cmdline = new StringBuilder (); // Define cmdline
 
             // Add the IWAD
-			if (!Game.Configurations.IWAD.Equals ("doom.wad") && !Game.Configurations.IWAD.Equals ("udoom.wad") && !Game.Configurations.IWAD.Equals ("bfgdoom.wad"))
-				cmdline.Append (" -iwad \"" + Game.Configurations.IWADPath + "\\" + Game.Configurations.IWAD + "\"");
+			if (!Game.Configurations.Basic.IWAD.Equals ("doom.wad") && !Game.Configurations.Basic.IWAD.Equals ("udoom.wad") && !Game.Configurations.Basic.IWAD.Equals ("bfgdoom.wad"))
+				cmdline.Append (" -iwad \"" + Game.Configurations.Paths.IWADPath + "\\" + Game.Configurations.Basic.IWAD + "\"");
 			else {
 				string IWAD = null;
 
-				if (File.Exists (Game.Configurations.IWADPath + "\\doom2.wad"))
+				if (File.Exists (Game.Configurations.Paths.IWADPath + "\\doom2.wad"))
 					IWAD = "\\doom2.wad";
-				else if (File.Exists (Game.Configurations.IWADPath + "\\bfgdoom2.wad"))
+				else if (File.Exists (Game.Configurations.Paths.IWADPath + "\\bfgdoom2.wad"))
 					IWAD = "\\bfgdoom2.wad";
-				else if (File.Exists (Game.Configurations.IWADPath + "\\tnt.wad"))
+				else if (File.Exists (Game.Configurations.Paths.IWADPath + "\\tnt.wad"))
 					IWAD = "\\tnt.wad";
-				else if (File.Exists (Game.Configurations.IWADPath + "\\plutonia.wad"))
+				else if (File.Exists (Game.Configurations.Paths.IWADPath + "\\plutonia.wad"))
 					IWAD = "\\plutonia.wad";
 
 				if (!string.IsNullOrEmpty (IWAD))
-					cmdline.Append ("-iwad \"" + Game.Configurations.IWADPath + IWAD);
+					cmdline.Append ("-iwad \"" + Game.Configurations.Paths.IWADPath + IWAD);
 			}
 
             // Add the files
             cmdline.Append (" -file");
 
 			// Add the IWAD if we're using Doom 1 or Ultimate Doom
-			if (Game.Configurations.IWAD.Equals ("doom.wad") || Game.Configurations.IWAD.Equals ("udoom.wad") || Game.Configurations.IWAD.Equals ("bfgdoom.wad"))
-				cmdline.Append (" \"" + Game.Configurations.IWADPath + Game.Configurations.IWAD + "\"");
+			if (Game.Configurations.Basic.IWAD.Equals ("doom.wad") || Game.Configurations.Basic.IWAD.Equals ("udoom.wad") || Game.Configurations.Basic.IWAD.Equals ("bfgdoom.wad"))
+				cmdline.Append (" \"" + Game.Configurations.Paths.IWADPath + Game.Configurations.Basic.IWAD + "\"");
 
             // Add the files from the modlist
             foreach (string line in Game.Configurations.ModList)
                 cmdline.Append (" \"" + line + "\"");
 
             // Add Final Duel
-            cmdline.Append (" \"" + Game.Configurations.FDPath + "\"");
+            cmdline.Append (" \"" + Game.Configurations.Paths.FDPath + "\"");
 
-            if (!Game.Configurations.NoSkill) {
+			if (!Game.Configurations.Basic.NoSkill) {
                 // Skill/Difficulty
-                cmdline.Append (" -skill " + Game.Configurations.Skill);
+				cmdline.Append (" -skill " + Game.Configurations.Basic.Skill);
 
                 // Map Number
-                if (!Game.Configurations.MapNameOn) // If Game.Configurations.MapNameOn is false
-                    cmdline.Append (" -warp " + Game.Configurations.MapNumber); // Add the map number
+				if (!Game.Configurations.Basic.MapNameOn) // If Game.Configurations.MapNameOn is false
+					cmdline.Append (" -warp " + Game.Configurations.Basic.MapNumber); // Add the map number
                 else
-					cmdline.Append (" +map " + Game.Configurations.MapName); // Add the map name
+					cmdline.Append (" +map " + Game.Configurations.Basic.MapName); // Add the map name
 
                 // Class
                 cmdline.Append (" +playerclass ");
-                if (!Game.Configurations.ClassNumberOn) // If Game.Configurations.ClassNumberOn is false
-                    cmdline.Append (Game.Configurations.ClassName); // Add the class name
+				if (!Game.Configurations.Basic.ClassNumberOn) // If Game.Configurations.ClassNumberOn is false
+					cmdline.Append (Game.Configurations.Basic.ClassName); // Add the class name
                 else
-                    cmdline.Append (Game.Configurations.ClassNumber); // Add the class number
+                    cmdline.Append (Game.Configurations.Basic.ClassNumber); // Add the class number
             }
 
             // Multiplayer
-            if (Game.Configurations.MultiplayerOn) {
+			if (Game.Configurations.Multiplayer.MultiplayerOn) {
                 // Hosting/Joining
-                if (!Game.Configurations.MPJoining)
-                    cmdline.Append (" -host " + Game.Configurations.MPPlayers);
-                if (Game.Configurations.MPJoining)
-                    cmdline.Append (" -join " + Game.Configurations.MPHostname);
-                cmdline.Append (" -port " + Game.Configurations.MPPort);
+				if (!Game.Configurations.Multiplayer.MPJoining)
+					cmdline.Append (" -host " + Game.Configurations.Multiplayer.MPPlayers);
+				if (Game.Configurations.Multiplayer.MPJoining)
+					cmdline.Append (" -join " + Game.Configurations.Multiplayer.MPHostname);
+				cmdline.Append (" -port " + Game.Configurations.Multiplayer.MPPort);
 
                 // Server-side stuff
-                if (!Game.Configurations.MPJoining) {
+				if (!Game.Configurations.Multiplayer.MPJoining) {
                     // Server Type
-                    if (Game.Configurations.Netmode == false)
+					if (Game.Configurations.Multiplayer.Netmode == false)
                         cmdline.Append (" -netmode 0");
-                    else if (Game.Configurations.Netmode == true)
+					else if (Game.Configurations.Multiplayer.Netmode == true)
                         cmdline.Append (" -netmode 1");
 
                     // Server Options
-                    if (Game.Configurations.ExtraTics)
+					if (Game.Configurations.Multiplayer.ExtraTics)
                         cmdline.Append (" -extratic");
-                    if (Game.Configurations.MPDup > 0)
-                        cmdline.Append (" -dup " + Game.Configurations.MPDup);
+					if (Game.Configurations.Multiplayer.MPDup > 0)
+						cmdline.Append (" -dup " + Game.Configurations.Multiplayer.MPDup);
 
                     // Game mode
-                    if (Game.Configurations.altdeath)
+					if (Game.Configurations.Multiplayer.altdeath)
                         cmdline.Append (" -altdeath");
-                    if (Game.Configurations.Deathmatch)
+                    if (Game.Configurations.Multiplayer.Deathmatch)
                         cmdline.Append (" -deathmatch");
                 }
             }
 
             // Enable Cheats
-            if (Game.Configurations.sv_cheats)
+			if (Game.Configurations.Advanced.sv_cheats)
                 cmdline.Append (" +set sv_cheats 1");
 
             // Enable Logging to File
-            if (Game.Configurations.LogToFile)
+			if (Game.Configurations.Advanced.LogToFile)
                 cmdline.Append (" +set logfile \"Final Duel.log\"");
 
             // Custom Commands
-            if (Game.Configurations.CustomCommands != string.Empty)
-                cmdline.Append (" " + Game.Configurations.CustomCommands);
+			if (Game.Configurations.Advanced.CustomCommands != string.Empty)
+                cmdline.Append (" " + Game.Configurations.Advanced.CustomCommands);
 
             // Log the command line if we're debugging
             Debug.WriteLine ("BuildCommandLine returned \"" + cmdline.ToString () + "\"");

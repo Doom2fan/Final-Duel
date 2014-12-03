@@ -4,102 +4,145 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
+using IniParser;
+using IniParser.Parser;
+using IniParser.Model.Configuration;
+using IniParser.Model;
 
 namespace Launcher {
+	public class iniParserConfiguration : BaseIniParserConfiguration {
+		public void iniParserConfiguration () {
+			CommentString = "#";
+			SectionStartChar = '[';
+			SectionEndChar = ']';
+			KeyValueAssigmentChar = '=';
+			AssigmentSpacer = " ";
+			AllowKeysWithoutSection = true;
+			AllowDuplicateKeys = false;
+			AllowDuplicateSections = false;
+			ThrowExceptionsOnError = true;
+			SkipInvalidLines = false;
+		}
+	}
+
 	public class Config {
+		iniParserConfiguration parserConfig = new iniParserConfiguration ();
+		FileIniDataParser dataParser = new FileIniDataParser ();
+		IniData parsedData = new IniData ();
+
+		
+		public void Config () {
+		}
+
 		public string ProgramPath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location);
 		public string CFGFilePath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location) + "\\Config\\";
 		public string PatchesPath = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().Location) + "\\Patches\\";
 		public string ConfigName = "Default";
 
 		// Paths
-		public string DisPath = string.Empty;
-		public string IWAD = string.Empty;
-		public string IWADPath = string.Empty;
-		public string FDPath = string.Empty;
+		public class PathConfigs {
+			public List<string> IWADPath = new List<string> ();
+			public List<string> WADPath = new List<string> ();
+			public string DisPath = string.Empty;
+			public string FDPath = string.Empty;
+		}
+		public PathConfigs Paths = new PathConfigs ();
 
 		// Basic
-		public bool NoSkill = true;
-		public short Skill = 0;
-		public bool MapNameOn = false;
-		public short MapNumber = 0;
-		public string MapName = string.Empty;
-		public bool ClassNumberOn = false;
-		public short ClassNumber = 0;
-		public string ClassName = string.Empty;
+		public class BasicConfigs {
+			public string IWAD = string.Empty;
+			public bool NoSkill = true;
+			public short Skill = 0;
+			public bool MapNameOn = false;
+			public short MapNumber = 0;
+			public string MapName = string.Empty;
+			public bool ClassNumberOn = false;
+			public short ClassNumber = 0;
+			public string ClassName = string.Empty;
+		}
+		public BasicConfigs Basic = new BasicConfigs ();
 
 		// Multiplayer
-		public bool MultiplayerOn = false;
-		public int MPPort = 5029;
-		// Joining
-		public bool MPJoining = false;
-		public string MPHostname = string.Empty;
-		// Hosting
-		public short MPPlayers = 1;
-		public bool Netmode = false;
-		public bool ExtraTics = false;
-		public short MPDup = 0;
-		public bool altdeath = false;
-		public bool Deathmatch = false;
+		public class MultiplayerConfigs {
+			public bool MultiplayerOn = false;
+			public int MPPort = 5029;
+			// Joining
+			public bool MPJoining = false;
+			public string MPHostname = string.Empty;
+			// Hosting
+			public short MPPlayers = 1;
+			public bool Netmode = false;
+			public bool ExtraTics = false;
+			public short MPDup = 0;
+			public bool altdeath = false;
+			public bool Deathmatch = false;
+		}
+		public MultiplayerConfigs Multiplayer = new MultiplayerConfigs ();
 
 		// Advanced
-		public bool sv_cheats = false;
-		public bool LogToFile = false;
-		public string CustomCommands = string.Empty;
+		public class AdvancedConfigs {
+			public bool sv_cheats = false;
+			public bool LogToFile = false;
+			public string CustomCommands = string.Empty;
+		}
+		public AdvancedConfigs Advanced = new AdvancedConfigs ();
 
 		// Gameplay options
-		public bool teamplay = false;
-		public string sv_fallingdamage = string.Empty;
-		public bool sv_weapondrop = false;
-		public bool sv_doubleammo = false;
-		public bool sv_infiniteammo = false;
-		public bool sv_infiniteinventory = false;
-		public bool sv_nomonsters = false;
-		public bool sv_killallmonsters = false;
-		public bool sv_monsterrespawn = false;
-		public bool sv_norespawn = false;
-		public bool sv_itemsrespawn = false;
-		public bool sv_respawnsuper = false;
-		public bool sv_fastmonsters = false;
-		public bool sv_degeneration = false;
-		public bool sv_noautoaim = false;
-		public bool sv_disallowsuicide = false;
-		public Trilean sv_jump = Trilean.Indeterminate;
-		public Trilean sv_crouch = Trilean.Indeterminate;
-		public Trilean sv_freelook = Trilean.Indeterminate;
-		public bool sv_nofov = false;
-		public bool sv_nobfgaim = false;
-		public bool sv_noautomap = false;
-		public bool sv_noautomapallies = false;
-		public bool sv_disallowspying = false;
-		public bool sv_chasecam = false;
-		public bool sv_dontcheckammo = false;
-		public bool sv_killbossmonst = false;
-		public bool sv_nocountendmonst = false;
-		// Deathmatch
-		public bool sv_weaponstay = false;
-		public bool sv_noitems = false;
-		public bool sv_noarmor = false;
-		public bool sv_nohealth = false;
-		public bool sv_spawnfarthest = false;
-		public bool sv_samelevel = false;
-		public bool sv_forcerespawn = false;
-		public bool sv_noexit = false;
-		public bool sv_barrelrespawn = false;
-		public bool sv_respawnprotect = false;
-		public bool sv_losefrag = false;
-		public bool sv_keepfrag = false;
-		public bool sv_noteamswitch = false;
-		// Cooperative
-		public bool sv_noweaponspawn = false;
-		public bool sv_cooploseinventory = false;
-		public bool sv_cooplosekeys = false;
-		public bool sv_cooploseweapons = false;
-		public bool sv_cooplosearmor = false;
-		public bool sv_cooplosepowerups = false;
-		public bool sv_cooploseammo = false;
-		public bool sv_coophalveammo = false;
-		public bool sv_samespawnspot = false;
+		public class GameplayOptionsClass {
+			public bool teamplay = false;
+			public string sv_fallingdamage = string.Empty;
+			public bool sv_weapondrop = false;
+			public bool sv_doubleammo = false;
+			public bool sv_infiniteammo = false;
+			public bool sv_infiniteinventory = false;
+			public bool sv_nomonsters = false;
+			public bool sv_killallmonsters = false;
+			public bool sv_monsterrespawn = false;
+			public bool sv_norespawn = false;
+			public bool sv_itemsrespawn = false;
+			public bool sv_respawnsuper = false;
+			public bool sv_fastmonsters = false;
+			public bool sv_degeneration = false;
+			public bool sv_noautoaim = false;
+			public bool sv_disallowsuicide = false;
+			public Trilean sv_jump = Trilean.Indeterminate;
+			public Trilean sv_crouch = Trilean.Indeterminate;
+			public Trilean sv_freelook = Trilean.Indeterminate;
+			public bool sv_nofov = false;
+			public bool sv_nobfgaim = false;
+			public bool sv_noautomap = false;
+			public bool sv_noautomapallies = false;
+			public bool sv_disallowspying = false;
+			public bool sv_chasecam = false;
+			public bool sv_dontcheckammo = false;
+			public bool sv_killbossmonst = false;
+			public bool sv_nocountendmonst = false;
+			// Deathmatch
+			public bool sv_weaponstay = false;
+			public bool sv_noitems = false;
+			public bool sv_noarmor = false;
+			public bool sv_nohealth = false;
+			public bool sv_spawnfarthest = false;
+			public bool sv_samelevel = false;
+			public bool sv_forcerespawn = false;
+			public bool sv_noexit = false;
+			public bool sv_barrelrespawn = false;
+			public bool sv_respawnprotect = false;
+			public bool sv_losefrag = false;
+			public bool sv_keepfrag = false;
+			public bool sv_noteamswitch = false;
+			// Cooperative
+			public bool sv_noweaponspawn = false;
+			public bool sv_cooploseinventory = false;
+			public bool sv_cooplosekeys = false;
+			public bool sv_cooploseweapons = false;
+			public bool sv_cooplosearmor = false;
+			public bool sv_cooplosepowerups = false;
+			public bool sv_cooploseammo = false;
+			public bool sv_coophalveammo = false;
+			public bool sv_samespawnspot = false;
+		}
+		public GameplayOptionsClass GameplayOptions = new GameplayOptionsClass ();
 
 		// Mods
 		public List<string> ModList = new List<string> ();
@@ -162,37 +205,15 @@ namespace Launcher {
 		public void Save2 (string path, string file) {
 			List<string> data = new List<string> ();
 			List<string> data2 = new List<string> ();
-
+			
 			try {
 				if (!Directory.Exists (path))
 					Directory.CreateDirectory (path);
 
-				FieldInfo [] fields = this.GetType ().GetFields ();
-
-				foreach (FieldInfo field in fields) {
-					if (field.Name.Equals ("ConfigName")) {
-						data2.Add (field.Name + " ► " + field.GetValue (this));
-					} else if (field.Name.Equals ("CFGFilePath") || field.Name.Equals ("ProgramPath") || field.Name.Equals (PatchesPath))
-						continue;
-					else {
-						if (field.FieldType == typeof (List<string>)) {
-							List<string> strings = (List<string>) field.GetValue (this);
-							List<string> StringList = new List<string> ();
-
-							StringList.Add (field.Name + " ► " + strings.Count + " ► {");
-							foreach (string line in strings)
-								StringList.Add (line);
-							StringList.Add ("}");
-
-							data.AddRange (StringList);
-						} else
-							data.Add (field.Name + " ► " + field.GetValue (this));
-					}
+				foreach (FieldInfo field in this.GetType ().GetFields ()) {
+					
 				}
 
-				foreach (string line in data)
-					Debug.WriteLine (line);
-				//File.Delete (CFGFilePath + file + ".cfg");
 				File.WriteAllLines (path + file + ".cfg", data);
 			} catch (Exception e) {
 				Utils.ShowError (e);
@@ -204,65 +225,20 @@ namespace Launcher {
 		}
 
 		public void Load (string file) {
-			try {
-				if (!Directory.Exists (CFGFilePath))
-					Directory.CreateDirectory (CFGFilePath);
-
-				if (File.Exists (CFGFilePath + file + ".cfg")) {
-					FieldInfo [] fields = this.GetType ().GetFields ();
-					List<string> lines = File.ReadAllLines (CFGFilePath + file + ".cfg").ToList ();
-
-					foreach (string option in lines) {
-						int lineNumber = lines.FindIndex (x => x.Equals (option));
-
-						string [] s = option.Split ('►');
-
-						if (s.Length < 2)
-							continue;
-
-						for (int i = 0; i < s.Count (); i++)
-							s [i] = s [i].Trim ();
-
-						if (s [0].Equals ("ConfigName") || s [0].Equals ("CFGFilePath") || s [0].Equals ("ProgramPath") || field.Name.Equals (PatchesPath))
-							continue;
-
-						FieldInfo field = fields.FirstOrDefault (o => o.Name == s [0]);
-
-						if (field != null) {
-							// Basic Types
-							if (field.FieldType == typeof (bool))
-								field.SetValue (this, bool.Parse (s [1]));
-							if (field.FieldType == typeof (int))
-								field.SetValue (this, int.Parse (s [1]));
-							if (field.FieldType == typeof (float))
-								field.SetValue (this, float.Parse (s [1]));
-							if (field.FieldType == typeof (Trilean))
-								field.SetValue (this, Trilean.Parse (s [1]));
-							if (field.FieldType == typeof (string))
-								field.SetValue (this, s [1]);
-
-							// String List
-							if (field.FieldType == typeof (List<string>)) {
-								int lineCount = int.Parse (s [1]);
-								List<string> listContents = new List<string> ();
-
-								for (int i = 0; i < lineCount; i++)
-									if (!lines [lineNumber + 1 + i].StartsWith ("}"))
-										listContents.Add (lines [lineNumber + 1 + i]);
-
-								field.SetValue (this, listContents);
-							}
-						}
-					}
-				} else
-					Save (file);
-			} catch (Exception e) {
-				Utils.ShowError (e);
-			}
+			
 		}
 
 		public void Initialize () {
 			try {
+				#region Load global stuff
+
+				if (File.Exists (ProgramPath + "\\Config.txt"))
+					parsedData = dataParser.ReadFile (ProgramPath + "\\Config.txt");
+
+				#endregion
+
+				#region I dunno
+
 				if (!Directory.Exists (CFGFilePath))
 					Directory.CreateDirectory (CFGFilePath);
 
@@ -313,6 +289,8 @@ namespace Launcher {
 						}
 					}
 				}
+
+				#endregion
 			} catch (Exception e) {
 				Utils.ShowError (e);
 			}
