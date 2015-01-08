@@ -1,7 +1,7 @@
 Final Duel is a Doom mod for the Dis GZDoom fork.
 
 Launcher Source:
-	The C# source code of the launcher. This requires .NET Framework 4.5 to be compiled.
+	-- This has been moved to https://github.com/Doom2fan/Chronos-ZDoom-Launcher --
 
 PK3 Source:
 	The PK3's source.
