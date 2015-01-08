@@ -12,3 +12,6 @@
 - Change the Sniper Rifle's sprites to centered ones.
 - Change the AK-47's pickup sprite.
 - Actually balance this thing.
+
+*** When v19 is ready ***
+Tell HazeBandicoot it's ready
