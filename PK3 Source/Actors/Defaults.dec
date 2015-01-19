@@ -41,6 +41,21 @@ Actor WP : CustomInventory {
 	}
 }
 
+Actor FD_DeadBodyBlood : Blood {
+	States {
+	Spawn:
+		TNT1 A 0 NoDelay A_ChangeVelocity (0.0, 0.0, 0.0, CVF_REPLACE)
+		BLUD CBA 8
+		Stop
+	}
+}
+Actor FD_DeadBodyBase {
+	Health 50
+	Mass 0x7FFFFFFF
+	BloodType FD_DeadBodyBlood, FD_DeadBodyBlood
+	+Corpse +NotAutoAimed // Set 'Shootable' if you want it to be destroyable
+}
+
 // By Jekyll Grim Payne "Aka" zer0
 Actor DebrisGeneral {
 	Radius 1
@@ -86,19 +101,4 @@ Actor ParticleFire_General : DebrisGeneral {
 	Scale 0.5
 	Alpha 0.5
 	+NoClip +NoInteraction
-}
-
-Actor FD_DeadBodyBlood : Blood {
-	States {
-	Spawn:
-		TNT1 A 0 NoDelay A_ChangeVelocity (0.0, 0.0, 0.0, CVF_REPLACE)
-		BLUD CBA 8
-		Stop
-	}
-}
-Actor FD_DeadBodyBase {
-	Health 50
-	Mass 0x7FFFFFFF
-	BloodType FD_DeadBodyBlood, FD_DeadBodyBlood
-	+Corpse +NotAutoAimed // Set 'Shootable' if you want it to be destroyable
 }

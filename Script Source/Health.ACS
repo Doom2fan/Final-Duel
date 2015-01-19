@@ -24,25 +24,25 @@ script "Health1" ENTER { // Health systems...
 		} else if (health <= 5 && health > 0) {
 			if (heartbeatTics >= 70) {
 				heartbeatTics = 0;
-				localAmbientSound ("Player/Heartbeat", 127);
+				localAmbientSound ("Player/Heartbeat", heartbeatVolume);
 			}
 			heartbeatTics++;
 		} else if (health <= 10 && health > 0) {
 			if (heartbeatTics >= 105) {
 				heartbeatTics = 0;
-				localAmbientSound ("Player/Heartbeat", 127);
+				localAmbientSound ("Player/Heartbeat", heartbeatVolume);
 			}
 			heartbeatTics++;
 		} else if (health <= 15 && health > 0) {
 			if (heartbeatTics >= 140) {
 				heartbeatTics = 0;
-				localAmbientSound ("Player/Heartbeat", 127);
+				localAmbientSound ("Player/Heartbeat", heartbeatVolume);
 			}
 			heartbeatTics++;
 		} else if (health <= 20 && health > 0) {
 			if (heartbeatTics >= 175) {
 				heartbeatTics = 0;
-				localAmbientSound ("Player/Heartbeat", 127);
+				localAmbientSound ("Player/Heartbeat", heartbeatVolume);
 			}
 			heartbeatTics++;
 		} else if (getActorProperty (0, APROP_HEALTH) > 20 && heartbeatTics > 0)

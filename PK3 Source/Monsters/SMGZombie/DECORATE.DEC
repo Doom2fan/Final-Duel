@@ -53,7 +53,7 @@ ACTOR SMGZombie : ShotgunGuy 30031 {
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_SpawnItemEx ("ShotgunGuyBodyPlasma")
+		TNT1 A 0 A_SpawnItemEx ("SMGZombieBodyFire")
 		Stop
 	XDeath:
 		TNT1 A 0 A_GiveToTarget ("XPSystemExperience", 28)

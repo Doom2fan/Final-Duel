@@ -49,7 +49,12 @@ Actor RocketBoxSpawner : RandomSpawner replaces RocketBox {
 // Cell Spawner
 Actor CellSpawner : RandomSpawner replaces Cell {
 	DropItem "Cell2" 255 3
-	DropItem "SniperRifleClip" 255 1
+	DropItem "SniperRifleClipSpawner" 255 1
+}
+
+Actor SniperRifleClipSpawner : RandomSpawner {
+	DropItem "SRifleClipSpawned" 255 4
+	DropItem "SRifleExpClipSpawned" 255 1
 }
 
 // Cell Box Spawner

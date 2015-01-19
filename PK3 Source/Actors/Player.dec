@@ -231,8 +231,6 @@ Actor ChronosItem : Boolean { }
 Actor NeroItem : Boolean { }
 /* ---------------------------------------------------- */
 
-// By WildWeasel
-
 // Underwater effects
 Actor IsUnderwater : Boolean { }
 

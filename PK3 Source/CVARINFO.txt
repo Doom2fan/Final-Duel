@@ -11,3 +11,4 @@ user bool FD_AutoReload = true;
 user bool FD_AutoReloadSSG = true;
 user bool FD_HeartbeatsOn = true;
 user bool FD_LogLVLUpMsgs = true;
+user bool FD_SRifleExpReloadPriority = false;
