@@ -154,7 +154,6 @@ Actor FDShrapnel : DebrisGeneral { // By WildWeasel, edited by Alex_Mercer
 	Projectile
 	+DoomBounce +DontSplash +NoDamageThrust
 	Obituary "$OB_SHRAPNEL"
-	SelfObituary "$OB_SHRAPNEL"
 	
 	var int user_TimesToRepeat; // 16
 	States {
@@ -198,7 +197,6 @@ Actor SawPuff : BulletPuff2 {
 	Decal ChainsawMark
 	DamageType "Saw"
 	AttackSound "Chainsaw/Wall"
-	-AllowHeadshot
 	States {
 	Spawn:
 		TNT1 A 0

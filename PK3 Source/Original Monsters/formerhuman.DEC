@@ -3,7 +3,6 @@ Actor ZombiemanAmmo : Counter { Inventory.MaxAmount 30 }
 Actor FDZombieMan : ZombieMan 30094 {
 	//$category Final Duel-Original Monsters
 	//$title Corrupted Human
-	HeadshotHeight 44
 	PainChance "Kick", 255
 	DropItem "Clip2"
 	DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy" DropItem "Energy5" 128

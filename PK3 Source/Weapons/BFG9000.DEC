@@ -167,7 +167,6 @@ Actor FDBFGBall : FastProjectile Replaces BFGBall {
 	RenderStyle Add
 	Alpha 0.75
 	Obituary "$OBBFG"
-	SelfObituary "$OBBFGSELF"
 	DamageType BFG
 	+ExtremeDeath +DontSplash +ForceRadiusDMG +SeekerMissile
 	States {
@@ -275,12 +274,11 @@ Actor FDBFGExtra {
 	
 	+NoGravity +ExtremeDeath +IsMonster +NoTarget
 	+NeverTarget +NotAutoaimed +Friendly +NoDamage
-	+SpecialMonster
 	
 	States {
 	Spawn:
-		TNT1 A 0 // This is here to make sure nothing fucks up
-		TNT1 A 0 A_RearrangePointers (AAPTR_TRACER, AAPTR_TARGET, AAPTR_MASTER) // Set up our pointers
+		TNT1 A 0 noDelay A_RearrangePointers (AAPTR_TRACER, AAPTR_TARGET, AAPTR_MASTER) // Set up our pointers
+		TNT1 A 0 A_ChangeFlag ("monster", FALSE)
 		
 	Working:
 		TNT1 A 0 A_CustomRailgun (random (1, 4) * 4, 0, none, 00FF00, RGF_SILENT|RGF_FULLBRIGHT, 1, 1.0, "FDBFGExtraPuff") // Fire a railgun attack at the target

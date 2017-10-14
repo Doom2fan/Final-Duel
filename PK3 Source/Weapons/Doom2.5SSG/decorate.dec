@@ -205,7 +205,7 @@ Actor DoomSSG : FDWeapon {
 		SGSF DDDD 1 A_TakeInventory ("SynthFireRight")
 	Ready.SynthFire.Right:
 		TNT1 A 0 A_GiveInventory ("SynthFireRightReady", 9999)
-		SGSF D 1 NoFastWeaps A_JumpIfInventory ("SynthFireRight", 1, "Fire.SynthFire.Right") // The NoFastWeaps keyword is here so it doesn't glitch when sv_fastweapons is on
+		SGSF D 1 A_JumpIfInventory ("SynthFireRight", 1, "Fire.SynthFire.Right")
 		Loop
 	Fire.SynthFire.Right:
 		TNT1 A 0 A_TakeInventory ("SynthFireRightReady", 9999)

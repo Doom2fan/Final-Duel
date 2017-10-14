@@ -2,7 +2,6 @@ Actor FDDoomImp : DoomImp 30097 {
 	//$category Final Duel-Original Monsters
 	//$title Imp
 	GibHealth -30
-	HeadshotHeight 44
 	PainChance 200
 	PainChance "Kick", 255
 	PainChance "SRType1", 255

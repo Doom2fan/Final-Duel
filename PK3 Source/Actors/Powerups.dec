@@ -43,7 +43,7 @@ Actor InvulnerabilitySphereSparks {
 
 // Blursphere
 Actor PowerFDInvisibility : PowerInvisibility {
-	-Shadow +CantSeek +Shadow2
+	+Shadow +CantSeek
 	Powerup.Duration -60
 	Powerup.Strength 80
 	Powerup.Mode Shadow

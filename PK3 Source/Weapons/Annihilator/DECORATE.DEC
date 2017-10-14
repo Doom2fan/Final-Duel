@@ -114,7 +114,6 @@ Actor AnnihilatorMissile {
 	+ForceXYBillboard
 	+DontSplash
 	Obituary "$OBANNIHILATOR"
-	SelfObituary "$OBANNIHILATORSELF"
 	DeathSound "Annihilator/Explode"
 	States {
 	Spawn:

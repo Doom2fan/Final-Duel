@@ -11,7 +11,7 @@ Actor Tracer : FastProjectile {
 	Height 2
 	Speed 75
 	Projectile
-	+BloodSplatter +NoExtremeDeath +NoDamageThrust +AllowHeadshot
+	+BloodSplatter +NoExtremeDeath +NoDamageThrust
 	Scale 0.025
 	Damage (random (1, 3) * 4)
 	MissileType TracerTrail
@@ -46,7 +46,7 @@ Actor TracerTrail {
 }
 
 Actor BulletPuff2 Replaces BulletPuff {
-	+NoGravity +ForceXYBillboard +AllowHeadshot +NoTimeFreeze
+	+NoGravity +ForceXYBillboard +NoTimeFreeze
 	+NoExtremeDeath
 	RenderStyle Add
 	Scale 0.05

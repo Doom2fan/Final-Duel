@@ -140,7 +140,7 @@ Actor FDPlasmaRifle : FDWeapon {
 		TNT1 A 0 A_Refire ("AltHold")
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_JumpIfInventory ("PlasmaRifleUpgrade", 1, "AltHold2")
-		TNT1 A 0 A_ThingDamage (10, "WeaponOverload", TDF_PIERCEARMOR)
+		TNT1 A 0 A_DamageSelf (10, "WeaponOverload")
 	AltHold2:
 		PLSF A 0 A_PlaySound ("PlasmaRifle/Altfire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("PlasFlareSpawn", 0, 0, 0, 0)
@@ -207,7 +207,7 @@ Actor FDPlasmaRiflePowered : FDPlasmaRifle {
 		TNT1 A 0 A_Refire ("AltHold")
 		TNT1 A 0 A_JumpIfNoAmmo ("DryFire")
 		TNT1 A 0 A_JumpIfInventory ("PlasmaRifleUpgrade", 1, "AltHold2")
-		TNT1 A 0 A_ThingDamage (10, "WeaponOverload", TDF_PIERCEARMOR)
+		TNT1 A 0 A_DamageSelf (10, "WeaponOverload")
 	AltHold2:
 		PLSP A 0 A_PlaySound ("PlasmaRifle/Altfire", CHAN_WEAPON)
 		TNT1 A 0 A_FireCustomMissile ("PlasMissileFlareSpawn", 0, 0, 0, 0)

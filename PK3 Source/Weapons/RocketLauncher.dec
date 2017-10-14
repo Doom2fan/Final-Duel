@@ -163,7 +163,6 @@ Actor FDRocket Replaces Rocket {
 	+Randomize +DontSplash
 	DeathSound "RocketLauncher/Explosion"
 	Obituary "$OB_MPROCKET"
-	SelfObituary "$OB_ROCKETSELF"
 	DamageType Rocket
 	States {
 	Spawn:
